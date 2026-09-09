@@ -56,21 +56,21 @@ function build20MinChapterLecture(chap: Chapter): LectureSection[] {
   sections.push({
     title: "Masterclass Kickoff & Big Picture",
     tag: "Part 1: Orientation",
-    script: `Hello and welcome to your complete twenty-minute deep-dive masterclass for Chapter ${chap.number}: ${chap.title}. I am Yumna, your tutor. Over the next twenty minutes, we aren't just reading through notes. We are going to unpack, analyze, and truly understand how every concept functions. Get ready to master this topic.`,
+    script: `Hello and welcome to your complete twenty-minute deep-dive masterclass for Chapter ${chap.number}: ${chap.title}. I am Yumna, your personal tutor. Over the next twenty minutes, we are not simply reading through notes. We are going to unpack every concept layer by layer, understand how it connects to everything else, explore real-world examples, and make sure you can answer any Cambridge exam question on this topic with complete confidence. Let me give you the big picture first. This chapter is one of the most important in your entire syllabus because it forms the backbone of the ideas that follow. Every examiner marking your script will be looking for evidence that you truly understand the underlying mechanism, not just a memorised definition. So throughout this masterclass, every time I give you a fact, I will also give you the reason why it works that way, and I will give you a worked example of how it appears in an exam question. Let's begin.`,
   });
 
   // 2. Real-world relevance
   sections.push({
     title: "Why This Concept Exists in the Real World",
     tag: "Part 2: Motivation",
-    script: `Let's start by answering the question every student asks: why does this topic matter? In the Cambridge syllabus, ${chap.title} is essential because it forms the baseline for how modern systems and natural laws operate. Specifically, ${cleanIntro.slice(0, 220)}. When you grasp the reason behind it, everything falls into place.`,
+    script: `Before we dive into the technical content, let's answer the most important question a student can ask: why does this actually matter outside the classroom? The answer for ${chap.title} is this. ${cleanIntro.slice(0, 300)}. Now let me give you a real-world example to anchor this. Think about the last time you encountered something related to this topic in your daily life. Scientists, engineers, doctors, economists, and designers all rely on these exact principles every single day. When you understand the principle behind it rather than just the words, you gain the ability to apply it to situations you have never seen before, which is precisely what Cambridge A-star questions demand. Keep that motivation in mind throughout this entire masterclass.`,
   });
 
   // 3. Decoding first principles
   sections.push({
     title: "First Principles & Fundamental Definitions",
     tag: "Part 3: Definitions",
-    script: `Now let's decode the core foundation. Don't worry about memorizing dry jargon. Focus on the core definition: ${cleanIntro.slice(0, 200)}. When an examiner asks for this in Section A of your paper, stating this definition clearly earns your very first marks.`,
+    script: `Now let's build the foundation. The most common mistake students make is trying to memorise a definition word-for-word without understanding what each part of that definition actually means. Let's decode it piece by piece. The core definition here is: ${cleanIntro.slice(0, 280)}. Notice that this definition has two parts. The first part tells you what the thing is. The second part tells you what it does or how it behaves. When an examiner awards marks for a definition, they are looking for both parts. Writing only one of them costs you half the marks. So let me say it again, more slowly. First: identify the subject. Second: explain its function or behaviour. Third: if possible, state the conditions under which it applies. If you follow that three-part structure every time, you will never lose a definition mark again.`,
   });
 
   // 4. Subheadings deep elaboration
@@ -81,64 +81,64 @@ function build20MinChapterLecture(chap: Chapter): LectureSection[] {
       .map((b) => cleanSpeechText(b))
       .filter(Boolean);
 
-    // Concept Exploration
+    // Concept Exploration — expanded with cause-effect reasoning
     sections.push({
       title: `${sub.title}: Concept Breakdown`,
       tag: `Topic ${sIdx + 1}A`,
-      script: `Let's move into our next key topic: ${sub.title}. Let's break down how this actually works. ${cleanBody.slice(0, 220)}. Notice the cause and effect here. When one factor changes, it directly influences the surrounding mechanism. Keep that relationship clearly in mind.`,
+      script: `Let's move into our next key topic: ${sub.title}. I want you to really understand this one, not just memorise it, so let's break it down in three stages. Stage one: what is it? Stage two: how does it work step by step? Stage three: what does it connect to? Here is the explanation. ${cleanBody.slice(0, 350)}. Now let's think about the mechanism. There is always a cause and an effect. When you change one input, a specific output changes as a consequence. Being able to trace that chain from cause to effect, using precise terminology at every step, is what an examiner rewards with full marks. Let me highlight the most important part of this concept that students most often get wrong or oversimplify.`,
     });
 
-    // Practical worked examples & key bullet points
+    // Practical worked examples & key bullet points — expanded
     if (bullets.length > 0) {
-      const topBullets = bullets.slice(0, 2).join(". ");
+      const topBullets = bullets.slice(0, Math.min(4, bullets.length)).join(". Next: ");
       sections.push({
-        title: `${sub.title}: Key Syllabus Points`,
+        title: `${sub.title}: Key Syllabus Points & Examples`,
         tag: `Topic ${sIdx + 1}B`,
-        script: `Let's look at the crucial details for ${sub.title}. Cambridge mark schemes require specific elements: ${topBullets}. When answering exam questions, make sure to state both the action and the consequence to secure full marks.`,
+        script: `Now let's go through the specific details for ${sub.title} that Cambridge mark schemes test directly. I am going to go through each point carefully, explain why it is true, and give you an example for each one. Point one: ${topBullets}. For each of these, imagine an examiner asking you to explain the significance. A weak answer simply states the fact. A strong answer states the fact, explains the underlying mechanism, and gives a specific example or application. For instance, if you are asked about this in a structured question, start with the principle, then describe the process step by step, then conclude with the outcome. That three-step approach guarantees you cover everything the mark scheme is looking for.`,
       });
     }
 
-    // Examiner Traps for this subtopic
+    // Examiner Traps — richer and more specific
     sections.push({
-      title: `${sub.title}: Examiner Pitfalls`,
+      title: `${sub.title}: Examiner Pitfalls & How to Avoid Them`,
       tag: `Topic ${sIdx + 1}C`,
-      script: `Here is an examiner secret regarding ${sub.title}. Many students confuse similar terms or give half-answers without units. Remember: always write out your reasoning step-by-step so the examiner can award you every single method mark.`,
+      script: `Here is something examiners know that most students don't realise until after the exam. For the topic of ${sub.title}, there are three classic mistakes that appear year after year in the Cambridge examiner reports. Mistake one: using the correct term but in the wrong context. Mistake two: describing what happens without explaining why it happens. Mistake three: leaving out units, conditions, or qualifications that the mark scheme requires. Let me give you a strategy for each. For mistake one: always re-read the question and check you are answering what was actually asked. For mistake two: after every statement you write, ask yourself "why?" and add that reason. For mistake three: when in doubt, include the condition. Writing "under standard conditions" or "in a controlled environment" shows the examiner you understand the limits of the concept. These three habits alone can add five to eight marks to a typical exam paper.`,
     });
   });
 
-  // 5. Connecting the entire chapter together
+  // 5. Synthesis — richer connections
   sections.push({
     title: "System Integration: Connecting All Concepts",
     tag: "Synthesis",
-    script: `Now that we have analyzed the individual sections of Chapter ${chap.number}, let's look at how they connect as one unified system. If you alter the initial conditions of ${chap.title}, how does that trigger changes throughout the entire process? Being able to link these ideas is what separates an A grade from an A star.`,
+    script: `Now that we have analysed every individual section of Chapter ${chap.number}: ${chap.title}, let's zoom out and see the whole picture. In Cambridge exams, the highest-mark questions — typically the extended response or essay questions — require you to connect multiple ideas together rather than treat them as isolated facts. So let's practise that now. Every concept we covered today is part of a single system. The early sections defined the foundation. The middle sections showed the mechanisms and how they interact. The final sections showed the consequences and applications. When you answer a twelve-mark question, you should be moving through that same structure: foundation, mechanism, consequence. If you can draw a mental flowchart linking the topics from this chapter, you are ready for any synoptic question the examiner can write. Let's also think about how Chapter ${chap.number} connects to the chapters before and after it in the syllabus, because Cambridge increasingly writes questions that span multiple topics.`,
   });
 
-  // 6. Exam question strategy & structuring
+  // 6. Exam strategy — much more detailed
   sections.push({
     title: "Exam Question Walkthrough & Model Answers",
     tag: "Exam Strategy",
-    script: `Let's simulate a real Cambridge examination scenario for ${chap.title}. Picture a four-mark question. How do you structure your answer? Step one: state the precise definition. Step two: describe the step-by-step mechanism. Step three: conclude with the result. Following this formula guarantees maximum marks every time.`,
+    script: `Let's now simulate a real Cambridge examination scenario using ${chap.title} as our topic. I want you to picture yourself in the exam hall. The question reads: "Explain the relationship between [the main concept] and [its consequence]. Use examples to support your answer. [6 marks]". How do you approach this? Here is the exact formula. Sentence one: state the precise definition of the main concept. Sentence two: describe the step-by-step mechanism or process. Sentence three: identify the consequence and explain why it follows from the mechanism. Sentence four: give a named, specific example — not a vague one. Sentence five: if you have time, state the exception or the condition under which this does not apply, because that shows the examiner the depth of your understanding. For a four-mark question, use sentences one through three. For a six-mark question, add sentence four. For an eight or ten mark question, add sentence five and a comparison or evaluation. Following this formula every single time removes the guesswork and ensures you systematically hit every mark scheme point.`,
   });
 
-  // 7. Diagram & Visual Representation Mastery
+  // 7. Diagram mastery — more instructive
   sections.push({
     title: "Diagram & Visual Representation Mastery",
     tag: "Diagrams",
-    script: `Pay close attention to the diagrams in Chapter ${chap.number}. In the exam hall, examiners frequently ask you to label or interpret diagrams. Make sure you can sketch this from memory, label every key part accurately, and explain what each structure does.`,
+    script: `Pay very close attention to this section, because diagrams are worth more marks than most students realise. For Chapter ${chap.number}, Cambridge regularly includes diagram-based questions that ask you to label, annotate, complete, or interpret a visual representation of the concept. Here is how to approach every diagram question. First: identify what type of diagram it is — is it a process diagram, a structural diagram, a graph, or a cycle? Second: find the labels and arrows, because they tell you what the examiner expects you to name and explain. Third: every label you add should be accompanied by a brief function — not just the name. For example, do not just write the name of a structure. Write the name and add a colon followed by its specific function. This is the difference between one mark and two marks on every label. Fourth: if asked to sketch a diagram from memory, always include a title, labels with functions, arrows showing direction of process, and a scale or units if it involves quantities. Practise sketching the key diagrams from this chapter until you can reproduce them accurately in under two minutes.`,
   });
 
-  // 8. Rapid Recall Checkpoint
+  // 8. Rapid Recall — expanded with actual technique
   sections.push({
-    title: "Rapid Recall & Mental Recall Checkpoint",
+    title: "Rapid Recall & Active Retrieval Checkpoint",
     tag: "Recall Drill",
-    script: `Let's do a quick mental recall checkpoint. Pause and ask yourself: what is the single most important rule we learned about ${chap.title}? If you can explain it in your own words, you truly understand it. You are doing fantastic work today.`,
+    script: `This section uses the most powerful learning technique known to cognitive science: active retrieval. Research consistently shows that trying to recall information without looking at your notes strengthens your memory far more effectively than re-reading or highlighting. So here is what I want you to do right now. Pause mentally and ask yourself these three questions about ${chap.title}. Question one: what is the single most important definition from this chapter? Can you state it in two sentences without looking? Question two: what is the step-by-step process or mechanism? Can you describe it in the correct order? Question three: what is a real-world example or application of this concept that you could use in an exam answer? If you can answer all three confidently, you are in an excellent position. If any one of them feels uncertain, go back to your notes for that specific point, then close them and try again. This recall-and-verify cycle is how you build the long-term memory you need for exam day.`,
   });
 
-  // 9. Final 20-minute masterclass conclusion
+  // 9. Conclusion — motivating and complete
   sections.push({
-    title: "20-Minute Masterclass Conclusion & Success",
+    title: "20-Minute Masterclass Conclusion & What to Do Next",
     tag: "Completion",
-    script: `Congratulations! You have completed your full twenty-minute masterclass on Chapter ${chap.number}: ${chap.title}. You have covered the theory, the mechanisms, the practical applications, and the examiner secrets. You are thoroughly prepared to excel. Keep up this magnificent dedication with Yumna!`,
+    script: `Congratulations. You have completed your full twenty-minute masterclass on Chapter ${chap.number}: ${chap.title}. In the last twenty minutes, you have covered the complete theoretical foundation, the step-by-step mechanisms, specific worked examples, examiner pitfalls to avoid, a model answer formula, diagram technique, and an active retrieval drill. That is the equivalent of a full private tutoring session compressed into twenty minutes. Here is what I recommend you do immediately after this session. First: open your physical notes or textbook and glance through Chapter ${chap.number} one more time — now that you have heard the full explanation, the written content will click into place much more easily. Second: attempt at least one past paper question on this topic, applying the model answer formula we practised. Third: come back and listen to this masterclass again in three to four days to consolidate the memory through spaced repetition. You have invested twenty minutes today that will save you hours of confusion in the exam hall. Keep up this dedication. You are building something extraordinary.`,
   });
 
   return sections;
@@ -535,118 +535,150 @@ function ChapterDoc({
 
       {/* Floating 20-Min Yumna Masterclass Audio Player */}
       {isLectureActive && (
-        <div className="fixed bottom-6 inset-x-4 max-w-2xl mx-auto z-50 animate-in fade-in slide-in-from-bottom-5 duration-300">
-          <div className="relative overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-[#faf9f5]/95 dark:bg-[#1f1f1d]/95 backdrop-blur-xl shadow-2xl p-4 text-foreground">
-            {/* Top progress bar for 20-minute lecture */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-black/5 dark:bg-white/5">
+        <div className="fixed bottom-0 inset-x-0 sm:bottom-6 sm:inset-x-4 sm:max-w-2xl sm:mx-auto z-50 animate-in fade-in slide-in-from-bottom-5 duration-300">
+          <div className="relative overflow-hidden rounded-t-2xl sm:rounded-2xl border-t sm:border border-black/10 dark:border-white/10 bg-[#faf9f5]/98 dark:bg-[#1c1c1a]/98 backdrop-blur-xl shadow-2xl px-4 pt-3 pb-4 text-foreground">
+            {/* Top progress bar */}
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-black/5 dark:bg-white/5">
               <div
                 className="h-full bg-primary transition-all duration-300"
-                style={{
-                  width: `${Math.min(100, (elapsedSeconds / TOTAL_LECTURE_SECONDS) * 100)}%`,
-                }}
+                style={{ width: `${Math.min(100, (elapsedSeconds / TOTAL_LECTURE_SECONDS) * 100)}%` }}
               />
             </div>
 
-            <div className="flex items-center gap-3.5">
-              {/* Status icon */}
-              <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary">
+            {/* ── Row 1: icon + text + close ─────────────────────────── */}
+            <div className="flex items-start gap-3 mb-2.5">
+              {/* Status icon — gentle pulse instead of bounce */}
+              <div className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary">
                 {isVoiceLoading ? (
-                  <Loader2 className="size-5 animate-spin" />
+                  <Loader2 className="size-[18px] animate-spin" />
                 ) : isPlaying ? (
-                  <Volume2 className="size-5 animate-bounce" />
+                  <Volume2 className="size-[18px] opacity-90" style={{ animation: "yumna-speaker 1.8s ease-in-out infinite" }} />
                 ) : (
-                  <Pause className="size-5" />
+                  <Pause className="size-[18px]" />
                 )}
               </div>
 
-              {/* Title & Section details */}
+              {/* Text info */}
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary">
+                {/* Label + time on one line */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary leading-none">
                     20-Min Yumna Masterclass
                   </span>
-                  <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-mono font-bold text-primary">
+                  <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-mono font-bold text-primary leading-none">
                     {formatTime(elapsedSeconds)} / 20:00
                   </span>
                 </div>
-                <p className="truncate text-xs font-semibold text-foreground">
+                {/* Current topic title */}
+                <p className="mt-1 text-xs font-semibold text-foreground leading-snug line-clamp-2">
                   {lectureSectionsRef.current[lectureSectionIdx]?.title || chapter.title}
                 </p>
-                <p className="truncate text-[11px] text-muted-foreground">
+                {/* Status sub-line */}
+                <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug line-clamp-1">
                   {isVoiceLoading
-                    ? "Connecting to Yumna's realistic tutor voice..."
+                    ? "Connecting to Yumna's voice…"
                     : isPaused
-                    ? `Paused at ${formatTime(elapsedSeconds)} — click Resume`
-                    : `Topic ${lectureSectionIdx + 1} of ${lectureSectionsRef.current.length} · In-depth 20-min walkthrough`}
+                    ? `Paused · ${formatTime(elapsedSeconds)} — tap ▶ to resume`
+                    : `Topic ${lectureSectionIdx + 1} of ${lectureSectionsRef.current.length} · deep-dive walkthrough`}
                 </p>
               </div>
 
-              {/* Controls */}
-              <div className="flex items-center gap-1.5 shrink-0">
-                {/* Prev section */}
+              {/* Close — top-right, always reachable */}
+              <button
+                type="button"
+                onClick={handleStop}
+                className="mt-0.5 size-7 shrink-0 rounded-full flex items-center justify-center text-muted-foreground hover:text-rose-500 hover:bg-rose-500/10 active:scale-90 transition-all"
+                title="End lecture"
+              >
+                <X className="size-3.5" />
+              </button>
+            </div>
+
+            {/* ── Row 2: controls ─────────────────────────────────────── */}
+            <div className="flex items-center gap-2">
+              {/* Prev */}
+              <button
+                type="button"
+                onClick={handlePrevSection}
+                disabled={lectureSectionIdx === 0}
+                className="size-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                title="Previous Topic"
+              >
+                <SkipBack className="size-4" />
+              </button>
+
+              {/* Play / Pause / Loading — larger tap target */}
+              {isVoiceLoading ? (
                 <button
                   type="button"
-                  onClick={handlePrevSection}
-                  disabled={lectureSectionIdx === 0}
-                  className="size-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                  title="Previous Topic"
+                  disabled
+                  className="size-11 rounded-full bg-primary/20 text-primary flex items-center justify-center cursor-wait"
+                  title="Loading voice…"
                 >
-                  <SkipBack className="size-4" />
+                  <Loader2 className="size-4 animate-spin" />
                 </button>
-
-                {/* Play / Pause / Loading button */}
-                {isVoiceLoading ? (
-                  <button
-                    type="button"
-                    disabled
-                    className="size-10 rounded-full bg-primary/20 text-primary flex items-center justify-center animate-pulse cursor-wait"
-                    title="Loading voice..."
-                  >
-                    <Loader2 className="size-4 animate-spin" />
-                  </button>
-                ) : isPaused ? (
-                  <button
-                    type="button"
-                    onClick={handleResume}
-                    className="size-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-105 active:scale-95 shadow-md transition-all"
-                    title="Resume 20-min lecture"
-                  >
-                    <Play className="size-4 fill-current ml-0.5" />
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={handlePause}
-                    className="size-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-105 active:scale-95 shadow-md transition-all"
-                    title="Pause lecture"
-                  >
-                    <Pause className="size-4 fill-current" />
-                  </button>
-                )}
-
-                {/* Next section */}
+              ) : isPaused ? (
                 <button
                   type="button"
-                  onClick={handleNextSection}
-                  disabled={lectureSectionIdx === lectureSectionsRef.current.length - 1}
-                  className="size-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                  title="Next Topic"
+                  onClick={handleResume}
+                  className="size-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-105 active:scale-95 shadow-md transition-all"
+                  title="Resume lecture"
                 >
-                  <SkipForward className="size-4" />
+                  <Play className="size-4 fill-current ml-0.5" />
                 </button>
-
-                {/* Stop / Close button */}
+              ) : (
                 <button
                   type="button"
-                  onClick={handleStop}
-                  className="size-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-rose-500 hover:bg-rose-500/10 transition-colors ml-1"
-                  title="End lecture"
+                  onClick={handlePause}
+                  className="size-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-105 active:scale-95 shadow-md transition-all"
+                  title="Pause lecture"
                 >
-                  <X className="size-4" />
+                  <Pause className="size-4 fill-current" />
                 </button>
+              )}
+
+              {/* Next */}
+              <button
+                type="button"
+                onClick={handleNextSection}
+                disabled={lectureSectionIdx === lectureSectionsRef.current.length - 1}
+                className="size-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                title="Next Topic"
+              >
+                <SkipForward className="size-4" />
+              </button>
+
+              {/* Section progress pills */}
+              <div className="ml-auto flex items-center gap-1 overflow-hidden max-w-[140px]">
+                {lectureSectionsRef.current.slice(
+                  Math.max(0, lectureSectionIdx - 2),
+                  Math.min(lectureSectionsRef.current.length, lectureSectionIdx + 5)
+                ).map((_, relIdx) => {
+                  const absIdx = Math.max(0, lectureSectionIdx - 2) + relIdx;
+                  return (
+                    <div
+                      key={absIdx}
+                      className={`h-1 rounded-full transition-all duration-300 ${
+                        absIdx === lectureSectionIdx
+                          ? "w-6 bg-primary"
+                          : absIdx < lectureSectionIdx
+                          ? "w-1.5 bg-primary/40"
+                          : "w-1.5 bg-black/10 dark:bg-white/10"
+                      }`}
+                    />
+                  );
+                })}
               </div>
             </div>
           </div>
+
+          {/* Keyframe for subtle speaker animation */}
+          <style>{`
+            @keyframes yumna-speaker {
+              0%, 100% { opacity: 0.7; transform: scale(1); }
+              50%       { opacity: 1;   transform: scale(1.12); }
+            }
+          `}</style>
         </div>
       )}
 
