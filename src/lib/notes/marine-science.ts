@@ -16,7 +16,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
           title: "Physical Properties of Seawater",
           body: `The physical properties of seawater — temperature, pressure, light penetration, density, and wave motion — determine the habitats available to marine organisms and drive the global ocean circulation systems that shape Earth's climate.
 
-![Ocean depth zones and light penetration diagram](/diagrams/cell-structure.svg)`,
+![Ocean depth zones and light penetration diagram](/diagrams/rock-cycle.svg)`,
           groups: [
             {
               subTitle: "Temperature",

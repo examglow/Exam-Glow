@@ -848,6 +848,88 @@ export function getChapterDiagramSvg(subjectId: string, chapterNumber: number): 
     return DIAGRAM_MAP["rock-cycle.svg"]!;
   }
 
+  // 9. Art & Design (0400)
+  if (sid.includes("art")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["biology-classification.svg"]!; // colour wheel / elements grid
+    if (chapterNumber === 2) return DIAGRAM_MAP["physics-refraction.svg"]!;     // light / tonal diagram
+    return DIAGRAM_MAP["cell-structure.svg"]!;
+  }
+
+  // 10. Music (0410)
+  if (sid.includes("music")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["supply-demand.svg"]!;          // wave / frequency metaphor
+    if (chapterNumber === 2) return DIAGRAM_MAP["chemistry-states-matter.svg"]!;
+    return DIAGRAM_MAP["quadratic-graph.svg"]!;                                 // waveform curve
+  }
+
+  // 11. Design & Technology (0445)
+  if (sid.includes("design-and-technology") || sid.includes("design-and-tech")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["computer-architecture.svg"]!;
+    if (chapterNumber === 2) return DIAGRAM_MAP["chemistry-states-matter.svg"]!;
+    return DIAGRAM_MAP["computer-architecture.svg"]!;
+  }
+
+  // 12. Food & Nutrition (0648)
+  if (sid.includes("food")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["biology-classification.svg"]!;
+    if (chapterNumber === 2) return DIAGRAM_MAP["cell-structure.svg"]!;
+    if (chapterNumber === 3) return DIAGRAM_MAP["biology-enzyme.svg"]!;         // digestion / enzyme diagram
+    return DIAGRAM_MAP["biology-photosynthesis.svg"]!;
+  }
+
+  // 13. Physical Education (0413)
+  if (sid.includes("physical-education") || sid === "physical-education" || (sid.includes("physical") && sid.includes("edu"))) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["cell-structure.svg"]!;         // muscle / skeletal cell
+    if (chapterNumber === 2) return DIAGRAM_MAP["biology-enzyme.svg"]!;         // energy systems
+    if (chapterNumber === 3) return DIAGRAM_MAP["quadratic-graph.svg"]!;        // performance curve
+    return DIAGRAM_MAP["demographic-transition.svg"]!;
+  }
+
+  // 14. Travel & Tourism (0471)
+  if (sid.includes("travel") || sid.includes("tourism")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["demographic-transition.svg"]!;
+    if (chapterNumber === 2) return DIAGRAM_MAP["supply-demand.svg"]!;
+    return DIAGRAM_MAP["plate-tectonics.svg"]!;                                 // world map / geography
+  }
+
+  // 15. Psychology (0478) — note: 0478 also matches "ict" check above so we must put this BEFORE it
+  // (already handled: Psychology id is "psychology", ICT id is "ict" — no collision)
+  if (sid.includes("psych")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["computer-architecture.svg"]!;  // research methods / process diagram
+    if (chapterNumber === 2) return DIAGRAM_MAP["chemistry-mole-triangle.svg"]!; // memory triangle model
+    if (chapterNumber === 3) return DIAGRAM_MAP["demographic-transition.svg"]!; // development stages
+    return DIAGRAM_MAP["supply-demand.svg"]!;
+  }
+
+  // 16. Marine Science (0697)
+  if (sid.includes("marine")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["plate-tectonics.svg"]!;        // ocean floor / tectonic
+    if (chapterNumber === 2) return DIAGRAM_MAP["biology-classification.svg"]!; // organism classification
+    if (chapterNumber === 3) return DIAGRAM_MAP["rock-cycle.svg"]!;             // ocean cycles / impacts
+    return DIAGRAM_MAP["cell-structure.svg"]!;
+  }
+
+  // 17. Global Perspectives (0457)
+  if (sid.includes("global") || sid.includes("perspectives")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["computer-architecture.svg"]!;
+    if (chapterNumber === 2) return DIAGRAM_MAP["demographic-transition.svg"]!;
+    return DIAGRAM_MAP["supply-demand.svg"]!;
+  }
+
+  // 18. Media Studies (0573)
+  if (sid.includes("media")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["computer-architecture.svg"]!;
+    if (chapterNumber === 2) return DIAGRAM_MAP["biology-classification.svg"]!;
+    return DIAGRAM_MAP["supply-demand.svg"]!;
+  }
+
+  // 19. Drama (0411)
+  if (sid.includes("drama")) {
+    if (chapterNumber === 1) return DIAGRAM_MAP["demographic-transition.svg"]!;
+    if (chapterNumber === 2) return DIAGRAM_MAP["cell-structure.svg"]!;
+    return DIAGRAM_MAP["biology-classification.svg"]!;
+  }
+
   return DIAGRAM_MAP["demographic-transition.svg"]!;
 }
 

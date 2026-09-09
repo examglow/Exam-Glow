@@ -45,7 +45,7 @@ export const MUSIC: SubjectNotes = {
           title: "J.S. Bach — Counterpoint and the Fugue",
           body: `Johann Sebastian Bach (1685–1750) is considered the supreme master of Baroque counterpoint. His works — from the *Well-Tempered Clavier* to the *Brandenburg Concertos* — demonstrate every aspect of Baroque compositional technique in its most rigorous and expressive form.
 
-![Baroque counterpoint example diagram](/diagrams/cell-structure.svg)`,
+![Baroque counterpoint example diagram](/diagrams/quadratic-graph.svg)`,
           groups: [
             {
               subTitle: "Fugue Structure",

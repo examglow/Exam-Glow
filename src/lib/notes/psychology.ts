@@ -81,7 +81,7 @@ export const PSYCHOLOGY: SubjectNotes = {
           title: "The Multi-Store Model of Memory (Atkinson & Shiffrin, 1968)",
           body: `The Multi-Store Model (MSM) was the first major cognitive model of memory. It proposes three distinct memory stores with different capacities, durations, and encoding processes.
 
-![Memory stores — sensory, short-term, long-term model](/diagrams/computer-architecture.svg)`,
+![Memory stores — sensory, short-term, long-term model](/diagrams/quadratic-graph.svg)`,
           groups: [
             {
               subTitle: "Three Memory Stores",

@@ -16,7 +16,7 @@ export const ART_AND_DESIGN: SubjectNotes = {
           title: "The Elements of Art",
           body: `Every artwork — whether a watercolour painting, a graphic poster, or a textile piece — is composed of some or all of the seven elements below. Understanding each element individually enables you to use them deliberately in composition.
 
-![Elements of Art overview diagram](/diagrams/cell-structure.svg)`,
+![Elements of Art overview diagram](/diagrams/computer-architecture.svg)`,
           groups: [
             {
               subTitle: "Line",
