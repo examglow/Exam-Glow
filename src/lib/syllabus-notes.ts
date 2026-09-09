@@ -20,6 +20,19 @@ import { SOCIOLOGY } from "./notes/sociology";
 import { RELIGIOUS_STUDIES } from "./notes/religious-studies";
 import { COMPUTER_SCIENCE } from "./notes/computer-science";
 import { ICT } from "./notes/ict";
+// New subjects — 6 shown subjects
+import { ART_AND_DESIGN } from "./notes/art-and-design";
+import { MUSIC } from "./notes/music";
+import { DESIGN_AND_TECHNOLOGY } from "./notes/design-and-technology";
+import { FOOD_AND_NUTRITION } from "./notes/food-and-nutrition";
+import { PHYSICAL_EDUCATION } from "./notes/physical-education";
+import { TRAVEL_AND_TOURISM } from "./notes/travel-and-tourism";
+// New subjects — 5 additional syllabus subjects
+import { PSYCHOLOGY } from "./notes/psychology";
+import { MARINE_SCIENCE } from "./notes/marine-science";
+import { GLOBAL_PERSPECTIVES } from "./notes/global-perspectives";
+import { MEDIA_STUDIES } from "./notes/media-studies";
+import { DRAMA } from "./notes/drama";
 import type { SubjectNotes } from "./notes/types";
 
 export {
@@ -41,6 +54,17 @@ export {
   RELIGIOUS_STUDIES,
   COMPUTER_SCIENCE,
   ICT,
+  ART_AND_DESIGN,
+  MUSIC,
+  DESIGN_AND_TECHNOLOGY,
+  FOOD_AND_NUTRITION,
+  PHYSICAL_EDUCATION,
+  TRAVEL_AND_TOURISM,
+  PSYCHOLOGY,
+  MARINE_SCIENCE,
+  GLOBAL_PERSPECTIVES,
+  MEDIA_STUDIES,
+  DRAMA,
 };
 
 export const SYLLABUS_NOTES: SubjectNotes[] = [
@@ -62,4 +86,20 @@ export const SYLLABUS_NOTES: SubjectNotes[] = [
   RELIGIOUS_STUDIES,
   COMPUTER_SCIENCE,
   ICT,
+  // Arts & Creative subjects
+  ART_AND_DESIGN,
+  MUSIC,
+  DRAMA,
+  // Applied / Technical subjects
+  DESIGN_AND_TECHNOLOGY,
+  FOOD_AND_NUTRITION,
+  PHYSICAL_EDUCATION,
+  // Social Sciences & Humanities
+  TRAVEL_AND_TOURISM,
+  PSYCHOLOGY,
+  GLOBAL_PERSPECTIVES,
+  // Sciences
+  MARINE_SCIENCE,
+  // Media
+  MEDIA_STUDIES,
 ];

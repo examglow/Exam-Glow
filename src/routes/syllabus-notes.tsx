@@ -787,12 +787,12 @@ function SyllabusNotesPage() {
   const categories = ["All", "Sciences", "Mathematics", "English", "Business & Economics", "Humanities", "Technology"];
 
   const getSubjectCategory = (code: string): string => {
-    if (["0610", "0620", "0625", "0680"].includes(code)) return "Sciences";
+    if (["0610", "0620", "0625", "0680", "0697"].includes(code)) return "Sciences";
     if (["0580", "0606"].includes(code)) return "Mathematics";
     if (["0500", "0510", "0475"].includes(code)) return "English";
     if (["0455", "0450", "0452"].includes(code)) return "Business & Economics";
-    if (["0470", "0460", "0495", "0490"].includes(code)) return "Humanities";
-    if (["0417", "0478"].includes(code)) return "Technology";
+    if (["0470", "0460", "0495", "0490", "0471", "0457", "0478", "0413"].includes(code)) return "Humanities";
+    if (["0417", "0478", "0445", "0648", "0400", "0410", "0411", "0573"].includes(code)) return "Technology";
     return "Sciences";
   };
 
