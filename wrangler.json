@@ -8,5 +8,8 @@
       "binding": "EXAMGLOW_ACCOUNTS",
       "id": "ac27c362ef214d11acb10f8bb5120f6a"
     }
-  ]
+  ],
+  "ai": {
+    "binding": "AI"
+  }
 }

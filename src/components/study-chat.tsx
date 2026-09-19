@@ -21,6 +21,7 @@ import {
   MessageSquare,
   ChevronRight,
   Loader2,
+  Video,
 } from "lucide-react";
 
 import {
@@ -33,13 +34,8 @@ import { Shimmer } from "@/components/ai-elements/shimmer";
 import logoMark from "@/assets/logo-mark.png";
 import { callGemini, type ChatMessage } from "@/lib/ai-router";
 import {
-  isPaidUser,
-  getAiMessageCount,
   incrementAiMessageCount,
-  canSendAiMessage,
-  FREE_AI_MESSAGE_LIMIT,
 } from "@/lib/onboarding";
-import { PaywallModal } from "@/components/paywall-modal";
 import { playRealisticVoice, stopRealisticVoice, unlockAudio } from "@/lib/gemini-tts";
 
 type UploadedAttachment = {
@@ -60,10 +56,40 @@ type ChatSession = {
 const CHAT_STORAGE_KEY = "examglow.chat_sessions";
 const ACTIVE_SESSION_KEY = "examglow.active_chat_id";
 
+function extractYouTubeId(text: string): string | null {
+  if (!text) return null;
+  const match = text.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/i);
+  return match ? match[1]! : null;
+}
+
+function YouTubeVideoCard({ videoId }: { videoId: string }) {
+  return (
+    <div className="my-3 overflow-hidden rounded-2xl border border-border bg-card shadow-md">
+      <div className="flex items-center gap-2 border-b border-border bg-secondary/50 px-3.5 py-2 text-xs font-semibold">
+        <span className="flex size-2 rounded-full bg-red-500 animate-pulse" />
+        <span className="text-foreground">Watching with Yumna 🎬</span>
+        <span className="text-[10px] text-muted-foreground ml-auto">Ask about any timestamp!</span>
+      </div>
+      <div className="relative aspect-video w-full bg-black">
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1`}
+          title="YouTube Video Player"
+          className="absolute inset-0 size-full border-0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+    </div>
+  );
+}
+
+const VIDEO_SUGGESTION_PLACEHOLDER = "https://www.youtube.com/watch?v=";
+
 const suggestions = [
-  { label: "Explain photosynthesis step-by-step", Icon: BookOpen },
-  { label: "Quiz me on quadratic equations", Icon: ListChecks },
-  { label: "How do electric circuits work?", Icon: Layers },
+  { label: "🎬 Paste a YouTube link — I'll watch & teach it!", Icon: Video, isVideo: true },
+  { label: "Explain photosynthesis step-by-step", Icon: BookOpen, isVideo: false },
+  { label: "Quiz me on quadratic equations", Icon: ListChecks, isVideo: false },
+  { label: "How do electric circuits work?", Icon: Layers, isVideo: false },
 ] as const;
 
 // Helper to strip emojis from speech text so speech synthesizer never speaks emoji descriptions
@@ -110,7 +136,7 @@ export function StudyChat({
   const [showHistory, setShowHistory] = useState(false);
   const [playingMsgIdx, setPlayingMsgIdx] = useState<number | null>(null);
   const [voiceLoadingIdx, setVoiceLoadingIdx] = useState<number | null>(null);
-  const [showPaywall, setShowPaywall] = useState(false);
+
 
   // Dictation Speech-to-Text (inside the input box)
   const [isDictating, setIsDictating] = useState(false);
@@ -333,14 +359,6 @@ export function StudyChat({
     const trimmed = text.trim();
     if (!trimmed || status === "submitted") return;
 
-    // Check free user prompt quota (6 free questions)
-    if (!isPaidUser() && !canSendAiMessage()) {
-      setShowPaywall(true);
-      setError(
-        `You have used your ${FREE_AI_MESSAGE_LIMIT} free AI study questions. Upgrade to ExamGlow Premium for unlimited tutoring with Yumna.`
-      );
-      return;
-    }
 
     const userMsg: ChatMessage = {
       role: "user",
@@ -501,13 +519,7 @@ export function StudyChat({
 
   return (
     <div className={`relative flex h-full w-full flex-col bg-background ${className}`}>
-      {/* Paywall modal for free tier limit */}
-      <PaywallModal
-        open={showPaywall}
-        onClose={() => setShowPaywall(false)}
-        title="Upgrade to ExamGlow Premium"
-        subtitle={`You have used your ${FREE_AI_MESSAGE_LIMIT} free questions with Yumna. Unlock unlimited 24/7 AI tutoring, past paper walk-throughs, and voice calls.`}
-      />
+
       {/* Hidden file inputs */}
       <input
         ref={pdfInputRef}
@@ -675,16 +687,23 @@ export function StudyChat({
                 Hi, I'm Yumna!
               </h2>
               <p className="mt-2 max-w-md text-sm text-muted-foreground leading-relaxed">
-                Your dedicated Cambridge IGCSE study tutor. Paste a problem, ask me to explain a theorem, or review past paper questions!
+                Your dedicated Cambridge IGCSE study tutor. Paste a problem, ask me to explain a theorem, review past paper questions — or paste any YouTube link and I'll watch it with you and teach everything! 🎬
               </p>
 
               {/* Quick suggestions */}
               <div className="mt-6 flex flex-wrap justify-center gap-2">
-                {suggestions.map(({ label, Icon }) => (
+                {suggestions.map(({ label, Icon, isVideo }) => (
                   <button
                     key={label}
                     type="button"
-                    onClick={() => void send(label)}
+                    onClick={() => {
+                      if (isVideo) {
+                        setInput(VIDEO_SUGGESTION_PLACEHOLDER);
+                        setTimeout(() => inputRef.current?.focus(), 50);
+                      } else {
+                        void send(label);
+                      }
+                    }}
                     className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-foreground/80 hover:border-primary/40 hover:bg-secondary hover:text-foreground transition-all shadow-sm"
                   >
                     <Icon className="size-3.5 text-primary" />
@@ -756,7 +775,12 @@ export function StudyChat({
                       </div>
                     </div>
                   ) : (
-                    m.content
+                    <div>
+                      {extractYouTubeId(m.content) && (
+                        <YouTubeVideoCard videoId={extractYouTubeId(m.content)!} />
+                      )}
+                      <p className="whitespace-pre-wrap">{m.content}</p>
+                    </div>
                   )}
                 </MessageContent>
               </Message>
