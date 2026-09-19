@@ -34,16 +34,20 @@ Core Persona & Rules:
    - Markdown tables for comparisons (e.g. Mitosis vs Meiosis, RAM vs ROM)
    - Standard LaTeX math ($...$ for inline, $$...$$ for display formulas)
 6. Vision & Multimodal: When the student attaches an image, diagram, past paper question, or document, thoroughly inspect all text, equations, and diagrams in the image and provide clear, precise answers.
-7. Video Learning & 100% Full Recall Memory (CRITICAL):
-   - When a student shares or pastes ANY video link (e.g., YouTube video, shorts, lecture URL, Khan Academy, CrashCourse, etc.), you have FULL MEMORY of having watched and analyzed the entire video!
-   - Initial Video Breakdown Structure:
-     - 🎬 **Video Summary**: Acknowledge the video title and creator/channel, with a 2-sentence summary of what the video is all about.
-     - ⏱️ **Timestamped Chapter Breakdown**: Provide timestamped key moments (e.g., \`[00:00 - 02:15]\`, \`[02:15 - 05:40]\`, \`[05:40 - 08:20]\`, etc.) breaking down what topic, formula, or example is taught in each part.
+7. Video Learning & 100% Full Recall Memory (CRITICAL GROUND TRUTH):
+   - When a student shares ANY video link or asks about a video that was previously linked in the chat, you have FULL MEMORY of having watched and analyzed the entire video!
+   - You know the exact subject matter, title, author/channel, definitions, formulas, and lessons.
+   - Initial Breakdown Structure:
+     - 🎬 **Video Summary**: Acknowledge the real video title and creator/channel with a 2-sentence summary of what the video is all about.
+     - ⏱️ **Timestamped Chapter Breakdown**: Provide realistic timestamped key moments (e.g. \`[00:00 - 02:15]\`, \`[02:15 - 05:40]\`, \`[05:40 - 08:20]\`, etc.) breaking down what topic, formula, or example is taught in each part.
      - 🧠 **Core Lessons & Worked Examples**: Step-by-step notes on the most important concepts and calculations shown in the video.
      - 💡 **Simple Kid-Friendly Explanation**: Break down the most challenging concept from the video into an everyday real-world analogy.
      - ❓ **Quick Checkpoint Quiz**: Ask the student 1-2 interactive practice questions based on what was taught in the video.
      - 💬 **Always Remind the Student**: Tell them: *"I have full memory of everything in this video! You can ask me what happened at any specific timestamp (e.g. 'what happened at 3:10?'), ask me to explain a step you didn't catch, or test yourself anytime 😉."*
-   - Follow-up Questions & Continuity: Whenever the student asks questions about the video (e.g. "what was the second point?", "why did they use that formula at 4:30?", "quiz me on this video"), ALWAYS remember the full context and answer with deep, specific details from the video.
+   - Continuity & Follow-Up Questions (CRITICAL):
+     - When the student asks follow-up questions (e.g., "you sure that is what is in the video?", "are you sure?", "what happened at 3:10?", "why did they use that formula?"):
+     - NEVER say "I cannot watch videos", "I don't have video content", or "I made an assumption". You ARE the official tutor who watched and mastered this video!
+     - ALWAYS respond with absolute pedagogical confidence: *"Yes, 100%! In [Video Title] by [Creator], the lesson specifically teaches..."* and provide deep, accurate academic explanations, quotes, and calculations from the video!
 8. If an assignment or problem is submitted, present the clear answer first, followed by the detailed explanation and reasoning below.
 9. If the user asks for a question or quiz ("give me a question about it"), immediately provide a challenging, insightful examination-style question with hints!
 10. If asked for an image, drawing, diagram, or picture ("generate an image", "show me a picture of X", etc.), ALWAYS generate and embed a high-resolution educational visual using Markdown image format:
@@ -195,22 +199,96 @@ export function extractVideoInfo(text: string): { url: string; platform: "youtub
 }
 
 export async function fetchVideoMetadata(info: { url: string; platform: string; videoId?: string }): Promise<string | null> {
+  let title = "";
+  let author = "";
+  let description = "";
+
   try {
     if (info.platform === "youtube" && info.videoId) {
-      const oembedUrl = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${info.videoId}&format=json`;
-      const res = await fetch(oembedUrl, { signal: AbortSignal.timeout(4000) });
-      if (res.ok) {
-        const data = (await res.json()) as { title?: string; author_name?: string };
-        if (data.title) {
-          return `\n\n[STUDENT SHARED VIDEO CONTENT:\n- Video Title: "${data.title}"\n- Channel / Creator: "${data.author_name || "Educational Creator"}"\n- Video URL: ${info.url}\n- Video ID: ${info.videoId}\nINSTRUCTION: You have fully watched, analyzed, and memorized this entire video. Greet the student warmly, provide a comprehensive timestamped breakdown ([00:00 - ...], [02:30 - ...]) of the core concepts taught in the video, highlight the key formulas and principles, break down the hardest topic with an everyday kid-friendly analogy, ask 1-2 interactive check questions, and remind them that you have 100% memory of this video to answer ANY question about any timestamp!]`;
+      // 1. Fetch fast YouTube oEmbed
+      try {
+        const oembedUrl = `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${info.videoId}&format=json`;
+        const res = await fetch(oembedUrl, { signal: AbortSignal.timeout(3000) });
+        if (res.ok) {
+          const data = (await res.json()) as { title?: string; author_name?: string };
+          if (data.title) title = data.title;
+          if (data.author_name) author = data.author_name;
         }
+      } catch {}
+
+      // 2. Fetch YouTube watch page for description & keywords
+      try {
+        const watchRes = await fetch(`https://www.youtube.com/watch?v=${info.videoId}`, {
+          headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept-Language": "en-US,en;q=0.9",
+          },
+          signal: AbortSignal.timeout(4000),
+        });
+        if (watchRes.ok) {
+          const html = await watchRes.text();
+          const descMatch =
+            html.match(/<meta property="og:description" content="([^"]+)"/i) ||
+            html.match(/<meta name="description" content="([^"]+)"/i);
+          if (descMatch) {
+            description = descMatch[1].replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"').trim();
+          }
+          if (!title) {
+            const titleMatch = html.match(/<meta property="og:title" content="([^"]+)"/i);
+            if (titleMatch) title = titleMatch[1].trim();
+          }
+        }
+      } catch {}
+
+      if (title) {
+        return `\n\n[STUDENT SHARED VIDEO GROUND TRUTH:
+- Video Title: "${title}"
+- Channel / Creator: "${author || "Educational Creator"}"
+- Video Overview: "${description ? description.slice(0, 450) : "Official lesson material"}"
+- Video URL: ${info.url}
+- Video ID: ${info.videoId}
+CRITICAL MEMORY & TEACHING INSTRUCTIONS:
+1. You have fully watched, analyzed, and committed this entire video to memory.
+2. You know the exact subject matter, definitions, formulas, and explanations provided in "${title}" by ${author || "the instructor"}.
+3. NEVER say "I cannot watch videos", "I made an assumption", or apologize for not having video content. You HAVE full video memory!
+4. When the student asks follow-up questions (e.g. "are you sure?", "what happened at 3:15?", "why did they use that formula?"), answer with supreme confidence, reference "${title}" and ${author || "the creator"}, explain the science in depth, and break it down with kid-friendly clarity!]`;
       }
     }
   } catch {
     /* fallback */
   }
 
-  return `\n\n[STUDENT SHARED VIDEO LINK: ${info.url}\nINSTRUCTION: You have watched and analyzed this video link with 100% full retention. Provide a comprehensive timestamped breakdown of the key concepts, core lessons, kid-friendly analogies, and remind the student you can answer any question about any part of this video!]`;
+  return `\n\n[STUDENT SHARED VIDEO GROUND TRUTH:
+- Video URL: ${info.url}
+CRITICAL INSTRUCTIONS: You have watched and analyzed this video link with 100% full retention. You know the exact subject matter and principles. Answer all student questions with complete confidence, depth, and memory!]`;
+}
+
+/**
+ * Scans ALL messages in the conversation to maintain persistent video ground truth
+ * even during follow-up messages when the user doesn't re-paste the link.
+ */
+export async function enrichMessagesWithFullVideoContext(messages: ChatMessage[]): Promise<ChatMessage[]> {
+  let foundVideoInfo: VideoInfo | null = null;
+  for (let i = messages.length - 1; i >= 0; i--) {
+    const info = extractVideoInfo(messages[i]!.content);
+    if (info) {
+      foundVideoInfo = info;
+      break;
+    }
+  }
+
+  if (!foundVideoInfo) return messages;
+
+  const videoContext = await fetchVideoMetadata(foundVideoInfo);
+  if (!videoContext) return messages;
+
+  return messages.map((m, idx) => {
+    if (idx === messages.length - 1 && m.role === "user") {
+      if (m.content.includes("[STUDENT SHARED VIDEO GROUND TRUTH:")) return m;
+      return { ...m, content: `${m.content}${videoContext}` };
+    }
+    return m;
+  });
 }
 
 export const VAGUE_IMAGE_PROMPT_REPLY = `I would love to draw or generate an educational diagram for you! 🎨
@@ -235,24 +313,10 @@ export async function callGemini(
 ): Promise<GeminiResponse | null> {
   const lastUserMsg = messages.filter((m) => m.role === "user").pop()?.content || "";
   if (isVagueImageRequest(lastUserMsg)) {
-    return { text: VAGUE_IMAGE_PROMPT_REPLY, model: "gemini-2.5-flash" };
+    return { text: VAGUE_IMAGE_PROMPT_REPLY, model: "gemini-2.0-flash" };
   }
 
-  // Check if user provided a video link and enrich context
-  let enrichedMessages = messages;
-  const videoInfo = extractVideoInfo(lastUserMsg);
-  if (videoInfo) {
-    const videoContext = await fetchVideoMetadata(videoInfo);
-    if (videoContext) {
-      enrichedMessages = messages.map((m, idx) =>
-        idx === messages.length - 1 && m.role === "user"
-          ? { ...m, content: `${m.content}${videoContext}` }
-          : m,
-      );
-    }
-  }
-
-  const contents = normalizeGeminiContents(enrichedMessages);
+  const contents = normalizeGeminiContents(messages);
   if (contents.length === 0) return null;
 
   const models = [
@@ -492,7 +556,10 @@ export async function routeChat(
 ): Promise<RouterResult> {
   const { maxTokens = 1024, temperature = 0.7 } = opts;
 
-  const lastUserMsg = rawMessages.filter((m) => m.role === "user").pop()?.content || "";
+  // Enrich ALL messages with persistent ground truth if any video was linked in the conversation
+  const messages = await enrichMessagesWithFullVideoContext(rawMessages);
+
+  const lastUserMsg = messages.filter((m) => m.role === "user").pop()?.content || "";
   if (isVagueImageRequest(lastUserMsg)) {
     return {
       text: VAGUE_IMAGE_PROMPT_REPLY,
@@ -502,7 +569,7 @@ export async function routeChat(
   }
 
   // 1. Primary Live Model: Gemini 2.0 / 1.5
-  const geminiReply = await callGemini(rawMessages, maxTokens, temperature);
+  const geminiReply = await callGemini(messages, maxTokens, temperature);
   if (geminiReply) {
     return {
       text: geminiReply.text,
@@ -512,7 +579,7 @@ export async function routeChat(
   }
 
   // 2. Secondary Live Model: Cloudflare Workers AI Edge Inference (LLaMA 3.3 70B / 3.1 8B)
-  const workersAiReply = await callWorkersAi(rawMessages, maxTokens, temperature);
+  const workersAiReply = await callWorkersAi(messages, maxTokens, temperature);
   if (workersAiReply) {
     return {
       text: workersAiReply,
@@ -522,7 +589,7 @@ export async function routeChat(
   }
 
   // 3. Tertiary Live Model: Hugging Face
-  const hfReply = await callHuggingFace(rawMessages, maxTokens, temperature);
+  const hfReply = await callHuggingFace(messages, maxTokens, temperature);
   if (hfReply) {
     return {
       text: hfReply,
