@@ -3,6 +3,7 @@ import { useState, type FormEvent, useEffect } from "react";
 import { useNavigate } from "@tanstack/react-router";
 
 import { AuthLayout } from "@/components/auth-layout";
+import { saveProfile } from "@/lib/onboarding";
 
 export const Route = createFileRoute("/login")({
   head: () => ({
@@ -18,9 +19,6 @@ export const Route = createFileRoute("/login")({
   }),
   component: LoginPage,
 });
-
-const EMAIL_ERROR =
-  "We're experiencing a problem with email sign-in right now. Please use Google to continue — we'll have this fixed soon.";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -40,7 +38,21 @@ function LoginPage() {
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
-    setError(EMAIL_ERROR);
+    if (!email.trim()) {
+      setError("Please enter your email address.");
+      return;
+    }
+    saveProfile({
+      name: email.split("@")[0] || "Student",
+      email: email.trim(),
+      plan: "free",
+    });
+    try {
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem("examglow.auth_method", "email");
+      }
+    } catch { /* ignore */ }
+    navigate({ to: "/home", replace: true });
   }
 
   return (

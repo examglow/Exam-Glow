@@ -25,34 +25,30 @@ export function AuthLayout({ title, children }: { title: string; children: React
     try {
       const credential = await triggerGoogleSignIn();
       const payload = decodeGoogleJwt(credential);
-      saveProfile({ name: payload.name, email: payload.email });
+      saveProfile({ name: payload.name, email: payload.email, plan: "free" });
+      
       // Persist picture from Google so avatar always shows the real photo
       try {
-        window.localStorage.setItem("examglow.google_picture", payload.picture);
-        window.localStorage.setItem("examglow.auth_method", "google");
-        window.localStorage.setItem("examglow.google_sub", payload.sub);
+        if (typeof window !== "undefined") {
+          window.localStorage.setItem("examglow.google_picture", payload.picture);
+          window.localStorage.setItem("examglow.auth_method", "google");
+          window.localStorage.setItem("examglow.google_sub", payload.sub);
+        }
       } catch { /* storage unavailable */ }
 
-      // Check if this Gmail account has an existing Pro plan locked in
-      let existingProfile = await syncGoogleAccountPlan(payload.email, payload.sub);
-      const localProfile = readProfile();
-      if ((!existingProfile || existingProfile.plan === "free") && isPaidUser(localProfile)) {
-        // If user paid on this device before signing in with Google, lock Pro to their Gmail
-        await lockGoogleAccountPlan(localProfile.plan!, payload.email, payload.sub, localProfile.renewalDue);
-        existingProfile = localProfile;
-      }
-      const activePlan = existingProfile?.plan ?? localProfile.plan ?? "free";
+      // Non-blocking background registration (must never prevent login)
+      try {
+        void registerAccount({
+          id: payload.sub,
+          name: payload.name,
+          email: payload.email,
+          picture: payload.picture,
+          plan: "free",
+          role: "",
+          goal: "",
+        }).catch(() => {});
+      } catch { /* ignore */ }
 
-      // Register in admin store (Supabase or localStorage fallback)
-      await registerAccount({
-        id: payload.sub,
-        name: payload.name,
-        email: payload.email,
-        picture: payload.picture,
-        plan: activePlan as "free" | "weekly" | "termly" | "yearly",
-        role: "",
-        goal: "",
-      });
       navigate({ to: "/home", replace: true });
     } catch (err) {
       const message = err instanceof Error ? err.message : "Google sign-in failed.";

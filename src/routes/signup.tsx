@@ -3,6 +3,7 @@ import { useState, type FormEvent, useEffect } from "react";
 import { useNavigate } from "@tanstack/react-router";
 
 import { AuthLayout } from "@/components/auth-layout";
+import { saveProfile } from "@/lib/onboarding";
 
 export const Route = createFileRoute("/signup")({
   head: () => ({
@@ -45,7 +46,21 @@ function SignUpPage() {
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
-    setError(EMAIL_ERROR);
+    if (!email.trim()) {
+      setError("Please enter your email address.");
+      return;
+    }
+    saveProfile({
+      name: name.trim() || email.split("@")[0] || "Student",
+      email: email.trim(),
+      plan: "free",
+    });
+    try {
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem("examglow.auth_method", "email");
+      }
+    } catch { /* ignore */ }
+    navigate({ to: "/home", replace: true });
   }
 
   return (
