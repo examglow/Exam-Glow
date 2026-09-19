@@ -20,9 +20,6 @@ import { DashboardSidebar } from "@/components/dashboard-sidebar";
 import { ProfileAvatar } from "@/components/dashboard-page";
 import {
   readProfile,
-  isPaidUser,
-  getAiMessageCount,
-  FREE_AI_MESSAGE_LIMIT,
   type OnboardingProfile,
 } from "@/lib/onboarding";
 import logoMark from "@/assets/logo-mark.png";
@@ -75,11 +72,9 @@ export function HomePage() {
   const [profile, setProfile] = useState<OnboardingProfile>({});
   const [tasks, setTasks] = useState<StudyTask[]>(DEFAULT_TASKS);
   const [notesCount, setNotesCount] = useState(1);
-  const [aiCount, setAiCount] = useState(0);
 
   useEffect(() => {
     setProfile(readProfile());
-    setAiCount(getAiMessageCount());
 
     try {
       const savedTasks = window.localStorage.getItem(TASKS_KEY);
@@ -107,7 +102,6 @@ export function HomePage() {
     });
   };
 
-  const isPaid = isPaidUser(profile);
   const firstName = profile.name?.split(" ")[0] ?? "there";
   const completedTasks = tasks.filter((t) => t.done).length;
 
@@ -158,9 +152,7 @@ export function HomePage() {
                 {focusTitle}
               </h2>
               <p className="mt-3 max-w-md text-sm text-ink-foreground/75 leading-relaxed">
-                {isPaid
-                  ? "Your Premium plan is active with unlimited notes, all 21 chapters, and 24/7 AI tutor guidance."
-                  : "Free Preview: Chapter sections 1 & 2 open. Upgrade to unlock all chapters and unlimited AI tutoring."}
+                All chapters, notes, diagrams, and unlimited AI tutoring — 100% free, no subscription needed.
               </p>
               <div className="mt-6 flex flex-wrap gap-2">
                 <Link
@@ -180,7 +172,7 @@ export function HomePage() {
 
             <div className="grid grid-cols-2 gap-4">
               <Stat
-                value={isPaid ? "All Open" : "Preview"}
+                value="All Open"
                 label="Syllabus Access"
               />
               <Stat
@@ -194,8 +186,8 @@ export function HomePage() {
                 icon={<Flame className="size-4 text-lavender" aria-hidden />}
               />
               <Stat
-                value={isPaid ? "Unlimited" : `${Math.max(0, FREE_AI_MESSAGE_LIMIT - aiCount)} left`}
-                label="AI Tutor Quota"
+                value="Unlimited"
+                label="AI Tutor"
                 icon={<Bot className="size-4 text-emerald-500" />}
               />
             </div>

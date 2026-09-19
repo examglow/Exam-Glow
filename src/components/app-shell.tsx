@@ -68,16 +68,6 @@ export function AppNav() {
             );
           })}
         </nav>
-
-        <div className="hidden shrink-0 items-center gap-2 md:flex">
-          <span className="rounded-full bg-secondary px-3 py-1.5 text-xs font-medium">
-            {profile.plan && profile.plan !== "free" ? "Premium" : "Free plan"}
-          </span>
-          <button className="flex items-center gap-1.5 rounded-full bg-ink px-4 py-2 text-[13.5px] font-semibold text-ink-foreground transition-transform hover:-translate-y-0.5">
-            <Upload className="size-3.5" aria-hidden />
-            Upload
-          </button>
-        </div>
       </header>
     </div>
   );

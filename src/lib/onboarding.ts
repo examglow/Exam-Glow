@@ -69,11 +69,7 @@ export function saveProfile(patch: OnboardingProfile) {
   }
 }
 
-export function isPaidUser(profile?: OnboardingProfile): boolean {
-  const p = profile ?? readProfile();
-  if (!p.plan || p.plan === "free") return false;
-  if (p.subscriptionStatus === "expired") return false;
-  if (p.autoRenew === false && p.renewalDue && Date.now() > p.renewalDue) return false;
+export function isPaidUser(_profile?: OnboardingProfile): boolean {
   return true;
 }
 
@@ -218,7 +214,6 @@ export function incrementAiMessageCount(): number {
   }
 }
 
-export function canSendAiMessage(profile?: OnboardingProfile): boolean {
-  if (isPaidUser(profile)) return true;
-  return getAiMessageCount() < FREE_AI_MESSAGE_LIMIT;
+export function canSendAiMessage(_profile?: OnboardingProfile): boolean {
+  return true;
 }

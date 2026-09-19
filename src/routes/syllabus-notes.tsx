@@ -1,14 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
-import { BookOpen, ChevronRight, Search, ArrowLeft, FileText, Check, Volume2, VolumeX, Loader2, Play, Pause, SkipBack, SkipForward, X, Lock, ShieldCheck } from "lucide-react";
+import { BookOpen, ChevronRight, Search, ArrowLeft, FileText, Check, Volume2, VolumeX, Loader2, Play, Pause, SkipBack, SkipForward, X, ShieldCheck } from "lucide-react";
 import { DashboardLayout } from "@/components/dashboard-page";
 import { playRealisticVoice, stopRealisticVoice, pauseRealisticVoice, resumeRealisticVoice, preloadGeminiSpeech, cleanSpeechText, unlockAudio } from "@/lib/gemini-tts";
 import type { SubjectNotes, Chapter } from "@/lib/notes/types";
 import { SYLLABUS_NOTES } from "@/lib/syllabus-notes";
 import { formatMathAndMarkdown } from "@/lib/render-math";
 import { getChapterDiagramSvg } from "@/lib/diagrams";
-import { isPaidUser, readProfile } from "@/lib/onboarding";
-import { PaywallModal } from "@/components/paywall-modal";
+import { readProfile } from "@/lib/onboarding";
 
 export const Route = createFileRoute("/syllabus-notes")({
   head: () => ({
@@ -703,14 +702,10 @@ function ChapterDoc({
 
 function SubjectNoteRow({
   subject,
-  isPaid,
   onSelectChapter,
-  onLockedClick,
 }: {
   subject: SubjectNotes;
-  isPaid: boolean;
   onSelectChapter: (c: Chapter) => void;
-  onLockedClick: (c: Chapter) => void;
 }) {
   const [open, setOpen] = useState(false);
 
@@ -737,69 +732,42 @@ function SubjectNoteRow({
         </span>
       </button>
 
-      {/* Expanded chapter list in clean horizontal lines */}
+      {/* Expanded chapter list */}
       {open && (
         <div className="pb-4 pt-2 pl-6 sm:pl-8 space-y-2">
-          {subject.chapters.map((ch) => {
-            const isLocked = !isPaid && ch.number >= 3;
-            return (
-              <button
-                key={ch.number}
-                type="button"
-                onClick={() => {
-                  if (isLocked) {
-                    onLockedClick(ch);
-                  } else {
-                    onSelectChapter(ch);
-                  }
-                }}
-                className={`flex w-full items-center gap-3 rounded-xl border bg-card px-4 py-3 text-left transition-all hover:-translate-y-0.5 hover:shadow-sm ${
-                  isLocked
-                    ? "border-border/60 opacity-85 hover:border-amber-500/50"
-                    : "border-border hover:border-foreground/30"
-                }`}
+          {subject.chapters.map((ch) => (
+            <button
+              key={ch.number}
+              type="button"
+              onClick={() => onSelectChapter(ch)}
+              className="flex w-full items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-left transition-all hover:-translate-y-0.5 hover:shadow-sm hover:border-foreground/30"
+            >
+              {/* Chapter number */}
+              <div
+                className={`flex size-7 shrink-0 items-center justify-center rounded-lg text-xs font-bold ${subject.color} text-white`}
               >
-                {/* Chapter number */}
-                <div
-                  className={`flex size-7 shrink-0 items-center justify-center rounded-lg text-xs font-bold ${
-                    isLocked ? "bg-muted text-muted-foreground" : `${subject.color} text-white`
-                  }`}
-                >
-                  {isLocked ? <Lock className="size-3.5" /> : ch.number}
-                </div>
+                {ch.number}
+              </div>
 
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2">
-                    <p className="truncate text-sm font-semibold text-foreground">
-                      {ch.title}
-                    </p>
-                    {isLocked ? (
-                      <span className="rounded-md bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-bold text-amber-600 dark:text-amber-400">
-                        PRO
-                      </span>
-                    ) : (
-                      <span className="rounded-md bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                        FREE PREVIEW
-                      </span>
-                    )}
-                  </div>
-                  <p className="truncate text-xs text-muted-foreground mt-0.5">
-                    {ch.subheadings.length} sections · {ch.subheadings.map((s) => s.title).slice(0, 3).join(", ")}...
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-2">
+                  <p className="truncate text-sm font-semibold text-foreground">
+                    {ch.title}
                   </p>
+                  <span className="rounded-md bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
+                    FREE
+                  </span>
                 </div>
+                <p className="truncate text-xs text-muted-foreground mt-0.5">
+                  {ch.subheadings.length} sections · {ch.subheadings.map((s) => s.title).slice(0, 3).join(", ")}...
+                </p>
+              </div>
 
-                <span
-                  className={`text-xs font-semibold ${
-                    isLocked
-                      ? "text-amber-600 dark:text-amber-400"
-                      : "text-muted-foreground group-hover:text-foreground"
-                  }`}
-                >
-                  {isLocked ? "Unlock Note 🔒" : "Read note →"}
-                </span>
-              </button>
-            );
-          })}
+              <span className="text-xs font-semibold text-muted-foreground group-hover:text-foreground">
+                Read note →
+              </span>
+            </button>
+          ))}
         </div>
       )}
     </div>
@@ -813,8 +781,6 @@ function SyllabusNotesPage() {
   const [activeChapter, setActiveChapter] = useState<Chapter | null>(null);
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
-  const [paywallOpen, setPaywallOpen] = useState(false);
-  const isPaid = isPaidUser();
 
   const categories = ["All", "Sciences", "Mathematics", "English", "Business & Economics", "Humanities", "Technology"];
 
@@ -850,10 +816,6 @@ function SyllabusNotesPage() {
     const idx = selectedSubject.chapters.findIndex((c) => c.number === activeChapter.number);
     const nextCh = selectedSubject.chapters[idx + 1];
     if (!nextCh) return;
-    if (!isPaid && nextCh.number >= 3) {
-      setPaywallOpen(true);
-      return;
-    }
     setActiveChapter(nextCh);
   };
 
@@ -867,12 +829,6 @@ function SyllabusNotesPage() {
 
   return (
     <>
-      <PaywallModal
-        open={paywallOpen}
-        onClose={() => setPaywallOpen(false)}
-        title="Unlock All Chapters & Complete Syllabus Notes"
-        subtitle="Chapters 1 and 2 are free preview. Upgrade to ExamGlow Premium to unlock all chapters, complete 20-minute masterclasses, and revision guides."
-      />
 
       {activeChapter && selectedSubject && (
         <ChapterDoc
@@ -899,7 +855,7 @@ function SyllabusNotesPage() {
                   Syllabus Notes
                 </h1>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  {SYLLABUS_NOTES.length} subjects · Chapters 1 &amp; 2 free preview · Upgrade for full access
+                  {SYLLABUS_NOTES.length} subjects · All chapters free · Full Cambridge IGCSE coverage
                 </p>
               </div>
               <div className="flex shrink-0 items-center gap-2 rounded-2xl bg-card/70 px-5 py-3 backdrop-blur shadow-sm">
@@ -962,13 +918,9 @@ function SyllabusNotesPage() {
                     <SubjectNoteRow
                       key={subject.id}
                       subject={subject}
-                      isPaid={isPaid}
                       onSelectChapter={(c) => {
                         setSelectedSubject(subject);
                         setActiveChapter(c);
-                      }}
-                      onLockedClick={() => {
-                        setPaywallOpen(true);
                       }}
                     />
                   ))}
