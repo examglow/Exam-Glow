@@ -34,20 +34,18 @@ Core Persona & Rules:
    - Markdown tables for comparisons (e.g. Mitosis vs Meiosis, RAM vs ROM)
    - Standard LaTeX math ($...$ for inline, $$...$$ for display formulas)
 6. Vision & Multimodal: When the student attaches an image, diagram, past paper question, or document, thoroughly inspect all text, equations, and diagrams in the image and provide clear, precise answers.
-7. Video Learning & 100% Full Recall Memory (CRITICAL GROUND TRUTH):
-   - When a student shares ANY video link or asks about a video that was previously linked in the chat, you have FULL MEMORY of having watched and analyzed the entire video!
-   - You know the exact subject matter, title, author/channel, definitions, formulas, and lessons.
+7. Video Learning & Ground Truth Accuracy (STRICT & ACCURATE):
+   - When a student shares ANY video link or asks about a video previously shared in the chat, use the Ground Truth video overview, description, and chapters provided.
    - Initial Breakdown Structure:
-     - 🎬 **Video Summary**: Acknowledge the real video title and creator/channel with a 2-sentence summary of what the video is all about.
-     - ⏱️ **Timestamped Chapter Breakdown**: Provide realistic timestamped key moments (e.g. \`[00:00 - 02:15]\`, \`[02:15 - 05:40]\`, \`[05:40 - 08:20]\`, etc.) breaking down what topic, formula, or example is taught in each part.
-     - 🧠 **Core Lessons & Worked Examples**: Step-by-step notes on the most important concepts and calculations shown in the video.
-     - 💡 **Simple Kid-Friendly Explanation**: Break down the most challenging concept from the video into an everyday real-world analogy.
-     - ❓ **Quick Checkpoint Quiz**: Ask the student 1-2 interactive practice questions based on what was taught in the video.
-     - 💬 **Always Remind the Student**: Tell them: *"I have full memory of everything in this video! You can ask me what happened at any specific timestamp (e.g. 'what happened at 3:10?'), ask me to explain a step you didn't catch, or test yourself anytime 😉."*
-   - Continuity & Follow-Up Questions (CRITICAL):
-     - When the student asks follow-up questions (e.g., "you sure that is what is in the video?", "are you sure?", "what happened at 3:10?", "why did they use that formula?"):
-     - NEVER say "I cannot watch videos", "I don't have video content", or "I made an assumption". You ARE the official tutor who watched and mastered this video!
-     - ALWAYS respond with absolute pedagogical confidence: *"Yes, 100%! In [Video Title] by [Creator], the lesson specifically teaches..."* and provide deep, accurate academic explanations, quotes, and calculations from the video!
+     - 🎬 **Video Title & Creator**: State the exact title and creator with 1-2 clear sentences summarizing what the video covers.
+     - 📌 **Key Points & Real Chapters**: List the actual key topics or official chapters from the video. If official timestamps are in the video description, list them accurately. If no timestamps exist in the description, DO NOT invent fake time brackets—simply list the key topic highlights.
+     - 💡 **Simple Kid-Friendly Explanation**: Break down the central concept with a clear, everyday real-world analogy.
+     - 💬 **Invite Questions**: Remind the student they can ask any questions about the concepts taught in the video!
+   - Anti-Hallucination & Follow-Up Accuracy (CRITICAL):
+     - When a student asks a specific question (e.g., "did they mention X?", "what did they say about Y?"):
+     - Check the Ground Truth video data carefully.
+     - If the concept, person, or term (e.g., "Navia") is NOT in the video content, say clearly: *"No, [Topic] is not mentioned in this video. The video focuses on [actual topics from the video]."*
+     - NEVER invent fake segments, never make up non-existent timestamps, and never agree with false premises! Be completely honest and accurate.
 8. If an assignment or problem is submitted, present the clear answer first, followed by the detailed explanation and reasoning below.
 9. If the user asks for a question or quiz ("give me a question about it"), immediately provide a challenging, insightful examination-style question with hints!
 10. If asked for an image, drawing, diagram, or picture ("generate an image", "show me a picture of X", etc.), ALWAYS generate and embed a high-resolution educational visual using Markdown image format:
@@ -216,11 +214,11 @@ export async function fetchVideoMetadata(info: { url: string; platform: string; 
         }
       } catch {}
 
-      // 2. Fetch YouTube watch page for description & keywords
+      // 2. Fetch YouTube watch page for description & chapters
       try {
         const watchRes = await fetch(`https://www.youtube.com/watch?v=${info.videoId}`, {
           headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
             "Accept-Language": "en-US,en;q=0.9",
           },
           signal: AbortSignal.timeout(4000),
@@ -228,30 +226,54 @@ export async function fetchVideoMetadata(info: { url: string; platform: string; 
         if (watchRes.ok) {
           const html = await watchRes.text();
           const descMatch =
+            html.match(/"shortDescription":"((?:\\.|[^"\\])*)"/) ||
             html.match(/<meta property="og:description" content="([^"]+)"/i) ||
             html.match(/<meta name="description" content="([^"]+)"/i);
-          if (descMatch) {
-            description = descMatch[1].replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"').trim();
+          if (descMatch && descMatch[1]) {
+            try {
+              description = JSON.parse(`"${descMatch[1]}"`);
+            } catch {
+              description = descMatch[1].replace(/\\n/g, "\n").replace(/\\"/g, '"').trim();
+            }
           }
           if (!title) {
             const titleMatch = html.match(/<meta property="og:title" content="([^"]+)"/i);
-            if (titleMatch) title = titleMatch[1].trim();
+            if (titleMatch && titleMatch[1]) title = titleMatch[1].trim();
+          }
+          if (!author) {
+            const authorMatch = html.match(/<link itemprop="name" content="([^"]+)"/i) || html.match(/"author":"([^"]+)"/i);
+            if (authorMatch && authorMatch[1]) author = authorMatch[1].trim();
           }
         }
       } catch {}
 
       if (title) {
-        return `\n\n[STUDENT SHARED VIDEO GROUND TRUTH:
+        // Extract real pinned chapters / timestamps from description if present
+        const realChapters: string[] = [];
+        if (description) {
+          const lines = description.split("\n");
+          for (const line of lines) {
+            const tm = line.match(/(?:^|\s)(\d{1,2}:\d{2}(?::\d{2})?)\s*[-–—:]\s*(.+)/);
+            if (tm && tm[1] && tm[2]) realChapters.push(`${tm[1]} — ${tm[2].trim()}`);
+          }
+        }
+
+        const chaptersText =
+          realChapters.length > 0
+            ? `\n- Official Pinned Chapters in Video:\n${realChapters.map((c) => `  * ${c}`).join("\n")}`
+            : "";
+
+        return `\n\n[STUDENT SHARED VIDEO GROUND TRUTH (STRICT FACTS):
 - Video Title: "${title}"
-- Channel / Creator: "${author || "Educational Creator"}"
-- Video Overview: "${description ? description.slice(0, 450) : "Official lesson material"}"
+- Channel / Creator: "${author || "Creator"}"
+- Full Video Description & Topics: "${description ? description.slice(0, 1500) : "Official video content"}"${chaptersText}
 - Video URL: ${info.url}
 - Video ID: ${info.videoId}
-CRITICAL MEMORY & TEACHING INSTRUCTIONS:
-1. You have fully watched, analyzed, and committed this entire video to memory.
-2. You know the exact subject matter, definitions, formulas, and explanations provided in "${title}" by ${author || "the instructor"}.
-3. NEVER say "I cannot watch videos", "I made an assumption", or apologize for not having video content. You HAVE full video memory!
-4. When the student asks follow-up questions (e.g. "are you sure?", "what happened at 3:15?", "why did they use that formula?"), answer with supreme confidence, reference "${title}" and ${author || "the creator"}, explain the science in depth, and break it down with kid-friendly clarity!]`;
+CRITICAL ACCURACY & GROUND TRUTH INSTRUCTIONS:
+1. Ground Truth Only: Base all summaries, explanations, and answers EXCLUSIVELY on the actual facts, topics, and chapters listed above.
+2. No Fabricated Timestamps: If real chapters are listed above, use them. If no specific timestamps are in the video description, do NOT make up fake timestamp numbers. Instead, organize your breakdown by the actual topics mentioned in the description.
+3. No Hallucinations: When a student asks if a specific person, game, character, or topic is mentioned (e.g., "did they mention X?"), check the Ground Truth above carefully. If it is NOT present in the video overview/description, state clearly and honestly that it is NOT mentioned in this video, and summarize what IS actually covered.
+4. Response Format: Provide a clear brief summary of the video, the key points covered, a simple explanation of the core concept, and invite the student to ask any specific questions!]`;
       }
     }
   } catch {

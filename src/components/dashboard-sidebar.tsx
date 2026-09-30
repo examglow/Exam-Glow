@@ -8,6 +8,7 @@ import {
   FileText,
   ClipboardCheck,
   FileQuestion,
+  Gamepad2,
   Home,
   Menu,
   MessageCircle,
@@ -38,6 +39,7 @@ const practiceItems = [
   { label: "Test", to: "/test", Icon: CircleHelp },
   { label: "Flashcards", to: "/flashcards", Icon: NotebookTabs },
   { label: "Assignments", to: "/assignments", Icon: FileText },
+  { label: "Study Games", to: "/arcade", Icon: Gamepad2 },
 ] as const;
 
 

@@ -13,7 +13,7 @@ export const studyNav = [
   { to: "/flashcards", label: "Flashcards" },
   { to: "/quizzes", label: "Quizzes" },
   { to: "/tutors", label: "Tutors" },
-  { to: "/arcade", label: "Arcade" },
+  { to: "/arcade", label: "Study Games" },
 ] as const;
 
 export function AppNav() {
