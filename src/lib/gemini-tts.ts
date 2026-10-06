@@ -216,48 +216,6 @@ export async function preloadGeminiSpeech(text: string): Promise<string | null> 
   return generateGeminiSpeech(text);
 }
 
-/**
- * Play speech via Web SpeechSynthesis with high-quality feminine voice
- */
-function playSpeechSynthesisFallback(
-  text: string,
-  callbacks?: { onStart?: () => void; onEnd?: () => void; onError?: () => void },
-) {
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) {
-    callbacks?.onError?.();
-    return;
-  }
-
-  try {
-    window.speechSynthesis.cancel();
-    const clean = cleanSpeechText(text);
-    const utterance = new SpeechSynthesisUtterance(clean);
-    utterance.rate = 1.0;
-    utterance.pitch = 1.05;
-
-    const voices = window.speechSynthesis.getVoices();
-    const preferred = voices.find(
-      (v) =>
-        v.lang.startsWith("en") &&
-        (v.name.toLowerCase().includes("female") ||
-          v.name.toLowerCase().includes("samantha") ||
-          v.name.toLowerCase().includes("victoria") ||
-          v.name.toLowerCase().includes("karen") ||
-          v.name.toLowerCase().includes("zira") ||
-          v.name.toLowerCase().includes("natural")),
-    );
-    if (preferred) utterance.voice = preferred;
-
-    utterance.onstart = () => callbacks?.onStart?.();
-    utterance.onend = () => callbacks?.onEnd?.();
-    utterance.onerror = () => callbacks?.onError?.();
-
-    window.speechSynthesis.speak(utterance);
-  } catch {
-    callbacks?.onError?.();
-  }
-}
-
 export function playRealisticVoice(
   text: string,
   callbacks?: {
@@ -267,7 +225,7 @@ export function playRealisticVoice(
     onError?: (err?: unknown) => void;
   },
 ): { stop: () => void; pause: () => boolean; resume: () => boolean } {
-  // 1. Immediately unlock browser AudioContext during user click handler!
+  // Unlock AudioContext immediately inside user gesture
   const ctx = unlockAudio();
   stopRealisticVoice();
 
@@ -289,86 +247,73 @@ export function playRealisticVoice(
 
     if (isStopped) return;
 
-    if (base64Audio) {
-      try {
-        const binaryString = atob(base64Audio);
-        const len = binaryString.length;
-        const pcmBytes = new Uint8Array(len);
-        for (let i = 0; i < len; i++) {
-          pcmBytes[i] = binaryString.charCodeAt(i);
-        }
-
-        // Strategy A: AudioContext buffer playback (instant, unblockable after unlock)
-        if (ctx && ctx.state !== "closed") {
-          if (ctx.state === "suspended") {
-            await ctx.resume();
-          }
-
-          const audioBuffer = pcmToAudioBuffer(ctx, pcmBytes, 24000);
-          activeAudioBuffer = audioBuffer;
-          const source = ctx.createBufferSource();
-          source.buffer = audioBuffer;
-          source.connect(ctx.destination);
-
-          source.onended = () => {
-            if (!isAudioPaused) {
-              currentSourceNode = null;
-              activeAudioBuffer = null;
-              callbacks?.onEnd?.();
-            }
-          };
-
-          currentSourceNode = source;
-          audioStartTimestamp = ctx.currentTime;
-          audioPauseOffset = 0;
-          isAudioPaused = false;
-          source.start(0);
-
-          if (!isStopped) {
-            callbacks?.onStart?.();
-          }
-          return;
-        }
-
-        // Strategy B: Standard HTMLAudioElement with WAV Blob URL
-        const wavBuffer = pcmToWav(pcmBytes, 24000, 1);
-        const blob = new Blob([wavBuffer], { type: "audio/wav" });
-        const url = URL.createObjectURL(blob);
-        currentAudioUrl = url;
-        const audio = new Audio(url);
-        currentAudioElement = audio;
-
-        audio.onended = () => {
-          stopRealisticVoice();
-          callbacks?.onEnd?.();
-        };
-        audio.onerror = () => {
-          stopRealisticVoice();
-          playSpeechSynthesisFallback(text, callbacks);
-        };
-
-        await audio.play();
-        if (!isStopped) {
-          callbacks?.onStart?.();
-        }
-        return;
-      } catch (err) {
-        console.warn("AudioContext decode/play error, falling back to speech synthesis:", err);
-      }
+    if (!base64Audio) {
+      // Gemini returned nothing — signal error, no fallback
+      callbacks?.onError?.();
+      return;
     }
 
-    // Fallback: Voice synthesis ensures student ALWAYS hears audio!
-    playSpeechSynthesisFallback(text, {
-      onStart: () => {
+    try {
+      const binaryString = atob(base64Audio);
+      const len = binaryString.length;
+      const pcmBytes = new Uint8Array(len);
+      for (let i = 0; i < len; i++) {
+        pcmBytes[i] = binaryString.charCodeAt(i);
+      }
+
+      // Strategy A: AudioContext (preferred — unlocked above)
+      if (ctx && ctx.state !== "closed") {
+        if (ctx.state === "suspended") {
+          await ctx.resume();
+        }
+
+        const audioBuffer = pcmToAudioBuffer(ctx, pcmBytes, 24000);
+        activeAudioBuffer = audioBuffer;
+        const source = ctx.createBufferSource();
+        source.buffer = audioBuffer;
+        source.connect(ctx.destination);
+
+        source.onended = () => {
+          if (!isAudioPaused) {
+            currentSourceNode = null;
+            activeAudioBuffer = null;
+            callbacks?.onEnd?.();
+          }
+        };
+
+        currentSourceNode = source;
+        audioStartTimestamp = ctx.currentTime;
+        audioPauseOffset = 0;
+        isAudioPaused = false;
+        source.start(0);
+
         if (!isStopped) callbacks?.onStart?.();
-      },
-      onEnd: () => {
+        return;
+      }
+
+      // Strategy B: HTMLAudioElement WAV fallback (same Gemini audio, different player)
+      const wavBuffer = pcmToWav(pcmBytes, 24000, 1);
+      const blob = new Blob([wavBuffer], { type: "audio/wav" });
+      const url = URL.createObjectURL(blob);
+      currentAudioUrl = url;
+      const audio = new Audio(url);
+      currentAudioElement = audio;
+
+      audio.onended = () => {
+        stopRealisticVoice();
         callbacks?.onEnd?.();
-      },
-      onError: () => {
+      };
+      audio.onerror = () => {
+        stopRealisticVoice();
         callbacks?.onError?.();
-      },
-    });
+      };
+
+      await audio.play();
+      if (!isStopped) callbacks?.onStart?.();
+    } catch (err) {
+      console.error("Gemini TTS playback error:", err);
+      callbacks?.onError?.(err);
+    }
   })();
 
   return { stop, pause, resume };
@@ -390,15 +335,6 @@ export function pauseRealisticVoice(): boolean {
   if (currentAudioElement && !currentAudioElement.paused) {
     try {
       currentAudioElement.pause();
-      return true;
-    } catch {
-      return false;
-    }
-  }
-
-  if (typeof window !== "undefined" && "speechSynthesis" in window && window.speechSynthesis.speaking) {
-    try {
-      window.speechSynthesis.pause();
       return true;
     } catch {
       return false;
@@ -442,29 +378,18 @@ export function resumeRealisticVoice(): boolean {
     }
   }
 
-  if (typeof window !== "undefined" && "speechSynthesis" in window && window.speechSynthesis.paused) {
-    try {
-      window.speechSynthesis.resume();
-      return true;
-    } catch {
-      return false;
-    }
-  }
-
   return false;
 }
 
 export function isRealisticVoicePlaying(): boolean {
   if (globalAudioCtx && currentSourceNode && !isAudioPaused) return true;
   if (currentAudioElement && !currentAudioElement.paused) return true;
-  if (typeof window !== "undefined" && "speechSynthesis" in window && window.speechSynthesis.speaking && !window.speechSynthesis.paused) return true;
   return false;
 }
 
 export function isRealisticVoicePaused(): boolean {
   if (isAudioPaused) return true;
   if (currentAudioElement && currentAudioElement.paused) return true;
-  if (typeof window !== "undefined" && "speechSynthesis" in window && window.speechSynthesis.paused) return true;
   return false;
 }
 
@@ -494,11 +419,5 @@ export function stopRealisticVoice() {
       URL.revokeObjectURL(currentAudioUrl);
     } catch {}
     currentAudioUrl = null;
-  }
-
-  if (typeof window !== "undefined" && "speechSynthesis" in window) {
-    try {
-      window.speechSynthesis.cancel();
-    } catch {}
   }
 }

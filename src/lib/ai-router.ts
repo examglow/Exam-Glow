@@ -215,6 +215,7 @@ export async function fetchVideoMetadata(info: { url: string; platform: string; 
       } catch {}
 
       // 2. Fetch YouTube watch page for description & chapters
+      let watchPageHtml = "";
       try {
         const watchRes = await fetch(`https://www.youtube.com/watch?v=${info.videoId}`, {
           headers: {
@@ -224,11 +225,11 @@ export async function fetchVideoMetadata(info: { url: string; platform: string; 
           signal: AbortSignal.timeout(4000),
         });
         if (watchRes.ok) {
-          const html = await watchRes.text();
+          watchPageHtml = await watchRes.text();
           const descMatch =
-            html.match(/"shortDescription":"((?:\\.|[^"\\])*)"/) ||
-            html.match(/<meta property="og:description" content="([^"]+)"/i) ||
-            html.match(/<meta name="description" content="([^"]+)"/i);
+            watchPageHtml.match(/"shortDescription":"((?:\\.|[^"\\])*)"/) ||
+            watchPageHtml.match(/<meta property="og:description" content="([^"]+)"/i) ||
+            watchPageHtml.match(/<meta name="description" content="([^"]+)"/i);
           if (descMatch && descMatch[1]) {
             try {
               description = JSON.parse(`"${descMatch[1]}"`);
@@ -237,11 +238,11 @@ export async function fetchVideoMetadata(info: { url: string; platform: string; 
             }
           }
           if (!title) {
-            const titleMatch = html.match(/<meta property="og:title" content="([^"]+)"/i);
+            const titleMatch = watchPageHtml.match(/<meta property="og:title" content="([^"]+)"/i);
             if (titleMatch && titleMatch[1]) title = titleMatch[1].trim();
           }
           if (!author) {
-            const authorMatch = html.match(/<link itemprop="name" content="([^"]+)"/i) || html.match(/"author":"([^"]+)"/i);
+            const authorMatch = watchPageHtml.match(/<link itemprop="name" content="([^"]+)"/i) || watchPageHtml.match(/"author":"([^"]+)"/i);
             if (authorMatch && authorMatch[1]) author = authorMatch[1].trim();
           }
         }
@@ -258,6 +259,18 @@ export async function fetchVideoMetadata(info: { url: string; platform: string; 
           }
         }
 
+        // Extract keyword topics from ytInitialPlayerResponse
+        let keywordLine = "";
+        try {
+          const kwMatch = watchPageHtml.match(/"keywords"\s*:\s*(\[[^\]]+\])/);
+          if (kwMatch && kwMatch[1]) {
+            const kws = JSON.parse(kwMatch[1]) as string[];
+            if (Array.isArray(kws) && kws.length > 0) {
+              keywordLine = `\n- Key Topics & Keywords: ${kws.slice(0, 15).join(", ")}`;
+            }
+          }
+        } catch { /* keyword extraction optional */ }
+
         const chaptersText =
           realChapters.length > 0
             ? `\n- Official Pinned Chapters in Video:\n${realChapters.map((c) => `  * ${c}`).join("\n")}`
@@ -266,23 +279,22 @@ export async function fetchVideoMetadata(info: { url: string; platform: string; 
         return `\n\n[STUDENT SHARED VIDEO GROUND TRUTH (STRICT FACTS):
 - Video Title: "${title}"
 - Channel / Creator: "${author || "Creator"}"
-- Full Video Description & Topics: "${description ? description.slice(0, 1500) : "Official video content"}"${chaptersText}
+- Full Video Description & Topics: "${description ? description.slice(0, 1500) : "Official video content"}"${chaptersText}${keywordLine}
 - Video URL: ${info.url}
 - Video ID: ${info.videoId}
 CRITICAL ACCURACY & GROUND TRUTH INSTRUCTIONS:
-1. Ground Truth Only: Base all summaries, explanations, and answers EXCLUSIVELY on the actual facts, topics, and chapters listed above.
-2. No Fabricated Timestamps: If real chapters are listed above, use them. If no specific timestamps are in the video description, do NOT make up fake timestamp numbers. Instead, organize your breakdown by the actual topics mentioned in the description.
-3. No Hallucinations: When a student asks if a specific person, game, character, or topic is mentioned (e.g., "did they mention X?"), check the Ground Truth above carefully. If it is NOT present in the video overview/description, state clearly and honestly that it is NOT mentioned in this video, and summarize what IS actually covered.
-4. Response Format: Provide a clear brief summary of the video, the key points covered, a simple explanation of the core concept, and invite the student to ask any specific questions!]`;
+1. Ground Truth Only: Base ALL summaries, explanations, and answers EXCLUSIVELY on the actual facts, topics, chapters, and keywords listed above. Do NOT invent content.
+2. No Fabricated Timestamps: If real chapters are listed above, use ONLY those exact timestamps and titles. If no timestamps exist in the description, do NOT invent fake ones—organize the breakdown by the actual topics mentioned in the description/keywords.
+3. No Hallucinations: If a student asks whether a specific person, game, character, or concept is mentioned (e.g., "did they mention X?"), check the Ground Truth carefully. If it is NOT in the description or keywords above, say honestly: "That topic is not mentioned in this video. This video covers [actual topics]."
+4. PROACTIVE LESSON: When a student first shares this video, do NOT just describe it—actively TEACH it. Begin with a structured 5-point lesson covering the core concepts from the description/chapters/keywords. Use clear headings, analogies, and invite the student to go deeper on any concept.
+5. Response Format for first video share: 🎬 Video + Creator → 📌 Real Chapters or Key Topics → 💡 5 Core Concepts Explained Simply → 💬 Invite questions.]`;
       }
     }
   } catch {
     /* fallback */
   }
 
-  return `\n\n[STUDENT SHARED VIDEO GROUND TRUTH:
-- Video URL: ${info.url}
-CRITICAL INSTRUCTIONS: You have watched and analyzed this video link with 100% full retention. You know the exact subject matter and principles. Answer all student questions with complete confidence, depth, and memory!]`;
+  return `\n\n[VIDEO SHARED BY STUDENT — METADATA UNAVAILABLE:\n- Video URL: ${info.url}\nIMPORTANT INSTRUCTIONS: You could NOT fetch the video title, description, or content for this link. Do NOT invent, guess, or fabricate any video content, chapters, timestamps, or topics. Instead: tell the student honestly that you cannot directly view video content, then ask them to paste the video title or a brief description so you can help them learn it thoroughly. Be warm, friendly, and helpful — offer to explain any specific topic from the video they want to share!]`;
 }
 
 /**

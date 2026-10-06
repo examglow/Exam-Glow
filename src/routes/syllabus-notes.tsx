@@ -202,6 +202,7 @@ function ChapterDoc({
   const lectureSectionsRef = useRef<LectureSection[]>([]);
   const currentSectionRef = useRef<number>(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const backFiredRef = useRef(false);
 
   // Load mastered state from local storage
   useEffect(() => {
@@ -428,85 +429,53 @@ function ChapterDoc({
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 });
+    backFiredRef.current = false;
     handleStop();
   }, [chapter.number]);
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-[#faf9f5] dark:bg-[#12141a]">
-      {/* Top Header & Progress Stepper Bar */}
-      <div className="shrink-0 border-b border-border/80 bg-background/95 backdrop-blur-md px-4 sm:px-8 py-3">
-        <div className="flex items-center justify-between gap-4 max-w-5xl mx-auto">
+    <div className="fixed inset-0 z-50 flex flex-col bg-background overflow-hidden">
+      {/* Top Header — compact, no Yumna button */}
+      <div className="shrink-0 border-b border-border/80 bg-background backdrop-blur-md px-3 sm:px-6 py-2">
+        <div className="flex items-center justify-between gap-3 max-w-5xl mx-auto">
           {/* Back Button */}
           <button
             onClick={() => {
+              if (backFiredRef.current) return;
+              backFiredRef.current = true;
               handleStop();
               onBack();
             }}
-            className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors shrink-0"
           >
             <ArrowLeft className="size-4" />
             <span className="hidden sm:inline">Back to chapters</span>
             <span className="sm:hidden">Back</span>
           </button>
 
-          {/* Center Progress Pill */}
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-muted/60 border border-border text-xs">
-              <Target className="size-3.5 text-primary" />
+          {/* Center: chapter title + mastery */}
+          <div className="flex items-center gap-2 min-w-0 flex-1 justify-center">
+            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/50 border border-border/60 text-[11px]">
+              <Target className="size-3 text-primary shrink-0" />
               <span className="font-semibold text-foreground">
-                {masteredCount} of {totalSections} Mastered
+                {masteredCount}/{totalSections}
               </span>
-              <span className="font-mono text-muted-foreground">({masteryPercentage}%)</span>
+              <span className="text-muted-foreground hidden sm:inline">mastered</span>
             </div>
-
-            <div className="hidden md:flex items-center gap-1.5 text-xs text-muted-foreground">
-              <Clock className="size-3.5" />
-              <span>~{Math.max(4, totalSections * 2)} min read</span>
+            <div className="hidden sm:flex items-center gap-1 text-[11px] text-muted-foreground">
+              <Clock className="size-3" />
+              <span>~{Math.max(4, totalSections * 2)}m</span>
             </div>
           </div>
 
-          {/* Voice Masterclass CTA */}
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={handleStartLecture}
-              className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all shadow-sm ${
-                isVoiceLoading
-                  ? "bg-primary/20 text-primary cursor-wait"
-                  : isPlaying
-                  ? "bg-primary text-primary-foreground animate-pulse"
-                  : isPaused
-                  ? "bg-amber-500 text-white"
-                  : "bg-foreground text-background hover:opacity-90"
-              }`}
-            >
-              {isVoiceLoading ? (
-                <>
-                  <Loader2 className="size-3.5 animate-spin" />
-                  <span>Loading Lecture...</span>
-                </>
-              ) : isPlaying ? (
-                <>
-                  <Pause className="size-3.5 fill-current" />
-                  <span>Pause Voice ({formatTime(elapsedSeconds)})</span>
-                </>
-              ) : isPaused ? (
-                <>
-                  <Play className="size-3.5 fill-current" />
-                  <span>Resume Voice</span>
-                </>
-              ) : (
-                <>
-                  <Volume2 className="size-3.5" />
-                  <span>Yumna Masterclass (20m)</span>
-                </>
-              )}
-            </button>
+          {/* Right: chapter number badge */}
+          <div className={`size-7 shrink-0 rounded-lg ${color} flex items-center justify-center text-xs font-black text-white`}>
+            {chapter.number}
           </div>
         </div>
 
-        {/* Dynamic Mastery Progress Bar Line */}
-        <div className="mt-2.5 h-1.5 w-full bg-muted/40 rounded-full overflow-hidden max-w-5xl mx-auto">
+        {/* Mastery Progress Bar */}
+        <div className="mt-1.5 h-1 w-full bg-muted/40 rounded-full overflow-hidden max-w-5xl mx-auto">
           <div
             className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-500 rounded-full"
             style={{ width: `${masteryPercentage}%` }}
@@ -515,8 +484,8 @@ function ChapterDoc({
       </div>
 
       {/* Scrollable document */}
-      <div ref={scrollRef} className="relative flex-1 overflow-y-auto select-none">
-        <article className="mx-auto max-w-4xl px-4 sm:px-8 pb-32 pt-8 space-y-10">
+      <div ref={scrollRef} className="relative flex-1 overflow-y-auto overflow-x-hidden select-none">
+        <article className="mx-auto max-w-4xl w-full px-4 sm:px-8 pb-32 pt-8 space-y-10">
           {/* Chapter Header */}
           <div className="space-y-4 pb-6 border-b border-border">
             <div className="flex items-center gap-3">
@@ -667,32 +636,54 @@ function ChapterDoc({
                     </div>
                   )}
 
-                  {/* Active Recall Checkpoint */}
-                  <div className="border-l-2 border-primary/40 pl-4 space-y-2">
+                  {/* Recap & Past-Paper Questions */}
+                  <div className="border-l-2 border-primary/40 pl-4 space-y-3 mt-2">
                     <div className="flex items-center gap-2 text-xs font-bold text-primary">
                       <HelpCircle className="size-3.5" />
-                      <span>Active Recall</span>
+                      <span>Exam Practice Questions</span>
                     </div>
 
-                    <p className="text-xs sm:text-sm font-semibold text-foreground">
-                      Can you explain the key principle of <em>"{sub.title}"</em> in 2 sentences without looking at your notes?
-                    </p>
-
-                    <button
-                      type="button"
-                      onClick={() => toggleRevealAnswer(si)}
-                      className="text-xs font-bold text-primary hover:underline flex items-center gap-1.5"
-                    >
-                      <span>{isAnswerRevealed ? "Hide Answer" : "Reveal Model Answer"}</span>
-                      <ChevronDown className={`size-3.5 transition-transform ${isAnswerRevealed ? "rotate-180" : ""}`} />
-                    </button>
-
-                    {isAnswerRevealed && (
-                      <div className="text-xs text-foreground/90 space-y-1 animate-in fade-in">
-                        <p className="font-bold text-primary">Model Answer:</p>
-                        <p className="leading-relaxed">
-                          State: 1) The precise definition or law, 2) The step-by-step mechanism, and 3) The required units or conditions. Use specific technical terms rather than general descriptions.
+                    {sub.recap && sub.recap.length > 0 ? (
+                      <div className="space-y-2">
+                        {sub.recap.map((q, qi) => (
+                          <div key={qi} className="space-y-1">
+                            <p className="text-xs sm:text-sm font-semibold text-foreground">
+                              <span className="text-primary mr-1.5">{qi + 1}.</span>{q}
+                            </p>
+                            <button
+                              type="button"
+                              onClick={() => toggleRevealAnswer(si * 100 + qi)}
+                              className="text-[11px] font-bold text-primary hover:underline flex items-center gap-1"
+                            >
+                              <span>{revealedAnswers[si * 100 + qi] ? "Hide hint" : "Show examiner hint"}</span>
+                              <ChevronDown className={`size-3 transition-transform ${revealedAnswers[si * 100 + qi] ? "rotate-180" : ""}`} />
+                            </button>
+                            {revealedAnswers[si * 100 + qi] && (
+                              <div className="text-[12px] text-foreground/80 leading-relaxed animate-in fade-in pl-3 border-l border-primary/20">
+                                Use precise Cambridge terminology. State the definition, describe the mechanism step by step, then give a specific named example. For command word "Explain", always include the word "because" with a causal reason.
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="space-y-1">
+                        <p className="text-xs sm:text-sm font-semibold text-foreground">
+                          Can you explain the key principle of <em>"{sub.title}"</em> in 2 sentences without looking at your notes?
                         </p>
+                        <button
+                          type="button"
+                          onClick={() => toggleRevealAnswer(si)}
+                          className="text-[11px] font-bold text-primary hover:underline flex items-center gap-1"
+                        >
+                          <span>{isAnswerRevealed ? "Hide hint" : "Show examiner hint"}</span>
+                          <ChevronDown className={`size-3 transition-transform ${isAnswerRevealed ? "rotate-180" : ""}`} />
+                        </button>
+                        {isAnswerRevealed && (
+                          <div className="text-[12px] text-foreground/80 leading-relaxed animate-in fade-in pl-3 border-l border-primary/20">
+                            State: 1) The precise definition, 2) The step-by-step mechanism, 3) The required units or conditions. Use specific technical terms from the syllabus.
+                          </div>
+                        )}
                       </div>
                     )}
                   </div>

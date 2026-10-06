@@ -98,6 +98,168 @@ function NotesEditorPage() {
 
   const editorRef = useRef<HTMLDivElement>(null);
   const saveTimeoutRef = useRef<any>(null);
+  const [showEmptyPrompts, setShowEmptyPrompts] = useState(true);
+
+  const NOTE_STARTERS = [
+    {
+      label: "Topic Summary",
+      html: `<h2 style="font-size:1.6rem;font-weight:800;margin-bottom:4px;letter-spacing:-0.5px">Topic Summary</h2>
+<p style="color:#9ca3af;font-size:13px;margin-bottom:20px">Subject: &nbsp;&nbsp;&nbsp;&nbsp; Chapter: &nbsp;&nbsp;&nbsp;&nbsp; Date: </p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-bottom:8px;margin-top:0">Overview</h3>
+<p style="line-height:1.8">Write a clear 2–3 sentence overview of the topic. What is it about? Why does it matter in the syllabus?</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Key Points</h3>
+<ul style="line-height:2;padding-left:20px">
+  <li>Key point 1 — explain it fully in one sentence</li>
+  <li>Key point 2 — explain it fully in one sentence</li>
+  <li>Key point 3 — explain it fully in one sentence</li>
+  <li>Key point 4 — explain it fully in one sentence</li>
+</ul>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Core Definitions</h3>
+<p><strong>Term 1:</strong> Write the precise definition here.</p>
+<p style="margin-top:8px"><strong>Term 2:</strong> Write the precise definition here.</p>
+<p style="margin-top:8px"><strong>Term 3:</strong> Write the precise definition here.</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">What I Understand Clearly</h3>
+<p style="line-height:1.8">Write what you are confident about. Use your own words — this is your strongest recall.</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">What I Need to Review</h3>
+<p style="line-height:1.8">Write any areas that are still unclear or need more practice. Be specific.</p>`,
+    },
+    {
+      label: "Key Concepts",
+      html: `<h2 style="font-size:1.6rem;font-weight:800;margin-bottom:4px;letter-spacing:-0.5px">Key Concepts</h2>
+<p style="color:#9ca3af;font-size:13px;margin-bottom:20px">Subject: &nbsp;&nbsp;&nbsp;&nbsp; Chapter: &nbsp;&nbsp;&nbsp;&nbsp; Date: </p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-bottom:8px">Concept 1: [Name]</h3>
+<p><strong>Definition:</strong> Write the precise definition. Include all required components — what it is, how it works, and under what conditions it applies.</p>
+<p style="margin-top:6px"><strong>Mechanism / Process:</strong> Explain step-by-step how it works.</p>
+<p style="margin-top:6px"><strong>Real-world example:</strong> Give a specific, named example.</p>
+<p style="margin-top:6px"><strong>Examiner note:</strong> What does the mark scheme specifically require?</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:28px;margin-bottom:8px">Concept 2: [Name]</h3>
+<p><strong>Definition:</strong> Write the precise definition. Include all required components.</p>
+<p style="margin-top:6px"><strong>Mechanism / Process:</strong> Explain step-by-step how it works.</p>
+<p style="margin-top:6px"><strong>Real-world example:</strong> Give a specific, named example.</p>
+<p style="margin-top:6px"><strong>Examiner note:</strong> What does the mark scheme specifically require?</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:28px;margin-bottom:8px">Concept 3: [Name]</h3>
+<p><strong>Definition:</strong> Write the precise definition. Include all required components.</p>
+<p style="margin-top:6px"><strong>Mechanism / Process:</strong> Explain step-by-step how it works.</p>
+<p style="margin-top:6px"><strong>Real-world example:</strong> Give a specific, named example.</p>
+<p style="margin-top:6px"><strong>Examiner note:</strong> What does the mark scheme specifically require?</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:28px;margin-bottom:8px">How These Concepts Connect</h3>
+<p style="line-height:1.8">Explain the relationship between the concepts above. How do they build on each other?</p>`,
+    },
+    {
+      label: "Mind Map",
+      html: `<h2 style="font-size:1.6rem;font-weight:800;margin-bottom:4px;letter-spacing:-0.5px">Mind Map</h2>
+<p style="color:#9ca3af;font-size:13px;margin-bottom:20px">Subject: &nbsp;&nbsp;&nbsp;&nbsp; Chapter: &nbsp;&nbsp;&nbsp;&nbsp; Date: </p>
+
+<p style="font-size:1.05rem;font-weight:700;margin-bottom:16px">Central Topic: <span style="font-weight:400;border-bottom:2px solid #e5e7eb;padding-bottom:2px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-bottom:8px">Branch 1: [Sub-topic name]</h3>
+<ul style="line-height:2;padding-left:20px">
+  <li>Key detail — explain briefly</li>
+  <li>Key detail — explain briefly</li>
+  <li>Link to another branch: connects to Branch ___</li>
+</ul>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Branch 2: [Sub-topic name]</h3>
+<ul style="line-height:2;padding-left:20px">
+  <li>Key detail — explain briefly</li>
+  <li>Key detail — explain briefly</li>
+  <li>Link to another branch: connects to Branch ___</li>
+</ul>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Branch 3: [Sub-topic name]</h3>
+<ul style="line-height:2;padding-left:20px">
+  <li>Key detail — explain briefly</li>
+  <li>Key detail — explain briefly</li>
+  <li>Link to another branch: connects to Branch ___</li>
+</ul>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Branch 4: [Sub-topic name]</h3>
+<ul style="line-height:2;padding-left:20px">
+  <li>Key detail — explain briefly</li>
+  <li>Key detail — explain briefly</li>
+  <li>Link to another branch: connects to Branch ___</li>
+</ul>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Key Connections Between Branches</h3>
+<p style="line-height:1.8">Describe the most important links or relationships between the branches above.</p>`,
+    },
+    {
+      label: "Essay Plan",
+      html: `<h2 style="font-size:1.6rem;font-weight:800;margin-bottom:4px;letter-spacing:-0.5px">Essay Plan</h2>
+<p style="color:#9ca3af;font-size:13px;margin-bottom:20px">Question: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Marks: &nbsp;&nbsp;&nbsp; Date: </p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-bottom:8px">Introduction</h3>
+<p><strong>Hook:</strong> Open with a relevant fact, statistic, or definition that establishes the context.</p>
+<p style="margin-top:6px"><strong>Thesis statement:</strong> State your overall argument clearly in one sentence.</p>
+<p style="margin-top:6px"><strong>Roadmap:</strong> Briefly outline the 3 main points you will argue (one sentence each).</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Body Paragraph 1</h3>
+<p><strong>Topic sentence:</strong> State the main point of this paragraph.</p>
+<p style="margin-top:6px"><strong>Evidence / Example:</strong> Provide a specific, named piece of evidence.</p>
+<p style="margin-top:6px"><strong>Analysis:</strong> Explain why this evidence supports your argument. Use key terminology.</p>
+<p style="margin-top:6px"><strong>Link:</strong> Connect back to the question / thesis.</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Body Paragraph 2</h3>
+<p><strong>Topic sentence:</strong> State the main point of this paragraph.</p>
+<p style="margin-top:6px"><strong>Evidence / Example:</strong> Provide a specific, named piece of evidence.</p>
+<p style="margin-top:6px"><strong>Analysis:</strong> Explain why this evidence supports your argument. Use key terminology.</p>
+<p style="margin-top:6px"><strong>Link:</strong> Connect back to the question / thesis.</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Body Paragraph 3</h3>
+<p><strong>Topic sentence:</strong> State the main point of this paragraph.</p>
+<p style="margin-top:6px"><strong>Evidence / Example:</strong> Provide a specific, named piece of evidence.</p>
+<p style="margin-top:6px"><strong>Analysis:</strong> Explain why this evidence supports your argument. Use key terminology.</p>
+<p style="margin-top:6px"><strong>Link:</strong> Connect back to the question / thesis.</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:8px">Conclusion</h3>
+<p><strong>Restate thesis:</strong> Rephrase your main argument (do not copy word-for-word).</p>
+<p style="margin-top:6px"><strong>Synthesis:</strong> Summarise how your three points proved the argument.</p>
+<p style="margin-top:6px"><strong>Final judgment:</strong> State your overall evaluative verdict on the question.</p>`,
+    },
+    {
+      label: "Revision Checklist",
+      html: `<h2 style="font-size:1.6rem;font-weight:800;margin-bottom:4px;letter-spacing:-0.5px">Revision Checklist</h2>
+<p style="color:#9ca3af;font-size:13px;margin-bottom:20px">Subject: &nbsp;&nbsp;&nbsp;&nbsp; Chapter / Topic: &nbsp;&nbsp;&nbsp;&nbsp; Date: </p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-bottom:10px">Core Knowledge — Can you recall without notes?</h3>
+<p>&#9744; Topic 1 — write what you need to know about it here</p>
+<p style="margin-top:6px">&#9744; Topic 2 — write what you need to know about it here</p>
+<p style="margin-top:6px">&#9744; Topic 3 — write what you need to know about it here</p>
+<p style="margin-top:6px">&#9744; Topic 4 — write what you need to know about it here</p>
+<p style="margin-top:6px">&#9744; Topic 5 — write what you need to know about it here</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:10px">Key Definitions — Can you write them from memory?</h3>
+<p>&#9744; Define: _______________</p>
+<p style="margin-top:6px">&#9744; Define: _______________</p>
+<p style="margin-top:6px">&#9744; Define: _______________</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:10px">Past Paper Practice</h3>
+<p>&#9744; Attempted past paper question — Year: ___ Paper: ___ Question: ___</p>
+<p style="margin-top:6px">&#9744; Reviewed mark scheme and identified missed points</p>
+<p style="margin-top:6px">&#9744; Rewrote model answer using correct terminology</p>
+
+<h3 style="font-weight:700;font-size:1rem;margin-top:24px;margin-bottom:10px">Areas Still Needing Work</h3>
+<p style="line-height:1.8;color:#6b7280">Write any concepts or skills that still feel uncertain. Be honest — this section is your revision priority list.</p>`,
+    },
+  ];
+
+  const insertStarter = (html: string) => {
+    if (!editorRef.current) return;
+    editorRef.current.innerHTML = html;
+    editorRef.current.focus();
+    setShowEmptyPrompts(false);
+    triggerAutoSave();
+  };
+
 
   // Initialize from localStorage
   useEffect(() => {
@@ -113,7 +275,9 @@ function NotesEditorPage() {
     if (editorRef.current) {
       editorRef.current.innerHTML = activeNote.content || "";
     }
+    setShowEmptyPrompts(!activeNote.content || activeNote.content.trim() === "");
   }, [activeId]);
+
 
   const exec = (command: string, value: string | undefined = undefined) => {
     document.execCommand(command, false, value);
@@ -397,7 +561,6 @@ function NotesEditorPage() {
                 onClick={() => setAiPromptOpen((v) => !v)}
                 className="flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-foreground hover:bg-secondary/80 transition-colors"
               >
-                <Bot className="size-3.5 text-lavender" />
                 <span>AI Note Assist</span>
               </button>
 
@@ -450,12 +613,34 @@ function NotesEditorPage() {
 
               <div className="my-6 h-px bg-border/60" />
 
+              {/* ── Motivating Empty State ──────────────────────────────────── */}
+              {showEmptyPrompts && (
+                <div className="mb-8 rounded-2xl border border-dashed border-border bg-secondary/30 p-6">
+                  <p className="mb-1 text-sm font-bold text-foreground">Start with a structure 🚀</p>
+                  <p className="mb-5 text-xs text-muted-foreground">
+                    Pick a format to get going — or just start typing below.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {NOTE_STARTERS.map((s) => (
+                      <button
+                        key={s.label}
+                        type="button"
+                        onClick={() => insertStarter(s.html)}
+                        className="rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground shadow-sm transition-all hover:border-foreground hover:shadow-md active:scale-95"
+                      >
+                        {s.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* Editable Body */}
               <div
                 ref={editorRef}
                 contentEditable
                 suppressContentEditableWarning
-                onInput={triggerAutoSave}
+                onInput={() => { setShowEmptyPrompts(false); triggerAutoSave(); }}
                 data-placeholder="Start typing your revision notes here..."
                 style={{ fontFamily, fontSize: `${fontSize}px` }}
                 className="min-h-[500px] leading-relaxed text-foreground/90 focus:outline-none empty:before:content-[attr(data-placeholder)] empty:before:text-muted-foreground/40 empty:before:pointer-events-none"

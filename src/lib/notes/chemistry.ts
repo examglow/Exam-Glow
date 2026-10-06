@@ -1,1733 +1,359 @@
 import type { SubjectNotes } from "./types";
 
 export const CHEMISTRY: SubjectNotes = {
- "id": "chemistry",
- "name": "Chemistry",
- "code": "0620",
- "color": "bg-cyan-500",
- "chapters": [
- {
- "number": 1,
- "title": "States of Matter",
- "intro": " **What is this topic all about?** All matter exists in one of three physical states — solid, liquid or gas — and transitions between them when energy is transferred. The kinetic particle theory provides a model that explains the observable properties of each state and the processes of melting, boiling, condensation and dissolving. Understanding these concepts is foundational for all chemistry that follows.",
- "subheadings": [
- {
- "title": "The Three States of Matter",
- "body": "Each state of matter has a distinctive set of properties that arise from the arrangement and movement of the particles within it. Chemists use the kinetic particle model to explain and predict these properties. In this model, all matter consists of tiny particles that are in constant random motion — the higher the temperature, the greater the average kinetic energy and the faster the motion. ",
- "groups": [
- {
- "subTitle": "Solid",
- "bullets": [
- "Particles are very close together and arranged in a regular, ordered lattice\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Particles vibrate about fixed positions — they do not have enough energy to move past each other\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Solids have a fixed shape and a fixed volume\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Solids are virtually incompressible because the particles are already as close together as repulsive forces allow\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Density is high because particles are closely packed\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Liquid",
- "bullets": [
- "Particles are close together but no longer in a fixed arrangement — they can slide past each other\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Particles move randomly with moderate kinetic energy\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Liquids have a fixed volume but take the shape of their container\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Liquids are almost incompressible but flow freely\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Surface tension arises because particles at the surface experience unequal attractions\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Gas",
- "bullets": [
- "Particles are very far apart — on average about ten times further apart than in a liquid\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Particles move randomly at high speeds in all directions with frequent collisions\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Gases have no fixed shape or volume — they expand to fill any container\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Gases are highly compressible because of the large spaces between particles\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Low density compared to solids and liquids\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"The Three States of Matter\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"The Three States of Matter\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Changes of State",
- "body": "When a substance gains or loses energy, its particles speed up or slow down. If enough energy is transferred, the arrangement of particles changes and a change of state occurs. During a change of state, the temperature remains constant even though energy is still being supplied — this energy is used to overcome forces between particles rather than to increase kinetic energy. ",
- "groups": [
- {
- "subTitle": "Heating Changes",
- "bullets": [
- "**Melting**: solid → liquid; energy overcomes the bonds/forces holding particles in fixed positions",
- "**Boiling/Evaporation**: liquid → gas; energy overcomes the forces holding particles together in the liquid",
- "**Sublimation**: solid → gas directly (e.g. dry ice, iodine at low pressure)",
- "The temperature at which a pure substance melts (melting point) or boils (boiling point) is fixed and characteristic — useful for identifying substances\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Cooling Changes",
- "bullets": [
- "**Condensation**: gas → liquid; particles lose energy and intermolecular forces pull them together",
- "**Freezing**: liquid → solid; particles slow enough to become fixed in a lattice",
- "Impurities lower the melting point and raise the boiling point of a substance — this is why roads are gritted in winter\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Changes of State\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Changes of State\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Diffusion",
- "body": "Diffusion is the net movement of particles from a region of high concentration to a region of low concentration as a result of random particle motion. It occurs in gases and liquids, where particles are free to move. Diffusion provides direct evidence for the particle model of matter. ",
- "groups": [
- {
- "bullets": [
- "Gases diffuse faster than liquids because the particles have more kinetic energy and fewer obstacles\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Rate of diffusion increases**: with higher temperature (more kinetic energy) and lower molecular mass (lighter molecules move faster)",
- "**Classic demonstration**: bromine vapour diffusing into air; ammonia and hydrogen chloride producing ammonium chloride smoke ring in a tube",
- "In the ammonia-HCl experiment, the white ring forms closer to the HCl end because HCl molecules are heavier and diffuse more slowly\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Diffusion\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Diffusion\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"States of Matter\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 2,
- "title": "Atoms, Elements and Compounds",
- "intro": " **What is this topic all about?** Chemistry is fundamentally the study of atoms — the tiny building blocks of all matter. An element consists of only one type of atom; a compound contains two or more elements chemically combined. Understanding atomic structure, electronic configuration and the nature of chemical bonds allows us to predict and explain the behaviour of every substance in chemistry.",
- "subheadings": [
- {
- "title": "Atomic Structure",
- "body": "The atom consists of a very small, dense nucleus surrounded by electrons moving in energy levels (shells). Almost all the mass of an atom is concentrated in the nucleus. The number of protons defines the element — every carbon atom has exactly 6 protons, every oxygen atom has 8. Understanding atomic number and mass number is essential for all subsequent chemistry. ",
- "groups": [
- {
- "subTitle": "Subatomic Particles",
- "bullets": [
- "**Proton**: relative mass 1, relative charge +1; found in nucleus",
- "**Neutron**: relative mass 1, relative charge 0; found in nucleus",
- "**Electron**: relative mass approximately 1/1836 (negligible), relative charge −1; found in shells around nucleus",
- "**Atomic number (Z)**: number of protons in the nucleus — defines the element",
- "**Mass number (A)**: total number of protons + neutrons in the nucleus",
- "**Number of electrons**: = number of protons in a neutral atom"
- ]
- },
- {
- "subTitle": "Isotopes",
- "bullets": [
- "Isotopes are atoms of the **same element** with the **same number of protons** but **different numbers of neutrons**\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Example: Carbon-12 (6 protons, 6 neutrons) and Carbon-14 (6 protons, 8 neutrons)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Isotopes have identical chemical properties because they have the same electronic structure\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Isotopes have different physical properties (e.g. density, rate of diffusion) because they have different masses\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Relative atomic mass**: (Ar) is the weighted average mass of the isotopes of an element relative to 1/12 the mass of Carbon-12"
- ]
- },
- {
- "subTitle": " \"Atomic Structure\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Atomic Structure\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Electronic Configuration",
- "body": "Electrons occupy shells (energy levels) around the nucleus. The pattern of electrons in each shell determines the chemical properties of an element and its position in the Periodic Table. The first shell holds a maximum of 2 electrons; the second and third shells each hold a maximum of 8. ",
- "groups": [
- {
- "bullets": [
- "**Shell 1**: maximum 2 electrons (closest to nucleus, lowest energy)",
- "**Shell 2**: maximum 8 electrons",
- "**Shell 3**: maximum 8 electrons (for elements in periods 1-3)",
- "Write electronic configurations as numbers: e.g. sodium (Na, Z=11): 2, 8, 1\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "The number of electrons in the **outer shell** equals the **group number** in the Periodic Table\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "The number of **occupied shells** equals the **period number**\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Elements in the same group have the same number of outer electrons → similar chemical properties\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Electronic Configuration\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Electronic Configuration\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Ionic Bonding",
- "body": "Ionic bonds form when electrons are transferred from one atom to another, creating oppositely charged ions that attract each other. This typically occurs between metals (which lose electrons to form positive cations) and non-metals (which gain electrons to form negative anions). The resulting ionic compounds form giant lattice structures with high melting and boiling points. ",
- "groups": [
- {
- "subTitle": "Formation of Ions",
- "bullets": [
- "**Metals**: lose electrons → form positive ions (cations): e.g. Na → Na⁺ + e⁻",
- "**Non-metals**: gain electrons → form negative ions (anions): e.g. Cl + e⁻ → Cl⁻",
- "Both ions achieve a noble gas electron configuration (full outer shell)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Example: sodium chloride (NaCl) — Na transfers 1e⁻ to Cl\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Example: magnesium oxide (MgO) — Mg transfers 2e⁻ to O\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Properties of Ionic Compounds",
- "bullets": [
- "**High melting and boiling points**: strong electrostatic forces between oppositely charged ions in the lattice require large amounts of energy to overcome",
- "**Conduct electricity when molten or dissolved**: ions are free to move and carry charge",
- "**Do not conduct when solid**: ions are fixed in lattice positions",
- "**Brittle**: layers shift under stress → like charges align → repulsion → the lattice shatters",
- "**Often soluble in water**: water molecules are polar and can surround and separate the ions"
- ]
- },
- {
- "subTitle": " \"Ionic Bonding\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Ionic Bonding\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Covalent Bonding",
- "body": "Covalent bonds form when two non-metal atoms share one or more pairs of electrons. Each shared pair constitutes one covalent bond. The shared electrons are attracted to both nuclei simultaneously, holding the atoms together. Covalent substances exist either as simple molecules or as giant covalent structures. ",
- "groups": [
- {
- "subTitle": "Simple Molecules",
- "bullets": [
- "Examples: H₂, Cl₂, H₂O, NH₃, CH₄, CO₂, HCl\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Low melting and boiling points — weak van der Waals forces between molecules (not the strong covalent bonds within)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Do not conduct electricity — no charged particles free to move\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Often exist as gases or liquids at room temperature\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Single bond: one shared pair (e.g. H−Cl); double bond: two shared pairs (e.g. O=O); triple bond: three shared pairs (e.g. N≡N)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Giant Covalent Structures",
- "bullets": [
- "**Diamond**: each carbon bonded to 4 others in tetrahedral lattice; very hard; very high melting point; does not conduct electricity",
- "**Graphite**: each carbon bonded to 3 others in layers; layers can slide (lubricant); conducts electricity because one electron per carbon is delocalised between layers",
- "**Silicon dioxide (SiO₂)**: every Si bonded to 4 O atoms; giant structure; very high melting point"
- ]
- },
- {
- "subTitle": " \"Covalent Bonding\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Covalent Bonding\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Metallic Bonding",
- "body": "In metals, the outer (valence) electrons are delocalised — they leave their parent atoms and move freely throughout the entire metal structure, forming a 'sea' of electrons. The metal ions (positive cores) are held in a lattice by their attraction to this delocalised electron cloud. This model explains the distinctive properties of metals. ",
- "groups": [
- {
- "bullets": [
- "**Good conductors of electricity and heat**: delocalised electrons carry charge and thermal energy through the lattice",
- "**Malleable and ductile**: layers of metal ions can slide past each other without disrupting the bonding (the electron sea adjusts)",
- "**High melting and boiling points**: strong attraction between metal ions and electron sea requires large amounts of energy to overcome",
- "**Lustrous (shiny)**: free electrons reflect light of all wavelengths",
- "**Alloys**: mixing two or more metals distorts the lattice → layers cannot slide as easily → harder and stronger than pure metal"
- ]
- },
- {
- "subTitle": " \"Metallic Bonding\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Metallic Bonding\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Atoms, Elements and Compounds\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 3,
- "title": "Stoichiometry",
- "intro": " **What is this topic all about?** Stoichiometry is the branch of chemistry concerned with the quantitative relationships between reactants and products in chemical reactions. It is built on the concept of the mole — the chemist's counting unit — and the balanced chemical equation. Mastering mole calculations is absolutely essential: virtually every quantitative question in chemistry uses these principles.",
- "subheadings": [
- {
- "title": "Relative Masses and the Mole",
- "body": "The mole is the SI unit for amount of substance. One mole of any substance contains exactly 6.02 × 10²³ particles (Avogadro's number). This number was chosen so that one mole of an element has a mass in grams equal to its relative atomic mass. The mole concept bridges the invisible atomic scale and the measurable mass scale of the laboratory. ",
- "groups": [
- {
- "bullets": [
- "**Relative atomic mass (Ar)**: weighted average mass of one atom of an element relative to 1/12 the mass of ¹²C",
- "**Relative molecular mass (Mr)**: sum of the Ar values of all atoms in the molecular formula",
- "**Relative formula mass (Mr)**: used for ionic compounds — sum of Ar of all ions in formula unit",
- "**Molar mass**: the mass of one mole of a substance in g/mol; numerically equal to the Mr",
- "**Formula:**: moles = mass (g) ÷ molar mass (g/mol)",
- "**Example:**: How many moles in 44 g of CO₂? Mr(CO₂) = 12 + (2×16) = 44; moles = 44/44 = 1.0 mol"
- ]
- },
- {
- "subTitle": " \"Relative Masses and the Mole\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Relative Masses and the Mole\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Empirical and Molecular Formulae",
- "body": "The empirical formula gives the simplest whole-number ratio of atoms of each element in a compound. The molecular formula gives the actual number of atoms of each element in one molecule. They may be the same (e.g. water: H₂O) or different (e.g. ethene: empirical CH₂, molecular C₂H₄). These formulae are determined experimentally from percentage composition data. ",
- "groups": [
- {
- "subTitle": "Steps to Find Empirical Formula from % Composition",
- "bullets": [
- "1. Write the percentage of each element\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "2. Divide each percentage by the Ar of that element → gives moles ratio\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "3. Divide all values by the smallest → gives simplest ratio\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "4. If ratios are not whole numbers, multiply through by 2, 3 etc. until they are\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Example:**: Compound: 40% C, 6.7% H, 53.3% O",
- " C: 40/12 = 3.33 | H: 6.7/1 = 6.7 | O: 53.3/16 = 3.33\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- " Divide by 3.33 → C:1, H:2, O:1 → Empirical formula = CH₂O\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Empirical and Molecular Formulae\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Empirical and Molecular Formulae\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Moles in Solution and Gas Calculations",
- "body": "In addition to mass calculations, chemists frequently work with solutions (where concentration is measured in mol/dm³) and gases (where volume at room temperature can be used). These additional mole relationships are frequently tested in IGCSE chemistry calculations. ",
- "groups": [
- {
- "subTitle": "Solutions",
- "bullets": [
- "**Concentration**: (mol/dm³) = moles ÷ volume (dm³)",
- "**Moles**: = concentration × volume (dm³); remember: 1 dm³ = 1 litre = 1000 cm³",
- "**Example:**: 0.1 mol/dm³ HCl, 25 cm³: moles = 0.1 × (25/1000) = 0.0025 mol"
- ]
- },
- {
- "subTitle": "Gases",
- "bullets": [
- "At room temperature and pressure (r.t.p.), one mole of any gas occupies **24 dm³** (24,000 cm³)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Moles of gas**: = volume (dm³) ÷ 24",
- "**Example:**: 6 dm³ of CO₂ at r.t.p.: moles = 6/24 = 0.25 mol",
- "At standard temperature and pressure (s.t.p., 0°C, 1 atm), molar volume = 22.4 dm³\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Reacting Masses from Equations",
- "bullets": [
- "1. Write balanced equation\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "2. Write mole ratio from equation coefficients\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "3. Calculate moles of known substance\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "4. Use ratio to find moles of unknown\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "5. Convert moles to mass using molar mass\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Example:**: 2Mg + O₂ → 2MgO; how much MgO from 12 g Mg?",
- " Moles Mg = 12/24 = 0.5 mol; ratio Mg:MgO = 1:1; moles MgO = 0.5 mol; mass MgO = 0.5 × 40 = 20 g\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Moles in Solution and Gas Calculations\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Moles in Solution and Gas Calculations\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Percentage Yield and Purity",
- "body": "In practice, chemical reactions rarely produce as much product as theory predicts. The percentage yield compares the actual amount obtained to the theoretical maximum. Purity analysis tells us what fraction of a sample is the desired substance. ",
- "groups": [
- {
- "bullets": [
- "**% yield**: = (actual yield / theoretical yield) × 100",
- "Reasons yield is less than 100%: reversible reactions, side reactions, product lost during transfer, incomplete reaction\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**% purity**: = (mass of pure substance / total mass of sample) × 100",
- "High purity is critical in pharmaceuticals and food chemistry\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Percentage Yield and Purity\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Percentage Yield and Purity\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Stoichiometry\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 4,
- "title": "Electrochemistry",
- "intro": " **What is this topic all about?** Electrochemistry explores how electrical energy can drive non-spontaneous chemical reactions (electrolysis) and how chemical reactions can generate electrical energy (electrochemical cells). Electrolysis is a vital industrial process used to extract reactive metals, purify metals, and manufacture chemicals. Understanding what happens at each electrode and why is central to this topic.",
- "subheadings": [
- {
- "title": "Electrolysis — Principles",
- "body": "Electrolysis is the decomposition of an ionic compound (in the molten state or in aqueous solution) by passing a direct electric current through it. The compound must contain ions that are free to move. Positive ions (cations) migrate to the negative electrode (cathode); negative ions (anions) migrate to the positive electrode (anode). ",
- "groups": [
- {
- "bullets": [
- "**Electrolyte**: the ionic compound being electrolysed (molten or in solution)",
- "**Cathode (negative electrode)**: cations gain electrons → **reduction** occurs",
- "**Anode (positive electrode)**: anions lose electrons → **oxidation** occurs",
- "Memory aid: **OIL RIG** — Oxidation Is Loss, Reduction Is Gain (of electrons)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "A.N.O. — Anode, Negative, Oxidation? No — Anode is Positive, not negative. Careful with electrode charges.\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Inert electrodes**: (graphite or platinum) do not react during electrolysis; **reactive electrodes** (copper) can dissolve"
- ]
- },
- {
- "subTitle": " \"Electrolysis — Principles\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Electrolysis — Principles\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Electrolysis of Molten Compounds",
- "body": "When an ionic compound is heated until it melts, the ions become free to move. Electrolysis of molten compounds is the only way to extract the most reactive metals (Group 1, Group 2, aluminium) because carbon reduction is not powerful enough. The products are always the pure elements. ",
- "groups": [
- {
- "subTitle": "Example: Molten Lead Bromide (PbBr₂)",
- "bullets": [
- "**At cathode (−)**: Pb²⁺ + 2e⁻ → Pb (lead metal deposited)",
- "**At anode (+)**: 2Br⁻ → Br₂ + 2e⁻ (bromine gas evolved)",
- "Overall: PbBr₂ → Pb + Br₂\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Industrial Example: Extraction of Aluminium (Hall-Héroult Process)",
- "bullets": [
- "Aluminium ore (bauxite) is refined to aluminium oxide (Al₂O₃), called alumina\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Alumina is dissolved in molten cryolite (Na₃AlF₆) to lower the melting point from 2050°C to ~950°C → saves energy\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**At cathode**: Al³⁺ + 3e⁻ → Al (liquid aluminium sinks to bottom, tapped off)",
- "**At anode**: 2O²⁻ → O₂ + 4e⁻ (oxygen produced; reacts with carbon anodes → CO₂)",
- "Carbon anodes burn away and must be replaced regularly\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Aluminium is used for aircraft, cans, foil — its oxide layer makes it resistant to corrosion\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Electrolysis of Molten Compounds\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Electrolysis of Molten Compounds\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Electrolysis of Aqueous Solutions",
- "body": "When an ionic compound dissolves in water, both the ions of the compound and the ions from water (H⁺ and OH⁻) are present. At each electrode, the ion that is more easily discharged is preferentially discharged. The rules for deciding which ion is discharged are based on concentration and the position in the electrochemical series. ",
- "groups": [
- {
- "subTitle": "Discharge Rules",
- "bullets": [
- "**At cathode**: the less reactive (lower in reactivity series) metal ion is preferentially discharged over H⁺; but if the metal is very reactive (e.g. Na, K, Ca), H₂ is evolved instead",
- "**At anode**: if halide ions (Cl⁻, Br⁻, I⁻) are present in high concentration, the halogen is discharged; otherwise O₂ is evolved from OH⁻"
- ]
- },
- {
- "subTitle": "Electrolysis of Brine (Concentrated NaCl solution) — Industrial",
- "bullets": [
- "**At cathode**: 2H⁺ + 2e⁻ → H₂ (hydrogen gas)",
- "**At anode**: 2Cl⁻ → Cl₂ + 2e⁻ (chlorine gas)",
- "**Remaining solution**: NaOH (sodium hydroxide)",
- "Three products: hydrogen (fuel cells, margarine), chlorine (bleach, PVC, disinfectants), sodium hydroxide (paper, soap, ceramics)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Electrolysis of Copper Sulfate Solution",
- "bullets": [
- "**Using inert electrodes**: Cu²⁺ + 2e⁻ → Cu at cathode; 2H₂O → O₂ + 4H⁺ + 4e⁻ at anode; solution becomes more acidic",
- "**Using copper electrodes (purification)**: Cu²⁺ + 2e⁻ → Cu at cathode (pure copper deposited); Cu → Cu²⁺ + 2e⁻ at anode (impure copper dissolves); concentration of CuSO₄ remains constant",
- "This method purifies copper from ~99% to >99.99% — essential for electrical wiring\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Electrolysis of Aqueous Solutions\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Electrolysis of Aqueous Solutions\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Electrochemistry\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 5,
- "title": "Chemical Energetics",
- "intro": " **What is this topic all about?** Every chemical reaction involves an energy change — either releasing energy to the surroundings (exothermic) or absorbing energy from the surroundings (endothermic). These energy changes are central to industrial chemistry, biological processes and our everyday use of fuels. Understanding enthalpy changes, bond energies and energy profiles allows chemists to predict whether reactions will release or absorb heat.",
- "subheadings": [
- {
- "title": "Exothermic and Endothermic Reactions",
- "body": "In an exothermic reaction, the chemical energy of the reactants is greater than that of the products. The difference is released as heat, causing the temperature of the surroundings to increase. In an endothermic reaction, the products contain more energy than the reactants — energy is absorbed from the surroundings, causing the temperature to fall. ",
- "groups": [
- {
- "subTitle": "Exothermic Reactions",
- "bullets": [
- "Products have lower energy than reactants → energy released to surroundings\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Temperature of surroundings **increases**\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Enthalpy change ΔH is **negative** (e.g. −890 kJ/mol for combustion of methane)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Examples**: combustion of fuels, neutralisation of acid with alkali, respiration, many oxidation reactions, rusting",
- "Industrial importance: exothermic reactions are exploited in hand warmers, self-heating cans\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Endothermic Reactions",
- "bullets": [
- "Products have higher energy than reactants → energy absorbed from surroundings\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Temperature of surroundings **decreases**\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Enthalpy change ΔH is **positive**\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Examples**: thermal decomposition (e.g. calcium carbonate → calcium oxide + CO₂), photosynthesis, dissolving ammonium nitrate in water",
- "Applications: cold packs used in sports injuries exploit endothermic dissolving reactions\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Exothermic and Endothermic Reactions\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Exothermic and Endothermic Reactions\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Bond Energies",
- "body": "Energy is always required to break chemical bonds (endothermic process) and always released when bonds are formed (exothermic process). The overall energy change of a reaction can be calculated by comparing the energy needed to break all bonds in the reactants with the energy released when all bonds in the products are formed. ",
- "groups": [
- {
- "bullets": [
- "**Bond breaking**: always requires energy input (endothermic); bond energy = energy needed to break one mole of that bond in gaseous molecules",
- "**Bond forming**: always releases energy (exothermic)",
- "**Formula**: ΔH = Σ(bond energies broken) − Σ(bond energies formed)",
- "If more energy is released in forming bonds than used in breaking them → ΔH negative → exothermic\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "If more energy is used breaking bonds than released → ΔH positive → endothermic\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Example calculation**: H₂ + Cl₂ → 2HCl",
- " Energy to break: H−H (436 kJ) + Cl−Cl (243 kJ) = 679 kJ\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- " Energy released forming: 2 × H−Cl (2 × 432 = 864 kJ)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- " ΔH = 679 − 864 = −185 kJ/mol (exothermic)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Bond Energies\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Bond Energies\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Energy Level Diagrams",
- "body": "Energy level diagrams (also called enthalpy/reaction profiles) show the energy of reactants and products and how energy changes during a reaction. They also show the activation energy — the minimum energy that reacting particles must have for the reaction to occur. ",
- "groups": [
- {
- "bullets": [
- "**Activation energy (Ea)**: shown as the energy 'hill' or 'hump' between reactants and products",
- "In an **exothermic** diagram: products are drawn at lower energy than reactants; ΔH negative\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "In an **endothermic** diagram: products are drawn at higher energy than reactants; ΔH positive\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "A catalyst provides an alternative reaction pathway with **lower activation energy** — shown as a lower hump on the same diagram\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "The catalyst does not change the energy of reactants or products (ΔH remains the same) — it only lowers Ea\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Energy Level Diagrams\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Energy Level Diagrams\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 5: \"Chemical Energetics\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 6,
- "title": "Chemical Reactions",
- "intro": " **What is this topic all about?** Understanding how fast reactions occur and what controls their rate is practically important in industry, medicine and everyday life. This chapter also covers the concept of reversibility — many reactions do not go to completion but reach a state of dynamic equilibrium. Le Chatelier's principle allows chemists to predict how equilibria respond to changes in conditions.",
- "subheadings": [
- {
- "title": "Rate of Reaction",
- "body": "The rate of a chemical reaction is defined as the change in concentration of a reactant or product per unit time. For a reaction to occur, particles must collide with sufficient energy (at least equal to the activation energy) and in the correct orientation. This is called the collision theory. ",
- "groups": [
- {
- "subTitle": "Factors Affecting Rate",
- "bullets": [
- "**Concentration**: (solutions): higher concentration → more particles per unit volume → more frequent collisions → faster rate",
- "**Pressure**: (gases): higher pressure → gas particles pushed closer together → more frequent collisions → faster rate",
- "**Surface area**: (solids): smaller particle size → greater surface area exposed → more frequent collisions with other reactants → faster rate",
- "**Temperature**: higher temperature → particles have more kinetic energy → more frequent AND more energetic collisions → significantly faster rate; a 10°C rise roughly doubles the rate",
- "**Catalyst**: provides an alternative reaction pathway with lower activation energy → more particles have sufficient energy to react → faster rate; catalyst is unchanged at end of reaction"
- ]
- },
- {
- "subTitle": "Measuring Rate",
- "bullets": [
- "**Gas evolution**: measure volume of gas collected vs time (e.g. acid + marble chips → CO₂)",
- "**Loss of mass**: weigh flask as gas escapes; rate = mass lost per second",
- "**Change in turbidity**: solution becomes cloudy as precipitate forms (e.g. sodium thiosulfate + acid)",
- "Rate graphs: gradient of concentration vs time graph = rate at that moment; steeper gradient = faster rate\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Rate of Reaction\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Rate of Reaction\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Reversible Reactions and Equilibrium",
- "body": "Some reactions are reversible — the products can react together to reform the original reactants. When both the forward and reverse reactions occur at the same rate in a closed system, the concentrations of reactants and products stop changing. This state is called dynamic equilibrium — the reactions continue but there is no net change in composition. ",
- "groups": [
- {
- "bullets": [
- "Reversible reactions use the ⇌ symbol in the equation\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "At equilibrium: **rate of forward reaction = rate of reverse reaction**\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Concentrations are constant but not necessarily equal — the position of equilibrium may favour products or reactants\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "If Kc >> 1: equilibrium lies to the right (mostly products)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "If Kc << 1: equilibrium lies to the left (mostly reactants)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Reversible Reactions and Equilibrium\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Reversible Reactions and Equilibrium\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Le Chatelier's Principle",
- "body": "Le Chatelier's principle states: if a system at equilibrium is subjected to a change, the equilibrium will shift in the direction that opposes the change and restores equilibrium. This principle is applied in industrial processes to maximise yield by choosing optimal conditions. ",
- "groups": [
- {
- "subTitle": "Effects on Position of Equilibrium",
- "bullets": [
- "**Increasing concentration of reactant**: → equilibrium shifts right (to use up the extra reactant) → more products formed",
- "**Decreasing concentration of product**: → equilibrium shifts right → more products formed",
- "**Increasing temperature**: equilibrium shifts in the endothermic direction (to absorb extra heat)",
- "**Decreasing temperature**: equilibrium shifts in the exothermic direction",
- "**Increasing pressure**: (gases): equilibrium shifts towards the side with fewer moles of gas",
- "**Catalyst**: does NOT change the position of equilibrium — only speeds up the rate at which equilibrium is reached"
- ]
- },
- {
- "subTitle": "Industrial Application — Haber Process (N₂ + 3H₂ ⇌ 2NH₃)",
- "bullets": [
- "Forward reaction is exothermic → lower temperature favours more ammonia, but very slow rate\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Fewer moles on right (2) than left (4) → higher pressure favours more ammonia\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Compromise conditions**: 450°C (balance between reasonable rate and acceptable yield), 200 atm, iron catalyst",
- "Ammonia is liquefied and removed as it forms → equilibrium shifts right (Le Chatelier)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Le Chatelier's Principle\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Le Chatelier's Principle\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 6 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 6: \"Chemical Reactions\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 7,
- "title": "Acids, Bases and Salts",
- "intro": " **What is this topic all about?** Acids and bases are fundamental to chemistry, biology and everyday life. Acids produce hydrogen ions (H⁺) in solution; bases neutralise acids. The pH scale measures the concentration of H⁺ ions, ranging from 0 (strongly acidic) to 14 (strongly alkaline). This chapter covers the reactions of acids, the preparation of salts and the practical techniques of titration — skills that will appear in both written papers and practicals.",
- "subheadings": [
- {
- "title": "Acids and Bases",
- "body": "An acid is a substance that produces hydrogen ions (H⁺) when dissolved in water. A base is a substance that neutralises an acid to produce a salt and water only. An alkali is a soluble base — it produces hydroxide ions (OH⁻) in solution. The Arrhenius and Brønsted-Lowry definitions are both useful at IGCSE level. ",
- "groups": [
- {
- "subTitle": "Common Acids",
- "bullets": [
- "**Hydrochloric acid (HCl)**: strong acid, fully dissociates → H⁺ + Cl⁻",
- "**Sulfuric acid (H₂SO₄)**: strong diprotic acid → 2H⁺ + SO₄²⁻",
- "**Nitric acid (HNO₃)**: strong acid → H⁺ + NO₃⁻",
- "**Ethanoic acid (CH₃COOH)**: weak acid, only partially dissociates — found in vinegar",
- "**Citric acid**: weak acid in fruits"
- ]
- },
- {
- "subTitle": "Common Bases and Alkalis",
- "bullets": [
- "**Sodium hydroxide (NaOH)**: strong alkali, fully dissociates",
- "**Potassium hydroxide (KOH)**: strong alkali",
- "**Calcium hydroxide (Ca(OH)₂)**: sparingly soluble; solution called limewater",
- "**Ammonia solution (NH₃(aq))**: weak alkali; NH₃ + H₂O ⇌ NH₄⁺ + OH⁻",
- "**Metal oxides and hydroxides**: insoluble bases"
- ]
- },
- {
- "subTitle": "The pH Scale",
- "bullets": [
- "pH 0-6: **acidic** (lower pH = more acidic = higher [H⁺])\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "pH 7: **neutral** (pure water at 25°C)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "pH 8-14: **alkaline** (higher pH = more alkaline = higher [OH⁻])\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Universal indicator**: turns a range of colours; pH meter gives a precise reading",
- "Strong acids have lower pH than weak acids of the same concentration — because strong acids fully dissociate\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Acids and Bases\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Acids and Bases\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Reactions of Acids",
- "body": "Acids undergo characteristic reactions with metals, metal oxides/hydroxides, metal carbonates/hydrogencarbonates, and ammonia. In every case, a salt is produced. The name of the salt depends on both the acid used and the base or metal reacted. ",
- "groups": [
- {
- "bullets": [
- "**Acid + reactive metal**: → salt + hydrogen gas; e.g. Zn + H₂SO₄ → ZnSO₄ + H₂",
- "**Acid + metal oxide**: → salt + water; e.g. CuO + 2HCl → CuCl₂ + H₂O",
- "**Acid + metal hydroxide (neutralisation)**: → salt + water; e.g. NaOH + HCl → NaCl + H₂O",
- "**Acid + metal carbonate**: → salt + water + carbon dioxide; e.g. CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂",
- "**Acid + ammonia**: → ammonium salt; e.g. NH₃ + HNO₃ → NH₄NO₃ (ammonium nitrate — fertiliser)"
- ]
- },
- {
- "subTitle": " \"Reactions of Acids\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Reactions of Acids\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Preparing Salts",
- "body": "Different preparation methods are used depending on whether the salt required is soluble or insoluble and which acid is being used. Mastering these methods is essential for practical chemistry. ",
- "groups": [
- {
- "subTitle": "Method 1: Soluble Salts from Insoluble Base",
- "bullets": [
- "Add excess insoluble metal oxide or carbonate to warm acid → salt forms in solution\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Filter to remove excess base; evaporate filtrate to crystallise the salt\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Example: excess CuO added to dilute H₂SO₄ → CuSO₄ solution → blue crystals of CuSO₄·5H₂O\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Method 2: Soluble Salts by Titration (acid + alkali)",
- "bullets": [
- "Use indicator to find exact volume of acid needed to neutralise alkali\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Repeat without indicator using same volumes; evaporate to crystallise\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Example: NaOH + HCl → NaCl; excess NaOH must not be used\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "No indicator used in final run — indicator would contaminate salt\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Method 3: Insoluble Salts by Precipitation",
- "bullets": [
- "Mix two solutions, each containing one of the ions needed for the salt\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "The insoluble salt precipitates immediately\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Filter, wash with distilled water, dry\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Example: Pb²⁺(aq) + 2I⁻(aq) → PbI₂(s) yellow precipitate\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Preparing Salts\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Preparing Salts\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 7 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 7: \"Acids, Bases and Salts\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 8,
- "title": "The Periodic Table",
- "intro": " **What is this topic all about?** The Periodic Table is chemistry's most powerful organisational tool. Elements are arranged in order of increasing atomic number in rows (periods) and columns (groups) such that elements with similar properties appear in the same group. Understanding periodic trends — how properties vary across periods and down groups — allows chemists to make predictions about elements they have never directly studied.",
- "subheadings": [
- {
- "title": "Structure of the Periodic Table",
- "body": "The modern Periodic Table was developed by Mendeleev in 1869, who arranged elements in order of relative atomic mass and noticed repeating patterns. Today we use atomic number (proton number) as the ordering principle. The table is divided into periods (horizontal rows) and groups (vertical columns numbered 1-7, then 0 for noble gases). ",
- "groups": [
- {
- "bullets": [
- "**Period number**: = number of electron shells occupied",
- "**Group number**: = number of electrons in the outermost shell",
- "**Metals**: are to the left and below a diagonal line; **non-metals** are to the upper right",
- "**Metalloids (semi-metals)**: like silicon and germanium lie along the diagonal and have intermediate properties",
- "**Transition metals**: occupy the central block (periods 4-7)"
- ]
- },
- {
- "subTitle": " \"Structure of the Periodic Table\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Structure of the Periodic Table\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Trends Across a Period (Period 3: Na to Ar)",
- "body": "As we move across a period from left to right, the atomic number increases by one. The outer electrons are in the same shell but the nuclear charge increases, pulling electrons closer. This creates systematic trends in physical and chemical properties. ",
- "groups": [
- {
- "bullets": [
- "**Atomic radius decreases**: increasing nuclear charge attracts outer electrons more strongly, pulling them closer",
- "**Ionisation energy increases**: harder to remove an electron as nuclear attraction increases",
- "**Electronegativity increases**: ability to attract bonding electrons increases left to right",
- "**Metallic character decreases**: and **non-metallic character increases** across a period",
- "**Nature of oxides**: Na₂O, MgO, Al₂O₃ are basic; SiO₂ is neutral/acidic; SO₃, Cl₂O₇ are acidic"
- ]
- },
- {
- "subTitle": " \"Trends Across a Period (Period 3: Na to Ar)\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Trends Across a Period (Period 3: Na to Ar)\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Group 1 — The Alkali Metals",
- "body": "Group 1 elements (lithium, sodium, potassium, rubidium, caesium, francium) are highly reactive metals that all have one electron in their outer shell. They lose this electron easily to form +1 ions, and their reactivity increases down the group as the outer electron becomes further from the nucleus and more easily lost. ",
- "groups": [
- {
- "bullets": [
- "**Reaction with cold water**: metal + water → metal hydroxide + hydrogen; e.g. 2Na + 2H₂O → 2NaOH + H₂",
- "Li: reacts steadily, bubbles; Na: reacts vigorously, melts to a ball, may catch fire; K: reacts very vigorously, lilac flame, often explosive\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Reaction with oxygen**: 4Li + O₂ → 2Li₂O; forms white oxide",
- "**Reaction with chlorine**: 2Na + Cl₂ → 2NaCl; forms white ionic chloride",
- "**Down the group**: atomic radius increases; ionisation energy decreases; reactivity increases; melting/boiling points decrease",
- "Stored under oil to prevent reaction with air and moisture\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Group 1 — The Alkali Metals\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Group 1 — The Alkali Metals\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Group 7 — The Halogens",
- "body": "Group 7 elements (fluorine, chlorine, bromine, iodine, astatine) are non-metals that all have seven electrons in their outer shell. They readily gain one electron to form −1 ions. Their reactivity decreases down the group as the incoming electron is further from the nucleus and the shielding effect of inner shells increases. ",
- "groups": [
- {
- "subTitle": "Physical Properties",
- "bullets": [
- "F₂: pale yellow gas; Cl₂: yellow-green gas; Br₂: brown/orange liquid; I₂: grey-black solid, purple vapour\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Melting and boiling points **increase** down the group as van der Waals forces become stronger\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "All exist as diatomic molecules (F₂, Cl₂, Br₂, I₂)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Reactions",
- "bullets": [
- "**With hydrogen**: H₂ + X₂ → 2HX; less vigorous down the group (F₂ explosive in dark; I₂ very slow even with heat)",
- "**With iron**: 2Fe + 3Cl₂ → 2FeCl₃ (iron(III) chloride)",
- "**Halogen displacement**: a more reactive halogen displaces a less reactive one from its salt solution",
- "Cl₂(aq) + 2KBr(aq) → 2KCl(aq) + Br₂(aq) (solution turns orange)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Cl₂(aq) + 2KI(aq) → 2KCl(aq) + I₂(aq) (solution turns brown/black)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Br₂ does NOT displace Cl (bromine is less reactive than chlorine)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Group 7 — The Halogens\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Group 7 — The Halogens\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Group 0 — The Noble Gases",
- "body": "Group 0 elements (helium, neon, argon, krypton, xenon, radon) are chemically inert under normal conditions because they have completely filled outer electron shells. Their stability makes them ideal for applications requiring non-reactive gases. ",
- "groups": [
- {
- "bullets": [
- "All exist as monatomic gases (single atoms, not molecules)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "He and Ne: completely full outer shell (2 and 8 electrons respectively); other noble gases also have full outer shells\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Do not normally form bonds (though some xenon compounds exist under extreme conditions)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Helium**: used in balloons and airships (less dense than air, not flammable)",
- "**Neon**: used in advertising signs (glows red-orange when electric current passed through)",
- "**Argon**: used to fill incandescent light bulbs and as inert atmosphere in welding",
- "Boiling points increase down the group (larger atoms → stronger London dispersion forces)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Group 0 — The Noble Gases\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Group 0 — The Noble Gases\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Transition Metals",
- "body": "The transition metals occupy the central block of the Periodic Table (periods 4-7). They have distinctive properties that set them apart from Group 1 and 2 metals. These properties arise from their partially filled d-subshells, which allow them to form variable oxidation states and complex ions. ",
- "groups": [
- {
- "bullets": [
- "**High density, hardness and melting points**: strong metallic bonding in a compact lattice",
- "**Variable oxidation states**: e.g. iron exists as Fe²⁺ and Fe³⁺; copper as Cu⁺ and Cu²⁺; manganese as Mn²⁺, Mn⁴⁺, Mn⁷⁺",
- "**Form coloured compounds**: e.g. Cu²⁺ solutions are blue; Fe²⁺ pale green; Fe³⁺ orange-brown; Cr³⁺ green",
- "**Act as catalysts**: Fe in Haber process (ammonia); V₂O₅ in Contact process (sulfuric acid); Ni in hydrogenation of oils; Pt in catalytic converters",
- "**Form complex ions**: transition metal ion surrounded by ligands (molecules or ions donating electron pairs)",
- "Less reactive than Group 1 and 2 metals — do not react with cold water\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Transition Metals\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Transition Metals\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 8 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 8: \"The Periodic Table\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 9,
- "title": "Metals",
- "intro": " **What is this topic all about?** Metals are the most abundant type of element in the Periodic Table, making up about 75% of all known elements. They are extracted from ores by methods that depend on their position in the reactivity series — a rank ordering of metals by their tendency to lose electrons and form positive ions. Understanding the reactivity series, extraction methods and uses of metals (especially alloys) is central to both chemistry and real-world applications.",
- "subheadings": [
- {
- "title": "The Reactivity Series",
- "body": "The reactivity series ranks metals in order of their reactivity — their tendency to form positive ions by losing electrons. The most reactive metals at the top lose electrons most easily; unreactive metals at the bottom rarely form ions. The series is established experimentally by observing reactions with water, acids and displacement reactions. ",
- "groups": [
- {
- "bullets": [
- "Order (most to least reactive): K, Na, Ca, Mg, Al, (C — carbon), Zn, Fe, Sn, Pb, (H — hydrogen), Cu, Ag, Au, Pt\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Metals above carbon (K, Na, Ca, Mg, Al) must be extracted by electrolysis\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Metals below carbon but above hydrogen (Zn, Fe, Sn, Pb) can be extracted by reduction with carbon (coke)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Metals below hydrogen (Cu, Ag, Au, Pt) are found native or need only gentle heating\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Reactions That Define Position",
- "bullets": [
- "**With cold water**: K, Na, Ca react vigorously; Mg reacts slowly; others don't react",
- "**With steam**: Mg, Al, Zn, Fe react with steam to form metal oxide + H₂",
- "**With dilute acid**: Mg, Al, Zn, Fe, Sn, Pb react; Cu, Ag, Au don't react",
- "**Displacement**: more reactive metal displaces less reactive from its salt solution; e.g. Zn + CuSO₄ → ZnSO₄ + Cu"
- ]
- },
- {
- "subTitle": " \"The Reactivity Series\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"The Reactivity Series\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Extraction of Metals",
- "body": "The method used to extract a metal from its ore depends on its reactivity. More reactive metals form more stable compounds and require more energy (and more powerful reducing agents) to extract. The economics of extraction must also be considered — aluminium requires large amounts of electricity, making it expensive despite being abundant. ",
- "groups": [
- {
- "subTitle": "Extraction by Carbon Reduction — Iron (Blast Furnace)",
- "bullets": [
- "Raw materials: haematite (Fe₂O₃), coke (carbon), limestone (CaCO₃), hot air\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Step 1**: Coke burns: C + O₂ → CO₂; then CO₂ + C → 2CO (carbon monoxide — the actual reducing agent)",
- "**Step 2**: Carbon monoxide reduces iron oxide: Fe₂O₃ + 3CO → 2Fe + 3CO₂",
- "**Step 3**: Limestone decomposes: CaCO₃ → CaO + CO₂; CaO removes acidic silica impurity: CaO + SiO₂ → CaSiO₃ (slag)",
- "Molten iron sinks to bottom; slag floats on top; both are tapped off separately\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Pig iron (cast iron) is ~96% Fe + impurities; must be converted to steel by removing excess carbon\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Uses of Metals and Alloys",
- "bullets": [
- "**Pure iron**: too soft for structural uses — layers of atoms slide easily",
- "**Steel**: iron + carbon (0.1-1.5%) — harder because carbon atoms distort the lattice, preventing layer sliding",
- "**Stainless steel**: iron + chromium + nickel — resists corrosion; used in cutlery, surgical instruments",
- "**Bronze**: copper + tin — harder than either pure metal; used historically for tools and weapons",
- "**Brass**: copper + zinc — golden colour, corrosion resistant; used in musical instruments, plumbing",
- "**Aluminium alloys**: aluminium + small amounts of Cu, Mg, Mn — strong and light; aircraft and bicycle frames"
- ]
- },
- {
- "subTitle": " \"Extraction of Metals\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Extraction of Metals\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Rusting and Corrosion",
- "body": "Rusting is the specific corrosion of iron in the presence of both water and oxygen, producing hydrated iron(III) oxide (Fe₂O₃·xH₂O). It is an electrochemical process and an enormous economic problem — approximately 25% of all steel produced is to replace rusted structures. Prevention methods exploit either physical barriers or sacrificial protection. ",
- "groups": [
- {
- "bullets": [
- "**Conditions required**: both water AND oxygen must be present; either alone is insufficient",
- "Salt water accelerates rusting (electrolyte increases electrical conductivity)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Acid rain also accelerates rusting\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Prevention Methods",
- "bullets": [
- "**Physical barriers**: — exclude water and oxygen: painting, oiling/greasing, plastic coating, tin plating (e.g. tin cans)",
- "**Galvanising**: coating iron with zinc; even if zinc layer is scratched, zinc acts as sacrificial anode (zinc is above iron in reactivity series → zinc oxidises preferentially)",
- "**Sacrificial protection (cathodic protection)**: attach a more reactive metal (zinc or magnesium) to the iron structure; reactive metal corrodes instead; used on ships, oil rigs, underground pipelines",
- "**Stainless steel**: alloying iron with chromium and nickel; chromium forms a thin, adherent oxide layer that prevents further oxidation",
- "**Tin plating**: (used for food cans): if tin layer scratched, iron corrodes first — tin is below iron in reactivity series and offers NO sacrificial protection"
- ]
- },
- {
- "subTitle": " \"Rusting and Corrosion\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Rusting and Corrosion\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 9 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 9: \"Metals\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 10,
- "title": "Chemistry of the Environment",
- "intro": " **What is this topic all about?** Human industrial and agricultural activities have significantly altered the natural chemical composition of the atmosphere, hydrosphere and lithosphere. This chapter explores the composition of clean air, the chemistry of water, the causes and effects of major pollutants, and the strategies used to treat water and reduce atmospheric pollution. Understanding these processes is increasingly important as environmental chemistry becomes a global concern.",
- "subheadings": [
- {
- "title": "Composition of the Atmosphere",
- "body": "The atmosphere is a layer of gases surrounding Earth held in place by gravity. Its composition has changed dramatically over Earth's 4.5-billion-year history. The modern atmosphere (unpolluted, dry air) has a relatively stable composition that has persisted for millions of years, though human activities are now altering it. ",
- "groups": [
- {
- "bullets": [
- "**Nitrogen (N₂)**: ~78% — relatively unreactive; produced by volcanic outgassing and later by denitrifying bacteria",
- "**Oxygen (O₂)**: ~21% — produced by photosynthesis over billions of years",
- "**Argon (Ar)**: ~1% — noble gas, completely inert",
- "**Carbon dioxide (CO₂)**: ~0.04% — essential for photosynthesis; greenhouse gas",
- "**Water vapour**: variable (0-4%) — depends on temperature and location",
- "**Trace gases**: other noble gases (He, Ne, Kr, Xe), methane, ozone"
- ]
- },
- {
- "subTitle": " \"Composition of the Atmosphere\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Composition of the Atmosphere\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Air Pollution",
- "body": "Human activities — particularly the combustion of fossil fuels, industrial processes and agriculture — release pollutants into the atmosphere. These pollutants cause a range of environmental and health problems. Understanding the source, chemistry and effects of each pollutant is essential for designing effective solutions. ",
- "groups": [
- {
- "subTitle": "Carbon Dioxide and the Greenhouse Effect",
- "bullets": [
- "**Source**: combustion of fossil fuels (coal, oil, natural gas); deforestation (removes CO₂ sinks); cement production (CaCO₃ → CaO + CO₂)",
- "**Effect**: CO₂ absorbs infrared radiation re-emitted by Earth's surface and re-radiates it in all directions, trapping heat in the atmosphere — the enhanced greenhouse effect",
- "**Consequences**: global warming → rising sea levels, extreme weather, habitat loss, ocean acidification",
- "**Reducing emissions**: renewable energy, energy efficiency, carbon capture, afforestation, nuclear power"
- ]
- },
- {
- "subTitle": "Sulfur Dioxide (SO₂)",
- "bullets": [
- "**Source**: combustion of fossil fuels containing sulfur impurities; metal smelting",
- "**Chemistry**: S + O₂ → SO₂; then 2SO₂ + O₂ → 2SO₃; SO₃ + H₂O → H₂SO₄ (sulfuric acid)",
- "**Effect**: acid rain (pH 3-5) — damages trees, leaches minerals from soil, acidifies lakes, corrodes limestone buildings and metal structures",
- "**Solutions**: remove sulfur from fuel before burning; fit flue gas desulfurisation (FGD) systems to power stations; use limestone/lime scrubbers: CaCO₃ + SO₂ → CaSO₃ + CO₂"
- ]
- },
- {
- "subTitle": "Oxides of Nitrogen (NOₓ)",
- "bullets": [
- "**Source**: high temperature combustion (car engines, power stations) causes N₂ + O₂ → 2NO → NO₂",
- "**Effects**: acid rain; photochemical smog; NO₂ is toxic (causes respiratory problems)",
- "**Solutions**: catalytic converters in car exhausts convert NOₓ + CO → N₂ + CO₂; exhaust gas recirculation reduces formation"
- ]
- },
- {
- "subTitle": "Carbon Monoxide (CO)",
- "bullets": [
- "**Source**: incomplete combustion of carbon-containing fuels (insufficient oxygen)",
- "**Effect**: toxic gas — binds to haemoglobin 250 times more strongly than O₂ → prevents O₂ transport → carbon monoxide poisoning → can be fatal",
- "**Solutions**: ensure adequate ventilation; catalytic converters: 2CO + O₂ → 2CO₂ (platinum/palladium catalyst)"
- ]
- },
- {
- "subTitle": "Methane and Other Greenhouse Gases",
- "bullets": [
- "**Sources of methane**: livestock (enteric fermentation), paddy fields, landfill, natural gas leaks",
- "Methane has ~80× more warming effect than CO₂ over 20 years\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**CFCs (chlorofluorocarbons)**: once used as refrigerants and aerosol propellants; destroy ozone layer by catalytic chain reaction releasing Cl atoms; now replaced by HFCs under Montreal Protocol"
- ]
- },
- {
- "subTitle": " \"Air Pollution\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Air Pollution\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Water Treatment and Quality",
- "body": "Access to clean water is a fundamental human need. Natural water sources contain dissolved mineral ions, bacteria, sediment and organic matter that must be removed before the water is safe to drink. Industrial processes also require pure water. The treatment steps depend on the source and the required purity. ",
- "groups": [
- {
- "subTitle": "Drinking Water Treatment",
- "bullets": [
- "**Screening**: large debris removed by mesh screens",
- "**Sedimentation**: water allowed to stand; large particles settle; flocculation agents (aluminium sulfate) cause small particles to clump",
- "**Filtration**: water passed through sand/gravel filters to remove remaining solid particles and some bacteria",
- "**Chlorination**: small amount of chlorine added (Cl₂ or ClO₂) to kill remaining bacteria and viruses; concentration carefully controlled to avoid trihalomethane formation",
- "**pH adjustment**: lime added if water is too acidic (protects pipes)"
- ]
- },
- {
- "subTitle": "Water Hardness",
- "bullets": [
- "Hard water contains dissolved Ca²⁺ and Mg²⁺ ions (from dissolving limestone/dolomite)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Temporary hardness**: caused by dissolved Ca(HCO₃)₂; removed by boiling → CaCO₃ precipitates (forms scale/fur in kettles)",
- "**Permanent hardness**: caused by CaSO₄ or MgSO₄; not removed by boiling",
- "**Both types removed by**: ion exchange resin (exchanges Ca²⁺/Mg²⁺ for Na⁺/H⁺); adding sodium carbonate (Ca²⁺ + CO₃²⁻ → CaCO₃ precipitate); distillation"
- ]
- },
- {
- "subTitle": " \"Water Treatment and Quality\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Water Treatment and Quality\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 10 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 10: \"Chemistry of the Environment\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 11,
- "title": "Organic Chemistry",
- "intro": " **What is this topic all about?** Organic chemistry is the study of carbon compounds, of which there are millions — far more than all inorganic compounds combined. This diversity arises from carbon's unique ability to form four covalent bonds, chain and ring structures, and to bond with hydrogen, oxygen, nitrogen and halogens in an enormous variety of ways. The systematic naming of organic compounds and understanding reactions of the major homologous series are the core skills of this chapter.",
- "subheadings": [
- {
- "title": "Alkanes",
- "body": "Alkanes are saturated hydrocarbons — they contain only carbon-carbon single bonds and carbon-hydrogen bonds. They form a homologous series with general formula CₙH₂ₙ₊₂. As the number of carbon atoms increases, the boiling point increases due to stronger intermolecular forces. Alkanes are the main components of natural gas and petroleum. ",
- "groups": [
- {
- "subTitle": "First Four Alkanes",
- "bullets": [
- "**Methane (CH₄)**: gas; main component of natural gas",
- "**Ethane (C₂H₆)**: gas",
- "**Propane (C₃H₈)**: gas; bottled as LPG (liquefied petroleum gas) for camping stoves",
- "**Butane (C₄H₁₀)**: gas at r.t.p.; used in cigarette lighters"
- ]
- },
- {
- "subTitle": "Reactions",
- "bullets": [
- "**Combustion (complete)**: CₙH₂ₙ₊₂ + excess O₂ → CO₂ + H₂O; releases large amounts of energy (used as fuels)",
- "**Combustion (incomplete)**: insufficient O₂ → CO and/or C (soot) produced; dangerous",
- "**Substitution with halogens (in UV light)**: H atoms replaced one at a time by halogen atoms; e.g. CH₄ + Cl₂ → CH₃Cl + HCl (chloromethane)",
- "Alkanes are relatively unreactive toward aqueous reagents because C−C and C−H bonds are strong and non-polar\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Alkanes\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Alkanes\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Alkenes",
- "body": "Alkenes are unsaturated hydrocarbons — they contain at least one carbon-carbon double bond (C=C). The general formula is CₙH₂ₙ. The C=C double bond makes alkenes much more reactive than alkanes, particularly in addition reactions where the double bond opens to allow two new groups to attach. ",
- "groups": [
- {
- "subTitle": "Test for Unsaturation",
- "bullets": [
- "Add bromine water (orange-brown): alkenes **decolourise** bromine water → colourless; alkanes do NOT\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "The test is specific to the C=C double bond (addition of Br₂ across the double bond)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Addition Reactions",
- "bullets": [
- "**Hydrogenation**: (H₂, Ni catalyst, 150°C): C=C + H₂ → C−C (alkene → alkane); used in food industry to harden vegetable oils (margarine production)",
- "**Addition of water (hydration)**: C=C + H₂O (steam, H₃PO₄ catalyst, 300°C, 60 atm) → alcohol; industrial production of ethanol from ethene",
- "**Addition of hydrogen halide**: C=C + HBr → C(Br)−C (haloalkane)",
- "**Addition of bromine**: C=C + Br₂ → C(Br)−C(Br) (dibromoalkane); decolourises bromine water"
- ]
- },
- {
- "subTitle": "Addition Polymerisation",
- "bullets": [
- "Many alkene monomers join together under high pressure and temperature with catalyst → long-chain polymer\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Poly(ethene)**: ethene monomers → flexible plastic bags, film, bottles",
- "**Poly(propene)**: propene monomers → rope, crates, car bumpers",
- "**Poly(chloroethene) (PVC)**: chloroethene monomers → pipes, window frames, electrical insulation",
- "The repeating unit of the polymer has the same composition as the monomer but with double bond opened\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Addition polymers are non-biodegradable → significant environmental pollution problem\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Alkenes\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Alkenes\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Alcohols",
- "body": "Alcohols contain the hydroxyl functional group (−OH) attached to a carbon atom. They form a homologous series with general formula CₙH₂ₙ₊₁OH. Ethanol is the most economically important alcohol — it is the alcohol in beverages, a solvent and increasingly important as a fuel. ",
- "groups": [
- {
- "subTitle": "Production of Ethanol",
- "bullets": [
- "**Fermentation**: (batch process): glucose + yeast (zymase enzyme) → ethanol + CO₂; conditions: 25-35°C, anaerobic, pH ~5; yeast dies above ~14% ethanol; ethanol separated by fractional distillation",
- "**Hydration of ethene**: (continuous process): C₂H₄ + H₂O(g) → C₂H₅OH; catalyst H₃PO₄, 300°C, 60 atm; produces very pure ethanol but uses non-renewable petroleum feedstock"
- ]
- },
- {
- "subTitle": "Reactions of Alcohols",
- "bullets": [
- "**Combustion**: C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O + energy (clean fuel for vehicles)",
- "**Oxidation to carboxylic acid**: ethanol + oxygen (or oxidising agent K₂Cr₂O₇) → ethanoic acid + water; wine → vinegar if exposed to air",
- "**Dehydration to alkene**: C₂H₅OH → C₂H₄ + H₂O (Al₂O₃ catalyst, 300°C) — reverse of hydration"
- ]
- },
- {
- "subTitle": " \"Alcohols\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Alcohols\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Carboxylic Acids and Esters",
- "body": "Carboxylic acids contain the carboxyl group (−COOH). They are weak acids — only partially dissociating in water. Esters are formed when a carboxylic acid reacts with an alcohol. Esters have characteristic fruity smells and are used as food flavourings and perfumes. ",
- "groups": [
- {
- "bullets": [
- "**Ethanoic acid (CH₃COOH)**: simplest carboxylic acid; 'weak acid' → only partially ionised; found in vinegar",
- "**Reactions of carboxylic acids**: with Na → salt + H₂; with NaOH → salt + water; with Na₂CO₃ → salt + H₂O + CO₂; with alcohols → ester + water (esterification)",
- "**Esterification**: carboxylic acid + alcohol ⇌ ester + water; concentrated H₂SO₄ catalyst; reversible — low yield without removing products",
- "Example: CH₃COOH + C₂H₅OH ⇌ CH₃COOC₂H₅ + H₂O (ethyl ethanoate — smell of pear drops)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Hydrolysis**: (reverse of esterification): ester + water → acid + alcohol (with acid or alkali catalyst)",
- "**Polyesters**: formed from dicarboxylic acids and diols; Terylene/Dacron used in textiles; PET used in bottles"
- ]
- },
- {
- "subTitle": " \"Carboxylic Acids and Esters\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Carboxylic Acids and Esters\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 11 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 11: \"Organic Chemistry\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 12,
- "title": "Experimental Techniques and Chemical Analysis",
- "intro": " **What is this topic all about?** Chemistry is fundamentally an experimental science. This final chapter brings together the practical techniques used throughout the course — separation methods, tests for ions and gases, and quantitative analysis by titration. Being able to select the appropriate technique for a given separation, explain why each step is done, and carry out calculations from experimental data are essential skills for both the written papers and practical examinations.",
- "subheadings": [
- {
- "title": "Separation Techniques",
- "body": "Mixtures must be separated to obtain pure substances or to analyse their composition. The choice of technique depends on the nature of the components — their physical state, solubility, boiling point and particle size. Each technique exploits a difference in one physical property to achieve separation. ",
- "groups": [
- {
- "subTitle": "Filtration",
- "bullets": [
- "**Purpose**: separates an insoluble solid from a liquid (or solution)",
- "**Apparatus**: filter paper in a filter funnel, conical flask",
- "**Residue**: solid collected on filter paper",
- "**Filtrate**: liquid that passes through",
- "**Example**: separating excess copper oxide from copper sulfate solution after reaction with sulfuric acid"
- ]
- },
- {
- "subTitle": "Crystallisation",
- "bullets": [
- "**Purpose**: obtains a pure solid from a solution",
- "**Steps**: evaporate solution gently until just saturated (hot, concentrated solution); allow to cool slowly → crystals form as solubility decreases; filter off crystals; dry in oven or desiccator",
- "Slow cooling gives large, pure crystals; rapid cooling gives small, impure crystals\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "**Example**: obtaining copper sulfate crystals from CuSO₄ solution"
- ]
- },
- {
- "subTitle": "Simple Distillation",
- "bullets": [
- "**Purpose**: separates a liquid from a dissolved solid, or separates two liquids with very different boiling points",
- "**Principle**: liquid heated → vaporises → vapour passes through condenser → cooled → liquid collected",
- "**Example**: obtaining pure water from salt water; collecting ethanol from fermentation mixture"
- ]
- },
- {
- "subTitle": "Fractional Distillation",
- "bullets": [
- "**Purpose**: separates a mixture of liquids with similar but different boiling points",
- "**Principle**: fractionating column allows repeated vaporisation and condensation; components with lower boiling points rise higher in column and are collected first",
- "**Examples**: separating ethanol/water mixture (boiling points 78°C and 100°C); industrial separation of crude oil into fractions (petrol, kerosene, diesel, lubricating oil, bitumen)\n\n![Industrial Fractional Distillation of Petroleum](/diagrams/fractional-distillation.svg)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Paper Chromatography",
- "bullets": [
- "**Purpose**: separates and identifies components of a mixture of soluble coloured (or colourless) substances",
- "**Principle**: components dissolve in mobile phase (solvent) and travel up the stationary phase (paper) at different rates depending on their solubility and adsorption",
- "**Rf value**: = distance moved by spot ÷ distance moved by solvent; fixed for each substance in a given solvent",
- "**Identifying substances**: compare Rf values with known standards run on the same chromatogram",
- "**Visualising colourless spots**: spray with ninhydrin (amino acids) or hold in iodine vapour"
- ]
- },
- {
- "subTitle": " \"Separation Techniques\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Separation Techniques\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Tests for Gases",
- "body": "Identifying unknown gases is a key practical skill. Each gas has a characteristic test that must be memorised and applied correctly. The test, observation and conclusion should all be clearly stated in exam answers. ",
- "groups": [
- {
- "bullets": [
- "**Hydrogen (H₂)**: hold lit splint to the gas → 'squeaky pop' as H₂ burns explosively with O₂",
- "**Oxygen (O₂)**: place a glowing splint in the gas → splint relights",
- "**Carbon dioxide (CO₂)**: bubble through limewater (Ca(OH)₂ solution) → turns milky/cloudy white (CaCO₃ precipitate forms)",
- "**Ammonia (NH₃)**: hold damp red litmus paper → turns blue; pungent smell; produces white smoke with HCl fumes",
- "**Chlorine (Cl₂)**: bleaches damp litmus paper (first turns red — acidic, then bleaches white); pale yellow-green colour; toxic smell",
- "**Sulfur dioxide (SO₂)**: turns damp potassium dichromate(VI) paper from orange to green; acidic; bleaches damp litmus paper; pungent smell"
- ]
- },
- {
- "subTitle": " \"Tests for Gases\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Tests for Gases\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Tests for Ions in Solution",
- "body": "Analytical chemistry often requires identifying the ions present in an unknown solution. Each cation and anion has characteristic reactions with specific reagents that produce identifiable observations (colour changes, precipitates, gas evolution). Being systematic — testing for cations first, then anions — gives reliable results. ",
- "groups": [
- {
- "subTitle": "Tests for Cations",
- "bullets": [
- "**Flame tests**: Li⁺ → crimson; Na⁺ → yellow; K⁺ → lilac; Ca²⁺ → brick red; Ba²⁺ → green; Cu²⁺ → blue-green",
- "**Adding NaOH (sodium hydroxide) solution**: Cu²⁺ → pale blue precipitate (copper hydroxide); Fe²⁺ → green gelatinous precipitate; Fe³⁺ → orange-brown precipitate; Al³⁺ → white precipitate that redissolves in excess NaOH; Zn²⁺ → white precipitate that redissolves in excess NaOH; NH₄⁺ → on warming, ammonia gas evolved (turns damp red litmus blue)"
- ]
- },
- {
- "subTitle": "Tests for Anions",
- "bullets": [
- "**Carbonate (CO₃²⁻)**: add dilute acid → effervescence; CO₂ turns limewater milky",
- "**Sulfate (SO₄²⁻)**: add dilute hydrochloric acid then barium chloride → white precipitate of BaSO₄ (insoluble in excess acid)",
- "**Halides**: add dilute nitric acid then silver nitrate solution → Cl⁻: white AgCl precipitate (soluble in dilute NH₃); Br⁻: cream AgBr precipitate (soluble only in concentrated NH₃); I⁻: yellow AgI precipitate (insoluble in NH₃)",
- "**Nitrate (NO₃⁻)**: add aluminium foil and dilute NaOH; warm → ammonia gas evolved (confirm with damp red litmus)"
- ]
- },
- {
- "subTitle": " \"Tests for Ions in Solution\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Tests for Ions in Solution\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Acid-Base Titrations",
- "body": "A titration is a technique for finding the exact volume of one solution needed to completely react with a measured volume of another solution. Used to find unknown concentrations, determine purity of samples, or identify the stoichiometry of a reaction. Accuracy and precision are paramount — results should be reproducible to within 0.1 cm³. ",
- "groups": [
- {
- "subTitle": "Procedure",
- "bullets": [
- "1. Pipette a known volume of one solution (e.g. 25.0 cm³ of NaOH) into a conical flask\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "2. Add a few drops of indicator (phenolphthalein for strong base, methyl orange for strong acid)\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "3. Fill burette with the other solution (e.g. HCl); record initial burette reading\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "4. Run solution from burette into flask, swirling constantly; slow to drop by drop near end-point\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "5. Stop at end-point (indicator colour change); record final burette reading\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "6. Calculate titre = final − initial reading\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "7. Repeat until concordant results (within 0.10 cm³ of each other); average the concordant values\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": "Calculation Example",
- "bullets": [
- "25.0 cm³ of NaOH neutralised by 20.0 cm³ of 0.100 mol/dm³ HCl\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Moles HCl = 0.100 × (20.0/1000) = 0.00200 mol\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Equation: NaOH + HCl → NaCl + H₂O; ratio 1:1\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Moles NaOH = 0.00200 mol\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests.",
- "Concentration NaOH = 0.00200 / (25.0/1000) = 0.0800 mol/dm³\n • *Key takeaway*: Remember this step-by-step: first identify the rule, then apply it to the example.\n • *Memory tip*: Connect this to a real-life situation you already know so it's super easy to recall in tests."
- ]
- },
- {
- "subTitle": " \"Acid-Base Titrations\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Acid-Base Titrations\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 12 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 12: \"Experimental Techniques and Chemical Analysis\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- }
- ]
+  id: "chemistry",
+  name: "Chemistry",
+  code: "0620",
+  color: "bg-blue-500",
+  chapters: [
+    {
+      number: 1,
+      title: "The Particulate Nature of Matter",
+      intro: "All matter is made of particles — atoms, molecules, or ions — that are in constant motion. The three states of matter (solid, liquid, gas) differ in the arrangement, spacing, and movement of these particles. Changes of state involve energy changes but no change in the chemical nature of the substance. Understanding particle theory allows chemists to explain physical properties such as density, compressibility, and the ability to diffuse.",
+      subheadings: [
+        {
+          title: "Kinetic Particle Theory and States of Matter",
+          body: "In a solid, particles are arranged in a regular lattice and vibrate about fixed positions. They are closely packed, so solids have high density, fixed shape, and fixed volume. They cannot be compressed because the particles are already touching. In a liquid, particles are still close together but have enough energy to move past each other. Liquids have a fixed volume but flow to take the shape of their container. In a gas, particles are far apart, move rapidly in random directions, and have almost no interactions between them. Gases have no fixed shape or volume, low density, and are highly compressible. As energy (heat) is supplied to a substance, particles move faster. At the melting point of a solid, the energy supplied breaks the forces holding particles in fixed positions without increasing the temperature — this energy is the latent heat of fusion. Similarly, at the boiling point, energy breaks the remaining attractive forces between liquid particles, converting them to gas — this is the latent heat of vaporisation. During melting and boiling, temperature remains constant even though energy is being absorbed, because the energy is used to overcome intermolecular forces rather than to increase kinetic energy.",
+          groups: [
+            {
+              subTitle: "Properties of the three states",
+              bullets: [
+                "**Solid**: Particles in fixed positions, vibrate only. Definite shape and volume. Cannot be compressed. High density. Does not flow. Particles held by strong forces of attraction.",
+                "**Liquid**: Particles move randomly but remain close together. Definite volume, no definite shape (takes shape of container). Cannot be compressed significantly. Slightly lower density than corresponding solid (except water). Can flow.",
+                "**Gas**: Particles widely spaced, move rapidly and randomly, negligible forces between them. No definite shape or volume (fills its container). Highly compressible. Very low density. Diffuses rapidly."
+              ]
+            }
+          ],
+          recap: [
+            "Describe the arrangement and movement of particles in a liquid. [2]",
+            "Explain why the temperature of a melting solid remains constant even though energy is being supplied. [3]",
+            "Explain why gases are much less dense than solids. [2]",
+            "Predict and explain what happens to the rate of diffusion of a gas when the temperature is increased. [3]"
+          ]
+        },
+        {
+          title: "Diffusion in Gases and Liquids",
+          body: "Diffusion is the net movement of particles from a region of high concentration to a region of low concentration due to random particle motion. In gases, diffusion is rapid because gas particles move quickly and the spaces between them are large. The rate of diffusion of a gas is inversely proportional to the square root of its relative molecular mass (Graham's Law) — lighter molecules diffuse faster. For example, hydrogen chloride (Mr = 36.5) and ammonia (Mr = 17) diffuse toward each other along a glass tube; ammonia molecules are lighter so they diffuse faster. Where they meet, they react to form a white ring of ammonium chloride. This ring forms closer to the HCl end, confirming ammonia diffused further. In liquids, diffusion is much slower because particles are closely spaced and movement is restricted by neighbouring particles. Diffusion of dissolved substances through water (such as ions in cells) is essential for cellular processes but is far slower than in gases. Both gas and liquid diffusion are temperature-dependent — higher temperatures increase kinetic energy, so diffusion is faster.",
+          groups: [
+            {
+              subTitle: "The ammonia and HCl diffusion experiment",
+              bullets: [
+                "**Setup**: Soak cotton wool plugs in concentrated hydrochloric acid and ammonia solution respectively. Place each plug in opposite ends of a sealed glass tube.",
+                "**What happens**: Ammonia gas (NH3) and hydrogen chloride gas (HCl) diffuse toward each other. Where they meet: NH3 + HCl → NH4Cl (white solid). A white ring of ammonium chloride forms.",
+                "**Result interpretation**: The white ring forms closer to the HCl end. This shows ammonia diffused faster and travelled further. Ammonia (Mr = 17) is lighter than HCl (Mr = 36.5), confirming lighter molecules diffuse faster.",
+                "**Quantitative prediction**: By Graham's Law, the ratio of distances is inversely proportional to the ratio of square roots of Mr values. Ammonia travels approximately 1.46 times as far as HCl."
+              ]
+            }
+          ],
+          recap: [
+            "Describe and explain what is observed when cotton wool soaked in HCl and cotton wool soaked in ammonia solution are placed at opposite ends of a sealed glass tube. [5]",
+            "Explain why gases diffuse faster than liquids at the same temperature. [2]",
+            "State one factor that increases the rate of diffusion and explain why. [2]",
+            "Predict whether nitrogen (Mr = 28) or oxygen (Mr = 32) will diffuse faster and explain your reasoning. [2]"
+          ]
+        }
+      ]
+    },
+    {
+      number: 2,
+      title: "Experimental Techniques and Chemical Analysis",
+      intro: "Practical chemistry requires accurate measurement, separation of mixtures, and identification of substances. The techniques in this chapter — filtration, evaporation, crystallisation, distillation, chromatography, and chemical tests — are used both in the laboratory and in industry. Understanding why each technique works requires knowledge of the physical and chemical properties of the substances being separated or identified. Accurate experimental technique directly affects the reliability and validity of results.",
+      subheadings: [
+        {
+          title: "Separation Techniques",
+          body: "Filtration separates an insoluble solid from a liquid. The mixture is poured through filter paper in a funnel; the paper has pores that allow liquid (filtrate) to pass through but retain solid particles (residue). Filtration works because of the difference in particle size. Evaporation removes solvent from a solution by heating; the solvent vapourises, leaving dissolved solute behind. It is used when the product is not damaged by heat — for example, evaporating salt solution to dryness leaves salt crystals. Crystallisation produces larger, purer crystals: the solution is heated to evaporate some solvent, then left to cool slowly. As it cools, solubility decreases and solute crystallises out in a regular lattice. Simple distillation separates a solvent from a solution (e.g. water from salt water) or two liquids with very different boiling points. The mixture is heated; the component with the lower boiling point boils off as vapour, is condensed in a cooled condenser, and collected as distillate. Fractional distillation separates mixtures of liquids with similar boiling points (such as crude oil fractions or ethanol and water) using a fractionating column that provides many condensation-evaporation steps. Paper chromatography separates mixtures of dissolved substances (such as dyes or amino acids) based on their differing solubilities in the mobile phase (solvent) and their different affinities for the stationary phase (paper). Components that are more soluble in the solvent travel further up the paper.",
+          groups: [
+            {
+              subTitle: "Chromatography and Rf values",
+              bullets: [
+                "**Rf value calculation**: Rf = distance travelled by substance / distance travelled by solvent front. Rf values are between 0 and 1 and are characteristic of a substance under specific conditions (solvent, temperature, paper type).",
+                "**Uses of chromatography**: Identifying dyes in food colouring, checking the purity of pharmaceutical products, identifying amino acids in protein hydrolysates (using ninhydrin spray to reveal colourless amino acids).",
+                "**Two-way chromatography**: Used when substances have similar Rf values in one solvent. The paper is turned 90° and run in a second, different solvent, separating substances that comigrate in the first solvent.",
+                "**Spotting technique**: The starting spot must be made with a pencil line (not pen — ink would run with the solvent). The spot must be small and concentrated. The solvent level must be below the starting line, otherwise the sample would dissolve into the solvent before running."
+              ]
+            }
+          ],
+          recap: [
+            "Describe how to obtain pure dry salt from a solution of salt in water. Include all steps. [4]",
+            "Explain how paper chromatography separates a mixture of dyes. [3]",
+            "A chromatogram shows a spot that travelled 4.5 cm when the solvent front travelled 7.5 cm. Calculate the Rf value and show your working. [2]",
+            "Explain why simple distillation cannot completely separate ethanol from water. [2]"
+          ]
+        },
+        {
+          title: "Identification of Ions and Gases",
+          body: "Chemical tests allow identification of specific ions and gases. For cations (positive ions): sodium ions produce a persistent yellow flame in a flame test; potassium ions give a lilac flame; calcium ions give a brick-red flame; copper ions give a blue-green flame. For anions (negative ions): chloride ions produce a white precipitate of silver chloride when silver nitrate solution is added (acidified with dilute HNO3, which prevents interference from carbonate and sulfate ions). Sulfate ions produce a white precipitate of barium sulfate when barium chloride solution is added (acidified with dilute HCl). Carbonate ions produce carbon dioxide when acid is added; CO2 turns limewater milky. Aqueous solutions of metal cations form characteristic precipitates with sodium hydroxide solution: copper(II) ions form a blue precipitate; iron(II) ions form a green precipitate; iron(III) ions form a brown/rust precipitate; these precipitates are the insoluble metal hydroxides. For gases: hydrogen burns with a squeaky pop with a lighted splint; oxygen relights a glowing splint; carbon dioxide turns limewater milky; chlorine bleaches damp litmus paper; ammonia turns damp red litmus paper blue and has a characteristic pungent smell.",
+          groups: [
+            {
+              subTitle: "Summary of key chemical tests",
+              bullets: [
+                "**Chloride ion**: Add dilute HNO3, then silver nitrate solution. White precipitate of AgCl forms. The precipitate is insoluble in dilute HNO3 (distinguishing from silver carbonate, which dissolves). AgCl also darkens on exposure to light.",
+                "**Sulfate ion**: Add dilute HCl (to dissolve any carbonate that would interfere), then barium chloride solution. White precipitate of BaSO4 forms. BaSO4 is extremely insoluble — even in strong acid.",
+                "**Carbonate ion**: Add dilute acid. Effervescence occurs (CO2 gas produced). Bubble the gas through limewater (calcium hydroxide solution) — it turns milky due to formation of calcium carbonate precipitate.",
+                "**Metal hydroxide precipitates with NaOH**: Cu2+ = blue; Fe2+ = green; Fe3+ = brown/rust-orange; Zn2+ = white (redissolves in excess NaOH to give colourless solution — amphoteric); Al3+ = white (also redissolves in excess NaOH)."
+              ]
+            }
+          ],
+          recap: [
+            "Describe how to test a solution to determine whether it contains sulfate ions. State the reagents, procedure, and result. [3]",
+            "State the observations when excess sodium hydroxide solution is added to a solution containing iron(III) ions. [2]",
+            "Describe the test for hydrogen gas and state the result. [2]",
+            "A student tests an unknown solution with silver nitrate and obtains a white precipitate. The student concludes chloride ions are present. Explain why the student must first add dilute nitric acid before adding silver nitrate. [2]"
+          ]
+        }
+      ]
+    },
+    {
+      number: 3,
+      title: "Atoms, Elements and Compounds",
+      intro: "An atom is the smallest particle of an element that can take part in chemical reactions. Atoms are composed of a nucleus containing protons and neutrons, surrounded by electrons in shells. The atomic number (proton number) determines the identity of the element; the mass number tells us the total number of protons and neutrons. Elements in the same group of the Periodic Table have the same number of electrons in their outer shell, which determines their chemical properties. Understanding electron configuration enables prediction of how atoms bond and react.",
+      subheadings: [
+        {
+          title: "Atomic Structure",
+          body: "An atom consists of a very small, dense, positively charged nucleus surrounded by negatively charged electrons in energy levels (shells). The nucleus contains protons (relative charge +1, relative mass 1) and neutrons (relative charge 0, relative mass 1). Electrons have relative charge -1 and negligible relative mass (1/1836 that of a proton). A neutral atom has equal numbers of protons and electrons. The atomic number (Z) is the number of protons in the nucleus — it identifies the element. The mass number (A) is the total number of protons plus neutrons. The number of neutrons = A - Z. Electrons are arranged in shells: the first shell holds a maximum of 2 electrons; the second and third shells each hold a maximum of 8 electrons. For example, sodium (Z = 11) has configuration 2,8,1 — two electrons in the first shell, eight in the second, one in the outer shell. This outer shell electron is why sodium is in Group I and why it forms Na+ ions. Isotopes are atoms of the same element with the same number of protons but different numbers of neutrons (and therefore different mass numbers). For example, carbon-12 (6 protons, 6 neutrons) and carbon-14 (6 protons, 8 neutrons) are both isotopes of carbon. Isotopes have identical chemical properties because they have the same electron configuration; they differ in physical properties such as density and rate of diffusion.",
+          groups: [
+            {
+              subTitle: "Key sub-atomic particles",
+              bullets: [
+                "**Proton**: Relative mass = 1, relative charge = +1. Located in the nucleus. The number of protons (atomic number) defines which element the atom is.",
+                "**Neutron**: Relative mass = 1, relative charge = 0. Located in the nucleus. The number of neutrons varies between isotopes of the same element.",
+                "**Electron**: Relative mass ≈ 0 (negligible), relative charge = -1. Arranged in shells (energy levels) around the nucleus. The number of electrons in a neutral atom equals the number of protons.",
+                "**Electron shells**: 1st shell: max 2 electrons; 2nd shell: max 8; 3rd shell: max 8 (at IGCSE level). The arrangement of electrons in shells (electron configuration) determines chemical reactivity."
+              ]
+            }
+          ],
+          recap: [
+            "An atom of magnesium has atomic number 12 and mass number 24. State the number of protons, neutrons, and electrons in this atom. [3]",
+            "Explain what is meant by the term isotope and give one example. [3]",
+            "Write the electron configuration of a chlorine atom (atomic number 17). [1]",
+            "Explain why isotopes of the same element have identical chemical properties but different physical properties. [3]"
+          ]
+        },
+        {
+          title: "Ionic and Covalent Bonding",
+          body: "Ionic bonding involves the transfer of electrons from a metal atom to a non-metal atom. The metal loses electrons to form a positively charged cation; the non-metal gains electrons to form a negatively charged anion. Both ions achieve a full outer shell of electrons (the noble gas configuration). For example, sodium gives its one outer electron to chlorine: Na (2,8,1) → Na+ (2,8) + e- and Cl (2,8,7) + e- → Cl- (2,8,8). The oppositely charged ions are held together by strong electrostatic forces of attraction — ionic bonds. Ionic compounds form giant lattice structures with high melting and boiling points because many ionic bonds must be broken simultaneously. They conduct electricity when molten or dissolved in water (because ions become free to move) but not as solids (ions are fixed in the lattice). Covalent bonding involves the sharing of pairs of electrons between two non-metal atoms, with each atom contributing one electron to the shared pair. Both atoms achieve a stable full outer shell. For example, in water (H2O), each hydrogen atom shares its single electron with the oxygen atom's electrons; oxygen makes two single bonds. In a covalent bond, the shared electrons are attracted simultaneously to both nuclei, holding the atoms together. Simple molecular covalent compounds (H2, Cl2, H2O, CO2) have low melting and boiling points because the intermolecular forces between discrete molecules are weak (van der Waals forces); the strong covalent bonds within the molecule are not broken during melting.",
+          groups: [
+            {
+              subTitle: "Giant covalent structures vs simple molecular",
+              bullets: [
+                "**Simple molecular covalent compounds** (H2O, CO2, CH4): Very low melting points. Poor conductors of electricity. Intermolecular forces (not covalent bonds) break during melting. Often gases or liquids at room temperature.",
+                "**Giant covalent/atomic lattices** (diamond, graphite, silicon dioxide SiO2): Very high melting points because every atom is joined to many others by strong covalent bonds — an enormous number of bonds must be broken to melt the substance.",
+                "**Diamond**: Each carbon bonded to 4 others tetrahedrally. Extremely hard. No free electrons — does not conduct electricity. Very high melting point (~3550°C).",
+                "**Graphite**: Each carbon bonded to 3 others in flat hexagonal layers. One delocalised electron per carbon — conducts electricity. Layers held by weak forces — layers slide easily (good lubricant). High melting point."
+              ]
+            }
+          ],
+          recap: [
+            "Describe what happens when sodium reacts with chlorine to form sodium chloride. Include electron transfer and resulting charges. [4]",
+            "Explain why sodium chloride has a high melting point and conducts electricity when dissolved in water. [3]",
+            "Draw a dot-and-cross diagram to show the covalent bonds in a molecule of water. [2]",
+            "Explain why diamond and sodium chloride both have high melting points but for different reasons. [4]"
+          ]
+        }
+      ]
+    },
+    {
+      number: 4,
+      title: "Stoichiometry",
+      intro: "Stoichiometry is the quantitative study of the amounts of reactants and products in chemical reactions. The mole concept provides the bridge between the atomic scale (individual atoms and molecules) and the laboratory scale (grams that can be weighed). By balancing equations and using molar ratios, chemists can predict how much product will form from a given mass of reactant, calculate theoretical yields, and determine concentrations of solutions. These calculations are essential in industrial chemistry for minimising waste and cost.",
+      subheadings: [
+        {
+          title: "The Mole and Molar Mass",
+          body: "The mole (mol) is the SI unit for amount of substance. One mole of any substance contains 6.02 × 10^23 particles (Avogadro's number, NA). This number was chosen so that the mass of one mole of a substance in grams equals its relative atomic mass (Ar) or relative molecular mass (Mr). For example, one mole of carbon atoms (Ar = 12) has a mass of 12 g; one mole of water molecules (Mr = 18) has a mass of 18 g. The molar mass (M) is the mass in grams of one mole of a substance, expressed in g/mol. The relationship is: number of moles = mass (g) / molar mass (g/mol), or n = m/M. For example, to find the number of moles in 44 g of CO2 (Mr = 12 + 16 + 16 = 44): n = 44/44 = 1 mol. For gases at room temperature and pressure (rtp: 25°C, 101 kPa), one mole of any gas occupies approximately 24 dm3 (24,000 cm3) — the molar volume. Therefore, number of moles of gas = volume (dm3) / 24.",
+          groups: [
+            {
+              subTitle: "Mole calculations — step by step",
+              bullets: [
+                "**Finding moles from mass**: n = m / M. Example: moles of NaCl in 5.85 g: M(NaCl) = 23 + 35.5 = 58.5 g/mol; n = 5.85/58.5 = 0.1 mol.",
+                "**Finding mass from moles**: m = n × M. Example: mass of 0.25 mol of H2SO4: M = 2+32+64 = 98 g/mol; m = 0.25 × 98 = 24.5 g.",
+                "**Moles of gas from volume**: n = V(dm3) / 24. Example: moles in 6 dm3 of CO2 at rtp: n = 6/24 = 0.25 mol.",
+                "**Using balanced equations**: The ratio of moles in a balanced equation is the mole ratio of reactants and products. For 2H2 + O2 → 2H2O: 2 mol H2 reacts with 1 mol O2 to produce 2 mol H2O."
+              ]
+            }
+          ],
+          recap: [
+            "Calculate the number of moles in 10 g of calcium carbonate (CaCO3). Show your working. [2]",
+            "What volume (in dm3) does 0.5 mol of oxygen gas occupy at room temperature and pressure? [1]",
+            "Calculate the mass of sodium hydroxide (NaOH) needed to make 250 cm3 of a 2 mol/dm3 solution. [3]",
+            "In the reaction 2Mg + O2 → 2MgO, calculate the mass of magnesium oxide produced when 4.8 g of magnesium reacts completely. [3]"
+          ]
+        },
+        {
+          title: "Concentration and Titration Calculations",
+          body: "Concentration measures how much solute is dissolved per unit volume of solution, expressed in mol/dm3 (also written as M or mol/L). The relationship is: concentration (mol/dm3) = moles of solute / volume of solution (dm3). To convert cm3 to dm3, divide by 1000. In a titration, a solution of known concentration (standard solution) is used to find the concentration of an unknown solution. A typical acid-base titration: the burette is filled with one solution (e.g. NaOH), and a measured volume of the other (e.g. HCl) is pipetted into a conical flask with a few drops of indicator. The NaOH is added slowly from the burette until the indicator changes colour at the equivalence point (end point). The volume used is the titre. From the titre and concentration of the standard solution, moles are calculated; using the mole ratio from the balanced equation, moles of the unknown are found; then concentration = moles / volume. Concordant titres (repeatable results within 0.10 cm3) are averaged for accuracy.",
+          groups: [
+            {
+              subTitle: "Titration calculation example",
+              bullets: [
+                "**Example problem**: 25.0 cm3 of NaOH solution of unknown concentration requires 20.0 cm3 of 0.10 mol/dm3 HCl to reach the end point. The equation is: HCl + NaOH → NaCl + H2O.",
+                "**Step 1 — moles of HCl**: n(HCl) = c × V = 0.10 × (20.0/1000) = 0.0020 mol.",
+                "**Step 2 — moles of NaOH**: From the 1:1 mole ratio, n(NaOH) = 0.0020 mol.",
+                "**Step 3 — concentration of NaOH**: c(NaOH) = n/V = 0.0020 / (25.0/1000) = 0.080 mol/dm3."
+              ]
+            }
+          ],
+          recap: [
+            "Calculate the concentration of a solution made by dissolving 4.0 g of NaOH in 500 cm3 of water. [3]",
+            "In a titration, 25.0 cm3 of H2SO4 of unknown concentration reacts with 30.0 cm3 of 0.2 mol/dm3 NaOH. The equation is: H2SO4 + 2NaOH → Na2SO4 + 2H2O. Calculate the concentration of the H2SO4. [4]",
+            "Explain why it is important to obtain concordant titres in a titration experiment. [2]",
+            "Describe the technique for performing a burette reading accurately to minimise experimental error. [2]"
+          ]
+        }
+      ]
+    },
+    {
+      number: 5,
+      title: "Electricity and Chemistry",
+      intro: "Electrolysis is the decomposition of an ionic compound — either molten or in aqueous solution — by the passage of an electric current. It is used industrially to extract reactive metals (like aluminium and sodium) that cannot be obtained by reduction with carbon, to purify metals like copper, and to electroplate metal objects. Understanding electrolysis requires knowing how ions move in an electric field and which products form at each electrode based on the ions present and the relative discharge potentials.",
+      subheadings: [
+        {
+          title: "Principles of Electrolysis",
+          body: "An electrolyte is a substance that conducts electricity when molten or dissolved in water because its ions become mobile. When a direct current (dc) is passed through an electrolyte, cations (positive ions) migrate toward the cathode (negative electrode), where they gain electrons and are reduced to form neutral atoms or molecules. Anions (negative ions) migrate toward the anode (positive electrode), where they lose electrons and are oxidised to form neutral atoms or molecules. The cathode is always negative (connected to the negative terminal of the dc supply) and the anode is always positive (connected to the positive terminal). At the cathode: reduction occurs — cations gain electrons: Mⁿ⁺ + ne⁻ → M. At the anode: oxidation occurs — anions lose electrons: Xⁿ⁻ → X + ne⁻, or the anode metal dissolves if the anode is an impure metal (e.g. in copper purification). Memory aid: OILRIG — Oxidation Is Loss, Reduction Is Gain (of electrons); and the acronym ANOX/REDCAT — ANOde = OXidation; REDuction = CATHode.",
+          groups: [
+            {
+              subTitle: "Electrolysis of aqueous solutions — discharge order",
+              bullets: [
+                "**At the cathode**: The less reactive metal ion is preferentially discharged. In copper sulfate solution, Cu2+ is discharged in preference to H+ (from water) — copper metal deposits. In dilute HCl or H2SO4, H+ is discharged — hydrogen gas is produced.",
+                "**At the anode**: If the anode is an inert electrode (platinum or graphite), the anion that is discharged depends on concentration. Cl- is preferentially discharged over OH- (from water) in concentrated HCl — chlorine gas produced. In dilute HCl or sulfate solutions, OH- is discharged — oxygen gas produced.",
+                "**In NaCl(aq)**: Cathode: H2 gas (H+ discharged in preference to Na+, as Na is more reactive). Anode: Cl2 gas (Cl- discharged in concentrated solution, O2 if dilute). Products are used industrially to make NaOH, Cl2, and H2 (chlor-alkali process).",
+                "**In CuSO4(aq) with copper electrodes**: The copper anode dissolves (Cu → Cu2+ + 2e-) and copper deposits at the cathode. The overall concentration of CuSO4 stays roughly constant. This is the basis of copper refining — impure copper anode dissolves, pure copper deposits at cathode."
+              ]
+            }
+          ],
+          recap: [
+            "Define the term electrolyte and explain why solid ionic compounds do not conduct electricity but molten ionic compounds do. [3]",
+            "State what is produced at each electrode during the electrolysis of concentrated sodium chloride solution using inert electrodes. Write ionic half-equations for each electrode. [4]",
+            "Explain how electrolysis is used to purify copper. [4]",
+            "State the half-equation for the reaction at the cathode during the electrolysis of copper(II) sulfate solution. [2]"
+          ]
+        }
+      ]
+    },
+    {
+      number: 6,
+      title: "Chemical Energetics",
+      intro: "Every chemical reaction involves a change in energy. Exothermic reactions release energy (usually as heat) to the surroundings, causing the temperature of the surroundings to rise. Endothermic reactions absorb energy from the surroundings, causing the temperature to fall. The enthalpy change of a reaction (H) is the heat energy absorbed or released at constant pressure. Bond breaking requires energy (endothermic); bond forming releases energy (exothermic). The net enthalpy change is determined by the balance between these two processes. Understanding energy changes is central to industrial chemistry — choosing reactions that maximise energy efficiency while maintaining reasonable reaction rates.",
+      subheadings: [
+        {
+          title: "Exothermic and Endothermic Reactions",
+          body: "In an exothermic reaction, the products have less energy than the reactants; the difference is released to the surroundings as heat (and sometimes light). The enthalpy change (ΔH) is negative for exothermic reactions. Examples include: combustion of fuels, neutralisation (acid + alkali), oxidation reactions, and displacement of metals. In everyday experience, exothermic reactions make the reaction container feel warm. In an endothermic reaction, the products have more energy than the reactants; energy is absorbed from the surroundings, so the surroundings cool down. ΔH is positive for endothermic reactions. Examples include: thermal decomposition of calcium carbonate, dissolving ammonium nitrate in water, and photosynthesis. In everyday experience, endothermic reactions make the container feel cold — hand warmers use exothermic reactions; cold packs used for sports injuries use endothermic reactions. Energy profile diagrams (reaction coordinate diagrams) show the energy of reactants and products. The activation energy (Ea) is the minimum energy that colliding particles must possess for a reaction to occur — it is the energy barrier that must be overcome. Catalysts provide an alternative reaction pathway with a lower activation energy, increasing the rate without being consumed.",
+          groups: [
+            {
+              subTitle: "Bond energy calculations",
+              bullets: [
+                "**Principle**: Bond breaking requires energy (endothermic); bond making releases energy (exothermic). ΔH = energy required to break bonds in reactants - energy released when bonds form in products.",
+                "**Example**: H2 + Cl2 → 2HCl. Bond energies: H-H = 436 kJ/mol; Cl-Cl = 242 kJ/mol; H-Cl = 432 kJ/mol.",
+                "**Step 1 — bonds broken**: 1 × H-H (436) + 1 × Cl-Cl (242) = 678 kJ (energy in).",
+                "**Step 2 — bonds formed**: 2 × H-Cl (2 × 432) = 864 kJ (energy out). ΔH = 678 - 864 = -186 kJ/mol. Negative sign confirms the reaction is exothermic."
+              ]
+            }
+          ],
+          recap: [
+            "Explain the difference between an exothermic and an endothermic reaction in terms of energy change and temperature change. [3]",
+            "Using bond energies provided, calculate the enthalpy change for the reaction CH4 + 2O2 → CO2 + 2H2O. Bond energies (kJ/mol): C-H = 413, O=O = 498, C=O = 805, O-H = 464. [4]",
+            "Draw and label an energy profile diagram for an exothermic reaction, showing reactants, products, activation energy, and enthalpy change. [4]",
+            "Explain how a catalyst increases the rate of a reaction using the concept of activation energy. [3]"
+          ]
+        }
+      ]
+    },
+    {
+      number: 7,
+      title: "Chemical Reactions",
+      intro: "Chemical reactions can be classified by the type of change that occurs: redox (simultaneous oxidation and reduction), precipitation, neutralisation, and decomposition. Reaction rates depend on the frequency and energy of successful collisions between reactant particles, which can be increased by raising temperature, increasing concentration, increasing surface area, or using a catalyst. Understanding how to control reaction rates is fundamental to safe and efficient industrial chemistry.",
+      subheadings: [
+        {
+          title: "Rates of Reaction and Collision Theory",
+          body: "The rate of a chemical reaction is the change in concentration of a reactant or product per unit time. According to collision theory, for a reaction to occur, reactant particles must collide with sufficient energy (at least equal to the activation energy) and with the correct orientation. Any factor that increases the frequency of successful collisions will increase the rate. Increasing concentration (in solution) or pressure (for gases) places more particles in the same volume, so collisions are more frequent. Increasing temperature increases both the frequency of collisions and, more importantly, the proportion of particles with energy equal to or greater than the activation energy (described by the Maxwell-Boltzmann distribution) — a 10°C rise roughly doubles the rate for many reactions. Increasing surface area by grinding a solid into smaller pieces exposes more particles at the surface, so more collisions with the other reactant can occur. A catalyst provides an alternative reaction pathway with a lower activation energy, meaning a greater proportion of collisions are successful at the same temperature. The catalyst is not consumed in the reaction and does not change the products or the overall enthalpy change.",
+          groups: [
+            {
+              subTitle: "Investigating reaction rates — standard experiments",
+              bullets: [
+                "**Marble chips and HCl (measuring CO2 production)**: CaCO3(s) + 2HCl(aq) → CaCl2(aq) + H2O(l) + CO2(g). Measure the volume of CO2 collected over time. Compare rates at different temperatures, concentrations, or particle sizes by measuring the initial slope of the volume-vs-time graph.",
+                "**Sodium thiosulfate and HCl (disappearing cross)**: Na2S2O3(aq) + 2HCl(aq) → 2NaCl(aq) + H2O(l) + SO2(g) + S(s). Yellow sulfur precipitate forms, making the solution go cloudy. Measure the time for a cross drawn under the flask to disappear. Rate ∝ 1/time.",
+                "**Effect of a catalyst**: Hydrogen peroxide decomposes slowly: 2H2O2 → 2H2O + O2. Adding manganese(IV) oxide (MnO2) as a catalyst dramatically increases the rate — oxygen is given off rapidly. The MnO2 can be recovered unchanged at the end, confirming it is a catalyst.",
+                "**Graphing rates**: The steeper the initial slope of a mass-lost or gas-produced graph, the faster the rate. When one reactant is used up completely (the limiting reagent), the graph becomes horizontal — no more product forms."
+              ]
+            }
+          ],
+          recap: [
+            "Explain using collision theory why increasing temperature increases the rate of a reaction. [3]",
+            "Describe an experiment to investigate the effect of concentration on the rate of reaction between sodium thiosulfate and hydrochloric acid. Include measurements taken and how rate is determined. [5]",
+            "Explain why a catalyst increases the rate of a reaction without being consumed. [3]",
+            "Explain why marble chips react faster with hydrochloric acid when powdered compared to large lumps, even if the same mass is used. [2]"
+          ]
+        },
+        {
+          title: "Redox Reactions",
+          body: "Oxidation and reduction always occur simultaneously — when one substance is oxidised, another is reduced. In terms of electron transfer: oxidation is the loss of electrons and reduction is the gain of electrons (remembered by OILRIG). In terms of oxygen: oxidation is the gain of oxygen; reduction is the loss of oxygen. In terms of oxidation state: oxidation is an increase in oxidation state; reduction is a decrease. An oxidising agent causes oxidation of another substance and is itself reduced (gains electrons). A reducing agent causes reduction of another substance and is itself oxidised (loses electrons). Displacement reactions are redox reactions: a more reactive metal displaces a less reactive metal ion from solution because the more reactive metal is a stronger reducing agent. For example, zinc displaces copper from copper sulfate solution: Zn(s) + CuSO4(aq) → ZnSO4(aq) + Cu(s). Zinc is oxidised (Zn → Zn2+ + 2e-) and copper ions are reduced (Cu2+ + 2e- → Cu). The reactivity series ranks metals by their tendency to lose electrons (be oxidised): potassium, sodium, calcium, magnesium, aluminium, zinc, iron, tin, lead, copper, silver, gold.",
+          groups: [
+            {
+              subTitle: "Oxidation state rules",
+              bullets: [
+                "**Rule 1**: Uncombined elements have oxidation state 0. e.g., O2, Mg, Fe all have oxidation state 0.",
+                "**Rule 2**: Ions of single atoms have oxidation state equal to their charge. Na+ = +1; Cl- = -1; Fe3+ = +3.",
+                "**Rule 3**: Oxygen usually has oxidation state -2 (except in peroxides where it is -1). Hydrogen is usually +1 (except in metal hydrides, where it is -1).",
+                "**Rule 4**: The sum of oxidation states in a neutral compound = 0. In H2SO4: 2(+1) + S + 4(-2) = 0; S = +6. In a polyatomic ion, the sum equals the charge on the ion."
+              ]
+            }
+          ],
+          recap: [
+            "Define oxidation and reduction in terms of electron transfer. [2]",
+            "In the reaction Mg + 2HCl → MgCl2 + H2, identify which species is oxidised and which is reduced. Give the oxidation state changes. [4]",
+            "Explain why displacement reactions are classified as redox reactions. Use the example of iron reacting with copper sulfate solution. [4]",
+            "Determine the oxidation state of manganese in KMnO4. Show your working. [2]"
+          ]
+        }
+      ]
+    },
+    {
+      number: 8,
+      title: "Acids, Bases and Salts",
+      intro: "Acids, bases, and salts are three of the most important classes of compounds in chemistry. Acids release hydrogen ions (H+) in aqueous solution and have pH below 7. Bases are metal oxides and hydroxides that neutralise acids. Alkalis are soluble bases that release hydroxide ions (OH-) in aqueous solution. Neutralisation — the reaction of an acid with a base to form a salt and water — is one of the most important reaction types in chemistry, with applications from treating acid indigestion to industrial manufacturing of fertilisers.",
+      subheadings: [
+        {
+          title: "Properties of Acids, Bases and the pH Scale",
+          body: "An acid is a proton (H+) donor; in water, acids ionise to release H+ ions. Strong acids (hydrochloric, sulfuric, nitric) are fully ionised in aqueous solution, giving a high concentration of H+ ions and very low pH. Weak acids (ethanoic, carbonic) are only partially ionised, giving fewer H+ ions and a higher pH for the same concentration. The pH scale runs from 0 to 14: values below 7 are acidic; pH 7 is neutral; values above 7 are alkaline. Each unit change in pH represents a tenfold change in H+ ion concentration (because pH is a logarithmic scale). A base is a proton acceptor — a substance that reacts with H+ ions. Metal oxides (CuO, MgO), metal hydroxides (NaOH, Ca(OH)2), and carbonates (CaCO3) are all bases. An alkali is a base that dissolves in water to form OH- ions — sodium hydroxide, potassium hydroxide, calcium hydroxide, and aqueous ammonia are common alkalis. The pH of a solution can be measured using universal indicator (gives a range of colours), a pH probe/meter (gives a precise numerical value), or individual indicators such as litmus (red in acid, blue in alkali) or phenolphthalein (colourless in acid, pink in alkali).",
+          groups: [
+            {
+              subTitle: "Reactions of acids — summary",
+              bullets: [
+                "**Acid + Metal**: acid + metal → salt + hydrogen. Example: 2HCl + Mg → MgCl2 + H2. The hydrogen gas produced burns with a squeaky pop. Not all metals react — noble metals (Cu, Ag, Au) do not react with dilute acids.",
+                "**Acid + Metal oxide (base)**: acid + metal oxide → salt + water. Example: H2SO4 + CuO → CuSO4 + H2O. This is a neutralisation reaction. The black copper oxide dissolves as the blue copper sulfate solution forms.",
+                "**Acid + Metal hydroxide (alkali)**: acid + alkali → salt + water. Example: HCl + NaOH → NaCl + H2O. The ionic equation for all strong acid-strong alkali neutralisations is: H+ + OH- → H2O.",
+                "**Acid + Carbonate**: acid + carbonate → salt + water + carbon dioxide. Example: 2HCl + CaCO3 → CaCl2 + H2O + CO2. The CO2 causes effervescence; it turns limewater milky — used as a test for carbonate ions."
+              ]
+            }
+          ],
+          recap: [
+            "Describe the reactions of dilute sulfuric acid with magnesium oxide and with magnesium carbonate. Write word equations for each reaction. [4]",
+            "Explain the difference between a strong acid and a weak acid. [2]",
+            "Explain why the pH of a solution of hydrochloric acid is lower than that of the same concentration of ethanoic acid. [3]",
+            "Write the ionic equation for the neutralisation of a strong acid by a strong alkali. [2]"
+          ]
+        },
+        {
+          title: "Preparation of Salts",
+          body: "Salts can be prepared by several methods depending on whether they are soluble or insoluble and whether the metal is reactive. Method 1 — Titration (for soluble salts from an alkali and acid): the acid and alkali are titrated to find the exact volumes needed for complete neutralisation (using indicator), then the same volumes are mixed without indicator and the solution is evaporated to crystallise the pure salt. Method 2 — Excess solid method (for soluble salts from an insoluble base/carbonate): excess base or carbonate (e.g. copper oxide or zinc carbonate) is added to a warm acid until no more dissolves (ensuring all the acid is used up), the excess solid is filtered off, and the filtrate is evaporated to crystallise the salt. The excess solid must be used to ensure all acid is consumed — if any acid remained, the salt would be contaminated. Method 3 — Precipitation (for insoluble salts): mix two soluble salt solutions whose ions combine to form the insoluble salt. For example, lead(II) iodide is made by mixing lead(II) nitrate solution with potassium iodide solution: Pb(NO3)2(aq) + 2KI(aq) → PbI2(s) + 2KNO3(aq). The precipitate is filtered, washed with distilled water to remove soluble impurities, and dried.",
+          groups: [
+            {
+              subTitle: "Naming salts from acids",
+              bullets: [
+                "**Hydrochloric acid** → chloride salts. HCl + NaOH → NaCl (sodium chloride). HCl + CuO → CuCl2 (copper(II) chloride).",
+                "**Sulfuric acid** → sulfate salts. H2SO4 + Mg → MgSO4 (magnesium sulfate). H2SO4 + 2NaOH → Na2SO4 (sodium sulfate).",
+                "**Nitric acid** → nitrate salts. HNO3 + KOH → KNO3 (potassium nitrate). Note: most nitrates are soluble.",
+                "**Solubility rules**: All nitrates soluble; all sodium, potassium, ammonium salts soluble; all chlorides soluble except AgCl and PbCl2; all sulfates soluble except BaSO4, PbSO4, and CaSO4; most carbonates insoluble except Na2CO3, K2CO3, (NH4)2CO3."
+              ]
+            }
+          ],
+          recap: [
+            "Describe how you would prepare pure dry crystals of copper(II) sulfate starting from copper(II) oxide and dilute sulfuric acid. [5]",
+            "Write the ionic equation for the precipitation of barium sulfate when barium chloride solution is added to sodium sulfate solution. [2]",
+            "Explain why an excess of copper oxide is added when making copper sulfate crystals from the oxide and acid. [2]",
+            "Name the salt produced when nitric acid reacts with calcium hydroxide and write a balanced equation. [2]"
+          ]
+        }
+      ]
+    }
+  ]
 };

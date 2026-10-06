@@ -7,6 +7,7 @@ export type SubHeading = {
   title: string;
   body: string;
   groups: BulletGroup[];
+  recap?: string[]; // Cambridge-style exam questions for this section
 };
 
 export type Chapter = {
