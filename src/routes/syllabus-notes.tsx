@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+﻿import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
 import {
   BookOpen,
@@ -12,12 +12,8 @@ import {
   SkipBack,
   SkipForward,
   X,
-  CheckCircle2,
-  Clock,
-  Target,
   HelpCircle,
   Trophy,
-  Layers,
   ChevronDown,
 } from "lucide-react";
 import { DashboardLayout } from "@/components/dashboard-page";
@@ -435,197 +431,136 @@ function ChapterDoc({
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-background overflow-hidden">
-      {/* Top Header — compact, no Yumna button */}
-      <div className="shrink-0 border-b border-border/80 bg-background backdrop-blur-md px-3 sm:px-6 py-2">
-        <div className="flex items-center justify-between gap-3 max-w-5xl mx-auto">
-          {/* Back Button */}
-          <button
-            onClick={() => {
-              if (backFiredRef.current) return;
-              backFiredRef.current = true;
-              handleStop();
-              onBack();
-            }}
-            className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors shrink-0"
-          >
-            <ArrowLeft className="size-4" />
-            <span className="hidden sm:inline">Back to chapters</span>
-            <span className="sm:hidden">Back</span>
-          </button>
+      {/* ── Compact top bar ── */}
+      <div className="shrink-0 border-b border-border/60 bg-background px-4 sm:px-8 py-2.5 flex items-center justify-between gap-4">
+        <button
+          onClick={() => {
+            if (backFiredRef.current) return;
+            backFiredRef.current = true;
+            handleStop();
+            onBack();
+          }}
+          className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors shrink-0"
+        >
+          <ArrowLeft className="size-4" />
+          <span>Back</span>
+        </button>
 
-          {/* Center: chapter title + mastery */}
-          <div className="flex items-center gap-2 min-w-0 flex-1 justify-center">
-            <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/50 border border-border/60 text-[11px]">
-              <Target className="size-3 text-primary shrink-0" />
-              <span className="font-semibold text-foreground">
-                {masteredCount}/{totalSections}
-              </span>
-              <span className="text-muted-foreground hidden sm:inline">mastered</span>
-            </div>
-            <div className="hidden sm:flex items-center gap-1 text-[11px] text-muted-foreground">
-              <Clock className="size-3" />
-              <span>~{Math.max(4, totalSections * 2)}m</span>
-            </div>
-          </div>
+        <p className="text-xs font-semibold text-muted-foreground truncate text-center flex-1 px-2">
+          Ch.{chapter.number} · {chapter.title}
+        </p>
 
-          {/* Right: chapter number badge */}
-          <div className={`size-7 shrink-0 rounded-lg ${color} flex items-center justify-center text-xs font-black text-white`}>
-            {chapter.number}
-          </div>
-        </div>
-
-        {/* Mastery Progress Bar */}
-        <div className="mt-1.5 h-1 w-full bg-muted/40 rounded-full overflow-hidden max-w-5xl mx-auto">
-          <div
-            className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-500 rounded-full"
-            style={{ width: `${masteryPercentage}%` }}
-          />
-        </div>
+        <button
+          type="button"
+          onClick={handleStartLecture}
+          className={`shrink-0 flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold transition-all ${
+            isVoiceLoading ? "bg-primary/15 text-primary cursor-wait"
+            : isPlaying ? "bg-primary text-primary-foreground"
+            : isPaused ? "bg-amber-500/15 text-amber-600"
+            : "bg-muted text-foreground hover:bg-muted/80"
+          }`}
+        >
+          {isVoiceLoading ? <Loader2 className="size-3.5 animate-spin" /> : isPlaying ? <Pause className="size-3.5 fill-current" /> : <Volume2 className="size-3.5" />}
+          <span className="hidden sm:inline">{isPlaying ? "Pause" : isPaused ? "Resume" : "Listen"}</span>
+        </button>
       </div>
 
-      {/* Scrollable document */}
-      <div ref={scrollRef} className="relative flex-1 overflow-y-auto overflow-x-hidden select-none">
-        <article className="mx-auto max-w-4xl w-full px-4 sm:px-8 pb-32 pt-8 space-y-10">
-          {/* Chapter Header */}
-          <div className="space-y-4 pb-6 border-b border-border">
-            <div className="flex items-center gap-3">
-              <div
-                className={`size-12 rounded-2xl ${color} flex items-center justify-center text-xl font-black text-white shadow-sm`}
-              >
+      {/* ── Scrollable document ── */}
+      <div ref={scrollRef} className="relative flex-1 overflow-y-auto overflow-x-hidden">
+        <article className="mx-auto max-w-3xl w-full px-4 sm:px-8 pb-40 pt-8">
+
+          {/* Chapter title block */}
+          <header className="mb-10">
+            <div className="flex items-start gap-4 mb-5">
+              <div className={`size-14 shrink-0 rounded-2xl ${color} flex items-center justify-center text-2xl font-black text-white shadow-md`}>
                 {chapter.number}
               </div>
-              <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground">
-                  Cambridge IGCSE Chapter Guide
-                </span>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground tracking-tight">
+              <div className="min-w-0">
+                <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground mb-1">
+                  Cambridge IGCSE · Chapter {chapter.number}
+                </p>
+                <h1 className="text-2xl sm:text-3xl font-black text-foreground leading-tight tracking-tight">
                   {chapter.title}
                 </h1>
               </div>
             </div>
-
-            {/* Overview */}
-            <div className="space-y-1">
-              <p className="text-xs font-bold uppercase tracking-wider text-primary">Chapter Overview</p>
-              <div
-                className="prose prose-sm dark:prose-invert max-w-none text-foreground/85 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(chapter.intro) }}
-              />
+            <div
+              className="text-base leading-7 text-foreground/80 prose prose-sm dark:prose-invert max-w-none border-l-4 border-primary/30 pl-4 mb-6"
+              dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(chapter.intro) }}
+            />
+            <div className="flex flex-wrap gap-2">
+              {chapter.subheadings.map((sub, sIdx) => (
+                <button
+                  key={sIdx}
+                  onClick={() => scrollToSection(sIdx)}
+                  className="px-3 py-1.5 rounded-lg border border-border bg-muted/40 text-xs font-medium text-foreground/70 hover:text-foreground hover:border-primary/40 hover:bg-primary/5 transition-all"
+                >
+                  {sIdx + 1}. {sub.title}
+                </button>
+              ))}
             </div>
-          </div>
+          </header>
 
-          {/* Quick-Jump Section Navigator Pills */}
-          <div className="space-y-2.5">
-            <div className="flex items-center justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider">
-              <span className="flex items-center gap-1.5">
-                <Layers className="size-3.5 text-primary" />
-                <span>Chapter Topic Roadmap ({chapter.subheadings.length} Sections)</span>
-              </span>
-              <span>Click to jump</span>
-            </div>
-
-            <div className="flex flex-wrap gap-2 pt-1">
-              {chapter.subheadings.map((sub, sIdx) => {
-                const isMastered = !!masteredSections[sIdx];
-                return (
-                  <button
-                    key={sIdx}
-                    onClick={() => scrollToSection(sIdx)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 border ${
-                      isMastered
-                        ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-700 dark:text-emerald-300"
-                        : "bg-muted/60 border-border text-foreground hover:bg-muted"
-                    }`}
-                  >
-                    {isMastered ? (
-                      <CheckCircle2 className="size-3.5 text-emerald-500" />
-                    ) : (
-                      <span className="size-4 rounded-full bg-background border text-[10px] flex items-center justify-center font-bold">
-                        {sIdx + 1}
-                      </span>
-                    )}
-                    <span className="truncate max-w-[200px]">{sub.title}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Chunked & Motivating Subheading Sections */}
-          <div className="space-y-8">
+          {/* Sections */}
+          <div className="space-y-0">
             {chapter.subheadings.map((sub, si) => {
-              const isMastered = !!masteredSections[si];
               const isAnswerRevealed = !!revealedAnswers[si];
-              const isExamTipSection =
-                sub.title.toLowerCase().includes("tip") ||
-                sub.title.toLowerCase().includes("mistake") ||
-                sub.title.toLowerCase().includes("pitfall");
-
               return (
                 <section
                   id={`section-${si}`}
                   key={si}
-                  className="py-6 border-b border-border/60 last:border-b-0 space-y-5 scroll-mt-24"
+                  className="scroll-mt-16 py-8 border-b border-border/40 last:border-0"
                 >
-                  {/* Section Title & Mastery Action Header */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                    <div className="flex items-center gap-3">
-                      <div
-                        className={`size-8 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 ${
-                          isMastered
-                            ? "bg-emerald-500 text-white"
-                            : "bg-muted text-foreground border border-border"
-                        }`}
-                      >
+                  <div className="mb-5">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className={`inline-flex size-6 shrink-0 items-center justify-center rounded-md text-[11px] font-black text-white ${color}`}>
                         {si + 1}
-                      </div>
-                      <div>
-                        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-muted-foreground">
-                          {`Section ${si + 1}`}
-                        </span>
-                        <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
-                          {sub.title}
-                        </h2>
-                      </div>
+                      </span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">Section {si + 1}</span>
                     </div>
-
-                    {/* Mark as Mastered Toggle Button */}
-                    <button
-                      type="button"
-                      onClick={() => toggleMastered(si)}
-                      className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2 self-start sm:self-center ${
-                        isMastered
-                          ? "bg-emerald-500 text-white shadow-sm"
-                          : "bg-muted/70 hover:bg-muted text-muted-foreground hover:text-foreground border border-border"
-                      }`}
-                    >
-                      <CheckCircle2 className="size-4" />
-                      <span>{isMastered ? "Mastered ✓" : "Mark as Mastered"}</span>
-                    </button>
+                    <h2 className="text-xl sm:text-2xl font-black text-foreground leading-snug tracking-tight">
+                      {sub.title}
+                    </h2>
                   </div>
 
-                  {/* Section Body Text */}
                   <div
-                    className="text-[15px] leading-relaxed text-foreground/90 prose prose-sm dark:prose-invert max-w-none"
+                    className="prose prose-base dark:prose-invert max-w-none
+                      prose-headings:font-bold prose-headings:text-foreground
+                      prose-h3:text-[17px] prose-h3:mt-6 prose-h3:mb-2
+                      prose-h4:text-[15px] prose-h4:mt-5 prose-h4:mb-1.5
+                      prose-p:leading-7 prose-p:text-[15px] prose-p:text-foreground/85 prose-p:mb-3
+                      prose-strong:font-semibold prose-strong:text-foreground
+                      prose-li:text-[14.5px] prose-li:leading-7
+                      prose-ol:ml-5 prose-ol:list-decimal prose-ol:space-y-1
+                      prose-ul:ml-5 prose-ul:list-disc prose-ul:space-y-1
+                      prose-table:text-sm prose-table:w-full
+                      prose-th:bg-muted/60 prose-th:px-3 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-xs prose-th:uppercase prose-th:tracking-wide
+                      prose-td:px-3 prose-td:py-2 prose-td:text-foreground/85
+                      prose-code:text-[12.5px] prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
+                      [&_figure]:my-6 [&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5
+                    "
                     dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(sub.body) }}
                   />
 
-                  {/* Sub-Concept Groups — plain text, no cards */}
                   {sub.groups.length > 0 && (
-                    <div className="space-y-5">
+                    <div className="mt-6 space-y-6">
                       {sub.groups.map((grp, gi) => (
-                        <div key={gi} className="space-y-2">
+                        <div key={gi}>
                           {grp.subTitle && (
-                            <h3 className="text-sm font-bold text-foreground">
+                            <h3 className="mb-3 text-[15px] font-bold text-foreground flex items-center gap-2">
+                              <span className={`inline-block size-2 rounded-full ${color} shrink-0`} />
                               {grp.subTitle}
                             </h3>
                           )}
-                          <ul className="space-y-2 pl-1">
+                          <ul className="space-y-3">
                             {grp.bullets.map((pt, pi) => (
-                              <li key={pi} className="flex items-start gap-2.5 text-[14px] text-foreground/85 leading-relaxed">
-                                <span className="mt-[7px] size-1.5 shrink-0 rounded-full bg-primary/60" />
+                              <li key={pi} className="flex items-start gap-3">
+                                <span className={`mt-2 size-1.5 shrink-0 rounded-full ${color} opacity-70`} />
                                 <div
-                                  className="flex-1 prose prose-sm dark:prose-invert max-w-none"
+                                  className="flex-1 text-[14.5px] leading-7 text-foreground/85 prose prose-sm dark:prose-invert max-w-none
+                                    prose-strong:font-semibold prose-strong:text-foreground
+                                    prose-code:text-[12px] prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+                                    [&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5"
                                   dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(pt) }}
                                 />
                               </li>
@@ -636,253 +571,103 @@ function ChapterDoc({
                     </div>
                   )}
 
-                  {/* Recap & Past-Paper Questions */}
-                  <div className="border-l-2 border-primary/40 pl-4 space-y-3 mt-2">
-                    <div className="flex items-center gap-2 text-xs font-bold text-primary">
-                      <HelpCircle className="size-3.5" />
-                      <span>Exam Practice Questions</span>
-                    </div>
-
-                    {sub.recap && sub.recap.length > 0 ? (
-                      <div className="space-y-2">
+                  {sub.recap && sub.recap.length > 0 && (
+                    <div className="mt-8 rounded-2xl border border-border bg-muted/20 overflow-hidden">
+                      <div className="flex items-center gap-2 border-b border-border/50 bg-muted/40 px-4 py-3">
+                        <HelpCircle className="size-4 text-primary shrink-0" />
+                        <span className="text-xs font-bold uppercase tracking-wider text-foreground">Exam Practice</span>
+                      </div>
+                      <div className="p-4 space-y-4">
                         {sub.recap.map((q, qi) => (
-                          <div key={qi} className="space-y-1">
-                            <p className="text-xs sm:text-sm font-semibold text-foreground">
-                              <span className="text-primary mr-1.5">{qi + 1}.</span>{q}
+                          <div key={qi} className="space-y-1.5">
+                            <p className="text-[14px] font-semibold text-foreground leading-snug">
+                              <span className={`inline-flex size-5 mr-2 items-center justify-center rounded text-[10px] font-black text-white ${color}`}>{qi + 1}</span>
+                              {q}
                             </p>
                             <button
                               type="button"
                               onClick={() => toggleRevealAnswer(si * 100 + qi)}
-                              className="text-[11px] font-bold text-primary hover:underline flex items-center gap-1"
+                              className="ml-7 text-[12px] font-semibold text-primary hover:underline flex items-center gap-1"
                             >
-                              <span>{revealedAnswers[si * 100 + qi] ? "Hide hint" : "Show examiner hint"}</span>
+                              {revealedAnswers[si * 100 + qi] ? "Hide hint" : "Examiner hint"}
                               <ChevronDown className={`size-3 transition-transform ${revealedAnswers[si * 100 + qi] ? "rotate-180" : ""}`} />
                             </button>
                             {revealedAnswers[si * 100 + qi] && (
-                              <div className="text-[12px] text-foreground/80 leading-relaxed animate-in fade-in pl-3 border-l border-primary/20">
-                                Use precise Cambridge terminology. State the definition, describe the mechanism step by step, then give a specific named example. For command word "Explain", always include the word "because" with a causal reason.
+                              <div className="ml-7 rounded-lg bg-primary/5 border border-primary/20 px-3 py-2 text-[12.5px] text-foreground/80 leading-relaxed animate-in fade-in">
+                                Use precise Cambridge terminology. State the definition, describe the mechanism step-by-step, give a named example. For "Explain" always add a causal <em>because</em> clause.
                               </div>
                             )}
                           </div>
                         ))}
                       </div>
-                    ) : (
-                      <div className="space-y-1">
-                        <p className="text-xs sm:text-sm font-semibold text-foreground">
-                          Can you explain the key principle of <em>"{sub.title}"</em> in 2 sentences without looking at your notes?
-                        </p>
-                        <button
-                          type="button"
-                          onClick={() => toggleRevealAnswer(si)}
-                          className="text-[11px] font-bold text-primary hover:underline flex items-center gap-1"
-                        >
-                          <span>{isAnswerRevealed ? "Hide hint" : "Show examiner hint"}</span>
-                          <ChevronDown className={`size-3 transition-transform ${isAnswerRevealed ? "rotate-180" : ""}`} />
-                        </button>
-                        {isAnswerRevealed && (
-                          <div className="text-[12px] text-foreground/80 leading-relaxed animate-in fade-in pl-3 border-l border-primary/20">
-                            State: 1) The precise definition, 2) The step-by-step mechanism, 3) The required units or conditions. Use specific technical terms from the syllabus.
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </section>
               );
             })}
           </div>
 
-          {/* Chapter Mastery Celebration Banner */}
           {masteryPercentage >= 100 && (
-            <div className="rounded-3xl border border-emerald-500/40 bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-emerald-500/5 p-8 text-center space-y-4 shadow-lg animate-in zoom-in-95 duration-300">
-              <div className="size-16 rounded-2xl bg-emerald-500 text-white flex items-center justify-center mx-auto shadow-md">
-                <Trophy className="size-8" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="text-2xl font-black text-foreground">Chapter {chapter.number} Fully Mastered!</h3>
-                <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
-                  You have reviewed and mastered all {totalSections} sections. Solidify your grade by testing past examination papers or challenging the 3D arcade games!
-                </p>
-              </div>
+            <div className="mt-10 rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/8 to-teal-500/8 p-8 text-center space-y-3">
+              <Trophy className="size-10 text-emerald-500 mx-auto" />
+              <h3 className="text-xl font-black text-foreground">Chapter {chapter.number} Complete</h3>
+              <p className="text-sm text-muted-foreground">Now try past paper questions to solidify this knowledge.</p>
             </div>
           )}
 
-          {/* Bottom Navigation Controls */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border pt-8">
+          <div className="mt-12 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 border-t border-border pt-8">
             <button
               type="button"
               onClick={hasPrev ? onPrev : onBack}
-              className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
+              className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
             >
               <ArrowLeft className="size-4" />
-              <span>{hasPrev ? "Previous Chapter" : "Back to Subject"}</span>
+              {hasPrev ? `Chapter ${allChapters[idx - 1]?.number}` : "All Chapters"}
             </button>
-
             {hasNext && (
               <button
                 type="button"
                 onClick={onNext}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3 text-sm font-bold text-background shadow-md transition-transform hover:-translate-y-0.5"
+                className={`flex items-center justify-center gap-2 rounded-xl ${color} px-5 py-3 text-sm font-bold text-white shadow-sm hover:opacity-90 transition-opacity`}
               >
-                <span>Next Chapter ({allChapters[idx + 1]?.title})</span>
+                Ch.{allChapters[idx + 1]?.number}: {allChapters[idx + 1]?.title}
                 <ChevronRight className="size-4" />
               </button>
             )}
           </div>
         </article>
       </div>
-
-      {/* Floating 20-Min Yumna Masterclass Audio Player Bar */}
+      {/* Floating lecture bar */}
       {isLectureActive && (
-        <div className="fixed bottom-0 inset-x-0 sm:bottom-6 sm:inset-x-4 sm:max-w-2xl sm:mx-auto z-50 animate-in fade-in slide-in-from-bottom-5 duration-300">
-          <div className="relative overflow-hidden rounded-t-2xl sm:rounded-2xl border-t sm:border border-black/10 dark:border-white/10 bg-[#faf9f5]/98 dark:bg-[#1c1c1a]/98 backdrop-blur-xl shadow-2xl px-4 pt-3 pb-4 text-foreground">
-            {/* Top progress bar */}
-            <div className="absolute top-0 left-0 right-0 h-[3px] bg-black/5 dark:bg-white/5">
-              <div
-                className="h-full bg-primary transition-all duration-300"
-                style={{ width: `${Math.min(100, (elapsedSeconds / TOTAL_LECTURE_SECONDS) * 100)}%` }}
-              />
+        <div className="fixed bottom-0 inset-x-0 sm:bottom-4 sm:inset-x-4 sm:max-w-xl sm:mx-auto z-50 animate-in fade-in slide-in-from-bottom-4 duration-300">
+          <div className="relative overflow-hidden rounded-t-2xl sm:rounded-2xl border-t sm:border border-black/10 dark:border-white/10 bg-background/98 backdrop-blur-xl shadow-2xl px-4 pt-3 pb-4">
+            <div className="absolute top-0 left-0 right-0 h-[3px] bg-muted/40">
+              <div className="h-full bg-primary transition-all duration-300" style={{ width: `${Math.min(100, (elapsedSeconds / TOTAL_LECTURE_SECONDS) * 100)}%` }} />
             </div>
-
-            {/* Row 1: icon + text + close */}
-            <div className="flex items-start gap-3 mb-2.5">
-              <div className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary">
-                {isVoiceLoading ? (
-                  <Loader2 className="size-[18px] animate-spin" />
-                ) : isPlaying ? (
-                  <Volume2 className="size-[18px] opacity-90" style={{ animation: "yumna-speaker 1.8s ease-in-out infinite" }} />
-                ) : (
-                  <Pause className="size-[18px]" />
-                )}
+            <div className="flex items-center gap-3 mb-2.5">
+              <div className="size-9 shrink-0 rounded-xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center">
+                {isVoiceLoading ? <Loader2 className="size-4 animate-spin" /> : isPlaying ? <Volume2 className="size-4" /> : <Pause className="size-4" />}
               </div>
-
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-primary leading-none">
-                    20-Min Yumna Masterclass
-                  </span>
-                  <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-mono font-bold text-primary leading-none">
-                    {formatTime(elapsedSeconds)} / 20:00
-                  </span>
-                </div>
-                <p className="mt-1 text-xs font-semibold text-foreground leading-snug line-clamp-2">
-                  {lectureSectionsRef.current[lectureSectionIdx]?.title || chapter.title}
-                </p>
-                <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug line-clamp-1">
-                  {isVoiceLoading
-                    ? "Connecting to Yumna's voice…"
-                    : isPaused
-                    ? `Paused · ${formatTime(elapsedSeconds)} — tap ▶ to resume`
-                    : `Topic ${lectureSectionIdx + 1} of ${lectureSectionsRef.current.length} · deep-dive walkthrough`}
-                </p>
+                <p className="text-[11px] font-bold uppercase tracking-wider text-primary">Yumna Voice · {formatTime(elapsedSeconds)} / 20:00</p>
+                <p className="text-xs font-medium text-foreground truncate">{lectureSectionsRef.current[lectureSectionIdx]?.title || chapter.title}</p>
               </div>
-
-              <button
-                type="button"
-                onClick={handleStop}
-                className="mt-0.5 size-7 shrink-0 rounded-full flex items-center justify-center text-muted-foreground hover:text-rose-500 hover:bg-rose-500/10 active:scale-90 transition-all"
-                title="End lecture"
-              >
+              <button type="button" onClick={handleStop} className="size-6 rounded-full flex items-center justify-center text-muted-foreground hover:text-rose-500 transition-colors">
                 <X className="size-3.5" />
               </button>
             </div>
-
-            {/* Row 2: controls */}
             <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={handlePrevSection}
-                disabled={lectureSectionIdx === 0}
-                className="size-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                title="Previous Topic"
-              >
-                <SkipBack className="size-4" />
-              </button>
-
+              <button type="button" onClick={handlePrevSection} disabled={lectureSectionIdx === 0} className="size-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground disabled:opacity-30 transition-colors"><SkipBack className="size-4" /></button>
               {isVoiceLoading ? (
-                <button
-                  type="button"
-                  disabled
-                  className="size-11 rounded-full bg-primary/20 text-primary flex items-center justify-center cursor-wait"
-                  title="Loading voice…"
-                >
-                  <Loader2 className="size-4 animate-spin" />
-                </button>
+                <button type="button" disabled className="size-10 rounded-full bg-primary/20 text-primary flex items-center justify-center cursor-wait"><Loader2 className="size-4 animate-spin" /></button>
               ) : isPaused ? (
-                <button
-                  type="button"
-                  onClick={handleResume}
-                  className="size-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-105 active:scale-95 shadow-md transition-all"
-                  title="Resume lecture"
-                >
-                  <Play className="size-4 fill-current ml-0.5" />
-                </button>
+                <button type="button" onClick={handleResume} className="size-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-md"><Play className="size-4 fill-current ml-0.5" /></button>
               ) : (
-                <button
-                  type="button"
-                  onClick={handlePause}
-                  className="size-11 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-105 active:scale-95 shadow-md transition-all"
-                  title="Pause lecture"
-                >
-                  <Pause className="size-4 fill-current" />
-                </button>
+                <button type="button" onClick={handlePause} className="size-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center shadow-md"><Pause className="size-4 fill-current" /></button>
               )}
-
-              <button
-                type="button"
-                onClick={handleNextSection}
-                disabled={lectureSectionIdx === lectureSectionsRef.current.length - 1}
-                className="size-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-                title="Next Topic"
-              >
-                <SkipForward className="size-4" />
-              </button>
-
-              <div className="ml-auto flex items-center gap-1 overflow-hidden max-w-[140px]">
-                {lectureSectionsRef.current
-                  .slice(
-                    Math.max(0, lectureSectionIdx - 2),
-                    Math.min(lectureSectionsRef.current.length, lectureSectionIdx + 5)
-                  )
-                  .map((_, relIdx) => {
-                    const absIdx = Math.max(0, lectureSectionIdx - 2) + relIdx;
-                    return (
-                      <div
-                        key={absIdx}
-                        className={`h-1 rounded-full transition-all duration-300 ${
-                          absIdx === lectureSectionIdx
-                            ? "w-6 bg-primary"
-                            : absIdx < lectureSectionIdx
-                            ? "w-1.5 bg-primary/40"
-                            : "w-1.5 bg-black/10 dark:bg-white/10"
-                        }`}
-                      />
-                    );
-                  })}
-              </div>
+              <button type="button" onClick={handleNextSection} disabled={lectureSectionIdx === lectureSectionsRef.current.length - 1} className="size-8 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground disabled:opacity-30 transition-colors"><SkipForward className="size-4" /></button>
             </div>
           </div>
-
-          <style>{`
-            @keyframes yumna-speaker {
-              0%, 100% { opacity: 0.7; transform: scale(1); }
-              50%       { opacity: 1;   transform: scale(1.12); }
-            }
-          `}</style>
-        </div>
-      )}
-
-      {/* Floating Teach Me Voice Button (when lecture bar is not active) */}
-      {!isLectureActive && (
-        <div className="fixed bottom-6 right-6 z-40">
-          <button
-            type="button"
-            onClick={handleStartLecture}
-            className="flex items-center gap-2.5 rounded-full px-5 py-3 text-sm font-bold shadow-2xl transition-all hover:scale-105 active:scale-95 bg-foreground text-background"
-          >
-            <Volume2 className="size-4" />
-            <span>Teach Me This Chapter (20 Min)</span>
-          </button>
         </div>
       )}
     </div>

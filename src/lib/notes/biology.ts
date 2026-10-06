@@ -9,78 +9,259 @@ export const BIOLOGY: SubjectNotes = {
     {
       number: 1,
       title: "Characteristics and Classification of Living Organisms",
-      intro: "All living organisms share seven fundamental life processes summarised by the acronym MRSGREN. Understanding these processes allows biologists to distinguish living from non-living matter and to appreciate why viruses occupy a controversial position. Classification organises the enormous diversity of life into a logical hierarchy based on shared structural features and, increasingly, DNA evidence. The binomial naming system gives every species a unique two-part Latin name that is recognised worldwide regardless of language.",
+      intro: "All living organisms share seven fundamental life processes summarised by the acronym **MRSGREN**. These characteristics distinguish living things from non-living matter and allow biologists to make precise claims about borderline cases such as viruses. Classification — the science of grouping organisms by shared features — brings order to the enormous diversity of life on Earth, and the universal binomial naming system means a scientist in any country can refer to exactly the same organism without ambiguity.",
       subheadings: [
         {
-          title: "The Seven Characteristics of Life (MRSGREN)",
-          body: "Every living organism must carry out all seven processes to be considered alive. Movement is a change in position caused by the organism itself — this includes the slow bending of a plant shoot towards light (phototropism) as well as the rapid locomotion of animals. Respiration is the release of energy from organic molecules inside cells; it is not the same as breathing, which is merely the ventilation of lungs. Sensitivity means detecting stimuli such as light, touch, chemicals, or temperature and producing an appropriate response. Growth is a permanent increase in dry mass caused by an increase in cell number, cell size, or both — this is why dry mass rather than wet mass is used, because water content can fluctuate. Reproduction produces new individuals of the same species; without reproduction a species eventually becomes extinct. Excretion removes the toxic waste products of metabolism — carbon dioxide from respiration, urea from protein breakdown — and is distinct from egestion, which removes undigested food. Nutrition is the taking in and use of materials for energy, growth, and development, whether by photosynthesis (autotrophic) or ingestion and digestion (heterotrophic). Viruses show none of these processes independently and can only reproduce inside a host cell, which is why biologists do not classify them as living organisms.",
-          groups: [
-            {
-              subTitle: "Key distinctions examiners test",
-              bullets: [
-                "**Respiration vs breathing**: Respiration is a chemical process in every living cell that releases energy from glucose. Breathing (ventilation) is a physical process of moving air in and out of the lungs. Candidates who write 'breathing' when asked about respiration will lose all marks.",
-                "**Excretion vs egestion**: Excretion removes metabolic waste produced inside cells (CO2, urea, excess water). Egestion removes undigested material that was never absorbed into cells. Faeces is egested, not excreted.",
-                "**Growth measured as dry mass**: Wet mass changes when an organism drinks water. Dry mass measures the actual increase in organic material, making it a more reliable indicator of true biological growth.",
-                "**Viruses and living status**: Viruses have no cells, no cytoplasm, no ribosomes, and cannot carry out any life process independently. They are considered non-living because they depend entirely on a host cell's machinery to replicate."
-              ]
-            }
-          ],
+          title: "The Seven Characteristics of Life — MRSGREN",
+          body: `Every living organism must carry out **all seven** life processes. If even one is missing, biologists classify the entity as non-living. Let's examine each one in full detail.
+
+:::svg[The Seven Characteristics of Life — MRSGREN]
+<svg viewBox="0 0 520 280" width="520" height="280" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <rect width="520" height="280" fill="#f8fafc" rx="12"/>
+  <!-- Title -->
+  <text x="260" y="26" text-anchor="middle" font-size="13" font-weight="700" fill="#1e293b">MRSGREN — Seven Characteristics of Life</text>
+  <!-- 7 boxes in a circle-like arrangement -->
+  <!-- M -->
+  <rect x="20" y="45" width="100" height="52" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="70" y="65" text-anchor="middle" font-size="14" font-weight="800" fill="#15803d">M</text>
+  <text x="70" y="80" text-anchor="middle" font-size="9.5" fill="#15803d">Movement</text>
+  <text x="70" y="92" text-anchor="middle" font-size="8.5" fill="#166534">Change in position</text>
+  <!-- R -->
+  <rect x="135" y="45" width="100" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="185" y="65" text-anchor="middle" font-size="14" font-weight="800" fill="#1d4ed8">R</text>
+  <text x="185" y="80" text-anchor="middle" font-size="9.5" fill="#1d4ed8">Respiration</text>
+  <text x="185" y="92" text-anchor="middle" font-size="8.5" fill="#1e40af">Energy from food</text>
+  <!-- S -->
+  <rect x="250" y="45" width="100" height="52" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="300" y="65" text-anchor="middle" font-size="14" font-weight="800" fill="#b45309">S</text>
+  <text x="300" y="80" text-anchor="middle" font-size="9.5" fill="#b45309">Sensitivity</text>
+  <text x="300" y="92" text-anchor="middle" font-size="8.5" fill="#92400e">Detect stimuli</text>
+  <!-- G -->
+  <rect x="365" y="45" width="100" height="52" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="415" y="65" text-anchor="middle" font-size="14" font-weight="800" fill="#be185d">G</text>
+  <text x="415" y="80" text-anchor="middle" font-size="9.5" fill="#be185d">Growth</text>
+  <text x="415" y="92" text-anchor="middle" font-size="8.5" fill="#9d174d">Increase in dry mass</text>
+  <!-- R -->
+  <rect x="20" y="115" width="100" height="52" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="70" y="135" text-anchor="middle" font-size="14" font-weight="800" fill="#6d28d9">R</text>
+  <text x="70" y="150" text-anchor="middle" font-size="9.5" fill="#6d28d9">Reproduction</text>
+  <text x="70" y="162" text-anchor="middle" font-size="8.5" fill="#5b21b6">Produce offspring</text>
+  <!-- E -->
+  <rect x="135" y="115" width="100" height="52" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="185" y="135" text-anchor="middle" font-size="14" font-weight="800" fill="#c2410c">E</text>
+  <text x="185" y="150" text-anchor="middle" font-size="9.5" fill="#c2410c">Excretion</text>
+  <text x="185" y="162" text-anchor="middle" font-size="8.5" fill="#9a3412">Remove metabolic waste</text>
+  <!-- N -->
+  <rect x="250" y="115" width="100" height="52" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.5"/>
+  <text x="300" y="135" text-anchor="middle" font-size="14" font-weight="800" fill="#047857">N</text>
+  <text x="300" y="150" text-anchor="middle" font-size="9.5" fill="#047857">Nutrition</text>
+  <text x="300" y="162" text-anchor="middle" font-size="8.5" fill="#065f46">Take in energy sources</text>
+  <!-- Key distinctions -->
+  <rect x="20" y="185" width="480" height="82" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="30" y="203" font-size="10" font-weight="700" fill="#334155">Key Distinctions Examiners Test:</text>
+  <text x="30" y="219" font-size="9.5" fill="#475569">Respiration ≠ Breathing. Respiration = chemical release of energy in cells. Breathing = physical ventilation of lungs.</text>
+  <text x="30" y="233" font-size="9.5" fill="#475569">Excretion ≠ Egestion. Excretion = removal of metabolic waste (CO₂, urea). Egestion = removal of undigested food (faeces).</text>
+  <text x="30" y="247" font-size="9.5" fill="#475569">Growth measured as DRY MASS (not wet mass) — water content fluctuates; dry mass measures actual organic increase.</text>
+  <text x="30" y="261" font-size="9.5" fill="#475569">Viruses: no cytoplasm, no ribosomes, no independent respiration → classified as non-living.</text>
+</svg>
+:::
+
+## Movement
+**Definition:** An action by an organism causing a change in position or place.
+
+This includes the obvious — a cheetah running — and the less obvious. A plant slowly bending its shoot toward light (**phototropism**) is also movement. A white blood cell moving toward a bacterium is movement. The key point is that the organism *itself* generates the movement, distinguishing it from a rock rolling downhill.
+
+> **Examiner note:** Do not say organisms "move." Say they "carry out movement" — the precise phrasing scores marks. Also note that not all parts of every organism move at all times; the *ability* to move is what counts.
+
+## Respiration
+**Definition:** The chemical reactions in cells that break down organic molecules (especially glucose) to release energy for metabolism.
+
+Respiration is **not breathing**. Breathing (ventilation) is the physical act of moving air in and out of the lungs. Respiration is a cellular chemical process — it happens in every living cell, including plant cells, fungal cells, and bacteria. The energy released is used to drive all other life processes: muscle contraction, active transport, protein synthesis, cell division.
+
+Aerobic respiration (with oxygen): glucose + oxygen → carbon dioxide + water + **ATP energy**
+
+Anaerobic respiration (without oxygen): glucose → lactic acid + **less ATP** (in animals); glucose → ethanol + CO₂ + **less ATP** (in yeast/plants)
+
+## Sensitivity
+**Definition:** The ability to detect or sense stimuli in the internal or external environment and produce an appropriate response.
+
+All organisms detect stimuli, though the mechanisms vary greatly. Animals use specialised receptor cells (photoreceptors in the eye, mechanoreceptors in the skin). Plants use phytohormones — **auxin** causes phototropism; **gibberellins** regulate germination. Even single-celled amoebae detect chemical gradients and move toward food.
+
+## Growth
+**Definition:** A permanent increase in size and **dry mass** due to an increase in cell number, cell size, or both.
+
+The word "permanent" is critical — a sponge absorbing water temporarily becomes larger, but this is not growth. We measure **dry mass** (after removing all water by drying to constant mass) because wet mass changes with hydration. An organism's dry mass genuinely increases only when new organic molecules are synthesised.
+
+## Reproduction
+**Definition:** The biological process by which more organisms of the same kind are produced, ensuring species survival.
+
+**Sexual reproduction** involves two parents, the fusion of gametes, and produces genetically varied offspring. **Asexual reproduction** involves one parent, no gametes, and produces genetically identical clones (e.g. bacteria dividing, strawberry runners, budding in yeast).
+
+## Excretion
+**Definition:** The removal from organisms of the **waste products of metabolism**, toxic substances, and substances in excess.
+
+Excretion specifically concerns metabolic waste — CO₂ from respiration, urea from amino acid breakdown (in mammals), excess salts and water. **Egestion** is the passing out of undigested food (faeces) — this material was never *inside* the body's cells and is not metabolic waste.
+
+| Process | What is removed | Source |
+|---------|----------------|--------|
+| Excretion | CO₂, urea, excess water, excess salts | Metabolism inside cells |
+| Egestion | Undigested food, dead bacteria, bile pigments | Food that was never absorbed |
+
+## Nutrition
+**Definition:** The taking in and use of nutrients (organic molecules and mineral ions) for energy, growth, and development.
+
+- **Autotrophic nutrition:** Organisms make their own food from inorganic sources using light energy (photosynthesis in green plants, algae) or chemical energy (chemosynthesis in some bacteria).
+- **Heterotrophic nutrition:** Organisms obtain organic molecules by consuming other organisms (animals, fungi, most bacteria).`,
+          groups: [],
           recap: [
-            "State four characteristics of living organisms. [4]",
-            "Explain why viruses are not considered to be living organisms. [2]",
-            "Distinguish between excretion and egestion. [2]",
-            "Explain why dry mass rather than wet mass is used to measure growth in plants. [2]"
+            "State the seven characteristics of living organisms using the acronym MRSGREN. [7]",
+            "Explain the difference between respiration and breathing, giving the location of each process. [4]",
+            "Explain why dry mass rather than wet mass is used to measure growth in organisms. [2]",
+            "A student claims viruses are living because they reproduce. Explain why viruses are not considered living organisms. [3]",
+            "Distinguish between excretion and egestion. Give one example of a substance produced by each process in a mammal. [4]"
           ]
         },
         {
-          title: "Classification: The Five Kingdoms",
-          body: "Taxonomists arrange organisms into a hierarchy of groups from most inclusive (domain/kingdom) to least inclusive (species). The five kingdoms recognised at IGCSE are Animals, Plants, Fungi, Protoctists, and Prokaryotes (Bacteria). Animals are multicellular eukaryotes whose cells lack cell walls; they obtain nutrition heterotrophically by ingestion and have nervous coordination. Plants are multicellular eukaryotes with cellulose cell walls and chloroplasts containing chlorophyll; they make food autotrophically by photosynthesis. Fungi are mostly multicellular eukaryotes with chitin cell walls; they are saprotrophic, secreting digestive enzymes outside the body and absorbing the soluble products. Protoctists are eukaryotes that are mostly unicellular and include animal-like protozoa (e.g. Amoeba, Plasmodium) and plant-like algae (e.g. Chlorella, Spirogyra). Prokaryotes (Bacteria) are unicellular organisms with no true membrane-bound nucleus; their genetic material is a circular DNA molecule in the cytoplasm, and they have 70S ribosomes (smaller than eukaryotic 80S ribosomes). The taxonomic hierarchy from most inclusive to least is: Kingdom, Phylum, Class, Order, Family, Genus, Species.",
+          title: "Classification: Kingdoms, Phyla and Species",
+          body: `Classification is the science of grouping organisms based on shared characteristics. A good classification system reflects evolutionary relationships and allows prediction — if you know one member of a group has a feature, you can predict others do too.
+
+## The Taxonomic Hierarchy
+
+Organisms are arranged in a nested series of groups from most inclusive to least inclusive:
+
+:::svg[The Taxonomic Hierarchy — Kingdom to Species]
+<svg viewBox="0 0 480 220" width="480" height="220" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <rect width="480" height="220" fill="#f8fafc" rx="12"/>
+  <text x="240" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">Taxonomic Hierarchy (Most → Least Inclusive)</text>
+  <!-- Pyramid bars -->
+  <rect x="170" y="32" width="140" height="22" rx="5" fill="#7c3aed"/>
+  <text x="240" y="47" text-anchor="middle" font-size="11" fill="white" font-weight="600">KINGDOM</text>
+  <rect x="155" y="58" width="170" height="22" rx="5" fill="#2563eb"/>
+  <text x="240" y="73" text-anchor="middle" font-size="11" fill="white" font-weight="600">PHYLUM</text>
+  <rect x="140" y="84" width="200" height="22" rx="5" fill="#0891b2"/>
+  <text x="240" y="99" text-anchor="middle" font-size="11" fill="white" font-weight="600">CLASS</text>
+  <rect x="125" y="110" width="230" height="22" rx="5" fill="#059669"/>
+  <text x="240" y="125" text-anchor="middle" font-size="11" fill="white" font-weight="600">ORDER</text>
+  <rect x="110" y="136" width="260" height="22" rx="5" fill="#ca8a04"/>
+  <text x="240" y="151" text-anchor="middle" font-size="11" fill="white" font-weight="600">FAMILY</text>
+  <rect x="95" y="162" width="290" height="22" rx="5" fill="#dc2626"/>
+  <text x="240" y="177" text-anchor="middle" font-size="11" fill="white" font-weight="600">GENUS</text>
+  <rect x="80" y="188" width="320" height="22" rx="5" fill="#be185d"/>
+  <text x="240" y="203" text-anchor="middle" font-size="11" fill="white" font-weight="600">SPECIES</text>
+  <!-- Mnemonic -->
+  <text x="10" y="210" font-size="9.5" fill="#64748b">Mnemonic: Kings Play Chess On Fine Green Silk</text>
+</svg>
+:::
+
+> **Memory trick:** "**K**ings **P**lay **C**hess **O**n **F**ine **G**reen **S**ilk" — Kingdom, Phylum, Class, Order, Family, Genus, Species.
+
+A **species** is a group of organisms that can interbreed to produce *fertile* offspring. Horses and donkeys can mate and produce mules, but mules are sterile — horses and donkeys are therefore different species.
+
+## The Five Kingdoms
+
+| Kingdom | Key Features | Nutrition | Example |
+|---------|-------------|-----------|---------|
+| **Animalia** | Multicellular eukaryote, no cell wall, no chloroplasts | Heterotrophic (ingestion) | Lion (*Panthera leo*) |
+| **Plantae** | Multicellular eukaryote, cellulose cell wall, chloroplasts | Autotrophic (photosynthesis) | Oak tree (*Quercus robur*) |
+| **Fungi** | Eukaryote (mostly multicellular), **chitin** cell wall | Saprotrophic (absorption) | *Agaricus bisporus* (mushroom) |
+| **Protoctists** | Eukaryote, mostly unicellular | Varied | *Amoeba*, *Plasmodium* |
+| **Prokaryotes** | No true nucleus, circular DNA, 70S ribosomes | Varied | *E. coli*, *Lactobacillus* |
+
+### Fungi in Detail
+Students often mistakenly classify fungi as plants. The differences are fundamental:
+1. Fungi have **chitin** cell walls (plants have cellulose)
+2. Fungi are **saprotrophic** — they secrete digestive enzymes *outside* the body and absorb the soluble products (plants photosynthesise)
+3. Fungi store energy as **glycogen** (plants store starch)
+4. Fungi are **heterotrophic** (plants are autotrophic)
+5. Most fungi are **multicellular with hyphae** forming a mycelium (most plants have differentiated organs)
+
+### Prokaryotes vs Eukaryotes
+The distinction between prokaryotic and eukaryotic cells is the most fundamental divide in biology:
+
+| Feature | Prokaryote | Eukaryote |
+|---------|-----------|-----------|
+| True nucleus | Absent (nucleoid region) | Present (membrane-bound) |
+| DNA form | Circular, no histones | Linear chromosomes with histones |
+| Ribosomes | 70S | 80S |
+| Membrane-bound organelles | Absent | Present (mitochondria, ER, etc.) |
+| Cell wall | Peptidoglycan (murein) | Cellulose (plants), chitin (fungi), absent (animals) |
+| Size | 1–10 μm | 10–100 μm |
+
+## Vertebrate Classes
+
+All vertebrates have a vertebral column (backbone), an endoskeleton, and a closed circulatory system. They are divided into five classes:
+
+:::svg[Vertebrate Classes — Key Features Comparison]
+<svg viewBox="0 0 520 200" width="520" height="200" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <rect width="520" height="200" fill="#f8fafc" rx="12"/>
+  <text x="260" y="20" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">Five Vertebrate Classes</text>
+  <!-- Fish -->
+  <rect x="10" y="30" width="90" height="115" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="55" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#1d4ed8">Fish</text>
+  <text x="55" y="62" text-anchor="middle" font-size="8.5" fill="#1e40af">Ectothermic</text>
+  <text x="55" y="74" text-anchor="middle" font-size="8.5" fill="#1e40af">Wet scales</text>
+  <text x="55" y="86" text-anchor="middle" font-size="8.5" fill="#1e40af">Gills</text>
+  <text x="55" y="98" text-anchor="middle" font-size="8.5" fill="#1e40af">Soft eggs in water</text>
+  <text x="55" y="110" text-anchor="middle" font-size="8.5" fill="#1e40af">Lateral line</text>
+  <text x="55" y="138" text-anchor="middle" font-size="8" fill="#3b82f6">e.g. salmon</text>
+  <!-- Amphibia -->
+  <rect x="110" y="30" width="90" height="115" rx="8" fill="#d1fae5" stroke="#10b981" stroke-width="1.5"/>
+  <text x="155" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#047857">Amphibia</text>
+  <text x="155" y="62" text-anchor="middle" font-size="8.5" fill="#065f46">Ectothermic</text>
+  <text x="155" y="74" text-anchor="middle" font-size="8.5" fill="#065f46">Moist skin</text>
+  <text x="155" y="86" text-anchor="middle" font-size="8.5" fill="#065f46">Gills→Lungs</text>
+  <text x="155" y="98" text-anchor="middle" font-size="8.5" fill="#065f46">Jelly eggs (water)</text>
+  <text x="155" y="138" text-anchor="middle" font-size="8" fill="#10b981">e.g. frog</text>
+  <!-- Reptiles -->
+  <rect x="210" y="30" width="90" height="115" rx="8" fill="#fef9c3" stroke="#eab308" stroke-width="1.5"/>
+  <text x="255" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#854d0e">Reptiles</text>
+  <text x="255" y="62" text-anchor="middle" font-size="8.5" fill="#713f12">Ectothermic</text>
+  <text x="255" y="74" text-anchor="middle" font-size="8.5" fill="#713f12">Dry scales</text>
+  <text x="255" y="86" text-anchor="middle" font-size="8.5" fill="#713f12">Lungs</text>
+  <text x="255" y="98" text-anchor="middle" font-size="8.5" fill="#713f12">Leathery eggs (land)</text>
+  <text x="255" y="138" text-anchor="middle" font-size="8" fill="#eab308">e.g. lizard</text>
+  <!-- Birds -->
+  <rect x="310" y="30" width="90" height="115" rx="8" fill="#fce7f3" stroke="#ec4899" stroke-width="1.5"/>
+  <text x="355" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#be185d">Birds</text>
+  <text x="355" y="62" text-anchor="middle" font-size="8.5" fill="#9d174d">Endothermic</text>
+  <text x="355" y="74" text-anchor="middle" font-size="8.5" fill="#9d174d">Feathers</text>
+  <text x="355" y="86" text-anchor="middle" font-size="8.5" fill="#9d174d">Wings + Lungs</text>
+  <text x="355" y="98" text-anchor="middle" font-size="8.5" fill="#9d174d">Hard-shelled eggs</text>
+  <text x="355" y="110" text-anchor="middle" font-size="8.5" fill="#9d174d">Beak, no teeth</text>
+  <text x="355" y="138" text-anchor="middle" font-size="8" fill="#ec4899">e.g. eagle</text>
+  <!-- Mammals -->
+  <rect x="410" y="30" width="100" height="115" rx="8" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.5"/>
+  <text x="460" y="48" text-anchor="middle" font-size="11" font-weight="700" fill="#6d28d9">Mammals</text>
+  <text x="460" y="62" text-anchor="middle" font-size="8.5" fill="#5b21b6">Endothermic</text>
+  <text x="460" y="74" text-anchor="middle" font-size="8.5" fill="#5b21b6">Hair/fur</text>
+  <text x="460" y="86" text-anchor="middle" font-size="8.5" fill="#5b21b6">Mammary glands</text>
+  <text x="460" y="98" text-anchor="middle" font-size="8.5" fill="#5b21b6">Live birth</text>
+  <text x="460" y="110" text-anchor="middle" font-size="8.5" fill="#5b21b6">Diaphragm</text>
+  <text x="460" y="138" text-anchor="middle" font-size="8" fill="#8b5cf6">e.g. human</text>
+  <!-- Legend -->
+  <rect x="10" y="155" width="100" height="16" rx="4" fill="#fef3c7"/>
+  <text x="60" y="166" text-anchor="middle" font-size="8.5" fill="#92400e">Ectothermic = cold-blooded</text>
+  <rect x="120" y="155" width="100" height="16" rx="4" fill="#ecfdf5"/>
+  <text x="170" y="166" text-anchor="middle" font-size="8.5" fill="#065f46">Endothermic = warm-blooded</text>
+</svg>
+:::`,
           groups: [
             {
-              subTitle: "Comparing the five kingdoms",
+              subTitle: "Arthropod Groups — a common exam topic",
               bullets: [
-                "**Animals**: Multicellular, eukaryotic, no cell wall, no chloroplasts, heterotrophic by ingestion, coordinated by nervous system. Examples: mammals, insects, fish.",
-                "**Plants**: Multicellular, eukaryotic, cellulose cell wall, chloroplasts present, autotrophic by photosynthesis, store carbohydrate as starch. Examples: flowering plants, ferns, mosses.",
-                "**Fungi**: Mostly multicellular (hyphae forming mycelium), eukaryotic, chitin cell wall, no chloroplasts, saprotrophic nutrition, store carbohydrate as glycogen. Examples: mushrooms, Penicillium, yeast (unicellular fungus).",
-                "**Protoctists**: Mostly unicellular, eukaryotic, diverse nutrition (some photosynthesise, some ingest). Protozoa include Amoeba and Plasmodium (malaria parasite); algae include Spirogyra.",
-                "**Prokaryotes**: Unicellular, no true nucleus (nucleoid region), no membrane-bound organelles, circular DNA, 70S ribosomes, cell wall of murein. Examples: Escherichia coli, Lactobacillus."
-              ]
-            },
-            {
-              subTitle: "Vertebrate classes",
-              bullets: [
-                "**Fish**: Ectothermic (body temperature varies with environment), wet scales, gills for gas exchange, lay soft unshelled eggs in water, lateral line detects water pressure changes.",
-                "**Amphibians**: Ectothermic, moist permeable skin used for gas exchange, gills as larvae then lungs as adults, jelly-covered eggs in water (no shell). Examples: frogs, toads, newts.",
-                "**Reptiles**: Ectothermic, dry scaly skin, lungs only, leathery-shelled eggs on land, internal fertilisation. Examples: snakes, lizards, crocodiles.",
-                "**Birds**: Endothermic (maintain constant body temperature), feathers, wings (forelimbs modified), hard-shelled eggs, beak with no teeth, air sacs for efficient gas exchange.",
-                "**Mammals**: Endothermic, hair or fur, mammary glands produce milk to nourish young, viviparous (give birth to live young, except monotremes), diaphragm present, heterodont teeth."
+                "**Insects** (3 pairs of legs, 3 body segments — head/thorax/abdomen, 1 pair antennae, compound eyes, usually wings): bees, flies, beetles, butterflies. Largest animal class on Earth.",
+                "**Arachnids** (4 pairs of legs, 2 body segments — cephalothorax/abdomen, no antennae, chelicerae/fangs): spiders, scorpions, ticks, mites.",
+                "**Crustaceans** (5+ pairs of legs, hard chalky exoskeleton, 2 pairs of antennae, cephalothorax + abdomen): crabs, lobsters, shrimps, woodlice.",
+                "**Myriapods** (many legs, elongated segmented body, 1 pair of antennae): **Centipedes** — 1 pair of legs per segment, carnivorous; **Millipedes** — 2 pairs per segment, herbivorous/detritivores."
               ]
             }
           ],
           recap: [
-            "State three features that distinguish fungi from plants. [3]",
-            "Explain why bacteria are classified as prokaryotes rather than eukaryotes. [3]",
-            "List the features that all vertebrates share and name the five vertebrate classes. [5]",
-            "A student says that a mushroom is a plant because it grows from the ground. Give two reasons why this is incorrect. [2]"
-          ]
-        },
-        {
-          title: "Binomial Nomenclature and Dichotomous Keys",
-          body: "Every species is given a unique two-part scientific name consisting of the genus name (capitalised) followed by the species name (lower case), both written in italics when typed or underlined when handwritten. For example, modern humans are Homo sapiens. The system, devised by Carl Linnaeus in the 18th century, allows scientists worldwide to refer to the same organism unambiguously regardless of their native language. A dichotomous key is a tool for identifying unknown organisms by presenting a series of paired statements (or questions) at each step; the user selects the statement that best describes the organism and follows the branch until an identification is reached. Each pair of statements must describe features that are clearly observable and mutually exclusive, such as 'has wings / does not have wings'. Well-designed keys use characters that are unambiguous (quantitative measurements are better than subjective descriptors), present the most useful distinguishing features first, and never use the same pair of characters twice.",
-          groups: [
-            {
-              subTitle: "Rules for writing binomial names",
-              bullets: [
-                "The genus name is written first with a capital initial letter: *Homo*. The species name is written second in lower case: *sapiens*. Together: *Homo sapiens*.",
-                "Both words are italicised when typed or underlined when handwritten. After the full name has been written once in a passage, the genus may be abbreviated to its initial letter: *H. sapiens*.",
-                "Scientific names are Latin or Latinised Greek, which allows international use. Common names like 'jaguar' are ambiguous — different animals may share a common name in different countries."
-              ]
-            }
-          ],
-          recap: [
-            "A student writes the scientific name of a tiger as PANTHERA TIGRIS. Give two mistakes in this notation and write the name correctly. [3]",
-            "Describe how to construct a dichotomous key for four different insects. [4]",
-            "State two advantages of using binomial nomenclature rather than common names. [2]"
+            "Name the five kingdoms of life and state one distinguishing feature of each. [5]",
+            "Explain why fungi are classified separately from plants, giving three differences. [3]",
+            "State four features that distinguish mammals from reptiles. [4]",
+            "Explain the difference between ectothermic and endothermic, giving one advantage of endothermy. [3]",
+            "Using the example of Homo sapiens, explain the rules for writing a binomial name correctly. [3]"
           ]
         }
       ]
@@ -88,58 +269,135 @@ export const BIOLOGY: SubjectNotes = {
     {
       number: 2,
       title: "Organisation of the Organism",
-      intro: "All living organisms are composed of cells, the smallest units capable of carrying out life processes. In multicellular organisms, cells with the same structure and function group together to form tissues, tissues combine to form organs, and organs work in coordinated organ systems. Understanding cell ultrastructure — the detailed internal architecture visible under an electron microscope — is essential for explaining how cells carry out their specific functions. Both animal and plant cells share certain features, but plant cells have additional structures that reflect their autotrophic lifestyle.",
+      intro: "Life is organised at multiple scales — from the atom, through molecules, organelles, cells, tissues, organs, organ systems, to the whole organism. Each level adds a new property that the level below does not possess alone. Understanding cell ultrastructure is essential: the specific components of a cell directly explain its function, and specialisation of cells into tissues and organs enables the division of labour that makes complex multicellular life possible.",
       subheadings: [
         {
-          title: "Cell Ultrastructure: Animal and Plant Cells",
-          body: "The cell membrane is a phospholipid bilayer with embedded proteins that controls the movement of substances into and out of the cell. The nucleus is surrounded by a double membrane (nuclear envelope) perforated by nuclear pores through which mRNA passes; it contains chromatin (DNA wound around histone proteins) and directs all cell activities by controlling protein synthesis. Mitochondria are the site of aerobic respiration — they have a double membrane, with the inner membrane folded into cristae that increase the surface area for the reactions of the electron transport chain; the fluid matrix contains enzymes for the Krebs cycle. Ribosomes are small organelles (80S in eukaryotes, 70S in prokaryotes) where polypeptide chains are assembled by translation of mRNA. Plant cells additionally possess a large central vacuole filled with cell sap (a concentrated solution of sugars and mineral salts) that maintains turgor pressure and supports the plant. Chloroplasts contain the green pigment chlorophyll in flattened membrane sacs called thylakoids, which are stacked into grana; the light-independent reactions occur in the stroma surrounding the grana. The cellulose cell wall outside the plant cell membrane provides structural support and prevents the cell from bursting by osmosis; it is fully permeable to water and solutes.",
+          title: "Cell Ultrastructure — Animal and Plant Cells",
+          body: `Cell ultrastructure refers to the detailed internal organisation of cells visible under an **electron microscope** (which has far greater resolution than a light microscope). Every structure has a function, and you must be able to link each one to what it does.
+
+:::svg[Animal Cell and Plant Cell — Ultrastructure Comparison]
+<svg viewBox="0 0 540 260" width="540" height="260" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <rect width="540" height="260" fill="#f8fafc" rx="12"/>
+  <text x="270" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">Eukaryotic Cell Ultrastructure</text>
+
+  <!-- ANIMAL CELL -->
+  <text x="130" y="34" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1d4ed8">ANIMAL CELL</text>
+  <!-- Cell membrane -->
+  <ellipse cx="130" cy="130" rx="110" ry="90" fill="#fef9c3" stroke="#eab308" stroke-width="2" stroke-dasharray="4,2"/>
+  <!-- Nucleus -->
+  <ellipse cx="105" cy="115" rx="35" ry="28" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="105" y="111" text-anchor="middle" font-size="8" fill="#1d4ed8">Nucleus</text>
+  <text x="105" y="121" text-anchor="middle" font-size="7" fill="#1e40af">(controls cell)</text>
+  <!-- Nucleolus -->
+  <circle cx="100" cy="108" r="6" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+  <text x="100" y="111" text-anchor="middle" font-size="6" fill="#1d4ed8">Nu</text>
+  <!-- Mitochondria -->
+  <ellipse cx="165" cy="105" rx="20" ry="11" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="165" y="108" text-anchor="middle" font-size="7" fill="#15803d">Mito.</text>
+  <ellipse cx="155" cy="145" rx="18" ry="10" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="155" y="148" text-anchor="middle" font-size="7" fill="#15803d">Mito.</text>
+  <!-- Ribosome dots -->
+  <circle cx="80" cy="145" r="3" fill="#f97316"/>
+  <circle cx="90" cy="155" r="3" fill="#f97316"/>
+  <circle cx="130" cy="160" r="3" fill="#f97316"/>
+  <text x="75" y="170" text-anchor="start" font-size="7" fill="#c2410c">Ribosomes</text>
+  <!-- Labels -->
+  <text x="245" y="78" font-size="8.5" fill="#854d0e">Cell membrane</text>
+  <line x1="240" y1="76" x2="200" y2="95" stroke="#854d0e" stroke-width="1"/>
+
+  <!-- PLANT CELL -->
+  <text x="400" y="34" text-anchor="middle" font-size="10.5" font-weight="700" fill="#15803d">PLANT CELL</text>
+  <!-- Cell wall -->
+  <rect x="295" y="50" width="210" height="170" rx="4" fill="none" stroke="#166534" stroke-width="3"/>
+  <!-- Cell membrane inside wall -->
+  <rect x="300" y="55" width="200" height="160" rx="3" fill="#fef9c3" stroke="#eab308" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <!-- Vacuole -->
+  <ellipse cx="400" cy="145" rx="70" ry="55" fill="#bae6fd" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="400" y="140" text-anchor="middle" font-size="9" fill="#0369a1">Large</text>
+  <text x="400" y="152" text-anchor="middle" font-size="9" fill="#0369a1">Vacuole</text>
+  <!-- Nucleus -->
+  <ellipse cx="330" cy="90" rx="28" ry="22" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="330" y="93" text-anchor="middle" font-size="8" fill="#1d4ed8">Nucleus</text>
+  <!-- Chloroplasts -->
+  <ellipse cx="480" cy="90" rx="18" ry="10" fill="#86efac" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="480" y="93" text-anchor="middle" font-size="7" fill="#15803d">Chloro.</text>
+  <ellipse cx="490" cy="140" rx="18" ry="10" fill="#86efac" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="490" y="143" text-anchor="middle" font-size="7" fill="#15803d">Chloro.</text>
+  <!-- Mitochondria -->
+  <ellipse cx="350" cy="165" rx="16" ry="9" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="350" y="168" text-anchor="middle" font-size="7" fill="#15803d">Mito.</text>
+  <!-- Labels right -->
+  <text x="510" y="55" font-size="8" fill="#166534">Cell wall</text>
+  <text x="510" y="67" font-size="7" fill="#166534">(cellulose)</text>
+</svg>
+:::
+
+## Structures Present in ALL Eukaryotic Cells
+
+### Cell Membrane
+The **plasma membrane** is a **phospholipid bilayer** 7–8 nm thick. Phospholipid molecules have a hydrophilic (water-loving) phosphate head and two hydrophobic (water-repelling) fatty acid tails. They spontaneously arrange into a bilayer with heads facing the aqueous environments on each side.
+
+Embedded **proteins** serve as:
+- Transport channels (facilitated diffusion of ions, glucose)
+- Carrier proteins (active transport)
+- Receptor proteins (for hormones, neurotransmitters)
+- Enzymes (on inner surfaces)
+
+The membrane is **selectively permeable** — it controls which substances enter and leave.
+
+### Nucleus
+The nucleus is the control centre, containing the cell's genetic instructions (DNA) as **chromatin** (DNA wound around histone proteins). It is surrounded by the **double nuclear envelope** (two lipid bilayers) perforated by **nuclear pores** (50–100 nm wide) through which mRNA exits during protein synthesis.
+
+Inside the nucleus, the **nucleolus** synthesises ribosomal RNA and assembles ribosome subunits.
+
+> The nucleus is analogous to the cell's "instruction manual" — it contains all the plans for making every protein in the cell, and it decides which plans are used at any given time.
+
+### Mitochondria
+Mitochondria (singular: mitochondrion) are the "powerhouses" of the cell. They have a **double membrane** — the **outer membrane** is smooth; the **inner membrane** is extensively folded into **cristae**, which dramatically increase the surface area for the reactions of the **electron transport chain** (the final stage of aerobic respiration that produces most ATP).
+
+The fluid-filled interior is the **matrix**, where the **Krebs cycle** occurs.
+
+Cells with high energy demands have abundant mitochondria:
+- Muscle cells (for contraction)
+- Sperm cells (for swimming)
+- Kidney tubule cells (for active reabsorption)
+- Liver cells (for metabolic reactions)
+
+### Ribosomes
+Ribosomes are the sites of **protein synthesis** (translation of mRNA into polypeptide chains). They consist of two subunits of ribosomal RNA and protein. Eukaryotic ribosomes are **80S** (larger); prokaryotic ribosomes are **70S** (smaller) — this difference is exploited by antibiotics like streptomycin which block 70S ribosomes without affecting human 80S ribosomes.
+
+## Structures in Plant Cells Only
+
+### Cell Wall
+Made of **cellulose microfibrils** embedded in a polysaccharide matrix. Provides:
+- Structural rigidity (keeps shape)
+- Prevents bursting (resists expansion during osmosis, creating **turgor pressure**)
+- **Fully permeable** (unlike the membrane — does not control passage of substances)
+
+### Chloroplasts
+Chloroplasts contain the **thylakoid membrane system** — flattened membrane-bound sacs (thylakoids) stacked into **grana** (singular: granum). Chlorophyll and other photosynthetic pigments are embedded in the thylakoid membranes. The light-dependent reactions of photosynthesis occur here.
+
+The **stroma** (fluid surrounding grana) is where the **Calvin cycle** (light-independent reactions) occurs.
+
+### Large Central Vacuole
+The vacuole is filled with **cell sap** — a concentrated solution of sugars, amino acids, and inorganic ions. When full of water, it pushes the cytoplasm outward against the cell wall, creating **turgor pressure** that keeps non-woody plants rigid. Plants wilt when the vacuole loses water and the cells become **flaccid**.`,
           groups: [
             {
-              subTitle: "Structures present in both animal and plant cells",
+              subTitle: "Comparing plant and animal cells — exam summary",
               bullets: [
-                "**Cell membrane**: Phospholipid bilayer with protein channels and carrier proteins. Selectively permeable — controls entry and exit of molecules. Proteins act as receptors for hormones and as enzymes.",
-                "**Nucleus**: Contains the genetic information (DNA) as chromatin. The nucleolus inside the nucleus manufactures ribosomal RNA. Controls which proteins the cell makes and therefore determines cell structure and function.",
-                "**Cytoplasm**: Aqueous gel containing dissolved enzymes, glucose, amino acids, and organelles. Site of glycolysis (the first stage of respiration) and many other metabolic reactions.",
-                "**Mitochondria**: Double membrane; inner membrane folded into cristae. Site of the Krebs cycle (matrix) and oxidative phosphorylation (inner membrane). Cells with high energy demands (muscle, sperm, kidney tubule cells) have more mitochondria.",
-                "**Ribosomes**: Tiny organelles (no membrane) made of ribosomal RNA and protein. Site of protein synthesis. Free ribosomes make proteins for use in the cytoplasm; ribosomes on rough endoplasmic reticulum make proteins for export."
-              ]
-            },
-            {
-              subTitle: "Structures found only in plant cells",
-              bullets: [
-                "**Cell wall**: Made of cellulose microfibrils embedded in a polysaccharide matrix. Provides structural rigidity, prevents bursting during osmosis (limits swelling to produce turgor pressure). Fully permeable — does not control passage of molecules.",
-                "**Chloroplasts**: Contain chlorophyll in thylakoid membranes (stacked as grana). Light reactions occur on thylakoid membranes; Calvin cycle occurs in stroma. Only present in green parts of the plant exposed to light.",
-                "**Large central vacuole**: Filled with cell sap. Pushes cytoplasm against the cell wall, maintaining turgor. When the vacuole loses water, the cell becomes flaccid and the plant wilts.",
-                "**Amyloplasts**: Colorless plastids that store starch granules. Found abundantly in storage organs like potato tubers and seeds."
+                "**Present in BOTH**: Cell membrane, nucleus, mitochondria, ribosomes, cytoplasm, endoplasmic reticulum.",
+                "**Plant cells ONLY**: Cell wall (cellulose), chloroplasts, large permanent central vacuole, amyloplasts (starch-storing plastids in non-green cells).",
+                "**Animal cells ONLY** (and absent in plants): Centrioles (involved in cell division); animal cells may have small temporary vacuoles but not the large permanent one.",
+                "**Examiner trap**: Students often say 'cell wall' when they mean 'cell membrane'. The cell wall is the rigid outer layer (plants only). The cell membrane is the flexible selectively permeable layer present in ALL cells."
               ]
             }
           ],
           recap: [
-            "Describe the structure and function of mitochondria. [4]",
-            "Explain why plant cells do not burst when placed in pure water, whereas animal cells do. [3]",
-            "State three differences between a plant cell and an animal cell visible under a light microscope. [3]",
-            "Explain why liver cells contain more mitochondria than skin cells. [2]"
-          ]
-        },
-        {
-          title: "Specialised Cells and Levels of Organisation",
-          body: "A specialised cell is one that has a structure precisely adapted to carry out a particular function efficiently. Red blood cells (erythrocytes) are biconcave discs lacking a nucleus — the absence of a nucleus gives more room for haemoglobin (up to 280 million molecules per cell), and the biconcave shape increases the surface area to volume ratio so oxygen can diffuse in and out rapidly; the flexible membrane allows the cell to squeeze through narrow capillaries. Sperm cells have a streamlined head containing a haploid nucleus and an acrosome (containing enzymes to digest the egg's outer coating), a mid-piece packed with mitochondria to supply ATP for swimming, and a long flagellum for propulsion. Root hair cells have a greatly elongated projection that dramatically increases the surface area in contact with soil water, facilitating the uptake of water by osmosis and mineral ions by active transport; they have no chloroplasts because they are underground. Ciliated epithelial cells lining the trachea and bronchi bear hundreds of cilia that beat in coordinated waves to sweep mucus (trapping dust and pathogens) upward toward the pharynx. Tissues are groups of cells with the same structure performing the same function; organs contain several different tissues working together; organ systems contain multiple organs with a shared overall function.",
-          groups: [
-            {
-              subTitle: "Adaptations of specialised cells",
-              bullets: [
-                "**Red blood cell**: No nucleus (more space for haemoglobin), biconcave shape (large SA:V ratio for rapid O2 diffusion), thin membrane (short diffusion distance), flexible (fits through capillaries 7 micrometres wide).",
-                "**Sperm cell**: Streamlined head (reduces drag), acrosome (enzymes digest zona pellucida of egg), many mitochondria in mid-piece (provide ATP for flagellum movement), flagellum (propulsion through fluid).",
-                "**Root hair cell**: Long thin extension (greatly increases SA for absorption), large vacuole (maintains water potential gradient for osmosis), no chloroplasts (underground — no light), many mitochondria (active transport of minerals).",
-                "**Nerve cell (neurone)**: Long axon (transmits impulses over large distances), myelin sheath around axon (insulation, speeds up conduction by saltatory transmission), many mitochondria at synaptic terminals (ATP for neurotransmitter release)."
-              ]
-            }
-          ],
-          recap: [
-            "Explain three ways in which a red blood cell is adapted for transporting oxygen. [3]",
-            "Describe three adaptations of a root hair cell for the absorption of water and mineral ions. [3]",
-            "Arrange the following in order from smallest to largest: organ system, cell, organism, tissue, organ. [1]",
-            "Explain why sperm cells contain many mitochondria in their mid-piece region. [2]"
+            "Describe the structure of a mitochondrion and explain how its structure is related to its function. [5]",
+            "Explain why plant cells do not burst when placed in pure water, but animal cells do. [4]",
+            "State three differences visible between a plant cell and an animal cell under a light microscope. [3]",
+            "Explain why liver cells contain more mitochondria than skin cells. [2]",
+            "Describe the role of the nucleus in protein synthesis. [3]"
           ]
         }
       ]
@@ -147,311 +405,276 @@ export const BIOLOGY: SubjectNotes = {
     {
       number: 3,
       title: "Movement In and Out of Cells",
-      intro: "Substances move across cell membranes by three processes: diffusion, osmosis, and active transport. Understanding each process requires knowing what drives the movement (concentration gradient, water potential gradient, or ATP), whether a membrane is required, and the direction of movement relative to the gradient. These processes underlie the absorption of digested food in the small intestine, gas exchange in the lungs and leaves, the uptake of water by plant roots, and the reabsorption of glucose in the kidney.",
+      intro: "The survival of every cell depends on the constant movement of substances across its membrane — nutrients in, waste products out, water balanced correctly. Three mechanisms govern this movement: **diffusion**, **osmosis**, and **active transport**. Each has different energy requirements, direction, and rules. Understanding them in precise detail explains how organisms absorb food, exchange gases, balance water, and maintain the internal conditions necessary for life.",
       subheadings: [
         {
-          title: "Diffusion",
-          body: "Diffusion is the net movement of particles from a region of higher concentration to a region of lower concentration, as a result of the random motion of particles. The word 'net' is important — particles move in both directions all the time, but there is an overall movement down the concentration gradient until equilibrium is reached. Diffusion requires no energy input from the cell (it is a passive process) and can occur in gases, liquids, and across cell membranes. The rate of diffusion is increased by: a steeper concentration gradient (greater difference in concentration), a higher temperature (particles have more kinetic energy), a larger surface area across which diffusion occurs, and a shorter diffusion distance (thinner membrane or tissue). In the lungs, oxygen diffuses from the alveolar air (high pO2) across the thin alveolar wall and capillary wall into the blood, while carbon dioxide diffuses in the opposite direction. The alveoli are adapted for rapid diffusion by having a very large total surface area (~70 m2), a one-cell-thick wall, a rich blood supply that maintains the concentration gradient, and a moist surface that allows gases to dissolve.",
+          title: "Diffusion — Passive Movement Down a Gradient",
+          body: `**Definition:** Diffusion is the ==net movement== of particles from a region of **higher concentration** to a region of **lower concentration**, due to the random kinetic motion of particles.
+
+The word ==net== is essential — particles move in *both* directions continuously. However, more particles move from high to low than from low to high (simply because there are more particles on the high-concentration side to start moving). This creates a net overall movement down the gradient until **equilibrium** is reached.
+
+:::svg[Diffusion — Net Movement Down Concentration Gradient]
+<svg viewBox="0 0 480 180" width="480" height="180" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <rect width="480" height="180" fill="#f8fafc" rx="12"/>
+  <text x="240" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">Diffusion: Net Movement Down Concentration Gradient</text>
+  <!-- Left chamber high concentration -->
+  <rect x="20" y="30" width="170" height="120" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+  <text x="105" y="50" text-anchor="middle" font-size="10" font-weight="700" fill="#dc2626">HIGH Concentration</text>
+  <!-- Particles (many) -->
+  <circle cx="50" cy="80" r="6" fill="#dc2626" opacity="0.8"/><circle cx="75" cy="65" r="6" fill="#dc2626" opacity="0.8"/>
+  <circle cx="100" cy="90" r="6" fill="#dc2626" opacity="0.8"/><circle cx="130" cy="70" r="6" fill="#dc2626" opacity="0.8"/>
+  <circle cx="55" cy="110" r="6" fill="#dc2626" opacity="0.8"/><circle cx="85" cy="125" r="6" fill="#dc2626" opacity="0.8"/>
+  <circle cx="145" cy="100" r="6" fill="#dc2626" opacity="0.8"/><circle cx="165" cy="125" r="6" fill="#dc2626" opacity="0.8"/>
+  <circle cx="40" cy="130" r="6" fill="#dc2626" opacity="0.6"/><circle cx="115" cy="115" r="6" fill="#dc2626" opacity="0.6"/>
+  <!-- Membrane in middle -->
+  <rect x="195" y="30" width="12" height="120" rx="3" fill="#94a3b8"/>
+  <text x="201" y="170" text-anchor="middle" font-size="8" fill="#64748b">membrane</text>
+  <!-- Arrows showing net movement -->
+  <path d="M195 75 L230 75" stroke="#16a34a" stroke-width="3" fill="none" marker-end="url(#arrowGreen)"/>
+  <path d="M220 100 L195 100" stroke="#ef4444" stroke-width="1.5" fill="none" marker-end="url(#arrowRed)" opacity="0.5"/>
+  <defs>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ef4444"/>
+    </marker>
+  </defs>
+  <text x="230" y="72" font-size="9" fill="#15803d" font-weight="600">Net movement</text>
+  <!-- Right chamber low concentration -->
+  <rect x="210" y="30" width="250" height="120" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="335" y="50" text-anchor="middle" font-size="10" font-weight="700" fill="#16a34a">LOW Concentration</text>
+  <circle cx="250" cy="90" r="6" fill="#16a34a" opacity="0.7"/><circle cx="310" cy="70" r="6" fill="#16a34a" opacity="0.7"/>
+  <circle cx="380" cy="100" r="6" fill="#16a34a" opacity="0.7"/>
+</svg>
+:::
+
+## Why Diffusion is Passive
+Diffusion requires **no energy input** from the cell. The kinetic energy of the particles themselves drives the process — particles are in constant random motion, and this randomness statistically guarantees net movement down a concentration gradient.
+
+## Factors Affecting Rate of Diffusion
+
+1. **Concentration gradient** — The steeper the gradient (bigger difference between two regions), the faster the net movement. Ventilation maintains a steep O₂ gradient in the lungs.
+
+2. **Surface area** — More area = more simultaneous diffusion events. This explains adaptations like alveoli, villi, and microvilli.
+
+3. **Diffusion distance** — Shorter distance = faster diffusion. Alveolar walls are only ~0.2 μm thick (one cell thick) to minimise distance.
+
+4. **Temperature** — Higher temperature gives particles more kinetic energy, so they move faster and diffuse more rapidly.
+
+5. **Molecular size** — Smaller molecules diffuse faster. O₂ (32 g/mol) diffuses faster than proteins (>10,000 g/mol).
+
+## The Alveoli — Adapted for Maximum Diffusion
+The alveoli demonstrate every factor that maximises diffusion rate:
+
+| Adaptation | Factor it affects |
+|-----------|-------------------|
+| ~700 million alveoli (total SA ~70 m²) | Surface area maximised |
+| Wall is one cell thick (~0.2 μm) | Diffusion distance minimised |
+| Dense capillary network surrounds each alveolus | Concentration gradient maintained (blood carries O₂ away) |
+| Constant ventilation (breathing) | O₂ in alveolar air replenished, CO₂ removed |
+| Moist alveolar surfaces | Gases dissolve to diffuse across membrane |`,
           groups: [
             {
-              subTitle: "Factors affecting the rate of diffusion",
+              subTitle: "Worked example — calculating diffusion rate effect",
               bullets: [
-                "**Concentration gradient**: The steeper the gradient (greater difference in concentration on either side), the faster the rate of diffusion. This is why ventilation of the lungs is important — it continually replenishes O2 and removes CO2, maintaining a steep gradient.",
-                "**Surface area**: A larger surface area provides more space for particles to cross simultaneously. Alveoli, villi, and microvilli are all adaptations that increase surface area to speed up diffusion.",
-                "**Diffusion distance**: The shorter the path particles must travel, the faster diffusion occurs. Alveolar walls are only one cell thick (~0.2 micrometres) — this minimises diffusion distance.",
-                "**Temperature**: Higher temperature gives particles more kinetic energy, so they move faster and diffuse more rapidly. At lower temperatures, diffusion slows significantly."
+                "**Scenario**: A student compares O₂ diffusion in experiment A (20 °C) versus experiment B (40 °C). At 40°C, particles have roughly 2× the kinetic energy. **Prediction**: The rate of diffusion in B is significantly faster because more particles have sufficient energy to move, and they move faster between collisions.",
+                "**Example — gas exchange at alveolus**: Blood arriving at the alveolus capillary has O₂ partial pressure ~5 kPa (O₂ used by respiring tissues). Alveolar air has O₂ partial pressure ~13 kPa. The steep gradient (13 vs 5 kPa) drives rapid diffusion of O₂ into blood. CO₂ gradient is reversed: blood CO₂ ~6 kPa, alveolar CO₂ ~5.3 kPa — CO₂ diffuses outward.",
+                "**Why diffusion alone cannot supply O₂ to all body cells**: At the distances involved (mm to cm from blood vessels), diffusion would take hours — far too slow. A mass-flow transport system (the circulatory system) is needed to carry O₂ rapidly in bulk from lungs to tissues."
               ]
             }
           ],
           recap: [
-            "Define diffusion. [2]",
-            "Explain how the alveoli are adapted to maximise the rate of gas exchange. [4]",
-            "State four factors that increase the rate of diffusion. [4]",
-            "Explain why diffusion alone is insufficient to supply oxygen to all the cells in a large multicellular organism. [3]"
+            "Define diffusion and explain why it requires no energy from the cell. [3]",
+            "Describe how the alveolus is adapted to maximise the rate of gas exchange by diffusion. State four adaptations and explain each one. [8]",
+            "A student places a crystal of potassium manganate(VII) in a beaker of still water. Describe and explain what they observe over 24 hours. [3]",
+            "Explain why increasing temperature increases the rate of diffusion. [2]",
+            "Explain why diffusion alone is not sufficient to supply oxygen to all cells in a large organism like a human. [3]"
           ]
         },
         {
-          title: "Osmosis",
-          body: "Osmosis is the net movement of water molecules from a region of higher water potential to a region of lower water potential through a partially permeable membrane. Water potential is a measure of the tendency of water molecules to move — pure water has the highest water potential (0 kPa), and solutions have negative water potential values. When a solution is more concentrated (more solute dissolved), its water potential is lower (more negative). A partially permeable membrane has pores large enough for water molecules to pass through but not for most dissolved solute molecules. In plant cells, when placed in pure water, water enters by osmosis and the vacuole swells, pushing the cytoplasm against the cell wall — the cell becomes turgid. The cell wall resists further expansion, creating wall pressure, so plant cells cannot burst (lysis does not occur). When placed in a concentrated solution, water leaves by osmosis and the vacuole shrinks — the cytoplasm pulls away from the cell wall (plasmolysis) and the cell becomes flaccid. Animal cells have no cell wall, so when placed in pure water they take up water continuously until they burst (lysis); in a concentrated solution they shrink and become crenated (shrivelled). Osmosis is critical in plant support — turgid cells push against each other, making non-woody parts of the plant rigid.",
+          title: "Osmosis — Water Movement Across a Membrane",
+          body: `**Definition:** Osmosis is the ==net movement== of **water molecules** from a region of ==higher water potential== to a region of ==lower water potential==, through a **partially permeable membrane**.
+
+## Understanding Water Potential
+
+**Water potential (Ψ)** measures the tendency of water molecules to move. It is always measured relative to pure water:
+- **Pure water** has the highest water potential: **Ψ = 0 kPa**
+- **Solutions** have **negative** water potential values (e.g. Ψ = -300 kPa)
+- The **more solute** dissolved, the **lower (more negative)** the water potential
+- Water always moves from **less negative → more negative** (i.e. from high Ψ to low Ψ)
+
+:::svg[Osmosis — Water Movement Through Partially Permeable Membrane]
+<svg viewBox="0 0 500 200" width="500" height="200" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <rect width="500" height="200" fill="#f8fafc" rx="12"/>
+  <text x="250" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">Osmosis Through Partially Permeable Membrane</text>
+  <!-- Pure water side -->
+  <rect x="15" y="30" width="170" height="140" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="100" y="52" text-anchor="middle" font-size="10" font-weight="700" fill="#1d4ed8">Pure Water</text>
+  <text x="100" y="66" text-anchor="middle" font-size="9" fill="#1e40af">Ψ = 0 kPa</text>
+  <!-- Water molecule symbols (small circles) -->
+  <circle cx="45" cy="95" r="7" fill="#93c5fd"/><circle cx="65" cy="80" r="7" fill="#93c5fd"/>
+  <circle cx="85" cy="105" r="7" fill="#93c5fd"/><circle cx="105" cy="85" r="7" fill="#93c5fd"/>
+  <circle cx="130" cy="100" r="7" fill="#93c5fd"/><circle cx="150" cy="80" r="7" fill="#93c5fd"/>
+  <circle cx="55" cy="130" r="7" fill="#93c5fd"/><circle cx="120" cy="130" r="7" fill="#93c5fd"/>
+  <circle cx="160" cy="120" r="7" fill="#93c5fd"/><circle cx="80" cy="145" r="7" fill="#93c5fd"/>
+  <!-- Membrane -->
+  <rect x="190" y="30" width="14" height="140" rx="4" fill="#64748b"/>
+  <text x="197" y="184" text-anchor="middle" font-size="7.5" fill="#475569">partially</text>
+  <text x="197" y="194" text-anchor="middle" font-size="7.5" fill="#475569">permeable</text>
+  <!-- Pores in membrane (small gaps) -->
+  <circle cx="197" cy="70" r="3" fill="#f8fafc"/>
+  <circle cx="197" cy="95" r="3" fill="#f8fafc"/>
+  <circle cx="197" cy="120" r="3" fill="#f8fafc"/>
+  <circle cx="197" cy="145" r="3" fill="#f8fafc"/>
+  <!-- Solution side -->
+  <rect x="210" y="30" width="270" height="140" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+  <text x="345" y="52" text-anchor="middle" font-size="10" font-weight="700" fill="#b45309">Sugar Solution</text>
+  <text x="345" y="66" text-anchor="middle" font-size="9" fill="#92400e">Ψ = -800 kPa (lower)</text>
+  <!-- Water molecules (fewer, because diluted by solute) -->
+  <circle cx="240" cy="95" r="7" fill="#fde68a"/><circle cx="280" cy="75" r="7" fill="#fde68a"/>
+  <circle cx="320" cy="110" r="7" fill="#fde68a"/><circle cx="370" cy="85" r="7" fill="#fde68a"/>
+  <circle cx="420" cy="100" r="7" fill="#fde68a"/>
+  <!-- Solute molecules (large squares) -->
+  <rect x="255" y="95" width="14" height="14" rx="2" fill="#f97316"/><rect x="295" y="115" width="14" height="14" rx="2" fill="#f97316"/>
+  <rect x="340" y="90" width="14" height="14" rx="2" fill="#f97316"/><rect x="385" y="115" width="14" height="14" rx="2" fill="#f97316"/>
+  <rect x="435" y="85" width="14" height="14" rx="2" fill="#f97316"/>
+  <!-- Net movement arrow -->
+  <path d="M190 95 L215 95" stroke="#1d4ed8" stroke-width="3.5" fill="none"/>
+  <polygon points="215,90 225,95 215,100" fill="#1d4ed8"/>
+  <text x="207" y="90" text-anchor="middle" font-size="8" fill="#1d4ed8" font-weight="700">Net flow</text>
+  <text x="207" y="100" text-anchor="middle" font-size="7.5" fill="#1d4ed8">of water</text>
+  <!-- Legend -->
+  <circle cx="230" cy="175" r="7" fill="#93c5fd"/>
+  <text x="244" y="178" font-size="8.5" fill="#1e40af">Water molecule</text>
+  <rect x="310" y="168" width="12" height="12" rx="2" fill="#f97316"/>
+  <text x="328" y="178" font-size="8.5" fill="#c2410c">Solute molecule (too large for pores)</text>
+</svg>
+:::
+
+## Osmosis in Plant Cells — Turgor and Plasmolysis
+
+### Turgid Cell (in pure water or dilute solution)
+1. Water potential outside cell > water potential inside vacuole
+2. Water enters by osmosis → vacuole expands → pushes cytoplasm against cell wall
+3. Cell wall resists expansion → **wall pressure** (turgor pressure) builds up
+4. Cell becomes **turgid** — firm and rigid
+5. Cell does **not burst** because the rigid cellulose wall prevents further swelling
+
+### Flaccid / Plasmolysed Cell (in concentrated solution)
+1. Water potential outside < water potential inside vacuole
+2. Water leaves by osmosis → vacuole shrinks
+3. If enough water leaves, cytoplasm pulls away from cell wall → **plasmolysis**
+4. Cell becomes **flaccid** → wilting in plants
+
+### Osmosis in Animal Cells
+Animal cells have **no cell wall**, so:
+- In **pure water**: water enters → cell swells → **lysis** (bursting/haemolysis in red blood cells)
+- In **concentrated solution**: water leaves → cell shrinks → **crenation** (spiky appearance in RBCs)
+- In **isotonic solution** (same water potential): no net movement, normal shape maintained
+
+| Solution | Plant cell result | Animal cell result |
+|----------|------------------|-------------------|
+| Pure water (hypotonic) | Turgid — firm, pressure against wall | Bursts (lysis) |
+| Isotonic solution | No change | No change |
+| Concentrated solution (hypertonic) | Plasmolysis — flaccid | Crenation — shrivelled |
+
+> **Key examiner point:** A plant cell becomes **turgid** in pure water, NOT "burst" — because the cell wall prevents bursting. An animal cell in the same conditions will BURST. This difference is the cell wall.`,
           groups: [
             {
-              subTitle: "Osmosis in plant vs animal cells",
+              subTitle: "Investigating osmosis — potato cylinder experiment",
               bullets: [
-                "**Plant cell in pure water**: Water enters by osmosis (high to low water potential). Vacuole swells, cell becomes turgid. Cell wall prevents bursting. Turgor pressure provides support to the plant.",
-                "**Plant cell in concentrated solution**: Water leaves by osmosis. Vacuole and cytoplasm shrink. Cytoplasm pulls away from cell wall — this is called plasmolysis. The cell is plasmolysed and flaccid.",
-                "**Animal cell in pure water**: Water enters by osmosis continuously. No cell wall to resist swelling — the cell bursts (lysis/haemolysis in red blood cells).",
-                "**Animal cell in concentrated solution**: Water leaves by osmosis. Cell shrinks and becomes crenated (spiky appearance in red blood cells). Normal blood plasma is isotonic to red blood cells to prevent this."
+                "**Method**: Cut cylinders of potato of equal length and mass. Place each in a different concentration of sucrose solution (e.g. 0%, 0.2 M, 0.4 M, 0.6 M, 0.8 M, 1.0 M). Leave for 30 minutes. Re-measure mass and length.",
+                "**Results**: In dilute solutions (< cell water potential): cylinder gains mass and length (water enters by osmosis — turgid). In solutions equal to cell water potential: no change in mass — this concentration is **isotonic** to potato cells. In concentrated solutions (> cell water potential): cylinder loses mass and length (water leaves — flaccid).",
+                "**Calculating % change in mass**: % change = (final mass - initial mass) / initial mass × 100. This controls for different starting masses. Plot % change vs concentration. Where the line crosses 0% change is the water potential of potato cell contents.",
+                "**Sources of error**: Surface water on cylinders must be blotted dry before measuring. All cylinders must come from the same potato (genetic variation). Temperature must be controlled. Timing must be consistent."
               ]
             }
           ],
           recap: [
-            "Define osmosis. [2]",
-            "Explain what happens to a plant cell when it is placed in a concentrated sugar solution. Include the terms plasmolysis and flaccid. [4]",
-            "A student places cylinders of potato in solutions of different concentrations and measures the change in mass. Predict and explain the results. [4]",
-            "Explain why it would be dangerous to drink large quantities of seawater. [3]"
+            "Define osmosis precisely, including the terms water potential and partially permeable membrane. [3]",
+            "Explain what happens to a plant cell when it is placed in a concentrated sucrose solution. Use the terms plasmolysis, flaccid, and water potential. [5]",
+            "A student places potato cylinders in solutions of different concentrations and finds one solution causes no change in mass. Explain what this result tells us about the potato cell contents. [3]",
+            "Explain why a patient who drinks large quantities of seawater would become dangerously dehydrated. [4]",
+            "Explain why it is dangerous to drink large volumes of pure water very rapidly. Include what happens to red blood cells. [3]"
           ]
         },
         {
-          title: "Active Transport",
-          body: "Active transport is the movement of molecules or ions across a cell membrane from a region of lower concentration to a region of higher concentration — that is, against the concentration gradient — using energy from ATP. Because it works against the gradient, active transport requires carrier proteins in the membrane that act as pumps, and it is directly dependent on respiration. If a cell's respiration is inhibited (by cyanide, for example, or by lack of oxygen), active transport stops. Active transport is essential in many situations where substances must be accumulated against a gradient: mineral ions such as nitrates are absorbed by root hair cells from soil water (where their concentration is very low) into the cytoplasm (where their concentration is higher); glucose and amino acids are reabsorbed from the kidney tubule filtrate back into the blood even when their concentration in the blood is already high; and in the small intestine, glucose and amino acids are absorbed by epithelial cells even after their concentration in the blood exceeds that in the intestinal lumen.",
-          groups: [
-            {
-              subTitle: "Comparing the three transport mechanisms",
-              bullets: [
-                "**Diffusion**: Passive (no ATP needed), down the concentration gradient, no carrier proteins required (for simple diffusion), can occur in any medium.",
-                "**Osmosis**: Passive (no ATP needed), water only, down the water potential gradient, requires a partially permeable membrane.",
-                "**Active transport**: Requires ATP from respiration, against the concentration gradient, requires specific carrier proteins, only across cell membranes.",
-                "**Examiner note**: Questions often ask you to identify which process is occurring based on whether a substance moves with or against its concentration gradient. If it moves against the gradient, it must be active transport. If water moves through a membrane, it is osmosis."
-              ]
-            }
-          ],
+          title: "Active Transport — Moving Against the Gradient",
+          body: `**Definition:** Active transport is the movement of molecules or ions across a cell membrane from a region of **lower concentration** to a region of **higher concentration** — against the concentration gradient — requiring **energy from ATP** and **specific carrier proteins**.
+
+## How Active Transport Works
+
+:::svg[Active Transport — Carrier Protein Mechanism]
+<svg viewBox="0 0 480 180" width="480" height="180" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">
+  <rect width="480" height="180" fill="#f8fafc" rx="12"/>
+  <text x="240" y="18" text-anchor="middle" font-size="12" font-weight="700" fill="#1e293b">Active Transport: ATP-Powered Carrier Protein</text>
+  <!-- Membrane bilayer -->
+  <rect x="30" y="60" width="420" height="60" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="240" y="78" text-anchor="middle" font-size="9" fill="#0369a1">Phospholipid Bilayer</text>
+  <!-- Carrier protein (before) -->
+  <rect x="80" y="52" width="50" height="76" rx="8" fill="#a5f3fc" stroke="#0e7490" stroke-width="2"/>
+  <text x="105" y="82" text-anchor="middle" font-size="8.5" fill="#0e7490">Carrier</text>
+  <text x="105" y="93" text-anchor="middle" font-size="8.5" fill="#0e7490">Protein</text>
+  <!-- Ion binding site -->
+  <circle cx="105" cy="48" r="8" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+  <text x="105" y="52" text-anchor="middle" font-size="7.5" fill="#92400e">Ion</text>
+  <!-- Arrow + ATP -->
+  <text x="170" y="85" text-anchor="middle" font-size="14" fill="#7c3aed">→</text>
+  <text x="170" y="100" text-anchor="middle" font-size="9" fill="#7c3aed" font-weight="600">ATP</text>
+  <text x="170" y="112" text-anchor="middle" font-size="7.5" fill="#6d28d9">energy</text>
+  <!-- Carrier protein (after - conformation change) -->
+  <rect x="210" y="52" width="50" height="76" rx="8" fill="#a5f3fc" stroke="#0e7490" stroke-width="2" transform="rotate(15, 235, 90)"/>
+  <text x="237" y="83" text-anchor="middle" font-size="8" fill="#0e7490">Carrier</text>
+  <text x="237" y="95" text-anchor="middle" font-size="8" fill="#0e7490">Protein</text>
+  <text x="237" y="107" text-anchor="middle" font-size="7.5" fill="#0e7490">(changed</text>
+  <text x="237" y="118" text-anchor="middle" font-size="7.5" fill="#0e7490">shape)</text>
+  <!-- Ion released on other side -->
+  <circle cx="240" cy="145" r="8" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+  <text x="240" y="149" text-anchor="middle" font-size="7.5" fill="#92400e">Ion</text>
+  <!-- Labels -->
+  <text x="105" y="35" text-anchor="middle" font-size="9" fill="#374151">LOW concentration side</text>
+  <text x="340" y="148" text-anchor="middle" font-size="9" fill="#374151">HIGH concentration side</text>
+  <!-- Concentration labels -->
+  <text x="380" y="50" font-size="9.5" fill="#7c3aed" font-weight="600">Against gradient</text>
+  <text x="380" y="62" font-size="9" fill="#6d28d9">(requires ATP)</text>
+  <text x="380" y="74" font-size="9" fill="#6d28d9">= Active transport</text>
+</svg>
+:::
+
+When ATP binds to a carrier protein, it changes the protein's **conformation** (shape). This shape change moves the ion or molecule from the low-concentration side to the high-concentration side, then releases it. The protein then reverts to its original shape, ready for the next molecule. This is why active transport stops immediately when respiration is inhibited — no ATP = no carrier protein function.
+
+## Where Active Transport Is Essential
+
+### 1. Root Hair Cells — Mineral Ion Uptake
+Soil water contains mineral ions (nitrate NO₃⁻, phosphate PO₄³⁻, potassium K⁺) at very low concentrations — often lower than the concentration already inside root cells. Active transport pumps ions from soil water INTO root cells against the gradient.
+
+Evidence: When roots are deprived of oxygen (anaerobic conditions, or treated with respiratory inhibitors), mineral ion uptake drops dramatically — confirming it requires aerobic respiration to provide ATP.
+
+### 2. Small Intestine — Glucose and Amino Acid Absorption
+After digestion, glucose concentrations in the intestinal lumen may be LOW (most has been absorbed) while blood glucose is HIGH. Epithelial cells of the villi use active transport to continue absorbing glucose against its concentration gradient — ensuring maximum absorption.
+
+### 3. Kidney — Glucose Reabsorption
+Glucose filtered into the kidney tubule is actively transported back into blood (100% recovery in healthy individuals) even when blood glucose exceeds filtrate glucose.
+
+## Comparing All Three Transport Mechanisms
+
+| Feature | Diffusion | Osmosis | Active Transport |
+|---------|-----------|---------|----------------|
+| Energy required? | No (passive) | No (passive) | Yes (ATP) |
+| Direction | High → low concentration | High → low water potential | Low → high concentration |
+| Membrane needed? | No (in gases); yes (across membranes) | Yes (partially permeable) | Yes |
+| Substances | Any dissolved/gaseous | Water only | Specific ions/molecules |
+| Carrier proteins needed? | Sometimes (facilitated diffusion) | No | Yes (specific pumps) |
+
+> **Examiner tip:** If a substance moves **against** its concentration gradient, it MUST be active transport. If it moves **with** the gradient and no energy is used, it is diffusion (or osmosis for water).`,
+          groups: [],
           recap: [
-            "Explain why active transport requires energy but diffusion does not. [2]",
-            "Describe how mineral ions are absorbed by root hair cells from the soil. [3]",
-            "An experiment shows that adding a respiratory inhibitor to root cells stops the uptake of nitrate ions. Explain this observation. [3]",
-            "Compare diffusion and active transport in terms of direction of movement, energy requirement, and the need for carrier proteins. [4]"
-          ]
-        }
-      ]
-    },
-    {
-      number: 4,
-      title: "Biological Molecules",
-      intro: "Living organisms are built from and fuelled by four main groups of biological molecules: carbohydrates, lipids, proteins, and nucleic acids. Each group has a characteristic monomer-polymer relationship — large complex molecules are built by joining smaller subunit molecules, a process called condensation, which releases water. Conversely, these polymers are broken down by hydrolysis, which adds water. Understanding the structure of each molecule type is essential for explaining its function, and the standard food tests allow identification of carbohydrates, lipids, and proteins in food samples.",
-      subheadings: [
-        {
-          title: "Carbohydrates: Structure and Function",
-          body: "Carbohydrates contain only carbon, hydrogen, and oxygen atoms, with the general formula (CH2O)n. The simplest carbohydrates are monosaccharides — single sugar units that cannot be hydrolysed further. Glucose (C6H12O6) is the primary fuel for cellular respiration; it exists as alpha and beta forms that differ only in the orientation of the -OH group on carbon 1. Two monosaccharides join by a condensation reaction to form a disaccharide with elimination of one water molecule, creating a glycosidic bond. Maltose (glucose + glucose) forms during starch digestion; sucrose (glucose + fructose) is the main transport sugar in plants. Polysaccharides are long chains of many monosaccharides. Starch consists of amylose (unbranched helical chains of alpha-glucose linked 1,4) and amylopectin (branched chains linked 1,4 and 1,6); its compact, insoluble, and osmotically inert structure makes it ideal for storage in plants. Glycogen in animals and fungi has the same monomers as amylopectin but is more heavily branched, allowing rapid enzymatic release of glucose during exercise. Cellulose chains of beta-glucose form hydrogen bonds between parallel chains, creating strong microfibrils that provide the tensile strength of plant cell walls.",
-          groups: [
-            {
-              subTitle: "Food tests for carbohydrates",
-              bullets: [
-                "**Benedict's test for reducing sugars**: Add Benedict's reagent (blue) to the food sample and heat in a water bath for 5 minutes. A positive result shows a colour change from blue through green, yellow, orange, to a brick-red precipitate. All monosaccharides and most disaccharides (except sucrose) are reducing sugars.",
-                "**Testing for non-reducing sugars (e.g. sucrose)**: First confirm the Benedict's test is negative (no colour change). Then add dilute hydrochloric acid and heat (to hydrolyse sucrose into glucose and fructose), neutralise with sodium hydrogen carbonate, then repeat the Benedict's test. A brick-red precipitate now confirms a non-reducing sugar was present.",
-                "**Iodine test for starch**: Add iodine solution (brown/orange) to the sample. A positive result is a blue-black colour change. This is due to iodine molecules fitting inside the helical coil of amylose."
-              ]
-            }
-          ],
-          recap: [
-            "Describe the chemical test for starch and state the result of a positive test. [2]",
-            "Explain how sucrose can be tested for using Benedict's reagent. Include all steps. [4]",
-            "Compare the structure of starch and cellulose and explain how their structures relate to their functions. [5]",
-            "State two ways in which glucose is used by cells after it has been absorbed from the intestine. [2]"
-          ]
-        },
-        {
-          title: "Proteins: Structure and Function",
-          body: "Proteins are composed of carbon, hydrogen, oxygen, nitrogen, and often sulfur. The monomers of proteins are amino acids, of which there are 20 different types used in living organisms, all sharing the same basic structure: a central carbon bonded to an amino group (-NH2), a carboxyl group (-COOH), a hydrogen atom, and a variable R-group (side chain) that gives each amino acid its unique chemical properties. Two amino acids join by a condensation reaction between the amino group of one and the carboxyl group of another, releasing water and forming a peptide bond; the resulting two-amino-acid chain is a dipeptide. Long chains of amino acids form polypeptides, and one or more polypeptide chains fold into the specific three-dimensional shape of a functional protein. The sequence of amino acids (primary structure) determines how the chain folds through hydrogen bonds and other interactions into secondary structures (alpha helices, beta pleated sheets) and ultimately into the precise tertiary structure that gives the protein its function. Proteins carry out an enormous variety of functions: enzymes catalyse metabolic reactions; structural proteins like collagen and keratin provide mechanical support; haemoglobin transports oxygen; antibodies provide immunity; hormones like insulin act as chemical messengers.",
-          groups: [
-            {
-              subTitle: "The Biuret test for proteins",
-              bullets: [
-                "**Procedure**: Add sodium hydroxide solution to make the sample alkaline, then add a few drops of copper sulfate solution. A positive result is a purple/violet colour. The Biuret reagent detects peptide bonds — the copper ions coordinate with nitrogen atoms in adjacent peptide bonds to produce the colour.",
-                "**Negative result**: The solution remains blue (the colour of copper sulfate). This indicates no protein is present.",
-                "**Important**: Do NOT heat this test. Heating is required for Benedict's test but not for Biuret. Heating with NaOH would hydrolyse the peptide bonds and give a false negative."
-              ]
-            }
-          ],
-          recap: [
-            "Describe the Biuret test for protein including reagents used, procedure, and positive result. [3]",
-            "Explain how the primary structure of a protein determines its function. [3]",
-            "Name the type of bond formed between two amino acids and describe the chemical reaction by which it forms. [2]",
-            "State three different functions of proteins in the human body and give a named example of each. [3]"
-          ]
-        }
-      ]
-    },
-    {
-      number: 5,
-      title: "Enzymes",
-      intro: "Enzymes are biological catalysts — protein molecules that speed up the rate of chemical reactions inside and outside living cells without being permanently altered or consumed in the reaction. They are essential for life because the chemical reactions of metabolism (respiration, digestion, photosynthesis, protein synthesis) would all proceed far too slowly at body temperature without them. Enzymes act on specific substrates and are therefore said to be specific — each enzyme catalyses only one reaction or a narrow range of similar reactions. Understanding how enzymes work and how their activity is affected by temperature, pH, and inhibitors is fundamental to Cambridge IGCSE Biology.",
-      subheadings: [
-        {
-          title: "The Active Site and Enzyme-Substrate Specificity",
-          body: "Every enzyme has an active site — a region with a specific three-dimensional shape that is complementary to the shape of the enzyme's substrate molecule. The substrate binds to the active site, forming an enzyme-substrate complex. During the reaction, the enzyme lowers the activation energy needed for the reaction, allowing it to proceed rapidly at body temperature. The products are released, and the enzyme is unchanged and free to bind another substrate molecule. The lock-and-key model describes the substrate fitting precisely into the rigid active site like a key into a lock. The induced fit model is more accurate: the active site is flexible and changes shape slightly when the substrate binds, optimising the fit and stressing chemical bonds in the substrate. The specificity of enzymes means that only substrates with the correct complementary shape can bind to a given enzyme — for example, sucrase only catalyses the hydrolysis of sucrose, not maltose or lactose. This specificity arises because the active site's precise shape is determined by the sequence of amino acids in the protein chain (primary structure) and the way they fold.",
-          groups: [
-            {
-              subTitle: "Lock-and-key vs induced fit models",
-              bullets: [
-                "**Lock-and-key model**: The active site has a rigid, fixed shape exactly complementary to the substrate. The substrate fits like a key into the lock. This model explains specificity but not why the enzyme-substrate complex is more reactive.",
-                "**Induced fit model**: The active site is flexible. When the substrate approaches, the enzyme changes shape slightly to achieve an optimum fit. This model better explains how the enzyme lowers activation energy by straining bonds in the substrate and optimising interactions at the active site.",
-                "**Why enzymes are specific**: The active site's three-dimensional shape depends on the precise folding of the protein chain, which is determined by the amino acid sequence. Any substrate with a different shape cannot form effective interactions with the active site and will not bind. This is why each enzyme catalyses only specific reactions."
-              ]
-            }
-          ],
-          recap: [
-            "Explain what is meant by the term 'active site' of an enzyme. [2]",
-            "Explain why each enzyme is specific to one substrate or a small group of substrates. [3]",
-            "Compare the lock-and-key model with the induced fit model of enzyme action. [3]",
-            "Explain the term enzyme-substrate complex. [2]"
-          ]
-        },
-        {
-          title: "Effects of Temperature and pH on Enzyme Activity",
-          body: "Enzyme activity is highly sensitive to both temperature and pH because both affect the shape of the active site. As temperature increases from 0°C, the rate of enzyme-catalysed reactions increases because both the enzyme and substrate molecules have more kinetic energy, so they collide more frequently and with more energy — more enzyme-substrate complexes form per unit time. However, above the optimum temperature (approximately 37-40°C for human enzymes), the rate drops sharply. High temperatures provide enough energy to break the hydrogen bonds and other weak interactions that maintain the enzyme's tertiary structure — the protein unfolds and the active site loses its specific shape. This irreversible process is called denaturation: the enzyme can no longer bind its substrate. pH also affects enzyme activity by altering the charge on amino acid R-groups in and around the active site. Each enzyme has an optimum pH; deviations in either direction change the ionic interactions that maintain the active site's shape, reducing activity. At extreme pH values, denaturation occurs as the protein structure is permanently disrupted. Pepsin (in the stomach) has an optimum pH of about 2; salivary amylase has an optimum of about 7; intestinal enzymes work best around pH 7-8.",
-          groups: [
-            {
-              subTitle: "Describing enzyme denaturation correctly",
-              bullets: [
-                "**Denaturation definition**: The irreversible change in the tertiary (three-dimensional) structure of an enzyme due to breaking of hydrogen bonds and other weak interactions, resulting in a change in the shape of the active site so the substrate can no longer bind.",
-                "**What denaturation is NOT**: The enzyme is not destroyed or dissolved — the peptide bonds in the primary structure remain intact. The protein chain still exists but is permanently unfolded.",
-                "**Common exam error**: Many students write 'the enzyme is killed' or 'the enzyme is broken down'. Enzymes are not alive, so cannot be killed. The correct term is denatured. Always state that the active site changes shape and the substrate can no longer bind.",
-                "**Effect of temperature on rate**: Below the optimum, the rate increases with temperature because of increased collision frequency. Above the optimum, the rate decreases because denaturation outweighs the benefit of increased kinetic energy. At the optimum, the rate is greatest."
-              ]
-            }
-          ],
-          recap: [
-            "Explain why increasing temperature above 40°C causes a decrease in the rate of an enzyme-catalysed reaction. Use the terms denaturation and active site. [4]",
-            "Explain why pepsin works most effectively in the stomach but not in the small intestine. [3]",
-            "Sketch a graph of enzyme activity against temperature for a human enzyme, label the optimum temperature, and explain the shape of the curve. [4]",
-            "Explain what happens to an enzyme molecule when it is denatured. [3]"
-          ]
-        }
-      ]
-    },
-    {
-      number: 6,
-      title: "Plant Nutrition",
-      intro: "Plants are autotrophs — they manufacture their own organic molecules from inorganic raw materials using energy from sunlight. This process, photosynthesis, is the foundation of virtually every food chain on Earth. Carbon dioxide is fixed into glucose, which is then used for respiration, stored as starch, or converted into other organic molecules needed for growth. Mineral ions absorbed from the soil are also essential for the synthesis of specific molecules. Understanding the requirements, products, and limiting factors of photosynthesis allows farmers and horticulturalists to optimise crop yields.",
-      subheadings: [
-        {
-          title: "Photosynthesis: Requirements, Products and the Equation",
-          body: "Photosynthesis occurs in two stages: the light-dependent reactions (in the thylakoid membranes of chloroplasts) and the light-independent reactions, also known as the Calvin cycle (in the stroma). In the light-dependent reactions, chlorophyll absorbs light energy and uses it to split water molecules — a process called photolysis — releasing oxygen as a by-product and generating ATP and reduced NADP (a hydrogen carrier). In the light-independent reactions, ATP and reduced NADP are used to drive the fixation of carbon dioxide into organic molecules via the Calvin cycle; carbon dioxide reacts with a five-carbon acceptor molecule (RuBP) to eventually produce glucose. The overall word equation is: carbon dioxide + water → glucose + oxygen (using light energy and chlorophyll). The balanced symbol equation is: 6CO2 + 6H2O → C6H12O6 + 6O2. The process requires carbon dioxide as the carbon source for building organic molecules, water as a source of electrons and hydrogen for the light-dependent reactions, and light energy (absorbed by chlorophyll) to drive both stages.",
-          groups: [
-            {
-              subTitle: "Investigating photosynthesis — key experiments",
-              bullets: [
-                "**Variegated leaf starch test**: A variegated leaf (green and white patches) is destarched in the dark, then left in light. The leaf is boiled in water (to kill cells and break down membranes), then in ethanol (to remove chlorophyll), then tested with iodine. Only the green regions turn blue-black — proving chlorophyll is needed.",
-                "**Testing for light**: De-starched plant covered with foil except for a window; after several hours the starch test shows starch only where light reached — proving light is needed.",
-                "**Testing for CO2**: De-starched plant placed in a sealed container with sodium hydroxide (which absorbs CO2). After time in light, starch test is negative — proving CO2 is needed.",
-                "**Measuring the rate**: The rate of photosynthesis in aquatic plants (e.g. Elodea) is estimated by counting oxygen bubbles per minute or measuring their volume. As light intensity or CO2 concentration increases, the bubble rate increases up to the limiting factor."
-              ]
-            }
-          ],
-          recap: [
-            "Write the word equation for photosynthesis. [2]",
-            "Describe an experiment to show that chlorophyll is needed for photosynthesis using a variegated leaf. [5]",
-            "State the two stages of photosynthesis, where each occurs in the chloroplast, and what each stage produces. [4]",
-            "A student increases the CO2 concentration around a plant and finds the rate of photosynthesis does not increase further. Suggest why. [2]"
-          ]
-        },
-        {
-          title: "Limiting Factors of Photosynthesis",
-          body: "A limiting factor is the factor present in the least favourable quantity that prevents the rate of a process from increasing further, even if other factors are optimal. For photosynthesis, the three main limiting factors are light intensity, carbon dioxide concentration, and temperature. At low light intensity, there is insufficient energy to drive the light-dependent reactions; increasing light intensity increases the rate. At high light intensity, if CO2 concentration is low, CO2 becomes limiting — there is not enough substrate for the Calvin cycle. Temperature affects the enzymes of the Calvin cycle (particularly RuBisCO); below the optimum, increasing temperature speeds the enzyme reactions; above the optimum (~25-35°C for most crop plants), denaturation reduces the rate. In a greenhouse, growers can control all three factors: artificial lighting extends the photoperiod; burning fuel or supplying CO2 tanks enriches the atmosphere; heating maintains optimal temperature. Understanding these interactions explains the shape of graphs showing rate of photosynthesis against light intensity at different CO2 concentrations or temperatures.",
-          groups: [
-            {
-              subTitle: "Interpreting photosynthesis rate graphs",
-              bullets: [
-                "**At low light**: Rate increases linearly with light intensity — light is the limiting factor. Adding more CO2 or raising temperature has no effect at this point.",
-                "**At the plateau**: Rate no longer increases with light intensity. CO2 or temperature is now limiting. If a higher CO2 line is drawn, it will plateau at a higher rate — CO2 was the limiting factor, not light.",
-                "**Temperature effect**: Two curves at the same CO2 concentration but different temperatures will plateau at different rates. At the higher temperature, the Calvin cycle enzymes work faster, so the rate is higher until denaturation occurs.",
-                "**Commercial application**: Tomato growers pipe CO2 from boiler exhaust into greenhouses, use supplemental LED lighting, and maintain ~25°C to push all three factors toward their optimum simultaneously."
-              ]
-            }
-          ],
-          recap: [
-            "Define the term limiting factor and name three limiting factors for photosynthesis. [4]",
-            "Explain why increasing light intensity beyond a certain point does not increase the rate of photosynthesis. [3]",
-            "A grower adds a kerosene heater to a greenhouse. Explain two reasons why photosynthesis rate might increase. [2]",
-            "Sketch a graph showing rate of photosynthesis against light intensity at two different CO2 concentrations. Annotate your graph to explain the results. [5]"
-          ]
-        }
-      ]
-    },
-    {
-      number: 7,
-      title: "Human Nutrition",
-      intro: "Humans are heterotrophic organisms that obtain energy and raw materials by ingesting and digesting complex organic molecules. The process of nutrition involves ingestion (taking food into the body), digestion (mechanical and chemical breakdown of food into small soluble molecules), absorption (passing these molecules from the gut into the blood), assimilation (using absorbed molecules for metabolism), and egestion (removing undigested material as faeces). Each nutrient class has specific roles in the body, and deficiencies of any essential nutrient lead to characteristic diseases. Digestion involves both physical breakdown (mastication, churning in the stomach) and chemical breakdown by specific digestive enzymes.",
-      subheadings: [
-        {
-          title: "Nutrients and Their Functions",
-          body: "Carbohydrates are the primary energy source; each gram provides about 17 kJ. Glucose is used directly in cellular respiration; excess glucose is stored as glycogen in the liver and muscles, and further excess is converted to fat. Fats (lipids) are concentrated energy stores (37 kJ per gram), provide insulation, protect organs, make up cell membranes, and are used to synthesise steroid hormones. Proteins provide the raw materials for growth and repair of tissues; they are broken down into amino acids, which are used to synthesise structural proteins (collagen, keratin), enzymes, hormones, antibodies, and haemoglobin. Vitamins are organic micronutrients needed in small amounts for specific metabolic functions. Vitamin C (ascorbic acid) is needed for the synthesis of collagen; deficiency causes scurvy (bleeding gums, poor wound healing). Vitamin D is needed for absorption of calcium from the gut and for bone mineralisation; deficiency causes rickets in children (soft, bending bones) and osteomalacia in adults. Mineral ions are inorganic micronutrients. Calcium is needed for bone and tooth formation and for muscle contraction and nerve impulse transmission. Iron is a component of haemoglobin (the oxygen-carrying protein in red blood cells); iron deficiency causes anaemia (insufficient haemoglobin, poor oxygen delivery). Water is needed as a solvent for metabolic reactions, as a transport medium in blood and lymph, as a reactant in hydrolysis and photosynthesis, and for temperature regulation (evaporation of sweat). Dietary fibre (cellulose) cannot be digested but provides bulk that stimulates peristalsis, preventing constipation and reducing risk of bowel cancer.",
-          groups: [
-            {
-              subTitle: "Deficiency diseases and their causes",
-              bullets: [
-                "**Scurvy**: Caused by deficiency of vitamin C. Vitamin C is needed to hydroxylate proline and lysine residues in collagen. Without collagen, blood vessel walls weaken, causing bleeding gums, slow wound healing, and bruising easily.",
-                "**Rickets (children) / Osteomalacia (adults)**: Caused by deficiency of vitamin D and/or calcium. Bones are insufficiently mineralised with calcium phosphate, causing softness, bowing of leg bones, and bone pain.",
-                "**Anaemia**: Caused by iron deficiency. Iron is the central atom of the haem group in haemoglobin; insufficient iron means fewer or less effective haemoglobin molecules, reducing oxygen-carrying capacity. Symptoms: fatigue, pale skin, breathlessness.",
-                "**Kwashiorkor**: Protein-energy malnutrition causing oedema (fluid accumulation in tissues), wasting of muscles, and impaired immune function. The swollen abdomen results from reduced plasma protein (albumin) production, lowering blood osmotic pressure so water moves from blood into tissues."
-              ]
-            }
-          ],
-          recap: [
-            "State the role of iron in the body and explain what happens when iron is deficient. [3]",
-            "Explain why dietary fibre is important even though it cannot be digested. [2]",
-            "Explain how a deficiency of vitamin C leads to the symptoms of scurvy. [3]",
-            "Compare the energy values per gram of carbohydrates and lipids and explain the advantage of storing energy as fat rather than glycogen. [3]"
-          ]
-        },
-        {
-          title: "Digestion and Absorption in the Alimentary Canal",
-          body: "Digestion begins in the mouth, where teeth mechanically break food into smaller pieces, and salivary amylase begins the hydrolysis of starch into maltose. The food bolus travels down the oesophagus by peristalsis — coordinated waves of muscular contraction — to the stomach. In the stomach, hydrochloric acid (pH 1-2) denatures proteins and kills most ingested bacteria; pepsin (a protease) begins protein digestion by hydrolysing peptide bonds. Gastric glands secrete pepsinogen (inactive) which is converted to pepsin by the acidic pH. From the stomach, partially digested food (chyme) enters the small intestine. The pancreas secretes pancreatic juice containing pancreatic amylase (continues starch digestion), lipase (hydrolyses triglycerides to fatty acids and glycerol), and proteases (trypsin, chymotrypsin — continue protein digestion). Bile, produced by the liver and stored in the gallbladder, is secreted into the duodenum; bile salts emulsify fat — they break large fat droplets into many tiny droplets, dramatically increasing the surface area for lipase to act upon. In the ileum, final digestion occurs on the surface of the epithelial cells (brush border enzymes — maltase, sucrase, lactase). Absorption occurs mainly in the ileum, which is adapted with villi (finger-like projections) and microvilli (on each epithelial cell) to have an enormous surface area of ~6 m2. Each villus has a dense capillary network (for absorbing glucose, amino acids, minerals, and water-soluble vitamins into the blood) and a lacteal (a lymph vessel, for absorbing fatty acids and glycerol, which are reassembled into triglycerides and travel as chylomicrons in lymph before entering the blood).",
-          groups: [
-            {
-              subTitle: "Summary of digestion by region",
-              bullets: [
-                "**Mouth**: Mechanical digestion by teeth. Salivary amylase hydrolyses starch to maltose. Neutral pH (~7). Tongue shapes food into bolus.",
-                "**Stomach**: Muscular churning (mechanical digestion). HCl (pH 1-2) denatures proteins and kills bacteria. Pepsin hydrolyses proteins to polypeptides. Mucus protects stomach wall from autodigestion.",
-                "**Small intestine (duodenum and ileum)**: Pancreatic amylase, lipase, proteases. Bile emulsifies fats. Brush border enzymes complete digestion to monosaccharides, amino acids, fatty acids, glycerol. Villi and microvilli for absorption.",
-                "**Large intestine**: Absorbs water, mineral ions, and vitamins produced by gut bacteria. Compacts undigested material into faeces for egestion via the rectum and anus."
-              ]
-            }
-          ],
-          recap: [
-            "Describe the role of bile in fat digestion. Include the terms emulsification and surface area. [3]",
-            "Explain how the structure of the small intestine is adapted for efficient absorption. [5]",
-            "State the products of complete digestion of proteins and carbohydrates. [2]",
-            "Explain why the stomach secretes pepsinogen rather than pepsin directly. [2]"
-          ]
-        }
-      ]
-    },
-    {
-      number: 8,
-      title: "Transport in Plants",
-      intro: "Plants need to transport water, mineral ions, and organic solutes (sugars, amino acids) between different parts of the plant. Water and minerals move upward from roots to leaves through the xylem, driven primarily by transpiration. Organic solutes move in both directions through the phloem, from sources (where sugars are produced or stored) to sinks (where they are used or stored). The structure of xylem and phloem vessels is precisely adapted to their transport functions. Understanding these processes is essential for explaining how plants survive in different environments and why excessive transpiration can cause wilting.",
-      subheadings: [
-        {
-          title: "Xylem: Structure and the Transpiration Stream",
-          body: "Xylem vessels are dead hollow tubes formed from cells whose end walls have broken down, creating a continuous column. The cell walls are thickened with lignin, which prevents them from collapsing under the tension created during water transport and makes them impermeable (preventing water loss through the walls). Water moves through xylem from roots to leaves by the transpiration stream — a continuous column of water pulled upward by the evaporation of water from the leaf surfaces. In leaves, water evaporates from the mesophyll cell surfaces into the substomatal air spaces and then diffuses out through open stomata; this is transpiration. As water is lost from the leaf, more water is pulled up from below by cohesion-tension: water molecules are strongly attracted to each other by hydrogen bonds (cohesion), and to the xylem wall by adhesion, so as water evaporates from the top of the column, the tension pulls the entire column upward like a chain. At the root, water enters root hair cells by osmosis (soil water has a higher water potential than the root cell cytoplasm), moves across the cortex by osmosis from cell to cell, and enters the xylem. Root pressure — created by active transport of mineral ions into the xylem, which lowers water potential so water follows by osmosis — also contributes to pushing water upward, especially in short plants at night.",
-          groups: [
-            {
-              subTitle: "Factors affecting the rate of transpiration",
-              bullets: [
-                "**Light intensity**: Stomata open in light (guard cells photosynthesize, produce glucose, become turgid, open stomata). More open stomata means faster transpiration. At night, stomata close, reducing transpiration.",
-                "**Temperature**: Higher temperatures increase the kinetic energy of water molecules, speeding evaporation from mesophyll cells. Also reduces air humidity, steepening the water vapour concentration gradient.",
-                "**Humidity**: High humidity reduces the water vapour concentration gradient between the leaf interior and the surrounding air, slowing diffusion of water vapour out of stomata.",
-                "**Wind speed**: Moving air carries water vapour away from the leaf surface, maintaining a steep concentration gradient and therefore increasing the rate of transpiration.",
-                "**Measuring transpiration**: A potometer measures the rate of water uptake (an approximation of transpiration rate) by tracking the movement of an air bubble in a capillary tube as the plant draws in water."
-              ]
-            }
-          ],
-          recap: [
-            "Explain the mechanism by which water moves from roots to leaves in the xylem. Include the terms cohesion, tension, and transpiration. [5]",
-            "Describe how you would use a potometer to compare the rate of transpiration under different conditions. [4]",
-            "Explain why transpiration rate increases on a hot, windy day. [3]",
-            "State two structural adaptations of xylem vessels for water transport. [2]"
-          ]
-        },
-        {
-          title: "Phloem and Translocation",
-          body: "Phloem transports organic solutes — primarily sucrose (produced by photosynthesis in leaves), but also amino acids and other organic molecules — throughout the plant in a process called translocation. Unlike xylem, phloem consists of living cells: sieve tube elements are elongated cells with perforated end walls (sieve plates) through which sieve tubes communicate. They have very little cytoplasm (allowing flow through the tube) and are metabolically supported by companion cells connected via plasmodesmata; companion cells carry out active transport to load sucrose into the phloem at source tissues. Translocation moves solutes from source (leaves during active photosynthesis; storage organs during spring mobilisation) to sink (growing tips, roots, fruits, seeds, storage organs). The flow is driven by a pressure gradient created by the active loading of sucrose into the phloem at the source (by companion cells using ATP) and the active unloading at the sink. Loading sucrose at the source raises the solute concentration inside phloem, lowering its water potential; water enters from adjacent xylem by osmosis, increasing the turgor pressure. At the sink, sucrose is unloaded (or used), lowering the solute concentration; water leaves by osmosis, decreasing turgor. This pressure difference drives the mass flow of sap from source to sink. Evidence that translocation is active includes the fact that poisoning cells (and stopping respiration) with metabolic inhibitors stops translocation even though diffusion would not require respiration.",
-          groups: [
-            {
-              subTitle: "Comparing xylem and phloem",
-              bullets: [
-                "**Xylem**: Dead cells, no cytoplasm, lignified walls, moves water and mineral ions only upward from roots to leaves, movement driven by transpiration (passive — no ATP required).",
-                "**Phloem**: Living cells (sieve tube elements + companion cells), thin walls, moves organic solutes (mainly sucrose) in any direction from source to sink, movement driven by active loading (requires ATP).",
-                "**Both**: Part of the vascular bundle found in leaves (vascular tissue in leaf veins), stems (vascular bundles — xylem toward centre in herbaceous stems), and roots. Together they form the plant's transport system."
-              ]
-            }
-          ],
-          recap: [
-            "Explain the meaning of the terms source and sink in the context of translocation. Give one example of each. [3]",
-            "Describe how sucrose is loaded into and transported through the phloem. [4]",
-            "Compare the structure and function of xylem and phloem. [5]",
-            "Explain why translocation stops when metabolic inhibitors are applied to phloem cells, but transpiration continues. [3]"
+            "Define active transport and explain why it requires energy. [3]",
+            "Explain why mineral ion uptake by root hair cells requires active transport, not diffusion. [3]",
+            "An experiment adds cyanide (a respiratory inhibitor) to root cells. Explain why mineral ion uptake stops, using your knowledge of active transport. [4]",
+            "Compare active transport with diffusion in terms of energy requirement, direction of movement, and need for carrier proteins. [6]",
+            "Explain why the small intestine can continue absorbing glucose even when blood glucose concentration is higher than lumen glucose concentration. [3]"
           ]
         }
       ]
