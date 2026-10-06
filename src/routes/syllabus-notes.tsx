@@ -1,19 +1,49 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useRef } from "react";
-import { BookOpen, ChevronRight, Search, ArrowLeft, FileText, Check, Volume2, VolumeX, Loader2, Play, Pause, SkipBack, SkipForward, X, ShieldCheck } from "lucide-react";
+import {
+  BookOpen,
+  ChevronRight,
+  Search,
+  ArrowLeft,
+  Volume2,
+  Loader2,
+  Play,
+  Pause,
+  SkipBack,
+  SkipForward,
+  X,
+  CheckCircle2,
+  Clock,
+  Target,
+  HelpCircle,
+  Trophy,
+  Layers,
+  ChevronDown,
+} from "lucide-react";
 import { DashboardLayout } from "@/components/dashboard-page";
-import { playRealisticVoice, stopRealisticVoice, pauseRealisticVoice, resumeRealisticVoice, preloadGeminiSpeech, cleanSpeechText, unlockAudio } from "@/lib/gemini-tts";
+import {
+  playRealisticVoice,
+  stopRealisticVoice,
+  pauseRealisticVoice,
+  resumeRealisticVoice,
+  preloadGeminiSpeech,
+  cleanSpeechText,
+  unlockAudio,
+} from "@/lib/gemini-tts";
 import type { SubjectNotes, Chapter } from "@/lib/notes/types";
 import { SYLLABUS_NOTES } from "@/lib/syllabus-notes";
 import { formatMathAndMarkdown } from "@/lib/render-math";
-import { getChapterDiagramSvg } from "@/lib/diagrams";
-import { readProfile } from "@/lib/onboarding";
+import { sound } from "@/components/arcade/sound-fx";
 
 export const Route = createFileRoute("/syllabus-notes")({
   head: () => ({
     meta: [
       { title: "Syllabus Notes — Cambridge IGCSE | ExamGlow" },
-      { name: "description", content: "Full chapter notes for every Cambridge IGCSE subject with KaTeX formulas and diagrams." },
+      {
+        name: "description",
+        content:
+          "Structured, high-yield chapter revision notes for every Cambridge IGCSE subject with interactive diagrams, voice masterclasses, and active recall checkpoints.",
+      },
     ],
   }),
   component: SyllabusNotesPage,
@@ -22,13 +52,13 @@ export const Route = createFileRoute("/syllabus-notes")({
 // ─── Dot colours per category ─────────────────────────────────────────────────
 
 const catDot: Record<string, string> = {
-  Sciences:               "bg-emerald-500",
-  Mathematics:            "bg-blue-500",
-  English:                "bg-violet-500",
-  Languages:              "bg-pink-500",
+  Sciences: "bg-emerald-500",
+  Mathematics: "bg-blue-500",
+  English: "bg-violet-500",
+  Languages: "bg-pink-500",
   "Business & Economics": "bg-amber-500",
-  Humanities:             "bg-orange-500",
-  Technology:             "bg-cyan-500",
+  Humanities: "bg-orange-500",
+  Technology: "bg-cyan-500",
 };
 
 // ─── Full chapter document reader & 20-Min Yumna Masterclass Player ───────────
@@ -160,7 +190,8 @@ function ChapterDoc({
   onNext: () => void;
   onPrev: () => void;
 }) {
-  const [collapsed, setCollapsed] = useState<Record<number, boolean>>({});
+  const [masteredSections, setMasteredSections] = useState<Record<number, boolean>>({});
+  const [revealedAnswers, setRevealedAnswers] = useState<Record<number, boolean>>({});
   const [isLectureActive, setIsLectureActive] = useState(false);
   const [lectureSectionIdx, setLectureSectionIdx] = useState(0);
   const [isVoiceLoading, setIsVoiceLoading] = useState(false);
@@ -172,8 +203,39 @@ function ChapterDoc({
   const currentSectionRef = useRef<number>(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const toggleCollapse = (i: number) =>
-    setCollapsed((prev) => ({ ...prev, [i]: !prev[i] }));
+  // Load mastered state from local storage
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const saved = localStorage.getItem(`chapter_mastery_${subjectId}_${chapter.number}`);
+      if (saved) {
+        try {
+          setMasteredSections(JSON.parse(saved));
+        } catch {}
+      }
+    }
+  }, [subjectId, chapter.number]);
+
+  const toggleMastered = (idx: number) => {
+    setMasteredSections((prev) => {
+      const next = { ...prev, [idx]: !prev[idx] };
+      if (next[idx]) {
+        sound.playCorrect();
+      }
+      if (typeof window !== "undefined") {
+        localStorage.setItem(`chapter_mastery_${subjectId}_${chapter.number}`, JSON.stringify(next));
+      }
+      return next;
+    });
+  };
+
+  const toggleRevealAnswer = (idx: number) => {
+    setRevealedAnswers((prev) => ({ ...prev, [idx]: !prev[idx] }));
+    sound.playFlip();
+  };
+
+  const totalSections = chapter.subheadings.length;
+  const masteredCount = Object.values(masteredSections).filter(Boolean).length;
+  const masteryPercentage = Math.round((masteredCount / Math.max(1, totalSections)) * 100);
 
   const idx = allChapters.findIndex((c) => c.number === chapter.number);
   const hasNext = idx < allChapters.length - 1;
@@ -334,6 +396,13 @@ function ChapterDoc({
     }
   }
 
+  const scrollToSection = (secIndex: number) => {
+    const element = document.getElementById(`section-${secIndex}`);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   useEffect(() => {
     return () => {
       stopRealisticVoice();
@@ -359,172 +428,312 @@ function ChapterDoc({
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 });
-    setCollapsed({});
     handleStop();
   }, [chapter.number]);
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-[#faf9f5] dark:bg-[#181816]">
-      {/* Top navigation bar */}
-      <div className="flex h-13 shrink-0 items-center gap-3 border-b border-black/10 bg-[#faf9f5]/90 px-6 backdrop-blur dark:border-white/10 dark:bg-[#181816]/90">
-        <button
-          onClick={() => {
-            handleStop();
-            onBack();
-          }}
-          className="flex items-center gap-2 text-sm font-medium text-black/70 hover:text-black transition-colors dark:text-white/70 dark:hover:text-white"
-        >
-          <ArrowLeft className="size-4" />
-          <span>Back to chapters</span>
-        </button>
-        <div className="flex-1" />
-        <button
-          type="button"
-          onClick={handleStartLecture}
-          className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all shadow-sm ${
-            isVoiceLoading
-              ? "bg-primary/20 text-primary cursor-wait"
-              : isPlaying
-              ? "bg-primary text-primary-foreground animate-pulse"
-              : isPaused
-              ? "bg-amber-500 text-white"
-              : "bg-foreground text-background hover:opacity-90"
-          }`}
-        >
-          {isVoiceLoading ? (
-            <>
-              <Loader2 className="size-3.5 animate-spin" />
-              <span>Preparing 20-Min Lesson...</span>
-            </>
-          ) : isPlaying ? (
-            <>
-              <Pause className="size-3.5 fill-current" />
-              <span>Pause ({formatTime(elapsedSeconds)} / 20:00)</span>
-            </>
-          ) : isPaused ? (
-            <>
-              <Play className="size-3.5 fill-current" />
-              <span>Resume ({formatTime(elapsedSeconds)} / 20:00)</span>
-            </>
-          ) : (
-            <>
-              <Volume2 className="size-3.5" />
-              <span>Teach Me (20 Min)</span>
-            </>
-          )}
-        </button>
-        <span className="text-xs font-mono text-black/50 dark:text-white/50 ml-2">
-          Chapter {chapter.number} of {allChapters.length}
-        </span>
+    <div className="fixed inset-0 z-50 flex flex-col bg-[#faf9f5] dark:bg-[#12141a]">
+      {/* Top Header & Progress Stepper Bar */}
+      <div className="shrink-0 border-b border-border/80 bg-background/95 backdrop-blur-md px-4 sm:px-8 py-3">
+        <div className="flex items-center justify-between gap-4 max-w-5xl mx-auto">
+          {/* Back Button */}
+          <button
+            onClick={() => {
+              handleStop();
+              onBack();
+            }}
+            className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="size-4" />
+            <span className="hidden sm:inline">Back to chapters</span>
+            <span className="sm:hidden">Back</span>
+          </button>
+
+          {/* Center Progress Pill */}
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-muted/60 border border-border text-xs">
+              <Target className="size-3.5 text-primary" />
+              <span className="font-semibold text-foreground">
+                {masteredCount} of {totalSections} Mastered
+              </span>
+              <span className="font-mono text-muted-foreground">({masteryPercentage}%)</span>
+            </div>
+
+            <div className="hidden md:flex items-center gap-1.5 text-xs text-muted-foreground">
+              <Clock className="size-3.5" />
+              <span>~{Math.max(4, totalSections * 2)} min read</span>
+            </div>
+          </div>
+
+          {/* Voice Masterclass CTA */}
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={handleStartLecture}
+              className={`flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-bold transition-all shadow-sm ${
+                isVoiceLoading
+                  ? "bg-primary/20 text-primary cursor-wait"
+                  : isPlaying
+                  ? "bg-primary text-primary-foreground animate-pulse"
+                  : isPaused
+                  ? "bg-amber-500 text-white"
+                  : "bg-foreground text-background hover:opacity-90"
+              }`}
+            >
+              {isVoiceLoading ? (
+                <>
+                  <Loader2 className="size-3.5 animate-spin" />
+                  <span>Loading Lecture...</span>
+                </>
+              ) : isPlaying ? (
+                <>
+                  <Pause className="size-3.5 fill-current" />
+                  <span>Pause Voice ({formatTime(elapsedSeconds)})</span>
+                </>
+              ) : isPaused ? (
+                <>
+                  <Play className="size-3.5 fill-current" />
+                  <span>Resume Voice</span>
+                </>
+              ) : (
+                <>
+                  <Volume2 className="size-3.5" />
+                  <span>Yumna Masterclass (20m)</span>
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Dynamic Mastery Progress Bar Line */}
+        <div className="mt-2.5 h-1.5 w-full bg-muted/40 rounded-full overflow-hidden max-w-5xl mx-auto">
+          <div
+            className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-500 rounded-full"
+            style={{ width: `${masteryPercentage}%` }}
+          />
+        </div>
       </div>
 
       {/* Scrollable document */}
       <div ref={scrollRef} className="relative flex-1 overflow-y-auto select-none">
-        <article className="mx-auto max-w-4xl px-6 pb-28 pt-12 sm:px-12">
-          {/* Chapter badge */}
-          <div
-            className={`mb-6 inline-flex size-14 items-center justify-center rounded-2xl ${color} text-2xl font-black text-white shadow-sm`}
-          >
-            {chapter.number}
-          </div>
-
-          {/* Big serif title */}
-          <h1 className="font-serif text-[clamp(2.2rem,5vw,3.2rem)] font-bold leading-[1.15] tracking-tight text-foreground">
-            {chapter.title}
-          </h1>
-
-          {/* Introduction section */}
-          <div className="mt-8 rounded-3xl border border-border bg-card/60 p-6 sm:p-7">
-            <h2 className="mb-2 font-serif text-lg font-bold text-foreground">Chapter Overview</h2>
-            <div
-              className="text-[15px] leading-[1.8] text-foreground/80"
-              dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(chapter.intro) }}
-            />
-          </div>
-
-          {/* Chapter Concept & Scientific Diagram */}
-          <div className="mt-8 overflow-hidden rounded-3xl border border-border bg-card p-5 shadow-sm">
-            <div className="mb-3 flex items-center justify-between border-b border-border pb-2 text-xs font-semibold text-muted-foreground">
-              <span>Concept Diagram · Chapter {chapter.number}</span>
-              <span className="rounded-full bg-secondary px-2.5 py-0.5 text-[11px] font-bold text-foreground">Interactive Concept Diagram</span>
+        <article className="mx-auto max-w-4xl px-4 sm:px-8 pb-32 pt-8 space-y-10">
+          {/* Chapter Header */}
+          <div className="space-y-4 pb-6 border-b border-border">
+            <div className="flex items-center gap-3">
+              <div
+                className={`size-12 rounded-2xl ${color} flex items-center justify-center text-xl font-black text-white shadow-sm`}
+              >
+                {chapter.number}
+              </div>
+              <div>
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground">
+                  Cambridge IGCSE Chapter Guide
+                </span>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-foreground tracking-tight">
+                  {chapter.title}
+                </h1>
+              </div>
             </div>
-            <div
-              className="w-full overflow-x-auto"
-              dangerouslySetInnerHTML={{ __html: getChapterDiagramSvg(subjectId, chapter.number) }}
-            />
+
+            {/* Overview */}
+            <div className="space-y-1">
+              <p className="text-xs font-bold uppercase tracking-wider text-primary">Chapter Overview</p>
+              <div
+                className="prose prose-sm dark:prose-invert max-w-none text-foreground/85 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(chapter.intro) }}
+              />
+            </div>
           </div>
 
-          <div className="my-10 h-px bg-border" />
+          {/* Quick-Jump Section Navigator Pills */}
+          <div className="space-y-2.5">
+            <div className="flex items-center justify-between text-xs font-bold text-muted-foreground uppercase tracking-wider">
+              <span className="flex items-center gap-1.5">
+                <Layers className="size-3.5 text-primary" />
+                <span>Chapter Topic Roadmap ({chapter.subheadings.length} Sections)</span>
+              </span>
+              <span>Click to jump</span>
+            </div>
 
-          {/* Subheadings */}
-          {chapter.subheadings.map((sub, si) => {
-            const isCollapsed = collapsed[si];
-
-            return (
-              <section key={si} className="mb-12">
-                <div className="flex items-start justify-between gap-4 border-b border-border/60 pb-3">
-                  <h2 className="font-serif text-[1.45rem] font-bold leading-snug text-foreground sm:text-[1.65rem]">
-                    {sub.title}
-                  </h2>
+            <div className="flex flex-wrap gap-2 pt-1">
+              {chapter.subheadings.map((sub, sIdx) => {
+                const isMastered = !!masteredSections[sIdx];
+                return (
                   <button
-                    type="button"
-                    onClick={() => toggleCollapse(si)}
-                    className="mt-1 shrink-0 rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-secondary"
+                    key={sIdx}
+                    onClick={() => scrollToSection(sIdx)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all flex items-center gap-1.5 border ${
+                      isMastered
+                        ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-700 dark:text-emerald-300"
+                        : "bg-muted/60 border-border text-foreground hover:bg-muted"
+                    }`}
                   >
-                    {isCollapsed ? "Expand" : "Collapse"}
+                    {isMastered ? (
+                      <CheckCircle2 className="size-3.5 text-emerald-500" />
+                    ) : (
+                      <span className="size-4 rounded-full bg-background border text-[10px] flex items-center justify-center font-bold">
+                        {sIdx + 1}
+                      </span>
+                    )}
+                    <span className="truncate max-w-[200px]">{sub.title}</span>
                   </button>
-                </div>
+                );
+              })}
+            </div>
+          </div>
 
-                {!isCollapsed && (
-                  <>
-                    <div
-                      className="mt-4 text-[15px] leading-[1.8] text-foreground/85"
-                      dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(sub.body) }}
-                    />
+          {/* Chunked & Motivating Subheading Sections */}
+          <div className="space-y-8">
+            {chapter.subheadings.map((sub, si) => {
+              const isMastered = !!masteredSections[si];
+              const isAnswerRevealed = !!revealedAnswers[si];
+              const isExamTipSection =
+                sub.title.toLowerCase().includes("tip") ||
+                sub.title.toLowerCase().includes("mistake") ||
+                sub.title.toLowerCase().includes("pitfall");
 
-                    {sub.groups.map((grp, gi) => (
-                      <div key={gi} className="mt-6">
-                        {grp.subTitle && (
-                          <h3 className="mb-3 font-serif text-[16px] font-bold text-foreground">
-                            {grp.subTitle}
-                          </h3>
-                        )}
-                        <ul className="space-y-3">
-                          {grp.bullets.map((pt, pi) => (
-                            <li key={pi} className="flex gap-3 text-[15px] leading-[1.7] text-foreground/85">
-                              <span className="mt-[0.55rem] size-[6px] shrink-0 rounded-full bg-primary/60" />
-                              <div
-                                className="flex-1"
-                                dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(pt) }}
-                              />
-                            </li>
-                          ))}
-                        </ul>
+              return (
+                <section
+                  id={`section-${si}`}
+                  key={si}
+                  className="py-6 border-b border-border/60 last:border-b-0 space-y-5 scroll-mt-24"
+                >
+                  {/* Section Title & Mastery Action Header */}
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div
+                        className={`size-8 rounded-xl flex items-center justify-center text-xs font-bold shrink-0 ${
+                          isMastered
+                            ? "bg-emerald-500 text-white"
+                            : "bg-muted text-foreground border border-border"
+                        }`}
+                      >
+                        {si + 1}
                       </div>
-                    ))}
-                  </>
-                )}
-              </section>
-            );
-          })}
+                      <div>
+                        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-muted-foreground">
+                          {`Section ${si + 1}`}
+                        </span>
+                        <h2 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
+                          {sub.title}
+                        </h2>
+                      </div>
+                    </div>
 
-          {/* Bottom navigation */}
-          <div className="mt-12 flex items-center justify-between gap-4 border-t border-border pt-8">
+                    {/* Mark as Mastered Toggle Button */}
+                    <button
+                      type="button"
+                      onClick={() => toggleMastered(si)}
+                      className={`px-4 py-2 rounded-full text-xs font-bold transition-all flex items-center gap-2 self-start sm:self-center ${
+                        isMastered
+                          ? "bg-emerald-500 text-white shadow-sm"
+                          : "bg-muted/70 hover:bg-muted text-muted-foreground hover:text-foreground border border-border"
+                      }`}
+                    >
+                      <CheckCircle2 className="size-4" />
+                      <span>{isMastered ? "Mastered ✓" : "Mark as Mastered"}</span>
+                    </button>
+                  </div>
+
+                  {/* Section Body Text */}
+                  <div
+                    className="text-[15px] leading-relaxed text-foreground/90 prose prose-sm dark:prose-invert max-w-none"
+                    dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(sub.body) }}
+                  />
+
+                  {/* Sub-Concept Groups — plain text, no cards */}
+                  {sub.groups.length > 0 && (
+                    <div className="space-y-5">
+                      {sub.groups.map((grp, gi) => (
+                        <div key={gi} className="space-y-2">
+                          {grp.subTitle && (
+                            <h3 className="text-sm font-bold text-foreground">
+                              {grp.subTitle}
+                            </h3>
+                          )}
+                          <ul className="space-y-2 pl-1">
+                            {grp.bullets.map((pt, pi) => (
+                              <li key={pi} className="flex items-start gap-2.5 text-[14px] text-foreground/85 leading-relaxed">
+                                <span className="mt-[7px] size-1.5 shrink-0 rounded-full bg-primary/60" />
+                                <div
+                                  className="flex-1 prose prose-sm dark:prose-invert max-w-none"
+                                  dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(pt) }}
+                                />
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Active Recall Checkpoint */}
+                  <div className="border-l-2 border-primary/40 pl-4 space-y-2">
+                    <div className="flex items-center gap-2 text-xs font-bold text-primary">
+                      <HelpCircle className="size-3.5" />
+                      <span>Active Recall</span>
+                    </div>
+
+                    <p className="text-xs sm:text-sm font-semibold text-foreground">
+                      Can you explain the key principle of <em>"{sub.title}"</em> in 2 sentences without looking at your notes?
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => toggleRevealAnswer(si)}
+                      className="text-xs font-bold text-primary hover:underline flex items-center gap-1.5"
+                    >
+                      <span>{isAnswerRevealed ? "Hide Answer" : "Reveal Model Answer"}</span>
+                      <ChevronDown className={`size-3.5 transition-transform ${isAnswerRevealed ? "rotate-180" : ""}`} />
+                    </button>
+
+                    {isAnswerRevealed && (
+                      <div className="text-xs text-foreground/90 space-y-1 animate-in fade-in">
+                        <p className="font-bold text-primary">Model Answer:</p>
+                        <p className="leading-relaxed">
+                          State: 1) The precise definition or law, 2) The step-by-step mechanism, and 3) The required units or conditions. Use specific technical terms rather than general descriptions.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+
+          {/* Chapter Mastery Celebration Banner */}
+          {masteryPercentage >= 100 && (
+            <div className="rounded-3xl border border-emerald-500/40 bg-gradient-to-br from-emerald-500/10 via-teal-500/10 to-emerald-500/5 p-8 text-center space-y-4 shadow-lg animate-in zoom-in-95 duration-300">
+              <div className="size-16 rounded-2xl bg-emerald-500 text-white flex items-center justify-center mx-auto shadow-md">
+                <Trophy className="size-8" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-2xl font-black text-foreground">Chapter {chapter.number} Fully Mastered!</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
+                  You have reviewed and mastered all {totalSections} sections. Solidify your grade by testing past examination papers or challenging the 3D arcade games!
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Bottom Navigation Controls */}
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-border pt-8">
             <button
               type="button"
               onClick={hasPrev ? onPrev : onBack}
-              className="flex items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:bg-secondary transition-colors"
+              className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-secondary transition-colors"
             >
               <ArrowLeft className="size-4" />
-              <span>{hasPrev ? "Previous chapter" : "Back to subject"}</span>
+              <span>{hasPrev ? "Previous Chapter" : "Back to Subject"}</span>
             </button>
+
             {hasNext && (
               <button
                 type="button"
                 onClick={onNext}
-                className="flex items-center gap-2 rounded-full bg-foreground px-6 py-2.5 text-sm font-semibold text-background shadow-md transition-transform hover:-translate-y-0.5"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3 text-sm font-bold text-background shadow-md transition-transform hover:-translate-y-0.5"
               >
-                <span>Next chapter</span>
+                <span>Next Chapter ({allChapters[idx + 1]?.title})</span>
                 <ChevronRight className="size-4" />
               </button>
             )}
@@ -532,7 +741,7 @@ function ChapterDoc({
         </article>
       </div>
 
-      {/* Floating 20-Min Yumna Masterclass Audio Player */}
+      {/* Floating 20-Min Yumna Masterclass Audio Player Bar */}
       {isLectureActive && (
         <div className="fixed bottom-0 inset-x-0 sm:bottom-6 sm:inset-x-4 sm:max-w-2xl sm:mx-auto z-50 animate-in fade-in slide-in-from-bottom-5 duration-300">
           <div className="relative overflow-hidden rounded-t-2xl sm:rounded-2xl border-t sm:border border-black/10 dark:border-white/10 bg-[#faf9f5]/98 dark:bg-[#1c1c1a]/98 backdrop-blur-xl shadow-2xl px-4 pt-3 pb-4 text-foreground">
@@ -544,9 +753,8 @@ function ChapterDoc({
               />
             </div>
 
-            {/* ── Row 1: icon + text + close ─────────────────────────── */}
+            {/* Row 1: icon + text + close */}
             <div className="flex items-start gap-3 mb-2.5">
-              {/* Status icon — gentle pulse instead of bounce */}
               <div className="mt-0.5 flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary">
                 {isVoiceLoading ? (
                   <Loader2 className="size-[18px] animate-spin" />
@@ -557,9 +765,7 @@ function ChapterDoc({
                 )}
               </div>
 
-              {/* Text info */}
               <div className="min-w-0 flex-1">
-                {/* Label + time on one line */}
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-primary leading-none">
                     20-Min Yumna Masterclass
@@ -568,11 +774,9 @@ function ChapterDoc({
                     {formatTime(elapsedSeconds)} / 20:00
                   </span>
                 </div>
-                {/* Current topic title */}
                 <p className="mt-1 text-xs font-semibold text-foreground leading-snug line-clamp-2">
                   {lectureSectionsRef.current[lectureSectionIdx]?.title || chapter.title}
                 </p>
-                {/* Status sub-line */}
                 <p className="mt-0.5 text-[11px] text-muted-foreground leading-snug line-clamp-1">
                   {isVoiceLoading
                     ? "Connecting to Yumna's voice…"
@@ -582,7 +786,6 @@ function ChapterDoc({
                 </p>
               </div>
 
-              {/* Close — top-right, always reachable */}
               <button
                 type="button"
                 onClick={handleStop}
@@ -593,9 +796,8 @@ function ChapterDoc({
               </button>
             </div>
 
-            {/* ── Row 2: controls ─────────────────────────────────────── */}
+            {/* Row 2: controls */}
             <div className="flex items-center gap-2">
-              {/* Prev */}
               <button
                 type="button"
                 onClick={handlePrevSection}
@@ -606,7 +808,6 @@ function ChapterDoc({
                 <SkipBack className="size-4" />
               </button>
 
-              {/* Play / Pause / Loading — larger tap target */}
               {isVoiceLoading ? (
                 <button
                   type="button"
@@ -636,7 +837,6 @@ function ChapterDoc({
                 </button>
               )}
 
-              {/* Next */}
               <button
                 type="button"
                 onClick={handleNextSection}
@@ -647,31 +847,31 @@ function ChapterDoc({
                 <SkipForward className="size-4" />
               </button>
 
-              {/* Section progress pills */}
               <div className="ml-auto flex items-center gap-1 overflow-hidden max-w-[140px]">
-                {lectureSectionsRef.current.slice(
-                  Math.max(0, lectureSectionIdx - 2),
-                  Math.min(lectureSectionsRef.current.length, lectureSectionIdx + 5)
-                ).map((_, relIdx) => {
-                  const absIdx = Math.max(0, lectureSectionIdx - 2) + relIdx;
-                  return (
-                    <div
-                      key={absIdx}
-                      className={`h-1 rounded-full transition-all duration-300 ${
-                        absIdx === lectureSectionIdx
-                          ? "w-6 bg-primary"
-                          : absIdx < lectureSectionIdx
-                          ? "w-1.5 bg-primary/40"
-                          : "w-1.5 bg-black/10 dark:bg-white/10"
-                      }`}
-                    />
-                  );
-                })}
+                {lectureSectionsRef.current
+                  .slice(
+                    Math.max(0, lectureSectionIdx - 2),
+                    Math.min(lectureSectionsRef.current.length, lectureSectionIdx + 5)
+                  )
+                  .map((_, relIdx) => {
+                    const absIdx = Math.max(0, lectureSectionIdx - 2) + relIdx;
+                    return (
+                      <div
+                        key={absIdx}
+                        className={`h-1 rounded-full transition-all duration-300 ${
+                          absIdx === lectureSectionIdx
+                            ? "w-6 bg-primary"
+                            : absIdx < lectureSectionIdx
+                            ? "w-1.5 bg-primary/40"
+                            : "w-1.5 bg-black/10 dark:bg-white/10"
+                        }`}
+                      />
+                    );
+                  })}
               </div>
             </div>
           </div>
 
-          {/* Keyframe for subtle speaker animation */}
           <style>{`
             @keyframes yumna-speaker {
               0%, 100% { opacity: 0.7; transform: scale(1); }
@@ -715,7 +915,7 @@ function SubjectNoteRow({
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className="flex w-full items-center gap-3 py-3.5 text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
+        className="flex w-full items-center gap-3 py-3.5 px-4 sm:px-0 text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
       >
         <ChevronRight
           className={`size-4 shrink-0 transition-transform duration-200 ${open ? "rotate-90 text-foreground" : ""}`}
@@ -734,13 +934,13 @@ function SubjectNoteRow({
 
       {/* Expanded chapter list */}
       {open && (
-        <div className="pb-4 pt-2 pl-6 sm:pl-8 space-y-2">
+        <div className="pb-3 pt-1 -mx-4 sm:mx-0 sm:pl-8 space-y-px">
           {subject.chapters.map((ch) => (
             <button
               key={ch.number}
               type="button"
               onClick={() => onSelectChapter(ch)}
-              className="flex w-full items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-left transition-all hover:-translate-y-0.5 hover:shadow-sm hover:border-foreground/30"
+              className="flex w-full items-center gap-3 border-b border-border/50 last:border-b-0 px-4 py-3 text-left transition-colors hover:bg-muted/40"
             >
               {/* Chapter number */}
               <div
@@ -750,21 +950,16 @@ function SubjectNoteRow({
               </div>
 
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2">
-                  <p className="truncate text-sm font-semibold text-foreground">
-                    {ch.title}
-                  </p>
-                  <span className="rounded-md bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                    FREE
-                  </span>
-                </div>
+                <p className="truncate text-sm font-semibold text-foreground">
+                  {ch.title}
+                </p>
                 <p className="truncate text-xs text-muted-foreground mt-0.5">
                   {ch.subheadings.length} sections · {ch.subheadings.map((s) => s.title).slice(0, 3).join(", ")}...
                 </p>
               </div>
 
-              <span className="text-xs font-semibold text-muted-foreground group-hover:text-foreground">
-                Read note →
+              <span className="text-xs font-semibold text-muted-foreground">
+                Read →
               </span>
             </button>
           ))}
@@ -782,14 +977,15 @@ function SyllabusNotesPage() {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
 
-  const categories = ["All", "Sciences", "Mathematics", "English", "Business & Economics", "Humanities", "Technology"];
+  const categories = ["All", "Sciences", "Mathematics", "Languages", "English", "Business & Economics", "Humanities", "Technology"];
 
   const getSubjectCategory = (code: string): string => {
-    if (["0610", "0620", "0625", "0680", "0697"].includes(code)) return "Sciences";
+    if (["0610", "0620", "0625", "0680", "0697", "0654", "0653", "0617"].includes(code)) return "Sciences";
     if (["0580", "0606"].includes(code)) return "Mathematics";
-    if (["0500", "0510", "0475"].includes(code)) return "English";
-    if (["0455", "0450", "0452"].includes(code)) return "Business & Economics";
-    if (["0470", "0460", "0495", "0490", "0471", "0457", "0478", "0413"].includes(code)) return "Humanities";
+    if (["0520", "0530", "0504", "0525", "0508", "0480"].includes(code)) return "Languages";
+    if (["0500", "0510", "0475", "0408"].includes(code)) return "English";
+    if (["0455", "0450", "0452", "0454"].includes(code)) return "Business & Economics";
+    if (["0470", "0460", "0495", "0490", "0471", "0457", "0478", "0413", "0453"].includes(code)) return "Humanities";
     if (["0417", "0478", "0445", "0648", "0400", "0410", "0411", "0573"].includes(code)) return "Technology";
     return "Sciences";
   };
@@ -829,7 +1025,6 @@ function SyllabusNotesPage() {
 
   return (
     <>
-
       {activeChapter && selectedSubject && (
         <ChapterDoc
           chapter={activeChapter}
@@ -844,7 +1039,7 @@ function SyllabusNotesPage() {
 
       <DashboardLayout crumbs={[{ label: "Course" }, { label: "Syllabus Notes" }]}>
         <div className="w-full py-2">
-          {/* Hero banner matching syllabus & past-questions */}
+          {/* Hero banner */}
           <div className="mb-6 overflow-hidden rounded-3xl bg-gradient-to-br from-lavender/60 via-lilac/40 to-mint/50 px-6 py-8 sm:px-10">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
@@ -855,7 +1050,7 @@ function SyllabusNotesPage() {
                   Syllabus Notes
                 </h1>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  {SYLLABUS_NOTES.length} subjects · All chapters free · Full Cambridge IGCSE coverage
+                  {SYLLABUS_NOTES.length} subjects · Comprehensive chapter breakdowns · Full Cambridge IGCSE coverage
                 </p>
               </div>
               <div className="flex shrink-0 items-center gap-2 rounded-2xl bg-card/70 px-5 py-3 backdrop-blur shadow-sm">
@@ -873,61 +1068,56 @@ function SyllabusNotesPage() {
             <div className="relative flex-1 sm:max-w-xs">
               <Search className="absolute left-3.5 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
               <input
-                type="search"
+                type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search subjects or codes…"
-                className="w-full rounded-2xl border border-border bg-card py-2.5 pl-10 pr-4 text-sm outline-none focus:border-lavender focus:ring-2 focus:ring-lavender/20"
+                placeholder="Search subject or code..."
+                className="w-full rounded-full border border-border bg-card py-2 pl-9 pr-4 text-xs text-foreground placeholder:text-muted-foreground focus:border-foreground/40 focus:outline-none"
               />
             </div>
-            <div className="flex gap-2 overflow-x-auto pb-0.5">
+
+            <div className="flex flex-wrap items-center gap-1.5">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`flex shrink-0 items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-all ${
                     activeCategory === cat
-                      ? "bg-ink text-ink-foreground"
-                      : "bg-card text-muted-foreground hover:bg-secondary hover:text-foreground border border-border"
+                      ? "bg-foreground text-background shadow-sm"
+                      : "border border-border/80 bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground"
                   }`}
                 >
-                  {cat !== "All" && catDot[cat] && (
-                    <span className={`size-2 rounded-full ${catDot[cat]}`} />
-                  )}
                   {cat}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Line-by-line accordion rows grouped by category (Matches syllabus & past-questions line UI) */}
-          {grouped.length === 0 ? (
-            <div className="mt-20 text-center">
-              <BookOpen className="mx-auto size-12 text-muted-foreground/50" />
-              <p className="mt-4 text-base font-semibold">No notes found</p>
-              <p className="mt-1 text-sm text-muted-foreground">Try adjusting your search or category filter.</p>
-            </div>
-          ) : (
-            grouped.map(({ cat, subjects }) => (
-              <div key={cat} className="mb-8">
-                <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  {cat}
-                </h2>
-                <div className="divide-y divide-border rounded-2xl border border-border bg-card px-5">
-                  {subjects.map((subject) => (
+          {/* Subjects List */}
+          <div className="rounded-none sm:rounded-3xl border-y sm:border border-border bg-card sm:px-6 py-4 shadow-sm -mx-4 sm:mx-0">
+            {grouped.map(({ cat, subjects }) => (
+              <div key={cat} className="mb-6 last:mb-0">
+                <div className="flex items-center gap-2 border-b border-border pb-2 pt-2 text-xs font-bold uppercase tracking-wider text-muted-foreground px-4 sm:px-0">
+                  <span className={`size-2 rounded-full ${catDot[cat] ?? "bg-foreground"}`} />
+                  <span>{cat}</span>
+                  <span className="font-normal text-muted-foreground/60">({subjects.length})</span>
+                </div>
+
+                <div className="divide-y divide-border/60">
+                  {subjects.map((sub) => (
                     <SubjectNoteRow
-                      key={subject.id}
-                      subject={subject}
-                      onSelectChapter={(c) => {
-                        setSelectedSubject(subject);
-                        setActiveChapter(c);
+                      key={sub.id}
+                      subject={sub}
+                      onSelectChapter={(ch) => {
+                        setSelectedSubject(sub);
+                        setActiveChapter(ch);
                       }}
                     />
                   ))}
                 </div>
               </div>
-            ))
-          )}
+            ))}
+          </div>
         </div>
       </DashboardLayout>
     </>

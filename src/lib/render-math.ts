@@ -10,8 +10,29 @@ import { DIAGRAM_MAP } from "./diagrams";
  * - Markdown italic *...* to <em>
  * - Backticks `...` to inline code
  */
+/**
+ * Strips emoji characters and common emoji-style Unicode symbols from a string.
+ */
+function stripEmoji(str: string): string {
+  return str
+    // Wide emoji blocks (emoticons, misc symbols, transport, etc.)
+    .replace(/[\u{1F300}-\u{1FAFF}]/gu, "")
+    // Dingbats / enclosed alphanumerics
+    .replace(/[\u{2600}-\u{27BF}]/gu, "")
+    // Variation selectors + zero-width joiner sequences
+    .replace(/[\uFE00-\uFE0F\u200D]/gu, "")
+    // Remaining single-char emoji-ish symbols
+    .replace(/[\u{1F000}-\u{1F02F}\u{1F0A0}-\u{1F0FF}]/gu, "")
+    // Clean up any double-spaces left behind
+    .replace(/ {2,}/g, " ")
+    .trim();
+}
+
 export function formatMathAndMarkdown(text: string): string {
   if (!text) return "";
+
+  // Strip all emoji before any other processing
+  text = stripEmoji(text);
 
   // 1. Markdown images ![alt](url) -> Direct vector SVG or responsive image
   let result = text.replace(/!\[(.*?)\]\((.*?)\)/g, (_, alt, src) => {
