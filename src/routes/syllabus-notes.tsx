@@ -188,6 +188,7 @@ function ChapterDoc({
 }) {
   const [masteredSections, setMasteredSections] = useState<Record<number, boolean>>({});
   const [revealedAnswers, setRevealedAnswers] = useState<Record<number, boolean>>({});
+  const [expandedExam, setExpandedExam] = useState<Record<number, boolean>>({});
   const [isLectureActive, setIsLectureActive] = useState(false);
   const [lectureSectionIdx, setLectureSectionIdx] = useState(0);
   const [isVoiceLoading, setIsVoiceLoading] = useState(false);
@@ -223,11 +224,6 @@ function ChapterDoc({
       }
       return next;
     });
-  };
-
-  const toggleRevealAnswer = (idx: number) => {
-    setRevealedAnswers((prev) => ({ ...prev, [idx]: !prev[idx] }));
-    sound.playFlip();
   };
 
   const totalSections = chapter.subheadings.length;
@@ -504,7 +500,6 @@ function ChapterDoc({
           {/* Sections */}
           <div className="space-y-0">
             {chapter.subheadings.map((sub, si) => {
-              const isAnswerRevealed = !!revealedAnswers[si];
               return (
                 <section
                   id={`section-${si}`}
@@ -572,34 +567,53 @@ function ChapterDoc({
                   )}
 
                   {sub.recap && sub.recap.length > 0 && (
-                    <div className="mt-8 rounded-2xl border border-border bg-muted/20 overflow-hidden">
-                      <div className="flex items-center gap-2 border-b border-border/50 bg-muted/40 px-4 py-3">
-                        <HelpCircle className="size-4 text-primary shrink-0" />
-                        <span className="text-xs font-bold uppercase tracking-wider text-foreground">Exam Practice</span>
-                      </div>
-                      <div className="p-4 space-y-4">
-                        {sub.recap.map((q, qi) => (
-                          <div key={qi} className="space-y-1.5">
-                            <p className="text-[14px] font-semibold text-foreground leading-snug">
-                              <span className={`inline-flex size-5 mr-2 items-center justify-center rounded text-[10px] font-black text-white ${color}`}>{qi + 1}</span>
-                              {q}
-                            </p>
-                            <button
-                              type="button"
-                              onClick={() => toggleRevealAnswer(si * 100 + qi)}
-                              className="ml-7 text-[12px] font-semibold text-primary hover:underline flex items-center gap-1"
-                            >
-                              {revealedAnswers[si * 100 + qi] ? "Hide hint" : "Examiner hint"}
-                              <ChevronDown className={`size-3 transition-transform ${revealedAnswers[si * 100 + qi] ? "rotate-180" : ""}`} />
-                            </button>
-                            {revealedAnswers[si * 100 + qi] && (
-                              <div className="ml-7 rounded-lg bg-primary/5 border border-primary/20 px-3 py-2 text-[12.5px] text-foreground/80 leading-relaxed animate-in fade-in">
-                                Use precise Cambridge terminology. State the definition, describe the mechanism step-by-step, give a named example. For "Explain" always add a causal <em>because</em> clause.
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
+                    <div className="mt-8 rounded-2xl border border-border overflow-hidden">
+                      {/* Collapsible header */}
+                      <button
+                        type="button"
+                        onClick={() => setExpandedExam((prev) => ({ ...prev, [si]: !prev[si] }))}
+                        className="w-full flex items-center justify-between gap-3 border-b border-border/50 bg-muted/30 px-4 py-3 hover:bg-muted/50 transition-colors"
+                      >
+                        <div className="flex items-center gap-2">
+                          <HelpCircle className="size-4 text-primary shrink-0" />
+                          <span className="text-xs font-bold uppercase tracking-wider text-foreground">
+                            Exam Practice — {sub.recap.length} Questions
+                          </span>
+                        </div>
+                        <ChevronDown className={`size-4 text-muted-foreground transition-transform duration-200 ${expandedExam[si] ? "rotate-180" : ""}`} />
+                      </button>
+
+                      {/* Collapsible body */}
+                      {expandedExam[si] && (
+                        <div className="p-4 space-y-5 bg-muted/10">
+                          {sub.recap.map((q, qi) => (
+                            <div key={qi} className="space-y-2">
+                              {/* Question */}
+                              <p className="text-[14px] font-semibold text-foreground leading-snug flex items-start gap-2.5">
+                                <span className={`mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded text-[10px] font-black text-white ${color}`}>{qi + 1}</span>
+                                <span>{q}</span>
+                              </p>
+                              {/* Hint toggle */}
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setRevealedAnswers((prev) => ({ ...prev, [si * 100 + qi]: !prev[si * 100 + qi] }));
+                                  sound.playFlip();
+                                }}
+                                className="ml-7 text-[12px] font-semibold text-primary hover:underline flex items-center gap-1"
+                              >
+                                {revealedAnswers[si * 100 + qi] ? "Hide examiner hint" : "Show examiner hint"}
+                                <ChevronDown className={`size-3 transition-transform ${revealedAnswers[si * 100 + qi] ? "rotate-180" : ""}`} />
+                              </button>
+                              {revealedAnswers[si * 100 + qi] && (
+                                <div className="ml-7 rounded-lg bg-primary/5 border border-primary/20 px-3 py-2 text-[12.5px] text-foreground/80 leading-relaxed animate-in fade-in">
+                                  Use precise Cambridge terminology. State the definition → describe the mechanism step-by-step → give a named specific example. For "Explain" questions always include a causal <em>because</em> clause. For "Describe" just state what happens without needing reasons.
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
                 </section>

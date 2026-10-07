@@ -12,14 +12,10 @@ function stripEmoji(str: string): string {
     .trim();
 }
 
-// ─── Escape HTML in table cells ───────────────────────────────────────────────
 function escHtml(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-// ─── Inline SVG diagrams by keyword ──────────────────────────────────────────
-// Diagrams are authored as  :::svg[title]\n<svg…>\n:::
-// They render as a labelled figure card.
 function renderSvgBlock(title: string, svgContent: string): string {
   return `<figure class="my-6 not-prose">
     <div class="rounded-2xl border border-border bg-card overflow-hidden shadow-sm">
@@ -37,157 +33,254 @@ function renderSvgBlock(title: string, svgContent: string): string {
   </figure>`;
 }
 
-// ─── Main formatter ───────────────────────────────────────────────────────────
+// ─── Inline span-level formatting (bold, italic, highlight, code, math) ──────
+function formatInline(raw: string, mathBlocks: string[]): string {
+  let text = raw;
+
+  // Highlight key terms ==term==
+  text = text.replace(/==(.+?)==/g,
+    `<mark class="rounded px-0.5 bg-yellow-200/70 dark:bg-yellow-900/40 text-foreground font-semibold not-italic">$1</mark>`);
+
+  // Bold
+  text = text.replace(/\*\*(.+?)\*\*/g, `<strong class="font-semibold text-foreground">$1</strong>`);
+
+  // Italic (single asterisk, not part of **)
+  text = text.replace(/(?<!\*)\*([^*\n]+?)\*(?!\*)/g, `<em>$1</em>`);
+
+  // Inline code
+  text = text.replace(/`([^`\n]+?)`/g,
+    `<code class="inline-block rounded-md bg-muted px-1.5 py-0.5 font-mono text-[12.5px] text-foreground/90">$1</code>`);
+
+  // Restore inline math placeholders
+  text = text.replace(/\x00MATH(\d+)\x00/g, (_, idx) => {
+    const original = mathBlocks[Number(idx)] ?? "";
+    const isDisplay = original.startsWith("$$");
+    const eq = original.replace(/^\$\$?|\$\$?$/g, "").trim();
+    try {
+      const rendered = katex.renderToString(eq, { displayMode: false, throwOnError: false });
+      return isDisplay ? `<span class="inline-block">${rendered}</span>` : rendered;
+    } catch {
+      return `<code class="font-mono text-sm">${eq}</code>`;
+    }
+  });
+
+  return text;
+}
+
+// ─── Render a display-math block on its own line ─────────────────────────────
+function renderDisplayMath(eq: string): string {
+  try {
+    const rendered = katex.renderToString(eq.trim(), { displayMode: true, throwOnError: false });
+    return `<div class="my-4 overflow-x-auto text-center not-prose">${rendered}</div>`;
+  } catch {
+    return `<code>${eq}</code>`;
+  }
+}
+
+/**
+ * Block-level markdown-to-HTML renderer.
+ * Processes the text line-by-line, grouping into blocks (paragraphs, lists,
+ * headings, tables, callouts, code fences, svg diagrams) so block boundaries
+ * are never ambiguous — this prevents list items or paragraphs from being
+ * merged together incorrectly.
+ */
 export function formatMathAndMarkdown(text: string): string {
   if (!text) return "";
 
   text = stripEmoji(text);
 
-  // ── 0. Protect KaTeX blocks from further processing ──────────────────────
+  // Protect $$...$$ and $...$ from line-splitting / inline processing until the end
   const mathBlocks: string[] = [];
-  text = text.replace(/\$\$[\s\S]+?\$\$|\$[^$\n]+?\$/g, (m) => {
+  text = text.replace(/\$\$[\s\S]+?\$\$/g, (m) => {
+    mathBlocks.push(m);
+    return `\x00MATH${mathBlocks.length - 1}\x00`;
+  });
+  text = text.replace(/\$[^$\n]+?\$/g, (m) => {
     mathBlocks.push(m);
     return `\x00MATH${mathBlocks.length - 1}\x00`;
   });
 
-  // ── 1. Inline SVG diagram blocks  :::svg[Title]\n<svg>…</svg>\n::: ──────
+  // Extract and protect fenced SVG diagram blocks and code fences first,
+  // since they may contain content that looks like markdown.
+  const rawBlocks: string[] = [];
   text = text.replace(/:::svg\[([^\]]*)\]\n([\s\S]*?):::/g, (_, title, body) => {
-    return renderSvgBlock(title, body);
+    rawBlocks.push(renderSvgBlock(title, body));
+    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
   });
-
-  // ── 2. Image references  ![alt](url) ─────────────────────────────────────
+  text = text.replace(/```(?:\w+)?\n?([\s\S]+?)```/g, (_, code) => {
+    rawBlocks.push(
+      `<div class="my-4 not-prose overflow-x-auto rounded-xl border border-border/60 bg-muted/40">
+        <pre class="p-4 font-mono text-[12px] leading-relaxed text-foreground whitespace-pre">${code.trim()}</pre>
+      </div>`
+    );
+    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
+  });
   text = text.replace(/!\[(.*?)\]\((.*?)\)/g, (_, alt, src) => {
     const filename = src.split("/").pop() || "";
     const directSvg = DIAGRAM_MAP[filename];
     const inner = directSvg
       ? directSvg
       : `<img src="${src}" alt="${alt}" class="w-full max-w-2xl rounded-xl object-contain" loading="lazy" />`;
-    return renderSvgBlock(alt || "Diagram", inner);
+    rawBlocks.push(renderSvgBlock(alt || "Diagram", inner));
+    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
   });
 
-  // ── 3. Tables  | col | col | … ───────────────────────────────────────────
-  text = text.replace(/((?:\|.+\|\n?)+)/g, (block) => {
-    const rows = block.trim().split("\n").filter(Boolean);
-    if (rows.length < 2) return block;
-    const isSep = (r: string) => /^\|[\s|:-]+\|$/.test(r.trim());
-    const parse = (r: string) =>
-      r
-        .trim()
-        .replace(/^\||\|$/g, "")
-        .split("|")
-        .map((c) => c.trim());
+  const lines = text.split("\n");
+  const html: string[] = [];
+  let i = 0;
 
-    let html =
-      `<div class="my-5 not-prose overflow-x-auto rounded-xl border border-border">` +
-      `<table class="w-full text-sm border-collapse">`;
+  const isBlockPlaceholder = (line: string) => /^\x00BLOCK\d+\x00$/.test(line.trim());
+  const isTableRow = (line: string) => /^\s*\|.+\|\s*$/.test(line);
+  const isOrderedItem = (line: string) => /^\s*\d+\.\s+/.test(line);
+  const isUnorderedItem = (line: string) => /^\s*[-•]\s+/.test(line);
+  const isHeading = (line: string) => /^\s*#{1,4}\s+/.test(line);
+  const isHr = (line: string) => /^\s*---\s*$/.test(line);
+  const isQuote = (line: string) => /^\s*>\s?/.test(line);
+  const isBlank = (line: string) => line.trim() === "";
 
-    let headerDone = false;
-    for (let i = 0; i < rows.length; i++) {
-      if (isSep(rows[i]!)) continue;
-      const cells = parse(rows[i]!);
-      if (!headerDone) {
-        html += `<thead class="bg-muted/60"><tr>` +
-          cells.map((c) => `<th class="px-3 py-2 text-left font-semibold text-foreground text-xs uppercase tracking-wide border-b border-border">${escHtml(c)}</th>`).join("") +
-          `</tr></thead><tbody>`;
-        headerDone = true;
-      } else {
-        html +=
-          `<tr class="border-b border-border/50 last:border-0 hover:bg-muted/20 transition-colors">` +
-          cells.map((c) => `<td class="px-3 py-2 text-foreground/85 text-sm">${escHtml(c)}</td>`).join("") +
-          `</tr>`;
+  while (i < lines.length) {
+    const line = lines[i]!;
+
+    if (isBlank(line)) {
+      i++;
+      continue;
+    }
+
+    // Block placeholder (SVG diagram / code fence / image) — emit directly
+    if (isBlockPlaceholder(line)) {
+      const idx = Number(line.trim().match(/\d+/)![0]);
+      html.push(rawBlocks[idx] ?? "");
+      i++;
+      continue;
+    }
+
+    // Heading
+    if (isHeading(line)) {
+      const m = line.match(/^\s*(#{1,4})\s+(.*)$/)!;
+      const level = m[1]!.length;
+      const content = formatInline(m[2]!, mathBlocks);
+      if (level === 1) html.push(`<h2 class="mt-7 mb-2 text-[21px] font-black text-foreground">${content}</h2>`);
+      else if (level === 2) html.push(`<h3 class="mt-7 mb-2.5 text-[18px] font-bold text-foreground border-b border-border/40 pb-1.5">${content}</h3>`);
+      else if (level === 3) html.push(`<h4 class="mt-5 mb-1.5 text-[15.5px] font-bold text-foreground">${content}</h4>`);
+      else html.push(`<h5 class="mt-4 mb-1 text-[14px] font-bold text-foreground">${content}</h5>`);
+      i++;
+      continue;
+    }
+
+    // Horizontal rule
+    if (isHr(line)) {
+      html.push(`<hr class="my-5 border-border/50" />`);
+      i++;
+      continue;
+    }
+
+    // Table block
+    if (isTableRow(line)) {
+      const tableLines: string[] = [];
+      while (i < lines.length && isTableRow(lines[i]!)) {
+        tableLines.push(lines[i]!);
+        i++;
+      }
+      const isSep = (r: string) => /^\|[\s|:-]+\|$/.test(r.trim());
+      const parse = (r: string) =>
+        r.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+
+      let t = `<div class="my-5 not-prose overflow-x-auto rounded-xl border border-border"><table class="w-full text-sm border-collapse">`;
+      let headerDone = false;
+      for (const row of tableLines) {
+        if (isSep(row)) continue;
+        const cells = parse(row);
+        if (!headerDone) {
+          t += `<thead class="bg-muted/60"><tr>` +
+            cells.map((c) => `<th class="px-3 py-2 text-left font-semibold text-foreground text-xs uppercase tracking-wide border-b border-border">${formatInline(escHtml(c), mathBlocks)}</th>`).join("") +
+            `</tr></thead><tbody>`;
+          headerDone = true;
+        } else {
+          t += `<tr class="border-b border-border/50 last:border-0 hover:bg-muted/20 transition-colors">` +
+            cells.map((c) => `<td class="px-3 py-2 text-foreground/85 text-sm align-top">${formatInline(escHtml(c), mathBlocks)}</td>`).join("") +
+            `</tr>`;
+        }
+      }
+      t += `</tbody></table></div>`;
+      html.push(t);
+      continue;
+    }
+
+    // Blockquote / callout
+    if (isQuote(line)) {
+      const quoteLines: string[] = [];
+      while (i < lines.length && isQuote(lines[i]!)) {
+        quoteLines.push(lines[i]!.replace(/^\s*>\s?/, ""));
+        i++;
+      }
+      const inner = formatInline(quoteLines.join(" "), mathBlocks);
+      html.push(`<div class="my-4 not-prose flex gap-3 rounded-xl border border-primary/25 bg-primary/5 px-4 py-3">
+        <div class="mt-0.5 shrink-0 size-4 rounded-full bg-primary/20 flex items-center justify-center">
+          <div class="size-1.5 rounded-full bg-primary"></div>
+        </div>
+        <p class="text-sm leading-relaxed text-foreground/90 m-0">${inner}</p>
+      </div>`);
+      continue;
+    }
+
+    // Ordered list
+    if (isOrderedItem(line)) {
+      const items: string[] = [];
+      while (i < lines.length && isOrderedItem(lines[i]!)) {
+        items.push(lines[i]!.replace(/^\s*\d+\.\s*/, ""));
+        i++;
+      }
+      const itemsHtml = items.map((it) =>
+        `<li class="pl-1.5 text-[14.5px] leading-7 text-foreground/85">${formatInline(it, mathBlocks)}</li>`
+      ).join("");
+      html.push(`<ol class="my-3 ml-5 list-decimal space-y-2 not-prose">${itemsHtml}</ol>`);
+      continue;
+    }
+
+    // Unordered list
+    if (isUnorderedItem(line)) {
+      const items: string[] = [];
+      while (i < lines.length && isUnorderedItem(lines[i]!)) {
+        items.push(lines[i]!.replace(/^\s*[-•]\s*/, ""));
+        i++;
+      }
+      const itemsHtml = items.map((it) =>
+        `<li class="pl-1.5 text-[14.5px] leading-7 text-foreground/85">${formatInline(it, mathBlocks)}</li>`
+      ).join("");
+      html.push(`<ul class="my-3 ml-5 list-disc space-y-2 not-prose">${itemsHtml}</ul>`);
+      continue;
+    }
+
+    // Display math on its own line (after placeholder substitution it's \x00MATH n\x00)
+    const mathOnlyMatch = line.trim().match(/^\x00MATH(\d+)\x00$/);
+    if (mathOnlyMatch) {
+      const original = mathBlocks[Number(mathOnlyMatch[1])] ?? "";
+      if (original.startsWith("$$")) {
+        html.push(renderDisplayMath(original.replace(/^\$\$|\$\$$/g, "")));
+        i++;
+        continue;
       }
     }
-    html += `</tbody></table></div>`;
-    return html;
-  });
 
-  // ── 4. Callout / blockquote  > text ──────────────────────────────────────
-  text = text.replace(/((?:^>[ \t]*.+\n?)+)/gm, (block) => {
-    const inner = block
-      .split("\n")
-      .filter(Boolean)
-      .map((l) => l.replace(/^>\s?/, ""))
-      .join(" ");
-    return `<div class="my-4 not-prose flex gap-3 rounded-xl border border-primary/25 bg-primary/5 px-4 py-3">
-      <div class="mt-0.5 shrink-0 size-4 rounded-full bg-primary/20 flex items-center justify-center">
-        <div class="size-1.5 rounded-full bg-primary"></div>
-      </div>
-      <p class="text-sm leading-relaxed text-foreground/90 m-0">${inner}</p>
-    </div>`;
-  });
-
-  // ── 5. Code blocks  ``` … ``` ────────────────────────────────────────────
-  text = text.replace(/```(?:\w+)?\n?([\s\S]+?)```/g, (_, code) => {
-    return `<div class="my-4 not-prose overflow-x-auto rounded-xl border border-border/60 bg-muted/40">
-      <pre class="p-4 font-mono text-[12px] leading-relaxed text-foreground whitespace-pre">${code.trim()}</pre>
-    </div>`;
-  });
-
-  // ── 6. Headings  ### ## # ────────────────────────────────────────────────
-  text = text.replace(/^### (.+)$/gm, (_, t) =>
-    `<h4 class="mt-5 mb-1.5 text-[15px] font-bold text-foreground">${t}</h4>`);
-  text = text.replace(/^## (.+)$/gm, (_, t) =>
-    `<h3 class="mt-6 mb-2 text-[17px] font-bold text-foreground border-b border-border/40 pb-1">${t}</h3>`);
-  text = text.replace(/^# (.+)$/gm, (_, t) =>
-    `<h2 class="mt-7 mb-2 text-[20px] font-black text-foreground">${t}</h2>`);
-
-  // ── 7. Horizontal rule  --- ───────────────────────────────────────────────
-  text = text.replace(/^---$/gm, `<hr class="my-5 border-border/50" />`);
-
-  // ── 8. Ordered list  1. … ────────────────────────────────────────────────
-  text = text.replace(/((?:^\d+\. .+\n?)+)/gm, (block) => {
-    const items = block.trim().split("\n").filter(Boolean).map((l) =>
-      `<li class="pl-1 text-[14.5px] leading-relaxed text-foreground/85">${l.replace(/^\d+\.\s*/, "")}</li>`
-    ).join("");
-    return `<ol class="my-3 ml-5 list-decimal space-y-1 not-prose">${items}</ol>`;
-  });
-
-  // ── 9. Unordered list  - … ────────────────────────────────────────────────
-  text = text.replace(/((?:^[-•] .+\n?)+)/gm, (block) => {
-    const items = block.trim().split("\n").filter(Boolean).map((l) =>
-      `<li class="pl-1 text-[14.5px] leading-relaxed text-foreground/85">${l.replace(/^[-•]\s*/, "")}</li>`
-    ).join("");
-    return `<ul class="my-3 ml-5 list-disc space-y-1 not-prose">${items}</ul>`;
-  });
-
-  // ── 10. Restore math placeholders and render ─────────────────────────────
-  text = text.replace(/\x00MATH(\d+)\x00/g, (_, idx) => {
-    const original = mathBlocks[Number(idx)] ?? "";
-    const isDisplay = original.startsWith("$$");
-    const eq = original.replace(/^\$\$?|\$\$?$/g, "").trim();
-    try {
-      const rendered = katex.renderToString(eq, { displayMode: isDisplay, throwOnError: false });
-      return isDisplay
-        ? `<div class="my-4 overflow-x-auto text-center not-prose">${rendered}</div>`
-        : rendered;
-    } catch {
-      return `<code class="font-mono text-sm">${eq}</code>`;
+    // Default: paragraph — collect consecutive non-blank, non-block lines
+    const paraLines: string[] = [];
+    while (
+      i < lines.length &&
+      !isBlank(lines[i]!) &&
+      !isBlockPlaceholder(lines[i]!) &&
+      !isTableRow(lines[i]!) &&
+      !isOrderedItem(lines[i]!) &&
+      !isUnorderedItem(lines[i]!) &&
+      !isHeading(lines[i]!) &&
+      !isHr(lines[i]!) &&
+      !isQuote(lines[i]!)
+    ) {
+      paraLines.push(lines[i]!);
+      i++;
     }
-  });
-
-  // ── 11. Inline formatting ────────────────────────────────────────────────
-  // ==highlighted== key term
-  text = text.replace(/==(.+?)==/g,
-    `<mark class="rounded px-0.5 bg-yellow-200/70 dark:bg-yellow-900/40 text-foreground font-semibold not-italic">$1</mark>`);
-
-  // Bold
-  text = text.replace(/\*\*(.+?)\*\*/g,
-    `<strong class="font-semibold text-foreground">$1</strong>`);
-
-  // Italic
-  text = text.replace(/(?<!\*)\*([^*\n]+?)\*(?!\*)/g, `<em>$1</em>`);
-
-  // Inline code / key term with backtick
-  text = text.replace(/`([^`\n]+?)`/g,
-    `<code class="inline-block rounded-md bg-muted px-1.5 py-0.5 font-mono text-[12.5px] text-foreground/90">$1</code>`);
-
-  // ── 12. Paragraph breaks ─────────────────────────────────────────────────
-  // Convert double newlines that are not already inside HTML tags to paragraphs
-  text = text.replace(/\n{2,}/g, "</p><p class=\"mb-3 leading-7 text-[15px] text-foreground/88\">");
-  // Wrap if it doesn't start with a block element
-  if (!text.trimStart().startsWith("<")) {
-    text = `<p class="mb-3 leading-7 text-[15px] text-foreground/88">${text}</p>`;
+    const paraText = formatInline(paraLines.join(" "), mathBlocks);
+    html.push(`<p class="mb-3 leading-7 text-[15px] text-foreground/88">${paraText}</p>`);
   }
 
-  return text;
+  return html.join("\n");
 }
