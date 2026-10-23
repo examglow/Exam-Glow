@@ -31,7 +31,7 @@ export const Route = createFileRoute("/api/tts")({
                 speechConfig: {
                   voiceConfig: {
                     prebuiltVoiceConfig: {
-                      voiceName: "Aoede",
+                      voiceName: "Kore",
                     },
                   },
                 },

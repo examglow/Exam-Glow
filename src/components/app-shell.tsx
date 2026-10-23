@@ -7,10 +7,9 @@ import { readProfile, type OnboardingProfile } from "@/lib/onboarding";
 
 export const studyNav = [
   { to: "/home", label: "Home" },
-  { to: "/past-questions", label: "Past Questions" },
   { to: "/assignments", label: "Assignments" },
   { to: "/flashcards", label: "Flashcards" },
-  { to: "/quizzes", label: "Quizzes" },
+  { to: "/test", label: "Practice" },
   { to: "/tutors", label: "Tutors" },
   { to: "/arcade", label: "Study Games" },
 ] as const;

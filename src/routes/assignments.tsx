@@ -73,7 +73,7 @@ function AssignmentsPage() {
       }
 
       // Direct client fallback via callGemini
-      const prompt = `You are ExamGlow's senior Cambridge academic tutor Yumna. Complete this assignment thoroughly.
+      const prompt = `You are ExamGlow's senior IGCSE academic tutor Yumna. Complete this assignment thoroughly.
 Assignment title: ${title || "Untitled Assignment"}
 Preferred style: ${style}
 Target length: ${length}

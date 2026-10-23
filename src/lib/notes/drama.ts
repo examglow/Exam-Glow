@@ -9,7 +9,7 @@ export const DRAMA: SubjectNotes = {
  {
  "number": 1,
  "title": "Drama in Context — Theatre, Performance, and the Practitioner",
- "intro": " **What is this topic all about?** Drama is a live, collaborative art form — it requires performers, text (or devised content), space, and audience, all interacting in real time. Cambridge IGCSE Drama covers three interlocking areas: performing (as an actor or director), devising (creating original drama), and understanding the work of theatre practitioners and the contexts in which plays are made and performed.",
+ "intro": " **What is this topic all about?** Drama is a live, collaborative art form — it requires performers, text (or devised content), space, and audience, all interacting in real time. IGCSE Drama covers three interlocking areas: performing (as an actor or director), devising (creating original drama), and understanding the work of theatre practitioners and the contexts in which plays are made and performed.",
  "subheadings": [
  {
  "title": "Theatre Spaces and Their Effects on Performance",
@@ -38,7 +38,7 @@ export const DRAMA: SubjectNotes = {
  },
  {
  "title": "Drama Practitioners — Key Theorists and Their Approaches",
- "body": "Theatre practitioners are directors, writers, designers, and theorists who have developed systematic approaches to the making of drama. Cambridge IGCSE Drama requires knowledge of several key practitioners and their influence on contemporary performance. ",
+ "body": "Theatre practitioners are directors, writers, designers, and theorists who have developed systematic approaches to the making of drama. IGCSE Drama requires knowledge of several key practitioners and their influence on contemporary performance. ",
  "groups": [
  {
  "subTitle": "Konstantin Stanislavski (1863–1938)",
@@ -106,7 +106,7 @@ export const DRAMA: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"Drama in Context — Theatre, Performance, and the Practitioner\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"Drama in Context — Theatre, Performance, and the Practitioner\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -119,7 +119,7 @@ export const DRAMA: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -131,7 +131,7 @@ export const DRAMA: SubjectNotes = {
  {
  "number": 2,
  "title": "Acting — Voice, Movement, and Character",
- "intro": " **What is this topic all about?** The actor is the living heart of any performance. Acting requires control of both external instruments (voice and body) and internal resources (imagination, emotion, and concentration). Cambridge IGCSE Drama assesses acting in both scripted performances and devised work, evaluating the range, truthfulness, and physical/vocal expressiveness of the performance.",
+ "intro": " **What is this topic all about?** The actor is the living heart of any performance. Acting requires control of both external instruments (voice and body) and internal resources (imagination, emotion, and concentration). IGCSE Drama assesses acting in both scripted performances and devised work, evaluating the range, truthfulness, and physical/vocal expressiveness of the performance.",
  "subheadings": [
  {
  "title": "Voice — The Actor's Primary Instrument",
@@ -208,7 +208,7 @@ export const DRAMA: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Acting — Voice, Movement, and Character\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Acting — Voice, Movement, and Character\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -221,7 +221,7 @@ export const DRAMA: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -233,7 +233,7 @@ export const DRAMA: SubjectNotes = {
  {
  "number": 3,
  "title": "Devising — Creating Original Drama",
- "intro": " **What is this topic all about?** Devised drama is theatre created collaboratively by the company — without a pre-existing script as the starting point. Cambridge IGCSE Drama Component 1 (Devised Drama) requires candidates to develop an original piece from a stimulus, demonstrating creativity, collaborative skills, and an understanding of dramatic form.",
+ "intro": " **What is this topic all about?** Devised drama is theatre created collaboratively by the company — without a pre-existing script as the starting point. IGCSE Drama Component 1 (Devised Drama) requires candidates to develop an original piece from a stimulus, demonstrating creativity, collaborative skills, and an understanding of dramatic form.",
  "subheadings": [
  {
  "title": "The Devising Process",
@@ -319,7 +319,7 @@ export const DRAMA: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Devising — Creating Original Drama\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Devising — Creating Original Drama\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -332,7 +332,7 @@ export const DRAMA: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -344,7 +344,7 @@ export const DRAMA: SubjectNotes = {
  {
  "number": 4,
  "title": "Scripted Performance — Text Analysis and Realisation",
- "intro": " **What is this topic all about?** Cambridge IGCSE Drama Component 2 (Scripted Performance) requires candidates to perform a role in a scripted play, demonstrating textual understanding, characterisation, vocal and physical control, and the ability to work collaboratively in an ensemble. Selecting appropriate texts and analysing them thoroughly underpins outstanding performance.",
+ "intro": " **What is this topic all about?** IGCSE Drama Component 2 (Scripted Performance) requires candidates to perform a role in a scripted play, demonstrating textual understanding, characterisation, vocal and physical control, and the ability to work collaboratively in an ensemble. Selecting appropriate texts and analysing them thoroughly underpins outstanding performance.",
  "subheadings": [
  {
  "title": "Script Analysis for Performance",
@@ -404,7 +404,7 @@ export const DRAMA: SubjectNotes = {
  },
  {
  "title": "Examination Preparation and Performance Skills",
- "body": "Cambridge IGCSE Drama is assessed through live performance observed by a visiting examiner. Understanding the assessment criteria and preparing systematically ensures the highest possible marks. ",
+ "body": "IGCSE Drama is assessed through live performance observed by a visiting examiner. Understanding the assessment criteria and preparing systematically ensures the highest possible marks. ",
  "groups": [
  {
  "subTitle": "Assessment Objectives in Performance",
@@ -437,7 +437,7 @@ export const DRAMA: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Scripted Performance — Text Analysis and Realisation\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Scripted Performance — Text Analysis and Realisation\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -450,7 +450,7 @@ export const DRAMA: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

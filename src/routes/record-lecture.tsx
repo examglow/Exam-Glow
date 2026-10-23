@@ -216,11 +216,11 @@ function RecordLecturePage() {
     try {
       let prompt = "";
       if (kind === "summary") {
-        prompt = `You are Yumna, a supportive Cambridge AI tutor. Summarise this recorded lecture in concise bullet points, then provide the 3 most crucial exam takeaways:\n\nLecture transcript:\n${item.transcript}`;
+        prompt = `You are Yumna, a supportive IGCSE AI tutor. Summarise this recorded lecture in concise bullet points, then provide the 3 most crucial exam takeaways:\n\nLecture transcript:\n${item.transcript}`;
       } else if (kind === "explain") {
-        prompt = `You are Yumna, a warm and encouraging Cambridge AI tutor. Break down and explain this lecture transcript in simple, intuitive terms as if explaining to a student who found it confusing. Highlight the key concepts step-by-step:\n\nLecture transcript:\n${item.transcript}`;
+        prompt = `You are Yumna, a warm and encouraging IGCSE AI tutor. Break down and explain this lecture transcript in simple, intuitive terms as if explaining to a student who found it confusing. Highlight the key concepts step-by-step:\n\nLecture transcript:\n${item.transcript}`;
       } else {
-        prompt = `You are Yumna, a Cambridge tutor. Write 5 high-yield exam practice questions with mark schemes and model answers based on this lecture:\n\nLecture transcript:\n${item.transcript}`;
+        prompt = `You are Yumna, an IGCSE tutor. Write 5 high-yield exam practice questions with mark schemes and model answers based on this lecture:\n\nLecture transcript:\n${item.transcript}`;
       }
 
       const res = await fetch("/api/chat", {

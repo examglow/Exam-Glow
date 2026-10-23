@@ -94,7 +94,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"Research Methods in Psychology\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"Research Methods in Psychology\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -107,7 +107,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -200,7 +200,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Memory — Models and Forgetting\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Memory — Models and Forgetting\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -213,7 +213,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -225,7 +225,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  {
  "number": 3,
  "title": "Development — Cognitive and Social Development",
- "intro": " **What is this topic all about?** Developmental psychology studies how humans change throughout the lifespan — in thinking, social understanding, emotion, and behaviour. The two most influential developmental theories in the Cambridge syllabus are Piaget's theory of cognitive development and Vygotsky's sociocultural theory.",
+ "intro": " **What is this topic all about?** Developmental psychology studies how humans change throughout the lifespan — in thinking, social understanding, emotion, and behaviour. The two most influential developmental theories in the IGCSE syllabus are Piaget's theory of cognitive development and Vygotsky's sociocultural theory.",
  "subheadings": [
  {
  "title": "Piaget's Theory of Cognitive Development",
@@ -302,7 +302,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Development — Cognitive and Social Development\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Development — Cognitive and Social Development\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -315,7 +315,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -399,7 +399,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Social Influence — Conformity, Obedience, and Group Behaviour\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Social Influence — Conformity, Obedience, and Group Behaviour\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -412,7 +412,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -507,7 +507,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 5: \"Biological Psychology — Brain, Genes, and Behaviour\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 5: \"Biological Psychology — Brain, Genes, and Behaviour\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -520,7 +520,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -536,7 +536,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  "subheadings": [
  {
  "title": "Defining and Classifying Abnormality",
- "body": "There is no single agreed criterion for defining abnormal behaviour. Cambridge IGCSE Psychology requires knowledge of four main approaches to definition. ",
+ "body": "There is no single agreed criterion for defining abnormal behaviour. IGCSE Psychology requires knowledge of four main approaches to definition. ",
  "groups": [
  {
  "bullets": [
@@ -612,7 +612,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 6 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 6: \"Abnormal Psychology — Mental Health and Treatment\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 6: \"Abnormal Psychology — Mental Health and Treatment\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -625,7 +625,7 @@ export const PSYCHOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

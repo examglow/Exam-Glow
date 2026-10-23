@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 
 import { DashboardLayout } from "@/components/dashboard-page";
+import { PracticeQuiz } from "@/components/practice-quiz";
 import { callGemini } from "@/lib/ai-router";
 import { igcseSubjects } from "@/lib/igcse-syllabuses";
 import { isPaidUser } from "@/lib/onboarding";
@@ -25,10 +26,10 @@ import { PaywallModal } from "@/components/paywall-modal";
 export const Route = createFileRoute("/test")({
   head: () => ({
     meta: [
-      { title: "Exam Test Simulation | ExamGlow" },
+      { title: "Practice — Quiz & Exam Simulation | ExamGlow" },
       {
         name: "description",
-        content: "Official Cambridge IGCSE examination paper simulation with authentic form layout, live timer, and mark scheme.",
+        content: "Quiz yourself on any topic, then sit a full IGCSE examination simulation with live timer and mark scheme.",
       },
     ],
   }),
@@ -116,7 +117,7 @@ const SAMPLE_EXAMS: Record<string, QuestionPaper> = {
       {
         id: 5,
         part: "2 (b)",
-        text: "Define the term osmosis according to the Cambridge syllabus standard.",
+        text: "Define the term osmosis according to the IGCSE syllabus standard.",
         marks: 3,
         linesCount: 3,
         type: "structured",
@@ -241,6 +242,7 @@ const ALL_SUBJECTS = [
 ];
 
 function TestSimulationPage() {
+  const [mode, setMode] = useState<"quiz" | "exam">("exam");
   const [selectedSubject, setSelectedSubject] = useState("biology");
   const [subjectSearch, setSubjectSearch] = useState("");
   const [showPaywall, setShowPaywall] = useState(false);
@@ -323,7 +325,7 @@ function TestSimulationPage() {
     const targetObj = questionMode === "theory" ? 0 : objCount;
     const targetTheory = questionMode === "objectives" ? 0 : theoryCount;
 
-    const prompt = `You are a Senior Cambridge IGCSE Examiner. Generate an authentic official examination paper in valid JSON format.
+    const prompt = `You are a Senior IGCSE Examiner. Generate an authentic official examination paper in valid JSON format.
 Subject: ${activeSubjectInfo.name} (Code ${activeSubjectInfo.code}).
 ${topicInput.trim() ? `Specific Syllabus Topic: ${topicInput.trim()}` : "Full Subject Syllabus Scope"}.
 Exam Format: ${questionMode}
@@ -391,12 +393,37 @@ Return STRICTLY a JSON object without surrounding prose:
   }
 
   return (
-    <DashboardLayout crumbs={[{ label: "Practice" }, { label: "Exam Simulation" }]}>
-      <PaywallModal
+    <DashboardLayout crumbs={[{ label: "Practice" }, { label: mode === "quiz" ? "Quiz" : "Exam Simulation" }]}>
+      <div className="mb-6 inline-flex rounded-full border border-border bg-secondary/50 p-1 text-xs font-semibold">
+        <button
+          type="button"
+          onClick={() => setMode("quiz")}
+          className={`rounded-full px-5 py-2 transition-colors ${
+            mode === "quiz" ? "bg-ink text-ink-foreground shadow" : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          Quiz
+        </button>
+        <button
+          type="button"
+          onClick={() => setMode("exam")}
+          className={`rounded-full px-5 py-2 transition-colors ${
+            mode === "exam" ? "bg-ink text-ink-foreground shadow" : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          Exam Simulation
+        </button>
+      </div>
+
+      {mode === "quiz" ? (
+        <PracticeQuiz />
+      ) : (
+        <>
+          <PaywallModal
         open={showPaywall}
         onClose={() => setShowPaywall(false)}
-        title="Unlock Cambridge Examination Papers"
-        subtitle="You have completed your free trial exam paper. Upgrade to ExamGlow Premium to generate unlimited Cambridge IGCSE mock exams across all 40+ subjects with full mark schemes."
+        title="Unlock IGCSE Examination Papers"
+        subtitle="You have completed your free trial exam paper. Upgrade to ExamGlow Premium to generate unlimited IGCSE mock exams across all 40+ subjects with full mark schemes."
       />
 
       {!examStarted ? (
@@ -407,10 +434,10 @@ Return STRICTLY a JSON object without surrounding prose:
               <span className="flex size-7 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <BookOpen className="size-4" />
               </span>
-              <h1 className="text-xl font-bold text-foreground">Cambridge Examination Setup</h1>
+              <h1 className="text-xl font-bold text-foreground">IGCSE Examination Setup</h1>
             </div>
             <p className="text-xs text-muted-foreground">
-              Configure your exam format (Objectives, Theory, or Both) and let Yumna AI generate an authentic Cambridge examination booklet.
+              Configure your exam format (Objectives, Theory, or Both) and let Yumna AI generate an authentic IGCSE examination booklet.
             </p>
 
             <div className="mt-6 space-y-5">
@@ -587,7 +614,7 @@ Return STRICTLY a JSON object without surrounding prose:
               >
                 {isCompiling ? (
                   <>
-                    <Loader2 className="size-4 animate-spin" /> Compiling Authentic Cambridge Paper via AI...
+                    <Loader2 className="size-4 animate-spin" /> Compiling Authentic IGCSE Paper via AI...
                   </>
                 ) : (
                   <>
@@ -599,7 +626,7 @@ Return STRICTLY a JSON object without surrounding prose:
           </div>
         </div>
       ) : (
-        /* Authentic Cambridge Printed Examination Paper Booklet */
+        /* Authentic IGCSE Printed Examination Paper Booklet */
         <div className="w-full max-w-3xl py-4">
           {/* Top Live Timer Bar */}
           <div className="mb-4 flex items-center justify-between rounded-2xl border border-border bg-card px-5 py-3 shadow-sm">
@@ -619,16 +646,16 @@ Return STRICTLY a JSON object without surrounding prose:
             </div>
           </div>
 
-          {/* Official Cambridge Examination Form Booklet */}
+          {/* Official IGCSE Examination Form Booklet */}
           <div className="rounded-xl border border-zinc-300 bg-white text-zinc-900 shadow-xl p-8 sm:p-12 font-serif select-none dark:bg-zinc-950 dark:border-zinc-800 dark:text-zinc-100">
             {/* Candidate Cover Box Table */}
             <div className="border-2 border-zinc-900 p-5 dark:border-zinc-300">
               <div className="border-b border-zinc-900 pb-3 text-center dark:border-zinc-300">
                 <p className="text-[12px] font-bold uppercase tracking-widest text-zinc-700 dark:text-zinc-300 font-sans">
-                  Cambridge Assessment International Education
+                  ExamGlow Practice Examination
                 </p>
                 <p className="text-xs font-semibold text-zinc-500 font-sans mt-0.5">
-                  Cambridge International General Certificate of Secondary Education
+                  International General Certificate of Secondary Education
                 </p>
               </div>
 
@@ -735,7 +762,7 @@ Return STRICTLY a JSON object without surrounding prose:
                         ))}
                       </div>
                     ) : (
-                      /* Authentic Cambridge Ruled Answer Lines */
+                      /* Authentic IGCSE Ruled Answer Lines */
                       <div className="space-y-1 pl-4">
                         <textarea
                           rows={q.linesCount}
@@ -753,7 +780,7 @@ Return STRICTLY a JSON object without surrounding prose:
                   {examSubmitted && (
                     <div className="mt-4 rounded-xl border border-emerald-500/40 bg-emerald-50/50 p-4 font-sans text-xs dark:bg-emerald-950/30">
                       <p className="font-bold text-emerald-700 dark:text-emerald-400 flex items-center gap-1.5">
-                        <CheckCircle2 className="size-3.5" /> Cambridge Mark Scheme Criteria:
+                        <CheckCircle2 className="size-3.5" /> Mark Scheme Criteria:
                       </p>
                       <p className="mt-1 font-mono text-zinc-800 dark:text-zinc-200">{q.sampleAnswer}</p>
                       <ul className="mt-2 space-y-0.5 text-[11px] text-zinc-600 dark:text-zinc-400 list-disc pl-4">
@@ -769,7 +796,7 @@ Return STRICTLY a JSON object without surrounding prose:
 
             {/* Exam Paper Footer */}
             <div className="mt-12 border-t border-zinc-900 pt-3 flex items-center justify-between font-sans text-[10px] text-zinc-500 dark:border-zinc-700">
-              <p>© Cambridge University Press &amp; Assessment 2024</p>
+              <p>ExamGlow mock paper — not an official examination</p>
               <p className="font-mono">{examData.code}</p>
               <p>[Turn over</p>
             </div>
@@ -816,6 +843,8 @@ Return STRICTLY a JSON object without surrounding prose:
             )}
           </div>
         </div>
+      )}
+        </>
       )}
     </DashboardLayout>
   );

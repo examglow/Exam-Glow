@@ -39,7 +39,7 @@ function SettingsPage() {
   const [profile, setProfile] = useState(readProfile());
   const [name, setName] = useState(profile.name || "Alex Morgan");
   const [email, setEmail] = useState("student@examglow.com");
-  const [targetExam, setTargetExam] = useState(profile.curriculum || "Cambridge IGCSE");
+  const [targetExam, setTargetExam] = useState(profile.curriculum || "IGCSE");
   const [savedSuccess, setSavedSuccess] = useState(false);
   const [autoRenew, setAutoRenew] = useState(profile.autoRenew ?? true);
   const [notifications, setNotifications] = useState(true);
@@ -129,10 +129,10 @@ function SettingsPage() {
                   onChange={(e) => setTargetExam(e.target.value)}
                   className="w-full rounded-xl border border-border bg-surface px-3.5 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
                 >
-                  <option>Cambridge IGCSE (May/June 2025)</option>
-                  <option>Cambridge IGCSE (Oct/Nov 2025)</option>
-                  <option>Cambridge O-Levels</option>
-                  <option>Cambridge A-Levels</option>
+                  <option>IGCSE (May/June 2025)</option>
+                  <option>IGCSE (Oct/Nov 2025)</option>
+                  <option>O-Levels</option>
+                  <option>A-Levels</option>
                   <option>Edexcel International GCSE</option>
                 </select>
               </div>

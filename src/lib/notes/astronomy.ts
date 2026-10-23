@@ -9,7 +9,7 @@ export const ASTRONOMY: SubjectNotes = {
     {
       number: 1,
       title: "The Earth in Space",
-      intro: "Earth is a rocky planet orbiting the Sun at a mean distance of 1 AU (approximately 1.5 × 10^8 km). It completes one revolution every 365.25 days and rotates on its axis once every 24 hours. The axial tilt of approximately 23.5° relative to the orbital plane is responsible for the seasonal variation in solar energy received at different latitudes. Understanding Earth's position and motion in space underpins every other area of observational and theoretical astronomy in the Cambridge IGCSE syllabus.",
+      intro: "Earth is a rocky planet orbiting the Sun at a mean distance of 1 AU (approximately 1.5 × 10^8 km). It completes one revolution every 365.25 days and rotates on its axis once every 24 hours. The axial tilt of approximately 23.5° relative to the orbital plane is responsible for the seasonal variation in solar energy received at different latitudes. Understanding Earth's position and motion in space underpins every other area of observational and theoretical astronomy in the IGCSE syllabus.",
       subheadings: [
         {
           title: "Earth's Rotation and Revolution",

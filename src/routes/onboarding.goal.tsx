@@ -27,7 +27,7 @@ export const Route = createFileRoute("/onboarding/goal")({
 
 const goals = [
   { label: "College", hint: "Courses, assignments and semester exams", Icon: GraduationCap },
-  { label: "IGCSE", hint: "Cambridge and Edexcel subjects", Icon: School },
+  { label: "IGCSE", hint: "IGCSE and O-Level subjects", Icon: School },
   { label: "A Levels", hint: "AS and A Level exam preparation", Icon: BookOpenCheck },
   { label: "Professional Exams", hint: "Licensing, certification and entrance exams", Icon: BadgeCheck },
   { label: "Other", hint: "", Icon: MoreHorizontal },

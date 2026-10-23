@@ -9,7 +9,7 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
     {
       number: 1,
       title: "Functions",
-      intro: "A function is a rule that takes each allowed input value x and produces exactly one output value y = f(x). Functions are the foundation of the whole 0606 course: composite and inverse functions appear in almost every Paper 1 and Paper 2. You must be able to state the domain (allowed inputs) and range (possible outputs) of a function, decide whether a function has an inverse, and form composite functions in the correct order. Notation matters enormously here: f(x), fg(x) and f⁻¹(x) each mean something precise, and Cambridge awards marks for using them correctly. Master the worked examples in this chapter slowly — every later chapter (quadratics, exponentials, calculus) reuses this function language.",
+      intro: "A function is a rule that takes each allowed input value x and produces exactly one output value y = f(x). Functions are the foundation of the whole 0606 course: composite and inverse functions appear in almost every Paper 1 and Paper 2. You must be able to state the domain (allowed inputs) and range (possible outputs) of a function, decide whether a function has an inverse, and form composite functions in the correct order. Notation matters enormously here: f(x), fg(x) and f⁻¹(x) each mean something precise, and examiners award marks for using them correctly. Master the worked examples in this chapter slowly — every later chapter (quadratics, exponentials, calculus) reuses this function language.",
       subheadings: [
         {
           title: "Function Notation, Domain and Range",
@@ -152,7 +152,7 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
     {
       number: 2,
       title: "Quadratic Functions",
-      intro: "Quadratic functions have the form f(x) = ax² + bx + c with a ≠ 0, and their graphs are parabolas. This chapter covers the three skills Cambridge tests constantly: completing the square (to locate the vertex and state maxima, minima and ranges), using the discriminant b² - 4ac to classify roots and to find tangency conditions, and solving quadratic inequalities with correct interval notation. These tools reappear in trigonometric equations, simultaneous equations and even differentiation questions, so fluency here pays off across the whole paper. Every 0606 paper contains at least one substantial quadratic question, usually worth 6-10 marks.",
+      intro: "Quadratic functions have the form f(x) = ax² + bx + c with a ≠ 0, and their graphs are parabolas. This chapter covers the three skills IGCSE papers test constantly: completing the square (to locate the vertex and state maxima, minima and ranges), using the discriminant b² - 4ac to classify roots and to find tangency conditions, and solving quadratic inequalities with correct interval notation. These tools reappear in trigonometric equations, simultaneous equations and even differentiation questions, so fluency here pays off across the whole paper. Every 0606 paper contains at least one substantial quadratic question, usually worth 6-10 marks.",
       subheadings: [
         {
           title: "Completing the Square and Graph Features",
@@ -225,7 +225,7 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
             }
           ],
           examinerTips: [
-            "**Name the condition**: begin tangency/equal-roots working with the sentence 'For equal roots, b² - 4ac = 0' — Cambridge mark schemes attach a mark to stating the condition.",
+            "**Name the condition**: begin tangency/equal-roots working with the sentence 'For equal roots, b² - 4ac = 0' — mark schemes attach a mark to stating the condition.",
             "**Simplify to zero first**: rearrange the substituted equation to ax² + bx + c = 0 before reading off a, b, c; identifying coefficients from an unsimplified form is the biggest source of errors.",
             "**Two values, two checks**: when (4 + k)² = 16 gives two answers, present both and verify each makes sense as a tangent.",
             "**Use the discriminant for intersection counts**: two distinct roots = two intersections; equal roots = tangent; no real roots = no intersection — say this in words.",
@@ -271,7 +271,7 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
           examinerTips: [
             "**Draw the sketch, however rough**: the upward/downward orientation of the parabola decides everything; one small sketch prevents interval-direction errors.",
             "**Rearrange to zero first**: only factorise after collecting everything on one side with the x² coefficient positive — this makes the sign pattern standard.",
-            "**State answers in set/interval notation** exactly as Cambridge expects: 'x ≤ -3/2 or x ≥ 2' or using ∪ notation; the word 'or' (not 'and') joins the two regions.",
+            "**State answers in set/interval notation** exactly as mark schemes expect: 'x ≤ -3/2 or x ≥ 2' or using ∪ notation; the word 'or' (not 'and') joins the two regions.",
             "**Match the inequality sign at the boundary**: < and > exclude the roots (strict); ≤ and ≥ include them.",
             "**When asked to find the range of values of k**, you are solving an inequality in k — same technique, different variable."
           ],
@@ -294,7 +294,7 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
     {
       number: 3,
       title: "Equations, Inequalities and Graphs",
-      intro: "This chapter is about seeing algebra pictorially. You will learn to sketch cubic polynomials and reciprocal curves such as y = 1/x from their equations, to draw modulus graphs y = |f(x)| by reflecting the negative parts of f in the x-axis, and to use those sketches to solve equations and inequalities. Cambridge frequently asks for a solution 'graphically' or expects a labelled sketch to support an algebraic answer — the graph is a working tool, not decoration. Marks are awarded for correct intercepts, asymptotes and the reflected sections of modulus graphs, so train yourself to label everything you draw.",
+      intro: "This chapter is about seeing algebra pictorially. You will learn to sketch cubic polynomials and reciprocal curves such as y = 1/x from their equations, to draw modulus graphs y = |f(x)| by reflecting the negative parts of f in the x-axis, and to use those sketches to solve equations and inequalities. Papers frequently ask for a solution 'graphically' or expect a labelled sketch to support an algebraic answer — the graph is a working tool, not decoration. Marks are awarded for correct intercepts, asymptotes and the reflected sections of modulus graphs, so train yourself to label everything you draw.",
       subheadings: [
         {
           title: "Sketching Polynomial and Reciprocal Graphs",

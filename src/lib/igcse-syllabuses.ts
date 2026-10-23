@@ -1,4 +1,4 @@
-// ─── Cambridge IGCSE Syllabuses ───────────────────────────────────────────────
+// ─── IGCSE Syllabuses ───────────────────────────────────────────────
 // Every PDF URL verified directly from cambridgeinternational.org subject pages.
 // URL pattern: https://www.cambridgeinternational.org/Images/{id}-{years}-syllabus.pdf
 

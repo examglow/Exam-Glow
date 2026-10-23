@@ -115,7 +115,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"Types and components of computer systems\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"Types and components of computer systems\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -128,7 +128,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -249,7 +249,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Input and output devices\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Input and output devices\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -262,7 +262,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -386,7 +386,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Storage devices and media\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Storage devices and media\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -399,7 +399,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -513,7 +513,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Networks and the effects of using them\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Networks and the effects of using them\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -526,7 +526,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -646,7 +646,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 5: \"The effects of using IT\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 5: \"The effects of using IT\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -659,7 +659,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -817,7 +817,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 6 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 6: \"ICT applications\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 6: \"ICT applications\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -830,7 +830,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -944,7 +944,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 7 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 7: \"The systems life cycle\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 7: \"The systems life cycle\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -957,7 +957,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -1107,7 +1107,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 8 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 8: \"Safety and security\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 8: \"Safety and security\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -1120,7 +1120,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -1206,7 +1206,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 9 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 9: \"Audience\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 9: \"Audience\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -1219,7 +1219,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -1334,7 +1334,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 10 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 10: \"Communication\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 10: \"Communication\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -1347,7 +1347,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -1467,7 +1467,7 @@ export const ICT: SubjectNotes = {
  },
  {
  "title": " Chapter 11 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 11: \"File management\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 11: \"File management\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -1480,7 +1480,7 @@ export const ICT: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

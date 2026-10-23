@@ -13,7 +13,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  "subheadings": [
  {
  "title": "Core Definitions",
- "body": "These foundational definitions distinguish the key concepts of the subject and are frequently tested in Cambridge IGCSE examinations. ",
+ "body": "These foundational definitions distinguish the key concepts of the subject and are frequently tested in IGCSE examinations. ",
  "groups": [
  {
  "bullets": [
@@ -97,7 +97,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"Nutritional Terms and the Science of Nutrients\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"Nutritional Terms and the Science of Nutrients\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -110,7 +110,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -167,7 +167,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  },
  {
  "title": "Food Tests — Laboratory Detection of Nutrients",
- "body": "Food tests are chemical reagent tests used to identify and, in some cases, semi-quantify the presence of specific nutrients in food samples. Cambridge IGCSE requires knowledge of each test's procedure, positive result, and limitation. ",
+ "body": "Food tests are chemical reagent tests used to identify and, in some cases, semi-quantify the presence of specific nutrients in food samples. IGCSE requires knowledge of each test's procedure, positive result, and limitation. ",
  "groups": [
  {
  "bullets": [
@@ -223,7 +223,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Nutritive Value of Food — Composition and Testing\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Nutritive Value of Food — Composition and Testing\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -236,7 +236,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -335,7 +335,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Digestion and Absorption\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Digestion and Absorption\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -348,7 +348,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -454,7 +454,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Meal Planning, Dietary Guidelines, and Special Diets\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Meal Planning, Dietary Guidelines, and Special Diets\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -467,7 +467,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -565,7 +565,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  },
  {
  "title": " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 5: \"Food Spoilage, Hygiene, and Preservation\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 5: \"Food Spoilage, Hygiene, and Preservation\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -578,7 +578,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -683,7 +683,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  },
  {
  "title": " Chapter 6 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 6: \"Cooking Methods, Kitchen Equipment, and Safety\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 6: \"Cooking Methods, Kitchen Equipment, and Safety\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -696,7 +696,7 @@ export const FOOD_AND_NUTRITION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

@@ -171,7 +171,7 @@ export function ExamQuest({ onBack, onFinish }: ExamQuestProps) {
           <div className="space-y-2 max-w-lg mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Exam Quest: Syllabus Tower</h2>
             <p className="text-sm text-muted-foreground">
-              Climb 10 challenging floors of Cambridge exam scenarios. Face Mid-Boss & Final Examiner Boss challenges, use tactical lifelines, and guard your 3 hearts!
+              Climb 10 challenging floors of IGCSE exam scenarios. Face Mid-Boss & Final Examiner Boss challenges, use tactical lifelines, and guard your 3 hearts!
             </p>
           </div>
 

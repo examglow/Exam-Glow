@@ -176,14 +176,14 @@ export function WordBlast({ onBack, onFinish }: WordBlastProps) {
           <div className="space-y-2 max-w-lg mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Term Decrypter & Word Blast</h2>
             <p className="text-sm text-muted-foreground">
-              Cambridge mark schemes demand exact technical vocabulary. Read the official definition, deduce the term, and blast the letters before your attempts run out!
+              mark schemes demand exact technical vocabulary. Read the official definition, deduce the term, and blast the letters before your attempts run out!
             </p>
           </div>
 
           <div className="grid grid-cols-3 gap-3 max-w-md mx-auto text-left pt-2">
             <div className="p-3.5 rounded-2xl bg-muted/60 border border-border">
               <span className="text-xs font-bold text-foreground">1. Read Definition</span>
-              <p className="text-[11px] text-muted-foreground mt-1">Official Cambridge syllabus definition</p>
+              <p className="text-[11px] text-muted-foreground mt-1">Official IGCSE syllabus definition</p>
             </div>
             <div className="p-3.5 rounded-2xl bg-muted/60 border border-border">
               <span className="text-xs font-bold text-foreground">2. Blast Letters</span>
@@ -252,7 +252,7 @@ export function WordBlast({ onBack, onFinish }: WordBlastProps) {
             {/* Definition Prompt */}
             <div className="p-4 rounded-2xl bg-muted/60 border border-border text-center space-y-2">
               <span className="text-[11px] font-bold text-muted-foreground uppercase tracking-widest">
-                Cambridge Mark Scheme Definition:
+                Mark Scheme Definition:
               </span>
               <p className="text-sm md:text-base font-medium text-foreground leading-relaxed">
                 "{currentTerm.definition}"
@@ -376,7 +376,7 @@ export function WordBlast({ onBack, onFinish }: WordBlastProps) {
           <div className="space-y-2">
             <h2 className="text-2xl md:text-3xl font-black text-foreground">Vocabulary Forge Complete!</h2>
             <p className="text-sm text-muted-foreground">
-              You reviewed high-frequency examinable definitions across Cambridge curricula.
+              You reviewed high-frequency examinable definitions across IGCSE curricula.
             </p>
           </div>
 

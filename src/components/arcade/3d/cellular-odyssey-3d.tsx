@@ -22,7 +22,7 @@ const CELL_MISSIONS: CellMission[] = [
     targetOrganelle: "mitochondria",
     prompt: "Identify the organelle responsible for AEROBIC RESPIRATION and ATP synthesis.",
     functionDesc: "Folded inner cristae provide large surface area for electron transport chain.",
-    examinerTip: "Cambridge examiners require mentioning 'aerobic respiration' and 'ATP release'.",
+    examinerTip: "examiners require mentioning 'aerobic respiration' and 'ATP release'.",
   },
   {
     id: "m-2",

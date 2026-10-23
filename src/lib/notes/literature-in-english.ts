@@ -75,7 +75,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"Critical Analysis of Poetry (Paper 1 Section A)\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"Critical Analysis of Poetry (Paper 1 Section A)\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -88,7 +88,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -156,7 +156,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Prose Analysis: Character, Themes and Setting (Paper 1 Section B)\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Prose Analysis: Character, Themes and Setting (Paper 1 Section B)\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -169,7 +169,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -230,7 +230,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Drama Analysis: Dialogue and Stagecraft (Paper 2 / Paper 3)\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Drama Analysis: Dialogue and Stagecraft (Paper 2 / Paper 3)\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -243,7 +243,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -303,7 +303,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Unseen Poetry and Prose Critical Commentary (Paper 4)\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Unseen Poetry and Prose Critical Commentary (Paper 4)\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -316,7 +316,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -376,7 +376,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  },
  {
  "title": " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 5: \"Essay Structuring: PEEL / PEEZL and Textual Evidence\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 5: \"Essay Structuring: PEEL / PEEZL and Textual Evidence\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -389,7 +389,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -432,7 +432,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  },
  {
  "title": " Chapter 6 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 6: \"Literary Devices & Figurative Techniques Glossary\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 6: \"Literary Devices & Figurative Techniques Glossary\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -445,7 +445,7 @@ export const LITERATURE_IN_ENGLISH: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

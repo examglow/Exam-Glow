@@ -15,7 +15,7 @@ export function ContentProtectionGuard() {
   const routerState = useRouterState();
   const currentPath = routerState.location.pathname;
 
-  // Syllabus (/syllabus) and past questions (/past-questions) are 100% free and screenshot-able.
+  // Syllabus Notes is 100% free and screenshot-able.
   // Content protection is strictly applied to proprietary notes (/notes and /syllabus-notes).
   const isProtectedPage = currentPath.startsWith("/notes") || currentPath.startsWith("/syllabus-notes");
 

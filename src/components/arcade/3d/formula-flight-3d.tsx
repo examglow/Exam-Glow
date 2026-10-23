@@ -482,7 +482,7 @@ export function FormulaFlight3D({ onBack, onFinish }: FormulaFlight3DProps) {
           <div className="space-y-1.5">
             <h2 className="text-2xl font-black text-white tracking-tight">Formula Flight 3D</h2>
             <p className="text-xs text-slate-300 leading-relaxed">
-              Steer your pod through 3D hyperspace energy gates. Match missing variables and equations across Cambridge Physics, Chemistry & Math.
+              Steer your pod through 3D hyperspace energy gates. Match missing variables and equations across IGCSE Physics, Chemistry & Math.
             </p>
           </div>
 

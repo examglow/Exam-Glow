@@ -111,7 +111,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"The Design Process — From Need to Solution\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"The Design Process — From Need to Solution\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -124,7 +124,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -136,7 +136,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  {
  "number": 2,
  "title": "Materials — Properties, Selection, and Sustainability",
- "intro": " **What is this topic all about?** Material selection is one of the most critical decisions in design. The right material must possess the correct combination of physical, mechanical, aesthetic, and environmental properties for the specific application. Cambridge IGCSE D&T covers three material families: resistant materials, systems and control materials, and graphic products materials.",
+ "intro": " **What is this topic all about?** Material selection is one of the most critical decisions in design. The right material must possess the correct combination of physical, mechanical, aesthetic, and environmental properties for the specific application. IGCSE D&T covers three material families: resistant materials, systems and control materials, and graphic products materials.",
  "subheadings": [
  {
  "title": "Properties of Materials",
@@ -253,7 +253,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Materials — Properties, Selection, and Sustainability\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Materials — Properties, Selection, and Sustainability\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -266,7 +266,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -278,7 +278,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  {
  "number": 3,
  "title": "Manufacturing Processes — Marking Out, Cutting, Shaping, and Joining",
- "intro": " **What is this topic all about?** The ability to select and apply appropriate manufacturing processes is central to Cambridge IGCSE D&T. Candidates need to understand the tools, machines, and processes used to shape resistant materials, as well as the health and safety requirements for each.",
+ "intro": " **What is this topic all about?** The ability to select and apply appropriate manufacturing processes is central to IGCSE D&T. Candidates need to understand the tools, machines, and processes used to shape resistant materials, as well as the health and safety requirements for each.",
  "subheadings": [
  {
  "title": "Marking Out and Measuring",
@@ -389,7 +389,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Manufacturing Processes — Marking Out, Cutting, Shaping, and Joining\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Manufacturing Processes — Marking Out, Cutting, Shaping, and Joining\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -402,7 +402,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -521,7 +521,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Systems and Control — Electronics, Mechanisms, and Structures\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Systems and Control — Electronics, Mechanisms, and Structures\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -534,7 +534,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -546,7 +546,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  {
  "number": 5,
  "title": "Graphic Products — Communication Drawing and CAD",
- "intro": " **What is this topic all about?** Graphic products is the third specialist option in Cambridge IGCSE D&T. It covers the wide range of printed and screen-based visual communication — including technical drawing, packaging, point-of-sale display, and digital media — that forms a bridge between design and manufacture.",
+ "intro": " **What is this topic all about?** Graphic products is the third specialist option in IGCSE D&T. It covers the wide range of printed and screen-based visual communication — including technical drawing, packaging, point-of-sale display, and digital media — that forms a bridge between design and manufacture.",
  "subheadings": [
  {
  "title": "Technical Drawing Systems",
@@ -632,7 +632,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 5: \"Graphic Products — Communication Drawing and CAD\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 5: \"Graphic Products — Communication Drawing and CAD\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -645,7 +645,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -661,7 +661,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  "subheadings": [
  {
  "title": "Health and Safety in the Workshop",
- "body": "Cambridge IGCSE D&T candidates must demonstrate safe working practices in all practical work. Awareness of hazards and appropriate control measures protects both the student and others. ",
+ "body": "IGCSE D&T candidates must demonstrate safe working practices in all practical work. Awareness of hazards and appropriate control measures protects both the student and others. ",
  "groups": [
  {
  "subTitle": "Risk Assessment",
@@ -741,7 +741,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  },
  {
  "title": " Chapter 6 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 6: \"Health, Safety, and Quality Control in Manufacturing\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 6: \"Health, Safety, and Quality Control in Manufacturing\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -754,7 +754,7 @@ export const DESIGN_AND_TECHNOLOGY: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

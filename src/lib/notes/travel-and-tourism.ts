@@ -9,7 +9,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  {
  "number": 1,
  "title": "Introduction to Travel and Tourism",
- "intro": " **What is this topic all about?** Travel and tourism is the world's largest industry, accounting for approximately 10% of global GDP and employing over 330 million people. Understanding how the industry is structured, who its customers are, and how it has evolved requires a systematic framework. This chapter introduces the key concepts, terminology, and reasons people travel that underpin the entire Cambridge IGCSE Travel & Tourism course.",
+ "intro": " **What is this topic all about?** Travel and tourism is the world's largest industry, accounting for approximately 10% of global GDP and employing over 330 million people. Understanding how the industry is structured, who its customers are, and how it has evolved requires a systematic framework. This chapter introduces the key concepts, terminology, and reasons people travel that underpin the entire IGCSE Travel & Tourism course.",
  "subheadings": [
  {
  "title": "Defining Tourism and Its Components",
@@ -116,7 +116,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"Introduction to Travel and Tourism\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"Introduction to Travel and Tourism\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -129,7 +129,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -141,7 +141,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  {
  "number": 2,
  "title": "Global Tourism — Scale, Destinations, and Impacts",
- "intro": " **What is this topic all about?** International tourist arrivals grew from 25 million in 1950 to 1.5 billion in 2019 before the COVID-19 pandemic caused the largest collapse in tourism history (−74% in 2020). Understanding the scale, geography, and trends of global tourism, and the complex positive and negative impacts it generates, is central to Cambridge IGCSE Travel & Tourism.",
+ "intro": " **What is this topic all about?** International tourist arrivals grew from 25 million in 1950 to 1.5 billion in 2019 before the COVID-19 pandemic caused the largest collapse in tourism history (−74% in 2020). Understanding the scale, geography, and trends of global tourism, and the complex positive and negative impacts it generates, is central to IGCSE Travel & Tourism.",
  "subheadings": [
  {
  "title": "The Scale and Geography of Global Tourism",
@@ -248,7 +248,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Global Tourism — Scale, Destinations, and Impacts\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Global Tourism — Scale, Destinations, and Impacts\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -261,7 +261,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -273,7 +273,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  {
  "number": 3,
  "title": "Travel and Tourism Organisations",
- "intro": " **What is this topic all about?** The travel and tourism industry is made up of thousands of organisations — from sole-trader tour guides to multinational hotel chains and international airline alliances. Understanding the structure of the industry, the roles of different organisations, and how they work together is essential for Cambridge IGCSE Travel & Tourism.",
+ "intro": " **What is this topic all about?** The travel and tourism industry is made up of thousands of organisations — from sole-trader tour guides to multinational hotel chains and international airline alliances. Understanding the structure of the industry, the roles of different organisations, and how they work together is essential for IGCSE Travel & Tourism.",
  "subheadings": [
  {
  "title": "Structure of the Travel and Tourism Industry",
@@ -359,7 +359,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Travel and Tourism Organisations\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Travel and Tourism Organisations\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -372,7 +372,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -468,7 +468,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Customer Service in Travel and Tourism\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Customer Service in Travel and Tourism\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -481,7 +481,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -580,7 +580,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  },
  {
  "title": " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 5: \"Destination Marketing and the Future of Travel\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 5: \"Destination Marketing and the Future of Travel\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -593,7 +593,7 @@ export const TRAVEL_AND_TOURISM: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

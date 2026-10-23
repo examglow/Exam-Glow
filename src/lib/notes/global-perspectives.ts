@@ -9,7 +9,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  {
  "number": 1,
  "title": "Critical Thinking and Research Skills",
- "intro": " **What is this topic all about?** Cambridge IGCSE Global Perspectives is fundamentally a skills-based course — it develops the capacity to think critically about complex global issues, evaluate evidence, identify bias, construct arguments, and reflect on one's own and others' perspectives. These skills are applicable to all academic subjects and to active citizenship. This chapter lays the methodological foundation for the entire course.",
+ "intro": " **What is this topic all about?** IGCSE Global Perspectives is fundamentally a skills-based course — it develops the capacity to think critically about complex global issues, evaluate evidence, identify bias, construct arguments, and reflect on one's own and others' perspectives. These skills are applicable to all academic subjects and to active citizenship. This chapter lays the methodological foundation for the entire course.",
  "subheadings": [
  {
  "title": "Argument Analysis",
@@ -111,7 +111,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"Critical Thinking and Research Skills\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"Critical Thinking and Research Skills\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -124,7 +124,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -221,7 +221,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Global Issues — Poverty, Inequality, and Human Rights\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Global Issues — Poverty, Inequality, and Human Rights\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -234,7 +234,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -322,7 +322,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Global Issues — Climate Change, Technology, and Conflict\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Global Issues — Climate Change, Technology, and Conflict\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -335,7 +335,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -347,7 +347,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  {
  "number": 4,
  "title": "Individual and Team Projects — Assessment Skills",
- "intro": " **What is this topic all about?** Cambridge IGCSE Global Perspectives is assessed through three components: an Individual Report (research project on a global issue), a Team Project (collaborative research and presentation), and a Written Examination. This chapter consolidates the skills required to produce outstanding assessed work.",
+ "intro": " **What is this topic all about?** IGCSE Global Perspectives is assessed through three components: an Individual Report (research project on a global issue), a Team Project (collaborative research and presentation), and a Written Examination. This chapter consolidates the skills required to produce outstanding assessed work.",
  "subheadings": [
  {
  "title": "The Individual Report",
@@ -430,7 +430,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Individual and Team Projects — Assessment Skills\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Individual and Team Projects — Assessment Skills\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -443,7 +443,7 @@ export const GLOBAL_PERSPECTIVES: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

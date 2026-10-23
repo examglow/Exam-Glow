@@ -50,7 +50,7 @@ const roles = [
 
 const goals = [
   { label: "College", hint: "Courses, assignments and semester exams", Icon: GraduationCap },
-  { label: "IGCSE", hint: "Cambridge and Edexcel subjects", Icon: School },
+  { label: "IGCSE", hint: "IGCSE and O-Level subjects", Icon: School },
   { label: "A Levels", hint: "AS and A Level exam preparation", Icon: BookOpenCheck },
   { label: "Professional Exams", hint: "Licensing, certification and entrance exams", Icon: BadgeCheck },
   { label: "Other", hint: "", Icon: MoreHorizontal },
@@ -230,7 +230,7 @@ function PersonalizationModal({ onClose }: { onClose: () => void }) {
                 <div className="mt-4 border-t border-border/60 pt-3 text-xs text-muted-foreground space-y-1.5">
                   <p>• Notes access: {isPaid ? "Full access (all chapters unlocked)" : "Limited to Sections 1 & 2"}</p>
                   <p>• 24/7 AI tutor: {isPaid ? "Unlimited queries" : "6 free messages total"}</p>
-                  <p>• Cambridge syllabuses: {isPaid ? "All 25+ PDF syllabuses open" : "Sciences & Math preview"}</p>
+                  <p>• IGCSE syllabuses: {isPaid ? "All 25+ PDF syllabuses open" : "Sciences & Math preview"}</p>
                 </div>
 
                 {!isPaid && (

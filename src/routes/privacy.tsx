@@ -129,7 +129,7 @@ function PrivacyPolicyPage() {
                   <Database className="size-4 text-blue-600" /> B. Academic Preferences &amp; Study Progress
                 </h3>
                 <p className="mt-1 text-xs text-zinc-600 leading-normal">
-                  We maintain your chosen curriculum (such as Cambridge IGCSE, Edexcel, or AQA), target examination dates, enrolled subjects, completed notes, quiz answers, bookmark collections, and flashcard performance to track your revision trajectory.
+                  We maintain your chosen curriculum (such as IGCSE, Edexcel, or AQA), target examination dates, enrolled subjects, completed notes, quiz answers, bookmark collections, and flashcard performance to track your revision trajectory.
                 </p>
               </div>
 

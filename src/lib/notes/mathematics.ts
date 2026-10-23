@@ -9,7 +9,7 @@ export const MATHEMATICS: SubjectNotes = {
     {
       number: 1,
       title: "Number",
-      intro: "Number is the foundation of all mathematics. Cambridge IGCSE Mathematics requires fluency with integers, fractions, decimals, percentages, indices, standard form, and surds. Understanding how numbers relate to each other — through factors, multiples, prime factorisation, and ratio — underpins problem-solving across every other topic. Accurate arithmetic and the ability to interpret and convert between different number forms are tested throughout both calculator and non-calculator papers.",
+      intro: "Number is the foundation of all mathematics. IGCSE Mathematics requires fluency with integers, fractions, decimals, percentages, indices, standard form, and surds. Understanding how numbers relate to each other — through factors, multiples, prime factorisation, and ratio — underpins problem-solving across every other topic. Accurate arithmetic and the ability to interpret and convert between different number forms are tested throughout both calculator and non-calculator papers.",
       subheadings: [
         {
           title: "Factors, Multiples and Prime Factorisation",
@@ -79,7 +79,7 @@ export const MATHEMATICS: SubjectNotes = {
     {
       number: 2,
       title: "Algebra",
-      intro: "Algebra provides a symbolic language for expressing mathematical relationships. Cambridge IGCSE Algebra spans simplifying expressions, expanding and factorising, solving equations and inequalities, working with functions, and understanding sequences. Algebraic fluency is essential not just in its own right but as the foundation for coordinate geometry, trigonometry, and statistics. The ability to construct and solve equations from worded problems is one of the most important and frequently tested skills.",
+      intro: "Algebra provides a symbolic language for expressing mathematical relationships. IGCSE Algebra spans simplifying expressions, expanding and factorising, solving equations and inequalities, working with functions, and understanding sequences. Algebraic fluency is essential not just in its own right but as the foundation for coordinate geometry, trigonometry, and statistics. The ability to construct and solve equations from worded problems is one of the most important and frequently tested skills.",
       subheadings: [
         {
           title: "Expanding Brackets and Factorising",
@@ -128,7 +128,7 @@ export const MATHEMATICS: SubjectNotes = {
     {
       number: 3,
       title: "Geometry and Trigonometry",
-      intro: "Geometry deals with the properties of shapes, angles, and space. The Cambridge IGCSE syllabus covers circle theorems, similar and congruent figures, Pythagoras' theorem, and trigonometric ratios in right-angled triangles, extending to the sine and cosine rules for non-right-angled triangles. These tools allow calculation of unknown sides and angles and the solution of real-world problems in architecture, navigation, and engineering. Precise diagram drawing and the ability to identify and apply the correct theorem are essential skills.",
+      intro: "Geometry deals with the properties of shapes, angles, and space. The IGCSE syllabus covers circle theorems, similar and congruent figures, Pythagoras' theorem, and trigonometric ratios in right-angled triangles, extending to the sine and cosine rules for non-right-angled triangles. These tools allow calculation of unknown sides and angles and the solution of real-world problems in architecture, navigation, and engineering. Precise diagram drawing and the ability to identify and apply the correct theorem are essential skills.",
       subheadings: [
         {
           title: "Circle Theorems",
@@ -177,7 +177,7 @@ export const MATHEMATICS: SubjectNotes = {
     {
       number: 4,
       title: "Statistics and Probability",
-      intro: "Statistics is the science of collecting, organising, analysing, and interpreting numerical data. Cambridge IGCSE Statistics covers measures of central tendency and spread, representation of data through various chart types, and cumulative frequency curves. Probability quantifies the likelihood of events using values between 0 (impossible) and 1 (certain). Understanding combined events through tree diagrams and Venn diagrams, and distinguishing between independent and mutually exclusive events, is essential for achieving top marks.",
+      intro: "Statistics is the science of collecting, organising, analysing, and interpreting numerical data. IGCSE Statistics covers measures of central tendency and spread, representation of data through various chart types, and cumulative frequency curves. Probability quantifies the likelihood of events using values between 0 (impossible) and 1 (certain). Understanding combined events through tree diagrams and Venn diagrams, and distinguishing between independent and mutually exclusive events, is essential for achieving top marks.",
       subheadings: [
         {
           title: "Averages and Spread",

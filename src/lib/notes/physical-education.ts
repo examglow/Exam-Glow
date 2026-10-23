@@ -9,11 +9,11 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  {
  "number": 1,
  "title": "Anatomy and Physiology — The Body in Motion",
- "intro": " **What is this topic all about?** A thorough understanding of anatomy and physiology is the scientific foundation of physical education. It explains why the body moves as it does, how training produces adaptation, and why certain injuries occur. Cambridge IGCSE PE requires knowledge of the skeletal system, muscular system, cardiovascular system, and respiratory system, and how each responds to acute exercise and chronic training.",
+ "intro": " **What is this topic all about?** A thorough understanding of anatomy and physiology is the scientific foundation of physical education. It explains why the body moves as it does, how training produces adaptation, and why certain injuries occur. IGCSE PE requires knowledge of the skeletal system, muscular system, cardiovascular system, and respiratory system, and how each responds to acute exercise and chronic training.",
  "subheadings": [
  {
  "title": "The Skeletal System",
- "body": "The human skeleton consists of 206 bones in the adult. It provides structure, protects organs, allows movement (in conjunction with muscles), produces blood cells (haematopoiesis in red marrow), and stores minerals (calcium and phosphorus). Cambridge IGCSE PE focuses on the major bones, joints, and their movements during sports activity.\n\n![Skeletal system diagram — major bones and joints](/diagrams/cell-structure.svg) ",
+ "body": "The human skeleton consists of 206 bones in the adult. It provides structure, protects organs, allows movement (in conjunction with muscles), produces blood cells (haematopoiesis in red marrow), and stores minerals (calcium and phosphorus). IGCSE PE focuses on the major bones, joints, and their movements during sports activity.\n\n![Skeletal system diagram — major bones and joints](/diagrams/cell-structure.svg) ",
  "groups": [
  {
  "subTitle": "Functions of the Skeleton",
@@ -50,7 +50,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  },
  {
  "title": "Joints — Classification and Movement Types",
- "body": "A joint (articulation) is where two or more bones meet. The type of joint determines the range and type of movement possible. Cambridge IGCSE PE requires detailed knowledge of synovial joints, which produce most sporting movements. ",
+ "body": "A joint (articulation) is where two or more bones meet. The type of joint determines the range and type of movement possible. IGCSE PE requires detailed knowledge of synovial joints, which produce most sporting movements. ",
  "groups": [
  {
  "subTitle": "Types of Joints",
@@ -146,7 +146,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"Anatomy and Physiology — The Body in Motion\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"Anatomy and Physiology — The Body in Motion\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -159,7 +159,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -277,7 +277,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Health, Fitness, and Training Principles\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Health, Fitness, and Training Principles\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -290,7 +290,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -302,7 +302,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  {
  "number": 3,
  "title": "Skill Acquisition and Sports Psychology",
- "intro": " **What is this topic all about?** Sports performance depends not only on physical fitness but on the acquisition and refinement of motor skills and the psychological factors that facilitate or inhibit performance. Cambridge IGCSE PE covers how skills are classified, learned, and performed, as well as the mental aspects of competition.",
+ "intro": " **What is this topic all about?** Sports performance depends not only on physical fitness but on the acquisition and refinement of motor skills and the psychological factors that facilitate or inhibit performance. IGCSE PE covers how skills are classified, learned, and performed, as well as the mental aspects of competition.",
  "subheadings": [
  {
  "title": "Classification of Skills",
@@ -401,7 +401,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Skill Acquisition and Sports Psychology\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Skill Acquisition and Sports Psychology\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -414,7 +414,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -426,7 +426,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  {
  "number": 4,
  "title": "Social, Cultural, and Ethical Influences on Physical Activity",
- "intro": " **What is this topic all about?** Sport does not occur in a vacuum — it is embedded in social, cultural, economic, and political contexts. Cambridge IGCSE PE examines how factors such as gender, ethnicity, age, disability, religion, and socioeconomic status shape participation in sport, as well as ethical issues including doping, fair play, and commercialisation.",
+ "intro": " **What is this topic all about?** Sport does not occur in a vacuum — it is embedded in social, cultural, economic, and political contexts. IGCSE PE examines how factors such as gender, ethnicity, age, disability, religion, and socioeconomic status shape participation in sport, as well as ethical issues including doping, fair play, and commercialisation.",
  "subheadings": [
  {
  "title": "Factors Affecting Participation in Physical Activity",
@@ -515,7 +515,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Social, Cultural, and Ethical Influences on Physical Activity\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Social, Cultural, and Ethical Influences on Physical Activity\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -528,7 +528,7 @@ export const PHYSICAL_EDUCATION: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

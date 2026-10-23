@@ -4,10 +4,8 @@ import {
   BookOpen,
   CalendarDays,
   ChevronDown,
-  CircleHelp,
   FileText,
   ClipboardCheck,
-  FileQuestion,
   Gamepad2,
   Home,
   Menu,
@@ -35,8 +33,7 @@ const studyItems = [
 ] as const;
 
 const practiceItems = [
-  { label: "Quiz", to: "/quizzes", Icon: ClipboardCheck },
-  { label: "Test", to: "/test", Icon: CircleHelp },
+  { label: "Practice", to: "/test", Icon: ClipboardCheck },
   { label: "Flashcards", to: "/flashcards", Icon: NotebookTabs },
   { label: "Assignments", to: "/assignments", Icon: FileText },
   { label: "Study Games", to: "/arcade", Icon: Gamepad2 },
@@ -45,7 +42,6 @@ const practiceItems = [
 
 const courseItems = [
   { label: "Syllabus Notes", to: "/syllabus-notes", Icon: NotebookTabs },
-  { label: "Past Questions", to: "/past-questions", Icon: FileQuestion },
 ] as const;
 
 type NavItem = (typeof primaryItems)[number] | (typeof studyItems)[number] | (typeof practiceItems)[number] | (typeof courseItems)[number];

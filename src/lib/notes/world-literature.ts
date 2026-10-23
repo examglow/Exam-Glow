@@ -9,7 +9,7 @@ export const WORLD_LITERATURE: SubjectNotes = {
     {
       number: 1,
       title: "Reading Literary Texts: Analysis and Interpretation",
-      intro: "Cambridge IGCSE World Literature (0408) focuses on the study of literary texts from a wide range of world cultures and traditions. Students develop skills in close reading, textual analysis, and written response for prose fiction, poetry, and drama. The syllabus rewards evidence-based interpretations that engage with both the literal meaning of a text and its deeper implications — theme, character, structure, language choice, and cultural context.",
+      intro: "IGCSE World Literature (0408) focuses on the study of literary texts from a wide range of world cultures and traditions. Students develop skills in close reading, textual analysis, and written response for prose fiction, poetry, and drama. The syllabus rewards evidence-based interpretations that engage with both the literal meaning of a text and its deeper implications — theme, character, structure, language choice, and cultural context.",
       subheadings: [
         {
           title: "Close Reading: What to Look For",
@@ -65,7 +65,7 @@ export const WORLD_LITERATURE: SubjectNotes = {
         },
         {
           title: "Poetry: Reading, Analysing, and Comparing",
-          body: "Poetry analysis requires attention to every word and every formal choice. Unlike prose, poems rarely have redundant language — form and meaning are inseparable. The Cambridge World Literature syllabus includes poems from diverse traditions, and students must show awareness of how cultural context shapes meaning.",
+          body: "Poetry analysis requires attention to every word and every formal choice. Unlike prose, poems rarely have redundant language — form and meaning are inseparable. The IGCSE World Literature syllabus includes poems from diverse traditions, and students must show awareness of how cultural context shapes meaning.",
           groups: [
             {
               subTitle: "Approaching an Unseen Poem",

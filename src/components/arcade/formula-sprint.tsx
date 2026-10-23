@@ -168,7 +168,7 @@ export function FormulaSprint({ onBack, onFinish }: FormulaSprintProps) {
           <div className="space-y-2 max-w-lg mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold tracking-tight">Formula Speed Sprint</h2>
             <p className="text-sm text-muted-foreground">
-              60 seconds on the clock. Fill in missing variables, match SI units, and calculate relationships across Cambridge Physics, Chemistry, Maths, and Biology. Build combos for bonus XP!
+              60 seconds on the clock. Fill in missing variables, match SI units, and calculate relationships across IGCSE Physics, Chemistry, Maths, and Biology. Build combos for bonus XP!
             </p>
           </div>
 

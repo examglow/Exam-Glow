@@ -1,30 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import {
-  ClipboardCheck,
-  Play,
-  RotateCcw,
-  CheckCircle2,
-  XCircle,
-  Loader2,
-  BookOpen,
-} from "lucide-react";
+import { ClipboardCheck, Play, RotateCcw, CheckCircle2, XCircle, Loader2 } from "lucide-react";
 
-import { DashboardLayout, PageHeading } from "@/components/dashboard-page";
 import { callGemini } from "@/lib/ai-router";
-
-export const Route = createFileRoute("/quizzes")({
-  head: () => ({
-    meta: [
-      { title: "Quiz | ExamGlow" },
-      {
-        name: "description",
-        content: "Quiz yourself on any academic subject or syllabus topic with instant feedback.",
-      },
-    ],
-  }),
-  component: QuizTopicPage,
-});
 
 type QuizQuestion = {
   id: number;
@@ -34,7 +11,7 @@ type QuizQuestion = {
   explanation: string;
 };
 
-function QuizTopicPage() {
+export function PracticeQuiz() {
   const [topic, setTopic] = useState("");
   const [activeQuiz, setActiveQuiz] = useState<QuizQuestion[] | null>(null);
   const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
@@ -47,7 +24,7 @@ function QuizTopicPage() {
     setIsGenerating(true);
     setError(null);
 
-    const prompt = `You are a Cambridge IGCSE Examiner. Generate exactly 5 challenging, syllabus-accurate multiple-choice quiz questions for the topic: "${chosenTopic}".
+    const prompt = `You are a IGCSE Examiner. Generate exactly 5 challenging, syllabus-accurate multiple-choice quiz questions for the topic: "${chosenTopic}".
 Respond STRICTLY with a valid JSON array of objects. Do not include markdown code block syntax or any explanation outside the JSON array:
 [
   {
@@ -89,15 +66,21 @@ Respond STRICTLY with a valid JSON array of objects. Do not include markdown cod
   const score = activeQuiz?.reduce((acc, q) => (selectedAnswers[q.id] === q.correct ? acc + 1 : acc), 0) ?? 0;
 
   return (
-    <DashboardLayout crumbs={[{ label: "Practice" }, { label: "Quiz" }]}>
-      <PageHeading
-        icon={<ClipboardCheck className="size-5" aria-hidden />}
-        title="Quiz"
-        subtitle="Dynamic recall quizzes generated on-the-fly by Yumna for any topic with examiner explanations."
-      />
+    <div className="w-full py-4">
+      <div className="mb-6 flex items-start gap-3">
+        <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+          <ClipboardCheck className="size-4" />
+        </span>
+        <div>
+          <h1 className="text-xl font-bold text-foreground">Quick Quiz</h1>
+          <p className="text-xs text-muted-foreground">
+            Dynamic recall quizzes generated on-the-fly by Yumna for any topic, with examiner explanations.
+          </p>
+        </div>
+      </div>
 
       {!activeQuiz ? (
-        <div className="w-full max-w-xl py-4">
+        <div className="w-full max-w-xl">
           <div className="rounded-3xl border border-border bg-card p-6 shadow-sm">
             <h2 className="text-lg font-bold text-foreground">What topic would you like to be quizzed on?</h2>
             <p className="mt-1 text-xs text-muted-foreground">
@@ -150,13 +133,11 @@ Respond STRICTLY with a valid JSON array of objects. Do not include markdown cod
           </div>
         </div>
       ) : (
-        <div className="w-full max-w-2xl py-4">
+        <div className="w-full max-w-2xl">
           <div className="mb-6 flex items-center justify-between">
             <div>
               <p className="text-xs uppercase font-bold text-muted-foreground">Active Quiz</p>
-              <h2 className="text-xl font-bold text-foreground">
-                {topic ? topic : "Revision Quiz"}
-              </h2>
+              <h2 className="text-xl font-bold text-foreground">{topic ? topic : "Revision Quiz"}</h2>
             </div>
             {submitted && (
               <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 font-bold text-emerald-600 dark:text-emerald-400 text-sm">
@@ -246,6 +227,6 @@ Respond STRICTLY with a valid JSON array of objects. Do not include markdown cod
           </div>
         </div>
       )}
-    </DashboardLayout>
+    </div>
   );
 }

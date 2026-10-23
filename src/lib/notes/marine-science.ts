@@ -109,7 +109,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  },
  {
  "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"The Ocean Environment — Physical and Chemical Properties\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 1: \"The Ocean Environment — Physical and Chemical Properties\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -122,7 +122,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -134,7 +134,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  {
  "number": 2,
  "title": "Marine Biodiversity — Organisms and Food Webs",
- "intro": " **What is this topic all about?** The oceans harbour an extraordinary diversity of life — from microscopic bacteria and viruses that cycle nutrients at the base of the food web, to the largest animal that has ever lived (the blue whale). Understanding how marine organisms are classified, how they feed, and how energy flows through marine ecosystems is central to Cambridge IGCSE Marine Science.",
+ "intro": " **What is this topic all about?** The oceans harbour an extraordinary diversity of life — from microscopic bacteria and viruses that cycle nutrients at the base of the food web, to the largest animal that has ever lived (the blue whale). Understanding how marine organisms are classified, how they feed, and how energy flows through marine ecosystems is central to IGCSE Marine Science.",
  "subheadings": [
  {
  "title": "Major Groups of Marine Organisms",
@@ -195,7 +195,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  },
  {
  "title": "Coral Reef Ecology",
- "body": "Coral reefs are often called the 'rainforests of the sea' — they occupy less than 1% of the ocean floor but support approximately 25% of all marine species. Understanding their ecology, threats, and the importance of conservation is a major Cambridge IGCSE Marine Science theme. ",
+ "body": "Coral reefs are often called the 'rainforests of the sea' — they occupy less than 1% of the ocean floor but support approximately 25% of all marine species. Understanding their ecology, threats, and the importance of conservation is a major IGCSE Marine Science theme. ",
  "groups": [
  {
  "bullets": [
@@ -218,7 +218,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  },
  {
  "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Marine Biodiversity — Organisms and Food Webs\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 2: \"Marine Biodiversity — Organisms and Food Webs\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -231,7 +231,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -318,7 +318,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  },
  {
  "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Human Impacts on Marine Environments\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 3: \"Human Impacts on Marine Environments\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -331,7 +331,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]
@@ -422,7 +422,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  },
  {
  "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Marine Resources, Exploration, and Careers\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
+ "body": "Here is your cheat-sheet for Chapter 4: \"Marine Resources, Exploration, and Careers\". These are the exact pitfalls examiners point out in examiner reports year after year.",
  "groups": [
  {
  "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
@@ -435,7 +435,7 @@ export const MARINE_SCIENCE: SubjectNotes = {
  {
  "subTitle": " Golden Rules for Full Marks",
  "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
+ "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
  "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
  "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
  ]

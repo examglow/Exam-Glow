@@ -17,7 +17,7 @@ export type ChatMessage = {
 };
 
 export const YUMNA_SYSTEM_PROMPT = `You are Yumna, the official AI study tutor for ExamGlow (https://examglow.com).
-Your primary mission is to help students of all levels master their school and examination subjects, especially Cambridge IGCSE, O-Levels, A-Levels, GCSEs, sciences, mathematics, humanities, and languages.
+Your primary mission is to help students of all levels master their school and examination subjects, especially IGCSE, O-Levels, A-Levels, GCSEs, sciences, mathematics, humanities, and languages.
 
 Core Persona & Rules:
 1. Instruction Following: Follow the student's prompt and instructions EXACTLY. Never ignore rules, formatting requests, or specific tasks set by the student.
@@ -57,8 +57,7 @@ ExamGlow Website Navigation (share these links when asked about navigation):
 - AI Chat with Yumna (full screen): https://examglow.com/chat
 - Notes (write & save notes): https://examglow.com/notes
 - Syllabus (IGCSE syllabus chapters): https://examglow.com/syllabus
-- Past Questions (Cambridge past papers): https://examglow.com/past-questions
-- Quiz (AI quiz generator): https://examglow.com/quizzes
+- Practice (Quiz + Exam Simulation): https://examglow.com/test
 - Test / Exam Simulation: https://examglow.com/test
 - Flashcards (AI flashcard generator): https://examglow.com/flashcards
 - Assignments (assignment solver): https://examglow.com/assignments
@@ -557,12 +556,12 @@ function generateSmartStudyReply(cleanUserMsg: string, rawMessages: ChatMessage[
 
   // 3. Affirmation / Continuation ("ok", "sure", "continue", "yes", "go on", "next")
   if (/^(ok|okay|sure|yes|continue|go on|next|tell me more|cool|got it)\b/i.test(lower)) {
-    return `Awesome! Let's keep the momentum going! 🚀\n\nTo make sure you've completely locked this concept in for your exams, would you like to:\n1. **Solve a Cambridge exam-style question together** (with step-by-step marks)?\n2. **Break down the common pitfalls** where examiners try to trick students?\n3. **Explore the next related topic** in your syllabus?\n\nTell me which one you'd like to do next! 😉`;
+    return `Awesome! Let's keep the momentum going! 🚀\n\nTo make sure you've completely locked this concept in for your exams, would you like to:\n1. **Solve a IGCSE-style question together** (with step-by-step marks)?\n2. **Break down the common pitfalls** where examiners try to trick students?\n3. **Explore the next related topic** in your syllabus?\n\nTell me which one you'd like to do next! 😉`;
   }
 
   // 4. Photosynthesis & Plant Biology
   if (/(?:photosynthesis|chlorophyll|chloroplast|light-dependent|calvin|stroma|thylakoid)/i.test(lower)) {
-    return `### 🌿 Photosynthesis: The Complete Cambridge Master Guide\n\nPhotosynthesis is how green plants manufacture glucose from raw inorganic materials using light energy trapped by chlorophyll.\n\n**The Core Chemical Equation:**\n$$6CO_2 + 6H_2O \\xrightarrow{\\text{Light + Chlorophyll}} C_6H_{12}O_6 + 6O_2$$\n\n---\n\n### 💡 The 3 Limiting Factors (Guaranteed Exam Marks!)\n1. **Light Intensity**: As light increases, photosynthesis speeds up until chloroplasts are working at maximum capacity.\n2. **Carbon Dioxide Concentration**: Adding more $CO_2$ boosts sugar production until the carbon-fixing enzymes are fully saturated.\n3. **Temperature**: Rate rises up to the enzyme's optimum (~$35^\\circ\\text{C}$ to $40^\\circ\\text{C}$). Past this, enzymes permanently **denature** and rate crashes to zero!\n\n---\n\n### 🔍 Real-World Analogy\nThink of a plant like a **solar-powered smoothie blender**: $CO_2$ and water are your fruit ingredients, sunlight is the electricity, and chlorophyll is the power cord. Without enough electricity or fruit, the blender can't make smoothies any faster!\n\nWould you like to try a 3-mark past paper question on limiting factors? 📚`;
+    return `### 🌿 Photosynthesis: The Complete IGCSE Master Guide\n\nPhotosynthesis is how green plants manufacture glucose from raw inorganic materials using light energy trapped by chlorophyll.\n\n**The Core Chemical Equation:**\n$$6CO_2 + 6H_2O \\xrightarrow{\\text{Light + Chlorophyll}} C_6H_{12}O_6 + 6O_2$$\n\n---\n\n### 💡 The 3 Limiting Factors (Guaranteed Exam Marks!)\n1. **Light Intensity**: As light increases, photosynthesis speeds up until chloroplasts are working at maximum capacity.\n2. **Carbon Dioxide Concentration**: Adding more $CO_2$ boosts sugar production until the carbon-fixing enzymes are fully saturated.\n3. **Temperature**: Rate rises up to the enzyme's optimum (~$35^\\circ\\text{C}$ to $40^\\circ\\text{C}$). Past this, enzymes permanently **denature** and rate crashes to zero!\n\n---\n\n### 🔍 Real-World Analogy\nThink of a plant like a **solar-powered smoothie blender**: $CO_2$ and water are your fruit ingredients, sunlight is the electricity, and chlorophyll is the power cord. Without enough electricity or fruit, the blender can't make smoothies any faster!\n\nWould you like to try a 3-mark past paper question on limiting factors? 📚`;
   }
 
   // 5. Quadratic Equations & Algebra
@@ -658,7 +657,7 @@ export async function routeChat(
   const lastMsgLower = cleanUserMsg.toLowerCase();
   if (lastMsgLower.includes("question") || lastMsgLower.includes("quiz") || lastMsgLower.includes("test")) {
     return {
-      text: "Here is a Cambridge exam-style question to test your understanding:\n\n**Question [3 marks]:**\nExplain the role of the thylakoid membrane and ATP synthase during the light-dependent stage of photosynthesis.\n\n*Hint: Think about where protons accumulate, how the proton concentration gradient is established, and how ATP is generated as protons pass through ATP synthase into the stroma.* What is your answer?",
+      text: "Here is a IGCSE-style question to test your understanding:\n\n**Question [3 marks]:**\nExplain the role of the thylakoid membrane and ATP synthase during the light-dependent stage of photosynthesis.\n\n*Hint: Think about where protons accumulate, how the proton concentration gradient is established, and how ATP is generated as protons pass through ATP synthase into the stroma.* What is your answer?",
       provider: "Yumna-AI",
       model: "yumna-pro",
     };

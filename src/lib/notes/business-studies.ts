@@ -200,7 +200,7 @@ export const BUSINESS_STUDIES: SubjectNotes = {
     {
       number: 2,
       title: "People in Business",
-      intro: "Businesses are run by, and for, people — so managing them well is a core management task. This chapter covers the role of managers and how organisations are structured so that everyone knows who reports to whom; how businesses recruit, select and train the right employees; and how they motivate staff to work productively and stay loyal. Cambridge questions in this area are almost always applied: you will be asked to recommend structures, recruitment methods or reward systems for the business in the case study, so always anchor your answer in its size, skills and situation.",
+      intro: "Businesses are run by, and for, people — so managing them well is a core management task. This chapter covers the role of managers and how organisations are structured so that everyone knows who reports to whom; how businesses recruit, select and train the right employees; and how they motivate staff to work productively and stay loyal. IGCSE questions in this area are almost always applied: you will be asked to recommend structures, recruitment methods or reward systems for the business in the case study, so always anchor your answer in its size, skills and situation.",
       subheadings: [
         {
           title: "Management and Organisation Structure",

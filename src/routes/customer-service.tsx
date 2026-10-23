@@ -39,7 +39,7 @@ const REVIEWS = [
     rating: 5,
     date: "July 2025",
     review:
-      "The past questions section is incredible. Having all Cambridge papers in one place with year filters saved me so much time. The AI tutor Yumna also explains every mark scheme answer so clearly.",
+      "The exam simulation is incredible. Having a full mock paper generated for my exact topic saved me so much time. The AI tutor Yumna also explains every mark scheme answer so clearly.",
     subject: "Mathematics 0580",
   },
   {
@@ -91,11 +91,11 @@ const FAQS = [
   },
   {
     q: "What is the difference between Free Preview and Premium?",
-    a: "Free preview users can access Chapters 1 & 2 of all syllabus notes, 2024 past papers, and introductory quizzes. Premium users unlock every chapter, all historical past question series, unlimited AI tutoring with Yumna, and full-length exam simulation forms.",
+    a: "Free preview users can access Chapters 1 & 2 of all syllabus notes and introductory quizzes. Premium users unlock every chapter, unlimited AI tutoring with Yumna, and full-length exam simulation papers.",
   },
   {
-    q: "Can I download and print the notes and past papers?",
-    a: "Yes! While on-screen content is protected from unauthorized clipping, official Cambridge question papers and mark schemes have direct PDF viewer and full download links inside the paper modal.",
+    q: "Can I download and print the notes and exam papers?",
+    a: "Yes! While on-screen content is protected from unauthorized clipping, generated exam papers print directly from the paper view, and your browser can save that as a PDF.",
   },
   {
     q: "How do I report a typo or incorrect mark scheme answer?",
@@ -182,7 +182,7 @@ function CustomerServicePage() {
           <p className="text-sm font-bold text-foreground max-w-[200px]">
             "Trusted by students across 30+ countries"
           </p>
-          <p className="text-xs text-muted-foreground mt-1">Cambridge IGCSE · O-Level · A-Level</p>
+          <p className="text-xs text-muted-foreground mt-1">IGCSE · O-Level · A-Level</p>
         </div>
       </div>
 

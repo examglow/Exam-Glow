@@ -22,10 +22,8 @@ import { Route as FlashcardsRouteImport } from './routes/flashcards'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as NotesRouteImport } from './routes/notes'
-import { Route as PastQuestionsRouteImport } from './routes/past-questions'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as QuizzesRouteImport } from './routes/quizzes'
 import { Route as RecordLectureRouteImport } from './routes/record-lecture'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SignupRouteImport } from './routes/signup'
@@ -110,11 +108,6 @@ const NotesRoute = NotesRouteImport.update({
   path: '/notes',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PastQuestionsRoute = PastQuestionsRouteImport.update({
-  id: '/past-questions',
-  path: '/past-questions',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
@@ -123,11 +116,6 @@ const PricingRoute = PricingRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const QuizzesRoute = QuizzesRouteImport.update({
-  id: '/quizzes',
-  path: '/quizzes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RecordLectureRoute = RecordLectureRouteImport.update({
@@ -235,10 +223,8 @@ export interface FileRoutesByFullPath {
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
   '/notes': typeof NotesRoute
-  '/past-questions': typeof PastQuestionsRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
-  '/quizzes': typeof QuizzesRoute
   '/record-lecture': typeof RecordLectureRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
@@ -272,10 +258,8 @@ export interface FileRoutesByTo {
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
   '/notes': typeof NotesRoute
-  '/past-questions': typeof PastQuestionsRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
-  '/quizzes': typeof QuizzesRoute
   '/record-lecture': typeof RecordLectureRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
@@ -310,10 +294,8 @@ export interface FileRoutesById {
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
   '/notes': typeof NotesRoute
-  '/past-questions': typeof PastQuestionsRoute
   '/pricing': typeof PricingRoute
   '/privacy': typeof PrivacyRoute
-  '/quizzes': typeof QuizzesRoute
   '/record-lecture': typeof RecordLectureRoute
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
@@ -349,10 +331,8 @@ export interface FileRouteTypes {
     | '/home'
     | '/login'
     | '/notes'
-    | '/past-questions'
     | '/pricing'
     | '/privacy'
-    | '/quizzes'
     | '/record-lecture'
     | '/settings'
     | '/signup'
@@ -386,10 +366,8 @@ export interface FileRouteTypes {
     | '/home'
     | '/login'
     | '/notes'
-    | '/past-questions'
     | '/pricing'
     | '/privacy'
-    | '/quizzes'
     | '/record-lecture'
     | '/settings'
     | '/signup'
@@ -423,10 +401,8 @@ export interface FileRouteTypes {
     | '/home'
     | '/login'
     | '/notes'
-    | '/past-questions'
     | '/pricing'
     | '/privacy'
-    | '/quizzes'
     | '/record-lecture'
     | '/settings'
     | '/signup'
@@ -461,10 +437,8 @@ export interface RootRouteChildren {
   HomeRoute: typeof HomeRoute
   LoginRoute: typeof LoginRoute
   NotesRoute: typeof NotesRoute
-  PastQuestionsRoute: typeof PastQuestionsRoute
   PricingRoute: typeof PricingRoute
   PrivacyRoute: typeof PrivacyRoute
-  QuizzesRoute: typeof QuizzesRoute
   RecordLectureRoute: typeof RecordLectureRoute
   SettingsRoute: typeof SettingsRoute
   SignupRoute: typeof SignupRoute
@@ -578,13 +552,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/past-questions': {
-      id: '/past-questions'
-      path: '/past-questions'
-      fullPath: '/past-questions'
-      preLoaderRoute: typeof PastQuestionsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/pricing': {
       id: '/pricing'
       path: '/pricing'
@@ -597,13 +564,6 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/quizzes': {
-      id: '/quizzes'
-      path: '/quizzes'
-      fullPath: '/quizzes'
-      preLoaderRoute: typeof QuizzesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/record-lecture': {
@@ -749,10 +709,8 @@ const rootRouteChildren: RootRouteChildren = {
   HomeRoute: HomeRoute,
   LoginRoute: LoginRoute,
   NotesRoute: NotesRoute,
-  PastQuestionsRoute: PastQuestionsRoute,
   PricingRoute: PricingRoute,
   PrivacyRoute: PrivacyRoute,
-  QuizzesRoute: QuizzesRoute,
   RecordLectureRoute: RecordLectureRoute,
   SettingsRoute: SettingsRoute,
   SignupRoute: SignupRoute,

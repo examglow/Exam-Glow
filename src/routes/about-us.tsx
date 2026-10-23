@@ -14,7 +14,7 @@ export const Route = createFileRoute("/about-us")({
   head: () => ({
     meta: [
       { title: "About Us | ExamGlow" },
-      { name: "description", content: "Learn about ExamGlow and our mission to help students excel in Cambridge examinations." },
+      { name: "description", content: "Learn about ExamGlow and our mission to help students excel in IGCSE examinations." },
     ],
   }),
   component: AboutUsPage,
@@ -35,7 +35,7 @@ function AboutUsPage() {
             <GraduationCap className="size-4" /> Transforming International Education
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl font-bold leading-tight">
-            Built for Students Aiming for Top Cambridge Marks.
+            Built for Students Aiming for Top IGCSE Marks.
           </h1>
           <p className="mt-4 text-sm sm:text-base text-white/85 leading-relaxed">
             ExamGlow was founded with a singular purpose: to replace messy revision guides and outdated past paper sites with a unified, beautiful study system. We bring together comprehensive syllabus notes, verified examination papers, and Yumna—our real-time AI study tutor.
@@ -51,7 +51,7 @@ function AboutUsPage() {
           </div>
           <h3 className="font-serif text-xl font-bold text-foreground">Syllabus Precision</h3>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            Every chapter, definition, and formula is mapped exactly to the official Cambridge IGCSE syllabus specifications and examiner mark schemes.
+            Every chapter, definition, and formula is mapped exactly to the official IGCSE syllabus specifications and examiner mark schemes.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ function AboutUsPage() {
           </div>
           <h3 className="font-serif text-xl font-bold text-foreground">Verified Past Papers</h3>
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-            Direct access to official examination question papers and mark schemes across core Cambridge subjects, complete with high-yield practice modes.
+            Direct access to official examination question papers and mark schemes across core IGCSE subjects, complete with high-yield practice modes.
           </p>
         </div>
       </div>
@@ -93,7 +93,7 @@ function AboutUsPage() {
             <div className="mt-6 space-y-2">
               <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
                 <CheckCircle2 className="size-4 text-emerald-500 shrink-0" />
-                Over 16+ Core Cambridge IGCSE subjects supported
+                Over 16+ Core IGCSE subjects supported
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-foreground">
                 <CheckCircle2 className="size-4 text-emerald-500 shrink-0" />

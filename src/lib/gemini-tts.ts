@@ -172,7 +172,7 @@ export async function fetchTtsAudioBase64(text: string): Promise<string | null> 
           responseModalities: ["AUDIO"],
           speechConfig: {
             voiceConfig: {
-              prebuiltVoiceConfig: { voiceName: "Aoede" },
+              prebuiltVoiceConfig: { voiceName: "Kore" },
             },
           },
         },

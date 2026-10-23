@@ -9,7 +9,7 @@ export const HISTORY: SubjectNotes = {
     {
       number: 1,
       title: "Exam Technique and Source Skills",
-      intro: "Cambridge IGCSE History (0470) tests two very different skills: the ability to write structured, judgement-driven essays from your own knowledge (Paper 1 core content and Paper 4 depth studies), and the ability to extract, compare and evaluate information from historical sources (Paper 2 source-based questions). Most marks are lost not through lack of knowledge but through poor technique: students narrate instead of arguing, describe sources instead of evaluating them, and never reach a verdict. This chapter teaches you the answer architectures that examiners reward — PEEL paragraphs for essays, and utility-versus-reliability analysis for sources — before you apply them to real content in later chapters.",
+      intro: "IGCSE History (0470) tests two very different skills: the ability to write structured, judgement-driven essays from your own knowledge (Paper 1 core content and Paper 4 depth studies), and the ability to extract, compare and evaluate information from historical sources (Paper 2 source-based questions). Most marks are lost not through lack of knowledge but through poor technique: students narrate instead of arguing, describe sources instead of evaluating them, and never reach a verdict. This chapter teaches you the answer architectures that examiners reward — PEEL paragraphs for essays, and utility-versus-reliability analysis for sources — before you apply them to real content in later chapters.",
       subheadings: [
         {
           title: "Structured Essay Questions and the PEEL Paragraph",

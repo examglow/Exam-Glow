@@ -80,7 +80,7 @@ function FlashcardDeckView() {
   const [topic, setTopic] = useState("");
   const [deck, setDeck] = useState<Flashcard[]>([
     { id: 1, question: "What is the function of the cell membrane?", answer: "Controls the movement of substances into and out of the cell; selectively permeable barrier." },
-    { id: 2, question: "Define an enzyme in Cambridge biological terms.", answer: "A biological catalyst that increases the rate of chemical reactions without being changed or consumed." },
+    { id: 2, question: "Define an enzyme in precise biological terms.", answer: "A biological catalyst that increases the rate of chemical reactions without being changed or consumed." },
     { id: 3, question: "What is the active site of an enzyme?", answer: "The specific region of an enzyme molecule where the substrate binds to form an enzyme-substrate complex." },
     { id: 4, question: "What happens when an enzyme is denatured?", answer: "Extreme temperature or pH alters its tertiary protein structure and active site shape, so substrates can no longer fit." },
     { id: 5, question: "Which organelle is the site of aerobic cellular respiration?", answer: "Mitochondria." },
@@ -100,7 +100,7 @@ function FlashcardDeckView() {
     setIsGenerating(true);
     setError(null);
 
-    const prompt = `You are an expert Cambridge IGCSE tutor. Generate exactly 10 high-yield, syllabus-aligned revision flashcards for the topic: "${chosen}".
+    const prompt = `You are an expert IGCSE tutor. Generate exactly 10 high-yield, syllabus-aligned revision flashcards for the topic: "${chosen}".
 Return STRICTLY a JSON array of objects without markdown formatting or surrounding explanations:
 [
   {

@@ -36,11 +36,11 @@ import { sound } from "@/components/arcade/sound-fx";
 export const Route = createFileRoute("/syllabus-notes")({
   head: () => ({
     meta: [
-      { title: "Syllabus Notes — Cambridge IGCSE | ExamGlow" },
+      { title: "Syllabus Notes — IGCSE | ExamGlow" },
       {
         name: "description",
         content:
-          "Structured, high-yield chapter revision notes for every Cambridge IGCSE subject with interactive diagrams, voice masterclasses, and active recall checkpoints.",
+          "Structured, high-yield chapter revision notes for every IGCSE subject with interactive diagrams, voice masterclasses, and active recall checkpoints.",
       },
     ],
   }),
@@ -83,14 +83,14 @@ function build20MinChapterLecture(chap: Chapter): LectureSection[] {
   sections.push({
     title: "Masterclass Kickoff & Big Picture",
     tag: "Part 1: Orientation",
-    script: `Hello and welcome to your complete twenty-minute deep-dive masterclass for Chapter ${chap.number}: ${chap.title}. I am Yumna, your personal tutor. Over the next twenty minutes, we are not simply reading through notes. We are going to unpack every concept layer by layer, understand how it connects to everything else, explore real-world examples, and make sure you can answer any Cambridge exam question on this topic with complete confidence. Let me give you the big picture first. This chapter is one of the most important in your entire syllabus because it forms the backbone of the ideas that follow. Every examiner marking your script will be looking for evidence that you truly understand the underlying mechanism, not just a memorised definition. So throughout this masterclass, every time I give you a fact, I will also give you the reason why it works that way, and I will give you a worked example of how it appears in an exam question. Let's begin.`,
+    script: `Hello and welcome to your complete twenty-minute deep-dive masterclass for Chapter ${chap.number}: ${chap.title}. I am Yumna, your personal tutor. Over the next twenty minutes, we are not simply reading through notes. We are going to unpack every concept layer by layer, understand how it connects to everything else, explore real-world examples, and make sure you can answer any IGCSE exam question on this topic with complete confidence. Let me give you the big picture first. This chapter is one of the most important in your entire syllabus because it forms the backbone of the ideas that follow. Every examiner marking your script will be looking for evidence that you truly understand the underlying mechanism, not just a memorised definition. So throughout this masterclass, every time I give you a fact, I will also give you the reason why it works that way, and I will give you a worked example of how it appears in an exam question. Let's begin.`,
   });
 
   // 2. Real-world relevance
   sections.push({
     title: "Why This Concept Exists in the Real World",
     tag: "Part 2: Motivation",
-    script: `Before we dive into the technical content, let's answer the most important question a student can ask: why does this actually matter outside the classroom? The answer for ${chap.title} is this. ${cleanIntro.slice(0, 300)}. Now let me give you a real-world example to anchor this. Think about the last time you encountered something related to this topic in your daily life. Scientists, engineers, doctors, economists, and designers all rely on these exact principles every single day. When you understand the principle behind it rather than just the words, you gain the ability to apply it to situations you have never seen before, which is precisely what Cambridge A-star questions demand. Keep that motivation in mind throughout this entire masterclass.`,
+    script: `Before we dive into the technical content, let's answer the most important question a student can ask: why does this actually matter outside the classroom? The answer for ${chap.title} is this. ${cleanIntro.slice(0, 300)}. Now let me give you a real-world example to anchor this. Think about the last time you encountered something related to this topic in your daily life. Scientists, engineers, doctors, economists, and designers all rely on these exact principles every single day. When you understand the principle behind it rather than just the words, you gain the ability to apply it to situations you have never seen before, which is precisely what top-grade questions demand. Keep that motivation in mind throughout this entire masterclass.`,
   });
 
   // 3. Decoding first principles
@@ -121,7 +121,7 @@ function build20MinChapterLecture(chap: Chapter): LectureSection[] {
       sections.push({
         title: `${sub.title}: Key Syllabus Points & Examples`,
         tag: `Topic ${sIdx + 1}B`,
-        script: `Now let's go through the specific details for ${sub.title} that Cambridge mark schemes test directly. I am going to go through each point carefully, explain why it is true, and give you an example for each one. Point one: ${topBullets}. For each of these, imagine an examiner asking you to explain the significance. A weak answer simply states the fact. A strong answer states the fact, explains the underlying mechanism, and gives a specific example or application. For instance, if you are asked about this in a structured question, start with the principle, then describe the process step by step, then conclude with the outcome. That three-step approach guarantees you cover everything the mark scheme is looking for.`,
+        script: `Now let's go through the specific details for ${sub.title} that mark schemes test directly. I am going to go through each point carefully, explain why it is true, and give you an example for each one. Point one: ${topBullets}. For each of these, imagine an examiner asking you to explain the significance. A weak answer simply states the fact. A strong answer states the fact, explains the underlying mechanism, and gives a specific example or application. For instance, if you are asked about this in a structured question, start with the principle, then describe the process step by step, then conclude with the outcome. That three-step approach guarantees you cover everything the mark scheme is looking for.`,
       });
     }
 
@@ -129,7 +129,7 @@ function build20MinChapterLecture(chap: Chapter): LectureSection[] {
     sections.push({
       title: `${sub.title}: Examiner Pitfalls & How to Avoid Them`,
       tag: `Topic ${sIdx + 1}C`,
-      script: `Here is something examiners know that most students don't realise until after the exam. For the topic of ${sub.title}, there are three classic mistakes that appear year after year in the Cambridge examiner reports. Mistake one: using the correct term but in the wrong context. Mistake two: describing what happens without explaining why it happens. Mistake three: leaving out units, conditions, or qualifications that the mark scheme requires. Let me give you a strategy for each. For mistake one: always re-read the question and check you are answering what was actually asked. For mistake two: after every statement you write, ask yourself "why?" and add that reason. For mistake three: when in doubt, include the condition. Writing "under standard conditions" or "in a controlled environment" shows the examiner you understand the limits of the concept. These three habits alone can add five to eight marks to a typical exam paper.`,
+      script: `Here is something examiners know that most students don't realise until after the exam. For the topic of ${sub.title}, there are three classic mistakes that appear year after year in the examiner reports. Mistake one: using the correct term but in the wrong context. Mistake two: describing what happens without explaining why it happens. Mistake three: leaving out units, conditions, or qualifications that the mark scheme requires. Let me give you a strategy for each. For mistake one: always re-read the question and check you are answering what was actually asked. For mistake two: after every statement you write, ask yourself "why?" and add that reason. For mistake three: when in doubt, include the condition. Writing "under standard conditions" or "in a controlled environment" shows the examiner you understand the limits of the concept. These three habits alone can add five to eight marks to a typical exam paper.`,
     });
   });
 
@@ -137,21 +137,21 @@ function build20MinChapterLecture(chap: Chapter): LectureSection[] {
   sections.push({
     title: "System Integration: Connecting All Concepts",
     tag: "Synthesis",
-    script: `Now that we have analysed every individual section of Chapter ${chap.number}: ${chap.title}, let's zoom out and see the whole picture. In Cambridge exams, the highest-mark questions — typically the extended response or essay questions — require you to connect multiple ideas together rather than treat them as isolated facts. So let's practise that now. Every concept we covered today is part of a single system. The early sections defined the foundation. The middle sections showed the mechanisms and how they interact. The final sections showed the consequences and applications. When you answer a twelve-mark question, you should be moving through that same structure: foundation, mechanism, consequence. If you can draw a mental flowchart linking the topics from this chapter, you are ready for any synoptic question the examiner can write. Let's also think about how Chapter ${chap.number} connects to the chapters before and after it in the syllabus, because Cambridge increasingly writes questions that span multiple topics.`,
+    script: `Now that we have analysed every individual section of Chapter ${chap.number}: ${chap.title}, let's zoom out and see the whole picture. In IGCSE exams, the highest-mark questions — typically the extended response or essay questions — require you to connect multiple ideas together rather than treat them as isolated facts. So let's practise that now. Every concept we covered today is part of a single system. The early sections defined the foundation. The middle sections showed the mechanisms and how they interact. The final sections showed the consequences and applications. When you answer a twelve-mark question, you should be moving through that same structure: foundation, mechanism, consequence. If you can draw a mental flowchart linking the topics from this chapter, you are ready for any synoptic question the examiner can write. Let's also think about how Chapter ${chap.number} connects to the chapters before and after it in the syllabus, because papers increasingly ask questions that span multiple topics.`,
   });
 
   // 6. Exam strategy — much more detailed
   sections.push({
     title: "Exam Question Walkthrough & Model Answers",
     tag: "Exam Strategy",
-    script: `Let's now simulate a real Cambridge examination scenario using ${chap.title} as our topic. I want you to picture yourself in the exam hall. The question reads: "Explain the relationship between [the main concept] and [its consequence]. Use examples to support your answer. [6 marks]". How do you approach this? Here is the exact formula. Sentence one: state the precise definition of the main concept. Sentence two: describe the step-by-step mechanism or process. Sentence three: identify the consequence and explain why it follows from the mechanism. Sentence four: give a named, specific example — not a vague one. Sentence five: if you have time, state the exception or the condition under which this does not apply, because that shows the examiner the depth of your understanding. For a four-mark question, use sentences one through three. For a six-mark question, add sentence four. For an eight or ten mark question, add sentence five and a comparison or evaluation. Following this formula every single time removes the guesswork and ensures you systematically hit every mark scheme point.`,
+    script: `Let's now simulate a real IGCSE examination scenario using ${chap.title} as our topic. I want you to picture yourself in the exam hall. The question reads: "Explain the relationship between [the main concept] and [its consequence]. Use examples to support your answer. [6 marks]". How do you approach this? Here is the exact formula. Sentence one: state the precise definition of the main concept. Sentence two: describe the step-by-step mechanism or process. Sentence three: identify the consequence and explain why it follows from the mechanism. Sentence four: give a named, specific example — not a vague one. Sentence five: if you have time, state the exception or the condition under which this does not apply, because that shows the examiner the depth of your understanding. For a four-mark question, use sentences one through three. For a six-mark question, add sentence four. For an eight or ten mark question, add sentence five and a comparison or evaluation. Following this formula every single time removes the guesswork and ensures you systematically hit every mark scheme point.`,
   });
 
   // 7. Diagram mastery — more instructive
   sections.push({
     title: "Diagram & Visual Representation Mastery",
     tag: "Diagrams",
-    script: `Pay very close attention to this section, because diagrams are worth more marks than most students realise. For Chapter ${chap.number}, Cambridge regularly includes diagram-based questions that ask you to label, annotate, complete, or interpret a visual representation of the concept. Here is how to approach every diagram question. First: identify what type of diagram it is — is it a process diagram, a structural diagram, a graph, or a cycle? Second: find the labels and arrows, because they tell you what the examiner expects you to name and explain. Third: every label you add should be accompanied by a brief function — not just the name. For example, do not just write the name of a structure. Write the name and add a colon followed by its specific function. This is the difference between one mark and two marks on every label. Fourth: if asked to sketch a diagram from memory, always include a title, labels with functions, arrows showing direction of process, and a scale or units if it involves quantities. Practise sketching the key diagrams from this chapter until you can reproduce them accurately in under two minutes.`,
+    script: `Pay very close attention to this section, because diagrams are worth more marks than most students realise. For Chapter ${chap.number}, exams regularly include diagram-based questions that ask you to label, annotate, complete, or interpret a visual representation of the concept. Here is how to approach every diagram question. First: identify what type of diagram it is — is it a process diagram, a structural diagram, a graph, or a cycle? Second: find the labels and arrows, because they tell you what the examiner expects you to name and explain. Third: every label you add should be accompanied by a brief function — not just the name. For example, do not just write the name of a structure. Write the name and add a colon followed by its specific function. This is the difference between one mark and two marks on every label. Fourth: if asked to sketch a diagram from memory, always include a title, labels with functions, arrows showing direction of process, and a scale or units if it involves quantities. Practise sketching the key diagrams from this chapter until you can reproduce them accurately in under two minutes.`,
   });
 
   // 8. Rapid Recall — expanded with actual technique
@@ -475,7 +475,7 @@ function ChapterDoc({
               </div>
               <div className="min-w-0">
                 <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground mb-1">
-                  Cambridge IGCSE · Chapter {chapter.number}
+                  IGCSE · Chapter {chapter.number}
                 </p>
                 <h1 className="text-2xl sm:text-3xl font-black text-foreground leading-tight tracking-tight">
                   {chapter.title}
@@ -665,7 +665,7 @@ function ChapterDoc({
                               </button>
                               {revealedAnswers[si * 100 + qi] && (
                                 <div className="ml-7 rounded-lg bg-primary/5 border border-primary/20 px-3 py-2 text-[12.5px] text-foreground/80 leading-relaxed animate-in fade-in">
-                                  Use precise Cambridge terminology. State the definition → describe the mechanism step-by-step → give a named specific example. For "Explain" questions always include a causal <em>because</em> clause. For "Describe" just state what happens without needing reasons.
+                                  Use precise technical terminology. State the definition → describe the mechanism step-by-step → give a named specific example. For "Explain" questions always include a causal <em>because</em> clause. For "Describe" just state what happens without needing reasons.
                                 </div>
                               )}
                             </div>
@@ -746,7 +746,7 @@ function ChapterDoc({
   );
 }
 
-// ─── Horizontal Line Row Component (Matches syllabus & past-questions line UI) ─
+// ── Horizontal Line Row Component (ruled answer-line styling) ─
 
 function SubjectNoteRow({
   subject,
@@ -892,13 +892,13 @@ function SyllabusNotesPage() {
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                  Cambridge IGCSE
+                  IGCSE
                 </p>
                 <h1 className="mt-1 font-serif text-3xl font-bold sm:text-4xl text-foreground">
                   Syllabus Notes
                 </h1>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  {SYLLABUS_NOTES.length} subjects · Comprehensive chapter breakdowns · Full Cambridge IGCSE coverage
+                  {SYLLABUS_NOTES.length} subjects · Comprehensive chapter breakdowns · Full IGCSE coverage
                 </p>
               </div>
               <div className="flex shrink-0 items-center gap-2 rounded-2xl bg-card/70 px-5 py-3 backdrop-blur shadow-sm">

@@ -9,7 +9,7 @@ export const ARABIC_SECOND_LANGUAGE: SubjectNotes = {
     {
       number: 1,
       title: "Reading Comprehension: Strategies and Question Types",
-      intro: "The Cambridge IGCSE Arabic Second Language reading paper presents a range of texts — informational, descriptive, and argumentative — drawn from newspapers, magazines, and online sources. Questions test global understanding, specific detail, inference, and vocabulary in context. A systematic approach to each question type maximises marks and prevents common errors such as copying irrelevant sections of text.",
+      intro: "The IGCSE Arabic Second Language reading paper presents a range of texts — informational, descriptive, and argumentative — drawn from newspapers, magazines, and online sources. Questions test global understanding, specific detail, inference, and vocabulary in context. A systematic approach to each question type maximises marks and prevents common errors such as copying irrelevant sections of text.",
       subheadings: [
         {
           title: "Approaching Reading Texts",
@@ -74,7 +74,7 @@ export const ARABIC_SECOND_LANGUAGE: SubjectNotes = {
                 "**Present/imperfect (المضارع)**: Prefixes and suffixes added to the root: يَكتُب (he writes/is writing), تَكتُب (she writes), نَكتُب (we write), يَكتُبون (they write).",
                 "**Future (المستقبل)**: Formed by adding سَـ or سَوف before the present tense form: سيكتب (he will write), سوف نذهب (we will go).",
                 "**Verb-subject agreement**: When the verb comes before the subject, it takes singular form even if the subject is plural — this is the standard VSO word order: ذهبَ الطلابُ (The students went — verb is singular masculine).",
-                "**Dual form**: Used for exactly two — يذهبان (they two go), كتبا (they two wrote). Cambridge IGCSE examiners expect recognition and basic production of dual forms."
+                "**Dual form**: Used for exactly two — يذهبان (they two go), كتبا (they two wrote). IGCSE examiners expect recognition and basic production of dual forms."
               ]
             },
             {

@@ -58,7 +58,7 @@ export const GEOGRAPHY: SubjectNotes = {
     {
       number: 2,
       title: "Natural Environments",
-      intro: "Physical geography examines the natural processes that shape the Earth's surface — the movement of rivers, the work of glaciers, coastal processes, and the formation of distinctive landscapes. For Cambridge IGCSE Geography, students must understand the processes operating in fluvial (river), glacial, and coastal environments, and the human responses to the hazards and opportunities these environments present. Process-landform linkages — understanding how a process produces a specific landform — are the core of examination answers.",
+      intro: "Physical geography examines the natural processes that shape the Earth's surface — the movement of rivers, the work of glaciers, coastal processes, and the formation of distinctive landscapes. For IGCSE Geography, students must understand the processes operating in fluvial (river), glacial, and coastal environments, and the human responses to the hazards and opportunities these environments present. Process-landform linkages — understanding how a process produces a specific landform — are the core of examination answers.",
       subheadings: [
         {
           title: "River Processes and Landforms",

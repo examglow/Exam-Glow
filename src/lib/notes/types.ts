@@ -9,7 +9,7 @@ export type SubHeading = {
   groups: BulletGroup[];
   examinerTips?: string[]; // how to approach questions, structure answers, what examiners look for
   commonMistakes?: string[]; // frequent errors, why students make them, how to avoid them
-  recap?: string[]; // Cambridge-style exam questions for this section
+  recap?: string[]; // IGCSE-style exam questions for this section
 };
 
 export type Chapter = {

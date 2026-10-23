@@ -30,7 +30,7 @@ export const Route = createFileRoute("/arcade")({
       {
         name: "description",
         content:
-          "Interactive 3D simulation games for Cambridge IGCSE & GCSE: Formula Flight 3D, Orbital Core, Cambridge Balance, and Cellular Odyssey.",
+          "Interactive 3D simulation games for IGCSE & GCSE: Formula Flight 3D, Orbital Core, Torque Balance, and Cellular Odyssey.",
       },
       { property: "og:title", content: "3D Study Games | ExamGlow" },
       {
@@ -71,7 +71,7 @@ function ArcadePage() {
       <PageHeading
         icon={<Gamepad2 className="size-5" aria-hidden />}
         title="3D Study Games"
-        subtitle="Tactile, interactive 3D simulations designed to build deep conceptual intuition for Cambridge Sciences and Mathematics."
+        subtitle="Tactile, interactive 3D simulations designed to build deep conceptual intuition for IGCSE Sciences and Mathematics."
       />
 
       <div className="mt-6">
@@ -163,7 +163,7 @@ function ArcadePage() {
                     Formula Flight 3D
                   </h3>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
-                    Pilot a 3D starship through glowing hyperspace tunnels. Dodge obstacles and fly through the correct equation gates across Cambridge Physics, Chemistry & Math.
+                    Pilot a 3D starship through glowing hyperspace tunnels. Dodge obstacles and fly through the correct equation gates across IGCSE Physics, Chemistry & Math.
                   </p>
                 </div>
 
@@ -209,7 +209,7 @@ function ArcadePage() {
                 </div>
               </div>
 
-              {/* 3. Cambridge Balance 3D */}
+              {/* 3. Torque Balance 3D */}
               <div
                 onClick={() => {
                   sound.playPowerup();
@@ -228,7 +228,7 @@ function ArcadePage() {
 
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold text-foreground group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-                    Cambridge Balance 3D
+                    Torque Balance 3D
                   </h3>
                   <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                     Test the Principle of Moments and Torque on a real 3D pivot fulcrum. Place calibrated weights at precise meter distances to achieve perfect equilibrium.

@@ -387,7 +387,7 @@ export function StudyChat({
         const profileRaw = localStorage.getItem("examglow.profile");
         if (recentNotes || profileRaw) {
           studentContext = `\n\n(Student Info: ${
-            profileRaw ? `Curriculum: ${JSON.parse(profileRaw).curriculum || "Cambridge IGCSE"}. ` : ""
+            profileRaw ? `Curriculum: ${JSON.parse(profileRaw).curriculum || "IGCSE"}. ` : ""
           }${recentNotes ? `Recent notes written: ${recentNotes.slice(0, 180)}...` : ""})`;
         }
       } catch {}
@@ -687,7 +687,7 @@ export function StudyChat({
                 Hi, I'm Yumna!
               </h2>
               <p className="mt-2 max-w-md text-sm text-muted-foreground leading-relaxed">
-                Your dedicated Cambridge IGCSE study tutor. Paste a problem, ask me to explain a theorem, review past paper questions — or paste any YouTube link and I'll watch it with you and teach everything! 🎬
+                Your dedicated IGCSE study tutor. Paste a problem, ask me to explain a theorem, review past paper questions — or paste any YouTube link and I'll watch it with you and teach everything! 🎬
               </p>
 
               {/* Quick suggestions */}

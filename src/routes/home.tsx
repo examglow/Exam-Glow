@@ -48,8 +48,7 @@ export const Route = createFileRoute("/home")({
 const quickActions = [
   { title: "Ask the tutor", meta: "Instant explanations & quiz", to: "/chat", Icon: MessageCircle, tone: "bg-lilac" },
   { title: "My Notes", meta: "Write & edit rich notes", to: "/notes", Icon: FileText, tone: "bg-mint" },
-  { title: "Syllabus Notes", meta: "Full Cambridge chapters", to: "/syllabus-notes", Icon: BookOpen, tone: "bg-surface" },
-  { title: "Past Questions", meta: "Exam papers by topic", to: "/past-questions", Icon: Layers, tone: "bg-surface" },
+  { title: "Syllabus Notes", meta: "Full syllabus chapters", to: "/syllabus-notes", Icon: BookOpen, tone: "bg-surface" },
 ] as const;
 
 type StudyTask = {
@@ -131,7 +130,7 @@ export function HomePage() {
 
   const focusTitle = profile.goal
     ? `${profile.goal} Focused Revision`
-    : "Cambridge IGCSE Curriculum Review";
+    : "IGCSE Curriculum Review";
 
   return (
     <div className="flex h-dvh overflow-hidden bg-background">
@@ -317,7 +316,7 @@ export function HomePage() {
                   <span className="text-sm font-semibold">{nextTargetDay}</span>
                 </div>
                 <p className="mt-3 font-semibold text-foreground">
-                  {profile.goal ? `${profile.goal} Mock Assessment` : "Cambridge IGCSE Mock Test"}
+                  {profile.goal ? `${profile.goal} Mock Assessment` : "IGCSE Mock Test"}
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
                   Prepare by testing past questions and reviewing your formula flashcards.

@@ -73,7 +73,7 @@ export function PaywallModal({
           {[
             "Unrestricted access to all chapters and subjects",
             "High-resolution scientific diagrams and formulas",
-            "Full Cambridge IGCSE past papers & mark schemes",
+            "Full IGCSE past papers & mark schemes",
             "Cancel subscription anytime in account settings",
           ].map((item) => (
             <div key={item} className="flex items-center gap-2 text-foreground/90 font-medium">

@@ -97,7 +97,7 @@ export const GERMAN: SubjectNotes = {
     {
       number: 2,
       title: "Themes and Vocabulary: Daily Life, Environment and Society",
-      intro: "The Cambridge IGCSE German syllabus is organised around core topics: home and family, school, work, leisure, travel, the environment, health, shopping, and social issues. Examiners test the ability to communicate about these themes in listening, reading, speaking, and writing tasks. Strong thematic vocabulary combined with accurate grammar structures is the key to achieving top marks.",
+      intro: "The IGCSE German syllabus is organised around core topics: home and family, school, work, leisure, travel, the environment, health, shopping, and social issues. Examiners test the ability to communicate about these themes in listening, reading, speaking, and writing tasks. Strong thematic vocabulary combined with accurate grammar structures is the key to achieving top marks.",
       subheadings: [
         {
           title: "Home, Family and Daily Routine",
