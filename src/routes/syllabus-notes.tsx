@@ -1,5 +1,5 @@
 ﻿import { createFileRoute } from "@tanstack/react-router";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type UIEvent as ReactUIEvent } from "react";
 import {
   BookOpen,
   ChevronRight,
@@ -17,6 +17,7 @@ import {
   ChevronDown,
   Lightbulb,
   AlertTriangle,
+  CheckCircle2,
 } from "lucide-react";
 import { DashboardLayout } from "@/components/dashboard-page";
 import {
@@ -28,7 +29,7 @@ import {
   cleanSpeechText,
   unlockAudio,
 } from "@/lib/gemini-tts";
-import type { SubjectNotes, Chapter } from "@/lib/notes/types";
+import type { SubjectNotes, Chapter, BulletGroup, SubHeading } from "@/lib/notes/types";
 import { SYLLABUS_NOTES } from "@/lib/syllabus-notes";
 import { formatMathAndMarkdown } from "@/lib/render-math";
 import { sound } from "@/components/arcade/sound-fx";
@@ -171,6 +172,268 @@ function build20MinChapterLecture(chap: Chapter): LectureSection[] {
   return sections;
 }
 
+// ─── Reading structure ────────────────────────────────────────────────────────
+// The note data is one long string per paragraph, which renders as an unbroken
+// wall. These helpers re-shape it into rows: "**Movement:** an action that…"
+// becomes a label column beside a detail column, and a worked example split on
+// blank lines becomes numbered steps with a highlighted answer.
+
+const WORDS_PER_MINUTE = 230;
+
+function countWords(text: string): number {
+  return text.split(/\s+/).filter(Boolean).length;
+}
+
+function readTime(words: number): string {
+  return `${Math.max(1, Math.round(words / WORDS_PER_MINUTE))} min`;
+}
+
+type Lead = { label: string; rest: string };
+
+function splitLead(text: string): Lead | null {
+  const trimmed = text.trim();
+  // The note corpus writes labels three ways: "**Movement:** detail",
+  // "**Writing 'x'.** detail" and "**A mule** detail".
+  const patterns = [
+    /^\*\*([^*\n]{2,70}?)\s*[:—.]\s*\*\*\s+([\s\S]+)$/,
+    /^\*\*([^*\n]{2,60}?)\*\*\s+([\s\S]+)$/,
+  ];
+  for (const pattern of patterns) {
+    const m = trimmed.match(pattern);
+    if (!m) continue;
+    const label = m[1]!.replace(/[:.—]$/, "").trim();
+    const rest = m[2]!.trim();
+    if (!label || !rest) continue;
+    return { label, rest };
+  }
+  return null;
+}
+
+const proseCell =
+  "text-[14.5px] leading-[1.72] text-foreground/80 prose prose-sm dark:prose-invert max-w-none " +
+  "prose-p:my-0 prose-strong:font-semibold prose-strong:text-foreground " +
+  "prose-code:text-[12px] prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded " +
+  "prose-code:before:content-none prose-code:after:content-none " +
+  "[&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5";
+
+/** A list of bullets re-shaped as label/detail rows, falling back to dotted prose. */
+function KeyPointList({
+  items,
+  color,
+  accent = "border-border/60 bg-card",
+}: {
+  items: string[];
+  color: string;
+  accent?: string;
+}) {
+  return (
+    <dl className={`divide-y divide-border/60 overflow-hidden rounded-2xl border ${accent}`}>
+      {items.map((item, idx) => {
+        const lead = splitLead(item.trim());
+        if (!lead) {
+          return (
+            <div key={idx} className="flex items-start gap-3 px-4 py-3.5">
+              <span className={`mt-2 size-1.5 shrink-0 rounded-full ${color} opacity-70`} />
+              <div
+                className={proseCell}
+                dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(item) }}
+              />
+            </div>
+          );
+        }
+        return (
+          <div
+            key={idx}
+            className="grid gap-1 px-4 py-3.5 sm:grid-cols-[minmax(0,11rem)_minmax(0,1fr)] sm:gap-5"
+          >
+            <dt className="text-[13.5px] font-bold leading-snug text-foreground">{lead.label}</dt>
+            <dd>
+              <div
+                className={proseCell}
+                dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(lead.rest) }}
+              />
+            </dd>
+          </div>
+        );
+      })}
+    </dl>
+  );
+}
+
+/** One paragraph inside a worked example, classified by its leading label. */
+function WorkedStep({ chunk }: { chunk: string }) {
+  const lead = splitLead(chunk);
+  const label = lead?.label ?? "";
+  const body = lead?.rest ?? chunk;
+  const stepNumber = label.match(/^step\s*(\d+)/i)?.[1];
+
+  if (/^question$/i.test(label)) {
+    return (
+      <div className="rounded-xl border border-border/70 bg-muted/40 px-4 py-3">
+        <p className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">Question</p>
+        <div className={`mt-1 ${proseCell}`} dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(body) }} />
+      </div>
+    );
+  }
+
+  if (stepNumber) {
+    const title = label.replace(/^step\s*\d+\s*[—-]?\s*/i, "").trim();
+    return (
+      <div className="flex gap-3">
+        <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-sky-500/15 text-[11px] font-black text-sky-600 dark:text-sky-400">
+          {stepNumber}
+        </span>
+        <div className="min-w-0 flex-1">
+          {title && (
+            <p className="text-[12px] font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-400">
+              {title}
+            </p>
+          )}
+          <div className={`mt-0.5 ${proseCell}`} dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(body) }} />
+        </div>
+      </div>
+    );
+  }
+
+  if (/^(answer|result)\b/i.test(label)) {
+    return (
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3">
+        <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+          Answer
+        </span>
+        <div
+          className="text-[15px] font-bold text-emerald-800 dark:text-emerald-300 prose prose-sm dark:prose-invert max-w-none prose-p:my-0 prose-strong:text-inherit"
+          dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(body) }}
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div className="border-l-2 border-amber-500/40 pl-4">
+      <p className="text-[11px] font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+        {label || "Note"}
+      </p>
+      <div className={`mt-1 ${proseCell}`} dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(body) }} />
+    </div>
+  );
+}
+
+function WorkedCalculation({ group }: { group: BulletGroup }) {
+  const chunks = group.bullets.flatMap((b) => b.split(/\n\s*\n/).map((c) => c.trim()).filter(Boolean));
+  return (
+    <div className="overflow-hidden rounded-2xl border border-sky-500/25 bg-sky-500/[0.04]">
+      <div className="flex items-center justify-between gap-3 border-b border-sky-500/20 bg-sky-500/10 px-4 py-2.5">
+        <p className="text-[13px] font-bold text-sky-800 dark:text-sky-300">{group.subTitle}</p>
+        <span className="shrink-0 rounded-full bg-sky-500/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">
+          Step by step
+        </span>
+      </div>
+      <div className="space-y-4 p-4">
+        {chunks.map((chunk) => (
+          <WorkedStep key={chunk} chunk={chunk} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+const bodyProse =
+  "prose prose-base dark:prose-invert max-w-none " +
+  "prose-headings:font-bold prose-headings:text-foreground " +
+  "prose-h3:text-[17px] prose-h3:mt-6 prose-h3:mb-2 " +
+  "prose-h4:text-[15px] prose-h4:mt-5 prose-h4:mb-1.5 " +
+  "prose-p:leading-[1.8] prose-p:text-[15.5px] prose-p:text-foreground/85 prose-p:mb-4 " +
+  "prose-strong:font-semibold prose-strong:text-foreground " +
+  "prose-li:text-[14.5px] prose-li:leading-7 " +
+  "prose-ol:ml-5 prose-ol:list-decimal prose-ol:space-y-1 " +
+  "prose-ul:ml-5 prose-ul:list-disc prose-ul:space-y-1 " +
+  "prose-table:text-sm prose-table:w-full " +
+  "prose-th:bg-muted/60 prose-th:px-3 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-xs prose-th:uppercase prose-th:tracking-wide " +
+  "prose-td:px-3 prose-td:py-2 prose-td:text-foreground/85 " +
+  "prose-code:text-[12.5px] prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-mono prose-code:before:content-none prose-code:after:content-none " +
+  "[&_figure]:my-6 [&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5";
+
+function ProseBlock({ text, className }: { text: string; className?: string }) {
+  return (
+    <div
+      className={`${bodyProse} ${className ?? ""}`}
+      dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(text) }}
+    />
+  );
+}
+
+function isWorkedGroup(group: BulletGroup): boolean {
+  return /worked\s+(example|calculation)/i.test(group.subTitle ?? "");
+}
+
+function GroupPart({ group, color }: { group: BulletGroup; color: string }) {
+  if (isWorkedGroup(group)) return <WorkedCalculation group={group} />;
+  return (
+    <div>
+      {group.subTitle && (
+        <div className="mb-2.5 flex items-center gap-2.5">
+          <span className={`inline-block size-2 shrink-0 rounded-full ${color}`} />
+          <h3 className="text-[14.5px] font-bold tracking-tight text-foreground">{group.subTitle}</h3>
+          <span className="text-[11px] font-semibold text-muted-foreground">{group.bullets.length}</span>
+        </div>
+      )}
+      <KeyPointList items={group.bullets} color={color} />
+    </div>
+  );
+}
+
+function sectionWords(sub: SubHeading): number {
+  return (
+    countWords(sub.body) +
+    sub.groups.reduce((n, g) => n + countWords(g.bullets.join(" ")), 0) +
+    countWords((sub.examinerTips ?? []).join(" ")) +
+    countWords((sub.commonMistakes ?? []).join(" ")) +
+    countWords((sub.recap ?? []).join(" "))
+  );
+}
+
+function CalloutList({
+  items,
+  tone,
+  Icon,
+}: {
+  items: string[];
+  tone: "amber" | "rose";
+  Icon: typeof Lightbulb;
+}) {
+  const shell =
+    tone === "amber"
+      ? "border-amber-500/25 bg-amber-500/[0.05] dark:bg-amber-500/[0.07]"
+      : "border-rose-500/25 bg-rose-500/[0.04] dark:bg-rose-500/[0.06]";
+  const head = tone === "amber" ? "border-amber-500/20 bg-amber-500/10" : "border-rose-500/20 bg-rose-500/10";
+  const ink =
+    tone === "amber"
+      ? "text-amber-700 dark:text-amber-400"
+      : "text-rose-700 dark:text-rose-400";
+  const dot = tone === "amber" ? "bg-amber-500/70" : "bg-rose-500/70";
+  const divider = tone === "amber" ? "divide-amber-500/15" : "divide-rose-500/15";
+
+  return (
+    <div className={`mt-6 overflow-hidden rounded-2xl border ${shell}`}>
+      <div className={`flex items-center gap-2 border-b px-4 py-2.5 ${head}`}>
+        <Icon className={`size-4 shrink-0 ${ink}`} aria-hidden />
+        <span className={`text-xs font-bold uppercase tracking-wider ${ink}`}>
+          {tone === "amber" ? "Examiner's Tips" : "Common Mistakes"}
+        </span>
+      </div>
+      <ul className={`divide-y ${divider}`}>
+        {items.map((item, idx) => (
+          <li key={idx} className="flex items-start gap-3 px-4 py-3">
+            <span className={`mt-2 size-1.5 shrink-0 rounded-full ${dot}`} />
+            <div className={proseCell} dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(item) }} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function ChapterDoc({
   chapter,
   allChapters,
@@ -235,6 +498,29 @@ function ChapterDoc({
   const idx = allChapters.findIndex((c) => c.number === chapter.number);
   const hasNext = idx < allChapters.length - 1;
   const hasPrev = idx > 0;
+
+  const chapterWords =
+    chapter.subheadings.reduce((n, s) => n + sectionWords(s), 0) + countWords(chapter.intro);
+
+  // Scroll position is written straight to the DOM: setting state on every scroll
+  // event would re-render the whole chapter, and only the section index is needed
+  // by React.
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  const [activeSection, setActiveSection] = useState(0);
+
+  function handleReaderScroll(e: ReactUIEvent<HTMLDivElement>) {
+    const el = e.currentTarget;
+    const scrollable = el.scrollHeight - el.clientHeight;
+    if (progressBarRef.current) {
+      progressBarRef.current.style.transform = `scaleX(${scrollable > 8 ? Math.min(1, el.scrollTop / scrollable) : 0})`;
+    }
+    let current = 0;
+    for (let i = 0; i < chapter.subheadings.length; i++) {
+      const node = document.getElementById(`section-${i}`);
+      if (node && node.offsetTop - 100 <= el.scrollTop) current = i;
+    }
+    setActiveSection((prev) => (prev === current ? prev : current));
+  }
 
   // 20-minute timer ticker
   useEffect(() => {
@@ -423,6 +709,8 @@ function ChapterDoc({
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: 0 });
+    if (progressBarRef.current) progressBarRef.current.style.transform = "scaleX(0)";
+    setActiveSection(0);
     backFiredRef.current = false;
     handleStop();
   }, [chapter.number]);
@@ -448,6 +736,25 @@ function ChapterDoc({
           Ch.{chapter.number} · {chapter.title}
         </p>
 
+        <div className="hidden sm:flex shrink-0 items-center gap-2.5">
+          <div
+            className="h-1.5 w-20 overflow-hidden rounded-full bg-muted"
+            role="progressbar"
+            aria-valuenow={masteredCount}
+            aria-valuemin={0}
+            aria-valuemax={totalSections}
+            aria-label="Sections understood"
+          >
+            <div
+              className={`h-full rounded-full ${color} transition-all duration-300`}
+              style={{ width: `${masteryPercentage}%` }}
+            />
+          </div>
+          <span className="text-[11px] font-bold tabular-nums text-muted-foreground">
+            {masteredCount}/{totalSections}
+          </span>
+        </div>
+
         <button
           type="button"
           onClick={handleStartLecture}
@@ -464,12 +771,23 @@ function ChapterDoc({
       </div>
 
       {/* ── Scrollable document ── */}
-      <div ref={scrollRef} className="relative flex-1 overflow-y-auto overflow-x-hidden">
-        <article className="mx-auto max-w-3xl w-full px-4 sm:px-8 pb-40 pt-8">
+      <div
+        ref={scrollRef}
+        onScroll={handleReaderScroll}
+        className="relative flex-1 overflow-y-auto overflow-x-hidden"
+      >
+        <div
+          ref={progressBarRef}
+          aria-hidden
+          style={{ transform: "scaleX(0)" }}
+          className="sticky top-0 z-20 h-[2px] origin-left bg-primary/70"
+        />
+        <div className="mx-auto flex w-full max-w-6xl gap-10 px-4 sm:px-8">
+        <article className="min-w-0 max-w-3xl w-full pb-40 pt-8">
 
           {/* Chapter title block */}
-          <header className="mb-10">
-            <div className="flex items-start gap-4 mb-5">
+          <header className="mb-12">
+            <div className="flex items-start gap-4 mb-6">
               <div className={`size-14 shrink-0 rounded-2xl ${color} flex items-center justify-center text-2xl font-black text-white shadow-md`}>
                 {chapter.number}
               </div>
@@ -480,23 +798,40 @@ function ChapterDoc({
                 <h1 className="text-2xl sm:text-3xl font-black text-foreground leading-tight tracking-tight">
                   {chapter.title}
                 </h1>
+                <p className="mt-2 text-xs font-semibold text-muted-foreground">
+                  {chapter.subheadings.length} sections · {readTime(chapterWords)} read
+                </p>
               </div>
             </div>
-            <div
-              className="text-base leading-7 text-foreground/80 prose prose-sm dark:prose-invert max-w-none border-l-4 border-primary/30 pl-4 mb-6"
-              dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(chapter.intro) }}
-            />
-            <div className="flex flex-wrap gap-2">
-              {chapter.subheadings.map((sub, sIdx) => (
-                <button
-                  key={sIdx}
-                  onClick={() => scrollToSection(sIdx)}
-                  className="px-3 py-1.5 rounded-lg border border-border bg-muted/40 text-xs font-medium text-foreground/70 hover:text-foreground hover:border-primary/40 hover:bg-primary/5 transition-all"
-                >
-                  {sIdx + 1}. {sub.title}
-                </button>
-              ))}
+            <div className="mb-8 rounded-2xl border border-primary/25 bg-primary/[0.04] px-5 py-4">
+              <p className="mb-2 text-[11px] font-bold uppercase tracking-wider text-primary">The big idea</p>
+              <ProseBlock text={chapter.intro} className="prose-p:text-[15px] prose-p:leading-[1.75]" />
             </div>
+            <nav aria-label="Sections in this chapter">
+              <p className="mb-2.5 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                In this chapter
+              </p>
+              <ol className="space-y-1.5">
+                {chapter.subheadings.map((sub, sIdx) => (
+                  <li key={sIdx}>
+                    <button
+                      onClick={() => scrollToSection(sIdx)}
+                      className="group flex w-full items-baseline gap-3 rounded-lg px-2 py-1.5 text-left hover:bg-muted/50 transition-colors"
+                    >
+                      <span className={`flex size-5 shrink-0 items-center justify-center rounded text-[10px] font-black text-white ${color}`}>
+                        {sIdx + 1}
+                      </span>
+                      <span className="min-w-0 flex-1 text-[14px] font-medium text-foreground/85 group-hover:text-foreground">
+                        {sub.title}
+                      </span>
+                      <span className="shrink-0 text-[11px] font-semibold text-muted-foreground">
+                        {readTime(sectionWords(sub))}
+                      </span>
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            </nav>
           </header>
 
           {/* Sections */}
@@ -506,122 +841,51 @@ function ChapterDoc({
                 <section
                   id={`section-${si}`}
                   key={si}
-                  className="scroll-mt-16 py-8 border-b border-border/40 last:border-0"
+                  className="scroll-mt-16 py-10 border-b border-border/40 last:border-0"
                 >
-                  <div className="mb-5">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className={`inline-flex size-6 shrink-0 items-center justify-center rounded-md text-[11px] font-black text-white ${color}`}>
-                        {si + 1}
-                      </span>
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">Section {si + 1}</span>
+                  <div className="mb-6 flex items-start gap-3">
+                    <span className={`mt-1 inline-flex size-7 shrink-0 items-center justify-center rounded-lg text-[12px] font-black text-white ${color}`}>
+                      {si + 1}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <h2 className="text-xl sm:text-[26px] font-black text-foreground leading-snug tracking-tight">
+                        {sub.title}
+                      </h2>
+                      <p className="mt-1.5 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+                        {readTime(sectionWords(sub))} · {sub.groups.length} part{sub.groups.length === 1 ? "" : "s"}
+                      </p>
                     </div>
-                    <h2 className="text-xl sm:text-2xl font-black text-foreground leading-snug tracking-tight">
-                      {sub.title}
-                    </h2>
+                    <button
+                      type="button"
+                      onClick={() => toggleMastered(si)}
+                      aria-pressed={!!masteredSections[si]}
+                      className={`mt-1 flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-colors ${
+                        masteredSections[si]
+                          ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                          : "border-border text-muted-foreground hover:border-foreground/30 hover:text-foreground"
+                      }`}
+                    >
+                      <CheckCircle2 className="size-3.5" aria-hidden />
+                      {masteredSections[si] ? "Got it" : "Mark as understood"}
+                    </button>
                   </div>
 
-                  <div
-                    className="prose prose-base dark:prose-invert max-w-none
-                      prose-headings:font-bold prose-headings:text-foreground
-                      prose-h3:text-[17px] prose-h3:mt-6 prose-h3:mb-2
-                      prose-h4:text-[15px] prose-h4:mt-5 prose-h4:mb-1.5
-                      prose-p:leading-7 prose-p:text-[15px] prose-p:text-foreground/85 prose-p:mb-3
-                      prose-strong:font-semibold prose-strong:text-foreground
-                      prose-li:text-[14.5px] prose-li:leading-7
-                      prose-ol:ml-5 prose-ol:list-decimal prose-ol:space-y-1
-                      prose-ul:ml-5 prose-ul:list-disc prose-ul:space-y-1
-                      prose-table:text-sm prose-table:w-full
-                      prose-th:bg-muted/60 prose-th:px-3 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-xs prose-th:uppercase prose-th:tracking-wide
-                      prose-td:px-3 prose-td:py-2 prose-td:text-foreground/85
-                      prose-code:text-[12.5px] prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:font-mono prose-code:before:content-none prose-code:after:content-none
-                      [&_figure]:my-6 [&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5
-                    "
-                    dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(sub.body) }}
-                  />
+                  <ProseBlock text={sub.body} />
 
                   {sub.groups.length > 0 && (
-                    <div className="mt-6 space-y-6">
+                    <div className="mt-8 space-y-8">
                       {sub.groups.map((grp, gi) => (
-                        <div key={gi}>
-                          {grp.subTitle && (
-                            <h3 className="mb-3 text-[15px] font-bold text-foreground flex items-center gap-2">
-                              <span className={`inline-block size-2 rounded-full ${color} shrink-0`} />
-                              {grp.subTitle}
-                            </h3>
-                          )}
-                          <ul className="space-y-3">
-                            {grp.bullets.map((pt, pi) => (
-                              <li key={pi} className="flex items-start gap-3">
-                                <span className={`mt-2 size-1.5 shrink-0 rounded-full ${color} opacity-70`} />
-                                <div
-                                  className="flex-1 text-[14.5px] leading-7 text-foreground/85 prose prose-sm dark:prose-invert max-w-none
-                                    prose-strong:font-semibold prose-strong:text-foreground
-                                    prose-code:text-[12px] prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-                                    [&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5"
-                                  dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(pt) }}
-                                />
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                        <GroupPart key={gi} group={grp} color={color} />
                       ))}
                     </div>
                   )}
 
                   {sub.examinerTips && sub.examinerTips.length > 0 && (
-                    <div className="mt-8 rounded-2xl border border-amber-500/25 bg-amber-500/[0.05] dark:bg-amber-500/[0.07] overflow-hidden">
-                      <div className="flex items-center gap-2 border-b border-amber-500/20 bg-amber-500/10 px-4 py-3">
-                        <Lightbulb className="size-4 shrink-0 text-amber-600 dark:text-amber-400" aria-hidden />
-                        <span className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
-                          Examiner's Tips
-                        </span>
-                      </div>
-                      <ul className="p-4 space-y-3 sm:px-5">
-                        {sub.examinerTips.map((tip, ti) => (
-                          <li key={ti} className="flex items-start gap-3">
-                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-amber-500/70" />
-                            <div
-                              className="flex-1 text-[14.5px] leading-7 text-foreground/85 prose prose-sm dark:prose-invert max-w-none
-                                prose-strong:font-semibold prose-strong:text-foreground
-                                prose-code:text-[12px] prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-                                prose-table:text-sm prose-table:w-full
-                                prose-th:bg-muted/60 prose-th:px-3 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-xs prose-th:uppercase
-                                prose-td:px-3 prose-td:py-2 prose-td:text-foreground/85
-                                [&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5"
-                              dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(tip) }}
-                            />
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <CalloutList items={sub.examinerTips} tone="amber" Icon={Lightbulb} />
                   )}
 
                   {sub.commonMistakes && sub.commonMistakes.length > 0 && (
-                    <div className="mt-6 rounded-2xl border border-rose-500/25 bg-rose-500/[0.04] dark:bg-rose-500/[0.06] overflow-hidden">
-                      <div className="flex items-center gap-2 border-b border-rose-500/20 bg-rose-500/10 px-4 py-3">
-                        <AlertTriangle className="size-4 shrink-0 text-rose-600 dark:text-rose-400" aria-hidden />
-                        <span className="text-xs font-bold uppercase tracking-wider text-rose-700 dark:text-rose-400">
-                          Common Mistakes
-                        </span>
-                      </div>
-                      <ul className="p-4 space-y-3 sm:px-5">
-                        {sub.commonMistakes.map((mistake, mi) => (
-                          <li key={mi} className="flex items-start gap-3">
-                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-rose-500/70" />
-                            <div
-                              className="flex-1 text-[14.5px] leading-7 text-foreground/85 prose prose-sm dark:prose-invert max-w-none
-                                prose-strong:font-semibold prose-strong:text-foreground
-                                prose-code:text-[12px] prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-                                prose-table:text-sm prose-table:w-full
-                                prose-th:bg-muted/60 prose-th:px-3 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-xs prose-th:uppercase
-                                prose-td:px-3 prose-td:py-2 prose-td:text-foreground/85
-                                [&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5"
-                              dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(mistake) }}
-                            />
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <CalloutList items={sub.commonMistakes} tone="rose" Icon={AlertTriangle} />
                   )}
 
                   {sub.recap && sub.recap.length > 0 && (
@@ -708,6 +972,33 @@ function ChapterDoc({
             )}
           </div>
         </article>
+
+        {/* Sticky section rail — tells the reader how far is left to go */}
+        <aside className="hidden lg:block w-[15rem] shrink-0">
+          <div className="sticky top-10 py-10">
+            <p className="mb-3 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+              {readTime(chapterWords)} left
+            </p>
+            <ol className="space-y-1 border-l border-border">
+              {chapter.subheadings.map((sub, sIdx) => (
+                <li key={sIdx}>
+                  <button
+                    onClick={() => scrollToSection(sIdx)}
+                    className={`-ml-px flex w-full items-start gap-2 border-l-2 px-3 py-1.5 text-left text-[12.5px] leading-snug transition-colors ${
+                      activeSection === sIdx
+                        ? "border-primary font-semibold text-foreground"
+                        : "border-transparent text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <span className="tabular-nums opacity-60">{sIdx + 1}.</span>
+                    <span className="min-w-0">{sub.title}</span>
+                  </button>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </aside>
+        </div>
       </div>
       {/* Floating lecture bar */}
       {isLectureActive && (

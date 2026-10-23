@@ -33,6 +33,96 @@ function renderSvgBlock(title: string, svgContent: string): string {
   </figure>`;
 }
 
+// ─── Formula typesetting ──────────────────────────────────────────────────────
+// Notes carry equations as plain text ("**I = A × M**", "M = I ÷ A"). Rendered as
+// bold prose they read like a typo in the middle of a sentence, so short equations
+// are promoted to KaTeX. The validators are deliberately strict because prose must
+// not be caught: "A = the actual size" stays as text, "A = 2 µm" becomes maths.
+const KNOWN_UNITS = [
+  "µm", "mm", "cm", "nm", "km", "dm", "kg", "mg", "mol", "kPa", "Pa",
+  "mL", "min", "max", "h", "dm3", "cm3", "m3", "°C", "yr",
+];
+
+const MAX_FORMULA_LEN = 56;
+
+function isUnit(token: string) {
+  return KNOWN_UNITS.includes(token) || KNOWN_UNITS.includes(token.toLowerCase());
+}
+
+function alphabeticTokens(s: string) {
+  return s.match(/[A-Za-zµ°]+/g) ?? [];
+}
+
+function looksLikeMath(clean: string, bare: boolean): boolean {
+  if (!/^[A-Za-z0-9µ°²³=\s×÷+\-/.(),]+$/.test(clean)) return false;
+  for (const token of alphabeticTokens(clean)) {
+    if (isUnit(token)) continue;
+    if (token.length === 1) continue;
+    // In bare mode only single-letter variables are allowed, so sentence words
+    // ("So", "the") can never be pulled into the maths run.
+    if (bare) return false;
+    if (token.length > 2) return false;
+  }
+  return true;
+}
+
+function formulaToTex(raw: string, bare = false): string | null {
+  const clean = raw.replace(/\*/g, "").replace(/\s+/g, " ").trim();
+  if (!clean.includes("=") || clean.length > MAX_FORMULA_LEN) return null;
+  if (!looksLikeMath(clean, bare)) return null;
+
+  let tex = clean
+    // cubed units before the plain ones, so "cm3" is not read as "cm" + "3"
+    .replace(/(dm|cm|m)(3)(?![A-Za-z0-9µ°])/g, "\\text{$1}^{3}")
+    .replace(
+      /(µm|°C|kPa|Pa|mm|cm|nm|km|dm|kg|mg|mol|mL|min|max|yr)(?![A-Za-zµ°0-9])/g,
+      (_m, u: string) =>
+        u.startsWith("µ")
+          ? `\\mu\\text{${u.slice(1)}}`
+          : `\\text{${u.replace("°", "^{\\circ}")}}`,
+    )
+    .replace(/[²³]/g, (c) => `^{${c === "²" ? 2 : 3}}`)
+    .replace(/×/g, "\\times ")
+    .replace(/÷/g, "\\div ")
+    .replace(/−/g, "-");
+
+  // Math mode drops the spaces between numbers, so rebuild the ones that carry
+  // meaning: thousands separators and the gap before a unit.
+  tex = tex
+    .replace(/(\d)\s+(?=\d{3}(\D|$))/g, "$1\\,")
+    .replace(/(?<=[}\d)])\s+(?=\\(?:text|mu))/g, "\\ ")
+    .replace(/\s+(?=\\(?:text|mu))/g, "\\ ")
+    .trim();
+
+  tex = tex.replace(/[=\s]+$/, "").replace(/^[=\s]+/, "");
+  if (!tex.includes("=") || tex.length > MAX_FORMULA_LEN + 12) return null;
+
+  return tex;
+}
+
+function typesetFormulas(text: string, mathBlocks: string[]): string {
+  const stash = (tex: string) => {
+    mathBlocks.push(`$${tex}$`);
+    return `\x00MATH${mathBlocks.length - 1}\x00`;
+  };
+
+  return text
+    // Bold-wrapped equations: **I = A × M**
+    .replace(/\*\*([^*\n]{3,60})\*\*/g, (full, body) => {
+      const tex = formulaToTex(body);
+      return tex ? stash(tex) : full;
+    })
+    // Bare equations left unbolded by the note author: "…formula:** M = I ÷ A"
+    .replace(
+      /(?<![A-Za-z0-9*_$=.])([A-Za-z]{1,4})\s*=\s*([A-Za-z0-9µ°²³\s=×÷+\-/()]{1,44})(?![A-Za-z0-9µ°*_$=])/g,
+      (full, lhs, rhs) => {
+        if (isUnit(lhs)) return full;
+        const tex = formulaToTex(`${lhs} = ${rhs}`, true);
+        return tex ? stash(tex) : full;
+      },
+    );
+}
+
 // ─── Inline span-level formatting (bold, italic, highlight, code, math) ──────
 function formatInline(raw: string, mathBlocks: string[]): string {
   let text = raw;
@@ -84,7 +174,20 @@ function renderDisplayMath(eq: string): string {
  * are never ambiguous — this prevents list items or paragraphs from being
  * merged together incorrectly.
  */
+const renderCache = new Map<string, string>();
+
 export function formatMathAndMarkdown(text: string): string {
+  const cached = renderCache.get(text);
+  if (cached !== undefined) return cached;
+  const html = renderMarkdown(text);
+  // Static note content is re-rendered on every reader interaction; memoising
+  // keeps a KaTeX-heavy chapter from costing CPU each time.
+  if (renderCache.size > 4000) renderCache.clear();
+  renderCache.set(text, html);
+  return html;
+}
+
+function renderMarkdown(text: string): string {
   if (!text) return "";
 
   text = stripEmoji(text);
@@ -124,6 +227,9 @@ export function formatMathAndMarkdown(text: string): string {
     rawBlocks.push(renderSvgBlock(alt || "Diagram", inner));
     return `\x00BLOCK${rawBlocks.length - 1}\x00`;
   });
+
+  // Promote plain-text equations to KaTeX once fenced blocks are out of the way
+  text = typesetFormulas(text, mathBlocks);
 
   const lines = text.split("\n");
   const html: string[] = [];

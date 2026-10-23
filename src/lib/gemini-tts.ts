@@ -22,6 +22,122 @@ let activeAudioBuffer: AudioBuffer | null = null;
 
 const audioCache = new Map<string, string>(); // base64 cache
 
+// ─── Device-voice fallback ────────────────────────────────────────────────────
+// The Gemini key baked into this file was disabled by Google (the API answers
+// 401 ACCOUNT_STATE_INVALID), so Listen had no audio to play at all. When Gemini
+// returns nothing we speak with the browser's own synthesiser instead: it is less
+// expressive than Kore, but it is always available and costs no key.
+let geminiUnavailable = false;
+let deviceChunks: string[] = [];
+let deviceStopped = false;
+
+function splitForSpeech(text: string): string[] {
+  const sentences = text.match(/[^.!?]+[.!?]+/g) ?? [text];
+  const chunks: string[] = [];
+  let buffer = "";
+  for (const sentence of sentences) {
+    const piece = sentence.trim();
+    if (!piece) continue;
+    if ((buffer + " " + piece).trim().length > 220) {
+      if (buffer) chunks.push(buffer);
+      buffer = piece.length > 220 ? `${piece.slice(0, 220)}.` : piece;
+    } else {
+      buffer = buffer ? `${buffer} ${piece}` : piece;
+    }
+  }
+  if (buffer) chunks.push(buffer);
+  return chunks;
+}
+
+let cachedDeviceVoice: SpeechSynthesisVoice | null = null;
+
+type VoiceCallbacks = {
+  onStart?: (() => void) | undefined;
+  onEnd?: (() => void) | undefined;
+  onError?: ((err?: unknown) => void) | undefined;
+};
+
+function pickDeviceVoice(): SpeechSynthesisVoice | null {
+  if (typeof window === "undefined" || !window.speechSynthesis) return null;
+  if (cachedDeviceVoice) return cachedDeviceVoice;
+  const english = window.speechSynthesis.getVoices().filter((v) => /^en([-_]|$)/i.test(v.lang));
+  const score = (v: SpeechSynthesisVoice) => {
+    const name = v.name.toLowerCase();
+    let s = 0;
+    if (/(natural|neural|online|premium|enhanced|personal)/.test(name)) s += 40;
+    if (/(aria|jenny|ava|emma|libby|sonia|oliver|maya|keith|brian|george|susan)/.test(name)) s += 25;
+    if (/gb|british|uk/i.test(v.lang) || /british|uk/i.test(name)) s += 20;
+    if (v.localService) s += 3;
+    return s;
+  };
+  cachedDeviceVoice = english.sort((a, b) => score(b) - score(a))[0] ?? null;
+  return cachedDeviceVoice;
+}
+
+function speakDeviceChunks(
+  index: number,
+  callbacks?: VoiceCallbacks,
+  started = { value: false },
+) {
+  if (deviceStopped) return;
+  if (index >= deviceChunks.length) {
+    deviceChunks = [];
+    callbacks?.onEnd?.();
+    return;
+  }
+  const utterance = new SpeechSynthesisUtterance(deviceChunks[index]);
+  const voice = pickDeviceVoice();
+  if (voice) utterance.voice = voice;
+  utterance.lang = voice?.lang || "en-GB";
+  utterance.rate = 1.02;
+  utterance.pitch = 1;
+  utterance.onstart = () => {
+    if (!started.value) {
+      started.value = true;
+      callbacks?.onStart?.();
+    }
+  };
+  utterance.onend = () => {
+    if (deviceStopped) return;
+    speakDeviceChunks(index + 1, callbacks, started);
+  };
+  utterance.onerror = () => {
+    if (deviceStopped) return;
+    deviceChunks = [];
+    callbacks?.onError?.();
+  };
+  window.speechSynthesis.speak(utterance);
+}
+
+function isSpeechSynthesisSupported(): boolean {
+  return typeof window !== "undefined" && "speechSynthesis" in window && typeof SpeechSynthesisUtterance !== "undefined";
+}
+
+function speakWithDeviceVoice(
+  text: string,
+  callbacks?: VoiceCallbacks,
+): boolean {
+  if (!isSpeechSynthesisSupported()) return false;
+  // Chrome populates getVoices() asynchronously; priming the listener means the
+  // second and later taps get the ranked voice instead of the default one.
+  if (!cachedDeviceVoice) {
+    window.speechSynthesis.addEventListener?.(
+      "voiceschanged",
+      () => {
+        cachedDeviceVoice = null;
+        pickDeviceVoice();
+      },
+      { once: true },
+    );
+  }
+  pickDeviceVoice();
+  deviceStopped = false;
+  deviceChunks = splitForSpeech(cleanSpeechText(text));
+  if (deviceChunks.length === 0) return false;
+  speakDeviceChunks(0, callbacks);
+  return true;
+}
+
 /**
  * Synchronously unlock AudioContext within user gesture (button click, tap)
  * so subsequent async playback is never blocked by browser Autoplay Policy.
@@ -135,12 +251,20 @@ export function prepareSpeechSnippet(text: string): string {
  * Fetch raw base64 PCM audio data from /api/tts or direct Gemini fallback
  */
 export async function fetchTtsAudioBase64(text: string): Promise<string | null> {
+  if (geminiUnavailable) return null;
+
   const snippet = prepareSpeechSnippet(text);
   if (!snippet) return null;
 
   if (audioCache.has(snippet)) {
     return audioCache.get(snippet)!;
   }
+
+  // A rejected key is never going to work again this session, so stop paying the
+  // round-trip for it and let the caller fall back to the device voice.
+  const markUnusable = (status: number) => {
+    if (status === 401 || status === 403 || status === 404) geminiUnavailable = true;
+  };
 
   // 1. Try server-side API proxy first (bypasses browser CORS & adblockers)
   try {
@@ -157,8 +281,12 @@ export async function fetchTtsAudioBase64(text: string): Promise<string | null> 
         audioCache.set(snippet, data.audioBase64);
         return data.audioBase64;
       }
+    } else {
+      markUnusable(res.status);
     }
   } catch {}
+
+  if (geminiUnavailable) return null;
 
   // 2. Direct client-side Gemini fallback if server route is unavailable
   try {
@@ -187,6 +315,8 @@ export async function fetchTtsAudioBase64(text: string): Promise<string | null> 
         audioCache.set(snippet, b64);
         return b64;
       }
+    } else {
+      markUnusable(res.status);
     }
   } catch {}
 
@@ -248,8 +378,16 @@ export function playRealisticVoice(
     if (isStopped) return;
 
     if (!base64Audio) {
-      // Gemini returned nothing — signal error, no fallback
-      callbacks?.onError?.();
+      // Gemini gave us nothing (disabled key, offline, quota) — speak with the
+      // browser's own voice so Listen is never a dead button.
+      const fellBack = speakWithDeviceVoice(text, {
+        onStart: callbacks?.onStart,
+        onEnd: () => {
+          if (!isStopped) callbacks?.onEnd?.();
+        },
+        onError: callbacks?.onError,
+      });
+      if (!fellBack) callbacks?.onError?.();
       return;
     }
 
@@ -332,6 +470,11 @@ export function pauseRealisticVoice(): boolean {
     }
   }
 
+  if (deviceChunks.length > 0 && typeof window !== "undefined" && window.speechSynthesis?.speaking) {
+    window.speechSynthesis.pause();
+    return true;
+  }
+
   if (currentAudioElement && !currentAudioElement.paused) {
     try {
       currentAudioElement.pause();
@@ -345,6 +488,11 @@ export function pauseRealisticVoice(): boolean {
 }
 
 export function resumeRealisticVoice(): boolean {
+  if (deviceChunks.length > 0 && typeof window !== "undefined" && window.speechSynthesis?.paused) {
+    window.speechSynthesis.resume();
+    return true;
+  }
+
   if (globalAudioCtx && isAudioPaused && activeAudioBuffer) {
     try {
       if (globalAudioCtx.state === "suspended") {
@@ -384,18 +532,31 @@ export function resumeRealisticVoice(): boolean {
 export function isRealisticVoicePlaying(): boolean {
   if (globalAudioCtx && currentSourceNode && !isAudioPaused) return true;
   if (currentAudioElement && !currentAudioElement.paused) return true;
+  if (typeof window !== "undefined" && window.speechSynthesis?.speaking && !window.speechSynthesis.paused) return true;
   return false;
 }
 
 export function isRealisticVoicePaused(): boolean {
   if (isAudioPaused) return true;
   if (currentAudioElement && currentAudioElement.paused) return true;
+  if (deviceChunks.length > 0 && typeof window !== "undefined" && window.speechSynthesis?.paused) return true;
   return false;
 }
 
 export function stopRealisticVoice() {
   isAudioPaused = false;
   audioPauseOffset = 0;
+  deviceStopped = true;
+  deviceChunks = [];
+
+  if (typeof window !== "undefined" && window.speechSynthesis) {
+    try {
+      window.speechSynthesis.cancel();
+      // Chrome can leave the engine in a paused state after cancel(), which would
+      // silently swallow the next utterance.
+      window.speechSynthesis.resume();
+    } catch {}
+  }
 
   if (currentSourceNode) {
     try {
