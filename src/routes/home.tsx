@@ -59,19 +59,13 @@ type StudyTask = {
   done: boolean;
 };
 
-const DEFAULT_TASKS: StudyTask[] = [
-  { id: "1", title: "Review Cambridge Math & Quadratic formulas", time: "25 min", done: true },
-  { id: "2", title: "Read Chapter 1 & 2 Syllabus Notes", time: "20 min", done: true },
-  { id: "3", title: "Practice 5 past question problems", time: "30 min", done: false },
-  { id: "4", title: "Summarize key definitions in My Notes", time: "15 min", done: false },
-];
-
 const TASKS_KEY = "examglow.home_study_tasks";
 
 export function HomePage() {
   const [profile, setProfile] = useState<OnboardingProfile>({});
-  const [tasks, setTasks] = useState<StudyTask[]>(DEFAULT_TASKS);
-  const [notesCount, setNotesCount] = useState(1);
+  const [tasks, setTasks] = useState<StudyTask[]>([]);
+  const [newTask, setNewTask] = useState("");
+  const [notesCount, setNotesCount] = useState(0);
 
   useEffect(() => {
     setProfile(readProfile());
@@ -100,6 +94,24 @@ export function HomePage() {
       }
       return next;
     });
+  };
+
+  const addTask = () => {
+    const title = newTask.trim();
+    if (!title) return;
+    setTasks((prev) => {
+      const next = [
+        ...prev,
+        { id: crypto.randomUUID(), title, time: "15 min", done: false },
+      ];
+      try {
+        window.localStorage.setItem(TASKS_KEY, JSON.stringify(next));
+      } catch {
+        /* ignore */
+      }
+      return next;
+    });
+    setNewTask("");
   };
 
   const firstName = profile.name?.split(" ")[0] ?? "there";
@@ -222,43 +234,78 @@ export function HomePage() {
                   <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Today's Goals</p>
                   <h2 className="mt-1 text-3xl font-bold">Your study checklist</h2>
                 </div>
-                <span className="text-sm font-medium text-muted-foreground">
-                  {completedTasks} of {tasks.length} completed
-                </span>
+                {tasks.length > 0 && (
+                  <span className="text-sm font-medium text-muted-foreground">
+                    {completedTasks} of {tasks.length} completed
+                  </span>
+                )}
               </div>
-              <div className="mt-4 h-2 overflow-hidden rounded-full bg-secondary">
-                <div
-                  className="h-full rounded-full bg-lavender transition-all duration-300"
-                  style={{ width: `${tasks.length > 0 ? (completedTasks / tasks.length) * 100 : 0}%` }}
+              {tasks.length > 0 && (
+                <div className="mt-4 h-2 overflow-hidden rounded-full bg-secondary">
+                  <div
+                    className="h-full rounded-full bg-lavender transition-all duration-300"
+                    style={{ width: `${(completedTasks / tasks.length) * 100}%` }}
+                  />
+                </div>
+              )}
+
+              {/* Add task */}
+              <div className="mt-4 flex items-center gap-2 rounded-3xl border border-border bg-card px-3 py-2.5">
+                <Plus className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+                <input
+                  type="text"
+                  value={newTask}
+                  onChange={(e) => setNewTask(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && addTask()}
+                  placeholder="Add a study goal…"
+                  className="min-w-0 flex-1 bg-transparent text-[15px] text-foreground placeholder:text-muted-foreground focus:outline-none"
                 />
+                <button
+                  type="button"
+                  onClick={addTask}
+                  disabled={!newTask.trim()}
+                  className="shrink-0 rounded-full bg-ink px-4 py-2 text-xs font-semibold text-ink-foreground transition-opacity hover:opacity-90 disabled:opacity-40"
+                >
+                  Add
+                </button>
               </div>
-              <div className="mt-4 divide-y divide-border rounded-3xl border border-border px-5 bg-card">
-                {tasks.map((task) => (
-                  <button
-                    key={task.id}
-                    type="button"
-                    onClick={() => toggleTask(task.id)}
-                    className="grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 py-4 text-left hover:bg-secondary/40 rounded-2xl px-2 transition-colors"
-                  >
-                    {task.done ? (
-                      <CheckCircle2 className="size-5 shrink-0 text-lavender" />
-                    ) : (
-                      <span className="size-5 shrink-0 rounded-full border-2 border-muted-foreground/40" />
-                    )}
-                    <span
-                      className={`min-w-0 truncate text-[15px] ${
-                        task.done ? "text-muted-foreground line-through" : "font-medium text-foreground"
-                      }`}
+
+              {tasks.length === 0 ? (
+                <div className="mt-4 rounded-3xl border border-dashed border-border px-6 py-10 text-center">
+                  <p className="text-sm font-medium text-foreground">No goals yet</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Add your first study goal above and start tracking today's progress.
+                  </p>
+                </div>
+              ) : (
+                <div className="mt-4 divide-y divide-border rounded-3xl border border-border px-5 bg-card">
+                  {tasks.map((task) => (
+                    <button
+                      key={task.id}
+                      type="button"
+                      onClick={() => toggleTask(task.id)}
+                      className="grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 py-4 text-left hover:bg-secondary/40 rounded-2xl px-2 transition-colors"
                     >
-                      {task.title}
-                    </span>
-                    <span className="flex shrink-0 items-center gap-1.5 text-xs text-muted-foreground">
-                      <Clock3 className="size-3.5" />
-                      {task.time}
-                    </span>
-                  </button>
-                ))}
-              </div>
+                      {task.done ? (
+                        <CheckCircle2 className="size-5 shrink-0 text-lavender" />
+                      ) : (
+                        <span className="size-5 shrink-0 rounded-full border-2 border-muted-foreground/40" />
+                      )}
+                      <span
+                        className={`min-w-0 truncate text-[15px] ${
+                          task.done ? "text-muted-foreground line-through" : "font-medium text-foreground"
+                        }`}
+                      >
+                        {task.title}
+                      </span>
+                      <span className="flex shrink-0 items-center gap-1.5 text-xs text-muted-foreground">
+                        <Clock3 className="size-3.5" />
+                        {task.time}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
             </section>
 
             <section>

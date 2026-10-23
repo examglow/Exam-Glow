@@ -30,7 +30,6 @@ import { Route as RecordLectureRouteImport } from './routes/record-lecture'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as StudyPlanRouteImport } from './routes/study-plan'
-import { Route as SyllabusRouteImport } from './routes/syllabus'
 import { Route as SyllabusNotesRouteImport } from './routes/syllabus-notes'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TestRouteImport } from './routes/test'
@@ -151,11 +150,6 @@ const StudyPlanRoute = StudyPlanRouteImport.update({
   path: '/study-plan',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SyllabusRoute = SyllabusRouteImport.update({
-  id: '/syllabus',
-  path: '/syllabus',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SyllabusNotesRoute = SyllabusNotesRouteImport.update({
   id: '/syllabus-notes',
   path: '/syllabus-notes',
@@ -249,7 +243,6 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/study-plan': typeof StudyPlanRoute
-  '/syllabus': typeof SyllabusRoute
   '/syllabus-notes': typeof SyllabusNotesRoute
   '/terms': typeof TermsRoute
   '/test': typeof TestRoute
@@ -287,7 +280,6 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/study-plan': typeof StudyPlanRoute
-  '/syllabus': typeof SyllabusRoute
   '/syllabus-notes': typeof SyllabusNotesRoute
   '/terms': typeof TermsRoute
   '/test': typeof TestRoute
@@ -326,7 +318,6 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRoute
   '/signup': typeof SignupRoute
   '/study-plan': typeof StudyPlanRoute
-  '/syllabus': typeof SyllabusRoute
   '/syllabus-notes': typeof SyllabusNotesRoute
   '/terms': typeof TermsRoute
   '/test': typeof TestRoute
@@ -366,7 +357,6 @@ export interface FileRouteTypes {
     | '/settings'
     | '/signup'
     | '/study-plan'
-    | '/syllabus'
     | '/syllabus-notes'
     | '/terms'
     | '/test'
@@ -404,7 +394,6 @@ export interface FileRouteTypes {
     | '/settings'
     | '/signup'
     | '/study-plan'
-    | '/syllabus'
     | '/syllabus-notes'
     | '/terms'
     | '/test'
@@ -442,7 +431,6 @@ export interface FileRouteTypes {
     | '/settings'
     | '/signup'
     | '/study-plan'
-    | '/syllabus'
     | '/syllabus-notes'
     | '/terms'
     | '/test'
@@ -481,7 +469,6 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   SignupRoute: typeof SignupRoute
   StudyPlanRoute: typeof StudyPlanRoute
-  SyllabusRoute: typeof SyllabusRoute
   SyllabusNotesRoute: typeof SyllabusNotesRoute
   TermsRoute: typeof TermsRoute
   TestRoute: typeof TestRoute
@@ -647,13 +634,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StudyPlanRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/syllabus': {
-      id: '/syllabus'
-      path: '/syllabus'
-      fullPath: '/syllabus'
-      preLoaderRoute: typeof SyllabusRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/syllabus-notes': {
       id: '/syllabus-notes'
       path: '/syllabus-notes'
@@ -777,7 +757,6 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   SignupRoute: SignupRoute,
   StudyPlanRoute: StudyPlanRoute,
-  SyllabusRoute: SyllabusRoute,
   SyllabusNotesRoute: SyllabusNotesRoute,
   TermsRoute: TermsRoute,
   TestRoute: TestRoute,

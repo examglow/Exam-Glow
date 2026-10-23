@@ -1,1228 +1,437 @@
 import type { SubjectNotes } from "./types";
 
 export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
- "id": "additional-mathematics",
- "name": "Additional Mathematics",
- "code": "0606",
- "color": "bg-violet-600",
- "chapters": [
- {
- "number": 1,
- "title": "Functions",
- "intro": " **What is this topic all about?** Functions define mathematical relations between domain inputs and range outputs. This chapter covers domain and range, one-to-one and many-to-one functions, condition for inverse functions, composite functions, and graphing and solving modulus functions $|f(x)|$.",
- "subheadings": [
- {
- "title": "Domain, Range and Function Types",
- "body": "A function $f$ is a rule that assigns to each element $x$ in a domain set $X$ exactly one element $y$ in a range set $Y$. ",
- "groups": [
- {
- "subTitle": "Function Classifications",
- "bullets": [
- "**Domain**: The set of all valid input values for which $f(x)$ is mathematically defined.",
- "**Range**: The set of all output values produced by $f(x)$ across its domain.",
- "**One-to-One Function**: Every distinct input maps to a unique output ($x_1 \\ne x_2 \\implies f(x_1) \\ne f(x_2)$); passes the **Horizontal Line Test**.",
- "**Many-to-One Function**: Multiple different inputs map to the same output (e.g. $f(x) = x^2$ for $x \\in \\mathbb{R}$).",
- "**One-to-Many**: Not a function (a single input cannot produce multiple distinct outputs)."
- ]
- },
- {
- "subTitle": " \"Domain, Range and Function Types\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Domain, Range and Function Types\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Composite and Inverse Functions",
- "body": "Forming composite operations $fg(x)$ and finding algebraic inverse functions $f^{-1}(x)$. ",
- "groups": [
- {
- "subTitle": "Composite Functions",
- "bullets": [
- "**Definition**: $fg(x) = f(g(x))$ — the function $g$ is evaluated first, and its output becomes the input to $f$.",
- "**Condition for Existence**: The composite function $fg(x)$ exists if and only if the **range of $g$** is a subset of the **domain of $f$** ($\\text{Range}(g) \\subseteq \\text{Domain}(f)$)."
- ]
- },
- {
- "subTitle": "Inverse Functions",
- "bullets": [
- "**Condition for Inverse**: A function $f(x)$ has an inverse $f^{-1}(x)$ if and only if $f$ is a **one-to-one** function over its specified domain.",
- "**Algebraic Method**: Set $y = f(x)$, rearrange algebraically to make $x$ the subject in terms of $y$, and replace $y$ with $x$ to write $f^{-1}(x)$.",
- "**Domain and Range Inversion**: $\\text{Domain}(f^{-1}) = \\text{Range}(f)$ and $\\text{Range}(f^{-1}) = \\text{Domain}(f)$.",
- "**Geometric Property**: The graph of $y = f^{-1}(x)$ is the **reflection** of $y = f(x)$ in the line $y = x$."
- ]
- },
- {
- "subTitle": " \"Composite and Inverse Functions\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Composite and Inverse Functions\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Modulus Functions and Equations",
- "body": "The modulus (absolute value) function returns the non-negative magnitude of a real quantity. ",
- "groups": [
- {
- "subTitle": "Graphing and Solving",
- "bullets": [
- "**Definition**: $|x| = x$ if $x \\ge 0$, and $|x| = -x$ if $x < 0$.",
- "**Graph of $y = |f(x)|$**: Sketch $y = f(x)$, then reflect all parts of the graph below the x-axis ($y < 0$) into the upper half-plane ($y > 0$).",
- "**Solving $|ax + b| = c$**: Split into two linear cases: $ax + b = c$ or $ax + b = -c$ (provided $c \\ge 0$).",
- "**Solving $|ax + b| = cx + d$**: Solve $ax + b = cx + d$ and $ax + b = -(cx + d)$, then test all candidate solutions to discard extraneous roots.",
- "**Solving $|f(x)| < g(x)$**: Solve by squaring both sides when both are positive, or sketch graphs to identify intersection intervals."
- ]
- },
- {
- "subTitle": " \"Modulus Functions and Equations\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Modulus Functions and Equations\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 1: \"Functions\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 2,
- "title": "Quadratic Functions",
- "intro": " **What is this topic all about?** Quadratic functions of the form $f(x) = ax^2 + bx + c$ produce parabolic curves. This chapter explores vertex form, maximum and minimum values, the discriminant $\\Delta = b^2 - 4ac$, line-curve intersections, and quadratic inequalities.",
- "subheadings": [
- {
- "title": "Vertex Form and Graph Features",
- "body": "Expressing quadratic functions in completed-square form reveals axis of symmetry and extrema. ",
- "groups": [
- {
- "bullets": [
- "**Standard Form**: $y = ax^2 + bx + c$. If $a > 0$, parabola opens upwards (minimum vertex); if $a < 0$, parabola opens downwards (maximum vertex).",
- "**Vertex (Completed Square) Form**: $y = a(x - h)^2 + k$.",
- "**Extremum and Symmetry**: Vertex coordinates are $(h, k) = \\left(-\\frac{b}{2a}, c - \\frac{b^2}{4a}\\right)$; Line of symmetry is the vertical line $x = h = -\\frac{b}{2a}$."
- ]
- },
- {
- "subTitle": " \"Vertex Form and Graph Features\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Vertex Form and Graph Features\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "The Discriminant and Nature of Roots",
- "body": "The discriminant determines the number of real roots of quadratic equations and intersections with lines. ",
- "groups": [
- {
- "subTitle": "Roots of $ax^2 + bx + c = 0$",
- "bullets": [
- "**Discriminant**: $\\Delta = b^2 - 4ac$.",
- "**$\\Delta > 0$**: Two distinct real roots (curve intersects x-axis at two distinct points).\\delta > 0$ works when you look at it in real life.",
- "**$\\Delta = 0$**: Two equal real roots (repeated root; curve touches x-axis as a tangent).\\delta = 0$ works when you look at it in real life.",
- "**$\\Delta < 0$**: No real roots (curve does not cross or touch the x-axis; strictly positive if $a > 0$ or strictly negative if $a < 0$).\\delta < 0$ works when you look at it in real life."
- ]
- },
- {
- "subTitle": "Intersection of Line and Quadratic Curve",
- "bullets": [
- "**Method**: Equate $mx + c = ax^2 + bx + d \\implies ax^2 + (b - m)x + (d - c) = 0$.",
- "**Two Intersections**: Discriminant $\\Delta > 0$ (line is a secant).",
- "**One Intersection (Tangent)**: Discriminant $\\Delta = 0$ (line is tangent to curve).",
- "**No Intersection**: Discriminant $\\Delta < 0$ (line does not meet curve)."
- ]
- },
- {
- "subTitle": " \"The Discriminant and Nature of Roots\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"The Discriminant and Nature of Roots\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Quadratic Inequalities",
- "body": "Solving inequalities involving quadratic expressions using critical values and sketch graphs. ",
- "groups": [
- {
- "bullets": [
- "**Solving $a(x - x_1)(x - x_2) > 0$ ($a > 0, x_1 < x_2$)**: The solution set is outside the roots: $x < x_1$ or $x > x_2$.",
- "**Solving $a(x - x_1)(x - x_2) < 0$ ($a > 0, x_1 < x_2$)**: The solution set is between the roots: $x_1 < x < x_2$."
- ]
- },
- {
- "subTitle": " \"Quadratic Inequalities\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Quadratic Inequalities\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 2: \"Quadratic Functions\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 3,
- "title": "Factors of Polynomials",
- "intro": " **What is this topic all about?** Polynomial algebra extends quadratic concepts to cubic and higher degree polynomials. This chapter covers polynomial long division, the Remainder Theorem, the Factor Theorem, complete factorisation of cubic expressions, and solving polynomial equations.",
- "subheadings": [
- {
- "title": "Polynomial Operations and Long Division",
- "body": "Dividing a polynomial $P(x)$ by a divisor $D(x)$ produces a quotient $Q(x)$ and remainder $R(x)$ such that $P(x) = D(x)Q(x) + R(x)$. ",
- "groups": [
- {
- "bullets": [
- "**Polynomial Degree**: The highest power of $x$ appearing with a non-zero coefficient.",
- "**Polynomial Long Division**: Systematic algebraic division algorithm to divide $P(x)$ by a linear divisor $(ax + b)$ until the remainder is a constant.",
- "**Identity**: $\\frac{P(x)}{ax + b} = Q(x) + \\frac{R}{ax + b} \\iff P(x) = (ax + b)Q(x) + R$."
- ]
- },
- {
- "subTitle": " \"Polynomial Operations and Long Division\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Polynomial Operations and Long Division\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "The Remainder and Factor Theorems",
- "body": "Fundamental algebraic theorems providing rapid methods to evaluate polynomial remainders and identify linear factors without full division. ",
- "groups": [
- {
- "subTitle": "The Remainder Theorem",
- "bullets": [
- "**Theorem Statement**: When a polynomial $P(x)$ is divided by a linear factor $(ax - b)$, the remainder is $R = P\\left(\\frac{b}{a}\\right)$.",
- "**Example**: Remainder when $P(x) = 2x^3 - 3x^2 + 4$ is divided by $(x - 2)$ is $P(2) = 2(8) - 3(4) + 4 = 16 - 12 + 4 = 8$."
- ]
- },
- {
- "subTitle": "The Factor Theorem",
- "bullets": [
- "**Theorem Statement**: The linear binomial $(ax - b)$ is a factor of $P(x)$ if and only if $P\\left(\\frac{b}{a}\\right) = 0$.",
- "**Factorising a Cubic $P(x)$**: (1) Test integer factors of the constant term using the Factor Theorem until $P(k) = 0 \\implies (x - k)$ is a factor; (2) Use polynomial division or coefficient comparison to find the remaining quadratic factor $Q(x)$; (3) Factorise $Q(x)$ into linear factors if possible."
- ]
- },
- {
- "subTitle": " \"The Remainder and Factor Theorems\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"The Remainder and Factor Theorems\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 3: \"Factors of Polynomials\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 4,
- "title": "Equations, Inequalities and Graphs",
- "intro": " **What is this topic all about?** This chapter develops skills in graph sketching of polynomials and rational functions, solving cubic inequalities, solving absolute value equations graphically, and understanding transformations of curves.",
- "subheadings": [
- {
- "title": "Graph Sketching of Polynomials",
- "body": "Techniques for sketching cubic and higher-order curves by identifying axis intercepts, end behaviour, and turning points. ",
- "groups": [
- {
- "bullets": [
- "**Roots and X-Intercepts**: Set $P(x) = 0$. Distinct roots $(x - a)$ cross the x-axis; repeated roots $(x - a)^2$ touch the x-axis as turning points; $(x - a)^3$ cross with a stationary point of inflexion.",
- "**Y-Intercept**: Evaluate $P(0)$ (the constant term).",
- "**End Behaviour**: For $y = ax^3$, if $a > 0$, as $x \\to +\\infty, y \\to +\\infty$ and as $x \\to -\\infty, y \\to -\\infty$."
- ]
- },
- {
- "subTitle": " \"Graph Sketching of Polynomials\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Graph Sketching of Polynomials\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Solving Non-Linear Inequalities",
- "body": "Using sign diagrams and sketch graphs to determine solution intervals for polynomial and rational inequalities. ",
- "groups": [
- {
- "bullets": [
- "**Sign Diagram Method**: Find all real roots (critical points), plot on a number line, and test the sign of the expression in each interval.",
- "**Rational Inequalities**: To solve $\\frac{P(x)}{Q(x)} > 0$, multiply by $[Q(x)]^2 > 0$ (never multiply by $Q(x)$ directly as its sign is unknown) to obtain $P(x)Q(x) > 0$ with $Q(x) \\ne 0$."
- ]
- },
- {
- "subTitle": " \"Solving Non-Linear Inequalities\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Solving Non-Linear Inequalities\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 4: \"Equations, Inequalities and Graphs\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 5,
- "title": "Simultaneous Equations",
- "intro": " **What is this topic all about?** Simultaneous systems require finding coordinates $(x, y)$ that simultaneously satisfy two or more algebraic equations. This chapter focuses on solving systems involving one linear and one non-linear equation by algebraic substitution and interpreting results geometrically as intersections or tangencies.",
- "subheadings": [
- {
- "title": "Algebraic Solution by Substitution",
- "body": "The substitution method provides the universal technique for solving linear and non-linear simultaneous pairs. ",
- "groups": [
- {
- "subTitle": "Step-by-Step Procedure",
- "bullets": [
- "**Step 1**: From the linear equation $ax + by = c$, rearrange to express one variable in terms of the other (e.g. $y = \\frac{c - ax}{b}$).",
- "**Step 2**: Substitute this expression for $y$ into the non-linear equation (e.g. $x^2 + y^2 = r^2$ or $y = px^2 + qx + r$).",
- "**Step 3**: Expand and simplify to form a single quadratic equation in $x$: $Ax^2 + Bx + C = 0$.",
- "**Step 4**: Solve for $x$ using factorisation or the quadratic formula.",
- "**Step 5**: Substitute each $x$-value back into the **linear** equation to find the corresponding $y$-values, writing solutions as coordinate pairs $(x_1, y_1)$ and $(x_2, y_2)$."
- ]
- },
- {
- "subTitle": "Geometric Interpretation",
- "bullets": [
- "**Two Distinct Solutions**: The line intersects the curve at two distinct points (secant line).",
- "**One Repeated Solution**: The line touches the curve at exactly one point (tangent line).",
- "**No Real Solutions**: The line does not meet the curve."
- ]
- },
- {
- "subTitle": " \"Algebraic Solution by Substitution\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Algebraic Solution by Substitution\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 5: \"Simultaneous Equations\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 6,
- "title": "Logarithmic and Exponential Functions",
- "intro": " **What is this topic all about?** Logarithmic and exponential functions model continuous growth, decay, and power relationships across mathematics and science. This chapter covers the laws of logarithms, natural logarithms $\\ln x$, change of base formula, solving exponential equations, and modeling exponential phenomena.",
- "subheadings": [
- {
- "title": "Laws of Logarithms and Natural Logarithms",
- "body": "Logarithms are the mathematical inverses of exponential functions: $y = a^x \\iff x = \\log_a y$ ($a > 0, a \\ne 1, y > 0$). ",
- "groups": [
- {
- "subTitle": "The Laws of Logarithms",
- "bullets": [
- "**Product Law**: $\\log_a(xy) = \\log_a x + \\log_a y$",
- "**Quotient Law**: $\\log_a\\left(\\frac{x}{y}\\right) = \\log_a x - \\log_a y$",
- "**Power Law**: $\\log_a(x^k) = k \\log_a x$",
- "**Special Values**: $\\log_a 1 = 0$ and $\\log_a a = 1$",
- "**Change of Base Formula**: $\\log_b x = \\frac{\\log_a x}{\\log_a b}$ (commonly using base 10 or natural base $e$: $\\log_b x = \\frac{\\ln x}{\\ln b}$)",
- "**Natural Logarithms**: $\\ln x = \\log_e x$ where $e \\approx 2.71828$; $e^{\\ln x} = x$ and $\\ln(e^x) = x$."
- ]
- },
- {
- "subTitle": " \"Laws of Logarithms and Natural Logarithms\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Laws of Logarithms and Natural Logarithms\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Solving Exponential and Logarithmic Equations",
- "body": "Methods for solving equations where the unknown variable appears in the exponent or inside a logarithm. ",
- "groups": [
- {
- "subTitle": "Equation Types",
- "bullets": [
- "**Simple Exponential ($a^x = b$)**: Take natural logs of both sides: $\\ln(a^x) = \\ln b \\implies x \\ln a = \\ln b \\implies x = \\frac{\\ln b}{\\ln a}$.",
- "**Hidden Quadratics ($a^{2x} + p a^x + q = 0$)**: Substitute $u = a^x$ to form $u^2 + pu + q = 0$, solve for $u$, then solve $a^x = u$ (rejecting $u \\le 0$).",
- "**Logarithmic Equations**: Combine terms using log laws into $\\log_a(f(x)) = \\log_a(g(x)) \\implies f(x) = g(x)$, checking solutions against domain constraints ($f(x) > 0$)."
- ]
- },
- {
- "subTitle": " \"Solving Exponential and Logarithmic Equations\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Solving Exponential and Logarithmic Equations\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 6 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 6: \"Logarithmic and Exponential Functions\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 7,
- "title": "Straight-Line Graphs",
- "intro": " **What is this topic all about?** Many scientific and economic relationships are non-linear. By applying logarithms or algebraic substitution, non-linear laws can be transformed into the linear form $Y = mX + c$, allowing unknown constants to be determined from experimental straight-line graphs.",
- "subheadings": [
- {
- "title": "Transforming Non-Linear Relationships to Linear Form",
- "body": "Converting non-linear equations into the linear form $Y = mX + c$ where $Y$ and $X$ are expressions in $x$ and $y$. ",
- "groups": [
- {
- "subTitle": "Power Law: $y = ax^n$",
- "bullets": [
- "**Linear Transformation**: Take logs: $\\ln y = \\ln(ax^n) = \\ln a + n \\ln x \\implies \\ln y = n(\\ln x) + \\ln a$.",
- "**Graph Plot**: Plot $Y = \\ln y$ against $X = \\ln x$.",
- "**Parameters**: Gradient $m = n$; Y-intercept $c = \\ln a \\implies a = e^c$."
- ]
- },
- {
- "subTitle": "Exponential Law: $y = Ab^x$",
- "bullets": [
- "**Linear Transformation**: Take logs: $\\ln y = \\ln(Ab^x) = \\ln A + x \\ln b \\implies \\ln y = (\\ln b)x + \\ln A$.",
- "**Graph Plot**: Plot $Y = \\ln y$ against $X = x$.",
- "**Parameters**: Gradient $m = \\ln b \\implies b = e^m$; Y-intercept $c = \\ln A \\implies A = e^c$."
- ]
- },
- {
- "subTitle": "Other Algebraic Forms",
- "bullets": [
- "**$y = \\frac{a}{x} + b$**: Plot $y$ against $\\frac{1}{x}$; Gradient $= a$, Y-intercept $= b$.\\frac{a}{x} + b$ works when you look at it in real life.",
- "**$xy = ax + b$**: Divide by $x$: $y = a + \\frac{b}{x}$; Plot $y$ against $\\frac{1}{x}$; Gradient $= b$, Y-intercept $= a$.",
- "**$y = ax^2 + bx$**: Divide by $x$: $\\frac{y}{x} = ax + b$; Plot $\\frac{y}{x}$ against $x$; Gradient $= a$, Y-intercept $= b$."
- ]
- },
- {
- "subTitle": " \"Transforming Non-Linear Relationships to Linear Form\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Transforming Non-Linear Relationships to Linear Form\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 7 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 7: \"Straight-Line Graphs\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 8,
- "title": "Coordinate Geometry of the Circle",
- "intro": " **What is this topic all about?** This chapter develops the analytic geometry of circles on the Cartesian plane, deriving circle equations in standard and general forms, finding equations of tangents and normals, and analyzing chords and intersections.",
- "subheadings": [
- {
- "title": "Equations of Circles",
- "body": "A circle is the locus of all points $(x, y)$ equidistant from a fixed centre point. ",
- "groups": [
- {
- "subTitle": "Standard and General Forms",
- "bullets": [
- "**Standard Form (Centre $(a, b)$, Radius $r$)**: $(x - a)^2 + (y - b)^2 = r^2$.",
- "**Circle Centred at Origin**: $x^2 + y^2 = r^2$.",
- "**General Form**: $x^2 + y^2 + 2gx + 2fy + c = 0$.",
- "**Finding Centre and Radius from General Form**: Complete the square: $\\text{Centre} = (-g, -f)$ and $\\text{Radius} = r = \\sqrt{g^2 + f^2 - c}$ (valid if $g^2 + f^2 - c > 0$)."
- ]
- },
- {
- "subTitle": " \"Equations of Circles\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Equations of Circles\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Tangents, Normals and Chords",
- "body": "Applying coordinate geometry to determine tangent lines, normal lines, and chord properties. ",
- "groups": [
- {
- "bullets": [
- "**Tangent at Point $P(x_1, y_1)$ on Circle**: (1) Find gradient of radius $m_{\\text{rad}} = \\frac{y_1 - b}{x_1 - a}$; (2) Tangent gradient is perpendicular: $m_{\\text{tan}} = -\\frac{1}{m_{\\text{rad}}}$; (3) Tangent equation: $y - y_1 = m_{\\text{tan}}(x - x_1)$.",
- "**Normal to Circle at $P(x_1, y_1)$**: The normal is the line passing through $P$ and the centre $(a, b)$, with gradient $m_{\\text{rad}}$.",
- "**Perpendicular Bisector of a Chord**: The perpendicular bisector of any chord passes through the centre of the circle."
- ]
- },
- {
- "subTitle": " \"Tangents, Normals and Chords\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Tangents, Normals and Chords\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 8 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 8: \"Coordinate Geometry of the Circle\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 9,
- "title": "Circular Measure",
- "intro": " **What is this topic all about?** Circular measure utilizes the radian as the natural unit of angle measurement. This chapter establishes radian-degree conversions and exact formulas for arc length, sector area, and segment area.",
- "subheadings": [
- {
- "title": "Radian Measure and Conversions",
- "body": "One radian is the angle subtended at the centre of a circle by an arc equal in length to the radius. ",
- "groups": [
- {
- "bullets": [
- "**Fundamental Identity**: $\\pi \\text{ radians} = 180^\\circ \\iff 1 \\text{ rad} = \\frac{180^\\circ}{\\pi} \\approx 57.3^\\circ$.",
- "**Degrees to Radians**: Multiply by $\\frac{\\pi}{180^\\circ}$ (e.g. $60^\\circ = 60 \\times \\frac{\\pi}{180} = \\frac{\\pi}{3} \\text{ rad}$).",
- "**Radians to Degrees**: Multiply by $\\frac{180^\\circ}{\\pi}$ (e.g. $\\frac{3\\pi}{4} \\text{ rad} = \\frac{3\\pi}{4} \\times \\frac{180}{\\pi} = 135^\\circ$)."
- ]
- },
- {
- "subTitle": " \"Radian Measure and Conversions\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Radian Measure and Conversions\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Arc Length, Sector Area and Segment Area",
- "body": "Direct formulas for circular geometric measurements when angle $\\theta$ is in radians. ",
- "groups": [
- {
- "subTitle": "Formulas ($\\theta$ in radians)",
- "bullets": [
- "**Arc Length ($s$)**: $s = r\\theta$.",
- "**Sector Area ($A$)**: $A_{\\text{sector}} = \\frac{1}{2}r^2\\theta$.",
- "**Area of a Segment**: $\\text{Area of Segment} = \\text{Area of Sector} - \\text{Area of Triangle} = \\frac{1}{2}r^2\\theta - \\frac{1}{2}r^2\\sin\\theta = \\frac{1}{2}r^2(\\theta - \\sin\\theta)$.",
- "**Perimeter of a Segment**: $\\text{Perimeter} = s + \\text{chord length} = r\\theta + 2r\\sin\\left(\\frac{\\theta}{2}\\right)$."
- ]
- },
- {
- "subTitle": " \"Arc Length, Sector Area and Segment Area\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Arc Length, Sector Area and Segment Area\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 9 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 9: \"Circular Measure\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 10,
- "title": "Trigonometry",
- "intro": " **What is this topic all about?** Trigonometry in Additional Mathematics extends to angles of any magnitude, reciprocal trigonometric functions (secant, cosecant, cotangent), Pythagorean trigonometric identities, harmonic waveforms $y = a\\sin(bx) + c$, and solving general trigonometric equations.",
- "subheadings": [
- {
- "title": "Trigonometric Functions of General Angles and the CAST Rule",
- "body": "Defining trigonometric ratios on the unit circle across all four quadrants. ",
- "groups": [
- {
- "subTitle": "The CAST Diagram",
- "bullets": [
- "**Quadrant 1 ($0 < \\theta < 90^\\circ$)**: **All** ratios positive ($sin, cos, \tan > 0$).\\theta < 90^\\circ$) works when you look at it in real life.",
- "**Quadrant 2 ($90^\\circ < \\theta < 180^\\circ$)**: **Sine** positive; $sin(180^\\circ - \\theta) = \\sin \\theta$, $\\cos(180^\\circ - \\theta) = -\\cos \\theta$, $\\tan(180^\\circ - \\theta) = -\\tan \\theta$.\\circ < \\theta < 180^\\circ$) works when you look at it in real life.",
- "**Quadrant 3 ($180^\\circ < \\theta < 270^\\circ$)**: **Tangent** positive; $sin(180^\\circ + \\theta) = -\\sin \\theta$, $\\cos(180^\\circ + \\theta) = -\\cos \\theta$, $\\tan(180^\\circ + \\theta) = \\tan \\theta$.\\circ < \\theta < 270^\\circ$) works when you look at it in real life.",
- "**Quadrant 4 ($270^\\circ < \\theta < 360^\\circ$)**: **Cosine** positive; $sin(360^\\circ - \\theta) = -\\sin \\theta$, $\\cos(360^\\circ - \\theta) = \\cos \\theta$, $\\tan(360^\\circ - \\theta) = -\\tan \\theta$.\\circ < \\theta < 360^\\circ$) works when you look at it in real life."
- ]
- },
- {
- "subTitle": " \"Trigonometric Functions of General Angles and the CAST Rule\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Trigonometric Functions of General Angles and the CAST Rule\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Reciprocal Functions and Fundamental Identities",
- "body": "Definitions of reciprocal ratios and the Pythagorean identities. ",
- "groups": [
- {
- "subTitle": "Reciprocal Functions",
- "bullets": [
- "**Secant**: $\\sec \\theta = \\frac{1}{\\cos \\theta}$",
- "**Cosecant**: $\\csc \\theta = \\frac{1}{\\sin \\theta}$",
- "**Cotangent**: $\\cot \\theta = \\frac{1}{\\tan \\theta} = \\frac{\\cos \\theta}{\\sin \\theta}$"
- ]
- },
- {
- "subTitle": "Trigonometric Identities",
- "bullets": [
- "**Primary Pythagorean Identity**: $\\sin^2 \\theta + \\cos^2 \\theta = 1$",
- "**Secant-Tangent Identity**: $1 + \\tan^2 \\theta = \\sec^2 \\theta$ (divide primary identity by $\\cos^2 \\theta$)",
- "**Cosecant-Cotangent Identity**: $1 + \\cot^2 \\theta = \\csc^2 \\theta$ (divide primary identity by $\\sin^2 \\theta$)"
- ]
- },
- {
- "subTitle": " \"Reciprocal Functions and Fundamental Identities\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Reciprocal Functions and Fundamental Identities\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Trigonometric Graphs and Equations",
- "body": "Analyzing amplitude, period, and phase, and systematically solving trigonometric equations. ",
- "groups": [
- {
- "subTitle": "Waveform Characteristics: $y = a\\sin(bx) + c$",
- "bullets": [
- "**Amplitude**: $|a| = \\frac{\\text{Max} - \\text{Min}}{2}$",
- "**Period**: $\\text{Period} = \\frac{360^\\circ}{b}$ (or $\\frac{2\\pi}{b}$ radians)",
- "**Vertical Shift (Principal Axis)**: $y = c = \\frac{\\text{Max} + \\text{Min}}{2}$"
- ]
- },
- {
- "subTitle": "Solving Trigonometric Equations",
- "bullets": [
- "**Step 1**: Isolate the trig ratio (e.g. $\\sin(2x - \\pi/4) = 0.5$).",
- "**Step 2**: Determine the principal basic acute angle $\\alpha = \\arcsin|0.5| = \\pi/6$.",
- "**Step 3**: Identify the correct quadrants using CAST according to the sign of the ratio.",
- "**Step 4**: Adjust domain interval for the compound angle ($2x - \\pi/4$) and solve for $x$."
- ]
- },
- {
- "subTitle": " \"Trigonometric Graphs and Equations\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Trigonometric Graphs and Equations\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 10 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 10: \"Trigonometry\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 11,
- "title": "Permutations and Combinations",
- "intro": " **What is this topic all about?** Combinatorics is the branch of mathematics dealing with counting arrangements and selections. This chapter covers the multiplication principle, factorial notation, permutations (where order matters), combinations (where order does not matter), and problem-solving with constraints.",
- "subheadings": [
- {
- "title": "The Multiplication Principle and Factorials",
- "body": "Fundamental counting rules for independent sequential choices. ",
- "groups": [
- {
- "bullets": [
- "**Multiplication Principle**: If a task consists of $k$ consecutive steps where step 1 has $n_1$ choices, step 2 has $n_2$ choices, $\\dots$, total ways $= n_1 \\times n_2 \\times \\dots \\times n_k$.",
- "**Factorial Notation**: $n! = n \\times (n - 1) \\times (n - 2) \\times \\dots \\times 2 \\times 1$; by definition, $0! = 1$."
- ]
- },
- {
- "subTitle": " \"The Multiplication Principle and Factorials\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"The Multiplication Principle and Factorials\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Permutations (Arrangements Where Order Matters)",
- "body": "Calculating ordered arrangements of $r$ objects chosen from $n$ distinct items. ",
- "groups": [
- {
- "subTitle": "Permutation Formulas",
- "bullets": [
- "**Arranging $n$ Distinct Objects**: $n!$ ways.",
- "**Arranging $r$ Objects from $n$ Distinct Objects**: $^n\\text{P}_r = \\frac{n!}{(n - r)!}$.",
- "**Arrangements with Repetition**: If there are $p$ identical items of one type, $q$ of another: $\\text{Total Ways} = \\frac{n!}{p! \\, q! \\, r!}$."
- ]
- },
- {
- "subTitle": "Common Constraint Strategies",
- "bullets": [
- "**Items Must Be Together ('Block/Glue Method')**: Treat grouped items as a single unit, arrange the units, then multiply by internal permutations of the group.",
- "**Items Must Be Separated ('Gap Method')**: Arrange unconstrained items first, then place constrained items into the available spaces (gaps) between them.",
- "**Complement Rule**: $\\text{Favorable Arrangements} = \\text{Total Unrestricted} - \\text{Unfavorable Arrangements}$."
- ]
- },
- {
- "subTitle": " \"Permutations (Arrangements Where Order Matters)\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Permutations (Arrangements Where Order Matters)\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Combinations (Selections Where Order Does NOT Matter)",
- "body": "Calculating unordered subsets of $r$ objects chosen from $n$ distinct items. ",
- "groups": [
- {
- "subTitle": "Combination Formula",
- "bullets": [
- "**Selection Formula**: $^n\\text{C}_r = \\binom{n}{r} = \\frac{n!}{r!(n - r)!}$.",
- "**Symmetry Property**: $\\binom{n}{r} = \\binom{n}{n - r}$.",
- "**Committee & Team Selections**: Multiply independent combination selections (e.g. choosing 3 men from 7 AND 2 women from 5: $\\binom{7}{3} \\times \\binom{5}{2} = 35 \\times 10 = 350$)."
- ]
- },
- {
- "subTitle": " \"Combinations (Selections Where Order Does NOT Matter)\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Combinations (Selections Where Order Does NOT Matter)\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 11 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 11: \"Permutations and Combinations\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 12,
- "title": "Series",
- "intro": " **What is this topic all about?** A series is the sum of terms in a sequence. This chapter covers the Binomial Theorem for positive integer indices $(a + b)^n$, Arithmetic Progressions (AP), Geometric Progressions (GP), and the sum to infinity of convergent geometric series.",
- "subheadings": [
- {
- "title": "The Binomial Theorem",
- "body": "Expanding algebraic binomial powers $(a + b)^n$ for positive integer $n \\in \\mathbb{Z}^+$. ",
- "groups": [
- {
- "subTitle": "Expansion Formulas",
- "bullets": [
- "**Binomial Theorem**: $(a + b)^n = \\sum_{r=0}^n \\binom{n}{r} a^{n-r} b^r = a^n + \\binom{n}{1}a^{n-1}b + \\binom{n}{2}a^{n-2}b^2 + \\dots + b^n$.",
- "**Expansion of $(1 + x)^n$**: $(1 + x)^n = 1 + nx + \\frac{n(n-1)}{2!}x^2 + \\frac{n(n-1)(n-2)}{3!}x^3 + \\dots + x^n$.",
- "**General $(r+1)$th Term ($T_{r+1}$)**: $T_{r+1} = \\binom{n}{r} a^{n-r} b^r$."
- ]
- },
- {
- "subTitle": " \"The Binomial Theorem\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"The Binomial Theorem\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Arithmetic Progressions (AP)",
- "body": "Sequences with a constant common difference $d$ between successive terms. ",
- "groups": [
- {
- "subTitle": "AP Formulas",
- "bullets": [
- "**$n$th Term ($T_n$)**: $T_n = a + (n - 1)d$ where $a$ is the first term and $d = T_{k+1} - T_k$.",
- "**Sum of First $n$ Terms ($S_n$)**: $S_n = \\frac{n}{2}[2a + (n - 1)d] = \\frac{n}{2}(a + l)$ where $l = T_n$ is the last term."
- ]
- },
- {
- "subTitle": " \"Arithmetic Progressions (AP)\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Arithmetic Progressions (AP)\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Geometric Progressions (GP)",
- "body": "Sequences with a constant common ratio $r$ between successive terms. ",
- "groups": [
- {
- "subTitle": "GP Formulas",
- "bullets": [
- "**$n$th Term ($T_n$)**: $T_n = a r^{n-1}$ where $a$ is the first term and $r = \\frac{T_{k+1}}{T_k}$.",
- "**Sum of First $n$ Terms ($S_n$)**: $S_n = \\frac{a(1 - r^n)}{1 - r} = \\frac{a(r^n - 1)}{r - 1}$ ($r \\ne 1$).",
- "**Sum to Infinity ($S_\\infty$)**: Exists if and only if the series is **convergent** ($|r| < 1 \\iff -1 < r < 1$): $S_\\infty = \\frac{a}{1 - r}$.\\infty$) works when you look at it in real life."
- ]
- },
- {
- "subTitle": " \"Geometric Progressions (GP)\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Geometric Progressions (GP)\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 12 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 12: \"Series\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 13,
- "title": "Vectors in Two Dimensions",
- "intro": " **What is this topic all about?** Vectors represent geometric quantities possessing magnitude and direction. This chapter covers unit vectors $\\mathbf{i}$ and $\\mathbf{j}$, vector addition and scalar multiplication, position vectors, collinearity proofs, and relative velocity.",
- "subheadings": [
- {
- "title": "Vector Notation, Magnitude and Unit Vectors",
- "body": "Representing 2D vectors in Cartesian component form. ",
- "groups": [
- {
- "bullets": [
- "**Component Form**: $\\mathbf{r} = x\\mathbf{i} + y\\mathbf{j} = \\begin{pmatrix} x \\\\ y \\end{pmatrix}$ where $\\mathbf{i} = \\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}$ and $\\mathbf{j} = \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix}$.",
- "**Magnitude (Length)**: $|\\mathbf{r}| = \\sqrt{x^2 + y^2}$.",
- "**Unit Vector**: A vector of magnitude 1 in the direction of $\\mathbf{r}$: $\\hat{\\mathbf{r}} = \\frac{\\mathbf{r}}{|\\mathbf{r}|} = \\frac{1}{\\sqrt{x^2 + y^2}}\\begin{pmatrix} x \\\\ y \\end{pmatrix}$."
- ]
- },
- {
- "subTitle": " \"Vector Notation, Magnitude and Unit Vectors\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Vector Notation, Magnitude and Unit Vectors\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Position Vectors, Geometric Proofs and Relative Velocity",
- "body": "Using vector algebra for displacement, collinearity, and relative motion. ",
- "groups": [
- {
- "subTitle": "Position Vectors and Collinearity",
- "bullets": [
- "**Displacement Vector**: $\\vec{AB} = \\vec{OB} - \\vec{OA} = \\mathbf{b} - \\mathbf{a}$.",
- "**Collinearity Condition**: Three distinct points $A, B, C$ are collinear if $\\vec{AB} = k \\vec{BC}$ ($k$ is a scalar) and they share point $B$."
- ]
- },
- {
- "subTitle": "Relative Velocity",
- "bullets": [
- "**Definition**: Velocity of body $A$ relative to body $B$ is $\\mathbf{v}_{A/B} = \\mathbf{v}_A - \\mathbf{v}_B$.",
- "**Interception & Closest Approach**: If body $A$ with initial position $\\mathbf{r}_A$ moves at velocity $\\mathbf{v}_A$, position at time $t$ is $\\mathbf{r}(t) = \\mathbf{r}_A + t\\mathbf{v}_A$."
- ]
- },
- {
- "subTitle": " \"Position Vectors, Geometric Proofs and Relative Velocity\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Position Vectors, Geometric Proofs and Relative Velocity\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 13 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 13: \"Vectors in Two Dimensions\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- },
- {
- "number": 14,
- "title": "Calculus",
- "intro": " **What is this topic all about?** Calculus is the mathematical study of continuous change. Differential calculus finds instantaneous rates of change, gradients of tangents and normals, turning points, and rates of change. Integral calculus reverses differentiation to determine total accumulated quantities, areas under curves, and kinematic displacement from velocity.",
- "subheadings": [
- {
- "title": "Differentiation Rules and Techniques",
- "body": "Methods for calculating derivatives of algebraic, exponential, logarithmic, and trigonometric functions. ",
- "groups": [
- {
- "subTitle": "Standard Derivatives",
- "bullets": [
- "**Power Rule**: $\\frac{d}{dx}(x^n) = n x^{n-1}$",
- "**Exponential**: $\\frac{d}{dx}(e^{ax+b}) = a e^{ax+b}$",
- "**Logarithm**: $\\frac{d}{dx}(\\ln(ax+b)) = \\frac{a}{ax+b}$",
- "**Trigonometric**: $\\frac{d}{dx}(\\sin(ax+b)) = a\\cos(ax+b)$; $\\frac{d}{dx}(\\cos(ax+b)) = -a\\sin(ax+b)$; $\\frac{d}{dx}(\\tan(ax+b)) = a\\sec^2(ax+b)$"
- ]
- },
- {
- "subTitle": "Product, Quotient and Chain Rules",
- "bullets": [
- "**Chain Rule**: $\\frac{dy}{dx} = \\frac{dy}{du} \\times \\frac{du}{dx}$ (e.g. $\\frac{d}{dx}[f(x)]^n = n[f(x)]^{n-1} f'(x)$).",
- "**Product Rule**: $\\frac{d}{dx}(uv) = u\\frac{dv}{dx} + v\\frac{du}{dx}$.",
- "**Quotient Rule**: $\\frac{d}{dx}\\left(\\frac{u}{v}\\right) = \\frac{v\\frac{du}{dx} - u\\frac{dv}{dx}}{v^2}$."
- ]
- },
- {
- "subTitle": " \"Differentiation Rules and Techniques\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Differentiation Rules and Techniques\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Applications of Differentiation",
- "body": "Using derivatives to calculate tangents, normals, maximum and minimum values, and connected rates of change. ",
- "groups": [
- {
- "subTitle": "Tangents and Normals",
- "bullets": [
- "**Gradient of Tangent**: $m_{\\text{tan}} = \\left.\\frac{dy}{dx}\\right|_{x = x_1}$; Tangent line: $y - y_1 = m_{\\text{tan}}(x - x_1)$.",
- "**Gradient of Normal**: $m_{\\text{norm}} = -\\frac{1}{m_{\\text{tan}}}$; Normal line: $y - y_1 = m_{\\text{norm}}(x - x_1)$."
- ]
- },
- {
- "subTitle": "Stationary Points and Nature",
- "bullets": [
- "**Stationary Point Condition**: Set $\\frac{dy}{dx} = 0$ and solve for $x$.",
- "**Second Derivative Test**: If $\\frac{d^2y}{dx^2} > 0 \\implies$ **Local Minimum**; If $\\frac{d^2y}{dx^2} < 0 \\implies$ **Local Maximum**; If $\\frac{d^2y}{dx^2} = 0$, test sign of $\\frac{dy}{dx}$ on either side (inflexion point)."
- ]
- },
- {
- "subTitle": "Connected Rates of Change",
- "bullets": [
- "**Formula**: $\\frac{dy}{dt} = \\frac{dy}{dx} \\times \\frac{dx}{dt}$."
- ]
- },
- {
- "subTitle": " \"Applications of Differentiation\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Applications of Differentiation\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": "Integration and Applications",
- "body": "Indefinite and definite integration, area under a curve, and kinematics. ",
- "groups": [
- {
- "subTitle": "Standard Integrals",
- "bullets": [
- "**Power Rule**: $\\int x^n dx = \\frac{x^{n+1}}{n+1} + c$ ($n \\ne -1$)",
- "**Reciprocal**: $\\int \\frac{1}{ax+b} dx = \\frac{1}{a}\\ln|ax+b| + c$",
- "**Exponential**: $\\int e^{ax+b} dx = \\frac{1}{a}e^{ax+b} + c$",
- "**Trigonometric**: $\\int \\sin(ax+b) dx = -\\frac{1}{a}\\cos(ax+b) + c$; $\\int \\cos(ax+b) dx = \\frac{1}{a}\\sin(ax+b) + c$; $\\int \\sec^2(ax+b) dx = \\frac{1}{a}\\tan(ax+b) + c$"
- ]
- },
- {
- "subTitle": "Area Under a Curve & Kinematics",
- "bullets": [
- "**Area Under Curve Between $x = a$ and $x = b$**: $\\text{Area} = \\int_a^b y \\, dx$.",
- "**Area Between Two Curves**: $\\text{Area} = \\int_a^b (y_{\\text{upper}} - y_{\\text{lower}}) \\, dx$.",
- "**Kinematics Connections**: Displacement $s(t)$, Velocity $v(t) = \\frac{ds}{dt}$, Acceleration $a(t) = \\frac{dv}{dt}$; $v = \\int a \\, dt$ and $s = \\int v \\, dt$."
- ]
- },
- {
- "subTitle": " \"Integration and Applications\" — Super Simple Breakdown & Memory Tricks",
- "bullets": [
- "**The 1-Minute Rule**: If you had to explain \"Integration and Applications\" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.",
- "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
- "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!"
- ]
- }
- ]
- },
- {
- "title": " Chapter 14 Exam Mastery: Top Mistakes & How to Get Full Marks",
- "body": "Here is your cheat-sheet for Chapter 14: \"Calculus\". These are the exact pitfalls examiners point out in Cambridge examiner reports year after year.",
- "groups": [
- {
- "subTitle": " The 3 Biggest Mistakes Students Make in This Chapter",
- "bullets": [
- "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
- "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
- "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result."
- ]
- },
- {
- "subTitle": " Golden Rules for Full Marks",
- "bullets": [
- "**Rule 1 — Use the exact keywords**: Cambridge examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
- "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
- "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps)."
- ]
- }
- ]
- }
- ]
- }
- ]
+  id: "additional-mathematics",
+  name: "Additional Mathematics",
+  code: "0606",
+  color: "bg-violet-600",
+  chapters: [
+    {
+      number: 1,
+      title: "Functions",
+      intro: "A function is a rule that takes each allowed input value x and produces exactly one output value y = f(x). Functions are the foundation of the whole 0606 course: composite and inverse functions appear in almost every Paper 1 and Paper 2. You must be able to state the domain (allowed inputs) and range (possible outputs) of a function, decide whether a function has an inverse, and form composite functions in the correct order. Notation matters enormously here: f(x), fg(x) and f⁻¹(x) each mean something precise, and Cambridge awards marks for using them correctly. Master the worked examples in this chapter slowly — every later chapter (quadratics, exponentials, calculus) reuses this function language.",
+      subheadings: [
+        {
+          title: "Function Notation, Domain and Range",
+          body: "A function f is a rule that assigns to every element x of a set X (the ==domain==) exactly one element y; the values actually produced form the ==range==. We write y = f(x), read as 'f of x'. The domain is the set of inputs for which the rule is defined: for f(x) = 1/(x - 2) we must exclude x = 2 (division by zero is undefined); for f(x) = √(x - 1) we need x - 1 ≥ 0. When a question gives a restricted domain such as 0 ≤ x ≤ 5, you must use only that interval when finding the range — the range is then found from the graph's behaviour on that interval, checking the turning point and both endpoints.\n\n## Worked example 1 — easy\n- **Step 1 — Substitute the input.** f(x) = 3x - 2, so f(4) = 3(4) - 2 = 12 - 2 = **10**\n- **Step 2 — Substitute an algebraic input.** f(a) = 3a - 2 and f(2x) = 3(2x) - 2 = 6x - 2\n\n## Worked example 2 — exam grade\nFind the range of f(x) = x² - 4x for the domain 0 ≤ x ≤ 5.\n- **Step 1 — Locate the turning point.** Complete the square: f(x) = (x - 2)² - 4, so the minimum value is -4 at x = 2 (which lies inside the domain).\n- **Step 2 — Check both ends.** f(0) = 0 and f(5) = 25 - 20 = 5.\n- **Step 3 — Assemble the range.** The smallest output is -4, the largest is 5, so the range is **-4 ≤ f(x) ≤ 5**.\n\nThe single most important habit is to sketch or visualise the graph: the range is read from the y-direction extent of the graph over the given domain, never guessed from the formula alone.",
+          groups: [
+            {
+              subTitle: "Key definitions",
+              bullets: [
+                "**Function**: a rule giving exactly one output for each input; y = f(x) means 'y is the output when x is fed into f'.",
+                "**Domain**: the complete set of allowed input values x; it is part of the definition of a function, not an afterthought.",
+                "**Range**: the set of all output values f(x) as x runs through the domain; written with inequalities such as f(x) ≥ 3.",
+                "**Natural domain**: the largest set of x for which the formula is defined (no zero denominators, no negatives under square roots).",
+                "**Restricted domain**: a domain deliberately limited by the question, e.g. x > 0 or 1 ≤ x ≤ 4; the range then changes accordingly.",
+                "**Mapping diagram**: bubbles showing inputs joined to outputs; a function has exactly one arrow from each input."
+              ]
+            },
+            {
+              subTitle: "Finding the range — recipe",
+              bullets: [
+                "**Step A — Sketch**: draw or imagine y = f(x) over the given domain only.",
+                "**Step B — Turning points**: complete the square (or differentiate later) to find interior maxima/minima inside the domain.",
+                "**Step C — Endpoints**: always evaluate f at the boundary values of the domain.",
+                "**Step D — Compare**: the range runs from the smallest to the largest of these candidate values."
+              ]
+            }
+          ],
+          examinerTips: [
+            "**State the domain explicitly** when you define or use f, e.g. 'f(x) = x² - 4x, domain 0 ≤ x ≤ 5' — a mark is often attached to it.",
+            "**Use set or inequality notation** for domains and ranges (x ≥ 2 or {x : x ≠ 3}) rather than vague words.",
+            "**Show the candidate values**: write f(0) = 0, f(2) = -4, f(5) = 5 before stating the range — each evaluation can earn a mark.",
+            "**Answer the question asked**: if it says 'find the range', your final line must be an inequality such as -4 ≤ f(x) ≤ 5, not a list of points.",
+            "**Check the command word**: 'State' needs no working; 'Find' or 'Determine' needs the supporting lines."
+          ],
+          commonMistakes: [
+            "**Ignoring the restricted domain**: students find the range of x² - 4x as f(x) ≥ -4 and forget the upper cap f(5) = 5 — this happens when the formula is treated in isolation. Fix: always ask 'what x-values am I actually allowed?'.",
+            "**Confusing domain and range**: the domain is read along the x-axis, the range along the y-axis. Fix: label your axes before reading values off.",
+            "**Forgetting to check endpoints**: a turning point may lie outside the given domain. Fix: evaluate f at every boundary, every time.",
+            "**Thinking range equals codomain**: the codomain is only the set outputs are declared to land in; the range is what is actually produced. Fix: describe the range with inequalities about what is actually hit.",
+            "**Sign slips when substituting**: f(-2) for f(x) = 3x - 2 gives -8, not 4. Fix: bracket negative inputs, f(-2) = 3(-2) - 2."
+          ],
+          recap: [
+            "f(x) = 2x² - 8x + 5 has domain 0 ≤ x ≤ 5. Express f(x) in the form a(x + p)² + q and hence state the range of f. [4]",
+            "The function g is defined by g(x) = √(x - 3) for x ≥ 3. State the range of g. [1]",
+            "h(x) = 1/(x + 2). State the largest possible domain of h and explain your answer. [2]",
+            "f(x) = x² + 1 for x ≥ 0. Find f(3) and f(a + 1) in terms of a. [3]"
+          ]
+        },
+        {
+          title: "One-to-One Functions and Inverse Functions",
+          body: "A function is ==one-to-one== when different inputs always give different outputs, so no horizontal line cuts its graph more than once (the Horizontal Line Test). Only one-to-one functions have inverses that are also functions: if two inputs share an output, the reverse rule would have to send one input to two outputs, which is not allowed. A ==many-to-one== function such as f(x) = x² (over all real x) can be made one-to-one by restricting its domain, and then its inverse exists on that restriction.\n\nTo find the inverse of y = f(x): write y = f(x), rearrange to make x the subject, then swap the letters so the output variable is x. The inverse 'undoes' the function: f⁻¹(f(x)) = x and f(f⁻¹(x)) = x. The graph of y = f⁻¹(x) is the reflection of y = f(x) in the line y = x, which means the domain of f equals the range of f⁻¹, and the range of f equals the domain of f⁻¹.\n\n## Worked example 1 — easy\nFind f⁻¹(x) for f(x) = 5x - 7.\n- **Step 1 — Write y = f(x).** y = 5x - 7\n- **Step 2 — Make x the subject.** 5x = y + 7, so x = (y + 7)/5\n- **Step 3 — Swap letters.** f⁻¹(x) = (x + 7)/5\n- **Step 4 — Check.** f⁻¹(f(x)) = (5x - 7 + 7)/5 = 5x/5 = **x**\n\n## Worked example 2 — exam grade\nf(x) = (3x - 2)/(x + 1) for x ≠ -1. Find f⁻¹(x) and state its domain.\n- **Step 1 — Set y = (3x - 2)/(x + 1).** Multiply up: y(x + 1) = 3x - 2\n- **Step 2 — Collect x terms.** xy + y = 3x - 2, so xy - 3x = -2 - y, so x(y - 3) = -(y + 2)\n- **Step 3 — Solve.** x = (y + 2)/(3 - y)\n- **Step 4 — Swap letters and state the domain.** f⁻¹(x) = (x + 2)/(3 - x); the domain of f⁻¹ equals the range of f, which excludes the value 3, so **x ≠ 3**.",
+          groups: [
+            {
+              subTitle: "Inverse function toolkit",
+              bullets: [
+                "**Horizontal Line Test**: if any horizontal line meets the graph more than once, the function is many-to-one and has no inverse (as a function).",
+                "**Inverse procedure**: y = f(x), rearrange for x, interchange x and y — the result is y = f⁻¹(x).",
+                "**Undo property**: f⁻¹(f(x)) = x and f(f⁻¹(x)) = x for every x in the relevant domains.",
+                "**Reflection property**: the graphs of f and f⁻¹ are mirror images in the line y = x; corresponding coordinates swap, (a, b) becomes (b, a).",
+                "**Domain swap**: domain of f⁻¹ = range of f; range of f⁻¹ = domain of f.",
+                "**Self-inverse examples**: f(x) = 1/x and f(x) = a - x are each their own inverse, since f(f(x)) = x."
+              ]
+            },
+            {
+              subTitle: "When an inverse fails to exist",
+              bullets: [
+                "**Many-to-one trap**: f(x) = x² on all real x has f(-3) = f(3) = 9, so no inverse function exists.",
+                "**Restriction fix**: restrict the domain to x ≥ 0; then f⁻¹(x) = √x exists with range f⁻¹ ≥ 0.",
+                "**Check before you start**: if a question says 'explain why f⁻¹ does not exist', answer with a counterexample pair, e.g. f(2) = f(-2)."
+              ]
+            }
+          ],
+          examinerTips: [
+            "**Verify one-to-one before inverting**: if the question asks for f⁻¹, a quick 'f is one-to-one because...' line can earn the first mark.",
+            "**Always state the domain of f⁻¹**: it equals the range of f; write x ≠ 3, not just the formula.",
+            "**Use the reflection line**: for graph questions, draw y = x as a dashed mirror line and reflect key points (turning points, axis crossings) rather than the whole curve.",
+            "**Show the rearrangement lines**: y(x + 1) = 3x - 2 and x(y - 3) = -2 - y are the working examiners mark; jumping to the answer risks losing method marks.",
+            "**Sanity-check with composition**: evaluate f⁻¹(f(x)); if it does not simplify to x, an algebra slip has occurred — do this check on the answer line."
+          ],
+          commonMistakes: [
+            "**Swapping letters too early**: students write x = (3y - 2)/(y + 1) after swapping and then solve for y wrongly. Fix: rearrange in x and y FIRST, swap only at the end.",
+            "**Forgetting the domain of f⁻¹**: the formula alone is incomplete. Fix: domain of f⁻¹ = range of f; find the excluded value from where the denominator would vanish.",
+            "**Believing f⁻¹(x) means 1/f(x)**: f⁻¹ is the inverse mapping, not the reciprocal. Fix: read f⁻¹ as 'f inverse'; the reciprocal would be written 1/f(x).",
+            "**Assuming every function has an inverse**: f(x) = x² over all real x does not. Fix: run the horizontal line test mentally before attempting f⁻¹.",
+            "**Algebra slip collecting terms**: in xy + y = 3x - 2 the x-terms must be factorised as x(y - 3). Fix: move all x-terms to one side and factorise; never divide by an expression that might be zero."
+          ],
+          recap: [
+            "f(x) = 4x - 3. Find f⁻¹(x) and verify that f⁻¹(f(x)) = x. [3]",
+            "Explain why the function g(x) = x² - 6x, x ∈ ℝ, does not have an inverse. State a restriction of the domain for which g⁻¹ does exist. [3]",
+            "f(x) = (2x + 5)/(x - 3), x ≠ 3. Find f⁻¹(x) in the form (ax + b)/(cx + d) and state its domain. [5]",
+            "The point (5, 2) lies on the curve y = f(x). Write down one point that lies on y = f⁻¹(x), and describe the transformation that maps y = f(x) onto y = f⁻¹(x). [2]"
+          ]
+        },
+        {
+          title: "Composite Functions",
+          body: "A ==composite function== applies one function after another: fg(x) means 'first apply g, then apply f to the result', i.e. fg(x) = f(g(x)). Read composite notation from right to left — the function nearest the bracket acts first. Order matters: in general fg(x) ≠ gf(x), and examiners love asking you to demonstrate this with a specific counterexample. The composite only exists when the range of the inner function fits inside the domain of the outer function; for example if g(x) = x - 2 (range all real numbers) and f(x) = √x (domain x ≥ 0), then fg needs g(x) ≥ 0, i.e. x ≥ 2.\n\nThe inverse of a composite reverses the order: (fg)⁻¹(x) = g⁻¹f⁻¹(x) — 'socks and shoes' (you take off shoes then socks, the reverse of the order you put them on).\n\n## Worked example 1 — easy\nf(x) = 2x + 1 and g(x) = x².\n- **Step 1 — Evaluate fg(3).** g(3) = 9, then f(9) = 2(9) + 1 = **19**\n- **Step 2 — Evaluate gf(3).** f(3) = 7, then g(7) = **49**\n- **Step 3 — Conclude.** fg(3) = 19 ≠ 49 = gf(3), so fg ≠ gf in general.\n\n## Worked example 2 — exam grade\nf(x) = 3x - 5 and g(x) = 2/(x + 1) for x ≠ -1. Solve the equation fg(x) = 1.\n- **Step 1 — Form the composite.** fg(x) = f(g(x)) = 3 × 2/(x + 1) - 5 = 6/(x + 1) - 5\n- **Step 2 — Set equal to 1.** 6/(x + 1) - 5 = 1\n- **Step 3 — Solve.** 6/(x + 1) = 6, so x + 1 = 1, so **x = 0**\n- **Step 4 — Check.** g(0) = 2, f(2) = 1, which is correct.",
+          groups: [
+            {
+              subTitle: "Composite function rules",
+              bullets: [
+                "**Definition**: fg(x) = f(g(x)) — apply g first, then f; read right to left.",
+                "**Non-commutativity**: fg and gf are usually different functions; one counterexample pair of values proves they differ.",
+                "**Existence condition**: fg exists only where g(x) lies in the domain of f; find and state any resulting restriction on x.",
+                "**Domain of composite**: it is the set of x in the domain of g for which g(x) is in the domain of f.",
+                "**Inverse of composite**: (fg)⁻¹ = g⁻¹f⁻¹ — reverse both the functions and the order.",
+                "**Iterates**: ff(x) is written f²(x) in this context (it means f(f(x)), never [f(x)]² unless stated)."
+              ]
+            },
+            {
+              subTitle: "Solving composite equations",
+              bullets: [
+                "**Strategy 1 — Build then solve**: form f(g(x)) as a single expression, then solve the resulting equation in x.",
+                "**Strategy 2 — Work inside out**: if fg(x) = k, first solve f(u) = k for u, then solve g(x) = u.",
+                "**Strategy 2 example**: if fg(x) = 10 and f(u) = 3u - 5, then u = 5, so solve g(x) = 5."
+              ]
+            }
+          ],
+          examinerTips: [
+            "**Respect the order**: write out g(x) first as a separate line before substituting into f — this protects you from the classic fg/gf swap.",
+            "**State restrictions**: when forming fg, note any x that must be excluded (here x ≠ -1); losing this line can cost the final accuracy mark.",
+            "**Use the inside-out method when f is easy to invert**: solving f(u) = k first often avoids messy fractions entirely.",
+            "**Verify solutions by substitution**: one quick check (Step 4 in the example) catches most slips in fractional equations.",
+            "**For (fg)⁻¹ questions**: find the inverses of f and g separately, then present g⁻¹f⁻¹(x) with the correct order stated in words."
+          ],
+          commonMistakes: [
+            "**Reading fg as f-then-g**: students compute f first. Fix: the function closest to the bracket acts first — say 'g then f' out loud while writing.",
+            "**Assuming fg = gf**: squaring then doubling is not the same as doubling then squaring. Fix: test both at x = 3; if they differ, you have your proof.",
+            "**Dropping the domain restriction**: g(x) = 2/(x + 1) is undefined at x = -1, so fg is too. Fix: carry exclusions from the inner function into your answer.",
+            "**Solving fg(x) = k by dividing incorrectly**: 6/(x + 1) - 5 = 1 becomes 6/(x + 1) = 6 only after adding 5 to both sides, not before. Fix: undo operations in reverse order.",
+            "**Writing [fg(x)]² for f²g(x)**: superscripts on the function name mean composition, not powers. Fix: read f²(x) as f(f(x))."
+          ],
+          recap: [
+            "f(x) = 3x + 2 and g(x) = x² - 1. Find fg(x) and gf(x), and show that fg ≠ gf. [4]",
+            "f(x) = 2x - 3 for x ≥ 0 and g(x) = √(x + 4). Find fg(x) and state its domain. [4]",
+            "f(x) = (x + 1)/(x - 2), x ≠ 2. Find f⁻¹(x) and hence solve f(x) = f⁻¹(x). [6]",
+            "Given that fg(x) = 6x² - 1 and f(x) = 3x - 1, find g(x). [3]"
+          ]
+        }
+      ]
+    },
+    {
+      number: 2,
+      title: "Quadratic Functions",
+      intro: "Quadratic functions have the form f(x) = ax² + bx + c with a ≠ 0, and their graphs are parabolas. This chapter covers the three skills Cambridge tests constantly: completing the square (to locate the vertex and state maxima, minima and ranges), using the discriminant b² - 4ac to classify roots and to find tangency conditions, and solving quadratic inequalities with correct interval notation. These tools reappear in trigonometric equations, simultaneous equations and even differentiation questions, so fluency here pays off across the whole paper. Every 0606 paper contains at least one substantial quadratic question, usually worth 6-10 marks.",
+      subheadings: [
+        {
+          title: "Completing the Square and Graph Features",
+          body: "Completing the square rewrites ax² + bx + c in the vertex form ==a(x + p)² + q==, which immediately reveals the parabola's turning point at (-p, q), its line of symmetry x = -p, and whether it opens upwards (a > 0, minimum) or downwards (a < 0, maximum). The method: halve the coefficient of x to get p, then balance the constant. When a ≠ 1, factor a out of the x-terms first and complete the square inside the bracket, multiplying the compensating term by a afterwards.\n\n## Worked example 1 — easy\nWrite x² + 6x + 2 in the form (x + p)² + q.\n- **Step 1 — Halve the x-coefficient.** p = 6/2 = 3\n- **Step 2 — Expand the square.** (x + 3)² = x² + 6x + 9\n- **Step 3 — Balance the constant.** x² + 6x + 2 = (x + 3)² - 9 + 2 = **(x + 3)² - 7**\n\n## Worked example 2 — exam grade\nf(x) = 2x² - 8x + 5. Express f(x) in the form a(x + p)² + q and hence state the minimum value of f and the equation of the line of symmetry.\n- **Step 1 — Factor out the 2 from the x-terms.** f(x) = 2(x² - 4x) + 5\n- **Step 2 — Complete the square inside.** Half of -4 is -2: x² - 4x = (x - 2)² - 4\n- **Step 3 — Rebuild.** f(x) = 2[(x - 2)² - 4] + 5 = 2(x - 2)² - 8 + 5 = **2(x - 2)² - 3**\n- **Step 4 — Read off the features.** Since 2(x - 2)² ≥ 0, the minimum value is -3 when x = 2; the line of symmetry is x = 2; the range is f(x) ≥ -3.",
+          groups: [
+            {
+              subTitle: "Vertex form and what it tells you",
+              bullets: [
+                "**Vertex form**: f(x) = a(x + p)² + q has turning point (-p, q) — note the sign change on p.",
+                "**Line of symmetry**: x = -p, a vertical line through the vertex.",
+                "**Minimum vs maximum**: a > 0 gives a minimum (opens up); a < 0 gives a maximum (opens down).",
+                "**Range**: from vertex form the range reads straight off, e.g. f(x) ≥ q for a > 0 with unrestricted domain.",
+                "**y-intercept**: set x = 0; the curve crosses the y-axis at (0, c).",
+                "**x-intercepts**: set f(x) = 0 and solve — these are the roots discussed in the next section."
+              ]
+            },
+            {
+              subTitle: "The completing-the-square algorithm",
+              bullets: [
+                "**Coefficient of x² must be 1**: if a ≠ 1, factor a out of the x-terms only, never out of the constant.",
+                "**Halve and square**: p = b/2; add and subtract p² inside the bracket.",
+                "**Compensate outside**: the subtracted p² is multiplied by a when you multiply the bracket back out.",
+                "**Final check**: expand your answer mentally — it must return the original quadratic."
+              ]
+            }
+          ],
+          examinerTips: [
+            "**Answer in the exact form requested**: if the question says a(x + p)² + q, give all three values a, p, q explicitly; 'hence' means you must use your completed-square form to answer the next part.",
+            "**State 'minimum' or 'maximum' with the value**: 'minimum value = -3 at x = 2' is a complete answer worth both marks.",
+            "**Use the completed square to justify the range**: write '(x - 2)² ≥ 0, so 2(x - 2)² - 3 ≥ -3' — this reasoning line earns the mark, not just the final inequality.",
+            "**Keep exact fractions**: if p = 5/2, write (x + 5/2)² - 25/4 rather than decimals; exact values are required unless the question says otherwise.",
+            "**Sketch when asked**: mark the vertex, y-intercept and axis of symmetry; a labelled sketch can rescue method marks even if the algebra slips."
+          ],
+          commonMistakes: [
+            "**Sign error on p**: x² + 6x becomes (x + 3)² but students often write (x - 3)². Fix: p = b/2, and the bracket is (x + p) — with b = +6 the bracket is (x + 3).",
+            "**Forgetting to multiply the correction by a**: with 2(x² - 4x), the -4 inside becomes -8 outside, not -4. Fix: expand 2[(x - 2)² - 4] term by term to check.",
+            "**Mixing up the turning point sign**: (x - 2)² has turning point x = +2, not -2. Fix: set the bracket equal to zero to find the x-coordinate.",
+            "**Decimal approximations**: writing (x - 1.73)² for x² - 2√3x loses exactness marks. Fix: surds and fractions are exact — keep them.",
+            "**Calling q the line of symmetry**: the line is x = -p (an equation), the extreme value is q (a number). Fix: give both, in the right vocabulary."
+          ],
+          recap: [
+            "Express 3x² - 12x + 7 in the form a(x + p)² + q, stating the values of a, p and q. [3]",
+            "Find the maximum value of 5 - 2x - x² and the value of x at which it occurs. [4]",
+            "The curve y = x² - 6x + 11 has line of symmetry x = k. Find k and the coordinates of the vertex. [3]",
+            "f(x) = 2x² + 8x + 3 for x ≥ -2. Using your completed-square form, state the range of f. [4]"
+          ]
+        },
+        {
+          title: "The Discriminant and the Nature of Roots",
+          body: "For ax² + bx + c = 0, the quadratic formula x = (-b ± √(b² - 4ac))/(2a) shows the nature of the solutions is controlled entirely by the ==discriminant== b² - 4ac. If b² - 4ac > 0 there are two distinct real roots; if b² - 4ac = 0 the roots are repeated (equal) and the curve touches the x-axis; if b² - 4ac < 0 there are no real roots and the curve never meets the x-axis. The discriminant is also the key to tangency: a line that just touches a curve makes the substituted quadratic have b² - 4ac = 0.\n\nFor roots α and β, the sum and product links α + β = -b/a and αβ = c/a let you build new equations without ever solving the original one.\n\n## Worked example 1 — easy\nDetermine the nature of the roots of x² - 5x + 6 = 0.\n- **Step 1 — Identify coefficients.** a = 1, b = -5, c = 6\n- **Step 2 — Evaluate.** b² - 4ac = (-5)² - 4(1)(6) = 25 - 24 = **1**\n- **Step 3 — Conclude.** 1 > 0, so there are two distinct real roots (indeed x = 2 and x = 3).\n\n## Worked example 2 — exam grade\nFind the values of k for which the line y = kx - 3 is a tangent to the curve y = x² - 4x + 1.\n- **Step 1 — Equate the expressions.** x² - 4x + 1 = kx - 3, so x² - (4 + k)x + 4 = 0\n- **Step 2 — Tangency condition.** A tangent touches once, so b² - 4ac = 0: (4 + k)² - 4(1)(4) = 0\n- **Step 3 — Solve.** (4 + k)² = 16, so 4 + k = ±4, giving **k = 0 or k = -8**\n- **Step 4 — Check sense.** k = 0 gives y = -3, which touches y = x² - 4x + 1 = (x - 2)² - 3 at its vertex (2, -3).",
+          groups: [
+            {
+              subTitle: "Discriminant decision table",
+              bullets: [
+                "**b² - 4ac > 0**: two distinct real roots; the curve cuts the x-axis twice.",
+                "**b² - 4ac = 0**: repeated (equal) real root; the curve touches the x-axis (the line is a tangent).",
+                "**b² - 4ac < 0**: no real roots; the curve lies entirely above or below the x-axis.",
+                "**Perfect square discriminant**: roots are rational — useful when a question asks about root structure.",
+                "**Always write the condition explicitly**: 'for tangency, b² - 4ac = 0' is the line that earns the method mark."
+              ]
+            },
+            {
+              subTitle: "Roots and coefficients (Vieta links)",
+              bullets: [
+                "**Sum of roots**: α + β = -b/a — the minus sign is the classic slip.",
+                "**Product of roots**: αβ = c/a.",
+                "**Building new quadratics**: a quadratic with roots α′ and β′ is x² - (sum)x + (product) = 0.",
+                "**Example**: if α, β are roots of x² - 5x + 6 = 0, the equation with roots α², β² has sum 25 - 12 = 13 and product 36: x² - 13x + 36 = 0."
+              ]
+            }
+          ],
+          examinerTips: [
+            "**Name the condition**: begin tangency/equal-roots working with the sentence 'For equal roots, b² - 4ac = 0' — Cambridge mark schemes attach a mark to stating the condition.",
+            "**Simplify to zero first**: rearrange the substituted equation to ax² + bx + c = 0 before reading off a, b, c; identifying coefficients from an unsimplified form is the biggest source of errors.",
+            "**Two values, two checks**: when (4 + k)² = 16 gives two answers, present both and verify each makes sense as a tangent.",
+            "**Use the discriminant for intersection counts**: two distinct roots = two intersections; equal roots = tangent; no real roots = no intersection — say this in words.",
+            "**Relate back to the graph**: a concluding sentence such as 'the line touches the curve at (2, -3)' shows full understanding and can pick up a final mark."
+          ],
+          commonMistakes: [
+            "**Sign errors reading b**: in x² - (4 + k)x + 4, b = -(4 + k), so b² = (4 + k)² — students sometimes write (4 - k)². Fix: bracket the whole coefficient including its minus sign before squaring.",
+            "**Solving b² - 4ac > 0 like an equation**: inequalities from discriminants must keep their direction; squaring both sides of an inequality is invalid. Fix: solve the boundary equation, then test intervals.",
+            "**Forgetting the 4 in 4ac**: b² - ac is a common wrong formula. Fix: memorise 'b squared minus FOUR a c' by saying it aloud.",
+            "**Assuming tangent means gradients equal**: the clean method is the discriminant, not calculus, unless the question demands dy/dx.",
+            "**Dropping one solution**: (4 + k)² = 16 needs ±; k = 0 alone loses half the marks. Fix: write 4 + k = 4 or 4 + k = -4."
+          ],
+          recap: [
+            "Find the discriminant of 2x² - 3x - 7 = 0 and hence state the number of real roots. [2]",
+            "Find the value of k for which kx² + 4x + (k - 3) = 0 has equal roots. [4]",
+            "The line y = x + c is a tangent to the curve y = x² + 3x + 5. Find the possible values of c. [5]",
+            "The roots of x² - 6x + 4 = 0 are α and β. Find the value of α + β and of αβ, and hence write down the equation whose roots are 1/α and 1/β. [5]"
+          ]
+        },
+        {
+          title: "Quadratic Inequalities",
+          body: "A ==quadratic inequality== such as ax² + bx + c > 0 is solved by finding the critical values (the roots of ax² + bx + c = 0), then deciding which intervals of the x-axis make the expression positive or negative. Because a parabola is continuous and only changes sign at its roots, the solution is always a union of intervals — the sketch, even a rough one, is what guarantees the correct choice of inequality directions. If the quadratic has no real roots, it never crosses the axis, so its sign everywhere equals the sign of a.\n\n## Worked example 1 — easy\nSolve x² - 3x - 4 < 0.\n- **Step 1 — Find critical values.** x² - 3x - 4 = (x - 4)(x + 1) = 0 gives x = 4 or x = -1\n- **Step 2 — Sketch.** y = (x - 4)(x + 1) is an upward parabola crossing the axis at -1 and 4.\n- **Step 3 — Read the region.** The expression is negative between the roots: **-1 < x < 4**\n\n## Worked example 2 — exam grade\nFind the set of values of x for which 2x² ≥ x + 6.\n- **Step 1 — Move everything to one side.** 2x² - x - 6 ≥ 0\n- **Step 2 — Factorise.** (2x + 3)(x - 2) ≥ 0, critical values x = -3/2 and x = 2\n- **Step 3 — Sketch and read.** Upward parabola; the expression is ≥ 0 outside the roots: **x ≤ -3/2 or x ≥ 2**\n- **Step 4 — Present the answer** as a union: {x : x ≤ -3/2} ∪ {x : x ≥ 2}\n\nFor 'between' answers keep strict inequalities with < (the endpoints are excluded); for 'outside' answers use ≤ and ≥ when the inequality allows equality.",
+          groups: [
+            {
+              subTitle: "Solution method",
+              bullets: [
+                "**Critical values**: solve ax² + bx + c = 0; these split the number line into intervals.",
+                "**Sign analysis**: a continuous quadratic changes sign only at its roots; determine the sign on each interval from a sketch.",
+                "**Upward parabola (a > 0)**: positive outside the roots, negative between them.",
+                "**Downward parabola (a < 0)**: the pattern reverses — or multiply through by -1 first (flipping the inequality) to restore a > 0.",
+                "**No real roots**: the quadratic keeps the sign of a everywhere; x² + 2 > 0 is true for all x.",
+                "**Always finish with interval notation**: 'x < -1 or x > 4', never '-1 > x > 4' (which means nothing)."
+              ]
+            },
+            {
+              subTitle: "Link to graphs",
+              bullets: [
+                "**Inequality as comparison**: solving x² - 4 < x + 2 asks where the parabola lies below the line — both intersection x-values come from the boundary equation.",
+                "**Graphical check**: the boundary equation's roots are exactly the intersection points of the two curves."
+              ]
+            }
+          ],
+          examinerTips: [
+            "**Draw the sketch, however rough**: the upward/downward orientation of the parabola decides everything; one small sketch prevents interval-direction errors.",
+            "**Rearrange to zero first**: only factorise after collecting everything on one side with the x² coefficient positive — this makes the sign pattern standard.",
+            "**State answers in set/interval notation** exactly as Cambridge expects: 'x ≤ -3/2 or x ≥ 2' or using ∪ notation; the word 'or' (not 'and') joins the two regions.",
+            "**Match the inequality sign at the boundary**: < and > exclude the roots (strict); ≤ and ≥ include them.",
+            "**When asked to find the range of values of k**, you are solving an inequality in k — same technique, different variable."
+          ],
+          commonMistakes: [
+            "**Writing -1 > x > 4**: combining two one-sided inequalities into one chain is meaningless. Fix: join with 'or', or write x < -1, x > 4.",
+            "**Reversing the regions**: for a > 0, the quadratic is positive OUTSIDE the roots; students frequently swap this. Fix: test x = 0 (or any convenient point) to confirm the sign.",
+            "**Forgetting to flip when multiplying by -1**: -x² + 3x + 4 > 0 needs care. Fix: multiply by -1 to get x² - 3x - 4 < 0 and flip the sign.",
+            "**Including endpoints for strict inequalities**: x² - 3x - 4 < 0 excludes -1 and 4 because the expression equals zero there. Fix: equality is allowed only when the sign is ≤ or ≥.",
+            "**Stopping at the roots**: giving x = -1, x = 4 as the answer solves the equation, not the inequality. Fix: reread the question — it asks for a set of values."
+          ],
+          recap: [
+            "Solve the inequality x² - 5x + 6 ≤ 0. [3]",
+            "Find the set of values of x for which 3 + 2x - x² > 0. [3]",
+            "Solve 2x² + 5x - 3 ≥ 0, giving your answer in exact form. [4]",
+            "Find the range of values of k for which x² + kx + 9 > 0 for all real x. [4]"
+          ]
+        }
+      ]
+    },
+    {
+      number: 3,
+      title: "Equations, Inequalities and Graphs",
+      intro: "This chapter is about seeing algebra pictorially. You will learn to sketch cubic polynomials and reciprocal curves such as y = 1/x from their equations, to draw modulus graphs y = |f(x)| by reflecting the negative parts of f in the x-axis, and to use those sketches to solve equations and inequalities. Cambridge frequently asks for a solution 'graphically' or expects a labelled sketch to support an algebraic answer — the graph is a working tool, not decoration. Marks are awarded for correct intercepts, asymptotes and the reflected sections of modulus graphs, so train yourself to label everything you draw.",
+      subheadings: [
+        {
+          title: "Sketching Polynomial and Reciprocal Graphs",
+          body: "To sketch a cubic y = (x - a)(x - b)(x - c) with distinct roots: mark the x-intercepts at x = a, b, c, the y-intercept at x = 0, and note the end behaviour — for a positive cubic, y → +∞ as x → +∞ and y → -∞ as x → -∞. ==Repeated factors change the behaviour==: a double factor makes the graph touch the axis and turn, while a triple factor makes it flatten as it passes through. For reciprocal graphs y = k/x the axes are asymptotes: the curve never touches them, approaching the x-axis as x → ±∞ and the y-axis as x → 0, and the curve lies in quadrants 1 and 3 when k > 0, quadrants 2 and 4 when k < 0.\n\n## Worked example 1 — easy\nSketch y = (x - 1)(x - 2)(x + 1).\n- **Step 1 — Find intercepts.** x-intercepts at x = -1, 1, 2; y-intercept at (0, (-1)(-2)(1)) = (0, 2)\n- **Step 2 — End behaviour.** Positive leading term: up to the right, down to the left.\n- **Step 3 — Connect.** Cross at all three simple roots, passing through (0, 2): a standard cubic with two turning points.\n\n## Worked example 2 — exam grade\nSolve the inequality (x - 1)(x - 2)(x + 1) > 0.\n- **Step 1 — Critical values.** x = -1, 1, 2\n- **Step 2 — Sign table.** For x > 2 all three factors are positive (product +); between 1 and 2 the factor (x - 2) is negative (product -); between -1 and 1 two factors are negative (product +); below -1 all three factors are negative (product -).\n- **Step 3 — Select positive regions.** **-1 < x < 1 or x > 2**",
+          groups: [
+            {
+              subTitle: "Sketching checklist",
+              bullets: [
+                "**Factorise first**: roots are read directly from the factors; expand only if a question demands it.",
+                "**y-intercept**: set x = 0 and evaluate — a mark is routinely attached to it.",
+                "**End behaviour**: odd degree with positive leading coefficient gives opposite infinities at the two ends.",
+                "**Repeated root**: a squared factor touches the axis (turning point on the axis); a cubed factor passes through horizontally.",
+                "**Asymptotes of y = k/x**: both coordinate axes; draw them dashed and never let the curve touch them.",
+                "**y = k/x²**: both branches are above the x-axis for k > 0 — a different shape from y = k/x."
+              ]
+            },
+            {
+              subTitle: "Solving polynomial inequalities",
+              bullets: [
+                "**Critical values** from f(x) = 0 partition the axis; the sign alternates across each simple root.",
+                "**Multiplicity rule**: the sign changes at a root of odd multiplicity and does not change at even multiplicity.",
+                "**Present** the answer as intervals joined by 'or', matching the inequality's strictness."
+              ]
+            }
+          ],
+          examinerTips: [
+            "**Label every intercept on the sketch**: coordinates such as (-1, 0), (0, 2) are what the mark scheme lists; unlabelled crossings earn nothing.",
+            "**Draw asymptotes as dashed lines** and state their equations (x = 0, y = 0 for y = k/x) — two easy marks.",
+            "**Use a sign table** in inequality questions: it is compact, rigorous and earns method marks even if the final region is misread.",
+            "**State the end behaviour in words** when asked to 'describe' a graph: 'as x → ∞, y → ∞'.",
+            "**Scale honesty**: a sketch does not require a perfect scale, but intercepts must be in the correct relative positions."
+          ],
+          commonMistakes: [
+            "**Ignoring multiplicity**: students treat a double root as a crossing; the graph should touch and turn. Fix: count the power of each factor — odd crosses, even touches.",
+            "**Wrong end behaviour**: sketching a positive cubic rising on both sides. Fix: check the leading term's sign and the degree's parity before drawing.",
+            "**Curves crossing asymptotes**: y = 1/x drifting through the x-axis. Fix: remind yourself the curve approaches but never meets the axis; add arrows to show the trend.",
+            "**Sign table built on an un-factorised expression**: expanding first makes the arithmetic heavy and error-prone. Fix: keep factored form and track each factor's sign.",
+            "**Forgetting the y-intercept**: the easiest mark on the paper. Fix: it is always f(0) — compute it automatically."
+          ],
+          recap: [
+            "Sketch the curve y = (x + 2)(x - 1)(x - 3), labelling all intercepts. [4]",
+            "Solve the inequality (x + 2)(x - 1)(x - 3) ≤ 0. [3]",
+            "Sketch y = 4/x, stating the equations of the asymptotes and the quadrants it occupies. [3]",
+            "Describe how the graph of y = (x - 2)²(x + 1) differs from y = (x - 2)(x + 1)² near each intercept. [3]"
+          ]
+        },
+        {
+          title: "Modulus Functions: Graphs, Equations and Inequalities",
+          body: "The ==modulus== (absolute value) |x| means the distance of x from zero on the number line, so |x| = x when x ≥ 0 and |x| = -x when x < 0; it is never negative. The graph of y = |f(x)| takes the graph of y = f(x) and reflects any part below the x-axis upward in the x-axis. The graph of y = f(|x|) instead reflects the right-hand half in the y-axis, producing a graph symmetric about x = 0.\n\nAlgebraically, |A| = B requires B ≥ 0 and then A = B or A = -B — solve both cases and reject any solution that violates B ≥ 0. The inequality |x - a| < b with b > 0 is equivalent to a - b < x < a + b, readable as 'x is within distance b of a'.\n\n## Worked example 1 — easy\nSolve |2x - 3| = 5.\n- **Step 1 — Positive case.** 2x - 3 = 5, so 2x = 8, x = 4\n- **Step 2 — Negative case.** 2x - 3 = -5, so 2x = -2, x = -1\n- **Step 3 — Answer.** **x = 4 or x = -1**\n\n## Worked example 2 — exam grade\nSolve |x + 1| = 2x - 1.\n- **Step 1 — Case A: x + 1 = 2x - 1**, so x = 2. Check the right side is non-negative: 2(2) - 1 = 3 ≥ 0, accept.\n- **Step 2 — Case B: -(x + 1) = 2x - 1**, so -x - 1 = 2x - 1, giving 3x = 0, x = 0. Check the right side: 2(0) - 1 = -1 < 0, reject.\n- **Step 3 — Answer.** **x = 2 only**",
+          groups: [
+            {
+              subTitle: "Modulus rules",
+              bullets: [
+                "**Definition**: |x| = x if x ≥ 0; |x| = -x if x < 0; equivalently |x| = √(x²).",
+                "**Key properties**: |ab| = |a||b| and |a/b| = |a|/|b|; the triangle inequality |a + b| ≤ |a| + |b|.",
+                "**Equation |A| = B**: requires B ≥ 0, then A = B or A = -B; check every candidate against B ≥ 0.",
+                "**Equation |A| = |B|**: equivalent to A = B or A = -B, with no sign restriction.",
+                "**Inequality |x - a| < b** (b > 0): means -b < x - a < b, i.e. a - b < x < a + b.",
+                "**Inequality |x - a| > b**: means x < a - b or x > a + b."
+              ]
+            },
+            {
+              subTitle: "Graphs of modulus functions",
+              bullets: [
+                "**y = |f(x)|**: reflect the part of y = f(x) below the x-axis in the x-axis; anything on or above stays fixed.",
+                "**y = f(|x|)**: draw y = f(x) for x ≥ 0, then reflect that half in the y-axis; the result is symmetric about x = 0.",
+                "**Corner points**: the graph of |linear| has sharp corners (vertices) where the inside expression is zero — mark their coordinates."
+              ]
+            }
+          ],
+          examinerTips: [
+            "**Always run the B ≥ 0 check**: for |A| = B, writing 'require 2x - 1 ≥ 0, so x ≥ 1/2' before solving earns the method mark and makes rejection of false roots automatic.",
+            "**Two cases, two headings**: label Case A and Case B clearly; examiners award marks per case.",
+            "**For inequalities use the distance reading**: |x - 2| ≤ 3 is 'x within 3 of 2', instantly giving -1 ≤ x ≤ 5 — quote both forms.",
+            "**Sketch for graphical requests**: draw y = |f(x)| and the horizontal line y = k; solutions are the x-coordinates of intersections — state that you are reading them off.",
+            "**Vertex coordinates first**: when sketching y = |ax + b|, find where ax + b = 0 and evaluate; the vertex sits on the x-axis at that point."
+          ],
+          commonMistakes: [
+            "**Accepting impossible roots**: in |x + 1| = 2x - 1, x = 0 comes out of the algebra but makes the right side negative — impossible since a modulus cannot equal a negative number. Fix: run the B ≥ 0 check after every case.",
+            "**Solving |A| = |B| with a B ≥ 0 check**: no restriction is needed when both sides are moduli; adding one wrongly discards valid roots.",
+            "**Forgetting the ±**: |2x - 3| = 5 solved as only 2x - 3 = 5 loses half the answer. Fix: 'modulus equals a positive number → two equations'.",
+            "**Flipping the inequality regions**: |x - 2| < 3 is BETWEEN, not outside. Fix: remember |x - a| < b means 'close to a'; the < sign pairs with a between-region.",
+            "**Reflecting y = f(|x|) in the wrong axis**: it is the y-axis reflection of the right half only. Fix: test a value, e.g. f(|-3|) = f(3), so (-3, f(3)) must be on the graph."
+          ],
+          recap: [
+            "Solve |3x - 2| = 7. [2]",
+            "Solve the inequality |2x - 5| ≤ 3. [3]",
+            "Solve |x - 3| = 2x. [4]",
+            "Sketch y = |2x - 4| + 1, labelling the vertex and axis intercepts. [4]"
+          ]
+        },
+        {
+          title: "Solving Inequalities with Graphs",
+          body: "Many 0606 questions ask where one curve lies above another: solve f(x) > g(x) by sketching both graphs, finding their intersection x-values from f(x) = g(x), and reading which side puts one graph on top. The boundary equation f(x) = g(x) is usually a quadratic or cubic whose roots partition the axis. This graphical viewpoint also explains the discriminant work of Chapter 2: the number of intersections of a line and a curve equals the number of real roots of the substituted equation.\n\n## Worked example 1 — easy\nUsing a sketch, solve x² - 4 < x + 2.\n- **Step 1 — Find intersections.** x² - 4 = x + 2, so x² - x - 6 = 0, so (x - 3)(x + 2) = 0, giving x = -2 or x = 3\n- **Step 2 — Identify the region.** The parabola lies below the line between the intersections.\n- **Step 3 — Answer.** **-2 < x < 3**\n\n## Worked example 2 — exam grade\nFind the values of x for which |x - 2| < x/2 + 1.\n- **Step 1 — Find the boundary.** |x - 2| = x/2 + 1. Case A: x - 2 = x/2 + 1, so x/2 = 3, x = 6. Case B: -(x - 2) = x/2 + 1, so -x + 2 = x/2 + 1, so 1 = 3x/2, x = 2/3.\n- **Step 2 — Sketch both.** y = |x - 2| is a V with vertex (2, 0); y = x/2 + 1 passes through (0, 1) and (6, 4).\n- **Step 3 — Read the region.** The V lies below the line between the intersections: **2/3 < x < 6**\n- **Step 4 — Test a value.** x = 2 gives 0 < 2, true — the region is correct.",
+          groups: [
+            {
+              subTitle: "Graphical solution method",
+              bullets: [
+                "**Boundary equation**: solve f(x) = g(x); its roots are the intersection x-coordinates.",
+                "**Region selection**: pick a test point between critical values, or read from the sketch which curve is on top.",
+                "**Inequality direction**: f(x) > g(x) means the region where f's graph lies above g's graph.",
+                "**Discriminant link**: intersections of a line and a curve correspond to roots; b² - 4ac counts them.",
+                "**Modulus comparisons**: sketch y = |f(x)| alongside the other graph; intersections give the boundary values."
+              ]
+            },
+            {
+              subTitle: "Answer presentation",
+              bullets: [
+                "**Sketch + algebra**: even when solving algebraically, a small sketch shows the examiner you chose the correct region.",
+                "**Interval notation**: give the final answer with 'or'/union as needed and correct strictness.",
+                "**State the reading**: 'from the graph, the curve is above the line for...' connects the picture to the answer."
+              ]
+            }
+          ],
+          examinerTips: [
+            "**Label both curves** on the sketch; an unlabelled sketch cannot be credited fully.",
+            "**Show the boundary algebra** even in a graphical question — the intersections must come from solving an equation, not from a ruler measurement.",
+            "**Test-point verification**: substituting x = 2 into |x - 2| < x/2 + 1 gives 0 < 2, confirming 2 lies in the solution set — a five-second check that catches region swaps.",
+            "**When the question says 'by sketching'**, the graphical method is mandatory; unsupported pure algebra earns limited credit.",
+            "**Combine with discriminant knowledge**: 'explain why the curves never meet' is answered by b² - 4ac < 0, stated in words plus numbers."
+          ],
+          commonMistakes: [
+            "**Choosing the wrong region**: students answer x < 2/3 or x > 6 for the worked example. Fix: test one value from each candidate region in the original inequality.",
+            "**Solving the wrong boundary equation**: setting f(x) = 0 instead of f(x) = g(x). Fix: intersections are where the TWO expressions are equal.",
+            "**Reading intersections off a poor sketch**: a line and a V that miss by eye. Fix: always compute boundary values algebraically; the sketch only selects the region.",
+            "**Mixing degrees of strictness**: writing 2/3 ≤ x ≤ 6 when the inequality is strict. Fix: equality happens exactly at the boundary — check the original sign.",
+            "**Forgetting that modulus graphs have corners**: intersections can occur exactly at a vertex, which the Case A/Case B algebra handles but a smooth freehand sketch may hide."
+          ],
+          recap: [
+            "Find the set of values of x for which x² < 3x + 4. [4]",
+            "By sketching suitable graphs, solve |x - 1| < x + 2. [4]",
+            "The curve y = x² + k does not intersect the line y = 3x. Find the range of values of k. [4]",
+            "Solve the inequality (x - 1)(x - 3) > 0 by sketching the curve y = (x - 1)(x - 3). [3]"
+          ]
+        }
+      ]
+    }
+    // <<NEXT>>
+  ]
 };

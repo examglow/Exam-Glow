@@ -2,7 +2,6 @@
 // Re-exports all subjects from modular note collections
 
 export * from "./notes/types";
-import { BIOLOGY } from "./notes/biology";
 import { CHEMISTRY } from "./notes/chemistry";
 import { PHYSICS } from "./notes/physics";
 import { ENVIRONMENTAL_MANAGEMENT } from "./notes/environmental-management";
@@ -47,7 +46,6 @@ import { WORLD_LITERATURE } from "./notes/world-literature";
 import type { SubjectNotes } from "./notes/types";
 
 export {
-  BIOLOGY,
   CHEMISTRY,
   PHYSICS,
   ENVIRONMENTAL_MANAGEMENT,
@@ -90,7 +88,6 @@ export {
 };
 
 export const SYLLABUS_NOTES: SubjectNotes[] = [
-  BIOLOGY,
   CHEMISTRY,
   PHYSICS,
   ENVIRONMENTAL_MANAGEMENT,

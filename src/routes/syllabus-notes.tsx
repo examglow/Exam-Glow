@@ -15,6 +15,8 @@ import {
   HelpCircle,
   Trophy,
   ChevronDown,
+  Lightbulb,
+  AlertTriangle,
 } from "lucide-react";
 import { DashboardLayout } from "@/components/dashboard-page";
 import {
@@ -563,6 +565,62 @@ function ChapterDoc({
                           </ul>
                         </div>
                       ))}
+                    </div>
+                  )}
+
+                  {sub.examinerTips && sub.examinerTips.length > 0 && (
+                    <div className="mt-8 rounded-2xl border border-amber-500/25 bg-amber-500/[0.05] dark:bg-amber-500/[0.07] overflow-hidden">
+                      <div className="flex items-center gap-2 border-b border-amber-500/20 bg-amber-500/10 px-4 py-3">
+                        <Lightbulb className="size-4 shrink-0 text-amber-600 dark:text-amber-400" aria-hidden />
+                        <span className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400">
+                          Examiner's Tips
+                        </span>
+                      </div>
+                      <ul className="p-4 space-y-3 sm:px-5">
+                        {sub.examinerTips.map((tip, ti) => (
+                          <li key={ti} className="flex items-start gap-3">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-amber-500/70" />
+                            <div
+                              className="flex-1 text-[14.5px] leading-7 text-foreground/85 prose prose-sm dark:prose-invert max-w-none
+                                prose-strong:font-semibold prose-strong:text-foreground
+                                prose-code:text-[12px] prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+                                prose-table:text-sm prose-table:w-full
+                                prose-th:bg-muted/60 prose-th:px-3 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-xs prose-th:uppercase
+                                prose-td:px-3 prose-td:py-2 prose-td:text-foreground/85
+                                [&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5"
+                              dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(tip) }}
+                            />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {sub.commonMistakes && sub.commonMistakes.length > 0 && (
+                    <div className="mt-6 rounded-2xl border border-rose-500/25 bg-rose-500/[0.04] dark:bg-rose-500/[0.06] overflow-hidden">
+                      <div className="flex items-center gap-2 border-b border-rose-500/20 bg-rose-500/10 px-4 py-3">
+                        <AlertTriangle className="size-4 shrink-0 text-rose-600 dark:text-rose-400" aria-hidden />
+                        <span className="text-xs font-bold uppercase tracking-wider text-rose-700 dark:text-rose-400">
+                          Common Mistakes
+                        </span>
+                      </div>
+                      <ul className="p-4 space-y-3 sm:px-5">
+                        {sub.commonMistakes.map((mistake, mi) => (
+                          <li key={mi} className="flex items-start gap-3">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-rose-500/70" />
+                            <div
+                              className="flex-1 text-[14.5px] leading-7 text-foreground/85 prose prose-sm dark:prose-invert max-w-none
+                                prose-strong:font-semibold prose-strong:text-foreground
+                                prose-code:text-[12px] prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
+                                prose-table:text-sm prose-table:w-full
+                                prose-th:bg-muted/60 prose-th:px-3 prose-th:py-2 prose-th:text-left prose-th:font-semibold prose-th:text-xs prose-th:uppercase
+                                prose-td:px-3 prose-td:py-2 prose-td:text-foreground/85
+                                [&_mark]:bg-yellow-200/70 dark:[&_mark]:bg-yellow-900/40 [&_mark]:rounded [&_mark]:px-0.5"
+                              dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(mistake) }}
+                            />
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   )}
 
