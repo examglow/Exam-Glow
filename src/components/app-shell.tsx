@@ -9,9 +9,7 @@ export const studyNav = [
   { to: "/home", label: "Home" },
   { to: "/assignments", label: "Assignments" },
   { to: "/flashcards", label: "Flashcards" },
-  { to: "/test", label: "Practice" },
-  { to: "/tutors", label: "Tutors" },
-  { to: "/arcade", label: "Study Games" },
+  { to: "/test", label: "Quizzes & Tests" },
 ] as const;
 
 export function AppNav() {

@@ -14,6 +14,7 @@ import {
   Bot,
   Plus,
   FileText,
+  GraduationCap,
 } from "lucide-react";
 
 import { DashboardSidebar } from "@/components/dashboard-sidebar";
@@ -47,6 +48,7 @@ export const Route = createFileRoute("/home")({
 
 const quickActions = [
   { title: "Ask the tutor", meta: "Instant explanations & quiz", to: "/chat", Icon: MessageCircle, tone: "bg-lilac" },
+  { title: "Quizzes & Tests", meta: "Topical practice & mocks", to: "/test", Icon: ClipboardCheck, tone: "bg-lavender" },
   { title: "My Notes", meta: "Write & edit rich notes", to: "/notes", Icon: FileText, tone: "bg-mint" },
   { title: "Syllabus Notes", meta: "Full syllabus chapters", to: "/syllabus-notes", Icon: BookOpen, tone: "bg-surface" },
 ] as const;
@@ -325,7 +327,7 @@ export function HomePage() {
                   to="/test"
                   className="mt-5 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-xs font-semibold text-ink-foreground transition-transform hover:-translate-y-0.5"
                 >
-                  Start practice quiz <ArrowRight className="size-3.5" />
+                  Open Quizzes &amp; Tests <ArrowRight className="size-3.5" />
                 </Link>
               </div>
               <Link

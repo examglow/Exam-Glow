@@ -9,7 +9,8 @@ export const ECONOMICS: SubjectNotes = {
     {
       number: 1,
       title: "The Basic Economic Problem",
-      intro: "Economics studies how individuals, firms, and governments make decisions about allocating scarce resources to satisfy unlimited wants. The central problem — scarcity — arises because resources (land, labour, capital, enterprise) are finite while human desires are infinite. Every economic decision involves a trade-off, and understanding the concept of opportunity cost is essential for analysing all economic choices from household spending to government policy.",
+      intro:
+        "Economics studies how individuals, firms, and governments make decisions about allocating scarce resources to satisfy unlimited wants. The central problem — scarcity — arises because resources (land, labour, capital, enterprise) are finite while human desires are infinite. Every economic decision involves a trade-off, and understanding the concept of opportunity cost is essential for analysing all economic choices from household spending to government policy.",
       subheadings: [
         {
           title: "Scarcity, Choice and Opportunity Cost",
@@ -22,16 +23,16 @@ export const ECONOMICS: SubjectNotes = {
                 "**Points inside the PPC**: Represent inefficiency or unemployed resources — the economy is not using all available resources (e.g. during a recession).",
                 "**Points outside the PPC**: Currently unattainable — require either more resources or better technology.",
                 "**Movement along the PPC**: Represents opportunity cost — to produce more of one good, production of the other must fall. The curved shape of the PPC (concave to the origin) reflects the law of increasing opportunity cost — resources are not perfectly substitutable, so each additional unit of one good requires giving up increasing amounts of the other.",
-                "**Outward shift of the PPC**: Represents economic growth — caused by an increase in the quantity or quality of resources (more labour, better technology, more capital) allowing more of both goods to be produced."
-              ]
-            }
+                "**Outward shift of the PPC**: Represents economic growth — caused by an increase in the quantity or quality of resources (more labour, better technology, more capital) allowing more of both goods to be produced.",
+              ],
+            },
           ],
           recap: [
             "Define opportunity cost and give a specific example involving a government decision. [2]",
             "Explain, using a production possibility curve, what is meant by economic efficiency. [3]",
             "A PPC shifts outward. State two reasons why this might occur. [2]",
-            "Explain why the PPC is usually drawn as concave (bowed out) rather than as a straight line. [3]"
-          ]
+            "Explain why the PPC is usually drawn as concave (bowed out) rather than as a straight line. [3]",
+          ],
         },
         {
           title: "Factors of Production",
@@ -43,23 +44,24 @@ export const ECONOMICS: SubjectNotes = {
                 "**Capital goods**: Used in the production of other goods. Examples: factory machinery, cranes, ovens in a bakery, computers in a firm. They are not consumed immediately; they generate output over many periods.",
                 "**Consumer goods**: Purchased by households for direct satisfaction of wants. Durable consumer goods (cars, washing machines) provide utility over time; non-durable consumer goods (food, petrol) are used up quickly.",
                 "**Human capital**: The skills, knowledge, and experience embodied in workers, acquired through education and training. Investing in human capital raises labour productivity and increases the economy's productive capacity, shifting the PPC outward.",
-                "**Why enterprise is separate**: Enterprise cannot simply be hired like labour or purchased like capital — it requires a specific combination of risk-taking, innovation, and organisational skill. Without enterprise, the other three factors would not be combined productively."
-              ]
-            }
+                "**Why enterprise is separate**: Enterprise cannot simply be hired like labour or purchased like capital — it requires a specific combination of risk-taking, innovation, and organisational skill. Without enterprise, the other three factors would not be combined productively.",
+              ],
+            },
           ],
           recap: [
             "State the four factors of production and give the reward (income) earned by each. [4]",
             "Explain the difference between capital goods and consumer goods, giving one example of each. [2]",
             "Explain how an increase in human capital can lead to economic growth. [3]",
-            "A new factory is built in a country. Identify which factor of production has increased and explain the likely effect on the PPC. [2]"
-          ]
-        }
-      ]
+            "A new factory is built in a country. Identify which factor of production has increased and explain the likely effect on the PPC. [2]",
+          ],
+        },
+      ],
     },
     {
       number: 2,
       title: "Demand, Supply and Price",
-      intro: "In a market economy, prices are determined by the interaction of demand (consumers' willingness and ability to buy) and supply (producers' willingness and ability to sell). Understanding how and why demand and supply curves shift — and how changes in market conditions lead to new equilibrium prices and quantities — is the analytical core of microeconomics. These tools apply to all markets: goods, labour, foreign exchange, and financial assets.",
+      intro:
+        "In a market economy, prices are determined by the interaction of demand (consumers' willingness and ability to buy) and supply (producers' willingness and ability to sell). Understanding how and why demand and supply curves shift — and how changes in market conditions lead to new equilibrium prices and quantities — is the analytical core of microeconomics. These tools apply to all markets: goods, labour, foreign exchange, and financial assets.",
       subheadings: [
         {
           title: "Demand and the Law of Demand",
@@ -72,16 +74,16 @@ export const ECONOMICS: SubjectNotes = {
                 "**Price of substitutes**: If the price of Pepsi rises, demand for Coca-Cola increases (rightward shift) — consumers switch to the now relatively cheaper alternative.",
                 "**Price of complements**: Complements are goods consumed together (cars and petrol, printers and ink). If the price of petrol rises sharply, demand for cars falls (leftward shift).",
                 "**Tastes and fashions**: A health campaign showing evidence that a food causes cancer will decrease demand for it. Celebrity endorsements or social media trends increase demand for products.",
-                "**Expectations**: If consumers expect prices to rise in future, they buy now, increasing current demand. If a product is expected to become obsolete, demand may fall."
-              ]
-            }
+                "**Expectations**: If consumers expect prices to rise in future, they buy now, increasing current demand. If a product is expected to become obsolete, demand may fall.",
+              ],
+            },
           ],
           recap: [
             "Explain, using a demand curve diagram, the effect on the market for bus travel if average incomes rise significantly. State whether bus travel is a normal or inferior good in your answer. [4]",
             "Distinguish between a movement along a demand curve and a shift of the demand curve. [2]",
             "The price of tea rises sharply. Explain the likely effect on the demand curve for coffee. [2]",
-            "State four factors, other than price, that determine the demand for a product. [4]"
-          ]
+            "State four factors, other than price, that determine the demand for a product. [4]",
+          ],
         },
         {
           title: "Supply, Equilibrium and Price Elasticity",
@@ -93,23 +95,24 @@ export const ECONOMICS: SubjectNotes = {
                 "**PED calculation**: Price rises from £10 to £12 (20% increase). Quantity demanded falls from 100 to 80 (20% fall). PED = -20% / +20% = -1. Unit elastic (by convention, the negative sign is often omitted and the absolute value quoted).",
                 "**Inelastic demand and revenue**: If PED = -0.3, a 10% price increase causes only a 3% fall in quantity. Revenue = P × Q. Revenue increases because the rise in price outweighs the small fall in quantity.",
                 "**Elastic demand and revenue**: If PED = -2, a 10% price increase causes a 20% fall in quantity. The large fall in quantity outweighs the price rise — total revenue falls.",
-                "**Price Elasticity of Supply (PES)**: Measures responsiveness of quantity supplied to price change. PES = % change in QS / % change in price. PES > 1 = elastic supply (firms can easily increase output); PES < 1 = inelastic (firms cannot quickly increase production — agricultural goods, goods requiring long production times)."
-              ]
-            }
+                "**Price Elasticity of Supply (PES)**: Measures responsiveness of quantity supplied to price change. PES = % change in QS / % change in price. PES > 1 = elastic supply (firms can easily increase output); PES < 1 = inelastic (firms cannot quickly increase production — agricultural goods, goods requiring long production times).",
+              ],
+            },
           ],
           recap: [
             "Using a demand and supply diagram, show and explain what happens to the equilibrium price and quantity of new houses when the cost of building materials rises. [4]",
             "The price of a good rises from £20 to £25. Quantity demanded falls from 400 to 350. Calculate the PED and comment on whether demand is elastic or inelastic. [4]",
             "Explain why the demand for insulin is price inelastic. [2]",
-            "Explain how a government subsidy given to producers affects the supply curve and the equilibrium price and quantity. [4]"
-          ]
-        }
-      ]
+            "Explain how a government subsidy given to producers affects the supply curve and the equilibrium price and quantity. [4]",
+          ],
+        },
+      ],
     },
     {
       number: 3,
       title: "Government and the Economy",
-      intro: "Governments intervene in markets and the macroeconomy for many reasons: to correct market failures, redistribute income, stabilise the business cycle, and promote economic growth. The main macroeconomic objectives are economic growth, low inflation, low unemployment, and a satisfactory balance of payments. Governments use fiscal policy (taxation and government spending) and monetary policy (interest rates and money supply) as the primary tools for achieving these objectives, each with different effects and time lags.",
+      intro:
+        "Governments intervene in markets and the macroeconomy for many reasons: to correct market failures, redistribute income, stabilise the business cycle, and promote economic growth. The main macroeconomic objectives are economic growth, low inflation, low unemployment, and a satisfactory balance of payments. Governments use fiscal policy (taxation and government spending) and monetary policy (interest rates and money supply) as the primary tools for achieving these objectives, each with different effects and time lags.",
       subheadings: [
         {
           title: "Macroeconomic Objectives and Conflicts",
@@ -121,16 +124,16 @@ export const ECONOMICS: SubjectNotes = {
                 "**GDP**: The total monetary value of all finished goods and services produced within a country in one year. Real GDP adjusts for inflation to show true changes in output. GDP per capita = GDP / population — a measure of average living standards.",
                 "**Consumer Price Index (CPI)**: Tracks changes in the price of a basket of goods and services representative of a typical household's expenditure. Inflation rate = % change in CPI. A limitation is that the basket may not represent everyone's spending pattern.",
                 "**Unemployment rate**: Number unemployed / labour force × 100. The claimant count measures those claiming unemployment benefits; the ILO measure (survey-based) is broader. Hidden unemployment includes discouraged workers who have given up looking.",
-                "**Balance of payments**: Records all economic transactions between a country and the rest of the world over a year. The current account records trade in goods and services, income, and transfers. A current account deficit means imports exceed exports."
-              ]
-            }
+                "**Balance of payments**: Records all economic transactions between a country and the rest of the world over a year. The current account records trade in goods and services, income, and transfers. A current account deficit means imports exceed exports.",
+              ],
+            },
           ],
           recap: [
             "Explain the difference between real GDP and nominal GDP. [2]",
             "Explain why a government trying to reduce inflation may find that unemployment increases. [4]",
             "State four macroeconomic objectives of a government. [4]",
-            "Explain why deflation can be as harmful to an economy as high inflation. [3]"
-          ]
+            "Explain why deflation can be as harmful to an economy as high inflation. [3]",
+          ],
         },
         {
           title: "Fiscal and Monetary Policy",
@@ -142,18 +145,18 @@ export const ECONOMICS: SubjectNotes = {
                 "**Consumer spending**: Cheaper mortgage repayments leave homeowners with more disposable income. Cheaper personal loans encourage borrowing for consumption of cars, holidays, and electronics.",
                 "**Investment**: Firms face lower borrowing costs for capital investment — more projects become profitable. Investment in new machinery, factories, and technology increases.",
                 "**Exchange rate effect**: Lower interest rates make the currency less attractive to foreign investors (lower return on deposits). The currency depreciates, making exports cheaper and imports dearer — improving the current account balance.",
-                "**Inflation risk**: If the economy is already at or near full capacity, increased spending pushes up prices. Central banks must balance stimulating demand against creating excessive inflation."
-              ]
-            }
+                "**Inflation risk**: If the economy is already at or near full capacity, increased spending pushes up prices. Central banks must balance stimulating demand against creating excessive inflation.",
+              ],
+            },
           ],
           recap: [
             "Explain how a reduction in income tax rates might affect consumer spending and economic growth. [4]",
             "Explain the difference between direct and indirect taxes and give one example of each. [3]",
             "A central bank raises interest rates. Explain the likely effects on investment by firms and on the exchange rate. [4]",
-            "Explain one conflict that may arise from using expansionary fiscal policy to reduce unemployment. [3]"
-          ]
-        }
-      ]
-    }
-  ]
+            "Explain one conflict that may arise from using expansionary fiscal policy to reduce unemployment. [3]",
+          ],
+        },
+      ],
+    },
+  ],
 };

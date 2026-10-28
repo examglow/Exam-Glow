@@ -146,12 +146,12 @@ export function AuthLayout({ title, children }: { title: string; children: React
           we'll make your study plan.
         </h2>
         <p className="mt-5 text-sm text-muted-foreground">
-          Trusted by students from top institutions
+          Trusted by Cambridge IGCSE candidates worldwide
         </p>
         <div className="mt-4 flex flex-wrap items-center justify-center gap-8 font-display text-xl text-foreground/70">
-          <span>HARVARD</span>
-          <span>Yale</span>
-          <span>MIT</span>
+          <span>Cambridge IGCSE</span>
+          <span>A-Levels</span>
+          <span>Pearson Edexcel</span>
         </div>
       </div>
     </div>

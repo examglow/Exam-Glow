@@ -26,10 +26,10 @@ import { PaywallModal } from "@/components/paywall-modal";
 export const Route = createFileRoute("/test")({
   head: () => ({
     meta: [
-      { title: "Practice — Quiz & Exam Simulation | ExamGlow" },
+      { title: "Quizzes & Tests — Cambridge Practice & Mock Exams | ExamGlow" },
       {
         name: "description",
-        content: "Quiz yourself on any topic, then sit a full IGCSE examination simulation with live timer and mark scheme.",
+        content: "Topical revision quizzes and full Cambridge IGCSE examination simulations combined into one revision centre with timers and mark schemes.",
       },
     ],
   }),
@@ -393,27 +393,40 @@ Return STRICTLY a JSON object without surrounding prose:
   }
 
   return (
-    <DashboardLayout crumbs={[{ label: "Practice" }, { label: mode === "quiz" ? "Quiz" : "Exam Simulation" }]}>
-      <div className="mb-6 inline-flex rounded-full border border-border bg-secondary/50 p-1 text-xs font-semibold">
-        <button
-          type="button"
-          onClick={() => setMode("quiz")}
-          className={`rounded-full px-5 py-2 transition-colors ${
-            mode === "quiz" ? "bg-ink text-ink-foreground shadow" : "text-muted-foreground hover:text-foreground"
-          }`}
-        >
-          Quiz
-        </button>
-        <button
-          type="button"
-          onClick={() => setMode("exam")}
-          className={`rounded-full px-5 py-2 transition-colors ${
-            mode === "exam" ? "bg-ink text-ink-foreground shadow" : "text-muted-foreground hover:text-foreground"
-          }`}
-        >
-          Exam Simulation
-        </button>
-      </div>
+    <DashboardLayout crumbs={[{ label: "Quizzes & Tests" }, { label: mode === "quiz" ? "Topical Quizzes" : "Exam Papers" }]}>
+      {!examStarted && (
+        <div className="mb-6">
+          <h1 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">
+            Quizzes &amp; Tests
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Topical active-recall quizzes and full Cambridge examination simulations combined in one revision centre.
+          </p>
+        </div>
+      )}
+
+      {!examStarted && (
+        <div className="mb-6 inline-flex rounded-2xl border border-border bg-card p-1 text-xs font-semibold shadow-xs">
+          <button
+            type="button"
+            onClick={() => setMode("quiz")}
+            className={`flex items-center gap-2 rounded-xl px-5 py-2.5 transition-all ${
+              mode === "quiz" ? "bg-ink text-ink-foreground shadow-sm font-bold" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <CheckCircle2 className="size-4" /> Topical Practice Quizzes
+          </button>
+          <button
+            type="button"
+            onClick={() => setMode("exam")}
+            className={`flex items-center gap-2 rounded-xl px-5 py-2.5 transition-all ${
+              mode === "exam" ? "bg-ink text-ink-foreground shadow-sm font-bold" : "text-muted-foreground hover:text-foreground"
+            }`}
+          >
+            <FileCheck className="size-4" /> Cambridge Mock Exam Papers
+          </button>
+        </div>
+      )}
 
       {mode === "quiz" ? (
         <PracticeQuiz />

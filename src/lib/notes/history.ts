@@ -9,7 +9,8 @@ export const HISTORY: SubjectNotes = {
     {
       number: 1,
       title: "Exam Technique and Source Skills",
-      intro: "IGCSE History (0470) tests two very different skills: the ability to write structured, judgement-driven essays from your own knowledge (Paper 1 core content and Paper 4 depth studies), and the ability to extract, compare and evaluate information from historical sources (Paper 2 source-based questions). Most marks are lost not through lack of knowledge but through poor technique: students narrate instead of arguing, describe sources instead of evaluating them, and never reach a verdict. This chapter teaches you the answer architectures that examiners reward — PEEL paragraphs for essays, and utility-versus-reliability analysis for sources — before you apply them to real content in later chapters.",
+      intro:
+        "IGCSE History (0470) tests two very different skills: the ability to write structured, judgement-driven essays from your own knowledge (Paper 1 core content and Paper 4 depth studies), and the ability to extract, compare and evaluate information from historical sources (Paper 2 source-based questions). Most marks are lost not through lack of knowledge but through poor technique: students narrate instead of arguing, describe sources instead of evaluating them, and never reach a verdict. This chapter teaches you the answer architectures that examiners reward — PEEL paragraphs for essays, and utility-versus-reliability analysis for sources — before you apply them to real content in later chapters.",
       subheadings: [
         {
           title: "Structured Essay Questions and the PEEL Paragraph",
@@ -21,8 +22,8 @@ export const HISTORY: SubjectNotes = {
                 "**Part (a) Describe [4]**: Give four distinct, accurate points — no explanation needed. One mark per correct point, so breadth beats depth. Spend roughly four to five minutes.",
                 "**Part (b) Explain [6]**: Give two to three developed reasons, each with because/therefore reasoning and a supporting fact. Explanation language is what separates a 4 from a 6.",
                 "**Part (c) Assess [10]**: Write a mini-essay — judgement in the introduction, two to three PEEL paragraphs covering both sides, and a weighed conclusion. Aim for three paragraphs in 15 minutes.",
-                "**Command words decode everything**: Describe = say what happened. Explain = say why. Assess / How far = judge the importance of factors. Circle the command word before you write."
-              ]
+                "**Command words decode everything**: Describe = say what happened. Explain = say why. Assess / How far = judge the importance of factors. Circle the command word before you write.",
+              ],
             },
             {
               subTitle: "The anatomy of a PEEL paragraph",
@@ -31,8 +32,8 @@ export const HISTORY: SubjectNotes = {
                 "**Evidence**: Specific, checkable facts: a treaty and its date, a statistic, a named person and action. Evidence should be the shortest part of the paragraph, not the longest.",
                 "**Explanation**: The highest-marked section. Use connectives (because, this meant that, as a result) to show how the evidence causes the outcome in the question.",
                 "**Link**: A final sentence tying the paragraph back to the question wording, which keeps every paragraph on-task and signals structure to the examiner.",
-                "**Precision beats coverage**: Two fully explained paragraphs with exact facts outscore four paragraphs of vague generalisation every time."
-              ]
+                "**Precision beats coverage**: Two fully explained paragraphs with exact facts outscore four paragraphs of vague generalisation every time.",
+              ],
             },
             {
               subTitle: "Facts that earn marks — build a fact bank",
@@ -40,9 +41,9 @@ export const HISTORY: SubjectNotes = {
                 "**Dates as evidence**: 28 June 1919 (Versailles), 7 November 1917 (October Revolution), 30 January 1933 (Hitler appointed Chancellor), 1 September 1939 (invasion of Poland) — a correct date converts a weak point into a credited one.",
                 "**Statistics as evidence**: Germany's army cut to 100,000; unemployment of about 6 million in Germany by 1932; roughly 60,000 British casualties on the first day of the Somme — numbers prove scale.",
                 "**Named people as evidence**: Bismarck, Garibaldi, Stresemann, Cavour — attach an action to each name (Stresemann called off passive resistance in the Ruhr, 1923).",
-                "**Named places and events**: Kronstadt, Plombieres, Sedan, the Ruhr — depth study answers without named specifics rarely rise above the middle bands."
-              ]
-            }
+                "**Named places and events**: Kronstadt, Plombieres, Sedan, the Ruhr — depth study answers without named specifics rarely rise above the middle bands.",
+              ],
+            },
           ],
           examinerTips: [
             "**Start every answer with a one-sentence judgement**: For part (c), your introduction should answer the question in one line (for example, The Treaty of Versailles was the most important cause of German resentment in the 1920s, though economic crisis also played a major role). Examiners read introductions first and it anchors your whole argument.",
@@ -50,7 +51,7 @@ export const HISTORY: SubjectNotes = {
             "**Use the mark count to budget points**: Four marks means four points; six marks means two or three explained reasons; ten marks means at least two paragraphs each side. Never write three lines for a ten-mark question.",
             "**Spend time in proportion to marks**: A ten-mark part (c) deserves roughly a third of the question's time; part (a) should take under five minutes. Check the clock after each section.",
             "**Learn facts attached to arguments, not in isolation**: Mark schemes credit accurate, relevant supporting detail. A fact that is true but does not support your point earns nothing.",
-            "**Leave two minutes to check names and dates**: Misremembered details (Versailles signed in 1919, not 1918) are the most common way students throw away secure marks."
+            "**Leave two minutes to check names and dates**: Misremembered details (Versailles signed in 1919, not 1918) are the most common way students throw away secure marks.",
           ],
           commonMistakes: [
             "**Narrating instead of arguing**: Students retell the story (Then Hitler did this... then he did that...) because storytelling feels safe. The fix: begin every paragraph with an analytical point that contains the word because or shows a link to the question.",
@@ -58,15 +59,15 @@ export const HISTORY: SubjectNotes = {
             "**Generic evidence**: Writing Germany lost land and money could describe any treaty. The fix: use the specific (13 per cent of territory, 6.6 billion pounds of reparations) — specificity is what distinguishes top-band answers.",
             "**Ignoring the second half of the question**: A question asking how far requires considering the other side. The fix: plan at least one paragraph that argues against your own judgement before the conclusion.",
             "**Writing everything you know**: Dumping all revision onto the page buries the relevant points. The fix: plan three or four PEEL points in the margin before writing, and stick to them.",
-            "**Mismanaging time so part (c) is rushed**: Students over-write part (b) and leave eight minutes for a ten-mark essay. The fix: decide your time split when you read the paper and move on when time is up, even mid-thought."
+            "**Mismanaging time so part (c) is rushed**: Students over-write part (b) and leave eight minutes for a ten-mark essay. The fix: decide your time split when you read the paper and move on when time is up, even mid-thought.",
           ],
           recap: [
             "Describe the terms of the Treaty of Versailles that caused most resentment in Germany. [4]",
             "Explain why the Provisional Government struggled to hold onto power in Russia in 1917. [6]",
             "Assess the reasons why Hitler was able to become Chancellor of Germany in January 1933. [10]",
             "Explain why the policy of appeasement was adopted by Britain in the 1930s. [6]",
-            "Describe the events of the Long March and explain its significance for the Chinese Communist Party. [6]"
-          ]
+            "Describe the events of the Long March and explain its significance for the Chinese Communist Party. [6]",
+          ],
         },
         {
           title: "'How Far Do You Agree?' — Balanced Judgements and Conclusions",
@@ -78,8 +79,8 @@ export const HISTORY: SubjectNotes = {
                 "**Introduction (2-3 sentences)**: Define the issue, give one anchor fact, and state your line of argument with a qualified position (largely agree / agree to a limited extent).",
                 "**Against paragraphs (1-2)**: Present the opposing evidence honestly and explain it properly — examiners penalise straw-man arguments that are set up only to be knocked down.",
                 "**For paragraphs (2)**: Your strongest, best-evidenced points come here, each explained with chains of causation, not just assertion.",
-                "**Conclusion (3-4 sentences)**: Weigh both sides against each other using a stated criterion (duration, scale, timing, inevitability) and deliver a clear verdict that answers the exact question asked."
-              ]
+                "**Conclusion (3-4 sentences)**: Weigh both sides against each other using a stated criterion (duration, scale, timing, inevitability) and deliver a clear verdict that answers the exact question asked.",
+              ],
             },
             {
               subTitle: "Verdict language — phrases that signal weighing",
@@ -88,8 +89,8 @@ export const HISTORY: SubjectNotes = {
                 "**Qualified agreement**: The statement is largely valid in the short term; however, in the longer term its importance was overtaken by...",
                 "**Balanced judgement**: While X was necessary, it was not sufficient; without Y, X alone would not have produced the outcome.",
                 "**Disagreement with respect**: Although X contributed, it was a symptom rather than a cause; the deeper cause was Y, which determined...",
-                "**Criteria to weigh with**: compare time-span (immediate trigger versus long-term condition), scale (how many people affected), and whether the factor acted through others."
-              ]
+                "**Criteria to weigh with**: compare time-span (immediate trigger versus long-term condition), scale (how many people affected), and whether the factor acted through others.",
+              ],
             },
             {
               subTitle: "Planning in four minutes",
@@ -97,9 +98,9 @@ export const HISTORY: SubjectNotes = {
                 "**Underline the judgement demanded**: circle How far and the factor named — every paragraph must compare that factor against alternatives, not just describe it.",
                 "**T-chart in the margin**: jot two points for, two points against, each with one key fact — this guarantees balance before you start writing.",
                 "**Decide your verdict before writing**: a conclusion cannot weigh if you only make up your mind at the end; the introduction verdict and conclusion verdict must match.",
-                "**Sequence for effect**: put your second-strongest point first and your strongest last so the essay ends at full strength before the conclusion."
-              ]
-            }
+                "**Sequence for effect**: put your second-strongest point first and your strongest last so the essay ends at full strength before the conclusion.",
+              ],
+            },
           ],
           examinerTips: [
             "**Answer the exact comparative in the question**: If the question asks whether X was more important than Y, you must discuss Y in real depth — a paragraph that only covers X caps you at the middle levels.",
@@ -107,7 +108,7 @@ export const HISTORY: SubjectNotes = {
             "**Keep the same verdict from introduction to conclusion**: Contradicting yourself between the start and end is the fastest route out of the top band; plan your position first.",
             "**Use precise evidence in the conclusion itself**: A fresh, specific fact in the final paragraph (230 Nazi seats in July 1932) proves the conclusion is evidence-based, not a vague summary.",
             "**Practise conclusions as a standalone skill**: Take past questions and write only the introduction and conclusion in four minutes each; the middle is revision, the ends are technique.",
-            "**Watch the level descriptors language**: Top levels require sustained analysis and a well-supported judgement — adjectives like significant, decisive and fundamental belong in your argument, never it was very important."
+            "**Watch the level descriptors language**: Top levels require sustained analysis and a well-supported judgement — adjectives like significant, decisive and fundamental belong in your argument, never it was very important.",
           ],
           commonMistakes: [
             "**A conclusion that merely repeats**: Students restate their paragraphs because they run out of time or ideas. The fix: the conclusion must compare (however, outweighs) not summarise (also, furthermore).",
@@ -115,15 +116,15 @@ export const HISTORY: SubjectNotes = {
             "**No verdict at all**: Ending with a question mark or on the other hand... and stopping leaves the examiner to decide for you. The fix: always finish with Therefore, I agree to a large extent because...",
             "**Treating all factors as equal**: Listing five causes with equal weight signals no judgement. The fix: rank them explicitly — the most important, secondly, of lesser importance.",
             "**Extreme verdicts without support**: Claiming totally agree or completely disagree with only moderate evidence is discounted. The fix: use calibrated verdicts — largely, to a significant extent, only to a limited extent.",
-            "**Straw-man opposing arguments**: Presenting the other side weakly is spotted instantly. The fix: give the opposing side its best evidence, then explain why yours still outweighs it."
+            "**Straw-man opposing arguments**: Presenting the other side weakly is spotted instantly. The fix: give the opposing side its best evidence, then explain why yours still outweighs it.",
           ],
           recap: [
             "How far do you agree that the Treaty of Versailles was the main cause of the Second World War? Explain your answer. [10]",
             "Assess the view that the Bolsheviks won the Russian Civil War because of the weaknesses of the Whites rather than the strengths of the Reds. [10]",
             "How far was the Wall Street Crash responsible for the collapse of the Weimar Republic? [10]",
             "How far do you agree that the League of Nations was doomed to failure from the moment it was created? [10]",
-            "How important was the Nazi-Soviet Pact of August 1939 in causing the outbreak of the Second World War? [10]"
-          ]
+            "How important was the Nazi-Soviet Pact of August 1939 in causing the outbreak of the Second World War? [10]",
+          ],
         },
         {
           title: "Source Evaluation: Utility, Reliability, Limitations and Comparison",
@@ -136,8 +137,8 @@ export const HISTORY: SubjectNotes = {
                 "**Origin**: Who produced it, when, and in what circumstances? A British government poster of 1916 was produced under the Defence of the Realm Act, which censored the press — that origin shapes everything it can say.",
                 "**Purpose**: Why was it created — to inform, persuade, justify, console, mock? Purpose predicts slant: wartime posters demonise the enemy; victory speeches claim unearned credit.",
                 "**Apply NOP to a verdict**: never list nature, origin and purpose mechanically; use each to reach a judgement about usefulness or reliability for the specific enquiry.",
-                "**Corroborate**: Check the source against your own knowledge and other sources — a claim that matches the agreed historical record (for example, that rationing tightened in Germany after 1942) is corroborated; a lone claim is not."
-              ]
+                "**Corroborate**: Check the source against your own knowledge and other sources — a claim that matches the agreed historical record (for example, that rationing tightened in Germany after 1942) is corroborated; a lone claim is not.",
+              ],
             },
             {
               subTitle: "Question types on Paper 2 and how to attack them",
@@ -146,8 +147,8 @@ export const HISTORY: SubjectNotes = {
                 "**Comparison questions (5-7 marks)**: Find two or three specific points of agreement or disagreement — source A blames X while source B blames Y — and quote or closely paraphrase each side.",
                 "**Usefulness questions (6-8 marks)**: Judge usefulness for the stated enquiry using NOP, cover both content value and limitations, and end with an overall judgement about how far it helps.",
                 "**Reliability / do you trust questions (6-8 marks)**: Assess origin and purpose, check against your own knowledge for accuracy, and conclude with a qualified verdict (reliable for X, but not for Y).",
-                "**Cross-reference questions (7-8 marks)**: Say which source is better supported by your own knowledge, giving the factual evidence that confirms one and undermines the other."
-              ]
+                "**Cross-reference questions (7-8 marks)**: Say which source is better supported by your own knowledge, giving the factual evidence that confirms one and undermines the other.",
+              ],
             },
             {
               subTitle: "Example comparison and cross-reference moves",
@@ -156,9 +157,9 @@ export const HISTORY: SubjectNotes = {
                 "**Disagreement sentence frame**: However, they disagree about...; source A, produced by..., emphasises..., whereas source B, written by..., stresses... — the difference reflecting their different origins.",
                 "**Own-knowledge cross-check**: Source A claims that reparations were paid on time; however, Germany defaulted in 1922, leading to the Franco-Belgian occupation of the Ruhr in January 1923, so source A's claim is inaccurate.",
                 "**Silence as evidence**: Note what a source leaves out — a 1916 recruitment poster praising heroism says nothing about casualty rates, which limits its utility for studying conditions on the Western Front.",
-                "**Attitude evidence**: Even propaganda is primary evidence of attitudes — a Soviet poster mocking capitalism tells the historian what the regime wanted citizens to believe, which is itself historically valuable."
-              ]
-            }
+                "**Attitude evidence**: Even propaganda is primary evidence of attitudes — a Soviet poster mocking capitalism tells the historian what the regime wanted citizens to believe, which is itself historically valuable.",
+              ],
+            },
           ],
           examinerTips: [
             "**Anchor every judgement to the exact enquiry**: How useful is this source for studying the impact of the Depression? — mention the Depression in your first and last sentence; generic utility answers score half marks.",
@@ -166,7 +167,7 @@ export const HISTORY: SubjectNotes = {
             "**Use your own knowledge as the referee**: In reliability and cross-reference answers, your knowledge decides which source wins; name the specific fact (the Ruhr occupation, the Lytton Report) that settles it.",
             "**Quote briefly, then analyse**: A short quoted phrase proves you read the source; spending the rest of the sentence on NOP analysis converts description into evaluation.",
             "**Tie value to audience and timing**: A source published before an event differs from one written after with hindsight; a private diary entry written during a crisis usually outranks a memoir written decades later.",
-            "**Compare content AND provenance in comparison answers**: Top-band answers explain disagreement through origin and purpose (Source B was written by a defeated general defending his reputation), not just content."
+            "**Compare content AND provenance in comparison answers**: Top-band answers explain disagreement through origin and purpose (Source B was written by a defeated general defending his reputation), not just content.",
           ],
           commonMistakes: [
             "**Treating evaluation as comprehension**: Retelling what the source says without judging it is the single most common Paper 2 error. The fix: after every observation, add so it is useful because... or this limits its reliability because...",
@@ -174,22 +175,23 @@ export const HISTORY: SubjectNotes = {
             "**Answering reliability when asked utility**: They are different questions with different mark schemes. The fix: utility = value for this specific enquiry (both content and limitations); reliability = trustworthiness (accuracy and honesty).",
             "**Ignoring provenance details printed on the paper**: The caption under a source (who, when, why) is a gift — students who skip it write content-only answers. The fix: build the first sentence of every evaluation from the provenance.",
             "**Contradicting the source with your knowledge by mistake**: Misreading a source and then correcting it wrongly destroys credibility. The fix: re-read the source after writing your answer and check every claim you attributed to it.",
-            "**Comparing topics instead of viewpoints**: Saying one source is about economics and the other about politics misses the point. The fix: compare what each says about the same issue, and explain differences through NOP."
+            "**Comparing topics instead of viewpoints**: Saying one source is about economics and the other about politics misses the point. The fix: compare what each says about the same issue, and explain differences through NOP.",
           ],
           recap: [
             "Study a wartime propaganda poster. What is its message? Support your answer with details from the source. [5]",
             "How far do Sources A and B agree about the reasons for German resentment of the Treaty of Versailles? [6]",
             "How useful is a private letter from a German citizen, written in 1923, for an enquiry into the effects of hyperinflation in Germany? Explain your answer using details of the source and your own knowledge. [8]",
             "Source C was written by a British general in 1919 defending the tactics used on the Western Front. How reliable is this source for a historian studying conditions in the trenches? [8]",
-            "Which of Sources D and E is better supported by your own knowledge of the reasons for the failure of the League of Nations in the 1930s? Explain your answer. [7]"
-          ]
-        }
-      ]
+            "Which of Sources D and E is better supported by your own knowledge of the reasons for the failure of the League of Nations in the 1930s? Explain your answer. [7]",
+          ],
+        },
+      ],
     },
     {
       number: 2,
       title: "The Nineteenth Century Core Content",
-      intro: "The nineteenth-century core of Paper 1 examines the development of modern nation states between 1848 and 1914: the wave of revolutions that swept Europe in 1848, the industrial transformation that began in Britain, and the nationalist movements that created unified Germany and Italy. These topics are among the most reliably examined on Paper 1, and they reward precisely the skills practised in Chapter 1 — argued paragraphs built from named events, dates and people. Master the chronology below and you can answer almost any question on this section from the revolutions to the eve of the First World War.",
+      intro:
+        "The nineteenth-century core of Paper 1 examines the development of modern nation states between 1848 and 1914: the wave of revolutions that swept Europe in 1848, the industrial transformation that began in Britain, and the nationalist movements that created unified Germany and Italy. These topics are among the most reliably examined on Paper 1, and they reward precisely the skills practised in Chapter 1 — argued paragraphs built from named events, dates and people. Master the chronology below and you can answer almost any question on this section from the revolutions to the eve of the First World War.",
       subheadings: [
         {
           title: "The Revolutions of 1848",
@@ -202,8 +204,8 @@ export const HISTORY: SubjectNotes = {
                 "**Liberalism**: The middle classes demanded written constitutions, elected parliaments, the rule of law and careers open to talent rather than birth — grievances against the conservative order established in 1815.",
                 "**Nationalism**: Germans wanted national unity; Hungarians, Poles, Czechs and Italians wanted independence or autonomy from the multi-national Austrian (Habsburg) Empire, so every uprising also fed on national grievance.",
                 "**Weakness of the old order**: Habsburg Austria, ruled by the ageing Emperor Ferdinand and guided by the hated Metternich, was overstretched and financially exhausted, and could only suppress revolt one region at a time.",
-                "**The French example**: The February 1848 revolution in Paris, which toppled Louis Philippe within days, demonstrated that even long-entrenched monarchies could fall — news travelled fast and模仿 uprisings followed within weeks."
-              ]
+                "**The French example**: The February 1848 revolution in Paris, which toppled Louis Philippe within days, demonstrated that even long-entrenched monarchies could fall — news travelled fast and模仿 uprisings followed within weeks.",
+              ],
             },
             {
               subTitle: "The revolutions region by region",
@@ -212,8 +214,8 @@ export const HISTORY: SubjectNotes = {
                 "**Austria**: The March 1848 Vienna rising forced Metternich to flee and produced a short-lived liberal government; the imperial court retreated and regrouped, and by late 1848 the army under Windischgratz had bombarded Prague and Vienna back into submission.",
                 "**Hungary**: Led by Kossuth, the Hungarian Diet demanded self-government; the rebellion was finally crushed in August 1849 only by Russian troops invited in by the Habsburgs — proof the old order needed foreign help to survive.",
                 "**The German states**: Rulers hurriedly granted constitutions under pressure; the Frankfurt Assembly of 1848–49 debated German unity at length but controlled no army and no money; its refusal of the crown by Prussia's king in 1849 discredited liberal parliamentarism.",
-                "**Italy**: Revolts broke out in Milan, Venice and Rome; Mazzini briefly headed a Roman Republic in 1849 before French troops restored the Pope — a rehearsal of the issues Italian unification would later resolve."
-              ]
+                "**Italy**: Revolts broke out in Milan, Venice and Rome; Mazzini briefly headed a Roman Republic in 1849 before French troops restored the Pope — a rehearsal of the issues Italian unification would later resolve.",
+              ],
             },
             {
               subTitle: "Consequences and historical significance",
@@ -222,9 +224,9 @@ export const HISTORY: SubjectNotes = {
                 "**Nationalism confirmed as the driving force**: The failure of liberal unity in 1848 pushed nationalists towards the conclusion that unification must be achieved from above by strong states — the path Cavour and Bismarck would take within twenty years.",
                 "**Habsburg Austria weakened permanently**: The empire survived, but only with Russian help, and it remained internally divided — a weakness that shaped European politics until 1914.",
                 "**Revolutionary exile**: Thousands of defeated revolutionaries, including many Germans, fled to the USA, carrying liberal and radical ideas with them.",
-                "**A model for historians**: 1848 demonstrates how economic crisis ignites political demands, and how divided opposition (middle class against workers) throws away victory — a pattern repeated in 1917–18 and 1989."
-              ]
-            }
+                "**A model for historians**: 1848 demonstrates how economic crisis ignites political demands, and how divided opposition (middle class against workers) throws away victory — a pattern repeated in 1917–18 and 1989.",
+              ],
+            },
           ],
           examinerTips: [
             "**Build answers on causes, events, results**: The three classic part (b) questions on 1848 are causes, why they spread, and why they failed — prepare two explained points for each and you cover every likely question.",
@@ -232,7 +234,7 @@ export const HISTORY: SubjectNotes = {
             "**Use 1848 as a turning point in arguments**: For questions on German or Italian unification, present 1848 as the failure of revolution from below that made unification from above possible — this shows high-level analytical linking.",
             "**Practise the Frankfurt Assembly as a judgement question**: Why did the Frankfurt Assembly fail? (No army, no money, Prussian refusal of the crown, divisions) is a favourite assess question — rehearse a weighed verdict.",
             "**Keep the chronology straight in one line**: February 1848 Paris; March 1848 Vienna and Berlin; May 1848 Frankfurt Assembly opens; June 1848 June Days; spring 1849 counter-revolutions complete. A one-line timeline in your plan prevents date chaos.",
-            "**Explain why armies stayed loyal**: A top-band explanation of failure always notes that professional armies obeyed their monarchs while revolutionaries had no military force — the decisive imbalance."
+            "**Explain why armies stayed loyal**: A top-band explanation of failure always notes that professional armies obeyed their monarchs while revolutionaries had no military force — the decisive imbalance.",
           ],
           commonMistakes: [
             "**Confusing the two French revolutions of the century**: Students mix up 1830 (July Revolution, Louis Philippe comes to power), 1848 (February Revolution, he falls) and 1851 (Louis Napoleon's coup). The fix: learn one fact per date — 1830 in, 1848 out, 1851 Napoleon III.",
@@ -240,15 +242,15 @@ export const HISTORY: SubjectNotes = {
             "**Narrating the Frankfurt Assembly without judgement**: Listing its debates misses the point. The fix: frame it as a symbol of liberal weakness — an assembly without an army.",
             "**Claiming the revolutions achieved nothing**: That verdict ignores their long-term legacy. The fix: distinguish short-term failure (all suppressed by 1849) from long-term significance (nationalism, weakened Austria, lesson of change from above).",
             "**Omitting the June Days**: Students forget that the Paris workers' rising was crushed by the Republic itself. The fix: remember June 1848 — the moment middle-class liberals chose order over workers' demands, a fatal division repeated across Europe.",
-            "**Vague references to Metternich**: Writing Metternich fell without context loses the mark. The fix: name him as the Austrian chancellor, architect of the 1815 conservative settlement, forced to flee Vienna in March 1848."
+            "**Vague references to Metternich**: Writing Metternich fell without context loses the mark. The fix: name him as the Austrian chancellor, architect of the 1815 conservative settlement, forced to flee Vienna in March 1848.",
           ],
           recap: [
             "Describe the events of the February 1848 revolution in Paris. [4]",
             "Explain why revolutions broke out across Europe in 1848. [6]",
             "Why did the revolutions of 1848 fail? Explain your answer. [6]",
             "Assess the view that the revolutions of 1848 achieved nothing of lasting significance. [10]",
-            "Explain why the Frankfurt Assembly failed to unify Germany. [6]"
-          ]
+            "Explain why the Frankfurt Assembly failed to unify Germany. [6]",
+          ],
         },
         {
           title: "The Industrial Revolution in Britain",
@@ -261,8 +263,8 @@ export const HISTORY: SubjectNotes = {
                 "**Empire and trade**: Colonies supplied cotton and other raw materials and bought finished goods; profits from Atlantic trade and slavery provided capital for investment in machines and mines.",
                 "**Agricultural revolution**: Enclosure and new techniques raised food output while releasing labour from the villages to the towns — an internal migration that fed the factories.",
                 "**Money, law and stability**: A national bank, a stock exchange, patent law rewarding inventors, and no invasions after 1688 made long-term investment safe in ways continental rivals could not match.",
-                "**Population and markets**: A rising population at home and captive imperial markets abroad guaranteed demand for cheap factory-made textiles, the industry's first great product."
-              ]
+                "**Population and markets**: A rising population at home and captive imperial markets abroad guaranteed demand for cheap factory-made textiles, the industry's first great product.",
+              ],
             },
             {
               subTitle: "Key inventions and dates — learn this table",
@@ -272,8 +274,8 @@ export const HISTORY: SubjectNotes = {
                 "**1769 water frame (Richard Arkwright)**: Water-powered spinning of strong cotton thread; Arkwright's Cromford mill (1771) pioneered the factory system with disciplined shift work.",
                 "**1779 mule (Samuel Crompton)**: Combined jenny and water frame to produce fine, strong yarn cheaply — made Lancashire the world's cotton capital.",
                 "**1785 power loom (Edmund Cartwright)**: Mechanised weaving; by 1815 there were over 100,000 power looms in Britain, destroying the hand-loom weavers' livelihood.",
-                "**1769 Watt steam engine; 1825 Stockton–Darlington; 1830 Liverpool–Manchester**: Steam power freed factories from rivers, and railways slashed freight costs and created a national market."
-              ]
+                "**1769 Watt steam engine; 1825 Stockton–Darlington; 1830 Liverpool–Manchester**: Steam power freed factories from rivers, and railways slashed freight costs and created a national market.",
+              ],
             },
             {
               subTitle: "Social consequences and government responses",
@@ -282,9 +284,9 @@ export const HISTORY: SubjectNotes = {
                 "**Factory conditions and child labour**: Children as young as five worked 12–14 hour shifts in dust and noise; the Factory Act of 1833 banned work for under-nines and capped hours at nine for under-thirteens, with inspectors — the first enforceable factory regulation.",
                 "**The 1834 Poor Law**: The Poor Law Amendment Act established workhouses with deliberately harsh regimes (families separated, diet monotonous) based on the principle of less eligibility — deterrence, not relief; it provoked riots and the famous protests of the Tolpuddle Martyrs era.",
                 "**Public health reform**: Edwin Chadwick's 1842 Report on the Sanitary Condition of the Labouring Population linked dirt to disease; the Public Health Act of 1848 created local boards with powers over drainage and water supply.",
-                "**Political transformation**: The new industrial middle class won the vote in 1832, urban workers (partly) in 1867, and farm workers in 1884 — industrialisation reshaped politics as well as landscapes."
-              ]
-            }
+                "**Political transformation**: The new industrial middle class won the vote in 1832, urban workers (partly) in 1867, and farm workers in 1884 — industrialisation reshaped politics as well as landscapes.",
+              ],
+            },
           ],
           examinerTips: [
             "**Answer the why, not just the what**: Explain questions ask why Britain led, why towns grew so fast, why reform came slowly — always push causes (profit, fear of revolution, disease) beyond description.",
@@ -292,7 +294,7 @@ export const HISTORY: SubjectNotes = {
             "**Link industrialisation to political reform in conclusions**: A top-band answer to any consequence question can note that industrial wealth shifted power to the middle class, forcing the 1832 Reform Act — this connects economy and politics analytically.",
             "**Memorise five anchor dates**: 1733, 1769 (Watt and Arkwright), 1825, 1830, 1834 — these five dates alone can evidence almost any Industrial Revolution paragraph.",
             "**Handle the standard assess question**: How far was the Industrial Revolution beneficial for the British people? — prepare both sides (cheap goods, jobs, eventual reform versus exploitation, slums, child labour) and weigh living standards against later gains.",
-            "**Name reformers and reports**: Chadwick's 1842 report, the 1833 Factory Act, the 1847 Ten Hours Act — named legislation with dates is what separates level-3 from level-4 answers."
+            "**Name reformers and reports**: Chadwick's 1842 report, the 1833 Factory Act, the 1847 Ten Hours Act — named legislation with dates is what separates level-3 from level-4 answers.",
           ],
           commonMistakes: [
             "**Calling every invention a spinning machine**: Students confuse the jenny, the water frame and the mule. The fix: jenny = home use, many threads; water frame = water power, strong thread; mule = combination; power loom = weaving, not spinning.",
@@ -300,15 +302,15 @@ export const HISTORY: SubjectNotes = {
             "**Assuming government protected workers early**: Regulation came only after scandal and rebellion — 1833, 1842, 1847. The fix: frame reform as reluctant, driven by evidence of suffering and fear of disease and revolution.",
             "**Ignoring the human cost in 'benefit' questions**: Celebrating cheap cloth while skipping slums and child labour produces a one-sided answer. The fix: for at least one paragraph, argue the workers' case with housing and mortality evidence.",
             "**Muddling the reform acts**: 1832 enfranchised middle-class men (and redistributed seats), 1867 urban working men, 1884 rural workers; women waited until 1918. The fix: learn the sequence as a ladder of expanding votes.",
-            "**Treating industrialisation as an event not a process**: Saying Britain industrialised in 1760 is meaningless. The fix: describe stages — textiles (1760s–1780s), steam and iron (1780s–1820s), railways (1825–1850)."
+            "**Treating industrialisation as an event not a process**: Saying Britain industrialised in 1760 is meaningless. The fix: describe stages — textiles (1760s–1780s), steam and iron (1780s–1820s), railways (1825–1850).",
           ],
           recap: [
             "Describe the main features of the factory system that developed in Britain after 1770. [4]",
             "Explain why the Industrial Revolution began in Britain rather than in other European countries. [6]",
             "Explain how the inventions of the eighteenth century changed the textile industry. [6]",
             "Assess the view that the Industrial Revolution brought more harm than good to the people of Britain. [10]",
-            "Explain why governments were forced to pass factory and public health reforms in the nineteenth century. [6]"
-          ]
+            "Explain why governments were forced to pass factory and public health reforms in the nineteenth century. [6]",
+          ],
         },
         {
           title: "Nationalism and the Unification of Italy",
@@ -321,8 +323,8 @@ export const HISTORY: SubjectNotes = {
                 "**Count Cavour — the brain**: Piedmont's prime minister from 1852; a realist who modernised the economy and army, then used diplomacy — the 1858 Plombieres agreement with France — to make Piedmont the legitimate leader of the nationalist cause.",
                 "**Giuseppe Garibaldi — the sword**: Veteran of guerrilla wars; his Expedition of the Thousand (1860) conquered the Kingdom of the Two Sicilies in months with minimal bloodshed; his self-denial in handing the south to Victor Emmanuel made the monarchy, not his republic, the vehicle of unity.",
                 "**Victor Emmanuel II — the figurehead**: King of Piedmont-Sardinia whose crown became the crown of Italy in 1861; his acceptance of the south gave unification a legal monarchist framework acceptable to European powers.",
-                "**Napoleon III — the necessary foreigner**: Without French arms in 1859, Piedmont could never have beaten Austria; his price was Nice and Savoy, surrendered in 1860."
-              ]
+                "**Napoleon III — the necessary foreigner**: Without French arms in 1859, Piedmont could never have beaten Austria; his price was Nice and Savoy, surrendered in 1860.",
+              ],
             },
             {
               subTitle: "Stages of unification — a dated timeline",
@@ -332,8 +334,8 @@ export const HISTORY: SubjectNotes = {
                 "**1859 war against Austria**: Victories at Magenta (June) and Solferino (June) free Lombardy; revolutions in the central duchies topple pro-Austrian rulers, and plebiscites in 1860 bring central Italy into Piedmont.",
                 "**May–November 1860 Garibaldi's campaign**: The Thousand land at Marsala, win Sicily, cross to Naples; Garibaldi meets Victor Emmanuel and surrenders the south; March 1861 the Kingdom of Italy is proclaimed with Turin as capital.",
                 "**1866 Venetia**: Italy joins Prussia against Austria; although its own armies lose at Custozza and Lissa, Prussian victory delivers Venetia by treaty.",
-                "**1870 Rome**: With French troops withdrawn for the war against Prussia, Italian forces breach the walls on 20 September 1870; Rome becomes the capital in 1871 — unification complete except for the irredentist Trentino and Trieste, which would be claimed in 1915 and gained only in 1918."
-              ]
+                "**1870 Rome**: With French troops withdrawn for the war against Prussia, Italian forces breach the walls on 20 September 1870; Rome becomes the capital in 1871 — unification complete except for the irredentist Trentino and Trieste, which would be claimed in 1915 and gained only in 1918.",
+              ],
             },
             {
               subTitle: "Why unification succeeded after 1852 — the analysis",
@@ -342,9 +344,9 @@ export const HISTORY: SubjectNotes = {
                 "**Piedmont provided the state machine**: Unlike Mazzini's talk, Cavour had a real army, a constitution (the Statuto of 1848), railways and credit — the institutions into which Italy could be absorbed.",
                 "**Plebiscites gave legitimacy**: Popular votes in the central states and the south let Cavour claim unification expressed the will of the people, converting conquest into national consent.",
                 "**Garibaldi's restraint**: Had the republican Garibaldi marched on Rome in 1860, France would have intervened and civil war might have followed; his submission to the king kept the movement united.",
-                "**Austria's relative decline**: After 1848 Austria was overstretched and, after defeat by Prussia in 1866, definitively excluded from Italy — the obstacle to unity was removed by another's victory."
-              ]
-            }
+                "**Austria's relative decline**: After 1848 Austria was overstretched and, after defeat by Prussia in 1866, definitively excluded from Italy — the obstacle to unity was removed by another's victory.",
+              ],
+            },
           ],
           examinerTips: [
             "**Personality questions are really process questions**: Who contributed most to Italian unification? — argue the case (Mazzini inspired, Cavour delivered, Garibaldi conquered) but conclude by weighing necessity against timing.",
@@ -352,7 +354,7 @@ export const HISTORY: SubjectNotes = {
             "**Use the 1860 plebiscites as evidence of consent**: When explaining why unification was relatively peaceful after 1859, the plebiscites in central Italy and the south show popular endorsement — a subtle, high-level point.",
             "**Keep the two foreign acquisitions distinct**: Venetia came in 1866 via Prussia; Rome in 1870 after French withdrawal — students who merge them lose two separate marks.",
             "**Practise the 1848 versus 1852 contrast**: A favourite assess angle is why nationalist movements succeeded after 1852 when they failed in 1848 — the answer: state power, foreign alliances and leadership replaced spontaneous revolution.",
-            "**Mention what was missing**: The new Italy excluded Rome until 1870 and the Trentino until 1918 — noting the incompleteness demonstrates precise knowledge and sets up links to the First World War (Italy joined the Allies in 1915 partly to claim these lands)."
+            "**Mention what was missing**: The new Italy excluded Rome until 1870 and the Trentino until 1918 — noting the incompleteness demonstrates precise knowledge and sets up links to the First World War (Italy joined the Allies in 1915 partly to claim these lands).",
           ],
           commonMistakes: [
             "**Crediting Garibaldi with the whole unification**: His thousand volunteers could never have beaten Austria. The fix: always pair the heroic southern conquest with Cavour's northern diplomacy — both were necessary, neither sufficient.",
@@ -360,15 +362,15 @@ export const HISTORY: SubjectNotes = {
             "**Forgetting the Pope's position**: Rome only fell in 1870 because French troops left. The fix: remember the Pope held Rome with French protection from 1849 to 1870 — no French war, no Italian Rome.",
             "**Treating the 1861 kingdom as complete Italy**: The proclamation of 1861 excluded Venetia and Rome. The fix: describe 1861 as the kingdom proclaimed, 1870/71 as unification completed.",
             "**Confusing the leaders' ideologies**: Mazzini was republican, Cavour monarchist, Garibaldi republican but pragmatic. The fix: learn the ideology-motive table (Mazzini = faith, Cavour = state interest, Garibaldi = adventure and unity).",
-            "**Omitting Austria's role in the question**: Questions asking about obstacles must feature Austria, the power holding Lombardy-Venetia and dominating the peninsula through garrisons until 1859."
+            "**Omitting Austria's role in the question**: Questions asking about obstacles must feature Austria, the power holding Lombardy-Venetia and dominating the peninsula through garrisons until 1859.",
           ],
           recap: [
             "Describe the political divisions of Italy in 1848. [4]",
             "Explain the aims and methods of Cavour in the unification of Italy. [6]",
             "How significant was Garibaldi's expedition of 1860 in the unification of Italy? Explain your answer. [6]",
             "Assess the view that Italian unification owed more to foreign intervention than to Italian leadership. [10]",
-            "Explain why Rome became the capital of Italy only in 1871. [6]"
-          ]
+            "Explain why Rome became the capital of Italy only in 1871. [6]",
+          ],
         },
         {
           title: "The Unification of Germany",
@@ -381,8 +383,8 @@ export const HISTORY: SubjectNotes = {
                 "**Prussian military reform**: From 1860, War Minister Roon and Chief of Staff Moltke modernised the army — breech-loading needle gun, a general staff and a rail network for rapid mobilisation — giving Prussia a force no German rival could match.",
                 "**Economic growth**: Coal and steel in the Ruhr, plus the banks and rail mileage to exploit them, made Prussia the natural industrial centre of any German state.",
                 "**Liberal nationalism**: The 1848 revolutions failed, but the ideal of national unity survived and could be harnessed — Bismarck later wrapped conquest in the flag, presenting war against France as national defence against foreign bullying.",
-                "**Austrian decline**: Defeat in Italy in 1859 and exclusion from the Zollverein left Austria financially and militarily overstretched — the old rival was weakening just as Prussia consolidated."
-              ]
+                "**Austrian decline**: Defeat in Italy in 1859 and exclusion from the Zollverein left Austria financially and militarily overstretched — the old rival was weakening just as Prussia consolidated.",
+              ],
             },
             {
               subTitle: "The three wars — dates, methods, results",
@@ -391,8 +393,8 @@ export const HISTORY: SubjectNotes = {
                 "**Austro-Prussian War, 1866**: Seven weeks, decided in one afternoon at Königgrätz (3 July 1866) by Prussian firepower and Moltke's railway mobilisation; Bismarck was lenient (no annexations of Austrian land) to keep Austria out of future conflicts — a calculated moderation.",
                 "**North German Confederation, 1867**: Prussia annexed Hanover, Hesse-Cassel, Nassau and Frankfurt; the remaining north German states joined a confederation dominated by the Prussian king and chancellor — the institutional skeleton of the empire.",
                 "**Franco-Prussian War, 1870–71**: The edited Ems Dispatch baited France into declaring war, uniting all German states behind Prussia; victories at Sedan (Napoleon III captured) and the siege of Paris brought the south German states in by treaty.",
-                "**Proclamation, 18 January 1871**: In the Hall of Mirrors at Versailles, William I became German Emperor; France ceded Alsace-Lorraine and paid five billion francs — a peace so harsh it made Franco-German reconciliation impossible before 1914."
-              ]
+                "**Proclamation, 18 January 1871**: In the Hall of Mirrors at Versailles, William I became German Emperor; France ceded Alsace-Lorraine and paid five billion francs — a peace so harsh it made Franco-German reconciliation impossible before 1914.",
+              ],
             },
             {
               subTitle: "Explaining Bismarck's success — the analysis",
@@ -401,9 +403,9 @@ export const HISTORY: SubjectNotes = {
                 "**Control of the agenda**: Each war was provoked so that the other side appeared the aggressor — Denmark, Austria and above all France declared war on terms and timing that suited Prussia, isolating each victim diplomatically.",
                 "**Isolation of the enemy**: Before 1866 Bismarck secured French neutrality (hinting at compensation); before 1870 he negotiated Russia's neutrality and Italy's alliance, so France faced Germany alone.",
                 "**Military and technological superiority**: Conscription, the general staff, railways and the needle gun converted Prussian plans into victories measured in weeks.",
-                "**Nationalist packaging**: Bismarck presented Prussian expansion as the will of the German nation — the wars of unification became people's wars, and southern Catholics and northern Protestants marched under one flag against France."
-              ]
-            }
+                "**Nationalist packaging**: Bismarck presented Prussian expansion as the will of the German nation — the wars of unification became people's wars, and southern Catholics and northern Protestants marched under one flag against France.",
+              ],
+            },
           ],
           examinerTips: [
             "**Learn the war table cold**: Dates, opponent, decisive battle, result for each of 1864, 1866, 1870–71 — this table alone answers most describe and explain questions on German unification.",
@@ -411,7 +413,7 @@ export const HISTORY: SubjectNotes = {
             "**Answer Bismarck versus other factors with precision**: Assess questions (How far was Bismarck responsible?) should credit the Zollverein, the army and nationalism, then argue whether the same man in different circumstances could have done it — conclude with a clear weighing.",
             "**Link 1871 to 1914 for top-band conclusions**: Mentioning Alsace-Lorraine and French revanchism shows you understand consequences — a classic discriminator between level 3 and level 4.",
             "**Contrast the two unifications when asked**: Italy needed French and Prussian help against Austria and France removed the last obstacle; Germany needed only to defeat Austria and France. Comparing the dependence on foreigners is a favourite assess angle.",
-            "**Do not forget the south German states**: Bavaria, Württemberg, Baden and Hesse-Darmstadt joined through the 1870–71 war, not the North German Confederation — students who say unification happened in 1867 lose the mark for 1871."
+            "**Do not forget the south German states**: Bavaria, Württemberg, Baden and Hesse-Darmstadt joined through the 1870–71 war, not the North German Confederation — students who say unification happened in 1867 lose the mark for 1871.",
           ],
           commonMistakes: [
             "**Writing that Bismarck created nationalism**: He exploited and directed it; the Zollverein, the 1848 ideal and economic integration predated him. The fix: distinguish creating conditions (others) from exploiting conditions (Bismarck).",
@@ -419,17 +421,17 @@ export const HISTORY: SubjectNotes = {
             "**Muddling the battles**: Königgrätz decided 1866; Sedan decided 1870. The fix: remember Sedan captured an emperor (Napoleon III), Königgrätz humbled an empire.",
             "**Omitting the indemnity and annexations of 1871**: The five billion franc indemnity and Alsace-Lorraine are crucial consequences. The fix: any 1871 paragraph should end with what France lost.",
             "**Treating the Ems Dispatch as the cause of the war**: It was the trigger Bismarck manufactured; deeper causes were rivalry over the Spanish throne candidacy and French fear of a united Germany. The fix: separate trigger from cause in your answer.",
-            "**Forgetting that 1871 united only some Germans**: Austria's Germans were excluded — the grossdeutsch versus kleindeutsch question was settled kleindeutsch (little German, without Austria). The fix: note this explicitly in assess answers for precision marks."
+            "**Forgetting that 1871 united only some Germans**: Austria's Germans were excluded — the grossdeutsch versus kleindeutsch question was settled kleindeutsch (little German, without Austria). The fix: note this explicitly in assess answers for precision marks.",
           ],
           recap: [
             "Describe how the Zollverein contributed to German unification. [4]",
             "Explain Bismarck's role in the unification of Germany between 1862 and 1871. [6]",
             "Why did Prussia defeat Austria so quickly in 1866? Explain your answer. [6]",
             "How far was Bismarck responsible for the unification of Germany? Explain your answer. [10]",
-            "Explain why the Franco-Prussian War of 1870–71 completed German unification, and assess its consequences for France. [8]"
-          ]
-        }
-      ]
-    }
-  ]
+            "Explain why the Franco-Prussian War of 1870–71 completed German unification, and assess its consequences for France. [8]",
+          ],
+        },
+      ],
+    },
+  ],
 };

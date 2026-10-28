@@ -45,6 +45,7 @@ import { ARABIC_SECOND_LANGUAGE } from "./notes/arabic-second-language";
 import { LATIN } from "./notes/latin";
 import { WORLD_LITERATURE } from "./notes/world-literature";
 import type { SubjectNotes } from "./notes/types";
+export * from "./notes/definitions-store";
 
 export {
   BIOLOGY,
@@ -89,7 +90,7 @@ export {
   WORLD_LITERATURE,
 };
 
-export const SYLLABUS_NOTES: SubjectNotes[] = [
+const RAW_NOTES: SubjectNotes[] = [
   BIOLOGY,
   CHEMISTRY,
   PHYSICS,
@@ -137,3 +138,5 @@ export const SYLLABUS_NOTES: SubjectNotes[] = [
   LATIN,
   WORLD_LITERATURE,
 ];
+
+export const SYLLABUS_NOTES: SubjectNotes[] = RAW_NOTES;

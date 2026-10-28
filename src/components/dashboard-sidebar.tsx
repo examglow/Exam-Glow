@@ -6,7 +6,6 @@ import {
   ChevronDown,
   FileText,
   ClipboardCheck,
-  Gamepad2,
   Home,
   Menu,
   MessageCircle,
@@ -33,10 +32,9 @@ const studyItems = [
 ] as const;
 
 const practiceItems = [
-  { label: "Practice", to: "/test", Icon: ClipboardCheck },
+  { label: "Quizzes & Tests", to: "/test", Icon: ClipboardCheck },
   { label: "Flashcards", to: "/flashcards", Icon: NotebookTabs },
   { label: "Assignments", to: "/assignments", Icon: FileText },
-  { label: "Study Games", to: "/arcade", Icon: Gamepad2 },
 ] as const;
 
 

@@ -9,7 +9,8 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
     {
       number: 1,
       title: "Functions",
-      intro: "A function is a rule that takes each allowed input value x and produces exactly one output value y = f(x). Functions are the foundation of the whole 0606 course: composite and inverse functions appear in almost every Paper 1 and Paper 2. You must be able to state the domain (allowed inputs) and range (possible outputs) of a function, decide whether a function has an inverse, and form composite functions in the correct order. Notation matters enormously here: f(x), fg(x) and f⁻¹(x) each mean something precise, and examiners award marks for using them correctly. Master the worked examples in this chapter slowly — every later chapter (quadratics, exponentials, calculus) reuses this function language.",
+      intro:
+        "A function is a rule that takes each allowed input value x and produces exactly one output value y = f(x). Functions are the foundation of the whole 0606 course: composite and inverse functions appear in almost every Paper 1 and Paper 2. You must be able to state the domain (allowed inputs) and range (possible outputs) of a function, decide whether a function has an inverse, and form composite functions in the correct order. Notation matters enormously here: f(x), fg(x) and f⁻¹(x) each mean something precise, and examiners award marks for using them correctly. Master the worked examples in this chapter slowly — every later chapter (quadratics, exponentials, calculus) reuses this function language.",
       subheadings: [
         {
           title: "Function Notation, Domain and Range",
@@ -23,8 +24,8 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Range**: the set of all output values f(x) as x runs through the domain; written with inequalities such as f(x) ≥ 3.",
                 "**Natural domain**: the largest set of x for which the formula is defined (no zero denominators, no negatives under square roots).",
                 "**Restricted domain**: a domain deliberately limited by the question, e.g. x > 0 or 1 ≤ x ≤ 4; the range then changes accordingly.",
-                "**Mapping diagram**: bubbles showing inputs joined to outputs; a function has exactly one arrow from each input."
-              ]
+                "**Mapping diagram**: bubbles showing inputs joined to outputs; a function has exactly one arrow from each input.",
+              ],
             },
             {
               subTitle: "Finding the range — recipe",
@@ -32,30 +33,30 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Step A — Sketch**: draw or imagine y = f(x) over the given domain only.",
                 "**Step B — Turning points**: complete the square (or differentiate later) to find interior maxima/minima inside the domain.",
                 "**Step C — Endpoints**: always evaluate f at the boundary values of the domain.",
-                "**Step D — Compare**: the range runs from the smallest to the largest of these candidate values."
-              ]
-            }
+                "**Step D — Compare**: the range runs from the smallest to the largest of these candidate values.",
+              ],
+            },
           ],
           examinerTips: [
             "**State the domain explicitly** when you define or use f, e.g. 'f(x) = x² - 4x, domain 0 ≤ x ≤ 5' — a mark is often attached to it.",
             "**Use set or inequality notation** for domains and ranges (x ≥ 2 or {x : x ≠ 3}) rather than vague words.",
             "**Show the candidate values**: write f(0) = 0, f(2) = -4, f(5) = 5 before stating the range — each evaluation can earn a mark.",
             "**Answer the question asked**: if it says 'find the range', your final line must be an inequality such as -4 ≤ f(x) ≤ 5, not a list of points.",
-            "**Check the command word**: 'State' needs no working; 'Find' or 'Determine' needs the supporting lines."
+            "**Check the command word**: 'State' needs no working; 'Find' or 'Determine' needs the supporting lines.",
           ],
           commonMistakes: [
             "**Ignoring the restricted domain**: students find the range of x² - 4x as f(x) ≥ -4 and forget the upper cap f(5) = 5 — this happens when the formula is treated in isolation. Fix: always ask 'what x-values am I actually allowed?'.",
             "**Confusing domain and range**: the domain is read along the x-axis, the range along the y-axis. Fix: label your axes before reading values off.",
             "**Forgetting to check endpoints**: a turning point may lie outside the given domain. Fix: evaluate f at every boundary, every time.",
             "**Thinking range equals codomain**: the codomain is only the set outputs are declared to land in; the range is what is actually produced. Fix: describe the range with inequalities about what is actually hit.",
-            "**Sign slips when substituting**: f(-2) for f(x) = 3x - 2 gives -8, not 4. Fix: bracket negative inputs, f(-2) = 3(-2) - 2."
+            "**Sign slips when substituting**: f(-2) for f(x) = 3x - 2 gives -8, not 4. Fix: bracket negative inputs, f(-2) = 3(-2) - 2.",
           ],
           recap: [
             "f(x) = 2x² - 8x + 5 has domain 0 ≤ x ≤ 5. Express f(x) in the form a(x + p)² + q and hence state the range of f. [4]",
             "The function g is defined by g(x) = √(x - 3) for x ≥ 3. State the range of g. [1]",
             "h(x) = 1/(x + 2). State the largest possible domain of h and explain your answer. [2]",
-            "f(x) = x² + 1 for x ≥ 0. Find f(3) and f(a + 1) in terms of a. [3]"
-          ]
+            "f(x) = x² + 1 for x ≥ 0. Find f(3) and f(a + 1) in terms of a. [3]",
+          ],
         },
         {
           title: "One-to-One Functions and Inverse Functions",
@@ -69,38 +70,38 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Undo property**: f⁻¹(f(x)) = x and f(f⁻¹(x)) = x for every x in the relevant domains.",
                 "**Reflection property**: the graphs of f and f⁻¹ are mirror images in the line y = x; corresponding coordinates swap, (a, b) becomes (b, a).",
                 "**Domain swap**: domain of f⁻¹ = range of f; range of f⁻¹ = domain of f.",
-                "**Self-inverse examples**: f(x) = 1/x and f(x) = a - x are each their own inverse, since f(f(x)) = x."
-              ]
+                "**Self-inverse examples**: f(x) = 1/x and f(x) = a - x are each their own inverse, since f(f(x)) = x.",
+              ],
             },
             {
               subTitle: "When an inverse fails to exist",
               bullets: [
                 "**Many-to-one trap**: f(x) = x² on all real x has f(-3) = f(3) = 9, so no inverse function exists.",
                 "**Restriction fix**: restrict the domain to x ≥ 0; then f⁻¹(x) = √x exists with range f⁻¹ ≥ 0.",
-                "**Check before you start**: if a question says 'explain why f⁻¹ does not exist', answer with a counterexample pair, e.g. f(2) = f(-2)."
-              ]
-            }
+                "**Check before you start**: if a question says 'explain why f⁻¹ does not exist', answer with a counterexample pair, e.g. f(2) = f(-2).",
+              ],
+            },
           ],
           examinerTips: [
             "**Verify one-to-one before inverting**: if the question asks for f⁻¹, a quick 'f is one-to-one because...' line can earn the first mark.",
             "**Always state the domain of f⁻¹**: it equals the range of f; write x ≠ 3, not just the formula.",
             "**Use the reflection line**: for graph questions, draw y = x as a dashed mirror line and reflect key points (turning points, axis crossings) rather than the whole curve.",
             "**Show the rearrangement lines**: y(x + 1) = 3x - 2 and x(y - 3) = -2 - y are the working examiners mark; jumping to the answer risks losing method marks.",
-            "**Sanity-check with composition**: evaluate f⁻¹(f(x)); if it does not simplify to x, an algebra slip has occurred — do this check on the answer line."
+            "**Sanity-check with composition**: evaluate f⁻¹(f(x)); if it does not simplify to x, an algebra slip has occurred — do this check on the answer line.",
           ],
           commonMistakes: [
             "**Swapping letters too early**: students write x = (3y - 2)/(y + 1) after swapping and then solve for y wrongly. Fix: rearrange in x and y FIRST, swap only at the end.",
             "**Forgetting the domain of f⁻¹**: the formula alone is incomplete. Fix: domain of f⁻¹ = range of f; find the excluded value from where the denominator would vanish.",
             "**Believing f⁻¹(x) means 1/f(x)**: f⁻¹ is the inverse mapping, not the reciprocal. Fix: read f⁻¹ as 'f inverse'; the reciprocal would be written 1/f(x).",
             "**Assuming every function has an inverse**: f(x) = x² over all real x does not. Fix: run the horizontal line test mentally before attempting f⁻¹.",
-            "**Algebra slip collecting terms**: in xy + y = 3x - 2 the x-terms must be factorised as x(y - 3). Fix: move all x-terms to one side and factorise; never divide by an expression that might be zero."
+            "**Algebra slip collecting terms**: in xy + y = 3x - 2 the x-terms must be factorised as x(y - 3). Fix: move all x-terms to one side and factorise; never divide by an expression that might be zero.",
           ],
           recap: [
             "f(x) = 4x - 3. Find f⁻¹(x) and verify that f⁻¹(f(x)) = x. [3]",
             "Explain why the function g(x) = x² - 6x, x ∈ ℝ, does not have an inverse. State a restriction of the domain for which g⁻¹ does exist. [3]",
             "f(x) = (2x + 5)/(x - 3), x ≠ 3. Find f⁻¹(x) in the form (ax + b)/(cx + d) and state its domain. [5]",
-            "The point (5, 2) lies on the curve y = f(x). Write down one point that lies on y = f⁻¹(x), and describe the transformation that maps y = f(x) onto y = f⁻¹(x). [2]"
-          ]
+            "The point (5, 2) lies on the curve y = f(x). Write down one point that lies on y = f⁻¹(x), and describe the transformation that maps y = f(x) onto y = f⁻¹(x). [2]",
+          ],
         },
         {
           title: "Composite Functions",
@@ -114,45 +115,46 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Existence condition**: fg exists only where g(x) lies in the domain of f; find and state any resulting restriction on x.",
                 "**Domain of composite**: it is the set of x in the domain of g for which g(x) is in the domain of f.",
                 "**Inverse of composite**: (fg)⁻¹ = g⁻¹f⁻¹ — reverse both the functions and the order.",
-                "**Iterates**: ff(x) is written f²(x) in this context (it means f(f(x)), never [f(x)]² unless stated)."
-              ]
+                "**Iterates**: ff(x) is written f²(x) in this context (it means f(f(x)), never [f(x)]² unless stated).",
+              ],
             },
             {
               subTitle: "Solving composite equations",
               bullets: [
                 "**Strategy 1 — Build then solve**: form f(g(x)) as a single expression, then solve the resulting equation in x.",
                 "**Strategy 2 — Work inside out**: if fg(x) = k, first solve f(u) = k for u, then solve g(x) = u.",
-                "**Strategy 2 example**: if fg(x) = 10 and f(u) = 3u - 5, then u = 5, so solve g(x) = 5."
-              ]
-            }
+                "**Strategy 2 example**: if fg(x) = 10 and f(u) = 3u - 5, then u = 5, so solve g(x) = 5.",
+              ],
+            },
           ],
           examinerTips: [
             "**Respect the order**: write out g(x) first as a separate line before substituting into f — this protects you from the classic fg/gf swap.",
             "**State restrictions**: when forming fg, note any x that must be excluded (here x ≠ -1); losing this line can cost the final accuracy mark.",
             "**Use the inside-out method when f is easy to invert**: solving f(u) = k first often avoids messy fractions entirely.",
             "**Verify solutions by substitution**: one quick check (Step 4 in the example) catches most slips in fractional equations.",
-            "**For (fg)⁻¹ questions**: find the inverses of f and g separately, then present g⁻¹f⁻¹(x) with the correct order stated in words."
+            "**For (fg)⁻¹ questions**: find the inverses of f and g separately, then present g⁻¹f⁻¹(x) with the correct order stated in words.",
           ],
           commonMistakes: [
             "**Reading fg as f-then-g**: students compute f first. Fix: the function closest to the bracket acts first — say 'g then f' out loud while writing.",
             "**Assuming fg = gf**: squaring then doubling is not the same as doubling then squaring. Fix: test both at x = 3; if they differ, you have your proof.",
             "**Dropping the domain restriction**: g(x) = 2/(x + 1) is undefined at x = -1, so fg is too. Fix: carry exclusions from the inner function into your answer.",
             "**Solving fg(x) = k by dividing incorrectly**: 6/(x + 1) - 5 = 1 becomes 6/(x + 1) = 6 only after adding 5 to both sides, not before. Fix: undo operations in reverse order.",
-            "**Writing [fg(x)]² for f²g(x)**: superscripts on the function name mean composition, not powers. Fix: read f²(x) as f(f(x))."
+            "**Writing [fg(x)]² for f²g(x)**: superscripts on the function name mean composition, not powers. Fix: read f²(x) as f(f(x)).",
           ],
           recap: [
             "f(x) = 3x + 2 and g(x) = x² - 1. Find fg(x) and gf(x), and show that fg ≠ gf. [4]",
             "f(x) = 2x - 3 for x ≥ 0 and g(x) = √(x + 4). Find fg(x) and state its domain. [4]",
             "f(x) = (x + 1)/(x - 2), x ≠ 2. Find f⁻¹(x) and hence solve f(x) = f⁻¹(x). [6]",
-            "Given that fg(x) = 6x² - 1 and f(x) = 3x - 1, find g(x). [3]"
-          ]
-        }
-      ]
+            "Given that fg(x) = 6x² - 1 and f(x) = 3x - 1, find g(x). [3]",
+          ],
+        },
+      ],
     },
     {
       number: 2,
       title: "Quadratic Functions",
-      intro: "Quadratic functions have the form f(x) = ax² + bx + c with a ≠ 0, and their graphs are parabolas. This chapter covers the three skills IGCSE papers test constantly: completing the square (to locate the vertex and state maxima, minima and ranges), using the discriminant b² - 4ac to classify roots and to find tangency conditions, and solving quadratic inequalities with correct interval notation. These tools reappear in trigonometric equations, simultaneous equations and even differentiation questions, so fluency here pays off across the whole paper. Every 0606 paper contains at least one substantial quadratic question, usually worth 6-10 marks.",
+      intro:
+        "Quadratic functions have the form f(x) = ax² + bx + c with a ≠ 0, and their graphs are parabolas. This chapter covers the three skills IGCSE papers test constantly: completing the square (to locate the vertex and state maxima, minima and ranges), using the discriminant b² - 4ac to classify roots and to find tangency conditions, and solving quadratic inequalities with correct interval notation. These tools reappear in trigonometric equations, simultaneous equations and even differentiation questions, so fluency here pays off across the whole paper. Every 0606 paper contains at least one substantial quadratic question, usually worth 6-10 marks.",
       subheadings: [
         {
           title: "Completing the Square and Graph Features",
@@ -166,8 +168,8 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Minimum vs maximum**: a > 0 gives a minimum (opens up); a < 0 gives a maximum (opens down).",
                 "**Range**: from vertex form the range reads straight off, e.g. f(x) ≥ q for a > 0 with unrestricted domain.",
                 "**y-intercept**: set x = 0; the curve crosses the y-axis at (0, c).",
-                "**x-intercepts**: set f(x) = 0 and solve — these are the roots discussed in the next section."
-              ]
+                "**x-intercepts**: set f(x) = 0 and solve — these are the roots discussed in the next section.",
+              ],
             },
             {
               subTitle: "The completing-the-square algorithm",
@@ -175,30 +177,30 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Coefficient of x² must be 1**: if a ≠ 1, factor a out of the x-terms only, never out of the constant.",
                 "**Halve and square**: p = b/2; add and subtract p² inside the bracket.",
                 "**Compensate outside**: the subtracted p² is multiplied by a when you multiply the bracket back out.",
-                "**Final check**: expand your answer mentally — it must return the original quadratic."
-              ]
-            }
+                "**Final check**: expand your answer mentally — it must return the original quadratic.",
+              ],
+            },
           ],
           examinerTips: [
             "**Answer in the exact form requested**: if the question says a(x + p)² + q, give all three values a, p, q explicitly; 'hence' means you must use your completed-square form to answer the next part.",
             "**State 'minimum' or 'maximum' with the value**: 'minimum value = -3 at x = 2' is a complete answer worth both marks.",
             "**Use the completed square to justify the range**: write '(x - 2)² ≥ 0, so 2(x - 2)² - 3 ≥ -3' — this reasoning line earns the mark, not just the final inequality.",
             "**Keep exact fractions**: if p = 5/2, write (x + 5/2)² - 25/4 rather than decimals; exact values are required unless the question says otherwise.",
-            "**Sketch when asked**: mark the vertex, y-intercept and axis of symmetry; a labelled sketch can rescue method marks even if the algebra slips."
+            "**Sketch when asked**: mark the vertex, y-intercept and axis of symmetry; a labelled sketch can rescue method marks even if the algebra slips.",
           ],
           commonMistakes: [
             "**Sign error on p**: x² + 6x becomes (x + 3)² but students often write (x - 3)². Fix: p = b/2, and the bracket is (x + p) — with b = +6 the bracket is (x + 3).",
             "**Forgetting to multiply the correction by a**: with 2(x² - 4x), the -4 inside becomes -8 outside, not -4. Fix: expand 2[(x - 2)² - 4] term by term to check.",
             "**Mixing up the turning point sign**: (x - 2)² has turning point x = +2, not -2. Fix: set the bracket equal to zero to find the x-coordinate.",
             "**Decimal approximations**: writing (x - 1.73)² for x² - 2√3x loses exactness marks. Fix: surds and fractions are exact — keep them.",
-            "**Calling q the line of symmetry**: the line is x = -p (an equation), the extreme value is q (a number). Fix: give both, in the right vocabulary."
+            "**Calling q the line of symmetry**: the line is x = -p (an equation), the extreme value is q (a number). Fix: give both, in the right vocabulary.",
           ],
           recap: [
             "Express 3x² - 12x + 7 in the form a(x + p)² + q, stating the values of a, p and q. [3]",
             "Find the maximum value of 5 - 2x - x² and the value of x at which it occurs. [4]",
             "The curve y = x² - 6x + 11 has line of symmetry x = k. Find k and the coordinates of the vertex. [3]",
-            "f(x) = 2x² + 8x + 3 for x ≥ -2. Using your completed-square form, state the range of f. [4]"
-          ]
+            "f(x) = 2x² + 8x + 3 for x ≥ -2. Using your completed-square form, state the range of f. [4]",
+          ],
         },
         {
           title: "The Discriminant and the Nature of Roots",
@@ -211,8 +213,8 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**b² - 4ac = 0**: repeated (equal) real root; the curve touches the x-axis (the line is a tangent).",
                 "**b² - 4ac < 0**: no real roots; the curve lies entirely above or below the x-axis.",
                 "**Perfect square discriminant**: roots are rational — useful when a question asks about root structure.",
-                "**Always write the condition explicitly**: 'for tangency, b² - 4ac = 0' is the line that earns the method mark."
-              ]
+                "**Always write the condition explicitly**: 'for tangency, b² - 4ac = 0' is the line that earns the method mark.",
+              ],
             },
             {
               subTitle: "Roots and coefficients (Vieta links)",
@@ -220,30 +222,30 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Sum of roots**: α + β = -b/a — the minus sign is the classic slip.",
                 "**Product of roots**: αβ = c/a.",
                 "**Building new quadratics**: a quadratic with roots α′ and β′ is x² - (sum)x + (product) = 0.",
-                "**Example**: if α, β are roots of x² - 5x + 6 = 0, the equation with roots α², β² has sum 25 - 12 = 13 and product 36: x² - 13x + 36 = 0."
-              ]
-            }
+                "**Example**: if α, β are roots of x² - 5x + 6 = 0, the equation with roots α², β² has sum 25 - 12 = 13 and product 36: x² - 13x + 36 = 0.",
+              ],
+            },
           ],
           examinerTips: [
             "**Name the condition**: begin tangency/equal-roots working with the sentence 'For equal roots, b² - 4ac = 0' — mark schemes attach a mark to stating the condition.",
             "**Simplify to zero first**: rearrange the substituted equation to ax² + bx + c = 0 before reading off a, b, c; identifying coefficients from an unsimplified form is the biggest source of errors.",
             "**Two values, two checks**: when (4 + k)² = 16 gives two answers, present both and verify each makes sense as a tangent.",
             "**Use the discriminant for intersection counts**: two distinct roots = two intersections; equal roots = tangent; no real roots = no intersection — say this in words.",
-            "**Relate back to the graph**: a concluding sentence such as 'the line touches the curve at (2, -3)' shows full understanding and can pick up a final mark."
+            "**Relate back to the graph**: a concluding sentence such as 'the line touches the curve at (2, -3)' shows full understanding and can pick up a final mark.",
           ],
           commonMistakes: [
             "**Sign errors reading b**: in x² - (4 + k)x + 4, b = -(4 + k), so b² = (4 + k)² — students sometimes write (4 - k)². Fix: bracket the whole coefficient including its minus sign before squaring.",
             "**Solving b² - 4ac > 0 like an equation**: inequalities from discriminants must keep their direction; squaring both sides of an inequality is invalid. Fix: solve the boundary equation, then test intervals.",
             "**Forgetting the 4 in 4ac**: b² - ac is a common wrong formula. Fix: memorise 'b squared minus FOUR a c' by saying it aloud.",
             "**Assuming tangent means gradients equal**: the clean method is the discriminant, not calculus, unless the question demands dy/dx.",
-            "**Dropping one solution**: (4 + k)² = 16 needs ±; k = 0 alone loses half the marks. Fix: write 4 + k = 4 or 4 + k = -4."
+            "**Dropping one solution**: (4 + k)² = 16 needs ±; k = 0 alone loses half the marks. Fix: write 4 + k = 4 or 4 + k = -4.",
           ],
           recap: [
             "Find the discriminant of 2x² - 3x - 7 = 0 and hence state the number of real roots. [2]",
             "Find the value of k for which kx² + 4x + (k - 3) = 0 has equal roots. [4]",
             "The line y = x + c is a tangent to the curve y = x² + 3x + 5. Find the possible values of c. [5]",
-            "The roots of x² - 6x + 4 = 0 are α and β. Find the value of α + β and of αβ, and hence write down the equation whose roots are 1/α and 1/β. [5]"
-          ]
+            "The roots of x² - 6x + 4 = 0 are α and β. Find the value of α + β and of αβ, and hence write down the equation whose roots are 1/α and 1/β. [5]",
+          ],
         },
         {
           title: "Quadratic Inequalities",
@@ -257,44 +259,45 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Upward parabola (a > 0)**: positive outside the roots, negative between them.",
                 "**Downward parabola (a < 0)**: the pattern reverses — or multiply through by -1 first (flipping the inequality) to restore a > 0.",
                 "**No real roots**: the quadratic keeps the sign of a everywhere; x² + 2 > 0 is true for all x.",
-                "**Always finish with interval notation**: 'x < -1 or x > 4', never '-1 > x > 4' (which means nothing)."
-              ]
+                "**Always finish with interval notation**: 'x < -1 or x > 4', never '-1 > x > 4' (which means nothing).",
+              ],
             },
             {
               subTitle: "Link to graphs",
               bullets: [
                 "**Inequality as comparison**: solving x² - 4 < x + 2 asks where the parabola lies below the line — both intersection x-values come from the boundary equation.",
-                "**Graphical check**: the boundary equation's roots are exactly the intersection points of the two curves."
-              ]
-            }
+                "**Graphical check**: the boundary equation's roots are exactly the intersection points of the two curves.",
+              ],
+            },
           ],
           examinerTips: [
             "**Draw the sketch, however rough**: the upward/downward orientation of the parabola decides everything; one small sketch prevents interval-direction errors.",
             "**Rearrange to zero first**: only factorise after collecting everything on one side with the x² coefficient positive — this makes the sign pattern standard.",
             "**State answers in set/interval notation** exactly as mark schemes expect: 'x ≤ -3/2 or x ≥ 2' or using ∪ notation; the word 'or' (not 'and') joins the two regions.",
             "**Match the inequality sign at the boundary**: < and > exclude the roots (strict); ≤ and ≥ include them.",
-            "**When asked to find the range of values of k**, you are solving an inequality in k — same technique, different variable."
+            "**When asked to find the range of values of k**, you are solving an inequality in k — same technique, different variable.",
           ],
           commonMistakes: [
             "**Writing -1 > x > 4**: combining two one-sided inequalities into one chain is meaningless. Fix: join with 'or', or write x < -1, x > 4.",
             "**Reversing the regions**: for a > 0, the quadratic is positive OUTSIDE the roots; students frequently swap this. Fix: test x = 0 (or any convenient point) to confirm the sign.",
             "**Forgetting to flip when multiplying by -1**: -x² + 3x + 4 > 0 needs care. Fix: multiply by -1 to get x² - 3x - 4 < 0 and flip the sign.",
             "**Including endpoints for strict inequalities**: x² - 3x - 4 < 0 excludes -1 and 4 because the expression equals zero there. Fix: equality is allowed only when the sign is ≤ or ≥.",
-            "**Stopping at the roots**: giving x = -1, x = 4 as the answer solves the equation, not the inequality. Fix: reread the question — it asks for a set of values."
+            "**Stopping at the roots**: giving x = -1, x = 4 as the answer solves the equation, not the inequality. Fix: reread the question — it asks for a set of values.",
           ],
           recap: [
             "Solve the inequality x² - 5x + 6 ≤ 0. [3]",
             "Find the set of values of x for which 3 + 2x - x² > 0. [3]",
             "Solve 2x² + 5x - 3 ≥ 0, giving your answer in exact form. [4]",
-            "Find the range of values of k for which x² + kx + 9 > 0 for all real x. [4]"
-          ]
-        }
-      ]
+            "Find the range of values of k for which x² + kx + 9 > 0 for all real x. [4]",
+          ],
+        },
+      ],
     },
     {
       number: 3,
       title: "Equations, Inequalities and Graphs",
-      intro: "This chapter is about seeing algebra pictorially. You will learn to sketch cubic polynomials and reciprocal curves such as y = 1/x from their equations, to draw modulus graphs y = |f(x)| by reflecting the negative parts of f in the x-axis, and to use those sketches to solve equations and inequalities. Papers frequently ask for a solution 'graphically' or expect a labelled sketch to support an algebraic answer — the graph is a working tool, not decoration. Marks are awarded for correct intercepts, asymptotes and the reflected sections of modulus graphs, so train yourself to label everything you draw.",
+      intro:
+        "This chapter is about seeing algebra pictorially. You will learn to sketch cubic polynomials and reciprocal curves such as y = 1/x from their equations, to draw modulus graphs y = |f(x)| by reflecting the negative parts of f in the x-axis, and to use those sketches to solve equations and inequalities. Papers frequently ask for a solution 'graphically' or expect a labelled sketch to support an algebraic answer — the graph is a working tool, not decoration. Marks are awarded for correct intercepts, asymptotes and the reflected sections of modulus graphs, so train yourself to label everything you draw.",
       subheadings: [
         {
           title: "Sketching Polynomial and Reciprocal Graphs",
@@ -308,38 +311,38 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**End behaviour**: odd degree with positive leading coefficient gives opposite infinities at the two ends.",
                 "**Repeated root**: a squared factor touches the axis (turning point on the axis); a cubed factor passes through horizontally.",
                 "**Asymptotes of y = k/x**: both coordinate axes; draw them dashed and never let the curve touch them.",
-                "**y = k/x²**: both branches are above the x-axis for k > 0 — a different shape from y = k/x."
-              ]
+                "**y = k/x²**: both branches are above the x-axis for k > 0 — a different shape from y = k/x.",
+              ],
             },
             {
               subTitle: "Solving polynomial inequalities",
               bullets: [
                 "**Critical values** from f(x) = 0 partition the axis; the sign alternates across each simple root.",
                 "**Multiplicity rule**: the sign changes at a root of odd multiplicity and does not change at even multiplicity.",
-                "**Present** the answer as intervals joined by 'or', matching the inequality's strictness."
-              ]
-            }
+                "**Present** the answer as intervals joined by 'or', matching the inequality's strictness.",
+              ],
+            },
           ],
           examinerTips: [
             "**Label every intercept on the sketch**: coordinates such as (-1, 0), (0, 2) are what the mark scheme lists; unlabelled crossings earn nothing.",
             "**Draw asymptotes as dashed lines** and state their equations (x = 0, y = 0 for y = k/x) — two easy marks.",
             "**Use a sign table** in inequality questions: it is compact, rigorous and earns method marks even if the final region is misread.",
             "**State the end behaviour in words** when asked to 'describe' a graph: 'as x → ∞, y → ∞'.",
-            "**Scale honesty**: a sketch does not require a perfect scale, but intercepts must be in the correct relative positions."
+            "**Scale honesty**: a sketch does not require a perfect scale, but intercepts must be in the correct relative positions.",
           ],
           commonMistakes: [
             "**Ignoring multiplicity**: students treat a double root as a crossing; the graph should touch and turn. Fix: count the power of each factor — odd crosses, even touches.",
             "**Wrong end behaviour**: sketching a positive cubic rising on both sides. Fix: check the leading term's sign and the degree's parity before drawing.",
             "**Curves crossing asymptotes**: y = 1/x drifting through the x-axis. Fix: remind yourself the curve approaches but never meets the axis; add arrows to show the trend.",
             "**Sign table built on an un-factorised expression**: expanding first makes the arithmetic heavy and error-prone. Fix: keep factored form and track each factor's sign.",
-            "**Forgetting the y-intercept**: the easiest mark on the paper. Fix: it is always f(0) — compute it automatically."
+            "**Forgetting the y-intercept**: the easiest mark on the paper. Fix: it is always f(0) — compute it automatically.",
           ],
           recap: [
             "Sketch the curve y = (x + 2)(x - 1)(x - 3), labelling all intercepts. [4]",
             "Solve the inequality (x + 2)(x - 1)(x - 3) ≤ 0. [3]",
             "Sketch y = 4/x, stating the equations of the asymptotes and the quadrants it occupies. [3]",
-            "Describe how the graph of y = (x - 2)²(x + 1) differs from y = (x - 2)(x + 1)² near each intercept. [3]"
-          ]
+            "Describe how the graph of y = (x - 2)²(x + 1) differs from y = (x - 2)(x + 1)² near each intercept. [3]",
+          ],
         },
         {
           title: "Modulus Functions: Graphs, Equations and Inequalities",
@@ -353,38 +356,38 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Equation |A| = B**: requires B ≥ 0, then A = B or A = -B; check every candidate against B ≥ 0.",
                 "**Equation |A| = |B|**: equivalent to A = B or A = -B, with no sign restriction.",
                 "**Inequality |x - a| < b** (b > 0): means -b < x - a < b, i.e. a - b < x < a + b.",
-                "**Inequality |x - a| > b**: means x < a - b or x > a + b."
-              ]
+                "**Inequality |x - a| > b**: means x < a - b or x > a + b.",
+              ],
             },
             {
               subTitle: "Graphs of modulus functions",
               bullets: [
                 "**y = |f(x)|**: reflect the part of y = f(x) below the x-axis in the x-axis; anything on or above stays fixed.",
                 "**y = f(|x|)**: draw y = f(x) for x ≥ 0, then reflect that half in the y-axis; the result is symmetric about x = 0.",
-                "**Corner points**: the graph of |linear| has sharp corners (vertices) where the inside expression is zero — mark their coordinates."
-              ]
-            }
+                "**Corner points**: the graph of |linear| has sharp corners (vertices) where the inside expression is zero — mark their coordinates.",
+              ],
+            },
           ],
           examinerTips: [
             "**Always run the B ≥ 0 check**: for |A| = B, writing 'require 2x - 1 ≥ 0, so x ≥ 1/2' before solving earns the method mark and makes rejection of false roots automatic.",
             "**Two cases, two headings**: label Case A and Case B clearly; examiners award marks per case.",
             "**For inequalities use the distance reading**: |x - 2| ≤ 3 is 'x within 3 of 2', instantly giving -1 ≤ x ≤ 5 — quote both forms.",
             "**Sketch for graphical requests**: draw y = |f(x)| and the horizontal line y = k; solutions are the x-coordinates of intersections — state that you are reading them off.",
-            "**Vertex coordinates first**: when sketching y = |ax + b|, find where ax + b = 0 and evaluate; the vertex sits on the x-axis at that point."
+            "**Vertex coordinates first**: when sketching y = |ax + b|, find where ax + b = 0 and evaluate; the vertex sits on the x-axis at that point.",
           ],
           commonMistakes: [
             "**Accepting impossible roots**: in |x + 1| = 2x - 1, x = 0 comes out of the algebra but makes the right side negative — impossible since a modulus cannot equal a negative number. Fix: run the B ≥ 0 check after every case.",
             "**Solving |A| = |B| with a B ≥ 0 check**: no restriction is needed when both sides are moduli; adding one wrongly discards valid roots.",
             "**Forgetting the ±**: |2x - 3| = 5 solved as only 2x - 3 = 5 loses half the answer. Fix: 'modulus equals a positive number → two equations'.",
             "**Flipping the inequality regions**: |x - 2| < 3 is BETWEEN, not outside. Fix: remember |x - a| < b means 'close to a'; the < sign pairs with a between-region.",
-            "**Reflecting y = f(|x|) in the wrong axis**: it is the y-axis reflection of the right half only. Fix: test a value, e.g. f(|-3|) = f(3), so (-3, f(3)) must be on the graph."
+            "**Reflecting y = f(|x|) in the wrong axis**: it is the y-axis reflection of the right half only. Fix: test a value, e.g. f(|-3|) = f(3), so (-3, f(3)) must be on the graph.",
           ],
           recap: [
             "Solve |3x - 2| = 7. [2]",
             "Solve the inequality |2x - 5| ≤ 3. [3]",
             "Solve |x - 3| = 2x. [4]",
-            "Sketch y = |2x - 4| + 1, labelling the vertex and axis intercepts. [4]"
-          ]
+            "Sketch y = |2x - 4| + 1, labelling the vertex and axis intercepts. [4]",
+          ],
         },
         {
           title: "Solving Inequalities with Graphs",
@@ -397,41 +400,41 @@ export const ADDITIONAL_MATHEMATICS: SubjectNotes = {
                 "**Region selection**: pick a test point between critical values, or read from the sketch which curve is on top.",
                 "**Inequality direction**: f(x) > g(x) means the region where f's graph lies above g's graph.",
                 "**Discriminant link**: intersections of a line and a curve correspond to roots; b² - 4ac counts them.",
-                "**Modulus comparisons**: sketch y = |f(x)| alongside the other graph; intersections give the boundary values."
-              ]
+                "**Modulus comparisons**: sketch y = |f(x)| alongside the other graph; intersections give the boundary values.",
+              ],
             },
             {
               subTitle: "Answer presentation",
               bullets: [
                 "**Sketch + algebra**: even when solving algebraically, a small sketch shows the examiner you chose the correct region.",
                 "**Interval notation**: give the final answer with 'or'/union as needed and correct strictness.",
-                "**State the reading**: 'from the graph, the curve is above the line for...' connects the picture to the answer."
-              ]
-            }
+                "**State the reading**: 'from the graph, the curve is above the line for...' connects the picture to the answer.",
+              ],
+            },
           ],
           examinerTips: [
             "**Label both curves** on the sketch; an unlabelled sketch cannot be credited fully.",
             "**Show the boundary algebra** even in a graphical question — the intersections must come from solving an equation, not from a ruler measurement.",
             "**Test-point verification**: substituting x = 2 into |x - 2| < x/2 + 1 gives 0 < 2, confirming 2 lies in the solution set — a five-second check that catches region swaps.",
             "**When the question says 'by sketching'**, the graphical method is mandatory; unsupported pure algebra earns limited credit.",
-            "**Combine with discriminant knowledge**: 'explain why the curves never meet' is answered by b² - 4ac < 0, stated in words plus numbers."
+            "**Combine with discriminant knowledge**: 'explain why the curves never meet' is answered by b² - 4ac < 0, stated in words plus numbers.",
           ],
           commonMistakes: [
             "**Choosing the wrong region**: students answer x < 2/3 or x > 6 for the worked example. Fix: test one value from each candidate region in the original inequality.",
             "**Solving the wrong boundary equation**: setting f(x) = 0 instead of f(x) = g(x). Fix: intersections are where the TWO expressions are equal.",
             "**Reading intersections off a poor sketch**: a line and a V that miss by eye. Fix: always compute boundary values algebraically; the sketch only selects the region.",
             "**Mixing degrees of strictness**: writing 2/3 ≤ x ≤ 6 when the inequality is strict. Fix: equality happens exactly at the boundary — check the original sign.",
-            "**Forgetting that modulus graphs have corners**: intersections can occur exactly at a vertex, which the Case A/Case B algebra handles but a smooth freehand sketch may hide."
+            "**Forgetting that modulus graphs have corners**: intersections can occur exactly at a vertex, which the Case A/Case B algebra handles but a smooth freehand sketch may hide.",
           ],
           recap: [
             "Find the set of values of x for which x² < 3x + 4. [4]",
             "By sketching suitable graphs, solve |x - 1| < x + 2. [4]",
             "The curve y = x² + k does not intersect the line y = 3x. Find the range of values of k. [4]",
-            "Solve the inequality (x - 1)(x - 3) > 0 by sketching the curve y = (x - 1)(x - 3). [3]"
-          ]
-        }
-      ]
-    }
+            "Solve the inequality (x - 1)(x - 3) > 0 by sketching the curve y = (x - 1)(x - 3). [3]",
+          ],
+        },
+      ],
+    },
     // <<NEXT>>
-  ]
+  ],
 };

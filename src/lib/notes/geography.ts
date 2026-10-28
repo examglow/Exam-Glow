@@ -9,7 +9,8 @@ export const GEOGRAPHY: SubjectNotes = {
     {
       number: 1,
       title: "Population and Settlement",
-      intro: "Population geography studies the distribution, density, growth, and movement of human populations. Understanding why people are unevenly distributed across the Earth, why populations grow at different rates, and why people migrate from one place to another is fundamental to explaining patterns of development, urbanisation, and resource pressure. Settlement geography examines why towns and cities form where they do, how they grow, and what problems their growth creates.",
+      intro:
+        "Population geography studies the distribution, density, growth, and movement of human populations. Understanding why people are unevenly distributed across the Earth, why populations grow at different rates, and why people migrate from one place to another is fundamental to explaining patterns of development, urbanisation, and resource pressure. Settlement geography examines why towns and cities form where they do, how they grow, and what problems their growth creates.",
       subheadings: [
         {
           title: "Population Distribution and Density",
@@ -21,16 +22,16 @@ export const GEOGRAPHY: SubjectNotes = {
                 "**Densely populated — the Nile Valley**: The Nile River provides water for irrigation in an otherwise arid desert. The fertile silt-rich floodplain supports intensive agriculture. Egypt's population of 100+ million is almost entirely concentrated in the 4% of the country that is the Nile Valley and Delta.",
                 "**Sparsely populated — the Sahara Desert**: Extreme aridity (less than 250 mm of rain per year), high temperatures (over 50°C in summer), and poor soils make permanent large-scale settlement impossible. Only oases with groundwater access support small communities.",
                 "**Densely populated — Bangladesh**: Flat, low-lying fertile delta, tropical monsoon climate with reliable rainfall, long history of rice cultivation, and high natural population growth have produced one of the world's highest population densities (~1,100 per km²).",
-                "**Sparsely populated — Canadian Shield**: Thin acidic soils over ancient crystalline rock, long harsh winters, short growing season, and remoteness from markets make this vast area economically unattractive for settlement despite rich mineral resources."
-              ]
-            }
+                "**Sparsely populated — Canadian Shield**: Thin acidic soils over ancient crystalline rock, long harsh winters, short growing season, and remoteness from markets make this vast area economically unattractive for settlement despite rich mineral resources.",
+              ],
+            },
           ],
           recap: [
             "Define the term population density and explain how it is calculated. [2]",
             "Explain two physical factors and two human factors that affect where people choose to live. [8]",
             "Compare the population distribution of one densely populated region with one sparsely populated region you have studied. [6]",
-            "Explain why river valleys tend to have high population densities. [3]"
-          ]
+            "Explain why river valleys tend to have high population densities. [3]",
+          ],
         },
         {
           title: "Population Growth and the Demographic Transition Model",
@@ -42,23 +43,24 @@ export const GEOGRAPHY: SubjectNotes = {
                 "**Children as economic assets**: In agricultural societies, children provide farm labour from a young age and support aging parents — large families are economically rational.",
                 "**High infant mortality**: Parents have many children knowing some will die before adulthood. As child survival improves, families need fewer births to achieve the same surviving family size.",
                 "**Lack of education and family planning**: Limited access to contraception and lack of education about family planning, particularly for women, keeps birth rates high.",
-                "**Cultural and religious factors**: In some societies, large families confer social status. Some religious traditions discourage contraception. These cultural norms are slow to change even as economic conditions improve."
-              ]
-            }
+                "**Cultural and religious factors**: In some societies, large families confer social status. Some religious traditions discourage contraception. These cultural norms are slow to change even as economic conditions improve.",
+              ],
+            },
           ],
           recap: [
             "Describe the changes in birth rate and death rate that occur between Stage 2 and Stage 3 of the Demographic Transition Model. [4]",
             "Explain why death rates fall rapidly in Stage 2 of the DTM. [4]",
             "Explain why birth rates begin to fall in Stage 3 of the DTM. [4]",
-            "What problems might a country in Stage 4 of the DTM face due to low population growth? [3]"
-          ]
-        }
-      ]
+            "What problems might a country in Stage 4 of the DTM face due to low population growth? [3]",
+          ],
+        },
+      ],
     },
     {
       number: 2,
       title: "Natural Environments",
-      intro: "Physical geography examines the natural processes that shape the Earth's surface — the movement of rivers, the work of glaciers, coastal processes, and the formation of distinctive landscapes. For IGCSE Geography, students must understand the processes operating in fluvial (river), glacial, and coastal environments, and the human responses to the hazards and opportunities these environments present. Process-landform linkages — understanding how a process produces a specific landform — are the core of examination answers.",
+      intro:
+        "Physical geography examines the natural processes that shape the Earth's surface — the movement of rivers, the work of glaciers, coastal processes, and the formation of distinctive landscapes. For IGCSE Geography, students must understand the processes operating in fluvial (river), glacial, and coastal environments, and the human responses to the hazards and opportunities these environments present. Process-landform linkages — understanding how a process produces a specific landform — are the core of examination answers.",
       subheadings: [
         {
           title: "River Processes and Landforms",
@@ -71,18 +73,18 @@ export const GEOGRAPHY: SubjectNotes = {
                 "**Step 2**: Hydraulic action and abrasion erode the softer rock faster, undercutting the hard caprock, forming a notch.",
                 "**Step 3**: The unsupported hard caprock overhangs and eventually collapses into the plunge pool.",
                 "**Step 4**: The process repeats — the waterfall retreats upstream over time. The abandoned valley downstream of the waterfall becomes a steep-sided gorge.",
-                "**Example**: Niagara Falls on the US-Canada border has retreated approximately 11 km upstream over 12,000 years, leaving a gorge behind it."
-              ]
-            }
+                "**Example**: Niagara Falls on the US-Canada border has retreated approximately 11 km upstream over 12,000 years, leaving a gorge behind it.",
+              ],
+            },
           ],
           recap: [
             "Describe the process of hydraulic action and explain how it contributes to river erosion. [3]",
             "Explain with the aid of a diagram how a waterfall forms and retreats upstream. [6]",
             "Explain how a meander develops and how an oxbow lake is eventually formed. [5]",
-            "Distinguish between the four processes of river transport. [4]"
-          ]
-        }
-      ]
-    }
-  ]
+            "Distinguish between the four processes of river transport. [4]",
+          ],
+        },
+      ],
+    },
+  ],
 };

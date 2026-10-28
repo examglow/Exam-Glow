@@ -1,7 +1,7 @@
 import logoMark from "@/assets/logo-mark.png";
 
 const columns = [
-  { title: "Product", items: ["Study Plan", "Sparky", "Tutor Me", "Notes", "Arcade"] },
+  { title: "Product", items: ["Study Plan", "Quizzes & Tests", "Notes", "Syllabus Notes"] },
   { title: "Company", items: ["About", "Careers", "Blog", "Press"] },
   { title: "Resources", items: ["Help center", "Educators", "Enterprise", "Contact"] },
 ];

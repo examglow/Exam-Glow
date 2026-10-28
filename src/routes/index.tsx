@@ -184,8 +184,8 @@ const tabs = [
     heading: "Notebook · Block 2 Review",
   },
   {
-    id: "Arcade",
-    eyebrow: "Arcade",
+    id: "Quizzes & Tests",
+    eyebrow: "Quizzes & Tests",
     title: "Studying that\ndoesn't feel like it",
     body: "Turn any set of materials into fast, competitive games and race your classmates to the top of the leaderboard.",
     items: [
@@ -194,7 +194,7 @@ const tabs = [
       "Streaks and daily goals",
       "Team study battles",
     ],
-    heading: "Arcade · Pharmacology Sprint",
+    heading: "Mock Papers & Topical Quizzes",
   },
 ];
 
@@ -785,10 +785,10 @@ function ClosingCta() {
 
         <ScrollReveal variants={fadeUp} delay={0.25}>
           <p className="mt-14 text-sm text-muted-foreground">
-            Trusted by students from top institutions
+            Trusted by Cambridge IGCSE candidates across 50+ countries
           </p>
           <StaggerReveal className="mt-5 flex flex-wrap items-center justify-center gap-10 font-display text-2xl text-foreground/70">
-            {["HARVARD", "Yale", "MIT", "Stanford"].map((uni) => (
+            {["Cambridge International", "IGCSE & O-Level", "A-Level Excellence", "Global Top Scorers"].map((uni) => (
               <motion.span key={uni} variants={fadeUp}>
                 {uni}
               </motion.span>

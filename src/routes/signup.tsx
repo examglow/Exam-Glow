@@ -24,9 +24,6 @@ export const Route = createFileRoute("/signup")({
   component: SignUpPage,
 });
 
-const EMAIL_ERROR =
-  "We're experiencing a problem with email sign-up right now. Please use Google to continue — we'll have this fixed soon.";
-
 function SignUpPage() {
   const navigate = useNavigate();
   const [name, setName] = useState("");
@@ -127,6 +124,23 @@ function SignUpPage() {
             Login
           </Link>
         </p>
+
+        <div className="pt-2">
+          <div className="rounded-2xl border border-border bg-card p-4 text-center">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Educators &amp; Tutors
+            </p>
+            <p className="mt-1 text-sm font-medium text-foreground">
+              Are you an accredited Cambridge tutor?
+            </p>
+            <Link
+              to="/tutor-signup"
+              className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-border bg-background py-2.5 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
+            >
+              Sign in as a Tutor &rarr;
+            </Link>
+          </div>
+        </div>
       </form>
     </AuthLayout>
   );

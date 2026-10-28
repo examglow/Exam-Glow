@@ -31,6 +31,7 @@ import { Route as StudyPlanRouteImport } from './routes/study-plan'
 import { Route as SyllabusNotesRouteImport } from './routes/syllabus-notes'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TestRouteImport } from './routes/test'
+import { Route as TutorSignupRouteImport } from './routes/tutor-signup'
 import { Route as TutorsRouteImport } from './routes/tutors'
 import { Route as ApiAccountPlanRouteImport } from './routes/api/account-plan'
 import { Route as ApiAssignmentRouteImport } from './routes/api/assignment'
@@ -153,6 +154,11 @@ const TestRoute = TestRouteImport.update({
   path: '/test',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TutorSignupRoute = TutorSignupRouteImport.update({
+  id: '/tutor-signup',
+  path: '/tutor-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TutorsRoute = TutorsRouteImport.update({
   id: '/tutors',
   path: '/tutors',
@@ -232,6 +238,7 @@ export interface FileRoutesByFullPath {
   '/syllabus-notes': typeof SyllabusNotesRoute
   '/terms': typeof TermsRoute
   '/test': typeof TestRoute
+  '/tutor-signup': typeof TutorSignupRoute
   '/tutors': typeof TutorsRoute
   '/api/account-plan': typeof ApiAccountPlanRoute
   '/api/assignment': typeof ApiAssignmentRoute
@@ -267,6 +274,7 @@ export interface FileRoutesByTo {
   '/syllabus-notes': typeof SyllabusNotesRoute
   '/terms': typeof TermsRoute
   '/test': typeof TestRoute
+  '/tutor-signup': typeof TutorSignupRoute
   '/tutors': typeof TutorsRoute
   '/api/account-plan': typeof ApiAccountPlanRoute
   '/api/assignment': typeof ApiAssignmentRoute
@@ -303,6 +311,7 @@ export interface FileRoutesById {
   '/syllabus-notes': typeof SyllabusNotesRoute
   '/terms': typeof TermsRoute
   '/test': typeof TestRoute
+  '/tutor-signup': typeof TutorSignupRoute
   '/tutors': typeof TutorsRoute
   '/api/account-plan': typeof ApiAccountPlanRoute
   '/api/assignment': typeof ApiAssignmentRoute
@@ -340,6 +349,7 @@ export interface FileRouteTypes {
     | '/syllabus-notes'
     | '/terms'
     | '/test'
+    | '/tutor-signup'
     | '/tutors'
     | '/api/account-plan'
     | '/api/assignment'
@@ -375,6 +385,7 @@ export interface FileRouteTypes {
     | '/syllabus-notes'
     | '/terms'
     | '/test'
+    | '/tutor-signup'
     | '/tutors'
     | '/api/account-plan'
     | '/api/assignment'
@@ -410,6 +421,7 @@ export interface FileRouteTypes {
     | '/syllabus-notes'
     | '/terms'
     | '/test'
+    | '/tutor-signup'
     | '/tutors'
     | '/api/account-plan'
     | '/api/assignment'
@@ -446,6 +458,7 @@ export interface RootRouteChildren {
   SyllabusNotesRoute: typeof SyllabusNotesRoute
   TermsRoute: typeof TermsRoute
   TestRoute: typeof TestRoute
+  TutorSignupRoute: typeof TutorSignupRoute
   TutorsRoute: typeof TutorsRoute
   ApiAccountPlanRoute: typeof ApiAccountPlanRoute
   ApiAssignmentRoute: typeof ApiAssignmentRoute
@@ -615,6 +628,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TestRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tutor-signup': {
+      id: '/tutor-signup'
+      path: '/tutor-signup'
+      fullPath: '/tutor-signup'
+      preLoaderRoute: typeof TutorSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tutors': {
       id: '/tutors'
       path: '/tutors'
@@ -718,6 +738,7 @@ const rootRouteChildren: RootRouteChildren = {
   SyllabusNotesRoute: SyllabusNotesRoute,
   TermsRoute: TermsRoute,
   TestRoute: TestRoute,
+  TutorSignupRoute: TutorSignupRoute,
   TutorsRoute: TutorsRoute,
   ApiAccountPlanRoute: ApiAccountPlanRoute,
   ApiAssignmentRoute: ApiAssignmentRoute,

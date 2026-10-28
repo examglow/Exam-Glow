@@ -9,7 +9,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
     {
       number: 1,
       title: "Biology — Cells and Biological Processes",
-      intro: "This chapter covers the whole of the Biology content of the Co-ordinated Sciences double award. It begins with the cell as the unit of life and the processes that move substances across cell membranes, then builds through biological molecules and enzymes into the large-scale processes of nutrition, transport, gas exchange and coordination. It finishes with reproduction, inheritance and the ecology of ecosystems. The double award covers the same topics as the separate sciences with slightly reduced depth, so every mechanism here is described at the level examiners expect. Master the 'why' behind each process, not just the 'what', because extended-answer questions always reward reasoning.",
+      intro:
+        "This chapter covers the whole of the Biology content of the Co-ordinated Sciences double award. It begins with the cell as the unit of life and the processes that move substances across cell membranes, then builds through biological molecules and enzymes into the large-scale processes of nutrition, transport, gas exchange and coordination. It finishes with reproduction, inheritance and the ecology of ecosystems. The double award covers the same topics as the separate sciences with slightly reduced depth, so every mechanism here is described at the level examiners expect. Master the 'why' behind each process, not just the 'what', because extended-answer questions always reward reasoning.",
       subheadings: [
         {
           title: "Cell Structure and Microscopy",
@@ -22,8 +23,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Plant only:** cell wall (cellulose), chloroplasts and a large permanent vacuole — adaptations for support and for making food by photosynthesis.",
                 "**Prokaryotes (bacteria):** no nucleus (a 'naked' circular DNA loop), no mitochondria or chloroplasts, and small ribosomes; reproduce by binary fission.",
                 "**Resolution vs magnification:** magnification makes things bigger, resolution lets you distinguish fine detail — beyond about ×1500 a light microscope cannot resolve two close points.",
-                "**Specialised cells:** root hair cells (long extension to absorb water), red blood cells (biconcave for surface area, no nucleus to carry more haemoglobin), nerve cells (long axon for conduction)."
-              ]
+                "**Specialised cells:** root hair cells (long extension to absorb water), red blood cells (biconcave for surface area, no nucleus to carry more haemoglobin), nerve cells (long axon for conduction).",
+              ],
             },
             {
               subTitle: "Levels of organisation",
@@ -32,23 +33,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Tissue:** a group of similar cells working together, e.g. muscle or epidermal tissue.",
                 "**Organ:** different tissues combined to perform a function, e.g. heart or leaf.",
                 "**Organ system:** organs cooperating, e.g. the digestive or circulatory system.",
-                "**Organism:** all systems working together as one living individual."
-              ]
-            }
+                "**Organism:** all systems working together as one living individual.",
+              ],
+            },
           ],
           examinerTips: [
             "**Learn the formula triangle:** cover the quantity you want in 'magnification = image ÷ actual' and the triangle shows the rearrangement — this avoids algebraic slips under pressure.",
             "**Convert units before you calculate:** questions often give image size in mm but want the answer in µm; converting first stops a factor-of-1000 error.",
             "**Label diagrams in pencil with straight ruler lines:** examiners award marks for correct labels tied to the right structure, not for artistic diagrams.",
             "**Use precise terms:** write 'partially permeable membrane', 'cellulose cell wall' and 'aerobic respiration' — these exact syllabus phrases score the marks.",
-            "**State the obvious when asked to 'describe':** if asked to describe a cell image, mention shape, any visible organelles and the cell wall if present — one mark per correct observation."
+            "**State the obvious when asked to 'describe':** if asked to describe a cell image, mention shape, any visible organelles and the cell wall if present — one mark per correct observation.",
           ],
           commonMistakes: [
             "**Confusing magnification with resolution:** students think a bigger image is automatically clearer; the fix is to define resolution as the ability to distinguish two separate points.",
             "**Writing 'cell wall' for animal cells:** only plant cells have a wall; underline which cell type the question refers to before answering.",
             "**Unit errors in magnification:** forgetting that 1 mm = 1000 µm loses the final mark; always write the conversion line in your working.",
             "**Calling the nucleus the 'brain' of the cell:** this vague description scores nothing; say it contains the genetic material (DNA) and controls cell activities.",
-            "**Mixing up mitochondria and chloroplasts:** mitochondria do respiration (all cells), chloroplasts do photosynthesis (plant cells only) — link each to its process."
+            "**Mixing up mitochondria and chloroplasts:** mitochondria do respiration (all cells), chloroplasts do photosynthesis (plant cells only) — link each to its process.",
           ],
           recap: [
             "Name the structures found in a plant cell but not an animal cell and state the function of each. [3]",
@@ -56,8 +57,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Explain the difference between magnification and resolution. [2]",
             "Describe two ways in which a root hair cell is adapted to absorb water. [2]",
             "State the word equation for aerobic respiration and name the organelle where it occurs. [2]",
-            "List the levels of organisation from cell to organism, giving a named example at each level. [4]"
-          ]
+            "List the levels of organisation from cell to organism, giving a named example at each level. [4]",
+          ],
         },
         {
           title: "Movement in and Out of Cells",
@@ -70,8 +71,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Osmosis:** diffusion of water only, through a partially permeable membrane, from high to low water potential, passive.",
                 "**Active transport:** against the gradient, needs ATP from respiration and carrier proteins, moves ions and molecules such as glucose.",
                 "**Surface area rule:** all exchange is faster with a larger surface area and shorter diffusion distance — the basis of alveoli and villi adaptations.",
-                "**Villi and microvilli:** the small intestine has millions of finger-like villi, each with microvilli, multiplying the surface area for absorbing digested food by diffusion and active transport."
-              ]
+                "**Villi and microvilli:** the small intestine has millions of finger-like villi, each with microvilli, multiplying the surface area for absorbing digested food by diffusion and active transport.",
+              ],
             },
             {
               subTitle: "Practical investigations",
@@ -79,23 +80,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Potato/osmosis experiment:** place equal-size potato cylinders in distilled water and in concentrated salt solution; measure mass change. In water mass increases (turgid); in salt solution mass decreases (flaccid).",
                 "**Control variables:** same potato, same size pieces, same volume of solution, same temperature and time — so any mass change is due to the solution concentration.",
                 "**Visking tubing model:** a partially permeable membrane (dialysis tubing) containing glucose and starch in water shows that water and small molecules cross but starch does not.",
-                "**Measuring rate of diffusion:** time how long a colour change takes across an agar cube of different sizes — larger cubes have a smaller surface-area-to-volume ratio, so diffusion is slower to the centre."
-              ]
-            }
+                "**Measuring rate of diffusion:** time how long a colour change takes across an agar cube of different sizes — larger cubes have a smaller surface-area-to-volume ratio, so diffusion is slower to the centre.",
+              ],
+            },
           ],
           examinerTips: [
             "**Define the gradient direction precisely:** examiners want 'from a region of higher concentration to lower concentration' — write the full phrase, not just 'down the gradient'.",
             "**For osmosis always name the membrane:** the definition requires 'through a partially permeable membrane'; omitting it loses the mark.",
             "**Use the terms turgid, flaccid and plasmolysed correctly:** match each to the solution the cell is in (dilute vs concentrated).",
             "**Explain, don't just state, in 'explain' questions:** for a predicted result, give the process (osmosis), the direction (water potential difference) and the outcome.",
-            "**Link active transport to respiration:** when asked why active transport stops without oxygen, say it needs ATP from aerobic respiration, so it is inhibited when respiration is blocked."
+            "**Link active transport to respiration:** when asked why active transport stops without oxygen, say it needs ATP from aerobic respiration, so it is inhibited when respiration is blocked.",
           ],
           commonMistakes: [
             "**Saying osmosis needs energy:** it is passive; only active transport uses ATP. Underline the process name in the question before writing.",
             "**Reversing water potential:** students write 'water moves to higher water potential' — the fix is to remember water moves TOWARDS the more concentrated solution (lower water potential).",
             "**Confusing concentration of solute with water:** think in terms of where the water molecules are more numerous, not where the salt is.",
             "**Forgetting to control variables in experiments:** without same-size pieces and equal volumes you cannot attribute mass change to the solution — list controls explicitly.",
-            "**Describing diffusion as needing a membrane:** simple diffusion across a membrane happens, but diffusion does not require one; the membrane is essential only for osmosis."
+            "**Describing diffusion as needing a membrane:** simple diffusion across a membrane happens, but diffusion does not require one; the membrane is essential only for osmosis.",
           ],
           recap: [
             "Define diffusion and state two factors that increase its rate. [3]",
@@ -103,8 +104,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Explain how the structure of a villus adapts the small intestine for absorption. [3]",
             "Distinguish between osmosis and active transport, referring to energy use and direction of movement. [4]",
             "Describe an experiment to investigate the effect of sucrose concentration on the mass of potato tissue. [5]",
-            "Explain why red blood cells burst in distilled water but plant cells do not. [3]"
-          ]
+            "Explain why red blood cells burst in distilled water but plant cells do not. [3]",
+          ],
         },
         {
           title: "Biological Molecules and Food Tests",
@@ -117,8 +118,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Protein subunit:** amino acids (about 20 types); joined by peptide bonds; sequence set by DNA.",
                 "**Lipid building blocks:** one glycerol + three fatty acids; the bond is an ester link.",
                 "**Elements compared:** all contain C, H, O; protein also contains N (and S); this is why proteins cannot be made from carbohydrate alone.",
-                "**Digestion breaks polymers to monomers:** starch → glucose; protein → amino acids; fat → fatty acids + glycerol, so they can be absorbed."
-              ]
+                "**Digestion breaks polymers to monomers:** starch → glucose; protein → amino acids; fat → fatty acids + glycerol, so they can be absorbed.",
+              ],
             },
             {
               subTitle: "Food test summary table",
@@ -127,23 +128,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Reducing sugar (glucose):** Benedict's, heat in water bath → brick-red precipitate; colour intensity ∝ concentration.",
                 "**Protein:** Biuret → violet/purple; no heating required.",
                 "**Lipid:** ethanol emulsion test → cloudy white layer in water.",
-                "**Vitamin C:** DCPIP (blue) decolourised; quantity measured by titration (drops to decolourise)."
-              ]
-            }
+                "**Vitamin C:** DCPIP (blue) decolourised; quantity measured by titration (drops to decolourise).",
+              ],
+            },
           ],
           examinerTips: [
             "**Learn tests as a table:** reagent, condition (heat or not), positive result — examiners award marks for all three elements per test.",
             "**Describe the full practical sequence:** when asked how to test a sample, write 'add reagent, mix, heat if needed, observe colour' — a stepwise method gains method marks.",
             "**Use control samples:** testing a known positive (e.g. glucose solution) and a known negative (distilled water) validates the result — mention this for reliability marks.",
             "**Interpret graduated results:** for Benedict's, the shade of red/orange indicates concentration; say 'the redder the precipitate, the higher the reducing-sugar concentration'.",
-            "**Name the reagents exactly:** 'Benedict's solution', 'Biuret solution', 'iodine solution' — vague 'chemicals' scores nothing."
+            "**Name the reagents exactly:** 'Benedict's solution', 'Biuret solution', 'iodine solution' — vague 'chemicals' scores nothing.",
           ],
           commonMistakes: [
             "**Swapping Biuret and Benedict's:** Benedict's is for sugar (heat, red), Biuret for protein (purple, no heat). Mnemonic: 'Benedict's burns (heats) sugar'.",
             "**Forgetting to heat for Benedict's:** without the water bath a negative result appears even when glucose is present — state the heating step.",
             "**Calling the lipid test 'the ethanol test' without the water step:** the emulsion must form when ethanol solution is added to water — describe both additions.",
             "**Assuming a blue Benedict's result means 'no sugar':** trace sugar gives green; only blue means truly absent — match colour to a scale.",
-            "**Confusing starch and glucose tests:** iodine tests starch, Benedict's tests glucose; check which molecule the question names."
+            "**Confusing starch and glucose tests:** iodine tests starch, Benedict's tests glucose; check which molecule the question names.",
           ],
           recap: [
             "Describe how you would test a food sample for protein, including the reagent and a positive result. [3]",
@@ -151,8 +152,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Explain why Benedict's solution must be heated to test for glucose. [2]",
             "State the chemical elements present in proteins that are not present in carbohydrates. [1]",
             "A food sample gives a cloudy white emulsion with ethanol and water. Name the nutrient present and the building blocks it is digested into. [2]",
-            "Describe how you would compare the vitamin C content of two fruit juices using DCPIP. [4]"
-          ]
+            "Describe how you would compare the vitamin C content of two fruit juices using DCPIP. [4]",
+          ],
         },
         {
           title: "Enzymes",
@@ -165,8 +166,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Active site:** the shaped pocket where the substrate binds.",
                 "**Denaturation:** permanent loss of shape (and activity) at high temperature or extreme pH.",
                 "**Optimum:** the temperature or pH giving the maximum rate of reaction.",
-                "**Specificity:** each enzyme catalyses one reaction because only its specific substrate fits its active site."
-              ]
+                "**Specificity:** each enzyme catalyses one reaction because only its specific substrate fits its active site.",
+              ],
             },
             {
               subTitle: "Digestive enzymes",
@@ -175,8 +176,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Protease:** protein → amino acids; pepsin works in the acidic stomach, others from the pancreas work in the small intestine.",
                 "**Lipase:** fat → fatty acids + glycerol, from the pancreas, working in the small intestine.",
                 "**Site of action:** mouth (amylase), stomach (protease), small intestine (all three, at about pH 7–8).",
-                "**Bile role:** emulsifies fats into droplets, increasing surface area so lipase works faster — bile also neutralises stomach acid."
-              ]
+                "**Bile role:** emulsifies fats into droplets, increasing surface area so lipase works faster — bile also neutralises stomach acid.",
+              ],
             },
             {
               subTitle: "Investigating enzyme activity",
@@ -184,23 +185,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Starch + amylase:** sample the mixture at intervals into iodine; time until no blue/black remains = measure of rate.",
                 "**Hydrogen peroxide + catalase:** measure oxygen gas volume evolved per second; catalase in liver/potato breaks H₂O₂ → water + oxygen.",
                 "**Variables:** independent = temperature/pH/enzyme concentration; dependent = time or gas volume; control = substrate concentration and volume.",
-                "**Safety:** hydrogen peroxide is an irritant — wear goggles; hot water baths need care."
-              ]
-            }
+                "**Safety:** hydrogen peroxide is an irritant — wear goggles; hot water baths need care.",
+              ],
+            },
           ],
           examinerTips: [
             "**Quote the lock-and-key or induced-fit model by name:** examiners reward the named model plus a correct description of the enzyme-substrate complex.",
             "**Use 'denatured', not 'killed' or 'destroyed':** precise language matches the mark scheme for high-temperature loss of activity.",
             "**Explain rate changes using collision theory:** more kinetic energy → more frequent successful collisions at the active site — this reasoning earns the explanation marks.",
             "**Always describe how you measure the dependent variable:** time to colour change or gas volume per unit time — the method is part of the mark.",
-            "**Draw the classic rate-temperature graph:** label the optimum peak and show activity falling steeply to zero beyond it; annotate the denaturation region."
+            "**Draw the classic rate-temperature graph:** label the optimum peak and show activity falling steeply to zero beyond it; annotate the denaturation region.",
           ],
           commonMistakes: [
             "**Saying the enzyme is 'used up':** catalysts are not consumed; the fix is to state the enzyme is unchanged and reusable.",
             "**Reversing denaturation:** students say the enzyme 'recovers when cooled' — denaturation is permanent; only lowering temperature below optimum (not past it) reduces activity reversibly.",
             "**Confusing the effect of pH and temperature:** both alter shape, but pH acts through charge changes on amino acids — link each factor to the correct mechanism.",
             "**Ignoring controls in experiments:** without keeping substrate concentration constant you cannot claim temperature caused the rate change.",
-            "**Calling all enzymes 'digestive':** metabolic enzymes (e.g. for respiration) are not digestive; check the context."
+            "**Calling all enzymes 'digestive':** metabolic enzymes (e.g. for respiration) are not digestive; check the context.",
           ],
           recap: [
             "Describe the lock-and-key model of enzyme action. [3]",
@@ -208,8 +209,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "State where in the digestive system amylase, protease and lipase are produced and where each acts. [3]",
             "Describe an experiment to investigate the effect of temperature on amylase activity. [5]",
             "Explain the shape of the rate-substrate concentration graph for an enzyme. [3]",
-            "A student doubles the enzyme concentration and finds the reaction rate doubles. Explain this result. [2]"
-          ]
+            "A student doubles the enzyme concentration and finds the reaction rate doubles. Explain this result. [2]",
+          ],
         },
         {
           title: "Plant Nutrition — Photosynthesis",
@@ -222,8 +223,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Palisade mesophyll:** tightly packed cells near the top, full of chloroplasts for maximum light capture.",
                 "**Spongy mesophyll:** air spaces let CO₂ diffuse quickly to all cells.",
                 "**Stomata (guard cells):** pores, mostly on the lower surface, allowing CO₂ in and O₂/water vapour out; guard cells change shape to open or close them.",
-                "**Veins:** xylem brings water, phloem takes away sucrose; midrib supports the leaf."
-              ]
+                "**Veins:** xylem brings water, phloem takes away sucrose; midrib supports the leaf.",
+              ],
             },
             {
               subTitle: "Limiting factors and rate",
@@ -232,23 +233,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Carbon dioxide:** about 0.04% of air — raising CO₂ (in a greenhouse) raises the rate once light is no longer limiting.",
                 "**Temperature:** raises rate up to an optimum (~25–35°C); above it enzymes denature and the rate falls.",
                 "**The law of limiting factors:** the factor nearest its minimum value controls the overall rate.",
-                "**Greenhouse application:** growers optimise all three factors (artificial light, CO₂ enrichment, heating) to maximise yield."
-              ]
-            }
+                "**Greenhouse application:** growers optimise all three factors (artificial light, CO₂ enrichment, heating) to maximise yield.",
+              ],
+            },
           ],
           examinerTips: [
             "**Write both word and symbol equations from memory:** the symbol equation must be balanced — practise until automatic.",
             "**Define limiting factor precisely:** 'the factor in shortest supply that controls the rate of photosynthesis' — this phrasing earns the definition mark.",
             "**Explain plateau regions on graphs:** when the rate stops rising with light, say 'another factor, e.g. CO₂ concentration, has become limiting'.",
             "**Describe the pondweed method stepwise:** independent variable (lamp distance), dependent (bubble count per minute), controls (temperature via heat filter, CO₂, same pondweed) — this secures method marks.",
-            "**Use the term 'destarched' correctly:** a plant kept in the dark for 24–48 h uses up its starch so any starch found after the experiment was made during it."
+            "**Use the term 'destarched' correctly:** a plant kept in the dark for 24–48 h uses up its starch so any starch found after the experiment was made during it.",
           ],
           commonMistakes: [
             "**Writing respiration instead of photosynthesis in the equation:** check the direction — photosynthesis makes glucose and oxygen from CO₂ and water.",
             "**Saying light energy is 'converted to glucose':** light energy is converted to chemical energy stored in glucose — phrase it as energy storage, not matter creation.",
             "**Omitting the heat filter in the pondweed experiment:** lamp heat changes temperature, a second variable; always include a water filter and say why.",
             "**Counting bubbles as 'rate of photosynthesis' without care:** bubble size varies; better to collect gas volume in a capillary tube, but if counting bubbles state the assumption.",
-            "**Claiming the plant 'breathes in CO₂ at night through stomata':** stomata close at night; the fix is to link stomatal opening to light and gas exchange only."
+            "**Claiming the plant 'breathes in CO₂ at night through stomata':** stomata close at night; the fix is to link stomatal opening to light and gas exchange only.",
           ],
           recap: [
             "Write the balanced symbol equation for photosynthesis. [2]",
@@ -256,8 +257,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Describe an experiment to show that light is necessary for photosynthesis. [4]",
             "Sketch and explain the shape of a graph of rate of photosynthesis against light intensity. [3]",
             "A grower raises the CO₂ level in a greenhouse but the yield does not increase. Suggest an explanation. [2]",
-            "State the word equation for photosynthesis and name the green pigment that traps light. [2]"
-          ]
+            "State the word equation for photosynthesis and name the green pigment that traps light. [2]",
+          ],
         },
         {
           title: "Human Nutrition — Diet and Digestion",
@@ -270,8 +271,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Protein:** growth and repair of tissues; deficiency causes kwashiorkor (swollen belly, wasted muscles).",
                 "**Lipid:** energy store, insulation, membranes; deficiency affects absorption of vitamins A, D, E, K.",
                 "**Vitamins/minerals:** vitamin C (scurvy), vitamin D (rickets), iron (anaemia), calcium (bones/teeth), iodine (thyroid).",
-                "**Fibre and water:** fibre aids peristalsis and prevents constipation; water is the medium for all reactions."
-              ]
+                "**Fibre and water:** fibre aids peristalsis and prevents constipation; water is the medium for all reactions.",
+              ],
             },
             {
               subTitle: "Digestion summarised",
@@ -280,8 +281,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Chemical digestion:** enzymes break polymers into monomers — starch→sugar, protein→amino acids, fat→fatty acids+glycerol.",
                 "**Absorption:** soluble products pass into the blood through villi; this is not the same as egestion (removal of undigested food).",
                 "**Bile function:** emulsifies fat and neutralises stomach acid — even though it contains no enzymes.",
-                "**Peristalsis:** muscular waves move food; circular and longitudinal muscles contract behind and relax in front of the food bolus."
-              ]
+                "**Peristalsis:** muscular waves move food; circular and longitudinal muscles contract behind and relax in front of the food bolus.",
+              ],
             },
             {
               subTitle: "Villi adaptations for absorption",
@@ -290,23 +291,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Thin walls:** one cell thick (single layer of epithelium) so diffusion distance is minimal.",
                 "**Rich blood supply:** a capillary network maintains a steep concentration gradient for rapid absorption.",
                 "**Lacteal:** a lymph vessel in each villus absorbs fatty acids and glycerol into the lymphatic system.",
-                "**Surface enzymes:** microvilli carry enzymes completing digestion right at the absorbing surface."
-              ]
-            }
+                "**Surface enzymes:** microvilli carry enzymes completing digestion right at the absorbing surface.",
+              ],
+            },
           ],
           examinerTips: [
             "**Learn deficiency diseases matched to nutrients:** vitamin C–scurvy, vitamin D–rickets, iron–anaemia, protein–kwashiorkor; examiners test these pairings directly.",
             "**Distinguish mechanical from chemical digestion:** define each and give the site — chewing (mechanical, mouth) vs enzyme action (chemical, mouth/stomach/intestine).",
             "**Explain bile's two roles separately:** emulsification of fats (surface area for lipase) and neutralisation of acid — students often omit the second.",
             "**Use 'absorbed into the blood' precisely:** name the small molecules (glucose, amino acids) and the villus structure that absorbs them.",
-            "**Plan a diet answer as a table:** nutrient, source food, role, deficiency — a clear structure captures every mark."
+            "**Plan a diet answer as a table:** nutrient, source food, role, deficiency — a clear structure captures every mark.",
           ],
           commonMistakes: [
             "**Confusing absorption with egestion:** absorption is nutrients into the blood; egestion is undigested food leaving as faeces — do not say faeces is 'excreted'.",
             "**Saying bile digests fat:** bile has no enzymes; it emulsifies fat and neutralises acid, while lipase digests it.",
             "**Mixing up vitamin deficiencies:** vitamin C = scurvy, vitamin D = rickets; write the pairs in a revision table to fix them.",
             "**Omitting the large intestine's role:** its main job is absorbing water — forgetting this loses easy marks.",
-            "**Calling all gut movements 'digestion':** peristalsis is movement, not digestion; name the muscular process separately."
+            "**Calling all gut movements 'digestion':** peristalsis is movement, not digestion; name the muscular process separately.",
           ],
           recap: [
             "State one function in the body of carbohydrate, protein and lipid. [3]",
@@ -314,8 +315,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Describe how the structure of a villus is adapted for absorption. [3]",
             "A person has a diet lacking vitamin C. Name the deficiency disease and one symptom. [2]",
             "Distinguish between digestion, absorption and egestion. [3]",
-            "Explain why fats are emulsified before they are digested. [2]"
-          ]
+            "Explain why fats are emulsified before they are digested. [2]",
+          ],
         },
         {
           title: "Transport in Plants",
@@ -328,8 +329,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Phloem:** living sieve tube cells (no nucleus) with companion cells; transports sucrose + amino acids both ways (source to sink) by translocation.",
                 "**Direction:** xylem is one-way up; phloem is bidirectional between source and sink.",
                 "**Energy need:** phloem loading uses active transport (needs ATP); xylem movement is largely passive, driven by evaporation.",
-                "**Where found:** arranged in vascular bundles with xylem on the inside, phloem on the outside of stems."
-              ]
+                "**Where found:** arranged in vascular bundles with xylem on the inside, phloem on the outside of stems.",
+              ],
             },
             {
               subTitle: "Factors affecting transpiration rate",
@@ -338,23 +339,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Humidity:** higher humidity → shallower water-potential gradient → slower transpiration.",
                 "**Air movement (wind):** removes the humid layer around the leaf, steepening the gradient.",
                 "**Light intensity:** opens the stomata (guard cells absorb light and take up water), so more water vapour escapes.",
-                "**Leaf surface area and stomatal number:** more/larger stomata and bigger leaves increase water loss."
-              ]
-            }
+                "**Leaf surface area and stomatal number:** more/larger stomata and bigger leaves increase water loss.",
+              ],
+            },
           ],
           examinerTips: [
             "**State the direction of transport for each tissue:** xylem = up (roots to leaves), phloem = source to sink in either direction — this contrast is a favourite mark.",
             "**Link xylem transport to evaporation:** describe the cohesion-tension pull, not 'the plant pumps water up' — plants have no heart.",
             "**Name the apparatus for measuring transpiration:** a potometer measures water uptake, used as an estimate (not a direct measure) of transpiration.",
             "**Explain guard cell action:** when guard cells take up water they swell and curve apart, opening the stomata; link light to this process.",
-            "**Use 'translocation' for phloem and 'transpiration' for water vapour loss:** do not swap these terms."
+            "**Use 'translocation' for phloem and 'transpiration' for water vapour loss:** do not swap these terms.",
           ],
           commonMistakes: [
             "**Swapping xylem and phloem functions:** xylem = water, phloem = sugar; remember 'phloem carries food'.",
             "**Saying water moves up the xylem by active transport:** it moves by cohesion-tension from transpiration; active transport is only for mineral ion uptake at roots and phloem loading.",
             "**Confusing transpiration with translocation:** transpiration is water vapour loss through stomata; translocation is sugar movement in phloem.",
             "**Ignoring controls with the potometer:** without controlling light, temperature and humidity, changed readings cannot be attributed to the chosen variable.",
-            "**Claiming phloem transport is one-way like xylem:** phloem carries sucrose from source to sink, which can be in either direction as sinks change."
+            "**Claiming phloem transport is one-way like xylem:** phloem carries sucrose from source to sink, which can be in either direction as sinks change.",
           ],
           recap: [
             "State the function of xylem and of phloem. [2]",
@@ -362,8 +363,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Describe an experiment to investigate the effect of air movement on transpiration rate. [4]",
             "Explain why cutting a shoot underwater is important when setting up a potometer. [1]",
             "Distinguish between transpiration and translocation. [2]",
-            "Explain how root hair cells are adapted to absorb water and mineral ions. [3]"
-          ]
+            "Explain how root hair cells are adapted to absorb water and mineral ions. [3]",
+          ],
         },
         {
           title: "Transport in Humans — Heart and Blood",
@@ -376,8 +377,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Pulmonary circuit:** right ventricle → pulmonary artery → lungs → pulmonary vein → left atrium; loads oxygen and unloads carbon dioxide.",
                 "**Double circulation advantage:** maintains high pressure to tissues, separating oxygenated from deoxygenated blood for efficient delivery.",
                 "**Coronary circulation:** the heart's own blood supply via coronary arteries; blockage causes a heart attack (myocardial infarction).",
-                "**Valves:** tricuspid (right), bicuspid/mitral (left), and semilunar valves at artery bases all prevent backflow."
-              ]
+                "**Valves:** tricuspid (right), bicuspid/mitral (left), and semilunar valves at artery bases all prevent backflow.",
+              ],
             },
             {
               subTitle: "Blood cells and their functions",
@@ -386,23 +387,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**White cells:** phagocytes engulf pathogens; lymphocytes make antibodies/antitoxins; larger, have a nucleus.",
                 "**Platelets:** fragments of larger cells; release clotting factors at a wound to form a fibrin mesh (scab).",
                 "**Plasma:** transports dissolved food, waste (urea), hormones, CO₂ and heat; about 90% water.",
-                "**Clotting:** prevents blood loss and entry of pathogens; too little platelet activity causes excessive bleeding."
-              ]
-            }
+                "**Clotting:** prevents blood loss and entry of pathogens; too little platelet activity causes excessive bleeding.",
+              ],
+            },
           ],
           examinerTips: [
             "**Trace blood through the heart in order:** vena cava → right atrium → tricuspid valve → right ventricle → pulmonary artery → lungs → pulmonary vein → left atrium → bicuspid valve → left ventricle → aorta — rehearse this sequence until fluent.",
             "**Learn the 'odd vessels':** pulmonary artery carries deoxygenated blood and pulmonary vein carries oxygenated blood — the exceptions to the artery/oxygen rule.",
             "**Explain wall thickness as pressure:** thicker wall = higher pressure needed; always link structure to the distance pumped.",
             "**Describe capillary exchange properly:** reference the one-cell wall, large surface area and slow blood flow giving time for diffusion.",
-            "**Use 'cardiac output = heart rate × stroke volume' in calculation questions:** define each symbol with units before substituting."
+            "**Use 'cardiac output = heart rate × stroke volume' in calculation questions:** define each symbol with units before substituting.",
           ],
           commonMistakes: [
             "**Reversing the sides of the heart:** students swap left and right; the fix is to remember 'right side = deoxygenated, receives from body, pumps to lungs'.",
             "**Saying arteries always carry oxygenated blood:** the pulmonary artery is the exception — arteries are defined by carrying blood away from the heart, not by oxygen content.",
             "**Calling the left ventricle wall thick 'to pump to the lungs':** it is thick because it pumps around the whole body at high pressure; the right pumps only to the nearby lungs.",
             "**Mixing up valves:** the tricuspid is on the right, bicuspid on the left; associating 'tri' with 'right' (both have an 'r') helps.",
-            "**Forgetting that red cells have no nucleus:** this adaptation lets them carry more haemoglobin — a common 'explain the adaptation' mark."
+            "**Forgetting that red cells have no nucleus:** this adaptation lets them carry more haemoglobin — a common 'explain the adaptation' mark.",
           ],
           recap: [
             "Describe the pathway of blood through the heart, naming the chambers, valves and vessels in order. [6]",
@@ -410,8 +411,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "State two ways in which red blood cells are adapted to carry oxygen. [2]",
             "Describe how the structure of a capillary is suited to the exchange of materials with tissue cells. [3]",
             "A person's heart rate is 72 beats per minute and the stroke volume is 70 cm³. Calculate the cardiac output. [2]",
-            "Describe the role of white blood cells in defence against disease. [3]"
-          ]
+            "Describe the role of white blood cells in defence against disease. [3]",
+          ],
         },
         {
           title: "Gas Exchange and Respiration",
@@ -424,8 +425,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**One-cell-thick walls:** both alveolus and capillary walls are a single cell, minimising diffusion distance.",
                 "**Dense capillary network:** keeps blood flowing, maintaining a steep concentration gradient.",
                 "**Moist lining:** oxygen and carbon dioxide dissolve in the film of moisture before diffusing.",
-                "**Thin layer of surfactant:** reduces surface tension so alveoli do not collapse on exhalation."
-              ]
+                "**Thin layer of surfactant:** reduces surface tension so alveoli do not collapse on exhalation.",
+              ],
             },
             {
               subTitle: "Aerobic vs anaerobic respiration",
@@ -434,23 +435,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Anaerobic in muscles:** glucose → lactic acid; incomplete; small energy yield; causes oxygen debt.",
                 "**Anaerobic in yeast (fermentation):** glucose → ethanol + CO₂; used in brewing and bread-making.",
                 "**Oxygen debt:** the extra oxygen required after exercise to oxidise lactic acid.",
-                "**Effect of exercise:** breathing and heart rates increase to supply more oxygen and remove more CO₂."
-              ]
-            }
+                "**Effect of exercise:** breathing and heart rates increase to supply more oxygen and remove more CO₂.",
+              ],
+            },
           ],
           examinerTips: [
             "**Never confuse respiration with breathing:** define respiration as the chemical release of energy from glucose in cells; examiners penalise 'breathing in oxygen to make energy'.",
             "**Link every alveolus feature to faster diffusion:** say how each adaptation (area, thin wall, gradient) increases the rate — the 'because' earns the mark.",
             "**Describe ventilation as a pressure change:** muscles change thoracic volume → pressure changes → air flows down a pressure gradient.",
             "**Contrast the two anaerobic products:** animals make lactic acid; yeast makes ethanol and CO₂ — check which organism the question names.",
-            "**Explain the oxygen debt mechanism:** lactic acid from anaerobic respiration must be oxidised using extra oxygen after exercise."
+            "**Explain the oxygen debt mechanism:** lactic acid from anaerobic respiration must be oxidised using extra oxygen after exercise.",
           ],
           commonMistakes: [
             "**Writing breathing as a characteristic of life instead of respiration:** the fix is to quote the full definition of respiration with 'chemical reactions in cells'.",
             "**Saying oxygen 'creates' energy:** energy is released from glucose; oxygen merely allows its complete oxidation — phrase it as energy release, not creation.",
             "**Forgetting that plants also respire:** students think plants only photosynthesise; respiration occurs in all living cells all the time, day and night.",
             "**Reversing the diffusion directions in the lungs:** O₂ moves alveolus→blood, CO₂ moves blood→alveolus; check the gradient for each gas.",
-            "**Claiming anaerobic respiration in yeast produces lactic acid:** yeast ferments to ethanol and CO₂; only animal muscle makes lactic acid."
+            "**Claiming anaerobic respiration in yeast produces lactic acid:** yeast ferments to ethanol and CO₂; only animal muscle makes lactic acid.",
           ],
           recap: [
             "Describe three adaptations of the alveoli for gas exchange. [3]",
@@ -458,8 +459,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Describe how the body takes in air during inhalation, referring to muscle action and pressure changes. [4]",
             "Write the word equation for aerobic respiration. [1]",
             "Explain why an athlete continues to breathe heavily for several minutes after finishing a sprint. [3]",
-            "State the products of anaerobic respiration in muscles and in yeast. [2]"
-          ]
+            "State the products of anaerobic respiration in muscles and in yeast. [2]",
+          ],
         },
         {
           title: "Coordination and Response",
@@ -472,8 +473,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Sensory neurone:** carries the impulse to the CNS; its cell body is in a ganglion near the spinal cord.",
                 "**Relay neurone:** in the CNS, connects sensory to motor neurone — the integration point.",
                 "**Motor neurone:** carries the impulse to the effector; cell body in the CNS.",
-                "**Effector:** muscle (contracts) or gland (secretes) that brings about the response."
-              ]
+                "**Effector:** muscle (contracts) or gland (secretes) that brings about the response.",
+              ],
             },
             {
               subTitle: "Hormones of the human body",
@@ -482,8 +483,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Glucagon:** raises blood glucose by converting stored glycogen back to glucose (its partner in control).",
                 "**Adrenaline:** 'fight or flight'; raises heart rate, breathing rate and blood glucose, widens pupils.",
                 "**Thyroxine:** from the thyroid gland; regulates metabolic rate; deficiency in children causes cretinism.",
-                "**Sex hormones:** oestrogen and testosterone control puberty and the reproductive cycle."
-              ]
+                "**Sex hormones:** oestrogen and testosterone control puberty and the reproductive cycle.",
+              ],
             },
             {
               subTitle: "Comparing nervous and hormonal control",
@@ -492,23 +493,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Duration:** nervous effects are short-lived; hormonal effects are longer-lasting.",
                 "**Pathway:** nervous uses neurones to specific targets; hormones travel everywhere but act only on target cells with receptors.",
                 "**Nature:** nervous messages are electrical (with chemical synapses); hormonal messages are chemical only.",
-                "**Example contrast:** touching something hot (nervous, milliseconds) versus growth and puberty (hormonal, years)."
-              ]
-            }
+                "**Example contrast:** touching something hot (nervous, milliseconds) versus growth and puberty (hormonal, years).",
+              ],
+            },
           ],
           examinerTips: [
             "**Draw and label a reflex arc:** receptor, sensory neurone (with its ganglion), relay neurone, motor neurone, effector — examiners award marks per correct label and direction.",
             "**State the direction of a synapse:** impulses cross a synapse one way only, by a chemical transmitter — this explains why signals cannot reverse.",
             "**Define negative feedback precisely:** 'a change triggers a response that reverses the change, returning the level to normal' — rehearse this definition.",
             "**Contrast the two control systems in a table:** speed, duration, pathway, nature — ideal for 'compare' questions worth several marks.",
-            "**Link each eye muscle change to the light condition:** bright = circular contract (pupil small); dim = radial contract (pupil large)."
+            "**Link each eye muscle change to the light condition:** bright = circular contract (pupil small); dim = radial contract (pupil large).",
           ],
           commonMistakes: [
             "**Calling the spinal cord the 'spine' (backbone):** the spinal cord is inside the vertebrae; the bony spine protects it.",
             "**Reversing the lens changes:** near objects need a thick, rounded lens; distant objects a thin, flat one — remember 'near = fat lens'.",
             "**Confusing effector with receptor:** the receptor detects, the effector acts; check whether the structure senses or responds.",
             "**Forgetting negative feedback returns a level to normal:** students describe feedback as 'switching off' — stress the return to a set point.",
-            "**Mixing up hormonal and nervous speeds:** hormones are slower and longer-lasting because they travel in the blood; write the contrast explicitly."
+            "**Mixing up hormonal and nervous speeds:** hormones are slower and longer-lasting because they travel in the blood; write the contrast explicitly.",
           ],
           recap: [
             "Describe the pathway of a reflex arc, naming each structure in order. [5]",
@@ -516,8 +517,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Compare the nervous and hormonal systems with respect to speed, duration and pathway of transmission. [3]",
             "Describe the role of negative feedback in controlling blood glucose concentration. [3]",
             "Explain how the iris of the eye responds to bright light. [2]",
-            "State the source and effect of adrenaline in the body. [2]"
-          ]
+            "State the source and effect of adrenaline in the body. [2]",
+          ],
         },
         {
           title: "Homeostasis and Excretion",
@@ -530,8 +531,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Too hot:** sweat + vasodilation + reduced heat production; evaporation removes latent heat.",
                 "**Too cold:** shivering + vasoconstriction + hairs erect; insulation and heat generation.",
                 "**Blood glucose high:** insulin from pancreas → glucose stored as glycogen in liver and muscles.",
-                "**Blood glucose low:** glucagon from pancreas → glycogen broken down to glucose in the liver."
-              ]
+                "**Blood glucose low:** glucagon from pancreas → glycogen broken down to glucose in the liver.",
+              ],
             },
             {
               subTitle: "Excretion vs egestion",
@@ -540,8 +541,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Egestion:** removal of undigested food (faeces) from the gut — this material never entered the body's cells.",
                 "**Urea formation:** the liver removes excess amino acids by deamination (ammonia → urea), which the kidneys filter out.",
                 "**Lungs:** excrete carbon dioxide and water vapour from respiration.",
-                "**Skin:** sweat contains water, salts and a little urea, and its evaporation cools the body."
-              ]
+                "**Skin:** sweat contains water, salts and a little urea, and its evaporation cools the body.",
+              ],
             },
             {
               subTitle: "Kidney nephron stages",
@@ -550,23 +551,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Selective reabsorption:** glucose is fully reabsorbed by active transport; water by osmosis; useful ions reabsorbed.",
                 "**Urine formation:** remaining water, urea and excess salts pass to the bladder as urine.",
                 "**Osmoregulation:** the kidney adjusts water reabsorption to the body's needs via the hormone ADH (antidiuretic hormone).",
-                "**Dialysis:** a machine filters a patient's blood when kidneys fail, removing urea and balancing salts and water."
-              ]
-            }
+                "**Dialysis:** a machine filters a patient's blood when kidneys fail, removing urea and balancing salts and water.",
+              ],
+            },
           ],
           examinerTips: [
             "**Define homeostasis as a process with a purpose:** 'maintaining a constant internal environment for optimal enzyme activity' — enzymes need a stable temperature and pH.",
             "**Always describe both sides of negative feedback:** say what happens when the level rises AND when it falls; half an answer loses half the marks.",
             "**Separate excretion from egestion explicitly:** one mark is routinely reserved for this distinction in long answers.",
             "**Use 'vasodilation' and 'vasoconstriction' correctly:** dilation = widen (lose heat), constriction = narrow (keep heat); attach the correct temperature to each.",
-            "**Describe ultrafiltration as pressure-driven:** high pressure in the glomerulus, small molecules forced out, proteins and cells retained — three points, three marks."
+            "**Describe ultrafiltration as pressure-driven:** high pressure in the glomerulus, small molecules forced out, proteins and cells retained — three points, three marks.",
           ],
           commonMistakes: [
             "**Saying sweat cools by 'soaking' the skin:** cooling is by evaporation of sweat, which removes latent heat; state the mechanism.",
             "**Confusing insulin and glucagon:** insulin lowers blood glucose (fed state), glucagon raises it (fasting); remember 'insulin in after eating'.",
             "**Reversing vasodilation/vasoconstriction:** hot → dilate (widen to release heat); cold → constrict (narrow to retain heat).",
             "**Claiming urea is made in the kidneys:** urea is made in the liver by deamination; the kidneys only filter it out of the blood.",
-            "**Including faeces as excretion:** egestion and excretion are different — fix by recalling excretion removes cell-made metabolic waste only."
+            "**Including faeces as excretion:** egestion and excretion are different — fix by recalling excretion removes cell-made metabolic waste only.",
           ],
           recap: [
             "Define homeostasis and explain why it is important for enzyme function. [3]",
@@ -574,8 +575,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Explain how insulin and glucagon control blood glucose concentration. [4]",
             "Distinguish between excretion and egestion, giving one example of each. [2]",
             "Describe the process of ultrafiltration in the nephron. [3]",
-            "Explain why a person with untreated diabetes may have glucose in their urine. [2]"
-          ]
+            "Explain why a person with untreated diabetes may have glucose in their urine. [2]",
+          ],
         },
         {
           title: "Reproduction in Plants and Humans",
@@ -588,8 +589,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Stamen (male):** anther makes pollen; filament holds the anther up.",
                 "**Carpel (female):** stigma receives pollen; style is the tube the pollen grows down; ovary contains ovules.",
                 "**Fertilisation:** pollen tube delivers male gamete to ovule; zygote forms, ovule → seed, ovary → fruit.",
-                "**Seed dispersal:** by wind (light, winged seeds), water, or animals (edible fruits) to reduce competition."
-              ]
+                "**Seed dispersal:** by wind (light, winged seeds), water, or animals (edible fruits) to reduce competition.",
+              ],
             },
             {
               subTitle: "Human gametes and fertilisation",
@@ -598,8 +599,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Egg adaptation:** large, with food reserves (yolk) and a coating that changes after fertilisation to block other sperm.",
                 "**Fertilisation site:** the oviduct (fallopian tube), not the uterus.",
                 "**Placenta function:** exchange of oxygen, nutrients, CO₂ and urea by diffusion; also a barrier to some pathogens.",
-                "**Umbilical cord:** connects the embryo to the placenta; carries blood between them."
-              ]
+                "**Umbilical cord:** connects the embryo to the placenta; carries blood between them.",
+              ],
             },
             {
               subTitle: "Asexual reproduction and cloning",
@@ -608,23 +609,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Advantages of asexual:** no partner needed, rapid colonisation, preserves good characteristics.",
                 "**Disadvantage:** no variation, so a disease could wipe out all clones.",
                 "**Advantages of sexual:** variation helps survival in changing environments and drives evolution by natural selection.",
-                "**Tissue culture (cloning plants):** a few cells grown on sterile nutrient agar produce many identical new plants — used commercially."
-              ]
-            }
+                "**Tissue culture (cloning plants):** a few cells grown on sterile nutrient agar produce many identical new plants — used commercially.",
+              ],
+            },
           ],
           examinerTips: [
             "**Order the plant events correctly:** pollination → pollen tube growth → fertilisation → seed and fruit formation — examiners check the sequence.",
             "**Name the fertilisation site in humans:** the oviduct (fallopian tube); a common error is to say 'uterus'.",
             "**Describe placenta exchange as diffusion:** never say the mother's and baby's blood 'mix' — they stay separate and exchange by diffusion across the placenta.",
             "**Link each sperm adaptation to its job:** tail for movement, mitochondria for energy, enzymes to enter the egg.",
-            "**Compare asexual and sexual reproduction** with one advantage and one disadvantage of each — a frequent compare question."
+            "**Compare asexual and sexual reproduction** with one advantage and one disadvantage of each — a frequent compare question.",
           ],
           commonMistakes: [
             "**Confusing pollination with fertilisation:** pollination is pollen transfer; fertilisation is the fusion of gametes — keep them distinct.",
             "**Saying the blood of mother and fetus mix:** exchange is by diffusion across the placenta; the two circulations are separate.",
             "**Reversing tropisms:** shoots grow toward light (positive phototropism) and away from gravity; roots toward gravity — check the organ.",
             "**Claiming asexual reproduction produces variation:** clones are genetically identical; variation comes only from sexual reproduction and mutation.",
-            "**Mixing up ovary functions:** the ovary releases eggs AND produces oestrogen; it is also where fertilised eggs develop in animals, but in plants the ovary becomes the fruit."
+            "**Mixing up ovary functions:** the ovary releases eggs AND produces oestrogen; it is also where fertilised eggs develop in animals, but in plants the ovary becomes the fruit.",
           ],
           recap: [
             "Describe the sequence of events from pollination to seed formation in a flowering plant. [5]",
@@ -632,8 +633,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Describe the role of the placenta in a human pregnancy. [3]",
             "Compare sexual and asexual reproduction, giving one advantage of each. [2]",
             "State where fertilisation normally occurs in humans. [1]",
-            "Name the hormones that control the menstrual cycle and state one function of each. [3]"
-          ]
+            "Name the hormones that control the menstrual cycle and state one function of each. [3]",
+          ],
         },
         {
           title: "Inheritance and Genetics",
@@ -646,8 +647,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Allele:** an alternative form of a gene (e.g. tall vs short).",
                 "**Dominant/recessive:** dominant shows with one copy (capital letter); recessive needs two copies (lowercase).",
                 "**Homozygous/heterozygous:** two identical alleles vs two different alleles.",
-                "**Genotype vs phenotype:** the genetic makeup vs the observable characteristic."
-              ]
+                "**Genotype vs phenotype:** the genetic makeup vs the observable characteristic.",
+              ],
             },
             {
               subTitle: "Mitosis vs meiosis",
@@ -656,8 +657,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Meiosis:** four different haploid gametes; halves the chromosome number; introduces variation by crossing over.",
                 "**Where:** mitosis in body cells throughout life; meiosis only in reproductive organs to make gametes.",
                 "**Chromosome number:** mitosis keeps 2n; meiosis reduces 2n → n.",
-                "**Fertilisation:** restores the diploid number by fusing two haploid nuclei."
-              ]
+                "**Fertilisation:** restores the diploid number by fusing two haploid nuclei.",
+              ],
             },
             {
               subTitle: "Sources of variation and evolution",
@@ -666,23 +667,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Random fertilisation:** any sperm can fuse with any egg, giving huge variety.",
                 "**Mutation:** random change in DNA; the only source of entirely new alleles.",
                 "**Natural selection:** advantageous alleles become commoner over generations (evolution).",
-                "**Antibiotic resistance:** a mutation survives antibiotics and multiplies — evidence of selection in action."
-              ]
-            }
+                "**Antibiotic resistance:** a mutation survives antibiotics and multiplies — evidence of selection in action.",
+              ],
+            },
           ],
           examinerTips: [
             "**Use capital/lowercase letters consistently for alleles:** define your letters at the start (e.g. 'Let T = tall, t = short') so the examiner follows your cross.",
             "**Draw a labelled Punnett square:** show parent alleles on the top and side, offspring in the grid — full marks need correct gametes AND correct combinations.",
             "**Give ratios AND probabilities:** write both '3:1' and 'probability of recessive = 25%' where asked for probability.",
             "**Distinguish mitosis and meiosis by purpose and product:** growth/repair (identical, 2 cells) vs gametes (varied, 4 cells).",
-            "**Explain antibiotic resistance as selection, not adaptation:** the bacterium does not 'learn' resistance; a resistant mutant survives and multiplies."
+            "**Explain antibiotic resistance as selection, not adaptation:** the bacterium does not 'learn' resistance; a resistant mutant survives and multiplies.",
           ],
           commonMistakes: [
             "**Reversing dominant and recessive:** dominant needs only one allele; recessive needs two — check the capital/lowcase before writing.",
             "**Saying mitosis makes gametes:** gametes are made by meiosis; mitosis makes identical body cells.",
             "**Forgetting to halve the chromosome number:** if gametes were diploid, chromosome numbers would double each generation — meiosis prevents this.",
             "**Mixing genotype and phenotype:** genotype is the letters (Tt), phenotype is the description (tall).",
-            "**Claiming mutations are always harmful:** most are harmful or neutral, but some are beneficial and drive evolution."
+            "**Claiming mutations are always harmful:** most are harmful or neutral, but some are beneficial and drive evolution.",
           ],
           recap: [
             "Define the terms gene, allele, dominant and recessive. [4]",
@@ -690,8 +691,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "State two differences between mitosis and meiosis. [2]",
             "Explain how meiosis and fertilisation produce genetic variation. [3]",
             "Describe how a population of bacteria becomes resistant to an antibiotic. [3]",
-            "Explain why gametes are haploid. [2]"
-          ]
+            "Explain why gametes are haploid. [2]",
+          ],
         },
         {
           title: "Ecology and Ecosystems",
@@ -704,8 +705,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Primary/secondary/tertiary consumers:** herbivore → carnivore → top carnivore.",
                 "**10% energy transfer:** most energy is lost as heat, movement and egestion, so chains are short.",
                 "**Decomposers:** bacteria and fungi break down dead matter, recycling nutrients.",
-                "**Pyramids of energy:** always upright; energy decreases at each level."
-              ]
+                "**Pyramids of energy:** always upright; energy decreases at each level.",
+              ],
             },
             {
               subTitle: "Carbon and nitrogen cycles",
@@ -714,8 +715,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Greenhouse effect:** CO₂ and methane trap infrared radiation, warming the planet; human activity intensifies it.",
                 "**Nitrogen fixation:** converts unreactive N₂ gas into ammonia/nitrates plants can use.",
                 "**Nitrification:** ammonia → nitrite → nitrate by nitrifying bacteria in well-aerated soil.",
-                "**Denitrification:** nitrates → N₂ gas in waterlogged soil by denitrifying bacteria; reduces fertility."
-              ]
+                "**Denitrification:** nitrates → N₂ gas in waterlogged soil by denitrifying bacteria; reduces fertility.",
+              ],
             },
             {
               subTitle: "Pollution and conservation",
@@ -724,23 +725,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Biomagnification:** pesticides concentrate at higher trophic levels, harming predators.",
                 "**Biodiversity value:** ecosystem stability, resources (food, medicines) and resilience to change.",
                 "**In-situ conservation:** protect habitats and species in the wild (reserves, corridors).",
-                "**Ex-situ conservation:** zoos, seed banks, captive breeding for reintroduction."
-              ]
-            }
+                "**Ex-situ conservation:** zoos, seed banks, captive breeding for reintroduction.",
+              ],
+            },
           ],
           examinerTips: [
             "**Always draw arrows in the direction of energy flow:** from the organism being eaten to the eater (grass → rabbit → fox); reversed arrows are a common error.",
             "**Explain the 10% rule fully:** name the ways energy is lost — heat, respiration, movement, egestion, excretion — to gain explanation marks.",
             "**Trace carbon or nitrogen in a cycle question:** write the process and the arrow for each step (e.g. 'respiration → CO₂ to atmosphere').",
             "**Use 'biomagnification' and 'eutrophication' precisely:** define the process and link it to the trophic level or the oxygen change.",
-            "**Distinguish in-situ from ex-situ with examples:** natural habitat vs removed from habitat; give one named example of each."
+            "**Distinguish in-situ from ex-situ with examples:** natural habitat vs removed from habitat; give one named example of each.",
           ],
           commonMistakes: [
             "**Reversing food-chain arrows:** arrows show energy flow to the consumer, not 'who eats whom' in reverse.",
             "**Saying energy is recycled:** energy flows one way and is lost as heat; only nutrients are recycled — a key distinction.",
             "**Confusing nitrifying and denitrifying bacteria:** nitrifying add oxygen/make nitrates in drained soil; denitrifying remove nitrates in waterlogged soil.",
             "**Claiming pesticides stay at the same concentration up the chain:** they biomagnify, becoming more concentrated at higher trophic levels.",
-            "**Mixing up the two conservation types:** in-situ = in the wild (reserves); ex-situ = out of the wild (zoos, seed banks)."
+            "**Mixing up the two conservation types:** in-situ = in the wild (reserves); ex-situ = out of the wild (zoos, seed banks).",
           ],
           recap: [
             "Explain why food chains are usually limited to four or five trophic levels. [3]",
@@ -748,15 +749,16 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Explain the role of bacteria in the nitrogen cycle. [4]",
             "Describe how eutrophication can lead to the death of fish in a lake. [3]",
             "Distinguish between in-situ and ex-situ conservation, giving an example of each. [2]",
-            "State what is meant by biomagnification and why it threatens top predators. [2]"
-          ]
-        }
-      ]
+            "State what is meant by biomagnification and why it threatens top predators. [2]",
+          ],
+        },
+      ],
     },
     {
       number: 2,
       title: "Chemistry — Matter and Chemical Reactions",
-      intro: "This chapter covers the Chemistry content of the Co-ordinated Sciences double award, from the particle nature of matter and atomic structure through bonding, the mole, energetics, rates, equilibrium, acids and bases, metals and organic chemistry, finishing with practical and analytical techniques. Chemistry is a quantitative subject at this level: you must be able to calculate with the mole, balance equations, work out concentrations and yields, and interpret graphs of energy and rate. Every calculation is learned here through a worked example using the same three-step format — write the formula, substitute with units, give the answer. Practise these until the method is automatic, because most marks are lost through method slips, not chemistry knowledge.",
+      intro:
+        "This chapter covers the Chemistry content of the Co-ordinated Sciences double award, from the particle nature of matter and atomic structure through bonding, the mole, energetics, rates, equilibrium, acids and bases, metals and organic chemistry, finishing with practical and analytical techniques. Chemistry is a quantitative subject at this level: you must be able to calculate with the mole, balance equations, work out concentrations and yields, and interpret graphs of energy and rate. Every calculation is learned here through a worked example using the same three-step format — write the formula, substitute with units, give the answer. Practise these until the method is automatic, because most marks are lost through method slips, not chemistry knowledge.",
       subheadings: [
         {
           title: "States of Matter and Separation Techniques",
@@ -769,8 +771,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Liquid:** particles close, sliding; fixed volume, takes container's shape.",
                 "**Gas:** particles far apart, rapid random motion; fills any volume; easily compressed.",
                 "**Diffusion evidence:** smells spread, bromine fills a gas jar from one end — particles move randomly.",
-                "**Temperature effect:** higher temperature → faster diffusion, because particles have more kinetic energy."
-              ]
+                "**Temperature effect:** higher temperature → faster diffusion, because particles have more kinetic energy.",
+              ],
             },
             {
               subTitle: "Choosing a separation technique",
@@ -779,8 +781,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Crystallisation:** heat a solution to the crystallisation point then cool; crystals of the solute form, e.g. copper sulfate from its solution.",
                 "**Simple distillation:** recover the solvent (pure water from sea water).",
                 "**Fractional distillation:** miscible liquids by boiling point, e.g. ethanol (78°C) from water (100°C), and crude oil fractions.",
-                "**Chromatography:** identify components; compare Rf values with known substances."
-              ]
+                "**Chromatography:** identify components; compare Rf values with known substances.",
+              ],
             },
             {
               subTitle: "Chromatography details",
@@ -789,23 +791,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Rf value:** Rf = distance by spot ÷ distance by solvent front (measure to the spot centre).",
                 "**Identifying substances:** run alongside a known reference; matching Rf under identical conditions suggests identity.",
                 "**Colourless mixtures:** locate spots with UV light or a locating agent (e.g. ninhydrin for amino acids).",
-                "**Pure vs mixture:** a pure substance gives one spot; a mixture gives several."
-              ]
-            }
+                "**Pure vs mixture:** a pure substance gives one spot; a mixture gives several.",
+              ],
+            },
           ],
           examinerTips: [
             "**Define Rf and state it is always ≤ 1:** examiners award the formula mark and a mark for noting the maximum value of 1.",
             "**Match each technique to the mixture type:** state what is insoluble/soluble and what you want to collect — the justification earns the mark.",
             "**Explain why temperature is constant during a change of state:** energy breaks interparticle bonds rather than raising kinetic energy — a favourite explain question.",
             "**Use 'residue' and 'filtrate' correctly:** residue stays on the paper, filtrate passes through.",
-            "**Describe chromatography stepwise:** pencil baseline (not ink, which would run), spot samples, place in solvent below the baseline, allow the front to rise, mark the front before it evaporates."
+            "**Describe chromatography stepwise:** pencil baseline (not ink, which would run), spot samples, place in solvent below the baseline, allow the front to rise, mark the front before it evaporates.",
           ],
           commonMistakes: [
             "**Drawing the chromatography baseline in ink:** ink runs and smears; always use a pencil line and keep the solvent level below the spots.",
             "**Calculating Rf with inconsistent distances:** both distances must be measured from the baseline to the same reference point; convert units first.",
             "**Confusing simple and fractional distillation:** simple collects the solvent; fractional separates two liquids by boiling point.",
             "**Saying a mixture can be separated only chemically:** mixtures are separated physically because components keep their properties — no new substances form.",
-            "**Claiming particles in a solid 'do not move':** they vibrate; only in gases do they move freely and randomly."
+            "**Claiming particles in a solid 'do not move':** they vibrate; only in gases do they move freely and randomly.",
           ],
           recap: [
             "Describe the arrangement and movement of particles in a solid, a liquid and a gas. [3]",
@@ -813,8 +815,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Describe how you would separate a mixture of sand and salt. [3]",
             "Explain how fractional distillation separates ethanol (boiling point 78°C) from water (boiling point 100°C). [3]",
             "A chromatogram shows a spot 4.5 cm from the baseline and the solvent front 6.0 cm from the baseline. Calculate the Rf value. [2]",
-            "State what is meant by a pure substance and how impurities affect melting point. [2]"
-          ]
+            "State what is meant by a pure substance and how impurities affect melting point. [2]",
+          ],
         },
         {
           title: "Atomic Structure and Isotopes",
@@ -827,8 +829,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Neutron:** nucleus; mass 1; charge 0; number = mass number − atomic number.",
                 "**Electron:** shells around nucleus; mass ≈ 1/1840; charge −1; number = protons in a neutral atom.",
                 "**Nucleon:** any particle in the nucleus (proton or neutron); mass number counts nucleons.",
-                "**Most mass in nucleus:** electrons contribute almost no mass but determine bonding and chemistry."
-              ]
+                "**Most mass in nucleus:** electrons contribute almost no mass but determine bonding and chemistry.",
+              ],
             },
             {
               subTitle: "Isotopes in context",
@@ -837,23 +839,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Radioactive isotopes:** unstable nuclei emit radiation; used in medicine (cobalt-60, iodine-131) and dating (carbon-14).",
                 "**Average atomic mass:** a weighted mean of isotope masses, e.g. chlorine = 35.5.",
                 "**Chemical properties identical:** because reactions depend on electrons, which are the same in isotopes.",
-                "**Tracers:** radioactive isotopes (e.g. iodine-131) track organ function or pipeline leaks."
-              ]
-            }
+                "**Tracers:** radioactive isotopes (e.g. iodine-131) track organ function or pipeline leaks.",
+              ],
+            },
           ],
           examinerTips: [
             "**State the three definitions separately:** atomic number = protons; mass number = protons + neutrons; neutrons = mass number − atomic number — writing them down earns the marks.",
             "**Deduce electron arrangement before predicting reactivity:** the number of outer electrons links directly to group number and ion charge.",
             "**Explain why isotopes have identical chemistry:** same electron arrangement — the chemistry depends on electrons, not the nucleus.",
             "**Show working in average-atomic-mass questions:** multiply each isotopic mass by its percentage/ fraction, add, then divide by 100 (or by total fraction).",
-            "**Use isotope notation correctly:** ²³₁₁Na means mass number 11? No — mass number on top (23), atomic number below (11). Practise reading it both ways."
+            "**Use isotope notation correctly:** ²³₁₁Na means mass number 11? No — mass number on top (23), atomic number below (11). Practise reading it both ways.",
           ],
           commonMistakes: [
             "**Swapping atomic and mass numbers in isotope notation:** the larger number (mass) goes on top, the atomic number below.",
             "**Thinking electrons contribute to mass number:** mass number counts only nucleons (protons + neutrons); electrons are negligible.",
             "**Claiming isotopes have different chemical properties:** they differ only in neutrons, so chemistry (electron-controlled) is identical.",
             "**Forgetting electrons = protons in a neutral atom:** an ion's electron count differs — check the charge first.",
-            "**Averaging isotope masses without the weighting:** multiply by abundance; a simple mean of 35 and 37 gives 36, not 35.5."
+            "**Averaging isotope masses without the weighting:** multiply by abundance; a simple mean of 35 and 37 gives 36, not 35.5.",
           ],
           recap: [
             "An atom has atomic number 19 and mass number 39. State the numbers of protons, neutrons and electrons. [3]",
@@ -861,8 +863,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Explain why isotopes of an element have the same chemical properties. [2]",
             "Bromine consists of 50.5% ⁷⁹Br and 49.5% ⁸¹Br. Calculate its average relative atomic mass. [2]",
             "Write the electron arrangement of chlorine (atomic number 17) and predict its ion charge. [2]",
-            "State one use of a radioactive isotope. [1]"
-          ]
+            "State one use of a radioactive isotope. [1]",
+          ],
         },
         {
           title: "The Periodic Table and Group Trends",
@@ -875,8 +877,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Groups (columns):** same number of outer electrons → similar chemistry; Group number = outer electrons (1–7).",
                 "**Periods (rows):** same number of shells; Period number = number of shells.",
                 "**Metal/non-metal divide:** staircase from boron down to astatine separates metals (left) from non-metals (right).",
-                "**Transition metals (centre block):** hard, strong, high melting points, variable valency, coloured compounds, catalysts (e.g. iron in the Haber process, nickel in hydrogenation)."
-              ]
+                "**Transition metals (centre block):** hard, strong, high melting points, variable valency, coloured compounds, catalysts (e.g. iron in the Haber process, nickel in hydrogenation).",
+              ],
             },
             {
               subTitle: "Group trends explained",
@@ -885,23 +887,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Group 1 reaction with water:** metal + water → metal hydroxide + hydrogen; hydroxide is alkaline.",
                 "**Group 7 down:** incoming electron enters a shell further out → attraction weaker → reactivity decreases.",
                 "**Displacement rule:** a more reactive halogen displaces a less reactive halogen from solution.",
-                "**Group 0 stability:** full outer shells mean no tendency to gain, lose or share electrons."
-              ]
-            }
+                "**Group 0 stability:** full outer shells mean no tendency to gain, lose or share electrons.",
+              ],
+            },
           ],
           examinerTips: [
             "**Link group number to outer electrons and reactivity:** this single idea explains most trend questions — always state the number of outer electrons.",
             "**Use the electron-shell explanation for trends:** 'more shells / greater distance / more shielding / weaker attraction' — these keywords score the marks.",
             "**Predict displacement outcomes before writing:** the halogen higher in Group 7 wins; write the balanced equation and the colour change.",
             "**Describe alkali-metal water reactions with observations:** fizzing, melting into a ball, darting on the surface, lilac flame (potassium) — observations carry marks.",
-            "**Explain noble-gas unreactivity via full outer shells:** 'already stable, so no need to gain, lose or share electrons'."
+            "**Explain noble-gas unreactivity via full outer shells:** 'already stable, so no need to gain, lose or share electrons'.",
           ],
           commonMistakes: [
             "**Saying Group 1 reactivity decreases down the group:** it increases — the outer electron is lost more easily as the atom grows.",
             "**Saying Group 7 reactivity increases down the group:** it decreases — the extra shell weakens the pull on the incoming electron.",
             "**Forgetting halogens are diatomic:** write Cl₂, Br₂, I₂ in equations, not Cl, Br, I.",
             "**Reversing a displacement prediction:** chlorine (higher) displaces bromine and iodine; bromine displaces iodine; never the reverse.",
-            "**Stating the Periodic Table is ordered by mass:** it is ordered by proton number (atomic number) — Mosley corrected Mendeleev."
+            "**Stating the Periodic Table is ordered by mass:** it is ordered by proton number (atomic number) — Mosley corrected Mendeleev.",
           ],
           recap: [
             "Explain why elements in the same group of the Periodic Table have similar chemical properties. [2]",
@@ -909,8 +911,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Write the word and symbol equation for the reaction of sodium with water. [2]",
             "Explain, with an equation, what happens when chlorine gas is bubbled through potassium bromide solution. [3]",
             "State why the noble gases are unreactive and give one use of argon. [2]",
-            "An element has electron arrangement 2,8,7. State its group and period and predict whether it is a metal or non-metal. [3]"
-          ]
+            "An element has electron arrangement 2,8,7. State its group and period and predict whether it is a metal or non-metal. [3]",
+          ],
         },
         {
           title: "Ionic, Covalent and Metallic Bonding",
@@ -923,8 +925,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Covalent (simple molecular):** non-metals share electrons; molecules; low melting point; non-conductor.",
                 "**Covalent (giant):** all atoms bonded in a network; very high melting point; diamond insulator, graphite conducts.",
                 "**Metallic:** positive ions in a sea of electrons; conducts heat and electricity; malleable and ductile.",
-                "**Structure determines properties:** always link a property to the bonding and particle arrangement."
-              ]
+                "**Structure determines properties:** always link a property to the bonding and particle arrangement.",
+              ],
             },
             {
               subTitle: "Representing bonds",
@@ -933,23 +935,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Ionic formulae:** balance charges to make a neutral compound, e.g. Mg²⁺ + 2Cl⁻ → MgCl₂.",
                 "**Displayed formulae:** show every bond, e.g. water as H–O–H.",
                 "**State symbols:** (s), (l), (g), (aq) show physical states in equations.",
-                "**Shared pairs:** each shared pair counts as one full outer shell for both atoms."
-              ]
-            }
+                "**Shared pairs:** each shared pair counts as one full outer shell for both atoms.",
+              ],
+            },
           ],
           examinerTips: [
             "**Always relate properties to structure:** 'conducts because ions are free to move when molten' or 'low melting point because only weak intermolecular forces break' — the reason earns the mark.",
             "**Draw dot-and-cross diagrams clearly:** distinguish the electrons of each element (dots vs crosses) and only show outer shells for speed and clarity.",
             "**Balance ion charges to get formulae:** check the compound is neutral overall — MgCl₂ not MgCl.",
             "**Distinguish the two covalent types:** simple molecular (low mp) vs giant covalent (very high mp) — students often confuse them.",
-            "**Explain graphite's conductivity vs diamond's insulation:** graphite has delocalised electrons between layers; diamond has none (all four electrons used in bonds)."
+            "**Explain graphite's conductivity vs diamond's insulation:** graphite has delocalised electrons between layers; diamond has none (all four electrons used in bonds).",
           ],
           commonMistakes: [
             "**Writing the wrong ionic formula:** forget to balance charges (CaCl₂ not CaCl); the compound must be neutral.",
             "**Claiming covalent compounds conduct:** simple molecular substances have no free ions or electrons — they are insulators.",
             "**Mixing intermolecular and covalent bond strength:** low melting of simple molecular substances breaks weak intermolecular forces, not the strong covalent bonds.",
             "**Saying metals conduct because 'atoms move':** conduction is by delocalised electrons, not moving ions or atoms.",
-            "**Forgetting state symbols when asked:** add (s), (l), (g), (aq) if the question requests them — they carry marks."
+            "**Forgetting state symbols when asked:** add (s), (l), (g), (aq) if the question requests them — they carry marks.",
           ],
           recap: [
             "Describe how sodium and chlorine atoms form sodium chloride, and explain the bonding in the product. [3]",
@@ -957,8 +959,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Explain why simple molecular substances such as carbon dioxide have low melting points. [2]",
             "Describe the structure and bonding of graphite and explain why it conducts electricity. [3]",
             "Explain why metals are good conductors of electricity. [2]",
-            "State two physical properties of ionic compounds and link each to their bonding. [2]"
-          ]
+            "State two physical properties of ionic compounds and link each to their bonding. [2]",
+          ],
         },
         {
           title: "Stoichiometry — Formulae, Equations and Conservation of Mass",
@@ -971,8 +973,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Molecular formula:** a multiple of the empirical formula; use Mr to find it.",
                 "**Compound formulae from ions:** balance positive and negative charges, e.g. aluminium nitrate Al(NO₃)₃.",
                 "**Bracket meaning:** multiply every atom inside, e.g. Ca(OH)₂ = Ca(OH)(OH) = 1 Ca, 2 O, 2 H.",
-                "**Valency/radicals:** common ions — NO₃⁻, SO₄²⁻, CO₃²⁻, OH⁻, NH₄⁺ — learn their charges to write formulae."
-              ]
+                "**Valency/radicals:** common ions — NO₃⁻, SO₄²⁻, CO₃²⁻, OH⁻, NH₄⁺ — learn their charges to write formulae.",
+              ],
             },
             {
               subTitle: "Rules for balancing equations",
@@ -981,8 +983,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Use coefficients, never subscripts:** changing subscripts changes the substance itself.",
                 "**Count atoms of each element** on both sides after every change.",
                 "**Balance polyatomic ions as a block** when they appear on both sides (e.g. SO₄, NO₃).",
-                "**Check the final balance:** every element must match; reduce coefficients to simplest ratio."
-              ]
+                "**Check the final balance:** every element must match; reduce coefficients to simplest ratio.",
+              ],
             },
             {
               subTitle: "Conservation of mass in practice",
@@ -991,23 +993,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Open system mass changes:** gases escape or are absorbed, so the balance reading changes even though mass is conserved overall.",
                 "**Precipitation and neutralisation** in solution show no mass change on a balance in a closed flask.",
                 "**Thermal decomposition:** mass loss equals the mass of gas released, e.g. CaCO₃ → CaO + CO₂.",
-                "**Reason for balancing:** equations must reflect that atoms are conserved."
-              ]
-            }
+                "**Reason for balancing:** equations must reflect that atoms are conserved.",
+              ],
+            },
           ],
           examinerTips: [
             "**Balance with coefficients only:** changing subscripts alters the compound — examiners penalise unbalanced or wrongly subscripted equations.",
             "**Show every working step in reacting-mass questions:** moles = mass ÷ Ar; use the ratio; mass = moles × Mr — method marks are awarded per step.",
             "**Find empirical formulae systematically:** divide each % by Ar, then divide all by the smallest to get the ratio.",
             "**Add state symbols when requested:** (s), (l), (g), (aq) — a mark is often reserved for these.",
-            "**Check your balanced equation by counting atoms** element by element before moving on."
+            "**Check your balanced equation by counting atoms** element by element before moving on.",
           ],
           commonMistakes: [
             "**Changing subscripts to balance equations:** this creates a different substance; only coefficients may change.",
             "**Rounding empirical-formula ratios too early:** keep at least 2 decimal places until the final whole-number ratio.",
             "**Using atomic mass instead of molar mass** in mass calculations: convert to moles first, never work directly in grams.",
             "**Ignoring the mole ratio from the equation:** the balanced equation's coefficients are the ratio — read them off carefully.",
-            "**Forgetting units or giving premature answers** without the final conversion back to grams."
+            "**Forgetting units or giving premature answers** without the final conversion back to grams.",
           ],
           recap: [
             "Balance the equation: Fe + O₂ → Fe₂O₃. [2]",
@@ -1015,8 +1017,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Calculate the mass of calcium oxide formed when 10 g of calcium carbonate decomposes (CaCO₃ → CaO + CO₂; Ar: Ca 40, C 12, O 16). [3]",
             "Explain the law of conservation of mass and describe how a precipitation reaction in a closed flask demonstrates it. [3]",
             "Write the formula of magnesium hydroxide and explain what the brackets mean. [2]",
-            "A compound has empirical formula CH₂ and relative molecular mass 56. Determine its molecular formula. [2]"
-          ]
+            "A compound has empirical formula CH₂ and relative molecular mass 56. Determine its molecular formula. [2]",
+          ],
         },
         {
           title: "The Mole and Molar Calculations",
@@ -1029,8 +1031,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Mole–particles:** particles = moles × 6.02 × 10²³ (Avogadro constant).",
                 "**Mole–gas volume:** volume (dm³) = moles × 24 at r.t.p.",
                 "**Mole–solution:** moles = concentration (mol/dm³) × volume (dm³).",
-                "**Molar mass:** equal to the Aᵣ/Mᵣ in grams per mole; e.g. H₂SO₄ = 98 g/mol."
-              ]
+                "**Molar mass:** equal to the Aᵣ/Mᵣ in grams per mole; e.g. H₂SO₄ = 98 g/mol.",
+              ],
             },
             {
               subTitle: "Percentage composition and yield",
@@ -1039,23 +1041,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Percentage yield:** (actual yield ÷ theoretical yield) × 100; yields are below 100% due to side reactions, reversible reactions and losses on transfer/filtering.",
                 "**Theoretical yield:** the mass of product predicted by the balanced equation (the maximum possible).",
                 "**Water of crystallisation:** salts like CuSO₄·5H₂O contain fixed water; heat to drive it off and measure the loss.",
-                "**Empirical formula from masses:** divide each mass by Aᵣ and simplify the ratio."
-              ]
-            }
+                "**Empirical formula from masses:** divide each mass by Aᵣ and simplify the ratio.",
+              ],
+            },
           ],
           examinerTips: [
             "**Convert volumes to dm³ before using concentration:** divide cm³ by 1000; a leading cause of wrong answers is forgetting this.",
             "**Write the formula, then substitute, then state the answer with units:** this three-line habit secures method marks even if arithmetic slips.",
             "**Use the balanced equation's mole ratio:** the coefficients give the ratio of moles — always go through moles, never straight from grams of reactant to grams of product.",
             "**Remember the 24 dm³ molar volume applies to gases at r.t.p.:** solids and liquids use Mᵣ, not the gas volume.",
-            "**Give sensible significant figures:** usually 2–3; round only at the end."
+            "**Give sensible significant figures:** usually 2–3; round only at the end.",
           ],
           commonMistakes: [
             "**Using cm³ directly in concentration calculations:** always convert to dm³ first (÷1000).",
             "**Confusing molar mass with atomic mass units:** Mᵣ has no units; molar mass is Mᵣ in g/mol.",
             "**Applying the 24 dm³ rule to solids:** the molar gas volume applies only to gases.",
             "**Not using the mole ratio from the equation:** the biggest single error — always convert through moles using the coefficients.",
-            "**Rounding intermediate answers** too aggressively, which compounds errors in multi-step calculations."
+            "**Rounding intermediate answers** too aggressively, which compounds errors in multi-step calculations.",
           ],
           recap: [
             "Calculate the number of moles in 4.9 g of H₂SO₄ (Mᵣ = 98). [1]",
@@ -1063,8 +1065,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "25.0 cm³ of hydrochloric acid contains 0.003 mol. Calculate its concentration in mol/dm³. [2]",
             "Calculate the percentage by mass of nitrogen in NH₄NO₃ (Ar: N 14, H 1, O 16). [2]",
             "Mg + 2HCl → MgCl₂ + H₂. Calculate the mass of hydrogen from 0.4 mol of magnesium. [2]",
-            "A reaction has a theoretical yield of 20 g but only 15 g is obtained. Calculate the percentage yield. [1]"
-          ]
+            "A reaction has a theoretical yield of 20 g but only 15 g is obtained. Calculate the percentage yield. [1]",
+          ],
         },
         {
           title: "Energetics — Energy Changes in Reactions",
@@ -1077,8 +1079,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Endothermic:** absorbs energy; surroundings get colder; ΔH positive; products higher than reactants.",
                 "**Everyday examples:** respiration and combustion (exothermic); photosynthesis and thermal decomposition (endothermic).",
                 "**Activation energy:** the hump on the profile; energy needed to start the reaction.",
-                "**Catalyst effect:** lowers activation energy but leaves ΔH unchanged."
-              ]
+                "**Catalyst effect:** lowers activation energy but leaves ΔH unchanged.",
+              ],
             },
             {
               subTitle: "Bond energy method",
@@ -1087,8 +1089,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Making bonds releases energy** (exothermic step).",
                 "**ΔH = Σ(bonds broken) − Σ(bonds made)** in the balanced equation.",
                 "**Negative ΔH = exothermic;** positive ΔH = endothermic.",
-                "**Use the displayed equation** to count each bond type correctly (e.g. count both O–H bonds in H₂O)."
-              ]
+                "**Use the displayed equation** to count each bond type correctly (e.g. count both O–H bonds in H₂O).",
+              ],
             },
             {
               subTitle: "Calorimetry practical",
@@ -1097,23 +1099,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Insulation:** polystyrene cup, lid, draught shield reduce heat loss.",
                 "**Energy per mole:** divide q by moles of fuel/reaction.",
                 "**Sources of error:** heat loss to surroundings, incomplete combustion, evaporation.",
-                "**Comparing fuels:** the fuel raising the temperature most per gram transfers the most energy."
-              ]
-            }
+                "**Comparing fuels:** the fuel raising the temperature most per gram transfers the most energy.",
+              ],
+            },
           ],
           examinerTips: [
             "**State the sign convention for ΔH:** negative = exothermic, positive = endothermic — the sign often carries a mark.",
             "**Count every bond in the displayed equation:** missing one bond (e.g. the second O–H in water) is the commonest bond-energy error.",
             "**Use q = mcΔT with the mass of the water, not the fuel:** and use c = 4.2 J/g/°C for water.",
             "**Describe how to reduce heat loss in calorimetry:** lid, insulation, draught shield — a frequent 'improve accuracy' question.",
-            "**Label energy profile diagrams fully:** reactants, products, activation energy, ΔH, and the catalysed route."
+            "**Label energy profile diagrams fully:** reactants, products, activation energy, ΔH, and the catalysed route.",
           ],
           commonMistakes: [
             "**Reversing the bond-energy formula:** it is bonds broken MINUS bonds made; reversing it flips the sign of ΔH.",
             "**Using the mass of fuel instead of water** in q = mcΔT.",
             "**Confusing temperature change with final temperature:** ΔT = final − initial.",
             "**Claiming a catalyst changes ΔH:** it lowers activation energy only; the overall energy change is the same.",
-            "**Mixing units:** convert J to kJ by dividing by 1000 when asked for kJ/mol."
+            "**Mixing units:** convert J to kJ by dividing by 1000 when asked for kJ/mol.",
           ],
           recap: [
             "Define exothermic and endothermic reactions, giving one example of each. [4]",
@@ -1121,8 +1123,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Burning a fuel raises the temperature of 200 g of water by 15°C. Calculate the energy transferred (c = 4.2 J/g/°C). [2]",
             "Sketch and label the energy profile diagram for an exothermic reaction with and without a catalyst. [3]",
             "Explain why a polystyrene cup is used in calorimetry experiments. [2]",
-            "State the effect of a catalyst on activation energy and on the overall energy change. [2]"
-          ]
+            "State the effect of a catalyst on activation energy and on the overall energy change. [2]",
+          ],
         },
         {
           title: "Rates of Reaction and Collision Theory",
@@ -1135,8 +1137,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Concentration/pressure:** more particles per volume → more collisions → faster.",
                 "**Temperature:** more kinetic energy → more frequent and more energetic collisions.",
                 "**Surface area:** powdering exposes more particles → more collisions.",
-                "**Catalyst:** alternative route of lower activation energy; unchanged at the end."
-              ]
+                "**Catalyst:** alternative route of lower activation energy; unchanged at the end.",
+              ],
             },
             {
               subTitle: "Experimental methods to measure rate",
@@ -1145,23 +1147,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Mass loss:** reaction on a balance; falling mass as gas escapes.",
                 "**Disappearing cross:** time for a cross to vanish as a precipitate clouds the solution.",
                 "**Continuous vs initial rate:** gradient at any time, or at t = 0, from the graph.",
-                "**Same final volume:** total product depends on the limiting reactant, not on conditions affecting rate."
-              ]
-            }
+                "**Same final volume:** total product depends on the limiting reactant, not on conditions affecting rate.",
+              ],
+            },
           ],
           examinerTips: [
             "**Explain each factor with collision theory keywords:** 'more frequent collisions' (concentration, surface area) vs 'more energetic collisions / more exceed activation energy' (temperature) — use the right phrase.",
             "**Distinguish rate from total amount:** on gas-volume graphs, conditions change the gradient (rate) but not the plateau (total), if the limiting reactant amount is unchanged.",
             "**Describe the disappearing-cross method:** same conical flask, same cross, same volume/concentration, measure time for cross to disappear — a classic 6-mark practical.",
             "**Calculate the gradient for the rate:** rate = Δy ÷ Δx from the graph, with units (e.g. cm³/s).",
-            "**State that a catalyst is not used up:** and that it lowers activation energy without changing ΔH."
+            "**State that a catalyst is not used up:** and that it lowers activation energy without changing ΔH.",
           ],
           commonMistakes: [
             "**Confusing rate with total yield:** a catalyst speeds the reaction but does not increase the final amount of product.",
             "**Saying temperature increases the number of particles:** it increases their kinetic energy and collision frequency, not the count.",
             "**Omitting 'activation energy' in explanations:** the explanation must mention collisions exceeding the activation energy.",
             "**Reversing concentration and surface-area effects:** both increase collision frequency — say which is which when asked.",
-            "**Not controlling variables in the cross experiment:** same concentrations, volumes and temperature must be kept constant for a fair comparison."
+            "**Not controlling variables in the cross experiment:** same concentrations, volumes and temperature must be kept constant for a fair comparison.",
           ],
           recap: [
             "State the two conditions for a collision to result in a reaction, according to collision theory. [2]",
@@ -1169,8 +1171,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "A catalyst increases the rate of a reaction. Explain how, and state what happens to the catalyst. [2]",
             "Describe an experiment to compare the rate of reaction of magnesium with acid at two different temperatures. [4]",
             "On a gas-volume–time graph, explain why the curve is steepest at the start and levels off. [2]",
-            "A reaction produces 240 cm³ of gas in 60 s. Calculate the mean rate of reaction in cm³/s. [1]"
-          ]
+            "A reaction produces 240 cm³ of gas in 60 s. Calculate the mean rate of reaction in cm³/s. [1]",
+          ],
         },
         {
           title: "Reversible Reactions and Equilibrium",
@@ -1183,8 +1185,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Closed system:** no matter enters or leaves; needed for equilibrium.",
                 "**Dynamic equilibrium:** forward and reverse rates equal; concentrations constant.",
                 "**Position of equilibrium:** which side (reactants or products) is favoured.",
-                "**Closed vs open:** equilibrium cannot be reached in an open system where products escape."
-              ]
+                "**Closed vs open:** equilibrium cannot be reached in an open system where products escape.",
+              ],
             },
             {
               subTitle: "Le Chatelier's principle in action",
@@ -1193,23 +1195,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Pressure:** increase → shift to side with fewer gas moles.",
                 "**Temperature:** increase → shift in the endothermic direction.",
                 "**Catalyst:** no shift; equilibrium reached faster only.",
-                "**Haber compromise:** ~450°C, ~200 atm, iron catalyst balance yield and rate."
-              ]
-            }
+                "**Haber compromise:** ~450°C, ~200 atm, iron catalyst balance yield and rate.",
+              ],
+            },
           ],
           examinerTips: [
             "**State Le Chatelier's principle as a full sentence:** 'the system counteracts any imposed change' — quote it before applying it.",
             "**Count gas moles on each side** for pressure questions: the side with fewer moles is favoured at high pressure.",
             "**Identify the exothermic direction for temperature questions:** raising T favours the endothermic direction; write which that is.",
             "**Emphasise a catalyst does not shift equilibrium:** it only shortens the time to reach it — a classic trick question.",
-            "**Apply the principle to industrial processes:** Haber (N₂ + 3H₂ ⇌ 2NH₃) is the standard example; know the compromise conditions and why."
+            "**Apply the principle to industrial processes:** Haber (N₂ + 3H₂ ⇌ 2NH₃) is the standard example; know the compromise conditions and why.",
           ],
           commonMistakes: [
             "**Saying equilibrium means equal concentrations:** it means constant concentrations; reactants and products need not be equal.",
             "**Saying reactions 'stop' at equilibrium:** they continue at equal rates (dynamic) — the net change is zero.",
             "**Reversing the temperature effect:** raising T favours the ENDOthermic direction; check which direction that is.",
             "**Claiming a catalyst increases yield:** it does not shift equilibrium or change the yield, only the rate.",
-            "**Applying pressure effects to solutions/solids:** pressure changes only matter when gases are involved."
+            "**Applying pressure effects to solutions/solids:** pressure changes only matter when gases are involved.",
           ],
           recap: [
             "Explain what is meant by a dynamic equilibrium in a closed system. [3]",
@@ -1217,8 +1219,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "For N₂ + 3H₂ ⇌ 2NH₃ (exothermic forward reaction), predict and explain the effect on the equilibrium position of (a) increasing pressure, (b) raising the temperature, (c) adding a catalyst. [4]",
             "Explain why the Haber process uses a compromise temperature of about 450°C. [2]",
             "Predict the effect of removing ammonia as it forms on the Haber equilibrium. [1]",
-            "Distinguish between the rate at which equilibrium is reached and the position of equilibrium. [2]"
-          ]
+            "Distinguish between the rate at which equilibrium is reached and the position of equilibrium. [2]",
+          ],
         },
         {
           title: "Acids, Bases and Salts",
@@ -1231,8 +1233,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Base:** metal oxide/hydroxide that neutralises an acid.",
                 "**Alkali:** soluble base releasing OH⁻ ions; pH > 7; turns litmus blue.",
                 "**Strong vs weak acid:** strong fully dissociates; weak partially dissociates.",
-                "**pH scale:** each unit = tenfold change in H⁺ concentration."
-              ]
+                "**pH scale:** each unit = tenfold change in H⁺ concentration.",
+              ],
             },
             {
               subTitle: "Acid reactions and tests for gases",
@@ -1241,8 +1243,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Acid + carbonate → salt + water + CO₂:** CO₂ turns limewater milky.",
                 "**Acid + base/alkali → salt + water:** neutralisation, H⁺ + OH⁻ → H₂O.",
                 "**Salt naming:** metal + acid radical (chloride, sulfate, nitrate).",
-                "**Ammonia test:** turns moist red litmus blue (the only common alkaline gas)."
-              ]
+                "**Ammonia test:** turns moist red litmus blue (the only common alkaline gas).",
+              ],
             },
             {
               subTitle: "Preparing pure salts",
@@ -1251,23 +1253,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Titration method:** for salts from two soluble reactants; find exact volumes first.",
                 "**Precipitation:** mix two soluble salts to form an insoluble salt; filter, wash, dry.",
                 "**Crystallisation:** evaporate to the crystallisation point, then cool; don't boil to dryness.",
-                "**Washing crystals:** wash with a little cold distilled water to remove surface impurities."
-              ]
-            }
+                "**Washing crystals:** wash with a little cold distilled water to remove surface impurities.",
+              ],
+            },
           ],
           examinerTips: [
             "**Learn the general equations for acids:** with metals, oxides, hydroxides and carbonates — these four patterns answer most acid questions.",
             "**Give the gas tests with the observation:** hydrogen 'pop' with lighted splint; CO₂ turns limewater milky — write both reagent and result.",
             "**Write the ionic equation for neutralisation:** H⁺ + OH⁻ → H₂O — frequently required for the final mark.",
             "**Describe salt preparation as a numbered method:** the excess/crystallisation sequence for a soluble salt carries many marks.",
-            "**Use 'evaporate to the crystallisation point, then cool':** boiling to dryness decomposes hydrated salts such as copper sulfate."
+            "**Use 'evaporate to the crystallisation point, then cool':** boiling to dryness decomposes hydrated salts such as copper sulfate.",
           ],
           commonMistakes: [
             "**Saying all acids contain hydrogen gas:** acids contain hydrogen (which forms H⁺ ions), not H₂ gas — precision matters.",
             "**Confusing 'strong' with 'concentrated':** strong/weak refers to dissociation; concentrated/dilute refers to amount per volume.",
             "**Forgetting to filter off excess solid** in salt preparation, leaving impure crystals.",
             "**Boiling salt solutions to dryness:** loses water of crystallisation; cool to crystallise instead.",
-            "**Mixing up gas tests:** hydrogen = lighted splint 'pop'; oxygen = glowing splint relights; CO₂ = limewater milky."
+            "**Mixing up gas tests:** hydrogen = lighted splint 'pop'; oxygen = glowing splint relights; CO₂ = limewater milky.",
           ],
           recap: [
             "Define an acid, a base and an alkali. [3]",
@@ -1275,8 +1277,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Describe how you would prepare pure dry crystals of copper sulfate from an insoluble oxide and an acid. [4]",
             "Write the ionic equation for neutralisation. [1]",
             "Describe how you would test for (a) hydrogen and (b) carbon dioxide. [2]",
-            "Explain the difference between a strong acid and a weak acid. [2]"
-          ]
+            "Explain the difference between a strong acid and a weak acid. [2]",
+          ],
         },
         {
           title: "Titrations and Quantitative Analysis",
@@ -1289,8 +1291,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Burette:** delivers variable volumes, accurate to 0.05 cm³; read the meniscus at eye level.",
                 "**Concordant results:** titres within 0.10–0.20 cm³; average them (exclude the rough titration).",
                 "**Indicator:** methyl orange or phenolphthalein; add 2–3 drops only.",
-                "**End-point:** the indicator's permanent colour change at the exact reacting volume."
-              ]
+                "**End-point:** the indicator's permanent colour change at the exact reacting volume.",
+              ],
             },
             {
               subTitle: "The titration calculation method",
@@ -1299,23 +1301,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Step 2:** use the equation's mole ratio to find moles of the unknown.",
                 "**Step 3:** concentration of unknown = moles ÷ volume (in dm³).",
                 "**Watch diprotic acids:** H₂SO₄ reacts with NaOH in a 1:2 ratio.",
-                "**Convert cm³ to dm³ throughout** (divide by 1000)."
-              ]
-            }
+                "**Convert cm³ to dm³ throughout** (divide by 1000).",
+              ],
+            },
           ],
           examinerTips: [
             "**Convert every volume to dm³ before calculating moles:** the single most common titration error.",
             "**Write the balanced equation first** to get the mole ratio; a wrong ratio invalidates the whole calculation.",
             "**Describe rinsing:** rinse the pipette with the solution it delivers and the burette with the titrant — using water would dilute and cause errors.",
             "**Average only concordant titres:** say 'repeat until titres agree within 0.10 cm³' and exclude the rough value.",
-            "**Record burette readings to 2 decimal places** (e.g. 22.50 cm³) — precision is expected."
+            "**Record burette readings to 2 decimal places** (e.g. 22.50 cm³) — precision is expected.",
           ],
           commonMistakes: [
             "**Leaving volumes in cm³:** always ÷1000 to get dm³ for the moles formula.",
             "**Using a wrong mole ratio:** write and balance the equation first — especially for H₂SO₄ (1:2 with NaOH).",
             "**Including the rough titre in the mean:** only concordant titres should be averaged.",
             "**Rinsing the burette with water:** dilutes the solution and shifts the end-point; rinse with the solution itself.",
-            "**Misreading the meniscus:** read at eye level from the bottom of the meniscus."
+            "**Misreading the meniscus:** read at eye level from the bottom of the meniscus.",
           ],
           recap: [
             "Name the apparatus used to measure (a) a fixed volume of solution and (b) a variable volume in a titration. [2]",
@@ -1323,8 +1325,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Why is the burette rinsed with the acid before a titration? [1]",
             "What are concordant results and why are they important? [2]",
             "In a titration of Na₂CO₃ with HCl (Na₂CO₃ + 2HCl → 2NaCl + H₂O + CO₂), 25.0 cm³ of Na₂CO₃ required 30.0 cm³ of 0.200 mol/dm³ HCl. Calculate the concentration of Na₂CO₃. [3]",
-            "State the colour change at the end-point when phenolphthalein is used in an acid–alkali titration. [1]"
-          ]
+            "State the colour change at the end-point when phenolphthalein is used in an acid–alkali titration. [1]",
+          ],
         },
         {
           title: "Metals, the Reactivity Series and Extraction",
@@ -1337,8 +1339,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Water reactions:** K, Na, Ca react with cold water; Mg, Zn, Fe with steam.",
                 "**Acid reactions:** metals above H react with dilute acid to give salt + hydrogen; rate falls down the series.",
                 "**Displacement:** a more reactive metal displaces a less reactive metal from solution.",
-                "**Redox in displacement:** the more reactive metal is oxidised (loses e⁻); the metal ion is reduced (gains e⁻)."
-              ]
+                "**Redox in displacement:** the more reactive metal is oxidised (loses e⁻); the metal ion is reduced (gains e⁻).",
+              ],
             },
             {
               subTitle: "Extraction methods",
@@ -1347,8 +1349,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Carbon reduction:** metals below carbon (Fe, Zn, Pb, Cu) in a blast furnace.",
                 "**Native metals:** unreactive metals (Ag, Au) found uncombined.",
                 "**Blast furnace reactions:** C + O₂ → CO₂; CO₂ + C → 2CO; Fe₂O₃ + 3CO → 2Fe + 3CO₂.",
-                "**Recycling:** saves energy and raw materials, reduces landfill and pollution."
-              ]
+                "**Recycling:** saves energy and raw materials, reduces landfill and pollution.",
+              ],
             },
             {
               subTitle: "Rusting and prevention",
@@ -1357,23 +1359,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Barrier methods:** paint, oil, grease, plastic — keep out oxygen and water.",
                 "**Galvanising:** zinc coating protects iron even when scratched (zinc more reactive).",
                 "**Sacrificial protection:** attach Mg or Zn blocks; they corrode instead of the iron.",
-                "**Aluminium:** resists corrosion due to a thin, adherent protective oxide layer."
-              ]
-            }
+                "**Aluminium:** resists corrosion due to a thin, adherent protective oxide layer.",
+              ],
+            },
           ],
           examinerTips: [
             "**Learn the reactivity series and quote it in order:** many marks depend on placing two metals correctly relative to each other.",
             "**Link extraction method to reactivity:** above carbon → electrolysis; below carbon → carbon reduction; unreactive → native.",
             "**Write blast-furnace equations** for iron extraction — Fe₂O₃ + 3CO → 2Fe + 3CO₂ is the key one.",
             "**Explain sacrificial protection via reactivity:** the more reactive metal loses electrons (oxidises) preferentially, protecting the iron — name the more reactive metal.",
-            "**Prove rusting needs both water and oxygen** by describing experiments with dry air (no rust), boiled water with oil layer (no rust) and normal air + water (rusts)."
+            "**Prove rusting needs both water and oxygen** by describing experiments with dry air (no rust), boiled water with oil layer (no rust) and normal air + water (rusts).",
           ],
           commonMistakes: [
             "**Extracting aluminium by carbon reduction:** aluminium is above carbon in the series, so it needs electrolysis — check the position first.",
             "**Saying rusting needs only water:** both water AND oxygen are required — the classic control-experiment conclusion.",
             "**Reversing displacement reactions:** only a more reactive metal displaces a less reactive one; copper cannot displace iron.",
             "**Confusing galvanising with tin-plating:** tin is less reactive than iron, so a scratch lets the iron rust (rust under the tin); zinc protects sacrificially.",
-            "**Calling the blast-furnace reducing agent carbon dioxide:** carbon monoxide (CO) reduces the iron oxide."
+            "**Calling the blast-furnace reducing agent carbon dioxide:** carbon monoxide (CO) reduces the iron oxide.",
           ],
           recap: [
             "Write the reactivity series for potassium to copper. [4]",
@@ -1381,8 +1383,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Write the equation for the reduction of iron(III) oxide by carbon monoxide in the blast furnace. [1]",
             "Describe an experiment to show that both water and oxygen are needed for iron to rust. [3]",
             "Explain how galvanising protects iron from rusting, even when the coating is scratched. [3]",
-            "Predict what happens when zinc is added to copper sulfate solution, and write the equation. [2]"
-          ]
+            "Predict what happens when zinc is added to copper sulfate solution, and write the equation. [2]",
+          ],
         },
         {
           title: "Organic Chemistry",
@@ -1395,8 +1397,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Alkenes:** CₙH₂ₙ; C=C double bond; unsaturated; decolourise bromine water; addition reactions.",
                 "**Alcohols:** –OH group; ethanol from fermentation; burn as fuel; oxidise to acids.",
                 "**Carboxylic acids:** –COOH; weak acids; ethanoic acid in vinegar; make esters.",
-                "**Functional group:** the atom/group giving the family its characteristic reactions."
-              ]
+                "**Functional group:** the atom/group giving the family its characteristic reactions.",
+              ],
             },
             {
               subTitle: "Key reactions and tests",
@@ -1405,8 +1407,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Cracking:** long alkane → short alkane + alkene (catalyst, heat); makes petrol-range fuels + alkene feedstock.",
                 "**Fermentation:** glucose → ethanol + CO₂ (yeast enzymes, ~30°C, no air).",
                 "**Oxidation of alcohols:** acidified K₂Cr₂O₇ orange → green as alcohol → acid.",
-                "**Esterification:** alcohol + carboxylic acid ⇌ ester + water (conc. H₂SO₄ catalyst)."
-              ]
+                "**Esterification:** alcohol + carboxylic acid ⇌ ester + water (conc. H₂SO₄ catalyst).",
+              ],
             },
             {
               subTitle: "Polymerisation",
@@ -1415,23 +1417,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Repeating unit:** derived from the monomer by opening the double bond.",
                 "**Condensation polymers:** monomers join with loss of water; e.g. starch, proteins.",
                 "**Natural polymers:** starch (glucose units), proteins (amino acids).",
-                "**Environmental issues:** non-biodegradable plastics, landfill, toxic fumes on burning; recycling helps."
-              ]
-            }
+                "**Environmental issues:** non-biodegradable plastics, landfill, toxic fumes on burning; recycling helps.",
+              ],
+            },
           ],
           examinerTips: [
             "**Learn the general formulae:** alkanes CₙH₂ₙ₊₂, alkenes CₙH₂ₙ, alcohols CₙH₂ₙ₊₁OH — use them to check or deduce formulae.",
             "**Use the bromine-water test to distinguish saturated/unsaturated:** state reagent, colour change and conclusion.",
             "**Write balanced equations for combustion and cracking:** complete combustion of a hydrocarbon gives CO₂ + H₂O; cracking splits an alkane into alkane + alkene.",
             "**Draw the repeating unit from the monomer:** open the C=C and extend the bonds on both ends.",
-            "**Describe fermentation conditions precisely:** yeast enzymes, about 30°C, absence of air, sugar solution."
+            "**Describe fermentation conditions precisely:** yeast enzymes, about 30°C, absence of air, sugar solution.",
           ],
           commonMistakes: [
             "**Confusing alkanes and alkenes:** alkenes have the double bond and decolourise bromine water; alkanes do not.",
             "**Writing addition polymerisation with a by-product:** there is none — all atoms appear in the polymer.",
             "**Getting the general formula wrong:** CₙH₂ₙ₊₂ for alkanes, CₙH₂ₙ for alkenes — check with methane (CH₄) and ethene (C₂H₄).",
             "**Calling ethanol's production 'distillation of sugar':** it is fermentation by yeast enzymes; distillation only purifies the product.",
-            "**Drawing the repeating unit incorrectly:** don't forget to extend the single bonds to both sides from the opened double bond."
+            "**Drawing the repeating unit incorrectly:** don't forget to extend the single bonds to both sides from the opened double bond.",
           ],
           recap: [
             "State the general formulae of alkanes and alkenes and give one example of each. [4]",
@@ -1439,8 +1441,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "Write the balanced equation for the complete combustion of methane. [1]",
             "Explain how ethanol is produced by fermentation, including the conditions. [3]",
             "Draw the repeating unit of polyethene from its monomer. [1]",
-            "State what is meant by a saturated hydrocarbon and name one. [2]"
-          ]
+            "State what is meant by a saturated hydrocarbon and name one. [2]",
+          ],
         },
         {
           title: "Experimental Techniques and Chemical Analysis",
@@ -1453,8 +1455,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Iron(II) Fe²⁺:** dirty green precipitate.",
                 "**Iron(III) Fe³⁺:** reddish brown precipitate.",
                 "**Calcium Ca²⁺:** white precipitate.",
-                "**Ammonium NH₄⁺:** no precipitate, but warming releases ammonia (turns moist red litmus blue)."
-              ]
+                "**Ammonium NH₄⁺:** no precipitate, but warming releases ammonia (turns moist red litmus blue).",
+              ],
             },
             {
               subTitle: "Anion and gas tests",
@@ -1463,8 +1465,8 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Chloride:** dilute HNO₃ then AgNO₃ → white precipitate of AgCl.",
                 "**Sulfate:** dilute HCl then BaCl₂ → white precipitate of BaSO₄.",
                 "**Nitrate:** NaOH + aluminium foil, warm → ammonia evolved.",
-                "**Flame tests:** Li crimson, Na yellow, K lilac, Ca orange-red, Cu green/blue-green."
-              ]
+                "**Flame tests:** Li crimson, Na yellow, K lilac, Ca orange-red, Cu green/blue-green.",
+              ],
             },
             {
               subTitle: "Validity, accuracy and errors",
@@ -1473,23 +1475,23 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
                 "**Dependent variable:** the one you measure as the outcome.",
                 "**Control variables:** kept constant for a fair test.",
                 "**Accuracy vs precision:** accuracy = close to true value; precision = repeat readings close together.",
-                "**Random vs systematic error:** random scatters (average them); systematic shifts all readings equally (recalibrate)."
-              ]
-            }
+                "**Random vs systematic error:** random scatters (average them); systematic shifts all readings equally (recalibrate).",
+              ],
+            },
           ],
           examinerTips: [
             "**Learn each ion test as a triplet:** reagent, observation, conclusion — examiners award marks for all three.",
             "**Add the acid before silver nitrate/barium chloride tests:** dilute nitric acid for the chloride test, dilute HCl for the sulfate test — state this to show you understand removing interfering ions.",
             "**Describe flame-test technique:** clean nichrome wire in HCl, dip in sample, hold in a non-luminous Bunsen flame — a method mark is often available.",
             "**Distinguish accuracy from precision clearly:** accuracy = near the true value; precision = reproducible repeats — define both in evaluation questions.",
-            "**Name the variables in any plan:** independent, dependent and at least two control variables secures 'plan an investigation' marks."
+            "**Name the variables in any plan:** independent, dependent and at least two control variables secures 'plan an investigation' marks.",
           ],
           commonMistakes: [
             "**Confusing Fe²⁺ and Fe³⁺ precipitate colours:** Fe²⁺ dirty green, Fe³⁺ reddish brown — a frequent mix-up.",
             "**Forgetting to acidify before AgNO₃ or BaCl₂:** without dilute acid, other precipitates form and give false positives.",
             "**Calling a mean of scattered readings 'accurate':** averaging reduces random error but cannot fix a systematic error.",
             "**Confusing accuracy and precision:** accuracy is closeness to the true value; precision is closeness of repeats — learn the definitions as a pair.",
-            "**Reusing a dirty flame-test wire:** contamination colours the flame; clean the wire with HCl each time."
+            "**Reusing a dirty flame-test wire:** contamination colours the flame; clean the wire with HCl each time.",
           ],
           recap: [
             "A solution gives a white precipitate with barium chloride in the presence of dilute hydrochloric acid. Which ion is present? [1]",
@@ -1497,11 +1499,11 @@ export const CO_ORDINATED_SCIENCES: SubjectNotes = {
             "A white solid produces a gas that turns limewater milky when dilute acid is added. Identify the anion in the solid. [1]",
             "Distinguish between accuracy and precision. [2]",
             "Describe the tests to confirm the presence of (a) chloride ions and (b) ammonium ions in solution. [4]",
-            "In an investigation of rate against temperature, state the independent, dependent and two control variables. [4]"
-          ]
-        }
-      ]
+            "In an investigation of rate against temperature, state the independent, dependent and two control variables. [4]",
+          ],
+        },
+      ],
     },
     /*__NEXT__*/
-  ]
+  ],
 };

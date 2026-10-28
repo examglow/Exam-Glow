@@ -210,6 +210,12 @@ function renderMarkdown(text: string): string {
     rawBlocks.push(renderSvgBlock(title, body));
     return `\x00BLOCK${rawBlocks.length - 1}\x00`;
   });
+  // Author-supplied figure markup (image grids, labelled panels). Escaped out of
+  // the markdown pass so card layouts survive inside the prose stream.
+  text = text.replace(/:::raw\n([\s\S]*?):::/g, (_, body) => {
+    rawBlocks.push(`<div class="my-6 not-prose">${body.trim()}</div>`);
+    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
+  });
   text = text.replace(/```(?:\w+)?\n?([\s\S]+?)```/g, (_, code) => {
     rawBlocks.push(
       `<div class="my-4 not-prose overflow-x-auto rounded-xl border border-border/60 bg-muted/40">

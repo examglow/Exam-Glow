@@ -106,6 +106,23 @@ function LoginPage() {
             Register
           </Link>
         </p>
+
+        <div className="pt-2">
+          <div className="rounded-2xl border border-border bg-card p-4 text-center">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Educators &amp; Tutors
+            </p>
+            <p className="mt-1 text-sm font-medium text-foreground">
+              Looking for your tutor workspace?
+            </p>
+            <Link
+              to="/tutor-signup"
+              className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-border bg-background py-2.5 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
+            >
+              Sign in as a Tutor &rarr;
+            </Link>
+          </div>
+        </div>
       </form>
     </AuthLayout>
   );

@@ -13,7 +13,6 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { FloatingChat } from "@/components/floating-chat";
 import { ContentProtectionGuard } from "@/components/content-protection";
-import { PageSkeleton } from "@/components/page-skeleton";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -151,7 +150,12 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ContentProtectionGuard />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      {isLoading ? <PageSkeleton /> : <Outlet />}
+      <Outlet />
+      {isLoading && (
+        <div className="route-loading-spinner" role="status" aria-label="Loading page">
+          <span />
+        </div>
+      )}
       <FloatingChat />
     </QueryClientProvider>
   );

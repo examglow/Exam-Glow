@@ -9,7 +9,8 @@ export const GERMAN: SubjectNotes = {
     {
       number: 1,
       title: "Grammar Foundations: Cases, Articles and Noun Gender",
-      intro: "German is an inflected language with four grammatical cases — Nominative, Accusative, Dative, and Genitive — and three noun genders (masculine, feminine, neuter). Every German noun has a grammatical gender that must be learned with the noun, as it determines the form of articles, adjectives, and pronouns. Case endings signal the grammatical function of each noun phrase in the sentence. Mastery of cases and gender is the single most important grammar foundation for all IGCSE German writing and reading tasks.",
+      intro:
+        "German is an inflected language with four grammatical cases — Nominative, Accusative, Dative, and Genitive — and three noun genders (masculine, feminine, neuter). Every German noun has a grammatical gender that must be learned with the noun, as it determines the form of articles, adjectives, and pronouns. Case endings signal the grammatical function of each noun phrase in the sentence. Mastery of cases and gender is the single most important grammar foundation for all IGCSE German writing and reading tasks.",
       subheadings: [
         {
           title: "Grammatical Gender and Definite Articles",
@@ -21,8 +22,8 @@ export const GERMAN: SubjectNotes = {
                 "**Masculine suffixes**: -er (der Lehrer, teacher), -ling (der Frühling, spring), -ismus (der Tourismus). Male persons/animals are almost always masculine.",
                 "**Feminine suffixes**: -ung (die Zeitung, newspaper), -heit/-keit (die Freiheit, freedom), -schaft (die Mannschaft, team), -tion (die Nation). Female persons are always feminine.",
                 "**Neuter suffixes**: -chen/-lein (diminutives: das Mädchen, girl), -um (das Zentrum), -ment (das Dokument). Infinitives used as nouns are neuter: das Essen (eating/food).",
-                "**Compound nouns**: Always take the gender of the final component — die Haustür (die Tür) = the front door."
-              ]
+                "**Compound nouns**: Always take the gender of the final component — die Haustür (die Tür) = the front door.",
+              ],
             },
             {
               subTitle: "The Four Cases",
@@ -31,10 +32,10 @@ export const GERMAN: SubjectNotes = {
                 "**Accusative**: The direct object (what is directly affected). Ich kaufe **den** Wein. (I buy the wine.) — masculine changes der → den.",
                 "**Dative**: The indirect object (to/for whom). Ich gebe **dem** Mann das Buch. (I give the man the book.) — masculine/neuter: dem; feminine: der; plural: den + -n on noun.",
                 "**Genitive**: Possession/relationship. Das Buch **des Mannes**. (The book of the man.) — used more in writing; often replaced by von + Dative in spoken German.",
-                "**Case trigger verbs (Dative)**: helfen (to help), danken (to thank), gehören (to belong to), glauben (to believe) — these always take a Dative object, not Accusative."
-              ]
-            }
-          ]
+                "**Case trigger verbs (Dative)**: helfen (to help), danken (to thank), gehören (to belong to), glauben (to believe) — these always take a Dative object, not Accusative.",
+              ],
+            },
+          ],
         },
         {
           title: "Verb Tenses: Present, Perfect and Imperfect",
@@ -45,8 +46,8 @@ export const GERMAN: SubjectNotes = {
               bullets: [
                 "**Regular -en verbs**: stem + endings: -e, -st, -t, -en, -t, -en. kauf-en → ich kaufe, du kaufst, er/sie/es kauft, wir kaufen, ihr kauft, sie/Sie kaufen.",
                 "**Stem-vowel change verbs**: e → ie: sehen (ich sehe, du siehst, er sieht). e → i: sprechen (du sprichst, er spricht). a → ä: fahren (du fährst, er fährt).",
-                "**Separable verbs**: Prefix detaches and moves to end of clause: aufstehen → Ich stehe um 7 Uhr auf."
-              ]
+                "**Separable verbs**: Prefix detaches and moves to end of clause: aufstehen → Ich stehe um 7 Uhr auf.",
+              ],
             },
             {
               subTitle: "Perfect Tense (Perfekt)",
@@ -55,18 +56,18 @@ export const GERMAN: SubjectNotes = {
                 "**haben verbs**: Transitive verbs and most others. Ich habe ein Buch **gelesen**. (I have read / I read a book.)",
                 "**sein verbs**: Verbs of movement/change of state with no direct object, plus sein, bleiben, werden. Ich bin nach Berlin **gefahren**. (I went to Berlin.)",
                 "**Partizip II formation**: Regular weak verbs: ge- + stem + -t (gekauft, gemacht). Strong verbs: ge- + stem (often with vowel change) + -en (geschrieben, gesprochen). Verbs ending in -ieren: no ge- prefix (studiert, telefoniert).",
-                "**Inseparable prefixes** (be-, er-, ver-, zer-, emp-, ent-, ge-, miss-): No ge- in Partizip II — er hat **besucht**, sie hat **verkauft**."
-              ]
+                "**Inseparable prefixes** (be-, er-, ver-, zer-, emp-, ent-, ge-, miss-): No ge- in Partizip II — er hat **besucht**, sie hat **verkauft**.",
+              ],
             },
             {
               subTitle: "Imperfect Tense (Präteritum)",
               bullets: [
                 "**Essential imperfect forms**: sein (war), haben (hatte), können (konnte), müssen (musste), wollen (wollte), dürfen (durfte), sollen (sollte) — these are used in conversation too.",
                 "**Weak verbs in Präteritum**: stem + -te endings: kaufen → ich kaufte, du kauftest, er kaufte.",
-                "**Strong verbs**: Stem vowel change + no ending in 1st/3rd person singular: gehen → ich ging, schreiben → ich schrieb."
-              ]
-            }
-          ]
+                "**Strong verbs**: Stem vowel change + no ending in 1st/3rd person singular: gehen → ich ging, schreiben → ich schrieb.",
+              ],
+            },
+          ],
         },
         {
           title: "Word Order and Subordinate Clauses",
@@ -77,8 +78,8 @@ export const GERMAN: SubjectNotes = {
               bullets: [
                 "**V2 rule**: The conjugated verb is always second in a main clause. Any element can come first (subject, time, place), but the verb stays second: Morgen **fahre** ich nach Hamburg.",
                 "**Time-Manner-Place (TMP)**: Adverbials generally follow the order: time first, then manner, then place: Ich fahre morgen mit dem Zug nach Berlin.",
-                "**Coordinating conjunctions** (und, aber, oder, denn, sondern): Join two main clauses; word order in both clauses unchanged."
-              ]
+                "**Coordinating conjunctions** (und, aber, oder, denn, sondern): Join two main clauses; word order in both clauses unchanged.",
+              ],
             },
             {
               subTitle: "Subordinating Conjunctions — Verb to End",
@@ -87,17 +88,18 @@ export const GERMAN: SubjectNotes = {
                 "**Rule**: In a subordinate clause, the conjugated verb goes to the very end: Ich komme nicht, weil ich krank **bin**.",
                 "**Separable verbs in subordinate clauses**: The prefix does NOT separate; the whole verb goes to the end: ..., weil er früh **aufsteht**.",
                 "**Perfect tense in subordinate clause**: auxiliary goes last, after the participle: ..., weil er das Buch **gelesen hat**.",
-                "**Modal verbs in subordinate clause**: Both the modal and infinitive go to the end, modal last: ..., weil er nicht kommen **kann**."
-              ]
-            }
-          ]
-        }
-      ]
+                "**Modal verbs in subordinate clause**: Both the modal and infinitive go to the end, modal last: ..., weil er nicht kommen **kann**.",
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
       number: 2,
       title: "Themes and Vocabulary: Daily Life, Environment and Society",
-      intro: "The IGCSE German syllabus is organised around core topics: home and family, school, work, leisure, travel, the environment, health, shopping, and social issues. Examiners test the ability to communicate about these themes in listening, reading, speaking, and writing tasks. Strong thematic vocabulary combined with accurate grammar structures is the key to achieving top marks.",
+      intro:
+        "The IGCSE German syllabus is organised around core topics: home and family, school, work, leisure, travel, the environment, health, shopping, and social issues. Examiners test the ability to communicate about these themes in listening, reading, speaking, and writing tasks. Strong thematic vocabulary combined with accurate grammar structures is the key to achieving top marks.",
       subheadings: [
         {
           title: "Home, Family and Daily Routine",
@@ -109,10 +111,10 @@ export const GERMAN: SubjectNotes = {
                 "**Rooms**: das Wohnzimmer (living room), das Schlafzimmer (bedroom), die Küche (kitchen), das Badezimmer (bathroom), der Keller (cellar/basement), der Dachboden (attic).",
                 "**Daily routine reflexive verbs**: sich waschen (to wash oneself), sich anziehen (to get dressed), sich kämmen (to comb one's hair), sich beeilen (to hurry), sich entspannen (to relax).",
                 "**Family**: der Vater/die Mutter, der Bruder/die Schwester, der Großvater/die Großmutter, der Onkel/die Tante, der Cousin/die Cousine (male/female cousin).",
-                "**Describing home**: Das Haus hat drei Stockwerke. (The house has three floors.) Die Wohnung liegt im zweiten Stock. (The flat is on the second floor.) Es gibt einen Garten. (There is a garden.)"
-              ]
-            }
-          ]
+                "**Describing home**: Das Haus hat drei Stockwerke. (The house has three floors.) Die Wohnung liegt im zweiten Stock. (The flat is on the second floor.) Es gibt einen Garten. (There is a garden.)",
+              ],
+            },
+          ],
         },
         {
           title: "Environment and Global Issues",
@@ -124,12 +126,12 @@ export const GERMAN: SubjectNotes = {
                 "**Problems**: die Luftverschmutzung (air pollution), der Treibhauseffekt (greenhouse effect), der Klimawandel (climate change), die Überschwemmung (flood), der Müll (rubbish/waste), das Abholzen (deforestation).",
                 "**Solutions**: recyceln (to recycle), Energie sparen (to save energy), öffentliche Verkehrsmittel benutzen (to use public transport), erneuerbare Energien (renewable energies), die Solarenergie, die Windenergie.",
                 "**Opinion phrases**: Ich bin der Meinung, dass... (I am of the opinion that...). Meiner Meinung nach... (In my opinion...). Es ist wichtig, dass wir... (It is important that we...). Man sollte... (One should...).",
-                "**Conditional for suggestions**: Man könnte mehr Rad fahren. (One could cycle more.) Die Regierung müsste strengere Gesetze einführen. (The government would need to introduce stricter laws.)"
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
+                "**Conditional for suggestions**: Man könnte mehr Rad fahren. (One could cycle more.) Die Regierung müsste strengere Gesetze einführen. (The government would need to introduce stricter laws.)",
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
