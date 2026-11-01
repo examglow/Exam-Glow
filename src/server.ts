@@ -2,6 +2,14 @@ import "./lib/error-capture";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+import { loadLocalEnv, refreshWorkersAiToken } from "./lib/load-local-env";
+
+// Must resolve before server-entry loads: ai-router snapshots process.env at import time.
+const envReady = loadLocalEnv();
+
+// Dev-only token repair hook, reached from ai-router's REST path on a 401.
+(globalThis as { __refreshWorkersAiToken?: () => Promise<string | null> }).__refreshWorkersAiToken =
+  refreshWorkersAiToken;
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
@@ -11,9 +19,9 @@ let serverEntryPromise: Promise<ServerEntry> | undefined;
 
 async function getServerEntry(): Promise<ServerEntry> {
   if (!serverEntryPromise) {
-    serverEntryPromise = import("@tanstack/react-start/server-entry").then(
-      (m) => (m.default ?? m) as ServerEntry,
-    );
+    serverEntryPromise = envReady
+      .then(() => import("@tanstack/react-start/server-entry"))
+      .then((m) => (m.default ?? m) as ServerEntry);
   }
   return serverEntryPromise;
 }
@@ -63,6 +71,12 @@ function withNoStoreHtml(response: Response): Response {
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    // Workers AI arrives as a per-request binding; ai-router reads it off globalThis.
+    const ai = (env as { AI?: unknown } | undefined)?.AI;
+    if (ai && !(globalThis as { AI?: unknown }).AI) {
+      (globalThis as { AI?: unknown }).AI = ai;
+      (globalThis as { __env__?: Record<string, unknown> }).__env__ = env as Record<string, unknown>;
+    }
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);

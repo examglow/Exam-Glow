@@ -2,7 +2,8 @@
  * ExamGlow Live AI Inference Engine
  * ─────────────────────────────────────────────────────────────────────────────
  * Real-time AI study tutor with ZERO hardcoded canned templates.
- * Powered by Google Gemini 2.5 Flash, 2.0 Flash & Hugging Face fallback pool.
+ * Replies come only from live models: Gemini (GEMINI_API_KEY env/secret),
+ * Cloudflare Workers AI (edge LLaMA) and the Hugging Face fallback.
  */
 
 export type ChatAttachment = {
@@ -76,17 +77,26 @@ export type RouterResult = {
   model: string;
 };
 
-const decodeKey = (b64: string) =>
-  typeof atob !== "undefined" ? atob(b64) : Buffer.from(b64, "base64").toString("utf-8");
+const readEnv = (name: string): string | undefined => {
+  if (typeof process === "undefined") return undefined;
+  const fromProcess = process.env?.[name];
+  if (fromProcess) return fromProcess;
+  const fromCloudflare = (globalThis as { __env__?: Record<string, string> }).__env__?.[name];
+  return fromCloudflare || undefined;
+};
 
-export const GEMINI_API_KEYS = [
-  decodeKey("QVEuQWI4Uk42SWo4al96RFhIRElRUXp6RUZlazdnVnJhcE5XTkxKNkhLOUowdWR6SlFldmc="),
-  decodeKey("QVEuQWI4Uk42SVNoVTZiRVdCRkY1aVpRVzBzTjNOZUxjSXEtZzk5U2F0dElPTnI0SUpteGc="),
-];
+// The previously embedded demo keys were disabled by Google (401) and removed.
+// Provide a key via GEMINI_API_KEY (env var before `npm run dev`, or
+// `npx wrangler secret put GEMINI_API_KEY` for the deployed worker).
+export const GEMINI_API_KEYS: string[] = Array.from(
+  new Set(
+    [readEnv("GEMINI_API_KEY"), readEnv("VITE_GEMINI_API_KEY")].filter(
+      (k): k is string => typeof k === "string" && k.length > 0,
+    ),
+  ),
+);
 
-export const GEMINI_API_KEY =
-  (typeof process !== "undefined" && (process.env?.["GEMINI_API_KEY"] || process.env?.["VITE_GEMINI_API_KEY"])) ||
-  GEMINI_API_KEYS[0];
+export const GEMINI_API_KEY = GEMINI_API_KEYS[0];
 
 /**
  * Normalizes message array so roles alternate strictly user -> model -> user -> model
@@ -136,28 +146,6 @@ function normalizeGeminiContents(messages: ChatMessage[]) {
   return contents;
 }
 
-/**
- * Detects if a user is asking for an image/diagram but hasn't specified what concept or subject to illustrate.
- * e.g., "hey i need an image", "generate an image", "can you draw something", "show me a picture"
- */
-export function isVagueImageRequest(text: string): boolean {
-  const hasImageWord = /\b(image|picture|diagram|drawing|draw|photo|illustration|visual|visuals|sketch)\b/i.test(text);
-  if (!hasImageWord) return false;
-
-  const stripped = text
-    .toLowerCase()
-    .replace(/^(hey|hi|hello|yo|please|kindly|yumna)\b/gi, "")
-    .replace(/\b(can you|could you|would you|will you|i want|i need|give me|show me|send me|create|generate|draw|make|provide|paint|render)\b/gi, "")
-    .replace(/\b(an?|the|some|any|educational|detailed|clear|good|high quality|hd)\b/gi, "")
-    .replace(/\b(image|picture|diagram|drawing|photo|illustration|visual|visuals|pic|pics|diagrams|sketch)\b/gi, "")
-    .replace(/\b(for me|to me|please|now|here|as well|too|thanks|thank you|right now)\b/gi, "")
-    .replace(/[^a-z0-9]/gi, " ")
-    .trim();
-
-  const emptyOrTrivial = new Set(["", "it", "one", "something", "anything", "of", "about", "for", "a", "an", "this", "that"]);
-  return emptyOrTrivial.has(stripped) || stripped.length < 3;
-}
-
 export function extractImageSubject(text: string): string {
   const cleaned = text
     .replace(/^(hey|hi|hello|yo|please)?\s*(can you|could you)?\s*(generate|make|draw|show|create|give me|send me)\s+(an?\s+)?(image|picture|diagram|drawing|photo|illustration|visual)\s+(for\s+me\s+)?(of|about|for)?\s*/i, "")
@@ -195,7 +183,10 @@ export function extractVideoInfo(text: string): { url: string; platform: "youtub
   return null;
 }
 
-export async function fetchVideoMetadata(info: { url: string; platform: string; videoId?: string }): Promise<string | null> {
+export async function fetchVideoMetadata(
+  info: { url: string; platform: string; videoId?: string },
+  mode: "first-share" | "follow-up" = "first-share",
+): Promise<string | null> {
   let title = "";
   let author = "";
   let description = "";
@@ -275,6 +266,13 @@ export async function fetchVideoMetadata(info: { url: string; platform: string; 
             ? `\n- Official Pinned Chapters in Video:\n${realChapters.map((c) => `  * ${c}`).join("\n")}`
             : "";
 
+        const modeInstructions =
+          mode === "follow-up"
+            ? `4. FOLLOW-UP MODE: The student already got a breakdown of this video earlier. Answer ONLY the question in their current message — do NOT re-summarise the video or repeat the lesson structure.
+5. If what they ask about is not present in the facts above, state plainly that it is not mentioned in this video, then name in one sentence what the video does cover.]`
+            : `4. PROACTIVE LESSON: When a student first shares this video, do NOT just describe it—actively TEACH it. Begin with a structured 5-point lesson covering the core concepts from the description/chapters/keywords. Use clear headings, analogies, and invite the student to go deeper on any concept.
+5. Response Format for first video share: 🎬 Video + Creator → 📌 Real Chapters or Key Topics → 💡 5 Core Concepts Explained Simply → 💬 Invite questions.]`;
+
         return `\n\n[STUDENT SHARED VIDEO GROUND TRUTH (STRICT FACTS):
 - Video Title: "${title}"
 - Channel / Creator: "${author || "Creator"}"
@@ -285,8 +283,7 @@ CRITICAL ACCURACY & GROUND TRUTH INSTRUCTIONS:
 1. Ground Truth Only: Base ALL summaries, explanations, and answers EXCLUSIVELY on the actual facts, topics, chapters, and keywords listed above. Do NOT invent content.
 2. No Fabricated Timestamps: If real chapters are listed above, use ONLY those exact timestamps and titles. If no timestamps exist in the description, do NOT invent fake ones—organize the breakdown by the actual topics mentioned in the description/keywords.
 3. No Hallucinations: If a student asks whether a specific person, game, character, or concept is mentioned (e.g., "did they mention X?"), check the Ground Truth carefully. If it is NOT in the description or keywords above, say honestly: "That topic is not mentioned in this video. This video covers [actual topics]."
-4. PROACTIVE LESSON: When a student first shares this video, do NOT just describe it—actively TEACH it. Begin with a structured 5-point lesson covering the core concepts from the description/chapters/keywords. Use clear headings, analogies, and invite the student to go deeper on any concept.
-5. Response Format for first video share: 🎬 Video + Creator → 📌 Real Chapters or Key Topics → 💡 5 Core Concepts Explained Simply → 💬 Invite questions.]`;
+${modeInstructions}`;
       }
     }
   } catch {
@@ -302,17 +299,29 @@ CRITICAL ACCURACY & GROUND TRUTH INSTRUCTIONS:
  */
 export async function enrichMessagesWithFullVideoContext(messages: ChatMessage[]): Promise<ChatMessage[]> {
   let foundVideoInfo: VideoInfo | null = null;
+  let foundAt = -1;
   for (let i = messages.length - 1; i >= 0; i--) {
     const info = extractVideoInfo(messages[i]!.content);
     if (info) {
       foundVideoInfo = info;
+      foundAt = i;
       break;
     }
   }
 
   if (!foundVideoInfo) return messages;
 
-  const videoContext = await fetchVideoMetadata(foundVideoInfo);
+  // A link only in an earlier turn means the student is asking a follow-up about it.
+  let lastUserIdx = -1;
+  for (let i = messages.length - 1; i >= 0; i--) {
+    if (messages[i]!.role === "user") {
+      lastUserIdx = i;
+      break;
+    }
+  }
+  const mode = foundAt === lastUserIdx && foundAt === messages.length - 1 ? "first-share" : "follow-up";
+
+  const videoContext = await fetchVideoMetadata(foundVideoInfo, mode);
   if (!videoContext) return messages;
 
   return messages.map((m, idx) => {
@@ -323,16 +332,6 @@ export async function enrichMessagesWithFullVideoContext(messages: ChatMessage[]
     return m;
   });
 }
-
-export const VAGUE_IMAGE_PROMPT_REPLY = `I would love to draw or generate an educational diagram for you! 🎨
-
-What specific concept, structure, or topic would you like me to illustrate? For example:
-- **Biology:** Plant Cell vs Animal Cell, Human Heart Anatomy, or Photosynthesis Stages
-- **Physics:** Electric Circuit Diagrams, Reflection & Refraction of Light, or Magnetic Fields
-- **Chemistry:** Fractional Distillation of Crude Oil, Electrolysis, or Atomic Orbitals
-- **Computer Science:** Von Neumann Architecture, Logic Gates, or Network Topologies
-
-Tell me which concept or syllabus topic you want, and I'll create a clear diagram right away!`;
 
 /**
  * Primary Real-Time AI Generation using Gemini API with model cascade
@@ -345,24 +344,16 @@ export async function callGemini(
   temperature = 0.7,
 ): Promise<GeminiResponse | null> {
   const lastUserMsg = messages.filter((m) => m.role === "user").pop()?.content || "";
-  if (isVagueImageRequest(lastUserMsg)) {
-    return { text: VAGUE_IMAGE_PROMPT_REPLY, model: "gemini-2.0-flash" };
-  }
 
   const contents = normalizeGeminiContents(messages);
   if (contents.length === 0) return null;
 
   const models = [
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
     "gemini-2.0-flash",
-    "gemini-2.0-flash-lite",
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-8b",
   ];
-  const keys = [
-    process.env?.["GEMINI_API_KEY"],
-    process.env?.["VITE_GEMINI_API_KEY"],
-    ...GEMINI_API_KEYS,
-  ].filter(Boolean) as string[];
+  const keys = GEMINI_API_KEYS;
   const isImageRequest = /\b(image|picture|drawing|draw|diagram|photo|illustration|visual)\b/i.test(lastUserMsg);
 
   for (const key of keys) {
@@ -454,134 +445,113 @@ async function callHuggingFace(messages: ChatMessage[], maxTokens = 1024, temper
 }
 
 /**
- * Cloudflare Workers AI Native Inference Engine
- * Zero keys required — runs on Cloudflare Edge using Meta LLaMA 3.3 70B & 3.1 8B.
+ * Cloudflare Workers AI — the provider this app runs on by default.
+ * In the deployed worker it uses the `AI` binding (no secrets at all); locally it
+ * uses the same account over REST with the credential wrangler already has.
+ * Free tier is ~10,000 neurons/day: llama 3.1 8B ≈ 8/rep, 3.3 70B ≈ 33/rep.
  */
-async function callWorkersAi(
+const WORKERS_AI_MODELS = [
+  { id: "@cf/meta/llama-3.1-8b-instruct", name: "workers-ai-llama-8b" },
+  { id: "@cf/meta/llama-3.3-70b-instruct-fp8-fast", name: "workers-ai-llama-70b" },
+];
+
+function getAiBinding(): { run: (model: string, body: unknown) => Promise<unknown> } | null {
+  const g = globalThis as { AI?: unknown; __env__?: { AI?: unknown } };
+  const candidate = g.AI || g.__env__?.AI;
+  if (candidate && typeof (candidate as { run?: unknown }).run === "function") {
+    return candidate as { run: (model: string, body: unknown) => Promise<unknown> };
+  }
+  return null;
+}
+
+function workersAiReply(raw: unknown): string | null {
+  const r = raw as {
+    response?: string;
+    message?: string;
+    choices?: Array<{ message?: { content?: string } }>;
+  };
+  const text = r?.response || r?.choices?.[0]?.message?.content || r?.message;
+  return text && String(text).trim().length > 0 ? String(text).trim() : null;
+}
+
+type WorkersAiRun = (model: string, body: unknown) => Promise<string | null>;
+
+async function runViaBinding(binding: NonNullable<ReturnType<typeof getAiBinding>>): Promise<WorkersAiRun> {
+  return async (model, body) => {
+    try {
+      return workersAiReply(await binding.run(model, body));
+    } catch {
+      return null;
+    }
+  };
+}
+
+async function runViaRest(): Promise<WorkersAiRun | null> {
+  if (!(readEnv("CLOUDFLARE_API_TOKEN") || readEnv("CLOUDFLARE_AI_TOKEN"))) return null;
+  const account = readEnv("CLOUDFLARE_ACCOUNT_ID") || "6731a2cf3ac3e76d3f399f505a7e5c11";
+
+  const post = async (model: string, body: unknown, token: string) => {
+    const res = await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/${account}/ai/run/${model}`,
+      {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(20000),
+      },
+    );
+    return { ok: res.ok, status: res.status, data: res.ok ? ((await res.json()) as { result?: unknown }) : null };
+  };
+
+  return async (model, body) => {
+    try {
+      let attempt = await post(model, body, readEnv("CLOUDFLARE_API_TOKEN") || readEnv("CLOUDFLARE_AI_TOKEN") || "");
+      if (attempt.status === 401) {
+        // Local dev reuses wrangler's hour-long OAuth token; ask it to mint a fresh one.
+        const refresh = (globalThis as { __refreshWorkersAiToken?: () => Promise<string | null> })
+          .__refreshWorkersAiToken;
+        const fresh = refresh ? await refresh() : null;
+        if (fresh) attempt = await post(model, body, fresh);
+      }
+      if (!attempt.ok) return null;
+      return workersAiReply(attempt.data?.result);
+    } catch {
+      return null;
+    }
+  };
+}
+
+export async function callWorkersAi(
   messages: ChatMessage[],
   maxTokens = 1024,
   temperature = 0.7,
-): Promise<string | null> {
-  const globalAi =
-    (typeof globalThis !== "undefined" && ((globalThis as any).AI || (globalThis as any).__env__?.AI)) ||
-    (typeof process !== "undefined" && (process.env as any)?.AI);
-
-  if (!globalAi || typeof globalAi.run !== "function") return null;
-
+): Promise<{ text: string; model: string } | null> {
   const chatMessages = messages
     .filter((m) => (m.role === "user" || m.role === "assistant") && m.content.trim().length > 0)
-    .map((m) => ({
-      role: m.role,
-      content: m.content,
-    }));
+    .map((m) => ({ role: m.role === "assistant" ? "assistant" : "user", content: m.content }));
 
   if (chatMessages.length === 0) return null;
 
-  const models = [
-    "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
-    "@cf/meta/llama-3.1-8b-instruct",
-    "@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
-    "@cf/qwen/qwen2.5-72b-instruct",
-  ];
+  const binding = getAiBinding();
+  const run = binding ? await runViaBinding(binding) : await runViaRest();
+  if (!run) return null;
 
-  for (const model of models) {
-    try {
-      const res = await globalAi.run(model, {
-        messages: [
-          { role: "system", content: YUMNA_SYSTEM_PROMPT },
-          ...chatMessages,
-        ],
-        max_tokens: maxTokens,
-        temperature,
-      });
-
-      const reply =
-        res?.response ||
-        res?.choices?.[0]?.message?.content ||
-        (typeof res === "string" ? res : null);
-      if (reply && String(reply).trim().length > 0) {
-        return String(reply).trim();
-      }
-    } catch {
-      continue;
-    }
+  for (const { id, name } of WORKERS_AI_MODELS) {
+    const reply = await run(id, {
+      messages: [{ role: "system", content: YUMNA_SYSTEM_PROMPT }, ...chatMessages],
+      max_tokens: maxTokens,
+      temperature,
+    });
+    if (reply) return { text: reply, model: name };
   }
 
   return null;
 }
 
 /**
- * Intelligent pedagogical reply generator when external LLM endpoints are unreachable.
- * Adapts dynamically to conversational intent, video URLs, past context, and student questions.
- */
-function generateSmartStudyReply(cleanUserMsg: string, rawMessages: ChatMessage[]): string {
-  const lower = cleanUserMsg.toLowerCase().trim();
-
-  // 1. Check if message is or refers to a video URL
-  const videoInfo = extractVideoInfo(cleanUserMsg);
-  const isVideoDiscussion =
-    videoInfo !== null ||
-    /\b(video|timestamp|youtube|watch|channel|minute|clip|recording)\b/i.test(lower) ||
-    /\b\d{1,2}:\d{2}\b/.test(cleanUserMsg);
-
-  if (isVideoDiscussion) {
-    const timeMatch = cleanUserMsg.match(/(\d{1,2}:\d{2})/);
-    const specificTime = timeMatch ? timeMatch[1] : null;
-
-    if (specificTime) {
-      return `### ⏱️ Timestamp Breakdown: ${specificTime}\n\nAt **${specificTime}**, the video zeroes in on the core mechanism of the topic:\n\n1. **What is happening**: The instructor demonstrates the key relationship between the primary variables, showing how changing one factor directly impacts the outcome.\n2. **Key Principle**: This is where the foundational formula/theory is applied to a practical exam-style scenario.\n3. **💡 Kid-Friendly Analogy**: Think of it like adjusting the gears on a bicycle—when you shift at this exact moment, everything becomes smoother and requires less effort!\n\nWould you like me to walk through the exact calculation or step that follows right after ${specificTime}? 😉`;
-    }
-
-    const title = videoInfo?.videoId
-      ? `Lesson Video [ID: ${videoInfo.videoId}]`
-      : "Educational Video";
-
-    return `### 🎬 Video Breakdown & Lesson Masterclass\n\nI have watched, analyzed, and committed this entire video to memory! ✨ Here is your comprehensive breakdown:\n\n---\n\n### ⏱️ Timestamped Chapter Breakdown\n- **[00:00 - 02:15] Introduction & Foundational Concepts**: The instructor introduces the core principles, syllabus scope, and fundamental definitions you need for exams.\n- **[02:15 - 05:40] Deep Dive & Scientific Mechanism**: Step-by-step breakdown of how the process operates, highlighting key relationships and variables.\n- **[05:40 - 08:30] Worked Examples & Problem-Solving**: Practical demonstration of exam-style questions, showing step-by-step working and units.\n- **[08:30 - End] Common Exam Pitfalls & Summary**: High-frequency exam traps where students lose easy marks, followed by quick revision rules.\n\n---\n\n### 💡 Simple Everyday Analogy\nImagine this whole concept like a **smartphone charging system**: the energy flows in a strictly regulated sequence, and every component must do its specific job before the next one can activate. If one part is blocked, the whole circuit pauses!\n\n---\n\n### ❓ Quick Checkpoint Question\n*Based on what was taught in this video: What is the single most important factor that limits this process, and what happens if you increase it past its optimum level?*\n\n---\n\n💬 **Full Memory Active**: I remember every detail of this video! You can ask me what happened at any timestamp (like *"what happened at 3:15?"*), ask me to explain a formula, or quiz you anytime! 😉`;
-  }
-
-  // 2. Student confusion / clarification ("what?", "huh?", "pardon?", "i don't get it", "what do you mean?")
-  if (
-    /^(what\??|huh\??|pardon\??|wait what\??|what do you mean\??|i don['’]?t (get|understand) (it|this)|confused)\b/i.test(
-      lower,
-    ) ||
-    lower === "what" ||
-    lower === "what?"
-  ) {
-    const prevAssistantMsg = [...rawMessages]
-      .reverse()
-      .find((m) => m.role === "assistant")?.content;
-
-    return `Let me pause and break that down so it's super simple and crystal clear! 😊\n\nSometimes scientific terms sound much more complicated than they actually are. Which specific part felt tricky or unclear? \n\nTell me what caught you off guard, or give me a quick clue, and I'll explain it with an everyday real-world example until it makes 100% sense! ✨`;
-  }
-
-  // 3. Affirmation / Continuation ("ok", "sure", "continue", "yes", "go on", "next")
-  if (/^(ok|okay|sure|yes|continue|go on|next|tell me more|cool|got it)\b/i.test(lower)) {
-    return `Awesome! Let's keep the momentum going! 🚀\n\nTo make sure you've completely locked this concept in for your exams, would you like to:\n1. **Solve a IGCSE-style question together** (with step-by-step marks)?\n2. **Break down the common pitfalls** where examiners try to trick students?\n3. **Explore the next related topic** in your syllabus?\n\nTell me which one you'd like to do next! 😉`;
-  }
-
-  // 4. Photosynthesis & Plant Biology
-  if (/(?:photosynthesis|chlorophyll|chloroplast|light-dependent|calvin|stroma|thylakoid)/i.test(lower)) {
-    return `### 🌿 Photosynthesis: The Complete IGCSE Master Guide\n\nPhotosynthesis is how green plants manufacture glucose from raw inorganic materials using light energy trapped by chlorophyll.\n\n**The Core Chemical Equation:**\n$$6CO_2 + 6H_2O \\xrightarrow{\\text{Light + Chlorophyll}} C_6H_{12}O_6 + 6O_2$$\n\n---\n\n### 💡 The 3 Limiting Factors (Guaranteed Exam Marks!)\n1. **Light Intensity**: As light increases, photosynthesis speeds up until chloroplasts are working at maximum capacity.\n2. **Carbon Dioxide Concentration**: Adding more $CO_2$ boosts sugar production until the carbon-fixing enzymes are fully saturated.\n3. **Temperature**: Rate rises up to the enzyme's optimum (~$35^\\circ\\text{C}$ to $40^\\circ\\text{C}$). Past this, enzymes permanently **denature** and rate crashes to zero!\n\n---\n\n### 🔍 Real-World Analogy\nThink of a plant like a **solar-powered smoothie blender**: $CO_2$ and water are your fruit ingredients, sunlight is the electricity, and chlorophyll is the power cord. Without enough electricity or fruit, the blender can't make smoothies any faster!\n\nWould you like to try a 3-mark past paper question on limiting factors? 📚`;
-  }
-
-  // 5. Quadratic Equations & Algebra
-  if (/(?:quadratic|formula|parabola|discriminant|factoris|factoriz|roots)/i.test(lower)) {
-    return `### 📐 Quadratic Equations: Mastered Step-by-Step\n\nFor any quadratic equation written in standard form:\n$$ax^2 + bx + c = 0$$\n\nWe solve it using the **Quadratic Formula**:\n$$x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$$\n\n---\n\n### 🎯 The Discriminant Rule ($\\Delta = b^2 - 4ac$):\n- **$\\Delta > 0$**: 2 distinct real solutions.\n- **$\\Delta = 0$**: 1 repeated real solution.\n- **$\\Delta < 0$**: No real solutions (the curve never crosses the x-axis).\n\n---\n\n### 💡 Examiner Tip\nAlways be extra careful with negative signs when substituting $b$! If $b = -5$, then $-b$ becomes $+(-(-5)) = +5$.\n\nShare your exact equation, and I'll write out every single line of working for you! ✨`;
-  }
-
-  // 6. Cell Biology
-  if (/(?:cell|membrane|mitochondri|nucleus|ribosome|osmosis|diffusion)/i.test(lower)) {
-    return `### 🔬 Cell Biology: Fundamental Structures & Functions\n\nHere is how to remember all the essential cell organelles for exams:\n\n| Organelle | Function | Found In |\n| :--- | :--- | :--- |\n| **Cell Membrane** | Selectively controls what enters and exits (diffusion & osmosis) | Plant & Animal |\n| **Nucleus** | Stores DNA and controls all cellular protein synthesis | Plant & Animal |\n| **Mitochondria** | Powerhouse: generates ATP energy through aerobic respiration | Plant & Animal |\n| **Chloroplast** | Traps light energy for photosynthesis | Plant Only |\n| **Cellulose Wall** | Rigid outer box preventing lysis when turgid | Plant Only |\n| **Permanent Vacuole** | Stores cell sap and maintains turgor pressure | Plant Only |\n\nWhich specific organelle or transport mechanism (diffusion vs active transport) should we explore next? 😉`;
-  }
-
-  // 7. General Academic Concept
-  const topic = cleanUserMsg.length > 3 ? cleanUserMsg : "this concept";
-  return `### 💡 Breaking Down: ${topic}\n\nLet's tackle this step-by-step so you understand it completely:\n\n1. **The Core Concept**: At its heart, this topic examines how specific variables and principles interact in your syllabus.\n2. **The Key Scientific Rule**: Always identify what is causing the change, what is responding, and what must be kept constant.\n3. **💡 Real-World Analogy**: Think of it like a chain reaction—when the first condition shifts, the other elements naturally follow in sequence.\n\nWhat specific part of this question or syllabus chapter would you like to dive into next? Tell me what you're working on, and we'll solve it together! ✨`;
-}
-
-/**
  * Route a chat completion request to the live AI inference engine.
- * Cascade: Gemini 2.0 -> Workers AI (edge LLaMA 3.3 70B) -> Hugging Face -> Contextual Intelligence.
+ * Cascade: Cloudflare Workers AI (edge LLaMA) -> Gemini (only if a key is set) -> Hugging Face.
+ * Throws when every live provider fails — no canned replies.
  */
 export async function routeChat(
   rawMessages: ChatMessage[],
@@ -592,33 +562,16 @@ export async function routeChat(
   // Enrich ALL messages with persistent ground truth if any video was linked in the conversation
   const messages = await enrichMessagesWithFullVideoContext(rawMessages);
 
-  const lastUserMsg = messages.filter((m) => m.role === "user").pop()?.content || "";
-  if (isVagueImageRequest(lastUserMsg)) {
-    return {
-      text: VAGUE_IMAGE_PROMPT_REPLY,
-      provider: "Yumna-AI",
-      model: "yumna-pro",
-    };
-  }
-
-  // 1. Primary Live Model: Gemini 2.0 / 1.5
-  const geminiReply = await callGemini(messages, maxTokens, temperature);
-  if (geminiReply) {
-    return {
-      text: geminiReply.text,
-      provider: "Yumna-AI",
-      model: geminiReply.model,
-    };
-  }
-
-  // 2. Secondary Live Model: Cloudflare Workers AI Edge Inference (LLaMA 3.3 70B / 3.1 8B)
+  // 1. Primary Live Model: Cloudflare Workers AI (free tier, bound in the worker / REST in dev)
   const workersAiReply = await callWorkersAi(messages, maxTokens, temperature);
   if (workersAiReply) {
-    return {
-      text: workersAiReply,
-      provider: "Yumna-AI",
-      model: "workers-ai-llama",
-    };
+    return { text: workersAiReply.text, provider: "Yumna-AI", model: workersAiReply.model };
+  }
+
+  // 2. Secondary Live Model: Gemini 2.5 / 2.0, when GEMINI_API_KEY is configured
+  const geminiReply = await callGemini(messages, maxTokens, temperature);
+  if (geminiReply) {
+    return { text: geminiReply.text, provider: "Yumna-AI", model: geminiReply.model };
   }
 
   // 3. Tertiary Live Model: Hugging Face
@@ -631,44 +584,7 @@ export async function routeChat(
     };
   }
 
-  const isImageRequest = /\b(image|picture|drawing|draw|diagram|photo|illustration|visual)\b/i.test(lastUserMsg);
-
-  if (isImageRequest) {
-    const cleanSubject = extractImageSubject(lastUserMsg);
-    return {
-      text: `![${cleanSubject} Diagram](https://image.pollinations.ai/prompt/${encodeURIComponent(cleanSubject)}%20detailed%20cambridge%20science%20diagram?width=800&height=500&nologo=true)\n\n### Diagram: ${cleanSubject}\n\nHere is the visual diagram illustrating this concept for your study session. Key features to note for examination questions:\n- **Labels & Structure**: Take note of each primary component in the diagram.\n- **Function & Relationship**: Remember how each element interacts with surrounding structures.\n\nWould you like me to walk through the exact function of any specific labeled part?`,
-      provider: "Yumna-AI",
-      model: "yumna-pro",
-    };
-  }
-
-  const cleanUserMsg = lastUserMsg.replace(/\[Active Student Info:[\s\S]*?\]/gi, "").trim();
-
-  // If greeting
-  if (/^(hey|hi|hello|greetings|good\s+(morning|afternoon|evening)|yo|sup)\b/i.test(cleanUserMsg) || cleanUserMsg.length === 0) {
-    return {
-      text: `Hey there! 👋 What subject or topic are we tackling today?\n\nWhether you need help with **Biology**, **Chemistry**, **Physics**, **Mathematics**, **Computer Science**, or working through past paper exam questions—just let me know and we'll dive right in! ✨`,
-      provider: "Yumna-AI",
-      model: "yumna-pro",
-    };
-  }
-
-  // 4. Dynamic question fallback if user specifically requested a question/quiz
-  const lastMsgLower = cleanUserMsg.toLowerCase();
-  if (lastMsgLower.includes("question") || lastMsgLower.includes("quiz") || lastMsgLower.includes("test")) {
-    return {
-      text: "Here is a IGCSE-style question to test your understanding:\n\n**Question [3 marks]:**\nExplain the role of the thylakoid membrane and ATP synthase during the light-dependent stage of photosynthesis.\n\n*Hint: Think about where protons accumulate, how the proton concentration gradient is established, and how ATP is generated as protons pass through ATP synthase into the stroma.* What is your answer?",
-      provider: "Yumna-AI",
-      model: "yumna-pro",
-    };
-  }
-
-  // 5. Intelligent contextual pedagogical response
-  return {
-    text: generateSmartStudyReply(cleanUserMsg, rawMessages),
-    provider: "Yumna-AI",
-    model: "yumna-core",
-  };
+  throw new Error("All AI providers are unavailable");
 }
 
 /**
