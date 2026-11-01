@@ -1435,17 +1435,6 @@ function SyllabusNotesPage() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [openId, setOpenId] = useState<string | null>(subjectId ?? null);
 
-  const categories = [
-    "All",
-    "Sciences",
-    "Mathematics",
-    "Languages",
-    "English",
-    "Business & Economics",
-    "Humanities",
-    "Technology",
-  ];
-
   const getSubjectCategory = (code: string): string => {
     if (["0610", "0620", "0625", "0680", "0697", "0654", "0653", "0617"].includes(code))
       return "Sciences";
@@ -1459,6 +1448,22 @@ function SyllabusNotesPage() {
       return "Technology";
     return "Sciences";
   };
+
+  const categoryOrder = [
+    "Sciences",
+    "Mathematics",
+    "Languages",
+    "English",
+    "Business & Economics",
+    "Humanities",
+    "Technology",
+  ];
+  const categories = [
+    "All",
+    ...categoryOrder.filter((cat) =>
+      SYLLABUS_NOTES.some((s) => getSubjectCategory(s.code) === cat),
+    ),
+  ];
 
   const filtered = SYLLABUS_NOTES.filter((s) => {
     const matchCat = activeCategory === "All" || getSubjectCategory(s.code) === activeCategory;

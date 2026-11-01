@@ -12,6 +12,8 @@ import { FIRST_LANGUAGE_ENGLISH } from "./notes/first-language-english";
 import { ENGLISH_SECOND_LANGUAGE } from "./notes/english-second-language";
 import { LITERATURE_IN_ENGLISH } from "./notes/literature-in-english";
 import { ACCOUNTING } from "./notes/accounting";
+import { AGRICULTURE } from "./notes/agriculture";
+import { ART_DESIGN } from "./notes/art-design";
 import { BUSINESS_STUDIES } from "./notes/business-studies";
 import { ECONOMICS } from "./notes/economics";
 import { HISTORY } from "./notes/history";
@@ -58,6 +60,8 @@ export {
   ENGLISH_SECOND_LANGUAGE,
   LITERATURE_IN_ENGLISH,
   ACCOUNTING,
+  AGRICULTURE,
+  ART_DESIGN,
   BUSINESS_STUDIES,
   ECONOMICS,
   HISTORY,
@@ -105,6 +109,8 @@ const RAW_NOTES: SubjectNotes[] = [
   SPANISH,
   PORTUGUESE,
   ACCOUNTING,
+  AGRICULTURE,
+  ART_DESIGN,
   BUSINESS_STUDIES,
   ECONOMICS,
   ENTERPRISE,
@@ -139,4 +145,18 @@ const RAW_NOTES: SubjectNotes[] = [
   WORLD_LITERATURE,
 ];
 
-export const SYLLABUS_NOTES: SubjectNotes[] = RAW_NOTES;
+// Only subjects whose chapters have actually been written are listed. The rest
+// stay in RAW_NOTES so they can be re-enabled as each one is completed.
+const PUBLISHED_SUBJECT_IDS = new Set([
+  "biology",
+  "chemistry",
+  "physics",
+  "accounting",
+  "agriculture",
+  "art-design",
+  "physical-education",
+]);
+
+export const SYLLABUS_NOTES: SubjectNotes[] = RAW_NOTES.filter((s) =>
+  PUBLISHED_SUBJECT_IDS.has(s.id),
+);
