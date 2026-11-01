@@ -414,92 +414,83 @@ export function ProfileAvatar({ className = "" }: { className?: string }) {
         </button>
 
         {open && (
-          <div className="absolute right-0 top-11 z-50 w-64 overflow-hidden rounded-2xl border border-border bg-card shadow-[0_18px_50px_-18px_rgba(0,0,0,0.35)]">
+          <div className="absolute right-0 top-12 z-50 w-72 overflow-hidden rounded-[22px] border border-border bg-card shadow-[0_20px_60px_-24px_rgba(0,0,0,0.45)]">
             {/* User info header */}
             {(profile.name || profile.email) && (
-              <div className="flex items-center gap-3 border-b border-border px-4 py-3">
+              <div className="flex items-center gap-3 border-b border-border px-5 py-4">
                 {googlePicture && (
                   <img
                     src={googlePicture}
                     alt=""
                     referrerPolicy="no-referrer"
-                    width={36}
-                    height={36}
-                    className="size-9 shrink-0 rounded-full object-cover"
+                    width={40}
+                    height={40}
+                    className="size-10 shrink-0 rounded-full object-cover"
                   />
                 )}
                 <div className="min-w-0">
                   {profile.name && (
-                    <p className="truncate text-sm font-semibold">{profile.name}</p>
+                    <p className="truncate font-display text-[17px] leading-tight">{profile.name}</p>
                   )}
                   {profile.email && (
-                    <p className="truncate text-xs text-muted-foreground">{profile.email}</p>
+                    <p className="truncate text-[11px] uppercase tracking-[0.14em] text-muted-foreground">{profile.email}</p>
                   )}
                 </div>
               </div>
             )}
 
+            <p className="px-5 pb-1 pt-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">Account</p>
             <Link
               to="/pricing"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-secondary"
+              className="flex items-center gap-3.5 px-5 py-2.5 text-sm transition-colors hover:bg-secondary/60"
             >
-              <span className="flex size-8 items-center justify-center rounded-full bg-lilac">
-                <Crown className="size-4" aria-hidden />
-              </span>
+              <Crown className="size-4 shrink-0 text-muted-foreground" aria-hidden />
               Upgrade plan
             </Link>
             <button
               type="button"
               onClick={() => { setOpen(false); setShowPersonalization(true); }}
-              className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-secondary"
+              className="flex w-full items-center gap-3.5 px-5 py-2.5 text-sm transition-colors hover:bg-secondary/60"
             >
-              <span className="flex size-8 items-center justify-center rounded-full bg-mint">
-                <SlidersHorizontal className="size-4" aria-hidden />
-              </span>
+              <SlidersHorizontal className="size-4 shrink-0 text-muted-foreground" aria-hidden />
               Personalization
             </button>
             <Link
               to="/customer-service"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-secondary"
+              className="flex items-center gap-3.5 px-5 py-2.5 text-sm transition-colors hover:bg-secondary/60"
             >
-              <span className="flex size-8 items-center justify-center rounded-full bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300">
-                <Headphones className="size-4" aria-hidden />
-              </span>
+              <Headphones className="size-4 shrink-0 text-muted-foreground" aria-hidden />
               Customer Service
             </Link>
             <Link
               to="/about-us"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-secondary"
+              className="flex items-center gap-3.5 px-5 py-2.5 text-sm transition-colors hover:bg-secondary/60"
             >
-              <span className="flex size-8 items-center justify-center rounded-full bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300">
-                <Info className="size-4" aria-hidden />
-              </span>
+              <Info className="size-4 shrink-0 text-muted-foreground" aria-hidden />
               About Us
             </Link>
             <Link
               to="/settings"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-secondary"
+              className="flex items-center gap-3.5 px-5 py-2.5 text-sm transition-colors hover:bg-secondary/60"
             >
-              <span className="flex size-8 items-center justify-center rounded-full bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300">
-                <Settings className="size-4" aria-hidden />
-              </span>
+              <Settings className="size-4 shrink-0 text-muted-foreground" aria-hidden />
               Settings
             </Link>
+
+            <p className="px-5 pb-1 pt-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">Preferences</p>
             <button
               type="button"
               onClick={toggleDark}
-              className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium transition-colors hover:bg-secondary"
+              className="flex w-full items-center gap-3.5 px-5 py-2.5 text-sm transition-colors hover:bg-secondary/60"
             >
-              <span className="flex size-8 items-center justify-center rounded-full bg-surface">
-                {dark ? <Sun className="size-4" aria-hidden /> : <Moon className="size-4" aria-hidden />}
-              </span>
+              {dark ? <Sun className="size-4 shrink-0 text-muted-foreground" aria-hidden /> : <Moon className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
               <span className="flex-1 text-left">Dark mode</span>
               <span
-                className={`relative h-5 w-9 rounded-full transition-colors ${dark ? "bg-lavender" : "bg-secondary"}`}
+                className={`relative h-5 w-9 shrink-0 rounded-full transition-colors ${dark ? "bg-ink" : "bg-secondary"}`}
                 role="switch"
                 aria-checked={dark}
                 aria-label="Dark mode"
@@ -509,15 +500,14 @@ export function ProfileAvatar({ className = "" }: { className?: string }) {
                 />
               </span>
             </button>
-            <div className="border-t border-border">
+
+            <div className="mt-3 border-t border-border">
               <button
                 type="button"
                 onClick={signOut}
-                className="flex w-full items-center gap-3 px-4 py-3 text-sm font-medium text-destructive transition-colors hover:bg-destructive/10"
+                className="flex w-full items-center gap-3.5 px-5 py-3 text-sm text-destructive transition-colors hover:bg-destructive/[0.06]"
               >
-                <span className="flex size-8 items-center justify-center rounded-full bg-destructive/10">
-                  <LogOut className="size-4" aria-hidden />
-                </span>
+                <LogOut className="size-4 shrink-0" aria-hidden />
                 Sign out
               </button>
             </div>

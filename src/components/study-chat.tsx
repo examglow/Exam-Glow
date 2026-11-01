@@ -5,7 +5,6 @@ import {
   Layers,
   X,
   Mic,
-  MicOff,
   Volume2,
   VolumeX,
   Plus,
@@ -13,13 +12,9 @@ import {
   Image as ImageIcon,
   FileUp,
   Paperclip,
-  History,
-  PhoneOff,
   ArrowUp,
+  ArrowUpRight,
   Trash2,
-  Clock,
-  MessageSquare,
-  ChevronRight,
   Loader2,
   Video,
 } from "lucide-react";
@@ -29,14 +24,16 @@ import {
   ConversationContent,
   ConversationScrollButton,
 } from "@/components/ai-elements/conversation";
-import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
+import { MessageResponse } from "@/components/ai-elements/message";
 import { Shimmer } from "@/components/ai-elements/shimmer";
-import logoMark from "@/assets/logo-mark.png";
 import { callGemini, type ChatMessage } from "@/lib/ai-router";
 import {
   incrementAiMessageCount,
 } from "@/lib/onboarding";
-import { playRealisticVoice, stopRealisticVoice, unlockAudio } from "@/lib/gemini-tts";
+import { playRealisticVoice, stopRealisticVoice } from "@/lib/gemini-tts";
+import studentDesk from "@/assets/student-desk.jpg";
+import studentsGrass from "@/assets/students-grass.jpg";
+import logoMark from "@/assets/logo-mark.png";
 
 type UploadedAttachment = {
   name: string;
@@ -64,11 +61,11 @@ function extractYouTubeId(text: string): string | null {
 
 function YouTubeVideoCard({ videoId }: { videoId: string }) {
   return (
-    <div className="my-3 overflow-hidden rounded-2xl border border-border bg-card shadow-md">
-      <div className="flex items-center gap-2 border-b border-border bg-secondary/50 px-3.5 py-2 text-xs font-semibold">
-        <span className="flex size-2 rounded-full bg-red-500 animate-pulse" />
-        <span className="text-foreground">Watching with Yumna 🎬</span>
-        <span className="text-[10px] text-muted-foreground ml-auto">Ask about any timestamp!</span>
+    <div className="my-3 overflow-hidden rounded-2xl border border-border bg-card">
+      <div className="flex items-center gap-2 border-b border-border bg-secondary/50 px-3.5 py-2 text-xs font-medium">
+        <span className="flex size-2 rounded-full bg-lavender animate-pulse" />
+        <span className="text-foreground">Watching with Yumna</span>
+        <span className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground ml-auto">Ask about any timestamp</span>
       </div>
       <div className="relative aspect-video w-full bg-black">
         <iframe
@@ -86,10 +83,10 @@ function YouTubeVideoCard({ videoId }: { videoId: string }) {
 const VIDEO_SUGGESTION_PLACEHOLDER = "https://www.youtube.com/watch?v=";
 
 const suggestions = [
-  { label: "🎬 Paste a YouTube link — I'll watch & teach it!", Icon: Video, isVideo: true },
-  { label: "Explain photosynthesis step-by-step", Icon: BookOpen, isVideo: false },
-  { label: "Quiz me on quadratic equations", Icon: ListChecks, isVideo: false },
-  { label: "How do electric circuits work?", Icon: Layers, isVideo: false },
+  { label: "Paste a YouTube link — I'll watch & teach it", meta: "Video walkthroughs", Icon: Video, isVideo: true, tone: "bg-lilac" },
+  { label: "Explain photosynthesis step-by-step", meta: "Biology explainer", Icon: BookOpen, isVideo: false, tone: "bg-mint" },
+  { label: "Quiz me on quadratic equations", meta: "Practice questions", Icon: ListChecks, isVideo: false, tone: "bg-lavender" },
+  { label: "How do electric circuits work?", meta: "Physics basics", Icon: Layers, isVideo: false, tone: "bg-surface" },
 ] as const;
 
 // Helper to strip emojis from speech text so speech synthesizer never speaks emoji descriptions
@@ -142,12 +139,6 @@ export function StudyChat({
   const [isDictating, setIsDictating] = useState(false);
   const dictationRecoRef = useRef<any>(null);
 
-  // Speech-to-Speech Hands-Free Voice Mode (inline Claude/Lovable style)
-  const [voiceMode, setVoiceMode] = useState(false);
-  const [isListening, setIsListening] = useState(false);
-  const [isSpeaking, setIsSpeaking] = useState(false);
-  const [voiceTranscript, setVoiceTranscript] = useState("");
-
   const [uploadOpen, setUploadOpen] = useState(false);
   const [attachment, setAttachment] = useState<UploadedAttachment | null>(null);
 
@@ -159,7 +150,6 @@ export function StudyChat({
   const pdfInputRef = useRef<HTMLInputElement>(null);
   const imgInputRef = useRef<HTMLInputElement>(null);
   const docInputRef = useRef<HTMLInputElement>(null);
-  const recognitionRef = useRef<any>(null);
 
   // Listen to mobile virtual keyboard visualViewport changes
   useEffect(() => {
@@ -224,51 +214,6 @@ export function StudyChat({
     });
   }, [messages, currentSessionId]);
 
-  // Initialize Web Speech Recognition
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const SpeechRecognition =
-        (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-      if (SpeechRecognition) {
-        const reco = new SpeechRecognition();
-        reco.continuous = false;
-        reco.interimResults = true;
-        reco.lang = "en-US";
-
-        reco.onresult = (event: any) => {
-          let interim = "";
-          for (let i = event.resultIndex; i < event.results.length; ++i) {
-            interim += event.results[i][0].transcript;
-          }
-          setVoiceTranscript(interim);
-        };
-
-        // When user stops speaking, automatically send to AI hands-free!
-        reco.onspeechend = () => {
-          if (voiceTranscript.trim().length > 1) {
-            void handleHandsFreeSubmit(voiceTranscript.trim());
-          }
-        };
-
-        reco.onerror = () => {
-          setIsListening(false);
-        };
-
-        reco.onend = () => {
-          setIsListening(false);
-          // If still in voice mode and not muted and not speaking, auto-resume listening
-          if (voiceMode && !isSpeaking) {
-            setTimeout(() => {
-              if (voiceMode && !isSpeaking) startListening();
-            }, 300);
-          }
-        };
-
-        recognitionRef.current = reco;
-      }
-    }
-  }, [voiceMode, isSpeaking, voiceTranscript]);
-
   function toggleDictation() {
     if (isDictating) {
       dictationRecoRef.current?.stop();
@@ -305,57 +250,7 @@ export function StudyChat({
     setIsDictating(true);
   }
 
-  function speakResponse(text: string) {
-    setIsSpeaking(true);
-    playRealisticVoice(text, {
-      onStart: () => setIsSpeaking(true),
-      onEnd: () => {
-        setIsSpeaking(false);
-        if (voiceMode) startListening();
-      },
-      onError: () => {
-        setIsSpeaking(false);
-        if (voiceMode) startListening();
-      },
-    });
-  }
-
-  function startListening() {
-    if (recognitionRef.current && !isListening) {
-      try {
-        setVoiceTranscript("");
-        recognitionRef.current.start();
-        setIsListening(true);
-      } catch {}
-    }
-  }
-
-  function stopListening() {
-    if (recognitionRef.current && isListening) {
-      try {
-        recognitionRef.current.stop();
-      } catch {}
-      setIsListening(false);
-    }
-  }
-
-  function endVoiceCall() {
-    stopRealisticVoice();
-    stopListening();
-    setIsSpeaking(false);
-    setIsListening(false);
-    setVoiceMode(false);
-    setVoiceTranscript("");
-  }
-
-  async function handleHandsFreeSubmit(text: string) {
-    if (!text.trim() || status === "submitted") return;
-    stopListening();
-    setVoiceTranscript("");
-    await send(text, true);
-  }
-
-  async function send(text: string, speakBack = false) {
+  async function send(text: string) {
     const trimmed = text.trim();
     if (!trimmed || status === "submitted") return;
 
@@ -422,9 +317,6 @@ export function StudyChat({
         setError("Yumna is taking a moment to reply. Please try again.");
       } else {
         setMessages([...next, { role: "assistant", content: replyText }]);
-        if (speakBack || voiceMode) {
-          speakResponse(replyText);
-        }
       }
     } catch {
       // Direct browser fallback if /api/chat network failed
@@ -432,7 +324,6 @@ export function StudyChat({
         const directRes = await callGemini(fullMessages);
         if (directRes?.text) {
           setMessages([...next, { role: "assistant", content: directRes.text }]);
-          if (speakBack || voiceMode) speakResponse(directRes.text);
         } else {
           setError("Network error — check your connection and try again.");
         }
@@ -441,7 +332,7 @@ export function StudyChat({
       }
     } finally {
       setStatus("ready");
-      if (!voiceMode) inputRef.current?.focus();
+      inputRef.current?.focus();
     }
   }
 
@@ -552,81 +443,57 @@ export function StudyChat({
         }}
       />
 
-      {/* Top Header Bar with New Chat & History */}
-      <div className="flex h-14 shrink-0 items-center justify-between border-b border-border bg-card/80 px-4 backdrop-blur z-20">
-        <div className="flex items-center gap-2">
-          {/* New Chat Button */}
-          <button
-            type="button"
-            onClick={handleNewChat}
-            className="flex items-center gap-1.5 rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-3 py-1.5 text-xs font-bold transition-colors shadow-sm"
-          >
-            <Plus className="size-3.5" />
-            <span>New Chat</span>
-          </button>
-
-          {/* History Button */}
-          <button
-            type="button"
-            onClick={() => setShowHistory((v) => !v)}
-            className={`flex items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-xs font-medium transition-colors ${
-              showHistory ? "bg-secondary text-foreground" : "text-muted-foreground hover:text-foreground hover:bg-secondary/60"
-            }`}
-          >
-            <History className="size-3.5" />
-            <span>History</span>
-            {sessions.length > 0 && (
-              <span className="rounded-full bg-surface px-1.5 py-0.2 text-[10px] font-bold">
-                {sessions.length}
-              </span>
-            )}
-          </button>
-        </div>
-
-        {/* Right side: Voice Call launcher (Hidden on mini widget) */}
-        <div className="flex items-center gap-2">
-          {!isMini && (
+      {/* Chat header */}
+      <header className="shrink-0 border-b border-border bg-background py-3.5 pl-14 pr-4 md:px-8">
+        <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
+          <p className="flex shrink-0 items-baseline gap-3">
+            <span className="font-display text-[21px] leading-none">Yumna</span>
+            <span className="hidden truncate text-[10px] font-semibold uppercase tracking-[0.22em] text-muted-foreground lg:block">
+              AI Study Tutor
+            </span>
+          </p>
+          <nav className="flex shrink-0 items-center gap-2">
             <button
               type="button"
-              onClick={() => {
-                if (voiceMode) {
-                  endVoiceCall();
-                } else {
-                  unlockAudio();
-                  setVoiceMode(true);
-                  speakResponse("Hey there! What are we studying together today? ✨");
-                }
-              }}
-              className={`flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition-colors ${
-                voiceMode
-                  ? "bg-amber-500/20 text-amber-500 border border-amber-500/40 animate-pulse"
-                  : "bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"
+              onClick={handleNewChat}
+              className="flex items-center gap-1.5 rounded-full bg-ink px-3.5 py-2 text-xs font-medium text-ink-foreground transition-opacity hover:opacity-90"
+            >
+              <Plus className="size-3.5" />
+              <span className="hidden sm:inline">New chat</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowHistory((v) => !v)}
+              className={`rounded-full border px-3.5 py-2 text-xs font-medium transition-colors ${
+                showHistory
+                  ? "border-foreground/40 bg-secondary text-foreground"
+                  : "border-border text-muted-foreground hover:text-foreground"
               }`}
             >
-              <Mic className="size-3.5" />
-              <span>{voiceMode ? "End Call" : "Voice Call"}</span>
+              <span className="hidden sm:inline">History</span>
+              <span className="sm:hidden">Chat</span>
+              {sessions.length > 0 && (
+                <span className="ml-1.5 text-[10px] tabular-nums opacity-70">{sessions.length}</span>
+              )}
             </button>
-          )}
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              className="flex size-8 items-center justify-center rounded-full hover:bg-secondary text-muted-foreground"
-            >
-              <X className="size-4" />
-            </button>
-          )}
+            {onClose && (
+              <button
+                type="button"
+                onClick={onClose}
+                className="flex size-7 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              >
+                <X className="size-4" />
+              </button>
+            )}
+          </nav>
         </div>
-      </div>
+      </header>
 
       {/* History Slide-Over Drawer */}
       {showHistory && (
-        <div className="absolute inset-y-14 left-0 w-80 max-w-full bg-card/95 backdrop-blur-md border-r border-border shadow-2xl z-30 flex flex-col animate-in slide-in-from-left duration-200">
-          <div className="flex items-center justify-between p-4 border-b border-border">
-            <div className="flex items-center gap-2">
-              <History className="size-4 text-primary" />
-              <h3 className="font-bold text-sm text-foreground">Chat History</h3>
-            </div>
+        <div className="absolute inset-y-0 left-0 z-30 flex w-80 max-w-[85%] flex-col border-r border-border bg-card animate-in slide-in-from-left duration-200">
+          <div className="flex items-center justify-between border-b border-border px-5 py-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">Chat history</p>
             <button
               type="button"
               onClick={() => setShowHistory(false)}
@@ -636,10 +503,9 @@ export function StudyChat({
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-3 space-y-1.5">
+          <div className="flex-1 overflow-y-auto p-3">
             {sessions.length === 0 ? (
               <div className="py-12 text-center text-xs text-muted-foreground">
-                <MessageSquare className="size-8 mx-auto mb-2 opacity-30" />
                 No past conversations yet.
               </div>
             ) : (
@@ -649,13 +515,13 @@ export function StudyChat({
                   <div
                     key={s.id}
                     onClick={() => handleSelectSession(s)}
-                    className={`group flex items-center justify-between gap-2 rounded-xl p-3 text-left transition-all cursor-pointer ${
-                      isActive ? "bg-primary/10 text-primary border border-primary/20 font-bold" : "hover:bg-secondary text-muted-foreground hover:text-foreground"
+                    className={`group flex items-center justify-between gap-2 border-b border-border/60 px-2 py-3.5 text-left transition-colors cursor-pointer last:border-b-0 hover:bg-secondary/50 ${
+                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     <div className="min-w-0 flex-1">
-                      <p className="text-xs truncate font-medium">{s.title}</p>
-                      <p className="text-[10px] opacity-70 mt-0.5">
+                      <p className={`text-sm truncate ${isActive ? "font-display text-[15px]" : "font-medium"}`}>{s.title}</p>
+                      <p className="text-[10px] uppercase tracking-[0.14em] mt-0.5 opacity-70">
                         {new Date(s.updatedAt).toLocaleDateString([], { month: "short", day: "numeric" })} · {s.messages.length} msgs
                       </p>
                     </div>
@@ -674,25 +540,63 @@ export function StudyChat({
         </div>
       )}
 
-      {/* Main Conversation Messages */}
+      {/* Conversation */}
       <Conversation className="flex-1 overflow-y-auto">
-        <ConversationContent className="mx-auto max-w-3xl space-y-4 px-4 py-6">
+        <ConversationContent className="mx-auto flex w-full max-w-3xl flex-col gap-4 px-4 py-6 sm:px-6">
           {messages.length === 0 ? (
-            <div className="flex h-full min-h-[50vh] flex-col items-center justify-center text-center">
-              <div className="relative mb-5 flex size-16 items-center justify-center rounded-3xl bg-gradient-to-tr from-lavender via-lilac to-mint shadow-md">
-                <img src={logoMark} alt="" className="size-10 object-contain" />
-              </div>
+            <div className="w-full py-4">
+              {/* Ink hero band — matches the home page */}
+              <section className="relative overflow-hidden rounded-[28px] bg-ink px-6 py-8 text-ink-foreground sm:px-8 sm:py-10">
+                <img
+                  src={logoMark}
+                  alt=""
+                  width={512}
+                  height={512}
+                  className="pointer-events-none absolute -right-8 -top-10 size-52 opacity-10 invert"
+                />
+                <div className="relative grid gap-7 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+                  <div className="min-w-0">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-ink-foreground/10 px-3 py-1 text-xs font-semibold">
+                      <span className="size-1.5 rounded-full bg-lavender" aria-hidden />
+                      The study desk
+                    </span>
+                    <h2 className="mt-4 text-[clamp(1.9rem,4.5vw,2.8rem)] leading-[1.05]">
+                      Hi, I&apos;m <span className="display-italic">Yumna</span>
+                    </h2>
+                    <p className="mt-3 max-w-md text-sm leading-relaxed text-ink-foreground/75">
+                      Your dedicated IGCSE study tutor. Paste a problem, ask me to explain a theorem,
+                      review past paper questions — or paste any YouTube link and I&apos;ll watch it with you.
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <figure>
+                      <img
+                        src={studentDesk}
+                        alt="A student working at a library computer desk"
+                        className="aspect-[0.85] w-[130px] rounded-2xl object-cover sm:w-[150px]"
+                      />
+                      <figcaption className="mt-1.5 text-[10px] uppercase tracking-[0.16em] text-ink-foreground/50">
+                        Study desk
+                      </figcaption>
+                    </figure>
+                    <figure>
+                      <img
+                        src={studentsGrass}
+                        alt="Students sitting on the grass after class"
+                        className="aspect-[0.85] w-[130px] rounded-2xl object-cover sm:w-[150px]"
+                      />
+                      <figcaption className="mt-1.5 text-[10px] uppercase tracking-[0.16em] text-ink-foreground/50">
+                        After class
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </section>
 
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">
-                Hi, I'm Yumna!
-              </h2>
-              <p className="mt-2 max-w-md text-sm text-muted-foreground leading-relaxed">
-                Your dedicated IGCSE study tutor. Paste a problem, ask me to explain a theorem, review past paper questions — or paste any YouTube link and I'll watch it with you and teach everything! 🎬
-              </p>
-
-              {/* Quick suggestions */}
-              <div className="mt-6 flex flex-wrap justify-center gap-2">
-                {suggestions.map(({ label, Icon, isVideo }) => (
+              {/* Suggestion tiles — home quick-action style */}
+              <p className="mt-8 text-xs font-semibold uppercase tracking-wide text-muted-foreground">Try asking</p>
+              <div className="mt-3 grid gap-3 sm:grid-cols-2">
+                {suggestions.map(({ label, meta, Icon, isVideo, tone }) => (
                   <button
                     key={label}
                     type="button"
@@ -704,20 +608,41 @@ export function StudyChat({
                         void send(label);
                       }
                     }}
-                    className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-foreground/80 hover:border-primary/40 hover:bg-secondary hover:text-foreground transition-all shadow-sm"
+                    className={`group rounded-3xl ${tone} p-5 text-left transition-transform hover:-translate-y-1`}
                   >
-                    <Icon className="size-3.5 text-primary" />
-                    <span>{label}</span>
+                    <span className="flex size-10 items-center justify-center rounded-2xl bg-card">
+                      <Icon className="size-4.5" aria-hidden />
+                    </span>
+                    <strong className="mt-4 flex items-center gap-1.5 text-[15px] font-semibold">
+                      <span className="min-w-0">{label}</span>
+                      <ArrowUpRight className="size-4 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden />
+                    </strong>
+                    <span className="mt-1 block text-sm text-foreground/60">{meta}</span>
                   </button>
                 ))}
               </div>
             </div>
           ) : (
-            messages.map((m, i) => (
-              <Message key={i} from={m.role}>
-                <MessageContent className="rounded-2xl text-sm leading-relaxed">
-                  {m.role === "assistant" ? (
-                    <div className="relative group">
+            messages.map((m, i) => {
+              const mine = m.role !== "assistant";
+              return (
+                <div key={i} className={`flex items-end gap-2.5 ${mine ? "justify-end" : ""}`}>
+                  {!mine && (
+                    <span className="mb-1 flex size-7 shrink-0 items-center justify-center rounded-full bg-ink font-display text-[13px] text-ink-foreground">
+                      Y
+                    </span>
+                  )}
+                  {mine ? (
+                    <div className="flex max-w-[82%] flex-col items-end gap-2 sm:max-w-[75%]">
+                      {extractYouTubeId(m.content) && (
+                        <YouTubeVideoCard videoId={extractYouTubeId(m.content)!} />
+                      )}
+                      <div className="rounded-3xl rounded-br-md bg-ink px-4 py-3 text-sm leading-relaxed text-ink-foreground">
+                        <p className="whitespace-pre-wrap">{m.content}</p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="min-w-0 text-sm leading-relaxed">
                       <MessageResponse>{m.content}</MessageResponse>
                       <div className="mt-2 flex items-center gap-2">
                         {playingMsgIdx === i ? (
@@ -728,10 +653,10 @@ export function StudyChat({
                               setPlayingMsgIdx(null);
                               setVoiceLoadingIdx(null);
                             }}
-                            className="flex items-center gap-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 px-3 py-1 text-[11px] font-bold text-rose-500 hover:bg-rose-500/20 transition-colors"
+                            className="flex items-center gap-1.5 rounded-full bg-ink px-3 py-1 text-[11px] font-medium text-ink-foreground transition-opacity hover:opacity-90"
                           >
                             <VolumeX className="size-3.5" />
-                            <span>Stop Speaking</span>
+                            <span>Stop speaking</span>
                           </button>
                         ) : voiceLoadingIdx === i ? (
                           <button
@@ -740,11 +665,11 @@ export function StudyChat({
                               stopRealisticVoice();
                               setVoiceLoadingIdx(null);
                             }}
-                            className="flex items-center gap-1.5 rounded-full bg-primary/15 border border-primary/40 px-3 py-1 text-[11px] font-bold text-primary animate-pulse hover:bg-primary/25 cursor-pointer transition-colors"
+                            className="flex items-center gap-1.5 rounded-full border border-border px-3 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
                             title="Preparing realistic voice with Yumna... Click to cancel"
                           >
                             <Loader2 className="size-3.5 animate-spin" />
-                            <span>Preparing realistic voice...</span>
+                            <span>Preparing voice…</span>
                           </button>
                         ) : (
                           <button
@@ -766,40 +691,34 @@ export function StudyChat({
                                 },
                               });
                             }}
-                            className="flex items-center gap-1.5 rounded-full bg-secondary/80 hover:bg-secondary px-2.5 py-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground transition-colors"
+                            className="flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:bg-secondary/70 hover:text-foreground"
                           >
-                            <Volume2 className="size-3.5 text-primary" />
+                            <Volume2 className="size-3.5" />
                             <span>Listen to explanation</span>
                           </button>
                         )}
                       </div>
                     </div>
-                  ) : (
-                    <div>
-                      {extractYouTubeId(m.content) && (
-                        <YouTubeVideoCard videoId={extractYouTubeId(m.content)!} />
-                      )}
-                      <p className="whitespace-pre-wrap">{m.content}</p>
-                    </div>
                   )}
-                </MessageContent>
-              </Message>
-            ))
+                </div>
+              );
+            })
           )}
 
           {status === "submitted" && (
-            <Message from="assistant">
-              <MessageContent className="rounded-2xl">
-                <div className="flex items-center gap-2 py-1">
-                  <Loader2 className="size-3.5 animate-spin text-primary" />
-                  <Shimmer className="text-xs text-muted-foreground">Yumna is thinking and working through the steps…</Shimmer>
-                </div>
-              </MessageContent>
-            </Message>
+            <div className="flex items-end gap-2.5">
+              <span className="mb-1 flex size-7 shrink-0 items-center justify-center rounded-full bg-ink font-display text-[13px] text-ink-foreground">
+                Y
+              </span>
+              <div className="flex items-center gap-2 py-1.5">
+                <Loader2 className="size-3.5 animate-spin text-muted-foreground" />
+                <Shimmer className="text-sm text-muted-foreground">Yumna is thinking…</Shimmer>
+              </div>
+            </div>
           )}
 
           {error && (
-            <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-2.5 text-xs text-destructive">
+            <div className="rounded-2xl border border-destructive/30 bg-destructive/10 px-4 py-2.5 text-xs text-destructive">
               {error}
             </div>
           )}
@@ -807,81 +726,77 @@ export function StudyChat({
         <ConversationScrollButton />
       </Conversation>
 
-      {/* Modern, Sleek Input UI: Chat with Yumna */}
+      {/* Composer */}
       <div
         style={viewportBottomOffset > 0 ? { transform: `translateY(-${viewportBottomOffset}px)` } : undefined}
-        className={`shrink-0 border-t border-border bg-card/95 backdrop-blur transition-all duration-200 z-30 ${
-          isInputFocused
-            ? "px-2 sm:px-4 py-3 sm:py-3 shadow-2xl -translate-y-2 sm:translate-y-0 pb-4 sm:pb-3"
-            : "px-3 sm:px-4 py-2.5 sm:py-3"
-        }`}
+        className="z-30 shrink-0 border-t border-border bg-background px-4 pb-4 pt-3 transition-all duration-200 sm:px-6"
       >
         <div className="mx-auto w-full max-w-3xl">
-          {/* Attachment Preview Banner */}
+          {/* Attachment banner */}
           {attachment && (
-            <div className="mb-2 flex items-center justify-between rounded-xl bg-secondary px-3 py-1.5 text-xs text-foreground">
-              <div className="flex items-center gap-2 truncate">
-                <Paperclip className="size-3.5 text-primary" />
-                <span className="font-semibold truncate">{attachment.name}</span>
-                <span className="text-[10px] uppercase font-bold text-muted-foreground bg-card px-1.5 py-0.5 rounded">
+            <div className="mb-2 flex items-center justify-between gap-3 rounded-2xl bg-secondary px-3 py-1.5 text-xs text-foreground">
+              <span className="flex min-w-0 items-center gap-2">
+                <Paperclip className="size-3.5 shrink-0 text-muted-foreground" aria-hidden />
+                <span className="truncate font-semibold">{attachment.name}</span>
+                <span className="shrink-0 rounded bg-card px-1.5 py-0.5 text-[10px] font-bold uppercase text-muted-foreground">
                   {attachment.type}
                 </span>
-              </div>
+              </span>
               <button
                 type="button"
                 onClick={() => setAttachment(null)}
-                className="text-muted-foreground hover:text-foreground"
+                aria-label="Remove attachment"
+                className="shrink-0 text-muted-foreground transition-colors hover:text-foreground"
               >
                 <X className="size-3.5" />
               </button>
             </div>
           )}
 
-          {/* Upload Dropdown Popover */}
+          {/* Upload Popover */}
           {uploadOpen && (
-            <div className="mb-2 w-72 rounded-2xl border border-border bg-card p-2.5 shadow-2xl">
-              <p className="px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                Upload &amp; Analyze with AI
+            <div className="mb-2 w-72 rounded-3xl border border-border bg-card p-2.5 shadow-[0_20px_60px_-24px_rgba(0,0,0,0.45)]">
+              <p className="px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                Upload &amp; analyze
               </p>
-              <div className="flex flex-col gap-1 mt-1">
+              <div className="mt-1 flex flex-col">
                 <button
                   type="button"
                   onClick={() => pdfInputRef.current?.click()}
-                  className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium hover:bg-secondary text-left transition-colors"
+                  className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-xs font-medium transition-colors hover:bg-secondary/60"
                 >
-                  <FileText className="size-4 text-rose-500" />
-                  <div>
-                    <p className="font-semibold">Upload PDF Document</p>
-                    <p className="text-[10px] text-muted-foreground">Syllabus or past exam paper</p>
-                  </div>
+                  <FileText className="size-4 shrink-0 text-muted-foreground" />
+                  <span>
+                    <span className="block font-medium">PDF document</span>
+                    <span className="block text-[10px] uppercase tracking-[0.12em] text-muted-foreground">Syllabus or past exam paper</span>
+                  </span>
                 </button>
                 <button
                   type="button"
                   onClick={() => imgInputRef.current?.click()}
-                  className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium hover:bg-secondary text-left transition-colors"
+                  className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-xs font-medium transition-colors hover:bg-secondary/60"
                 >
-                  <ImageIcon className="size-4 text-emerald-500" />
-                  <div>
-                    <p className="font-semibold">Upload Image / Diagram</p>
-                    <p className="text-[10px] text-muted-foreground">Homework photo or chart</p>
-                  </div>
+                  <ImageIcon className="size-4 shrink-0 text-muted-foreground" />
+                  <span>
+                    <span className="block font-medium">Image / diagram</span>
+                    <span className="block text-[10px] uppercase tracking-[0.12em] text-muted-foreground">Homework photo or chart</span>
+                  </span>
                 </button>
                 <button
                   type="button"
                   onClick={() => docInputRef.current?.click()}
-                  className="flex items-center gap-2.5 rounded-xl px-3 py-2 text-xs font-medium hover:bg-secondary text-left transition-colors"
+                  className="flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-xs font-medium transition-colors hover:bg-secondary/60"
                 >
-                  <FileUp className="size-4 text-blue-500" />
-                  <div>
-                    <p className="font-semibold">Upload Text / Notes</p>
-                    <p className="text-[10px] text-muted-foreground">.txt or markdown notes</p>
-                  </div>
+                  <FileUp className="size-4 shrink-0 text-muted-foreground" />
+                  <span>
+                    <span className="block font-medium">Text / notes</span>
+                    <span className="block text-[10px] uppercase tracking-[0.12em] text-muted-foreground">.txt or markdown notes</span>
+                  </span>
                 </button>
               </div>
             </div>
           )}
 
-          {/* Sleek Lovable-Style Input Container (+6px height, integrated voice lighting from middle) */}
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -889,125 +804,77 @@ export function StudyChat({
               setIsInputFocused(false);
               void send(input);
             }}
-            className={`relative flex min-h-[56px] w-full items-center gap-1.5 sm:gap-2 rounded-2xl border transition-all shadow-sm ${
-              voiceMode
-                ? isSpeaking
-                  ? "border-amber-500 bg-amber-500/5 ring-2 ring-amber-500/30 px-3 sm:px-4 py-2"
-                  : "border-sky-500 bg-sky-500/5 ring-2 ring-sky-500/30 px-3 sm:px-4 py-2"
-                : isInputFocused
-                ? "border-primary bg-card ring-2 ring-primary/30 p-2 sm:p-3 shadow-md"
-                : "border-border/80 bg-card p-2 sm:p-3 focus-within:ring-2 focus-within:ring-primary/40 focus-within:border-primary"
+            className={`rounded-3xl border bg-card p-2.5 transition-colors sm:p-3 ${
+              isInputFocused ? "border-foreground/40" : "border-border"
             }`}
           >
-            {voiceMode ? (
-              // Integrated voice call interface inside the input bar itself
-              <div className="flex w-full items-center justify-between gap-3">
-                <div className="flex items-center gap-3 min-w-0">
-                  <span
-                    className={`size-3 rounded-full animate-ping shrink-0 ${
-                      isSpeaking ? "bg-amber-500" : "bg-sky-500"
-                    }`}
-                  />
-                  <div className="flex flex-col min-w-0">
-                    <span
-                      className={`text-xs font-bold truncate ${
-                        isSpeaking
-                          ? "text-amber-600 dark:text-amber-400"
-                          : "text-sky-600 dark:text-sky-400"
-                      }`}
-                    >
-                      {isSpeaking
-                        ? "Yumna is speaking (Realistic Voice)..."
-                        : isListening
-                        ? "Listening to you... speak naturally"
-                        : "Voice ready · speak or type below"}
-                    </span>
-                    <span className="text-[11px] text-muted-foreground truncate">
-                      {voiceTranscript ? `"${voiceTranscript}"` : "Speech-to-speech active · tap Stop to finish"}
-                    </span>
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  onClick={endVoiceCall}
-                  className="flex items-center gap-1.5 rounded-full bg-zinc-900 dark:bg-zinc-100 text-zinc-100 dark:text-zinc-900 px-4 py-1.5 text-xs font-bold hover:opacity-90 transition-opacity shrink-0 shadow-sm"
-                >
-                  <span>••• Stop</span>
-                </button>
-              </div>
-            ) : (
-              // Standard Lovable-style input
-              <>
-                {/* Attachment Button (Only shown in full chat, removed in mini chat) */}
+            <textarea
+              ref={inputRef}
+              rows={2}
+              value={input}
+              onFocus={() => setIsInputFocused(true)}
+              onBlur={() => setIsInputFocused(false)}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  inputRef.current?.blur();
+                  setIsInputFocused(false);
+                  void send(input);
+                }
+              }}
+              placeholder="Ask Yumna anything… (paste a question, formula, or link)"
+              className="max-h-40 w-full resize-none bg-transparent px-2 py-1.5 text-[15px] leading-relaxed text-foreground outline-none placeholder:text-muted-foreground"
+            />
+            <div className="mt-1 flex items-center justify-between">
+              <div className="flex items-center gap-1">
                 {!isMini && (
                   <button
                     type="button"
                     onClick={() => setUploadOpen((v) => !v)}
-                    className="flex size-9 shrink-0 items-center justify-center rounded-xl text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
                     title="Upload file or image"
+                    className={`flex size-9 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-secondary ${
+                      uploadOpen ? "bg-secondary text-foreground" : "text-muted-foreground hover:text-foreground"
+                    }`}
                   >
                     <Plus className="size-4" />
                   </button>
                 )}
-
-                {/* Input Textarea */}
-                <textarea
-                  ref={inputRef}
-                  rows={1}
-                  value={input}
-                  onFocus={() => setIsInputFocused(true)}
-                  onBlur={() => setIsInputFocused(false)}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && !e.shiftKey) {
-                      e.preventDefault();
-                      inputRef.current?.blur();
-                      setIsInputFocused(false);
-                      void send(input);
-                    }
-                  }}
-                  placeholder="Ask Yumna anything... (Paste questions, formulas, or homework)"
-                  className="flex-1 min-w-0 bg-transparent px-2 sm:px-2.5 py-1.5 text-base sm:text-sm text-foreground placeholder:text-muted-foreground outline-none resize-none max-h-32 leading-relaxed"
-                />
-
-                {/* Dictation Mic Button (Speech-to-Text strictly for input dictation) */}
                 <button
                   type="button"
                   onClick={toggleDictation}
-                  className={`flex size-9 shrink-0 items-center justify-center rounded-xl transition-all ${
-                    isDictating
-                      ? "bg-rose-500/20 text-rose-500 animate-pulse border border-rose-500/40"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                  }`}
                   title={isDictating ? "Stop Dictation" : "Dictate with voice"}
+                  className={`flex h-9 items-center gap-1.5 rounded-full px-3 text-xs font-medium transition-colors ${
+                    isDictating
+                      ? "bg-lavender text-ink-foreground"
+                      : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                  }`}
                 >
                   <Mic className="size-4" />
+                  <span className="hidden sm:inline">{isDictating ? "Listening…" : "Dictate"}</span>
                 </button>
-
-                {/* Send Button */}
-                <button
-                  type="submit"
-                  onClick={() => {
-                    inputRef.current?.blur();
-                    setIsInputFocused(false);
-                  }}
-                  disabled={!input.trim() && !attachment}
-                  className={`flex size-9 shrink-0 items-center justify-center rounded-xl transition-all ${
-                    input.trim() || attachment
-                      ? "bg-ink text-ink-foreground shadow hover:opacity-90 cursor-pointer"
-                      : "bg-secondary text-muted-foreground cursor-not-allowed opacity-50"
-                  }`}
-                  title="Send message"
-                >
-                  <ArrowUp className="size-4" />
-                </button>
-              </>
-            )}
+              </div>
+              <button
+                type="submit"
+                onClick={() => {
+                  inputRef.current?.blur();
+                  setIsInputFocused(false);
+                }}
+                disabled={!input.trim() && !attachment}
+                title="Send message"
+                className={`flex size-9 shrink-0 items-center justify-center rounded-full transition-all ${
+                  input.trim() || attachment
+                    ? "cursor-pointer bg-ink text-ink-foreground hover:opacity-90"
+                    : "cursor-not-allowed bg-secondary text-muted-foreground opacity-50"
+                }`}
+              >
+                <ArrowUp className="size-4" />
+              </button>
+            </div>
           </form>
 
-          <p className="mt-1.5 text-center text-[11px] text-muted-foreground hidden sm:block">
-            Press <kbd className="font-sans px-1 rounded bg-secondary">Enter</kbd> to send · <kbd className="font-sans px-1 rounded bg-secondary">Shift+Enter</kbd> for new line
+          <p className="mt-1.5 hidden text-center text-[11px] text-muted-foreground sm:block">
+            Press <kbd className="rounded bg-secondary px-1 font-sans">Enter</kbd> to send · <kbd className="rounded bg-secondary px-1 font-sans">Shift+Enter</kbd> for new line
           </p>
         </div>
       </div>

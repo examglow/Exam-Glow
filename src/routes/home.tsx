@@ -4,17 +4,12 @@ import {
   ArrowRight,
   ArrowUpRight,
   BookOpen,
-  CalendarDays,
   CheckCircle2,
   ClipboardCheck,
   Clock3,
-  Flame,
-  Layers,
-  MessageCircle,
-  Bot,
-  Plus,
   FileText,
-  GraduationCap,
+  MessageCircle,
+  Plus,
 } from "lucide-react";
 
 import { DashboardSidebar } from "@/components/dashboard-sidebar";
@@ -23,7 +18,6 @@ import {
   readProfile,
   type OnboardingProfile,
 } from "@/lib/onboarding";
-import logoMark from "@/assets/logo-mark.png";
 
 export const Route = createFileRoute("/home")({
   head: () => ({
@@ -47,10 +41,10 @@ export const Route = createFileRoute("/home")({
 });
 
 const quickActions = [
-  { title: "Ask the tutor", meta: "Instant explanations & quiz", to: "/chat", Icon: MessageCircle, tone: "bg-lilac" },
-  { title: "Quizzes & Tests", meta: "Topical practice & mocks", to: "/test", Icon: ClipboardCheck, tone: "bg-lavender" },
-  { title: "My Notes", meta: "Write & edit rich notes", to: "/notes", Icon: FileText, tone: "bg-mint" },
-  { title: "Syllabus Notes", meta: "Full syllabus chapters", to: "/syllabus-notes", Icon: BookOpen, tone: "bg-surface" },
+  { title: "Ask the tutor", meta: "Instant explanations & quiz", to: "/chat", Icon: MessageCircle },
+  { title: "Quizzes & Tests", meta: "Topical practice & mocks", to: "/test", Icon: ClipboardCheck },
+  { title: "My Notes", meta: "Write & edit rich notes", to: "/notes", Icon: FileText },
+  { title: "Syllabus Notes", meta: "Full syllabus chapters", to: "/syllabus-notes", Icon: BookOpen },
 ] as const;
 
 type StudyTask = {
@@ -139,119 +133,119 @@ export function HomePage() {
       <DashboardSidebar />
       <main className="min-w-0 flex-1 overflow-y-auto">
         <div className="mx-auto max-w-[1180px] px-5 pb-24 pt-20 md:px-8 md:pt-10 lg:px-12">
-          <header className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
-            <div className="min-w-0">
-              <p className="text-sm font-medium text-muted-foreground">{todayFormatted}</p>
-              <h1 className="mt-1 truncate text-[clamp(2rem,4vw,3.25rem)] leading-tight">
-                Good to see you, <span className="display-italic">{firstName}</span>
-              </h1>
-            </div>
-            <ProfileAvatar className="mt-1" />
+          {/* Dateline */}
+          <header className="flex items-center gap-5">
+            <p className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+              {todayFormatted}
+            </p>
+            <span className="h-px min-w-0 flex-1 bg-border" aria-hidden />
+            <ProfileAvatar className="shrink-0" />
           </header>
 
-          <section className="mt-7 grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
-            <div className="relative overflow-hidden rounded-[28px] bg-ink px-7 py-8 text-ink-foreground">
-              <img
-                src={logoMark}
-                alt=""
-                width={512}
-                height={512}
-                className="pointer-events-none absolute -right-8 -top-10 size-52 opacity-10 invert"
-              />
-              <span className="inline-flex items-center gap-2 rounded-full bg-ink-foreground/10 px-3 py-1 text-xs font-semibold">
-                Today's focus
-              </span>
-              <h2 className="mt-4 max-w-md text-[clamp(1.7rem,3vw,2.4rem)] leading-tight font-bold">
-                {focusTitle}
-              </h2>
-              <p className="mt-3 max-w-md text-sm text-ink-foreground/75 leading-relaxed">
-                All chapters, notes, diagrams, and unlimited AI tutoring — 100% free, no subscription needed.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <Link
-                  to="/syllabus-notes"
-                  className="inline-flex items-center gap-2 rounded-full bg-ink-foreground px-5 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
-                >
-                  Continue syllabus notes <ArrowRight className="size-4" aria-hidden />
-                </Link>
-                <Link
-                  to="/notes"
-                  className="inline-flex items-center gap-2 rounded-full border border-ink-foreground/25 px-5 py-3 text-sm font-medium hover:bg-ink-foreground/10"
-                >
-                  Open my notes
-                </Link>
-              </div>
+          {/* Masthead */}
+          <h1 className="mt-7 max-w-4xl text-[clamp(2.6rem,6.5vw,4.5rem)] leading-[1.02]">
+            Good to see you, <span className="display-italic">{firstName}</span>
+          </h1>
+
+          {/* Hero band */}
+          <section className="mt-9 overflow-hidden rounded-[30px] bg-ink px-7 py-10 text-ink-foreground sm:px-11 sm:py-12">
+            <p className="flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-foreground/60">
+              <span className="size-1.5 rounded-full bg-lavender" aria-hidden />
+              Today&apos;s focus
+            </p>
+            <h2 className="mt-5 max-w-2xl text-[clamp(2.1rem,4.6vw,3.4rem)] leading-[1.04]">
+              {focusTitle}
+            </h2>
+            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-ink-foreground/65">
+              All chapters, notes, diagrams, and unlimited AI tutoring — free, no subscription needed.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link
+                to="/syllabus-notes"
+                className="inline-flex items-center gap-2 rounded-full bg-ink-foreground px-6 py-3 text-sm font-medium text-ink transition-transform hover:-translate-y-0.5"
+              >
+                Continue syllabus notes <ArrowRight className="size-4" aria-hidden />
+              </Link>
+              <Link
+                to="/notes"
+                className="inline-flex items-center gap-2 rounded-full border border-ink-foreground/25 px-6 py-3 text-sm font-medium hover:bg-ink-foreground/10"
+              >
+                Open my notes
+              </Link>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <Stat
-                value="All Open"
-                label="Syllabus Access"
-              />
-              <Stat
-                value={notesCount.toString()}
-                label="Personal Notes"
-                icon={<FileText className="size-4 text-lavender" />}
-              />
-              <Stat
-                value={profile.streakDays ? `${profile.streakDays}d` : "Active"}
+            {/* Typographic stat line */}
+            <div className="mt-11 grid grid-cols-2 gap-y-8 border-t border-ink-foreground/15 pt-8 sm:grid-cols-4">
+              <BandStat value="All Open" label="Syllabus Access" />
+              <BandStat value={notesCount.toString()} label="Personal Notes" divider />
+              <BandStat
+                value={profile.streakDays ? `${profile.streakDays} days` : "Active"}
                 label="Study Consistency"
-                icon={<Flame className="size-4 text-lavender" aria-hidden />}
+                divider
               />
-              <Stat
-                value="Unlimited"
-                label="AI Tutor"
-                icon={<Bot className="size-4 text-emerald-500" />}
-              />
+              <BandStat value="Unlimited" label="AI Tutor" divider />
             </div>
           </section>
 
-          <section className="mt-10">
-            <h2 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Quick actions</h2>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-              {quickActions.map(({ title, meta, to, Icon, tone }) => (
+          {/* The index */}
+          <section className="mt-16">
+            <div className="flex items-center gap-5">
+              <p className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Quick actions
+              </p>
+              <span className="h-px min-w-0 flex-1 bg-border" aria-hidden />
+            </div>
+
+            <div className="mt-2">
+              {quickActions.map(({ title, meta, to }, i) => (
                 <Link
                   key={title}
                   to={to}
-                  className={`group rounded-3xl ${tone} p-5 transition-transform hover:-translate-y-1`}
+                  className="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-center gap-3 border-t border-border/70 py-6 sm:gap-6"
                 >
-                  <span className="flex size-10 items-center justify-center rounded-2xl bg-card">
-                    <Icon className="size-4.5" aria-hidden />
+                  <span className="text-xs font-semibold tabular-nums tracking-[0.18em] text-muted-foreground">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
-                  <strong className="mt-4 flex items-center gap-1.5 text-[15px] font-semibold">
-                    <span className="min-w-0 truncate">{title}</span>
-                    <ArrowUpRight className="size-4 shrink-0 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden />
-                  </strong>
-                  <span className="mt-1 block text-sm text-foreground/60">{meta}</span>
+                  <span className="min-w-0 truncate font-display text-[clamp(1.4rem,2.8vw,1.9rem)] leading-none">
+                    {title}
+                  </span>
+                  <span className="hidden min-w-0 text-right text-sm text-muted-foreground md:block">
+                    {meta}
+                  </span>
+                  <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" aria-hidden />
                 </Link>
               ))}
+              <span className="block h-px bg-border/70" aria-hidden />
             </div>
           </section>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.75fr)]">
+          {/* Goals + milestone */}
+          <div className="mt-16 grid gap-12 lg:grid-cols-[minmax(0,1.45fr)_minmax(280px,0.75fr)]">
             <section>
               <div className="flex items-end justify-between gap-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Today's Goals</p>
-                  <h2 className="mt-1 text-3xl font-bold">Your study checklist</h2>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                    Today&apos;s goals
+                  </p>
+                  <h2 className="mt-2 text-[clamp(1.8rem,3vw,2.3rem)] leading-tight">Your study checklist</h2>
                 </div>
                 {tasks.length > 0 && (
-                  <span className="text-sm font-medium text-muted-foreground">
-                    {completedTasks} of {tasks.length} completed
+                  <span className="text-sm text-muted-foreground">
+                    {completedTasks} of {tasks.length}
                   </span>
                 )}
               </div>
               {tasks.length > 0 && (
-                <div className="mt-4 h-2 overflow-hidden rounded-full bg-secondary">
+                <div className="mt-4 h-px bg-border">
                   <div
-                    className="h-full rounded-full bg-lavender transition-all duration-300"
+                    className="h-px bg-ink transition-all duration-300"
                     style={{ width: `${(completedTasks / tasks.length) * 100}%` }}
                   />
                 </div>
               )}
 
               {/* Add task */}
-              <div className="mt-4 flex items-center gap-2 rounded-3xl border border-border bg-card px-3 py-2.5">
+              <div className="mt-6 flex items-center gap-3 border-b border-border pb-2.5">
                 <Plus className="size-4 shrink-0 text-muted-foreground" aria-hidden />
                 <input
                   type="text"
@@ -265,32 +259,29 @@ export function HomePage() {
                   type="button"
                   onClick={addTask}
                   disabled={!newTask.trim()}
-                  className="shrink-0 rounded-full bg-ink px-4 py-2 text-xs font-semibold text-ink-foreground transition-opacity hover:opacity-90 disabled:opacity-40"
+                  className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.18em] text-ink transition-opacity hover:opacity-60 disabled:opacity-30"
                 >
                   Add
                 </button>
               </div>
 
               {tasks.length === 0 ? (
-                <div className="mt-4 rounded-3xl border border-dashed border-border px-6 py-10 text-center">
-                  <p className="text-sm font-medium text-foreground">No goals yet</p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Add your first study goal above and start tracking today's progress.
-                  </p>
-                </div>
+                <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+                  No goals yet — add your first study goal above and start tracking today&apos;s progress.
+                </p>
               ) : (
-                <div className="mt-4 divide-y divide-border rounded-3xl border border-border px-5 bg-card">
+                <div>
                   {tasks.map((task) => (
                     <button
                       key={task.id}
                       type="button"
                       onClick={() => toggleTask(task.id)}
-                      className="grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 py-4 text-left hover:bg-secondary/40 rounded-2xl px-2 transition-colors"
+                      className="grid w-full grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 border-b border-border/70 py-4 text-left"
                     >
                       {task.done ? (
                         <CheckCircle2 className="size-5 shrink-0 text-lavender" />
                       ) : (
-                        <span className="size-5 shrink-0 rounded-full border-2 border-muted-foreground/40" />
+                        <span className="size-4 shrink-0 rounded-full border border-muted-foreground/50" />
                       )}
                       <span
                         className={`min-w-0 truncate text-[15px] ${
@@ -310,31 +301,32 @@ export function HomePage() {
             </section>
 
             <section>
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Upcoming Milestone</p>
-              <h2 className="mt-1 text-3xl font-bold">Next checkpoint</h2>
-              <div className="mt-4 rounded-3xl border border-border p-6 bg-card">
-                <div className="flex items-center gap-3">
-                  <CalendarDays className="size-5 text-lavender" />
-                  <span className="text-sm font-semibold">{nextTargetDay}</span>
-                </div>
-                <p className="mt-3 font-semibold text-foreground">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+                Upcoming milestone
+              </p>
+              <h2 className="mt-2 text-[clamp(1.8rem,3vw,2.3rem)] leading-tight">Next checkpoint</h2>
+              <div className="mt-5 border-t border-border pt-5">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  {nextTargetDay}
+                </p>
+                <p className="mt-2.5 font-display text-xl leading-snug">
                   {profile.goal ? `${profile.goal} Mock Assessment` : "IGCSE Mock Test"}
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   Prepare by testing past questions and reviewing your formula flashcards.
                 </p>
                 <Link
                   to="/test"
-                  className="mt-5 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-xs font-semibold text-ink-foreground transition-transform hover:-translate-y-0.5"
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-foreground underline decoration-border decoration-1 underline-offset-8 transition-colors hover:decoration-foreground"
                 >
-                  Open Quizzes &amp; Tests <ArrowRight className="size-3.5" />
+                  Open Quizzes &amp; Tests <ArrowRight className="size-4" />
                 </Link>
               </div>
               <Link
                 to="/calendar"
-                className="mt-3 flex items-center justify-between rounded-3xl bg-surface px-5 py-4 text-sm font-medium hover:bg-secondary transition-colors"
+                className="mt-6 flex items-center justify-between border-t border-border pt-5 text-sm font-medium hover:text-foreground/70"
               >
-                View full revision calendar <ArrowRight className="size-4" />
+                Full revision calendar <ArrowRight className="size-4 text-muted-foreground" />
               </Link>
             </section>
           </div>
@@ -344,14 +336,11 @@ export function HomePage() {
   );
 }
 
-function Stat({ value, label, icon }: { value: string; label: string; icon?: React.ReactNode }) {
+function BandStat({ value, label, divider }: { value: string; label: string; divider?: boolean }) {
   return (
-    <div className="rounded-3xl border border-border bg-card px-5 py-6">
-      <div className="flex items-center gap-2">
-        <strong className="font-display text-2xl font-normal text-foreground sm:text-3xl">{value}</strong>
-        {icon}
-      </div>
-      <span className="mt-1 block text-xs text-muted-foreground sm:text-sm">{label}</span>
+    <div className={divider ? "sm:border-l sm:border-ink-foreground/15 sm:pl-6" : ""}>
+      <strong className="block font-display text-[clamp(1.5rem,2.4vw,1.9rem)] font-normal leading-none">{value}</strong>
+      <span className="mt-2 block text-[11px] uppercase tracking-[0.16em] text-ink-foreground/55">{label}</span>
     </div>
   );
 }
