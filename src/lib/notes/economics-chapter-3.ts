@@ -3,7 +3,7 @@ import { imagePanel } from "./image-panel";
 
 const IMG = "/notes/economics";
 
-const panelA = imagePanel(IMG, [
+const panelMoney = imagePanel(IMG, [
   {
     src: "econ3-money-coins.webp",
     alt: "Banknotes and coins of several different denominations arranged on a shop counter beside a cash register, in warm indoor light",
@@ -16,12 +16,15 @@ const panelA = imagePanel(IMG, [
   },
 ]);
 
-const panelB = imagePanel(IMG, [
+const panelHousehold = imagePanel(IMG, [
   {
     src: "econ3-household-budget.webp",
     alt: "A kitchen table with an open budget notebook, a pile of receipts, a calculator and envelopes for different household spending categories",
     caption: "Income, interest, confidence, age, culture",
   },
+]);
+
+const panelLabour = imagePanel(IMG, [
   {
     src: "econ3-job-board.webp",
     alt: "A wall of printed vacancy cards at a jobs fair, with several people standing reading them and one holding a folder of applications",
@@ -29,12 +32,15 @@ const panelB = imagePanel(IMG, [
   },
 ]);
 
-const panelC = imagePanel(IMG, [
+const panelProduction = imagePanel(IMG, [
   {
     src: "econ3-assembly-line.webp",
     alt: "A factory assembly line where each worker performs one small repeated task along a moving belt, machines and tools arranged in a long row",
     caption: "Specialisation lifts output per worker",
   },
+]);
+
+const panelMonopoly = imagePanel(IMG, [
   {
     src: "econ3-utility-office.webp",
     alt: "A single long queue of customers at the counter of a large public utility office, with one uniformed clerk serving and a waiting bench behind",
@@ -48,93 +54,164 @@ const chapterThree: Chapter = {
   intro: `The syllabus teaches the microeconomy through the people who make it run: **banks, households, workers and firms**. Every sub-topic is a decision, so the reliable answer structure is *who decides, on what grounds, and what happens next*.\n\nCosts and revenue here are the only place in the paper where a wrong arithmetic step is unarguable — so learn the formulas exactly.`,
   subheadings: [
     {
-      title: "Money, Banking and Households",
+      title: "3.1 Money and banking",
       body: `### What Money Does
 
-**Money** is anything **generally accepted as a means of payment**. It has four **functions**: **medium of exchange** (it buys things), **unit of account** (it measures value so prices can be compared), **store of value** (it holds purchasing power over time), and **standard of deferred payment** (it settles debts). Its **characteristics**: generally accepted, **divisible**, **portable**, **durable**, **limited in supply**, and **stable in value**.
+**Money** is anything **generally accepted as a means of payment**. Its four **functions** are **medium of exchange** (it buys things), **unit of account** (it measures value so prices can be compared), **store of value** (it holds purchasing power over time), and **standard of deferred payment** (it settles debts).
 
-Its **forms** have changed with trust: **commodity money** such as gold, silver or shells, then **coins and paper currency** whose value comes from legal acceptance rather than the metal, and finally **bank deposits** — the electronic balances moved by cards and transfers, which make up most of the money people actually spend.
+Its **characteristics**: generally accepted, **divisible**, **portable**, **durable**, **limited in supply**, and **stable in value**.
 
-**Barter** fails because it needs a **double coincidence of wants** — each side must want what the other has. That single sentence is the answer to most barter questions.
+Its **forms** changed with trust: **commodity money** such as gold, silver or shells; then **coins and paper currency**, whose value comes from legal acceptance rather than the metal; and finally **bank deposits** — the electronic balances moved by cards and transfers, which are most of the money people actually spend.
 
-Money is created and controlled by two kinds of bank. The **central bank** issues currency, **banks the banks**, sets monetary policy, holds foreign reserves and looks after the government's finances. **Commercial banks** take deposits from the public, lend them out at higher rates, and provide payment services — their importance is that they **channel savings into investment**.`,
-      figure: panelA,
+**Barter** fails because it needs a **double coincidence of wants** — each side must want what the other has. That one sentence answers most barter questions.`,
+      figure: panelMoney,
       groups: [
         {
-          subTitle: "What moves household spending, saving and borrowing",
+          subTitle: "The two kinds of bank",
           bullets: [
-            "**Income** — higher disposable income raises spending and usually saving; the extra amount spent is the **marginal propensity to consume**.",
-            "**Rate of interest** — a rise **encourages saving** and **discourages borrowing**, so spending falls; a fall does the reverse.",
-            "**Confidence** — if households expect jobs and incomes to be safe they spend and borrow; fear of unemployment raises precautionary saving.",
-            "**Age** — younger households borrow, middle-aged save most, retirees draw savings down. **Culture** — habits and religion change the saving rate; some cultures avoid interest-based borrowing.",
-            "Households are **consumers, savers, borrowers and workers** at once, so an interest-rate change hits them from several directions — the link into Topic 4.",
+            "The **central bank** issues currency, **banks the banks**, sets monetary policy, holds the country's foreign exchange reserves, and manages the government's finances. Its importance is control of the money supply and stability of the banking system.",
+            "**Commercial banks** take deposits from households and firms, lend those deposits out at higher rates, and provide payment services. Their importance is that they **channel savings into investment**.",
+            "**Deposit-taking plus lending** is how a commercial bank earns: the gap between the interest it pays and the interest it charges is its margin.",
+            "**Trap:** the central bank is not anyone's ordinary bank. A question about your savings account means a **commercial** bank.",
           ],
         },
       ],
     },
     {
-      title: "Workers, Wages and Mobility",
+      title: "3.2 Households",
+      body: `### Spend It, Save It, Borrow It
+
+A **household** is a consumer, a saver, a borrower and a worker all at once, so one change in the economy hits it from several directions.
+
+**Spending** rises with income; the extra amount spent from an extra dollar of income is the **marginal propensity to consume**. **Saving** is income not spent, and **borrowing** is spending paid for out of future income.`,
+      figure: panelHousehold,
+      groups: [
+        {
+          subTitle: "The five influences the syllabus names",
+          bullets: [
+            "**Income** — higher disposable income raises spending and usually saving; a fall cuts both, and saving can turn negative.",
+            "**Rate of interest** — a rise **encourages saving** and **discourages borrowing**, so spending falls; a fall does the reverse.",
+            "**Confidence** — if households expect jobs and incomes to be safe they spend and borrow; fear of unemployment raises **precautionary saving**.",
+            "**Age** — younger households borrow, middle-aged households save most for pensions and housing, and retirees draw savings down.",
+            "**Culture** — habits, religion and family structure change the saving rate, and some cultures avoid interest-based borrowing altogether.",
+            "Interest-rate sensitivity differs by position: a household in **debt** gains from a fall, a household with **savings** loses, and most households hold both.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "3.3 Workers",
       body: `### Choosing and Pricing Labour
 
-Choice of occupation depends on **wage factors** (pay, bonus, overtime, fringe benefits, job security) and **non-wage factors** (working conditions, hours, location, training on offer, job satisfaction, prestige, dress, risk, and how far you must commute).
+Choice of **occupation** depends on **wage factors** (pay, bonuses, overtime, fringe benefits, job security) and **non-wage factors** (working conditions, hours, location, training on offer, job satisfaction, prestige, dress, risk and the commute).
 
-**Wage determination** is demand for labour meeting supply of labour. Labour demand is a **derived demand** — firms want workers only because customers want the firm's output, so anything that raises product demand raises labour demand. Bargaining power of **trade unions**, and government policy including the **national minimum wage (NMW)**, both shift the outcome; a diagram with the NMW drawn **above** the equilibrium wage shows unemployment, and **below** it shows no effect at all.
+**Wage determination** is the demand for labour meeting the supply of labour. Labour demand is a **derived demand** — firms want workers only because customers want the firm's output — so anything that raises product demand raises labour demand.
 
-**Division of labour** is the splitting of production into separate tasks, each done by a different worker.`,
-      figure: panelB,
+**Trade unions** raise the bargaining power of workers, and **government policy**, including the **national minimum wage (NMW)**, sets a floor under the outcome.`,
+      figure: panelLabour,
       groups: [
         {
-          subTitle: "Why wages differ, and what mobility means",
+          subTitle: "Wage diagrams, wage differences and mobility",
           bullets: [
-            "Wage differences come from **demand for and supply of that type of labour**, **relative bargaining strength**, **skill level** (a doctor against a shelf-stacker), **sector** (primary, secondary, tertiary), **public versus private employment**, **discrimination** such as male/female pay gaps, and **government policy**.",
-            "**Occupational mobility** = moving between occupations; **geographical mobility** = moving between places. Training, vacancy information, housing and cheap travel raise them; specialised skills, high local house prices, family ties and language barriers lower them.",
-            "High mobility lets labour respond to wage signals, so supply shifts faster and wage gaps narrow; low mobility keeps structural unemployment alive.",
-            "**Division of labour advantages**: higher output per worker, faster production, greater dexterity, and machinery easier to design. **Disadvantages**: boredom, loss of craft variety, dependence on others in the chain, and workers easily replaced.",
+            "On the labour-market diagram, the **NMW drawn above equilibrium creates unemployment**; drawn **below** equilibrium it has no effect at all. That single sentence decides several marks.",
+            "Higher product demand, better labour productivity, or a rise in the price of a substitute factor shifts **labour demand right** and raises wages and employment.",
+            "Reasons wages differ: **demand for and supply of that type of labour**, **relative bargaining strength**, **skill level**, **sector worked in** (primary, secondary, tertiary), **public versus private employment**, **discrimination** such as the male-female pay gap, and **government policy**.",
+            "**Occupational mobility** is moving between jobs; **geographical mobility** is moving between places. Training, vacancy information, affordable housing and cheap travel raise them; specialised skills, high local house prices, family ties and language barriers lower them.",
+            "High mobility lets labour respond to wage signals, so supply adjusts quickly and wage gaps narrow. Low mobility keeps **structural unemployment** alive — the link into Topic 4.",
+            "**Division of labour** is splitting production into separate tasks, each done by a different worker. **Advantages**: higher output per worker, faster production, greater dexterity, machinery easier to design. **Disadvantages**: boredom, loss of craft variety, dependence on others in the chain, and workers who are easily replaced.",
           ],
         },
       ],
     },
     {
-      title: "Firms, Production, Costs and Markets",
-      body: `### From Sector to Scale
+      title: "3.4 Firms",
+      body: `### Size, Sectors and Mergers
 
-Firms sit in the **primary** sector (extracting raw materials: farming, fishing, mining), **secondary** (manufacturing and construction) or **tertiary** (services: retail, banking, transport, tourism). They belong to the **private sector** (owned by individuals for profit) or the **public sector** (owned by the state to serve the public).
+Firms sit in the **primary sector** (extracting raw materials: farming, fishing, mining), the **secondary sector** (manufacturing and construction) or the **tertiary sector** (services: retail, banking, transport, tourism). They belong to the **private sector** (owned by individuals for profit) or the **public sector** (owned by the state to serve the public).
 
-**Mergers**: **horizontal** (same stage, e.g. two similar firms), **vertical forward** (towards the customer) or **vertical backward** (towards the supplier), and **conglomerate** (unrelated industries). Advantages: growth, economies of scale, market power, security of supply. Disadvantages: less competition, job losses, possible monopoly, and integration problems.
-
-**Economies of scale** cut average cost as the firm grows — **internal** ones (purchasing, technical, financial, marketing, managerial, risk-bearing) belong to the firm; **external** ones (skilled local labour pools, better infrastructure, supplier clusters) belong to the industry. **Diseconomies of scale** raise average cost when a firm gets too big: **poor communication, bureaucracy, coordination problems, low morale and alienation**.`,
-      figure: panelC,
+A **merger** is two firms combining: **horizontal** (same stage, two rivals), **vertical forward** (towards the customer), **vertical backward** (towards the supplier), and **conglomerate** (unrelated industries).`,
       groups: [
         {
-          subTitle: "Small firms versus large firms",
+          subTitle: "Small firms, large firms and scale",
           bullets: [
-            "**Small firms** give the owner independence and close customer contact, start with little capital and adapt quickly. Their limits: **higher average costs**, difficulty borrowing, no spare staff for illness, and the owner carrying the risk alone.",
-            "**Large firms** spread fixed costs over huge output, borrow more cheaply, employ specialists and can absorb a bad year. Their limits: **bureaucracy**, slow decisions, communication problems and the risk of diseconomies of scale.",
-            "Size is not the same as efficiency. The examinable question is **which costs fall and which rise** as the firm grows, and that is the ATC curve in Topic 2 terms.",
+            "**Small firms**: owner independence, close customer contact, low start-up cost and quick adaptation. Their limits are **higher average costs**, hard borrowing, no spare staff for illness, and one person carrying the risk.",
+            "**Large firms**: fixed costs spread over huge output, cheaper borrowing, specialists on staff, and a bad year absorbed. Their limits are **bureaucracy**, slow decisions, communication problems and diseconomies of scale.",
+            "**Merger advantages**: growth, economies of scale, market power, security of supply. **Disadvantages**: less competition, job losses, a possible monopoly, and integration problems.",
+            "**Internal economies of scale** belong to the firm: purchasing, technical, financial, marketing, managerial and risk-bearing. **External economies** belong to the industry: a skilled local labour pool, better infrastructure, supplier clusters.",
+            "**Diseconomies of scale** raise average cost when a firm grows too big: poor communication, bureaucracy, coordination problems, low morale and alienation.",
+            "The **average total cost (ATC) diagram is required** here: output on the horizontal axis, cost per unit on the vertical, one U-shaped curve, with the falling part labelled economies of scale and the rising part diseconomies.",
+            "**Trap:** size is not efficiency. The examinable question is **which costs fall and which rise** as output grows.",
           ],
         },
+      ],
+    },
+    {
+      title: "3.5 Firms and production",
+      body: `### Labour, Machines and Output per Worker
+
+The **demand for a factor of production** depends on the **demand for the product**, the **price of the other factors**, their **availability**, and their **productivity**. It is derived demand again: a boom in coffee sells more pickers.
+
+**Labour-intensive** production uses more workers than machines. **Capital-intensive** production uses more machines than workers.`,
+      figure: panelProduction,
+      groups: [
         {
-          subTitle: "Production, costs, revenue and objectives",
+          subTitle: "Choosing a method, and what productivity means",
           bullets: [
-            "The **demand for a factor of production** depends on the **demand for the product**, the **price of other factors**, their **availability** and their **productivity** — again, derived demand.",
-            "**Labour-intensive** production uses more workers than machines — chosen when labour is cheap, flexible or skilled and output is bespoke. **Capital-intensive** uses more machines — chosen when labour is scarce or expensive, quality must be consistent, or volume is huge.",
-            "**Production** is total output; **productivity** is output per unit of input, usually **output per worker per hour**. Investment in better machines and training raises productivity.",
-            "**TC = FC + VC.** **AFC = FC / output**, **AVC = VC / output**, **ATC = TC / output**, and **ATC = AFC + AVC**. Fixed costs (rent, salaries, insurance) do not vary with output; variable costs (raw materials, hourly wages, energy) do.",
-            "Work one, in dollars: fixed costs **1200**, variable cost **800** at **100 units**. Then **TC = 2000, AFC = 12, AVC = 8, ATC = 20**. At **200 units** variable cost is 1400, so **TC = 2600, AFC = 6, AVC = 7, ATC = 13** — the same fixed cost spread over twice the output.",
-            "**TR = price x quantity**, and **AR = TR / output**, which equals the price. Profit is **TR minus TC**. Selling 200 units at 15 dollars gives TR 3000 against TC 2600, so the firm makes a **profit of 400**. Rising sales raise TR only if demand is not perfectly elastic.",
-            "Firm **objectives**: **survival** (short-run, during a slump), **profit maximisation**, **growth** (market share), and **social welfare** (co-operatives, community businesses). The objective chosen changes the pricing decision.",
-            "**Competitive markets** have many firms, low barriers to entry, and rivalry on price and quality: consumers gain choice and lower prices, but firms earn thin profits and may lack funds for research. **Monopoly** is one dominant supplier that can raise price and restrict output, earning supernormal profit with less incentive to innovate. The syllabus does **not** require perfect-competition diagrams for either.",
+            "Choose **labour-intensive** when labour is cheap, flexible or highly skilled, output is bespoke, and capital is scarce or expensive.",
+            "**Advantages**: low start-up cost, jobs created, personal service and easy flexibility in volume. **Disadvantages**: slower output, human error, and wages rising with the minimum wage.",
+            "Choose **capital-intensive** when labour is scarce or costly, quality must be identical every time, or the volume needed is enormous.",
+            "**Advantages**: huge output, consistency, no shifts or breaks, and safety in dangerous work. **Disadvantages**: heavy up-front cost, redundancy of workers, and inflexibility if demand shifts.",
+            "**Production** is total output. **Productivity** is output per unit of input, usually **output per worker per hour**. A firm that doubles its workers and doubles its output has flat productivity.",
+            "**Influences on productivity**: training, health, better machines, technology, motivation and the division of labour.",
+            "**Investment** in new machinery and training raises productivity and shifts the PPC outward; **depreciation** and neglected maintenance pull it back.",
           ],
         },
+      ],
+    },
+    {
+      title: "3.6 Firms' costs, revenue and objectives",
+      body: `### The Arithmetic of a Firm
+
+**Fixed costs (FC)** do not vary with output — rent, salaried wages, insurance. **Variable costs (VC)** do — raw materials, hourly labour, energy. **Total cost** is **TC = FC + VC**.
+
+**AFC = FC / output**, **AVC = VC / output**, **ATC = TC / output**, and **ATC = AFC + AVC**.
+
+On the revenue side, **total revenue is TR = price x quantity**, and **average revenue is AR = TR / output**, which is simply the price. Profit is **TR minus TC**.`,
+      groups: [
         {
-          subTitle: "Exam traps that cost marks",
+          subTitle: "Worked figures, diagrams and objectives",
           bullets: [
-            "**AFC keeps falling** as output rises — it never turns back up. ATC falls then rises; that U-shape is economies then diseconomies of scale.",
-            "The **ATC diagram is required** for economies and diseconomies of scale: output on the horizontal axis, cost per unit on the vertical, one U-shaped curve, and the falling part labelled economies of scale.",
-            "A minimum wage drawn **below** equilibrium causes **no** unemployment. Only a binding wage set **above** equilibrium does.",
-            "Productivity is a **ratio**, not total output. A firm that doubles workers and doubles output has flat productivity.",
-            "Economies of scale reduce **average** cost, not necessarily total cost — a bigger firm spends more in total while paying less per unit.",
-            "\u201cDerived demand\u201d is the phrase that earns the mark for labour questions; write it, do not paraphrase it.",
+            "Work one, in dollars: fixed costs **1200**, variable cost **800** at **100 units**. Then **TC = 2000, AFC = 12, AVC = 8, ATC = 20**.",
+            "At **200 units** variable cost is 1400, so **TC = 2600, AFC = 6, AVC = 7, ATC = 13** — the same fixed cost spread over twice the output.",
+            "Selling 200 units at 15 dollars gives **TR = 3000** against TC 2600, so profit is **400** and AR is **15**, equal to the price.",
+            "Rising sales raise TR only while demand is not perfectly elastic; a price cut grows TR only when demand is elastic, which is the Topic 2 link.",
+            "The cost diagrams: **AFC keeps falling** as output rises, **AVC and ATC are U-shaped**, and the gap between ATC and AVC narrows because AFC shrinks.",
+            "**Objectives of firms**: **survival** (short run, during a slump or new entry), **profit maximisation** (the usual assumption), **growth** (market share), and **social welfare** (co-operatives and community businesses). The objective chosen changes the price set.",
+          ],
+        },
+      ],
+    },
+    {
+      title: "3.7 Types of markets",
+      body: `### Many Sellers, or One
+
+A **competitive market** has **many firms**, **low barriers to entry**, and rivalry on price and quality — think of clothing shops or fruit vendors. A **monopoly** is a market supplied by **one dominant firm**, usually protected by high barriers such as ownership of a resource, a patent, or control of a network like a water supply.
+
+Neither needs a diagram: the syllabus states that **perfect and imperfect competition theory is not required**. Characteristics and effects are what score.`,
+      figure: panelMonopoly,
+      groups: [
+        {
+          subTitle: "The effect of the number of firms on price, quality, choice and profit",
+          bullets: [
+            "**Many firms — price**: rivalry pushes price towards cost, so it stays low.",
+            "**Many firms — quality**: firms compete on quality and service to stand out, so it rises.",
+            "**Many firms — choice**: many brands and variants, since each firm tries to differentiate.",
+            "**Many firms — profit**: thin margins and only normal profit in the long run, which can starve research of funds.",
+            "**One firm — price**: it can raise price above cost because buyers have nowhere else to go.",
+            "**One firm — quality**: it may fall, with no rival to punish bad service, or rise if the monopoly is regulated on standards.",
+            "**One firm — choice**: none, apart from substitutes in other markets.",
+            "**One firm — profit**: supernormal profit is possible and can fund large research programmes — but the incentive to be efficient weakens.",
+            "**Trap:** monopoly is not simply being big. The test is **market power over price** and **barriers to entry**.",
           ],
         },
       ],
