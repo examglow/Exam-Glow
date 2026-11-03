@@ -66,6 +66,21 @@ function looksLikeMath(clean: string, bare: boolean): boolean {
   return true;
 }
 
+/**
+ * A `$…$` pair is maths only when the span looks like maths. Agriculture and
+ * Economics notes carry worked money examples, and a line such as
+ * "$200/t gives $800, fertiliser $150" pairs its dollar signs by accident, which
+ * turned prose into KaTeX italics. Digit-led spans with words or commas in them are
+ * currency, so they stay exactly as written.
+ */
+function isLatexSpan(inner: string): boolean {
+  if (/[\\^_{}]/.test(inner)) return true;
+  if (/^\s*[\d.,]/.test(inner) && (inner.includes(',') || /\*\*/.test(inner) || /[a-z]{2}/.test(inner))) {
+    return false;
+  }
+  return true;
+}
+
 function formulaToTex(raw: string, bare = false): string | null {
   const clean = raw.replace(/\*/g, "").replace(/\s+/g, " ").trim();
   if (!clean.includes("=") || clean.length > MAX_FORMULA_LEN) return null;
@@ -198,8 +213,10 @@ function renderMarkdown(text: string): string {
     mathBlocks.push(m);
     return `\x00MATH${mathBlocks.length - 1}\x00`;
   });
-  text = text.replace(/\$[^$\n]+?\$/g, (m) => {
-    mathBlocks.push(m);
+  // Two dollar signs on one line are not enough to call something maths — see isLatexSpan.
+  text = text.replace(/\$([^$\n]+?)\$/g, (full, inner) => {
+    if (!isLatexSpan(inner)) return full;
+    mathBlocks.push(full);
     return `\x00MATH${mathBlocks.length - 1}\x00`;
   });
 
