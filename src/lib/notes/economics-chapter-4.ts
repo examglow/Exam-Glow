@@ -68,6 +68,7 @@ The aims conflict, and naming a conflict is an easy analysis mark:
             "Tax exists to **raise revenue**, **discourage consumption of demerit goods**, **reduce imports**, **redistribute income**, **influence total demand**, and **encourage environmental sustainability**.",
             "Two classifications, both tested: **progressive** (average rate rises with income), **regressive** (falls with income), **proportional** (constant share); and **direct** (on income or wealth, e.g. income tax, corporation tax) versus **indirect** (on expenditure, e.g. VAT, excise duty, tariffs).",
             "Tax effects: consumers pay more and buy less, workers keep less of each extra pound, firms face higher costs, government gains revenue, and the economy may slow — or become more equal.",
+            "**Budget arithmetic** is examinable: spending **520** against revenue **470** is a **deficit of 50**; revenue 520 against spending 480 is a **surplus of 40** (billions of dollars either way). The **national debt** is the accumulated deficits — a stock, measured at a date, not a flow measured over a year.",
             "**Expansionary fiscal policy** (spending up, taxes down) lifts demand and jobs but risks inflation and deficit. **Contractionary fiscal policy** (spending down, taxes up) cools demand and helps the current account but risks unemployment.",
           ],
         },
@@ -116,6 +117,17 @@ A **recession** is a prolonged fall in real GDP (often two consecutive quarters 
             "**Demand-pull** inflation comes from total demand rising faster than output; **cost-push** inflation from rising production costs passed on as higher prices.",
             "Inflation punishes **savers** and **lenders**, whose money buys less, and rewards **borrowers**, who repay in cheaper money. Consumers pay more, firms face uncertainty, exports lose competitiveness, and low-income households suffer most.",
             "**Policies**: demand-pull needs tighter fiscal and monetary policy; cost-push needs supply-side measures and lower business costs. For unemployment — expansionary demand policy (cyclical), training and relocation help (structural), job-match services (frictional), diversification (seasonal).",
+          ],
+        },
+        {
+          subTitle: "Worked measurements, and the two sides of growth",
+          bullets: [
+            "**Unemployment rate**: a labour force of **25 million** with **2 million** out of work gives **2 / 25 x 100 = 8%**.",
+            "**CPI**: a basket costing **100** in the base year and **108** this year means inflation of **8%**. Growth: real GDP rising from **600 to 624** (billions of dollars) is **4%**.",
+            "**GDP per head**: **600 billion dollars** split between **30 million** people is **20,000 dollars each**.",
+            "**Advantages of growth**: rising incomes, more jobs, extra tax revenue without raising any rate, poverty eased, and confidence that attracts investment.",
+            "**Disadvantages of growth**: pollution and resource depletion, congestion, longer working hours, and a boom that pulls in imports and re-ignites inflation.",
+            "**Consequences of a recession**: consumers buy less, workers face redundancy and wage freezes, firms lose revenue and cancel investment, and the government collects less tax while paying out more benefits.",
           ],
         },
         {

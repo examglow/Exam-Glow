@@ -69,6 +69,8 @@ Scarcity bites in four places, and exam questions name them:
             "**How to produce** — which method and which mix of the factors of production.",
             "**Who to produce for** — who in society gets the output, which is really a question about income and prices.",
             "Different economic systems answer all three differently: a **market system** answers them through prices and profit, a **command/planning system** through government decisions, and a **mixed economy** through both. Topic 2 and Topic 4 come back to this.",
+            "**Scarcity is not a shortage.** Scarcity is permanent and universal — resources always run out before wants do. A shortage is temporary, specific to one good, and appears in Topic 2 when a price is held below equilibrium.",
+            "A **define** answer here is one sentence: resources are finite while wants are infinite, so choices must be made. Then add one example from the list above to earn the working mark.",
           ],
         },
       ],
@@ -96,6 +98,8 @@ Capital in economics is never the money on a screen. Money is only used to **buy
             "**Quality of a factor** = how productive each unit is. Causes of change: **education and training**, **healthcare**, **better technology**, and **more skilled management**.",
             "A country with the same number of workers but better training has a higher **quality of labour** — and that is a growth story, which Topic 4 (supply-side policy) picks up.",
             "Expect questions that ask you to explain how a change in one factor affects another: a **higher capital stock** raises **labour productivity**, so the same workforce produces more.",
+            "The rewards are a matching set worth memorising: **land–rent, labour–wages, capital–interest, enterprise–profit**. **Profit is the reward for risk**, not for working.",
+            "**Depreciation** wears capital out and **investment** replaces it, so a country can hold its labour force steady and still lose productive capacity.",
           ],
         },
       ],
@@ -108,9 +112,33 @@ Capital in economics is never the money on a screen. Money is only used to **buy
 
 It drives every decision-maker in the syllabus: a consumer choosing between two goods, a worker choosing between jobs, a firm choosing which product line to fund, a government choosing between hospitals and roads.
 
-A **production possibility curve (PPC)** shows the **maximum combinations of two goods an economy can produce when all resources are fully and efficiently employed, given current technology**. Draw it with the axes labelled "capital goods" and "consumer goods" and the curve bowed outward.`,
+A **production possibility curve (PPC)** shows the **maximum combinations of two goods an economy can produce when all resources are fully and efficiently employed, given current technology**. Draw it with the axes labelled "capital goods" and "consumer goods" and the curve bowed outward.
+
+The same trade-off appears as a **schedule**, and the numbers are what Paper 1 asks about:
+
+| Point | Capital goods | Consumer goods |
+| --- | ---: | ---: |
+| A | 400 | 0 |
+| B | 300 | 200 |
+| C | 200 | 350 |
+| D | 100 | 450 |
+| E | 0 | 500 |
+
+Every point from **A to E is efficient** because it uses all resources. Move **B → C** and the economy gains **150 more consumer goods**; the cost sits in the same rows — **100 fewer capital goods**. That 100 is the opportunity cost.
+
+A point such as **200 capital goods and 200 consumer goods** is attainable but wasteful, because the schedule already offers 350 consumer goods at that level of capital production.`,
       figure: panelC,
       groups: [
+        {
+          subTitle: "Opportunity cost in the four decision-makers",
+          bullets: [
+            "**Consumer** — a cinema ticket costing **10 dollars** gives up the book those 10 dollars would have bought. The cost is the book, not the price.",
+            "**Worker** — taking the job in the capital city gives up the second-best offer and the leisure hours not worked.",
+            "**Firm** — using the factory to make phones means it cannot make tablets that week; the **forgone tablet profit** is the opportunity cost.",
+            "**Government** — funding the hospital means the best alternative project, say a road programme, goes unfunded. Count only that one, never the sum of everything else.",
+            "The syllabus asks for **examples in different contexts**, so name the decision-maker and name the forgone alternative in the same sentence.",
+          ],
+        },
         {
           subTitle: "Reading the four PPC situations",
           bullets: [

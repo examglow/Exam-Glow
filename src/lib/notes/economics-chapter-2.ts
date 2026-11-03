@@ -59,12 +59,14 @@ A **market** is any arrangement where **buyers and sellers interact to exchange 
       figure: panelA,
       groups: [
         {
-          subTitle: "Along versus shift — the whole topic in one table",
+          subTitle: "Along versus shift — the distinction that carries the marks",
           bullets: [
             "**Change in quantity demanded** = a **movement along** the curve, caused **only by the good's own price**. The words are **extension** (price falls) and **contraction** (price rises).",
             "**Change in demand** = a **shift of the whole curve**, caused by anything else: **income** (normal goods shift right, inferior goods shift left), **wealth**, **interest rates**, **expectations of future prices**, **prices of substitutes and complements**, **tastes**, **population**, **weather**, and **government tax or subsidy**.",
             "Supply shifts right when **costs fall** or conditions improve — **technology**, **subsidies**, **cheaper raw materials or labour**, **more sellers**, **better weather**, **expectations of lower future prices** — and left for the opposite reasons, including **indirect taxes**.",
             "A price change never shifts its own curve.",
+            "**Market supply** is the sum of the individual sellers' quantities at each price, the same way market demand sums the buyers. One firm's output is not the market's.",
+            "Drawing marks are awarded for the labels, not the line: **price on the vertical axis, quantity on the horizontal**, both curves named, and for a shift an **arrow from the old curve to the new one** plus the **new equilibrium marked**.",
           ],
         },
       ],
@@ -77,13 +79,28 @@ A **market** is any arrangement where **buyers and sellers interact to exchange 
 
 Above equilibrium, **supply exceeds demand** and a **surplus** pushes the price down; below it, **demand exceeds supply** and a **shortage** pushes the price up. That adjustment is the **price mechanism**, which answers the three basic questions: **what** is produced follows demand and supply, **how** follows the cheapest factor mix, **for whom** is decided by who can pay.
 
-A price change is caused by a shift in either curve, and its consequences fall on **sales, revenue, consumers, producers and the government** — show the shift, then state the new price and quantity.`,
+A price change is caused by a shift in either curve, and its consequences fall on **sales, revenue, consumers, producers and the government** — show the shift, then state the new price and quantity.
+
+A **schedule** is the same information in a table, and it is how Paper 1 tests equilibrium without a diagram:
+
+| Price per kg | Quantity demanded | Quantity supplied |
+| ---: | ---: | ---: |
+| $2 | 100 | 20 |
+| $4 | 80 | 40 |
+| $6 | 60 | 60 |
+| $8 | 40 | 80 |
+| $10 | 20 | 100 |
+
+Equilibrium is the **$6** row, where 60 kg is demanded and 60 kg supplied. At a price of **4**, buyers want 80 kg and sellers offer only 40 kg — a **shortage of 40 kg** that pushes the price up. At **8**, the gap reverses into a **surplus of 40 kg** and the price falls back.`,
       figure: panelB,
       groups: [
         {
           subTitle: "PED and PES, calculated and interpreted",
           bullets: [
             "**PED = percentage change in quantity demanded / percentage change in price.** Above 1 is **elastic**, below 1 **inelastic**, exactly 1 **unitary**, 0 **perfectly inelastic** (vertical curve), infinity **perfectly elastic** (horizontal curve).",
+            "Work one (prices in dollars): the price rises **8 → 10** (+25%) and quantity falls **200 → 100** (−50%), so **PED = 50 / 25 = 2** — elastic. Revenue moves **1600 → 1000**, so the firm has priced itself down.",
+            "Work two: a cigarette price rises **20%** and consumption falls only **4%**, so **PED = 0.2** — inelastic. Revenue **rises**, which is exactly why the tax works.",
+            "Divide the percentage changes, never the raw figures, and drop the minus sign: PED is quoted as a positive number.",
             "Determinants of PED: **availability of substitutes**, **necessity versus luxury**, **proportion of income spent**, **habit-forming goods**, and **time period** — demand becomes more elastic over time.",
             "PED and revenue run together: a **price rise** with **inelastic** demand raises total revenue; with **elastic** demand it lowers it. That is why governments tax cigarettes and why a good harvest can ruin a farmer.",
             "**PES = percentage change in quantity supplied / percentage change in price.** Determinants: **spare capacity**, **time period**, **perishability**, **stocks**, **ease of factor mobility**, **government policy**. Supply is inelastic in the **short run** and elastic in the **long run**.",
@@ -107,8 +124,17 @@ A **market economic system** relies on private firms and consumer sovereignty. I
             "**Public goods** (street lighting, flood defences, defence) are **non-excludable and non-rival**, so firms will not provide them — nobody can be refused and one person's use leaves it for everyone. Fix: **direct government provision**.",
             "**Merit goods** (education, healthcare) are **under-consumed**; **demerit goods** (tobacco, alcohol, gambling) are **over-consumed**. Fix: **subsidies and provision** for merit goods, **indirect taxes and regulation** for demerit goods.",
             "**External costs** (pollution, congestion) make social cost exceed private cost, so the market **over-produces**; **external benefits** (vaccination, training) make social benefit exceed private benefit, so it **under-produces**. Fix: tax the first, subsidise the second.",
-            "**Monopoly** restricts supply to raise price, so consumers pay more and receive less. Fix: **regulation**, or **nationalisation**.",
+            "**Abuse of monopoly power** — one dominant seller restricts supply to raise price, so consumers pay more and receive less. Fix: **regulation**, or **nationalisation**.",
             "Intervention tools to define, diagram and weigh up: **maximum price** (ceiling below equilibrium: shortage, consumers protected, black markets possible), **minimum price** (floor above equilibrium: surplus, producers or workers protected, resources wasted), **indirect tax** (supply shifts left: price up, quantity down, revenue raised), **subsidy** (supply shifts right: price down, quantity up, cost to the treasury), plus **regulation**, **privatisation**, **nationalisation**, **direct provision** and **quotas** such as fishing or extraction limits. Diagrams of market failure itself are **not required**.",
+          ],
+        },
+        {
+          subTitle: "Market versus mixed system — the arguments",
+          bullets: [
+            "**For the market system**: competition drives **efficiency**, prices signal what buyers want so output **responds quickly**, profit spurs **innovation**, and consumers keep **choice and freedom**.",
+            "**Against it**: monopoly power goes unchecked, **inequality** widens, and the poor get goods only if they can pay for them.",
+            "**For the mixed system**: the state **provides public goods**, subsidises merit goods, taxes demerit goods, regulates monopoly and cushions the vulnerable — market failure answered without abolishing the market.",
+            "**Against it**: taxes and rules **blunt incentives**, state provision can be slow and bureaucratic, and intervention can itself **misallocate resources** if the price or the tax is set wrongly.",
           ],
         },
         {

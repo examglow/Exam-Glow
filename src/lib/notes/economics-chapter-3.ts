@@ -53,6 +53,8 @@ const chapterThree: Chapter = {
 
 **Money** is anything **generally accepted as a means of payment**. It has four **functions**: **medium of exchange** (it buys things), **unit of account** (it measures value so prices can be compared), **store of value** (it holds purchasing power over time), and **standard of deferred payment** (it settles debts). Its **characteristics**: generally accepted, **divisible**, **portable**, **durable**, **limited in supply**, and **stable in value**.
 
+Its **forms** have changed with trust: **commodity money** such as gold, silver or shells, then **coins and paper currency** whose value comes from legal acceptance rather than the metal, and finally **bank deposits** — the electronic balances moved by cards and transfers, which make up most of the money people actually spend.
+
 **Barter** fails because it needs a **double coincidence of wants** — each side must want what the other has. That single sentence is the answer to most barter questions.
 
 Money is created and controlled by two kinds of bank. The **central bank** issues currency, **banks the banks**, sets monetary policy, holds foreign reserves and looks after the government's finances. **Commercial banks** take deposits from the public, lend them out at higher rates, and provide payment services — their importance is that they **channel savings into investment**.`,
@@ -104,13 +106,22 @@ Firms sit in the **primary** sector (extracting raw materials: farming, fishing,
       figure: panelC,
       groups: [
         {
+          subTitle: "Small firms versus large firms",
+          bullets: [
+            "**Small firms** give the owner independence and close customer contact, start with little capital and adapt quickly. Their limits: **higher average costs**, difficulty borrowing, no spare staff for illness, and the owner carrying the risk alone.",
+            "**Large firms** spread fixed costs over huge output, borrow more cheaply, employ specialists and can absorb a bad year. Their limits: **bureaucracy**, slow decisions, communication problems and the risk of diseconomies of scale.",
+            "Size is not the same as efficiency. The examinable question is **which costs fall and which rise** as the firm grows, and that is the ATC curve in Topic 2 terms.",
+          ],
+        },
+        {
           subTitle: "Production, costs, revenue and objectives",
           bullets: [
             "The **demand for a factor of production** depends on the **demand for the product**, the **price of other factors**, their **availability** and their **productivity** — again, derived demand.",
             "**Labour-intensive** production uses more workers than machines — chosen when labour is cheap, flexible or skilled and output is bespoke. **Capital-intensive** uses more machines — chosen when labour is scarce or expensive, quality must be consistent, or volume is huge.",
             "**Production** is total output; **productivity** is output per unit of input, usually **output per worker per hour**. Investment in better machines and training raises productivity.",
             "**TC = FC + VC.** **AFC = FC / output**, **AVC = VC / output**, **ATC = TC / output**, and **ATC = AFC + AVC**. Fixed costs (rent, salaries, insurance) do not vary with output; variable costs (raw materials, hourly wages, energy) do.",
-            "**TR = price x quantity**, and **AR = TR / output**, which equals the price. Profit is **TR minus TC**. Rising sales raise TR only if demand is not perfectly elastic.",
+            "Work one, in dollars: fixed costs **1200**, variable cost **800** at **100 units**. Then **TC = 2000, AFC = 12, AVC = 8, ATC = 20**. At **200 units** variable cost is 1400, so **TC = 2600, AFC = 6, AVC = 7, ATC = 13** — the same fixed cost spread over twice the output.",
+            "**TR = price x quantity**, and **AR = TR / output**, which equals the price. Profit is **TR minus TC**. Selling 200 units at 15 dollars gives TR 3000 against TC 2600, so the firm makes a **profit of 400**. Rising sales raise TR only if demand is not perfectly elastic.",
             "Firm **objectives**: **survival** (short-run, during a slump), **profit maximisation**, **growth** (market share), and **social welfare** (co-operatives, community businesses). The objective chosen changes the pricing decision.",
             "**Competitive markets** have many firms, low barriers to entry, and rivalry on price and quality: consumers gain choice and lower prices, but firms earn thin profits and may lack funds for research. **Monopoly** is one dominant supplier that can raise price and restrict output, earning supernormal profit with less incentive to innovate. The syllabus does **not** require perfect-competition diagrams for either.",
           ],
@@ -119,6 +130,7 @@ Firms sit in the **primary** sector (extracting raw materials: farming, fishing,
           subTitle: "Exam traps that cost marks",
           bullets: [
             "**AFC keeps falling** as output rises — it never turns back up. ATC falls then rises; that U-shape is economies then diseconomies of scale.",
+            "The **ATC diagram is required** for economies and diseconomies of scale: output on the horizontal axis, cost per unit on the vertical, one U-shaped curve, and the falling part labelled economies of scale.",
             "A minimum wage drawn **below** equilibrium causes **no** unemployment. Only a binding wage set **above** equilibrium does.",
             "Productivity is a **ratio**, not total output. A firm that doubles workers and doubles output has flat productivity.",
             "Economies of scale reduce **average** cost, not necessarily total cost — a bigger firm spends more in total while paying less per unit.",

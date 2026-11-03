@@ -53,7 +53,16 @@ const chapterSix: Chapter = {
 
 **Specialisation by country** is when a country concentrates on producing the goods and services it can make **most efficiently**, then trades for the rest. The basis is either the **best resource allocation** (it has the land, climate, skills or capital for it) or **low-cost production** relative to other countries.
 
-**Free trade** is trade with **no government restrictions** — no tariffs, quotas or embargoes between countries.`,
+**Free trade** is trade with **no government restrictions** — no tariffs, quotas or embargoes between countries.
+
+Output from **one worker-hour** makes the gain from specialising visible:
+
+| Country | Rice (kg) | Cloth (m) |
+| --- | ---: | ---: |
+| A | 6 | 2 |
+| B | 3 | 4 |
+
+If each country splits its worker-hour between the two goods, the world produces **4.5 kg of rice and 3 m of cloth**. If **A takes rice and B takes cloth**, the two countries together produce **6 kg and 4 m** — more of both from the same labour. Trade then divides that extra output, which is why both sides can consume beyond their own ability to produce.`,
       figure: panelA,
       groups: [
         {
@@ -78,6 +87,17 @@ Its **causes**: falling or rising **trade restrictions**, falling **transport co
 Its **effects** run on six channels the syllabus names: **international trade**, **competition**, **the environment**, **migration**, **income distribution**, and **economic development**.`,
       figure: panelB,
       groups: [
+        {
+          subTitle: "The six channels globalisation moves",
+          bullets: [
+            "**International trade** — volumes rise as barriers and freight costs fall, and goods cross borders in components rather than finished form.",
+            "**Competition** — domestic firms face foreign rivals, which rewards the efficient and squeezes the rest; consumers gain lower prices.",
+            "**The environment** — more shipping and output means more pollution and resource use, yet technology also spreads cleaner methods.",
+            "**Migration** — jobs and MNCs move people, filling labour shortages in host countries while draining skills from origin countries.",
+            "**Income distribution** — skilled workers and investors gain most; low-skilled workers in high-cost countries can lose, so inequality can widen inside a country even as it narrows between countries.",
+            "**Economic development** — market access, capital and know-how can lift a poor country, but only if it can supply the infrastructure and education to use them.",
+          ],
+        },
         {
           subTitle: "MNCs, and the four methods of protection",
           bullets: [
@@ -106,6 +126,8 @@ A **floating exchange rate** is set by demand and supply in that market with no 
             "**Appreciation** makes imports cheaper and exports dearer: export volumes and export jobs fall, import-competing firms gain, inbound tourists find the country expensive, and inflation eases. **Depreciation** does the reverse — exports and tourism gain, imports and imported inflation rise.",
             "The **current account** has four components: **trade in goods** (visible), **trade in services** (invisible: tourism, shipping, banking, insurance), **primary income** (investment profits, interest, dividends, and workers' earnings abroad), and **secondary income** (transfers: remittances, aid, donations, EU-style budget contributions).",
             "**Balance on the current account = credits (receipts) minus debits (payments)**. A **surplus** means receipts exceed payments; a **deficit** means payments exceed receipts. Calculate each section first, then add them.",
+            "Work one, in billions of dollars: goods **exports 400, imports 500** gives **−100**; services **receipts 150, payments 90** gives **+60**; primary income **−20**; secondary income **−10**. The current account is **−70**, a deficit — and the goods gap, not the transfers, is what to blame.",
+            "**Trace a depreciation**: the currency falls → exports are cheaper for foreign buyers → export volumes and export jobs rise → import-competing firms win home customers → but imported fuel and raw materials cost more, so costs and prices rise as well.",
             "**Deficit causes**: strong domestic demand for imports, uncompetitive exports, an appreciated currency, high oil or food prices, profits repatriated by MNCs, and more tourism spending abroad than inbound.",
             "**Deficit consequences**: lower GDP and jobs in export industries, possible depreciation and imported inflation, borrowing or reserve depletion, and pressure for protection — though cheap imports benefit consumers. A surplus shows competitiveness but can invite retaliation, appreciation, and a perception that the country under-consumes.",
             "**Policies for balance of payments stability**: expenditure-switching (depreciation, tariffs, quotas, subsidies for exporters), expenditure-reducing (contractionary fiscal and monetary policy), supply-side measures to raise export competitiveness, and trading agreements. Each has a cost — protection invites retaliation, and deflationary policy sacrifices jobs.",
