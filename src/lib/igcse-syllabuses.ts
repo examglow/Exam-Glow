@@ -355,6 +355,7 @@ export const igcseSubjects: IgcseSubject[] = [
     category: "Sciences",
     color: "bg-cyan-600",
     syllabuses: [
+      { label: "2027 – 2029 Syllabus", url: `${BASE}/721354-2027-2029-syllabus.pdf` },
       { label: "2023 – 2025 Syllabus", url: `${BASE}/597073-2023-syllabus.pdf` },
     ],
   },
