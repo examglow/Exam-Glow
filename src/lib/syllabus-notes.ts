@@ -156,6 +156,7 @@ const PUBLISHED_SUBJECT_IDS = new Set([
   "art-design",
   "physical-education",
   "marine-science",
+  "mathematics",
 ]);
 
 export const SYLLABUS_NOTES: SubjectNotes[] = RAW_NOTES.filter((s) =>
