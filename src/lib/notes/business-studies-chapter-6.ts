@@ -33,7 +33,12 @@ const panelEnvironment = imagePanel(IMG, [
   {
     src: "bus6-river-pollution.webp",
     alt: "A discharge pipe from an industrial site releasing murky water into a river, discoloured bank sediment and reeds, a warning sign on the towpath",
-    caption: "External costs are paid by other people, which is why law and pressure groups push them back onto the firm",
+    caption: "External costs are paid by other people",
+  },
+  {
+    src: "bus6-filters-solar-plant.webp",
+    alt: "The same kind of riverside industrial site after upgrading: scrubber filters and ducting beside the chimney, solar panels along the roofline, covered storage bins in the yard, and clear water leaving a monitored concrete outfall with reeds recovering on the bank",
+    caption: "Responding costs money — and buys reputation",
   },
 ]);
 
