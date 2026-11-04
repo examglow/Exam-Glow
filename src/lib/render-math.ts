@@ -205,10 +205,34 @@ export function formatMathAndMarkdown(text: string): string {
 function renderMarkdown(text: string): string {
   if (!text) return "";
 
+  const mathBlocks: string[] = [];
+  const rawBlocks: string[] = [];
+
+  // Fenced code is lifted out before the emoji pass, because stripEmoji collapses
+  // runs of spaces — and a run of spaces is exactly the indentation a Python block
+  // needs. The other raw blocks are stripped normally.
+  text = text.replace(/```(?:\w+)?\n?([\s\S]+?)```/g, (_, code) => {
+    rawBlocks.push(
+      `<div class="my-4 not-prose overflow-x-auto rounded-xl border border-border/60 bg-muted/40">
+        <pre class="p-4 font-mono text-[12px] leading-relaxed text-foreground whitespace-pre">${escHtml(code.trim())}</pre>
+      </div>`
+    );
+    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
+  });
+  text = text.replace(/:::svg\[([^\]]*)\]\n([\s\S]*?):::/g, (_, title, body) => {
+    rawBlocks.push(renderSvgBlock(title, stripEmoji(body)));
+    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
+  });
+  // Author-supplied figure markup (image grids, labelled panels). Escaped out of
+  // the markdown pass so card layouts survive inside the prose stream.
+  text = text.replace(/:::raw\n([\s\S]*?):::/g, (_, body) => {
+    rawBlocks.push(`<div class="my-6 not-prose">${stripEmoji(body)}</div>`);
+    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
+  });
+
   text = stripEmoji(text);
 
   // Protect $$...$$ and $...$ from line-splitting / inline processing until the end
-  const mathBlocks: string[] = [];
   text = text.replace(/\$\$[\s\S]+?\$\$/g, (m) => {
     mathBlocks.push(m);
     return `\x00MATH${mathBlocks.length - 1}\x00`;
@@ -220,27 +244,6 @@ function renderMarkdown(text: string): string {
     return `\x00MATH${mathBlocks.length - 1}\x00`;
   });
 
-  // Extract and protect fenced SVG diagram blocks and code fences first,
-  // since they may contain content that looks like markdown.
-  const rawBlocks: string[] = [];
-  text = text.replace(/:::svg\[([^\]]*)\]\n([\s\S]*?):::/g, (_, title, body) => {
-    rawBlocks.push(renderSvgBlock(title, body));
-    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
-  });
-  // Author-supplied figure markup (image grids, labelled panels). Escaped out of
-  // the markdown pass so card layouts survive inside the prose stream.
-  text = text.replace(/:::raw\n([\s\S]*?):::/g, (_, body) => {
-    rawBlocks.push(`<div class="my-6 not-prose">${body.trim()}</div>`);
-    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
-  });
-  text = text.replace(/```(?:\w+)?\n?([\s\S]+?)```/g, (_, code) => {
-    rawBlocks.push(
-      `<div class="my-4 not-prose overflow-x-auto rounded-xl border border-border/60 bg-muted/40">
-        <pre class="p-4 font-mono text-[12px] leading-relaxed text-foreground whitespace-pre">${code.trim()}</pre>
-      </div>`
-    );
-    return `\x00BLOCK${rawBlocks.length - 1}\x00`;
-  });
   text = text.replace(/!\[(.*?)\]\((.*?)\)/g, (_, alt, src) => {
     const filename = src.split("/").pop() || "";
     const directSvg = DIAGRAM_MAP[filename];

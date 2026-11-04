@@ -159,6 +159,7 @@ const PUBLISHED_SUBJECT_IDS = new Set([
   "mathematics",
   "economics",
   "business-studies",
+  "computer-science",
 ]);
 
 export const SYLLABUS_NOTES: SubjectNotes[] = RAW_NOTES.filter((s) =>

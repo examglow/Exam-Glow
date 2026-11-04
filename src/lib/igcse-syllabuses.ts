@@ -220,6 +220,7 @@ export const igcseSubjects: IgcseSubject[] = [
     syllabuses: [
       { label: "2023 – 2025 Syllabus", url: `${BASE}/595424-2023-2025-syllabus.pdf` },
       { label: "2026 – 2028 Syllabus", url: `${BASE}/697167-2026-2028-syllabus.pdf` },
+      { label: "2029 Syllabus (0265)", url: `${BASE}/763395-2029-syllabus.pdf` },
     ],
   },
   {
