@@ -264,3 +264,4 @@ const chapterEight: Chapter = {
 };
 
 export const MATHEMATICS_CHAPTER_8 = chapterEight;
+export const MATHEMATICS_CHAPTERS_8: Chapter[] = [chapterEight];
