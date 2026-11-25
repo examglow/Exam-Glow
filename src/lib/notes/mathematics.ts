@@ -1,5 +1,5 @@
 import type { SubjectNotes } from "./types";
-import { MATHEMATICS_CHAPTER_1 } from "./mathematics-chapter-1";
+import { MATHEMATICS_CHAPTERS_1 } from "./mathematics-chapter-1";
 import { MATHEMATICS_CHAPTER_2 } from "./mathematics-chapter-2";
 import { MATHEMATICS_CHAPTER_3 } from "./mathematics-chapter-3";
 import { MATHEMATICS_CHAPTER_4 } from "./mathematics-chapter-4";
@@ -16,7 +16,7 @@ export const MATHEMATICS: SubjectNotes = {
   code: "0580",
   color: "bg-blue-600",
   chapters: [
-    MATHEMATICS_CHAPTER_1,
+    ...MATHEMATICS_CHAPTERS_1,
     MATHEMATICS_CHAPTER_2,
     MATHEMATICS_CHAPTER_3,
     MATHEMATICS_CHAPTER_4,
