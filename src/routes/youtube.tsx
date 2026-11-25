@@ -1,12 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useCallback } from "react";
-import { Search, X, Play, Loader2, Key, ExternalLink, ChevronLeft } from "lucide-react";
+import { Search, X, Play, Loader2, ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/youtube")({
   component: YouTubePage,
 });
 
 const API_KEY_STORAGE = "examglow.youtube_api_key";
+const DEFAULT_API_KEY = "AIzaSyDlFA-LCfMNjZ8ZrR0UUMlKsI7dsE34EGs";
 
 const CATEGORIES = [
   { label: "For You", query: "IGCSE revision study" },
@@ -248,8 +249,8 @@ function PlayerModal({ video, onClose }: { video: Video; onClose: () => void }) 
 
 // ── Main Page ──────────────────────────────────────────────────────────────────
 function YouTubePage() {
-  const [apiKey, setApiKey] = useState<string | null>(() =>
-    localStorage.getItem(API_KEY_STORAGE)
+  const [apiKey, setApiKey] = useState<string>(
+    () => localStorage.getItem(API_KEY_STORAGE) || DEFAULT_API_KEY
   );
   const [searchInput, setSearchInput] = useState("");
   const [activeCategory, setActiveCategory] = useState(CATEGORIES[0].label);
@@ -299,8 +300,6 @@ function YouTubePage() {
     load(cat.query);
   }
 
-  if (!apiKey) return <SetupScreen onSave={saveKey} />;
-
   return (
     <>
       <div className="flex h-dvh flex-col bg-background text-foreground">
@@ -334,21 +333,6 @@ function YouTubePage() {
               Search
             </button>
           </form>
-
-          {/* Change key */}
-          <button
-            type="button"
-            onClick={() => {
-              if (confirm("Remove your YouTube API key?")) {
-                localStorage.removeItem(API_KEY_STORAGE);
-                setApiKey(null);
-              }
-            }}
-            title="Change API key"
-            className="shrink-0 rounded-lg border border-border p-2 text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <Key className="size-4" />
-          </button>
         </div>
 
         {/* Category pills */}
@@ -391,16 +375,6 @@ function YouTubePage() {
                   className="rounded-full bg-secondary px-4 py-2 text-sm font-medium hover:bg-secondary/70 transition-colors"
                 >
                   Retry
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
-                    localStorage.removeItem(API_KEY_STORAGE);
-                    setApiKey(null);
-                  }}
-                  className="rounded-full bg-red-600 px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors"
-                >
-                  Change API Key
                 </button>
               </div>
             </div>
