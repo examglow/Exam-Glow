@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useCallback } from "react";
 import { Search, X, Play, Loader2, ExternalLink } from "lucide-react";
+import { DashboardLayout } from "@/components/dashboard-page";
 
 export const Route = createFileRoute("/youtube")({
   component: YouTubePage,
@@ -302,70 +303,70 @@ function YouTubePage() {
 
   return (
     <>
-      <div className="flex h-dvh flex-col bg-background text-foreground">
-        {/* Top bar */}
-        <div className="flex shrink-0 items-center gap-3 border-b border-border bg-card px-4 py-3">
-          <div className="flex shrink-0 items-center gap-2">
-            <div className="flex size-8 items-center justify-center rounded-lg bg-red-600">
-              <svg viewBox="0 0 24 24" className="size-5 fill-white" aria-hidden>
-                <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z" />
-              </svg>
+      <DashboardLayout panelClassName="!overflow-hidden">
+        <div className="flex h-[calc(100dvh-56px)] flex-col -mx-4 -mt-4 sm:-mx-6 lg:-mx-8">
+          {/* Top bar */}
+          <div className="flex shrink-0 items-center gap-3 border-b border-border bg-card px-4 py-3">
+            <div className="flex shrink-0 items-center gap-2">
+              <div className="flex size-8 items-center justify-center rounded-lg bg-red-600">
+                <svg viewBox="0 0 24 24" className="size-5 fill-white" aria-hidden>
+                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z" />
+                </svg>
+              </div>
+              <span className="hidden text-[16px] font-bold sm:block">YouTube</span>
             </div>
-            <span className="hidden text-[16px] font-bold sm:block">YouTube</span>
+
+            <form onSubmit={handleSearch} className="flex flex-1 items-center gap-2">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+                <input
+                  type="text"
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
+                  placeholder="Search YouTube..."
+                  className="w-full rounded-full border border-border bg-background py-2 pl-9 pr-4 text-sm outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={loading}
+                className="shrink-0 rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-60 transition-colors"
+              >
+                Search
+              </button>
+            </form>
           </div>
 
-          <form onSubmit={handleSearch} className="flex flex-1 items-center gap-2">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-              <input
-                type="text"
-                value={searchInput}
-                onChange={(e) => setSearchInput(e.target.value)}
-                placeholder="Search YouTube..."
-                className="w-full rounded-full border border-border bg-background py-2 pl-9 pr-4 text-sm outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={loading}
-              className="shrink-0 rounded-full bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-60 transition-colors"
-            >
-              Search
-            </button>
-          </form>
-        </div>
+          {/* Category pills */}
+          <div className="scrollbar-none flex shrink-0 gap-2 overflow-x-auto border-b border-border bg-card px-4 py-2.5">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat.label}
+                type="button"
+                onClick={() => handleCategory(cat)}
+                className={`shrink-0 rounded-lg px-3.5 py-1.5 text-sm font-medium transition-colors ${
+                  activeCategory === cat.label
+                    ? "bg-foreground text-background"
+                    : "bg-secondary text-foreground hover:bg-secondary/70"
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
 
-        {/* Category pills */}
-        <div className="scrollbar-none flex shrink-0 gap-2 overflow-x-auto border-b border-border bg-card px-4 py-2.5">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat.label}
-              type="button"
-              onClick={() => handleCategory(cat)}
-              className={`shrink-0 rounded-lg px-3.5 py-1.5 text-sm font-medium transition-colors ${
-                activeCategory === cat.label
-                  ? "bg-foreground text-background"
-                  : "bg-secondary text-foreground hover:bg-secondary/70"
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
+          {/* Grid */}
+          <div className="min-h-0 flex-1 overflow-y-auto px-4 py-5">
+            {loading && (
+              <div className="flex h-48 items-center justify-center gap-2 text-muted-foreground">
+                <Loader2 className="size-5 animate-spin" />
+                <span className="text-sm">Loading videos...</span>
+              </div>
+            )}
 
-        {/* Grid */}
-        <div className="min-h-0 flex-1 overflow-y-auto px-4 py-5">
-          {loading && (
-            <div className="flex h-48 items-center justify-center gap-2 text-muted-foreground">
-              <Loader2 className="size-5 animate-spin" />
-              <span className="text-sm">Loading videos...</span>
-            </div>
-          )}
-
-          {error && !loading && (
-            <div className="flex h-48 flex-col items-center justify-center gap-3 text-center">
-              <p className="text-sm text-muted-foreground">{error}</p>
-              <div className="flex gap-2">
+            {error && !loading && (
+              <div className="flex h-48 flex-col items-center justify-center gap-3 text-center">
+                <p className="text-sm text-muted-foreground">{error}</p>
                 <button
                   type="button"
                   onClick={() => {
@@ -377,28 +378,28 @@ function YouTubePage() {
                   Retry
                 </button>
               </div>
-            </div>
-          )}
+            )}
 
-          {!loading && !error && videos.length > 0 && (
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-              {videos.map((video) => (
-                <VideoCard
-                  key={video.id}
-                  video={video}
-                  onClick={() => setPlaying(video)}
-                />
-              ))}
-            </div>
-          )}
+            {!loading && !error && videos.length > 0 && (
+              <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                {videos.map((video) => (
+                  <VideoCard
+                    key={video.id}
+                    video={video}
+                    onClick={() => setPlaying(video)}
+                  />
+                ))}
+              </div>
+            )}
 
-          {!loading && !error && videos.length === 0 && (
-            <div className="flex h-48 items-center justify-center text-sm text-muted-foreground">
-              No videos found.
-            </div>
-          )}
+            {!loading && !error && videos.length === 0 && (
+              <div className="flex h-48 items-center justify-center text-sm text-muted-foreground">
+                No videos found.
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </DashboardLayout>
 
       {playing && (
         <PlayerModal video={playing} onClose={() => setPlaying(null)} />
