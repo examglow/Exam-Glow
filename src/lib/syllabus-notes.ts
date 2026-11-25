@@ -98,6 +98,7 @@ export {
 
 const RAW_NOTES: SubjectNotes[] = [
   BIOLOGY,
+  MATHEMATICS,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
