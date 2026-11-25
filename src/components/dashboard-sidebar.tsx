@@ -20,6 +20,7 @@ import {
   Search,
   Settings,
   Sparkles,
+  Youtube,
   X,
 } from "lucide-react";
 
@@ -50,6 +51,7 @@ const practiceItems = [
 
 const courseItems = [
   { label: "Courses", to: "/syllabus-notes", Icon: NotebookTabs },
+  { label: "YouTube", to: "/youtube", Icon: Youtube },
 ] as const;
 
 type NavItem = (typeof primaryItems)[number] | (typeof studyItems)[number] | (typeof practiceItems)[number] | (typeof courseItems)[number];

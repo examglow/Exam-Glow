@@ -33,6 +33,7 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TestRouteImport } from './routes/test'
 import { Route as TutorSignupRouteImport } from './routes/tutor-signup'
 import { Route as TutorsRouteImport } from './routes/tutors'
+import { Route as YoutubeRouteImport } from './routes/youtube'
 import { Route as ApiAccountPlanRouteImport } from './routes/api/account-plan'
 import { Route as ApiAssignmentRouteImport } from './routes/api/assignment'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
@@ -164,6 +165,11 @@ const TutorsRoute = TutorsRouteImport.update({
   path: '/tutors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const YoutubeRoute = YoutubeRouteImport.update({
+  id: '/youtube',
+  path: '/youtube',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAccountPlanRoute = ApiAccountPlanRouteImport.update({
   id: '/api/account-plan',
   path: '/api/account-plan',
@@ -240,6 +246,7 @@ export interface FileRoutesByFullPath {
   '/test': typeof TestRoute
   '/tutor-signup': typeof TutorSignupRoute
   '/tutors': typeof TutorsRoute
+  '/youtube': typeof YoutubeRoute
   '/api/account-plan': typeof ApiAccountPlanRoute
   '/api/assignment': typeof ApiAssignmentRoute
   '/api/chat': typeof ApiChatRoute
@@ -276,6 +283,7 @@ export interface FileRoutesByTo {
   '/test': typeof TestRoute
   '/tutor-signup': typeof TutorSignupRoute
   '/tutors': typeof TutorsRoute
+  '/youtube': typeof YoutubeRoute
   '/api/account-plan': typeof ApiAccountPlanRoute
   '/api/assignment': typeof ApiAssignmentRoute
   '/api/chat': typeof ApiChatRoute
@@ -313,6 +321,7 @@ export interface FileRoutesById {
   '/test': typeof TestRoute
   '/tutor-signup': typeof TutorSignupRoute
   '/tutors': typeof TutorsRoute
+  '/youtube': typeof YoutubeRoute
   '/api/account-plan': typeof ApiAccountPlanRoute
   '/api/assignment': typeof ApiAssignmentRoute
   '/api/chat': typeof ApiChatRoute
@@ -351,6 +360,7 @@ export interface FileRouteTypes {
     | '/test'
     | '/tutor-signup'
     | '/tutors'
+    | '/youtube'
     | '/api/account-plan'
     | '/api/assignment'
     | '/api/chat'
@@ -387,6 +397,7 @@ export interface FileRouteTypes {
     | '/test'
     | '/tutor-signup'
     | '/tutors'
+    | '/youtube'
     | '/api/account-plan'
     | '/api/assignment'
     | '/api/chat'
@@ -423,6 +434,7 @@ export interface FileRouteTypes {
     | '/test'
     | '/tutor-signup'
     | '/tutors'
+    | '/youtube'
     | '/api/account-plan'
     | '/api/assignment'
     | '/api/chat'
@@ -460,6 +472,7 @@ export interface RootRouteChildren {
   TestRoute: typeof TestRoute
   TutorSignupRoute: typeof TutorSignupRoute
   TutorsRoute: typeof TutorsRoute
+  YoutubeRoute: typeof YoutubeRoute
   ApiAccountPlanRoute: typeof ApiAccountPlanRoute
   ApiAssignmentRoute: typeof ApiAssignmentRoute
   ApiChatRoute: typeof ApiChatRoute
@@ -642,6 +655,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TutorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/youtube': {
+      id: '/youtube'
+      path: '/youtube'
+      fullPath: '/youtube'
+      preLoaderRoute: typeof YoutubeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/account-plan': {
       id: '/api/account-plan'
       path: '/api/account-plan'
@@ -740,6 +760,7 @@ const rootRouteChildren: RootRouteChildren = {
   TestRoute: TestRoute,
   TutorSignupRoute: TutorSignupRoute,
   TutorsRoute: TutorsRoute,
+  YoutubeRoute: YoutubeRoute,
   ApiAccountPlanRoute: ApiAccountPlanRoute,
   ApiAssignmentRoute: ApiAssignmentRoute,
   ApiChatRoute: ApiChatRoute,
