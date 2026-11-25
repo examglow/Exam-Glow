@@ -38,18 +38,17 @@ describe("Biology course levels", () => {
     ]);
   });
 
-  it("gives the first 9 Core chapters their own labelled diagrams", () => {
-    const figures = BIOLOGY_CORE.chapters
-      .slice(0, 9)
-      .map((chapter) =>
-        chapter.subheadings.flatMap((section) => section.figure ?? []).join(""),
-      );
+  it("gives all 21 Core chapters their own labelled PNG diagrams", () => {
+    const figures = BIOLOGY_CORE.chapters.map((chapter) =>
+      chapter.subheadings.flatMap((section) => section.figure ?? []).join(""),
+    );
 
-    expect(figures).toHaveLength(9);
-    expect(new Set(figures).size).toBe(9);
+    expect(figures).toHaveLength(21);
+    expect(new Set(figures).size).toBe(21);
     figures.forEach((figure, index) => {
-      expect(figure).toContain(`/notes/biology-core/core-0${index + 1}-`);
-      expect(figure).toMatch(/^!\[.+\]\(.+\)$/);
+      const num = String(index + 1).padStart(2, "0");
+      expect(figure).toContain(`/notes/biology-core/core-${num}-`);
+      expect(figure).toMatch(/^!\[.+\]\(\/notes\/biology-core\/core-\d{2}-.+\.png\)$/);
     });
   });
 });

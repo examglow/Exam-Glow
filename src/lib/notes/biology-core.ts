@@ -50,7 +50,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Classification, Species and Binomial Names",
           body: "Classification places organisms into groups according to the features they share. The main sequence is **kingdom → phylum → class → order → family → genus → species**. A **species** is a group of organisms that can reproduce to produce fertile offspring.\n\nThe **binomial system** gives every species an internationally agreed two-part scientific name: the **genus** followed by the **species**. For example, *Homo sapiens* has genus *Homo* and species *sapiens*.",
-          figure: "![Core classification diagram showing the seven life processes, classification sequence and correct binomial-name format](/notes/biology-core/core-01-classification.svg)",
+          figure: "![Core classification diagram showing the seven life processes, classification sequence and correct binomial-name format](/notes/biology-core/core-01-classification.png)",
           groups: [
             {
               subTitle: "Writing scientific names correctly",
@@ -163,7 +163,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Plant and Animal Cells",
           body: "Plant and animal cells are **eukaryotic**: their genetic material is enclosed in a nucleus. They share many structures, while plant cells also have a cellulose cell wall, chloroplasts in photosynthetic cells and a large permanent vacuole.\n\n| Structure | Function |\n| --- | --- |\n| Cell membrane | partially permeable barrier that controls movement of substances into and out of the cell |\n| Cytoplasm | site of many chemical reactions |\n| Nucleus | contains genetic material and controls the activities of the cell |\n| Mitochondria | site of aerobic respiration, releasing energy for cell activities |\n| Ribosomes | sites of protein synthesis |\n| Cell wall | cellulose layer that strengthens and supports a plant cell |\n| Chloroplasts | contain chlorophyll and are the sites of photosynthesis |\n| Permanent vacuole | contains cell sap and helps maintain turgor in a plant cell |",
-          figure: "![Labelled comparison of a generalised plant cell, animal cell and bacterial cell](/notes/biology-core/core-02-cell-organisation.svg)",
+          figure: "![Labelled comparison of a generalised plant cell, animal cell and bacterial cell](/notes/biology-core/core-02-cell-organisation.png)",
           groups: [
             {
               subTitle: "Important comparisons",
@@ -303,7 +303,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Diffusion",
           body: "**Diffusion is the net movement of particles from a region of their higher concentration to a region of their lower concentration, down a concentration gradient, as a result of their random movement.**\n\nParticles move randomly in both directions. More particles initially move from the higher concentration, so the overall or **net** movement is down the gradient. At equal concentrations, random movement continues but there is no net movement.",
-          figure: "![Labelled comparison of diffusion, osmosis and active transport across a cell membrane](/notes/biology-core/core-03-membrane-transport.svg)",
+          figure: "![Labelled comparison of diffusion, osmosis and active transport across a cell membrane](/notes/biology-core/core-03-membrane-transport.png)",
           groups: [
             {
               subTitle: "Biological examples",
@@ -465,7 +465,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Elements and Smaller Units",
           body: "Biological molecules are built from smaller chemical units. Knowing the elements and building blocks helps explain their properties and the results of food tests.\n\n| Molecule group | Chemical elements | Smaller units |\n| --- | --- | --- |\n| Carbohydrates | carbon, hydrogen and oxygen | simple sugars such as glucose |\n| Lipids (fats and oils) | carbon, hydrogen and oxygen | fatty acids and glycerol |\n| Proteins | carbon, hydrogen, oxygen and nitrogen; some also contain sulfur | amino acids |",
-          figure: "![Labelled biological molecules diagram showing glucose units, a lipid and a folded amino-acid chain](/notes/biology-core/core-04-biological-molecules.svg)",
+          figure: "![Labelled biological molecules diagram showing glucose units, a lipid and a folded amino-acid chain](/notes/biology-core/core-04-biological-molecules.png)",
           groups: [
             {
               bullets: [
@@ -590,7 +590,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Catalysts and Enzymes as Biological Catalysts",
           body: "A **catalyst** is a substance that increases the rate of a chemical reaction and is not changed by the reaction. **Enzymes** are proteins that function as biological catalysts involved in all metabolic reactions.\n\nWithout enzymes, metabolic reactions in living organisms would occur far too slowly to sustain life. Enzymes provide a reaction rate fast enough to support living processes at body temperatures.",
-          figure: "![Core enzymes diagram showing biological catalyst action, active site lock-and-key model, and temperature and pH effects](/notes/biology-core/core-05-enzymes.svg)",
+          figure: "![Core enzymes diagram showing biological catalyst action, active site lock-and-key model, and temperature and pH effects](/notes/biology-core/core-05-enzymes.png)",
           groups: [
             {
               subTitle: "Key definitions for enzymes",
@@ -690,7 +690,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Photosynthesis and the Word Equation",
           body: "**Photosynthesis** is the process by which plants synthesise carbohydrates from raw materials using energy from light.\n\nPlants absorb carbon dioxide from the air and water from the soil. In the presence of sunlight and **chlorophyll**, these raw materials are converted into glucose and oxygen.",
-          figure: "![Core plant nutrition diagram showing photosynthesis word equation, chloroplast, and carbohydrate storage and uses](/notes/biology-core/core-06-plant-nutrition.svg)",
+          figure: "![Core plant nutrition diagram showing photosynthesis word equation, chloroplast, and carbohydrate storage and uses](/notes/biology-core/core-06-plant-nutrition.png)",
           groups: [
             {
               subTitle: "The word equation for photosynthesis",
@@ -789,7 +789,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Diet and Balanced Nutrition",
           body: "A **balanced diet** contains all seven dietary nutrients in the correct proportions to maintain health and support energy needs, growth, and repair.\n\nThe principal dietary nutrients are:\n- **Carbohydrates:** principal energy source (e.g. rice, bread, potatoes, pasta).\n- **Fats and oils (lipids):** long-term energy store, thermal insulation beneath skin, cell membranes (e.g. butter, oil, nuts).\n- **Proteins:** needed for growth and tissue repair, making enzymes and antibodies (e.g. meat, fish, eggs, beans).\n- **Vitamins:**\n  - **Vitamin C:** maintains healthy skin, blood vessels and gums; deficiency causes **scurvy** (bleeding gums, slow wound healing). Sources: citrus fruits, fresh vegetables.\n  - **Vitamin D:** helps absorb calcium for strong bones and teeth; deficiency causes **rickets** (soft, deformed bones). Sources: oily fish, egg yolk, dairy, sunlight on skin.\n- **Mineral ions:**\n  - **Calcium:** needed for strong bones and teeth, and blood clotting (e.g. milk, cheese). Deficiency also leads to rickets.\n  - **Iron:** needed to make **haemoglobin** in red blood cells to transport oxygen (e.g. red meat, liver, spinach). Deficiency causes anaemia (fatigue, lack of energy).\n- **Fibre (roughage):** indigestible plant material (cellulose) that provides bulk for the muscles of the alimentary canal to push against during peristalsis, preventing constipation (e.g. wholemeal bread, fruit, vegetables).\n- **Water:** solvent for chemical reactions, transport medium for blood and urine, and temperature regulation through sweating.",
-          figure: "![Core human nutrition diagram showing alimentary canal, tooth structure, tooth types, and chemical digestion enzymes](/notes/biology-core/core-07-human-nutrition.svg)",
+          figure: "![Core human nutrition diagram showing digestive system organs, tooth structure, and chemical digestion enzymes](/notes/biology-core/core-07-human-nutrition.png)",
           groups: [
             {
               subTitle: "Causes of dietary deficiency diseases",
@@ -940,7 +940,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Plant Transport Systems: Xylem and Phloem",
           body: "Plants have two distinct transport tissues located in vascular bundles:\n\n- **Xylem:** transports **water and mineral ions** upwards from roots to stems and leaves, and provides **structural support** to the plant.\n- **Phloem:** transports **sucrose and amino acids** from leaves to other parts of the plant (such as growing shoots and storage roots).\n\n**Distribution of Xylem and Phloem:**\n- **Root (dicot):** xylem forms a central star/cross shape ('X'); phloem is located between the arms of the star.\n- **Stem (dicot):** vascular bundles arranged in an outer ring around the periphery; xylem on the inner side, phloem on the outer side.\n- **Leaf (dicot midrib):** vascular bundle in the midrib vein with xylem on the upper side (towards upper surface) and phloem on the lower side.",
-          figure: "![Core plant transport diagram showing xylem and phloem distribution, water uptake pathway by root hair cells, and transpiration](/notes/biology-core/core-08-plant-transport.svg)",
+          figure: "![Core plant transport diagram showing xylem and phloem distribution, water uptake pathway by root hair cells, and transpiration](/notes/biology-core/core-08-plant-transport.png)",
           groups: [
             {
               subTitle: "Functions and positions comparison",
@@ -1035,7 +1035,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "The Circulatory System and the Mammalian Heart",
           body: "The **circulatory system** is a system of blood vessels with a pump (the heart) and valves to ensure **one-way flow** of blood.\n\nBlood is pumped **away from the heart in arteries** and returns **to the heart in veins**.\n\n**Structure of the Mammalian Heart:**\n- **Four chambers:** two upper **atria** (right atrium and left atrium) that receive blood, and two lower **ventricles** (right ventricle and left ventricle) that pump blood out.\n- **Muscular wall:** thick cardiac muscle; the **left ventricle wall is thicker** than the right ventricle wall because it must pump blood at higher pressure all around the body.\n- **Septum:** a central muscular dividing wall that separates oxygenated blood on the left side from deoxygenated blood on the right side.\n- **One-way valves:** atrioventricular and semilunar valves prevent the backflow of blood during heartbeats.\n- **Coronary arteries:** branch from the aorta to supply the heart muscle tissue with oxygen and glucose.",
-          figure: "![Core animal transport diagram showing mammalian heart anatomy, blood vessel comparison, and blood components](/notes/biology-core/core-09-animal-transport.svg)",
+          figure: "![Core animal transport diagram showing mammalian heart anatomy, blood vessel comparison, and blood components](/notes/biology-core/core-09-animal-transport.png)",
           groups: [
             {
               subTitle: "Heartbeat mechanism and monitoring",
@@ -1164,6 +1164,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Pathogens and Transmissible Diseases",
           body: "A **pathogen** is a disease-causing organism (such as bacteria, viruses, fungi, and protoctists).\n\nA **transmissible disease** is a disease in which the pathogen can be passed from one host to another.\n\nPathogens can be transmitted between hosts in two primary ways:\n- **Direct contact:** transmission through direct physical contact, including through blood and other body fluids (e.g. sharing needles, sexual contact, direct skin-to-skin touch).\n- **Indirect transmission:** transmission without direct physical contact, including from contaminated surfaces, contaminated food and drinking water, animal vectors (such as houseflies or mosquitoes), and airborne droplets in the air (e.g. sneezing and coughing).",
+          figure: "![Core diseases and immunity diagram showing pathogens, body defences, and disease prevention](/notes/biology-core/core-10-diseases-immunity.png)",
           groups: [
             {
               subTitle: "Key definitions and modes of transmission",
@@ -1257,6 +1258,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Features of Gas Exchange Surfaces and Breathing System Anatomy",
           body: "The human lungs contain millions of microscopic air sacs called **alveoli**, which form the gas exchange surface where oxygen diffuses into blood and carbon dioxide diffuses out.\n\n**Features of Gas Exchange Surfaces:**\n1. **Large surface area:** millions of alveoli create a huge total surface area for diffusion.\n2. **Thin surface:** alveoli walls and capillary walls are each one cell thick, providing a very short diffusion pathway.\n3. **Good blood supply:** extensive network of capillaries constantly brings deoxygenated blood and takes away oxygenated blood, maintaining steep concentration gradients.\n4. **Good ventilation with air:** breathing in and out brings fresh oxygen-rich air and removes carbon dioxide, maintaining steep concentration gradients.\n\n**Parts of the Breathing System:**\n- **Larynx (voice box):** upper airway structure containing vocal cords.\n- **Trachea (windpipe):** airway leading down from throat, kept open by C-shaped cartilage rings.\n- **Bronchi (left and right bronchus):** two branches of trachea leading into each lung.\n- **Bronchioles:** smaller branching tubes within lungs delivering air to alveoli.\n- **Alveoli:** tiny air sacs where gas exchange occurs.\n- **Lungs:** pair of spongy organs enclosed in the thorax.\n- **Ribs:** bone cage protecting the lungs and heart.\n- **Intercostal muscles:** muscles between ribs that move the ribcage during breathing.\n- **Diaphragm:** muscular sheet separating thorax from abdomen, moves down during inspiration.",
+          figure: "![Core gas exchange diagram showing the human breathing system and alveolus-capillary diffusion](/notes/biology-core/core-11-gas-exchange.png)",
           groups: [
             {
               subTitle: "Essential features of gas exchange surfaces",
@@ -1354,6 +1356,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Uses of Energy and the Effect of Temperature on Respiration in Yeast",
           body: "**Respiration** is the chemical process in cells that breaks down nutrient molecules (such as glucose) to release energy for metabolism.\n\n**Uses of Energy in Living Organisms:**\n- **Muscle contraction:** for movement and locomotion.\n- **Protein synthesis:** joining amino acids to build proteins.\n- **Cell division:** producing new cells for growth and repair.\n- **Active transport:** moving molecules and ions against concentration gradients.\n- **Growth:** increasing size and cell numbers.\n- **Passage of nerve impulses:** electrical transmission along neurones.\n- **Maintenance of a constant body temperature:** keeping core body temperature stable in mammals and birds.\n\n**Investigating Temperature on Respiration in Yeast:**\nYeast cells respire using enzymes. As temperature increases towards the optimum (around 35–40 °C), respiration rate increases because molecules have greater kinetic energy. Above the optimum, enzymes denature and respiration stops.",
+          figure: "![Core respiration diagram comparing aerobic respiration and anaerobic respiration in muscles and yeast](/notes/biology-core/core-12-respiration.png)",
           groups: [
             {
               subTitle: "Seven vital uses of energy in organisms",
@@ -1456,6 +1459,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Excretion Organs and Excretory Products",
           body: "**Excretion** is the removal of the waste products of metabolism, toxic substances, and substances in excess of requirements from an organism.\n\n**Major Excretory Organs and Products:**\n- **Lungs:** excrete **carbon dioxide** (waste product of cellular respiration) and water vapour in expired air.\n- **Kidneys:** excrete **urea**, **excess water**, and **excess ions** in the form of **urine**.\n  - Urea is produced in the liver from excess amino acids.\n  - Excess mineral salts (ions) and excess water are filtered from blood by the kidneys to maintain fluid balance.",
+          figure: "![Core excretion diagram showing the human urinary system and kidney cross-section](/notes/biology-core/core-13-excretion.png)",
           groups: [
             {
               subTitle: "Excretory organs and their wastes",
@@ -1519,6 +1523,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "The Mammalian Nervous System and Reflex Arcs",
           body: "The nervous system coordinates and regulates body functions through rapid electrical communication.\n\n- **Electrical impulses** travel along specialized cells called **neurones**.\n- **Mammalian Nervous System:**\n  - **Central Nervous System (CNS):** consisting of the **brain** and the **spinal cord**.\n  - **Peripheral Nervous System (PNS):** consisting of the **nerves outside of the brain and spinal cord**.\n\n**Three Types of Neurones:**\n1. **Sensory neurone:** transmits impulses from sensory receptors to the CNS.\n2. **Relay neurone (connector/interneurone):** transmits impulses within the CNS between sensory and motor neurones.\n3. **Motor neurone:** transmits impulses from the CNS to effectors (muscles and glands).\n\n**Reflex Arc and Reflex Actions:**\nA **reflex action** is a means of automatically and rapidly integrating and coordinating stimuli with the responses of effectors (muscles and glands), protecting the body from harm.\n\n**Sequence in a simple reflex arc:**\n**Receptor → Sensory neurone → Relay neurone → Motor neurone → Effector**\n\n**Synapses:**\nA **synapse** is a **junction between two neurones**.",
+          figure: "![Core coordination and response diagram showing a simple reflex arc and human eye cross-section](/notes/biology-core/core-14-coordination-response.png)",
           groups: [
             {
               subTitle: "Key structural and functional sequence",
@@ -1663,6 +1668,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Definition of Drugs and Antibiotic Action",
           body: "A **drug** is any substance taken into the body that modifies or affects chemical reactions in the body.\n\n**Antibiotics:**\nAntibiotics are medicines used for the **treatment of bacterial infections**.\n- Antibiotics work by disrupting the cell walls, cell membranes, or metabolic pathways of bacteria, killing them or preventing them from reproducing.\n- **Antibiotics kill bacteria but do NOT affect viruses.** Viruses do not have cell walls or their own metabolic machinery (they reproduce inside host cells), so antibiotics have no effect on viral infections such as colds, influenza, or HIV.\n\n**Antibiotic Resistance:**\n- Some bacteria mutate and develop **resistance to antibiotics**.\n- When resistant bacteria survive antibiotic treatment, they reproduce and spread, reducing the effectiveness of antibiotics.\n- Overuse and unnecessary use of antibiotics (e.g. taking them for viral infections or not finishing prescribed courses) increases the development of antibiotic-resistant strains.",
+          figure: "![Core drugs and antibiotics diagram showing antibiotic action against bacteria versus viruses and antibiotic resistance](/notes/biology-core/core-15-drugs.png)",
           groups: [
             {
               subTitle: "Key facts about drugs and antibiotics",
@@ -1700,6 +1706,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Asexual and Sexual Reproduction",
           body: "**Asexual reproduction** is a process resulting in the production of **genetically identical offspring from one parent**.\n- Occurs without gametes or fertilisation; examples include binary fission in bacteria, budding in yeast, and runners/tubers in plants (potatoes, strawberries).\n\n**Sexual reproduction** is a process involving the **fusion of the nuclei of two gametes to form a zygote** and the production of offspring that are **genetically different** from each other.\n- **Fertilisation** is the fusion of the nuclei of gametes.",
+          figure: "![Core reproduction diagram showing an insect-pollinated flower, asexual vs sexual reproduction, and a germinating seed](/notes/biology-core/core-16-reproduction.png)",
           groups: [
             {
               subTitle: "Comparison of asexual and sexual reproduction",
@@ -1875,6 +1882,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Chromosomes, Genes, Alleles and Sex Determination",
           body: "Inside the nucleus of every eukaryotic cell, genetic information is organised into structures called chromosomes:\n\n- **Chromosomes** are made of **DNA**, which contains genetic information in the form of **genes**.\n- A **gene** is a length of DNA that codes for a protein.\n- An **allele** is an **alternative form of a gene** (for example, alleles for blue eyes or brown eyes).\n\n**Haploid and Diploid Nuclei:**\n- A **haploid nucleus** contains a **single set of chromosomes** (e.g. human gametes contain 23 chromosomes, represented as n).\n- A **diploid nucleus** contains **two sets of chromosomes** (e.g. human body cells contain 23 pairs, or 46 chromosomes, represented as 2n).\n- In a diploid cell, there is a pair of each type of chromosome; in humans, there are 23 pairs.\n\n**Inheritance of Sex in Humans:**\nHuman sex is determined by the 23rd pair of chromosomes (the sex chromosomes):\n- Human females have two **X chromosomes (XX)**.\n- Human males have one **X and one Y chromosome (XY)**.\n- All egg cells contain an X chromosome; 50% of sperm cells carry an X chromosome and 50% carry a Y chromosome.\n- Fertilisation results in an equal **1 : 1 (50% : 50%) probability** of producing a female (XX) or male (XY) child.",
+          figure: "![Core inheritance diagram showing nucleus to gene, mitosis vs meiosis, and a monohybrid Punnett square](/notes/biology-core/core-17-inheritance.png)",
           groups: [
             {
               subTitle: "Core genetic terms",
@@ -2012,6 +2020,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Continuous and Discontinuous Variation and Mutation",
           body: "**Variation** is the differences between individuals of the same species.\n\n**Two Types of Variation:**\n1. **Continuous variation:** results in a **range of phenotypes between two extremes** without distinct categories.\n   - Examples: human height, body mass, body length, hand span.\n   - Cause: caused by **both genes and the environment** (e.g. nutrition and genetics affect height).\n   - Represented by a smooth bell-shaped curve (normal distribution).\n2. **Discontinuous variation:** results in a **limited number of distinct phenotypes with no intermediates**.\n   - Examples: human ABO blood groups (A, B, AB, O), presence of ear lobes, seed shape (round or wrinkled) in peas, seed colour in peas.\n   - Cause: caused by **genes only**; environment has no effect.\n   - Represented by separate discrete bars in a bar chart.\n\n**Mutation:**\n- A **mutation** is a **genetic change**.\n- Mutation is the primary process by which **new alleles are formed**.\n- Rate of mutation is increased by exposure to **ionising radiation** (such as ultraviolet rays, X-rays, and gamma rays) and **certain chemicals** (such as tobacco tar and mustard gas).",
+          figure: "![Core variation and selection diagram showing continuous and discontinuous variation, natural selection, and selective breeding](/notes/biology-core/core-18-variation-selection.png)",
           groups: [
             {
               subTitle: "Comparison of continuous and discontinuous variation",
@@ -2116,6 +2125,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Energy Flow, Food Chains, and Food Webs",
           body: "The **Sun is the principal source of energy input** to biological systems:\n- Light energy from the Sun is captured by green plants through photosynthesis and converted into **chemical energy** stored in organic molecules.\n- This chemical energy flows through living organisms when consumers feed on producers and other consumers.\n- Energy is eventually lost to the environment as heat from cellular respiration, meaning energy flows **unidirectionally** through ecosystems and is not recycled.\n\n**Feeding Roles:**\n- **Food chain:** shows the transfer of energy from one organism to the next, beginning with a producer.\n- **Food web:** a network of interconnected food chains.\n- **Producer:** an organism that makes its own organic nutrients, usually using sunlight through photosynthesis.\n- **Consumer:** an organism that gets its energy by feeding on other organisms.\n- **Trophic levels:** producers $\\rightarrow$ primary consumers (herbivores) $\\rightarrow$ secondary consumers (carnivores) $\\rightarrow$ tertiary consumers $\\rightarrow$ quaternary consumers.\n- **Herbivore:** animal that gets energy by eating plants.\n- **Carnivore:** animal that gets energy by eating other animals.\n- **Decomposer:** organism that gets energy from dead or waste organic material (e.g. bacteria and fungi).\n\n**Human Impact on Food Webs:**\n- **Overharvesting:** removing excessive numbers of a predator or prey species disrupts populations of other species in the food web.\n- **Introducing foreign (invasive) species:** non-native species compete with native species for food and shelter, often lacking natural predators and causing native populations to decline.",
+          figure: "![Core organisms and environment diagram showing a food chain, pyramid of biomass, and the carbon cycle](/notes/biology-core/core-19-organisms-environment.png)",
           groups: [
             {
               subTitle: "Feeding definitions",
@@ -2236,6 +2246,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Food Supply and Agricultural Practices",
           body: "Human population growth has required enormous increases in global food production:\n\n**Methods Used to Increase Food Production:**\n- **Agricultural machinery:** tractors and combine harvesters enable cultivation of vast areas of land with greater speed and efficiency.\n- **Chemical fertilisers:** supply essential mineral ions (nitrates, phosphates, potassium) to crops to boost growth and crop yields.\n- **Insecticides:** chemical sprays that kill insect pests, preventing crop damage and improving yield and quality.\n- **Herbicides:** chemicals that kill weeds, reducing competition with crops for water, light, space, and mineral ions.\n- **Selective breeding:** breeding crop varieties and livestock with desirable traits (e.g. pest resistance, high grain yield, high milk production).\n\n**Large-scale Monocultures of Crops:**\n- **Monoculture:** growing large areas of a single crop species.\n- **Advantages:** high yield, efficient mechanized planting and harvesting, reduced labour costs.\n- **Disadvantages:** drastically reduces biodiversity, promotes massive pest outbreaks requiring heavy pesticide use, and depletes specific soil nutrients.\n\n**Intensive Livestock Production:**\n- **Advantages:** high yield of meat, milk, and eggs in a small land area; animals protected from predators and weather.\n- **Disadvantages:** ethical concerns regarding animal confinement; rapid spread of infectious diseases requiring antibiotics; large amounts of manure causing water pollution.",
+          figure: "![Core human influences diagram showing deforestation, eutrophication, enhanced greenhouse effect, and conservation](/notes/biology-core/core-20-human-influences.png)",
           groups: [
             {
               subTitle: "Agricultural methods summary",
@@ -2355,6 +2366,7 @@ export const BIOLOGY_CORE: SubjectNotes = {
         {
           title: "Role of Bacteria and Microorganisms in Biotechnology",
           body: "**Biotechnology** is the application of biological organisms, systems, or processes to manufacturing and service industries.\n\n**Why Bacteria are Useful in Biotechnology and Genetic Modification:**\n1. **Rapid reproduction rate:** bacteria reproduce very quickly under optimal conditions, producing millions of cells in a short period.\n2. **Ability to make complex molecules:** bacteria possess the metabolic machinery to synthesise complex organic molecules (such as enzymes and human proteins).\n\n**Industrial Applications of Microorganisms:**\n- **Anaerobic respiration in yeast for biofuel:**\n  - Yeast is grown in sugar solutions (from maize, sugar cane, or waste plant material).\n  - Yeast respires anaerobically: $\\text{glucose} \\rightarrow \\text{alcohol (ethanol)} + \\text{carbon dioxide}$.\n  - The ethanol is extracted by distillation and used as a renewable biofuel for motor vehicles.\n- **Anaerobic respiration in yeast for bread-making:**\n  - Yeast is mixed with flour, water, and sugar to make bread dough.\n  - Yeast breaks down sugar anaerobically, producing bubbles of **carbon dioxide** gas.\n  - The trapped carbon dioxide bubbles expand, causing the dough to rise and giving bread its spongy texture.\n  - Any ethanol produced evaporates during baking.\n- **Use of pectinase in fruit juice production:**\n  - Fruit cell walls contain a substance called **pectin** that makes fruit pulp sticky and juice cloudy.\n  - The enzyme **pectinase** breaks down pectin, releasing more juice (higher yield) and making the juice clear.\n- **Biological washing powders:**\n  - Contain digestive enzymes (such as **proteases** to break down protein stains like blood and egg, and **lipases** to break down grease and oil stains).\n  - They work effectively at lower wash temperatures (30–40 °C), saving energy and money.",
+          figure: "![Core biotechnology and genetic modification diagram showing yeast biotechnology, industrial fermenter, and insulin production](/notes/biology-core/core-21-biotechnology.png)",
           groups: [
             {
               subTitle: "Why bacteria are useful",
