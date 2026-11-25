@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: #ffffff; width: 1360px; height: 760px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; }
+  .title { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 6px; text-align: center; }
+  .subtitle { font-size: 15px; color: #475569; margin-bottom: 28px; text-align: center; font-weight: 500; }
+  
+  .banner { background: #f8fafc; border: 2px dashed #94a3b8; border-radius: 12px; padding: 10px 24px; margin-bottom: 24px; font-size: 13.5px; color: #334155; text-align: center; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; width: 100%; max-width: 1260px; }
+  .card { background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 22px 18px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+  .icon-circle { width: 68px; height: 68px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 36px; margin-bottom: 12px; }
+  .group-name { font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 14px; }
+  
+  .spec-table { width: 100%; font-size: 12.5px; border-collapse: collapse; text-align: left; }
+  .spec-table td { padding: 6px 4px; border-bottom: 1px solid #f1f5f9; }
+  .spec-key { font-weight: 700; color: #64748b; width: 45%; }
+  .spec-val { font-weight: 600; color: #0f172a; }
+  
+  .ex-tag { margin-top: 14px; font-size: 11.5px; font-weight: 700; color: #0369a1; background: #e0f2fe; padding: 4px 10px; border-radius: 6px; }
+</style>
+</head>
+<body>
+  <div class="title">The Four Main Arthropod Classes</div>
+  <div class="subtitle">Cambridge IGCSE Biology (0610 / 0970) • Diagnostic Features of Invertebrates</div>
+
+  <div class="banner">
+    <strong>Universal Arthropod Features:</strong> 1. Exoskeleton made of chitin &nbsp;•&nbsp; 2. Jointed legs &nbsp;•&nbsp; 3. Segmented body &nbsp;•&nbsp; 4. Bilateral symmetry
+  </div>
+
+  <div class="grid-4">
+    <!-- Insects -->
+    <div class="card" style="border-top: 5px solid #2563eb;">
+      <div class="icon-circle" style="background: #dbeafe;">🐝</div>
+      <div class="group-name">1. Insects</div>
+      <table class="spec-table">
+        <tr><td class="spec-key">Legs:</td><td class="spec-val"><strong>3 pairs</strong> (6 total)</td></tr>
+        <tr><td class="spec-key">Body parts:</td><td class="spec-val">3 (Head, Thorax, Abdomen)</td></tr>
+        <tr><td class="spec-key">Antennae:</td><td class="spec-val"><strong>1 pair</strong></td></tr>
+        <tr><td class="spec-key">Wings:</td><td class="spec-val">Usually 2 pairs (on thorax)</td></tr>
+      </table>
+      <div class="ex-tag">Bee, Butterfly, Beetle</div>
+    </div>
+
+    <!-- Crustaceans -->
+    <div class="card" style="border-top: 5px solid #059669;">
+      <div class="icon-circle" style="background: #d1fae5;">🦀</div>
+      <div class="group-name">2. Crustaceans</div>
+      <table class="spec-table">
+        <tr><td class="spec-key">Legs:</td><td class="spec-val"><strong>5+ pairs</strong> (10+ legs)</td></tr>
+        <tr><td class="spec-key">Body parts:</td><td class="spec-val">Cephalothorax &amp; Abdomen</td></tr>
+        <tr><td class="spec-key">Antennae:</td><td class="spec-val"><strong>2 pairs</strong></td></tr>
+        <tr><td class="spec-key">Breathing:</td><td class="spec-val">Gills (Aquatic / Damp)</td></tr>
+      </table>
+      <div class="ex-tag">Crab, Lobster, Woodlouse</div>
+    </div>
+
+    <!-- Arachnids -->
+    <div class="card" style="border-top: 5px solid #dc2626;">
+      <div class="icon-circle" style="background: #fee2e2;">🕷️</div>
+      <div class="group-name">3. Arachnids</div>
+      <table class="spec-table">
+        <tr><td class="spec-key">Legs:</td><td class="spec-val"><strong>4 pairs</strong> (8 total)</td></tr>
+        <tr><td class="spec-key">Body parts:</td><td class="spec-val">Cephalothorax &amp; Abdomen</td></tr>
+        <tr><td class="spec-key">Antennae:</td><td class="spec-val"><strong>None</strong> (0 pairs)</td></tr>
+        <tr><td class="spec-key">Special:</td><td class="spec-val">Chelicerae (fangs), Pedipalps</td></tr>
+      </table>
+      <div class="ex-tag">Spider, Scorpion, Tick</div>
+    </div>
+
+    <!-- Myriapods -->
+    <div class="card" style="border-top: 5px solid #d97706;">
+      <div class="icon-circle" style="background: #fef3c7;">🐛</div>
+      <div class="group-name">4. Myriapods</div>
+      <table class="spec-table">
+        <tr><td class="spec-key">Legs:</td><td class="spec-val"><strong>Many pairs</strong></td></tr>
+        <tr><td class="spec-key">Body parts:</td><td class="spec-val">Head + many similar segments</td></tr>
+        <tr><td class="spec-key">Antennae:</td><td class="spec-val"><strong>1 pair</strong></td></tr>
+        <tr><td class="spec-key">Difference:</td><td class="spec-val">Centipede: 1 pair/seg<br>Millipede: 2 pairs/seg</td></tr>
+      </table>
+      <div class="ex-tag">Centipede, Millipede</div>
+    </div>
+  </div>
+</body>
+</html>

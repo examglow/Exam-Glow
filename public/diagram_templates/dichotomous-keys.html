@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: #ffffff; width: 1360px; height: 760px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px; }
+  .title { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 6px; text-align: center; }
+  .subtitle { font-size: 15px; color: #475569; margin-bottom: 30px; text-align: center; font-weight: 500; }
+  
+  .tree-container { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 1200px; }
+  
+  .node { background: #f8fafc; border: 2px solid #cbd5e1; border-radius: 12px; padding: 14px 20px; font-size: 15px; font-weight: 700; color: #1e293b; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+  .node.root { background: #eff6ff; border-color: #3b82f6; color: #1d4ed8; font-size: 16px; padding: 16px 24px; }
+  
+  .branch-split { display: flex; justify-content: space-around; width: 100%; margin-top: 24px; position: relative; }
+  .branch-arm { display: flex; flex-direction: column; align-items: center; flex: 1; position: relative; }
+  
+  .decision-label { font-size: 13px; font-weight: 800; color: #059669; background: #ecfdf5; border: 1.5px solid #10b981; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+  .decision-label.no { color: #dc2626; background: #fef2f2; border-color: #ef4444; }
+  
+  .leaf-group { display: flex; justify-content: center; gap: 16px; margin-top: 18px; width: 100%; }
+  .leaf-card { background: #ffffff; border: 2px solid #e2e8f0; border-radius: 12px; padding: 12px 16px; text-align: center; min-width: 130px; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
+  .leaf-title { font-size: 14px; font-weight: 800; color: #0f172a; margin-top: 4px; }
+  .leaf-icon { font-size: 24px; }
+
+  .bottom-tip { margin-top: 32px; background: #f1f5f9; border-left: 4px solid #3b82f6; padding: 12px 20px; border-radius: 8px; font-size: 13.5px; color: #334155; max-width: 900px; text-align: center; }
+</style>
+</head>
+<body>
+  <div class="title">How to Use a Dichotomous Key</div>
+  <div class="subtitle">Cambridge IGCSE Biology (0610 / 0970) • Step-by-Step Identification Tree</div>
+
+  <div class="tree-container">
+    <div class="node root">Specimen Identification: 5 Vertebrate Groups</div>
+    
+    <div class="branch-split">
+      <div class="branch-arm">
+        <div class="decision-label">1a. Has fur / hair</div>
+        <div class="leaf-card" style="border-color: #3b82f6; background: #eff6ff;">
+          <div class="leaf-icon">🦁</div>
+          <div class="leaf-title" style="color: #1d4ed8;">Class Mammalia</div>
+          <p style="font-size: 11px; color: #475569; margin-top: 2px;">(Mammary glands, give birth to live young)</p>
+        </div>
+      </div>
+
+      <div class="branch-arm">
+        <div class="decision-label no">1b. Does not have fur / hair</div>
+        <div class="node" style="font-size: 14px;">2. Does it have feathers?</div>
+
+        <div class="leaf-group">
+          <div class="leaf-card" style="border-color: #10b981; background: #ecfdf5;">
+            <div class="leaf-icon">🦅</div>
+            <div class="leaf-title" style="color: #047857;">Class Aves (Birds)</div>
+            <p style="font-size: 11px; color: #475569; margin-top: 2px;">Yes → Feathers, beak, hard-shelled eggs</p>
+          </div>
+
+          <div class="leaf-card">
+            <div class="node" style="padding: 8px 12px; font-size: 13px; margin-bottom: 8px;">3. Dry scales or moist skin?</div>
+            <div style="display: flex; gap: 10px;">
+              <div class="leaf-card" style="min-width: 110px; border-color: #f59e0b; background: #fffbeb;">
+                <div class="leaf-icon">🦎</div>
+                <div class="leaf-title" style="color: #b45309;">Reptiles</div>
+                <p style="font-size: 10.5px; color: #475569;">Dry scaly skin</p>
+              </div>
+              <div class="leaf-card" style="min-width: 110px; border-color: #8b5cf6; background: #f5f3ff;">
+                <div class="leaf-icon">🐸</div>
+                <div class="leaf-title" style="color: #6d28d9;">Amphibians</div>
+                <p style="font-size: 10.5px; color: #475569;">Moist slimy skin</p>
+              </div>
+              <div class="leaf-card" style="min-width: 110px; border-color: #06b6d4; background: #ecfeff;">
+                <div class="leaf-icon">🐟</div>
+                <div class="leaf-title" style="color: #0e7490;">Fish</div>
+                <p style="font-size: 10.5px; color: #475569;">Wet scales, fins, gills</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-tip">
+      <strong>Exam Rule for Keys:</strong> Always choose visible, definite anatomical features (e.g. wings, legs, antennae count). Never use vague, subjective descriptions like "large size" or "lives in water".
+    </div>
+  </div>
+</body>
+</html>

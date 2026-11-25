@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Characteristics and classification of living organisms</title>
+  <desc id="desc">The seven life processes, the classification sequence and the format of a binomial scientific name.</desc>
+  <defs>
+    <style>
+      .title{font:700 30px Arial,sans-serif;fill:#173128}.head{font:700 20px Arial,sans-serif;fill:#173128}.label{font:600 17px Arial,sans-serif;fill:#233831}.small{font:15px Arial,sans-serif;fill:#465a4d}.box{fill:#f7f8f4;stroke:#b7c7b9;stroke-width:2}.line{stroke:#547365;stroke-width:3;fill:none}.arrow{fill:#547365}
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#fffefb"/>
+  <text x="600" y="48" text-anchor="middle" class="title">Characteristics &amp; classification of living organisms</text>
+  <rect x="36" y="82" width="470" height="580" rx="20" class="box"/>
+  <text x="271" y="122" text-anchor="middle" class="head">Seven life processes — MRS GREN</text>
+  <circle cx="271" cy="350" r="90" fill="#dcebdd" stroke="#547365" stroke-width="3"/>
+  <text x="271" y="343" text-anchor="middle" class="head">LIVING</text><text x="271" y="370" text-anchor="middle" class="head">ORGANISM</text>
+  <g class="label">
+    <rect x="65" y="160" width="180" height="48" rx="12" fill="#fff" stroke="#b7c7b9"/><text x="155" y="191" text-anchor="middle">Movement</text>
+    <rect x="65" y="230" width="180" height="48" rx="12" fill="#fff" stroke="#b7c7b9"/><text x="155" y="261" text-anchor="middle">Respiration</text>
+    <rect x="65" y="300" width="180" height="48" rx="12" fill="#fff" stroke="#b7c7b9"/><text x="155" y="331" text-anchor="middle">Sensitivity</text>
+    <rect x="65" y="435" width="180" height="48" rx="12" fill="#fff" stroke="#b7c7b9"/><text x="155" y="466" text-anchor="middle">Growth</text>
+    <rect x="297" y="160" width="180" height="48" rx="12" fill="#fff" stroke="#b7c7b9"/><text x="387" y="191" text-anchor="middle">Reproduction</text>
+    <rect x="297" y="230" width="180" height="48" rx="12" fill="#fff" stroke="#b7c7b9"/><text x="387" y="261" text-anchor="middle">Excretion</text>
+    <rect x="297" y="300" width="180" height="48" rx="12" fill="#fff" stroke="#b7c7b9"/><text x="387" y="331" text-anchor="middle">Nutrition</text>
+  </g>
+  <g class="line"><path d="M190 350H65"/><path d="M271 260V208"/><path d="M271 440V525"/></g>
+  <text x="271" y="555" text-anchor="middle" class="small">Every living organism carries out</text><text x="271" y="578" text-anchor="middle" class="small">all seven processes during its life.</text>
+  <rect x="540" y="82" width="624" height="280" rx="20" class="box"/>
+  <text x="852" y="122" text-anchor="middle" class="head">Sequence of classification</text>
+  <text x="852" y="150" text-anchor="middle" class="small">Broad groups become more specific from left to right</text>
+  <g class="label" text-anchor="middle">
+    <rect x="568" y="190" width="116" height="58" rx="10" fill="#e7efe2" stroke="#8ca795"/><text x="626" y="225">Kingdom</text>
+    <rect x="704" y="190" width="105" height="58" rx="10" fill="#fff" stroke="#8ca795"/><text x="756" y="225">Phylum</text>
+    <rect x="829" y="190" width="96" height="58" rx="10" fill="#fff" stroke="#8ca795"/><text x="877" y="225">Class</text>
+    <rect x="945" y="190" width="92" height="58" rx="10" fill="#fff" stroke="#8ca795"/><text x="991" y="225">Order</text>
+    <rect x="1057" y="190" width="80" height="58" rx="10" fill="#fff" stroke="#8ca795"/><text x="1097" y="225">Family</text>
+    <rect x="665" y="278" width="150" height="52" rx="10" fill="#fff" stroke="#8ca795"/><text x="740" y="311">Genus</text>
+    <rect x="889" y="278" width="150" height="52" rx="10" fill="#dcebdd" stroke="#547365"/><text x="964" y="311">Species</text>
+  </g>
+  <g class="line"><path d="M626 248v22h114v8"/><path d="M756 248v22"/><path d="M877 248v22"/><path d="M991 248v22"/><path d="M1097 248v22H964v8"/><path d="M815 304h74"/></g>
+  <path d="M881 296l14 8-14 8z" class="arrow"/>
+  <rect x="540" y="392" width="624" height="270" rx="20" class="box"/>
+  <text x="852" y="432" text-anchor="middle" class="head">Binomial scientific name</text>
+  <text x="852" y="504" text-anchor="middle" style="font:italic 700 42px Georgia,serif;fill:#173128">Homo sapiens</text>
+  <path d="M660 540h180M900 540h180" stroke="#547365" stroke-width="3"/>
+  <text x="750" y="573" text-anchor="middle" class="label">GENUS</text><text x="990" y="573" text-anchor="middle" class="label">SPECIES</text>
+  <text x="750" y="600" text-anchor="middle" class="small">Capital initial</text><text x="990" y="600" text-anchor="middle" class="small">Lower-case initial</text>
+  <text x="852" y="634" text-anchor="middle" class="small">Italics when typed · underline separately by hand</text>
+</svg>

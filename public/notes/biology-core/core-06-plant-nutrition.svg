@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Plant Nutrition — Photosynthesis and Carbohydrate Storage</title>
+  <desc id="desc">Word equation of photosynthesis, chlorophyll in chloroplasts transferring light energy to chemicals, and subsequent use/storage as starch, cellulose, sucrose, glucose and nectar.</desc>
+  <defs>
+    <style>
+      .title{font:700 28px Arial,sans-serif;fill:#173128}.head{font:700 19px Arial,sans-serif;fill:#173128}.label{font:600 15px Arial,sans-serif;fill:#233831}.small{font:13px Arial,sans-serif;fill:#465a4d}.box{fill:#f7f8f4;stroke:#b7c7b9;stroke-width:2}.line{stroke:#547365;stroke-width:2.5;fill:none}.arrow{fill:#547365}
+    </style>
+  </defs>
+  <rect width="1200" height="720" fill="#fffefb"/>
+  <text x="600" y="44" text-anchor="middle" class="title">Topic 6: Plant Nutrition — Photosynthesis &amp; Storage</text>
+
+  <!-- Top panel: Word equation & Process definition -->
+  <rect x="36" y="68" width="1128" height="230" rx="16" class="box"/>
+  <text x="600" y="100" text-anchor="middle" class="head">The Word Equation for Photosynthesis</text>
+  <text x="600" y="124" text-anchor="middle" class="small">Plants synthesise carbohydrates from raw materials using energy from light absorbed by green chlorophyll in chloroplasts</text>
+
+  <!-- Word equation boxes -->
+  <g transform="translate(100, 140)">
+    <!-- Carbon dioxide -->
+    <rect x="0" y="0" width="160" height="56" rx="10" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+    <text x="80" y="28" text-anchor="middle" class="label">Carbon dioxide</text>
+    <text x="80" y="46" text-anchor="middle" font-size="11" fill="#0369a1">(from air via stomata)</text>
+
+    <!-- + -->
+    <text x="185" y="36" text-anchor="middle" font-size="28" font-weight="bold" fill="#374151">+</text>
+
+    <!-- Water -->
+    <rect x="210" y="0" width="160" height="56" rx="10" fill="#e0f2fe" stroke="#38bdf8" stroke-width="2"/>
+    <text x="290" y="28" text-anchor="middle" class="label">Water</text>
+    <text x="290" y="46" text-anchor="middle" font-size="11" fill="#0369a1">(from soil via roots)</text>
+
+    <!-- Arrow with Light & Chlorophyll conditions -->
+    <path d="M 395 28 L 565 28" stroke="#16a34a" stroke-width="3"/>
+    <polygon points="565,22 578,28 565,34" fill="#16a34a"/>
+    <text x="480" y="18" text-anchor="middle" font-size="13" font-weight="bold" fill="#ca8a04">☀️ Light</text>
+    <text x="480" y="46" text-anchor="middle" font-size="13" font-weight="bold" fill="#15803d">🌿 Chlorophyll</text>
+
+    <!-- Glucose -->
+    <rect x="600" y="0" width="170" height="56" rx="10" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <text x="685" y="28" text-anchor="middle" class="label">Glucose</text>
+    <text x="685" y="46" text-anchor="middle" font-size="11" fill="#15803d">(carbohydrate synthesised)</text>
+
+    <!-- + -->
+    <text x="795" y="36" text-anchor="middle" font-size="28" font-weight="bold" fill="#374151">+</text>
+
+    <!-- Oxygen -->
+    <rect x="820" y="0" width="160" height="56" rx="10" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <text x="900" y="28" text-anchor="middle" class="label">Oxygen</text>
+    <text x="900" y="46" text-anchor="middle" font-size="11" fill="#15803d">(released as by-product)</text>
+  </g>
+
+  <!-- Bottom: 5 Carbohydrate Fates (Core 6.1.5) -->
+  <rect x="36" y="318" width="1128" height="376" rx="16" class="box"/>
+  <text x="600" y="352" text-anchor="middle" class="head">Subsequent Use and Storage of Carbohydrates (Core 6.1.5)</text>
+  <text x="600" y="374" text-anchor="middle" class="small">Glucose made in photosynthesis is transformed for 5 key syllabus functions in the plant</text>
+
+  <!-- 5 columns -->
+  <!-- 1. Starch -->
+  <g transform="translate(60, 400)">
+    <rect x="0" y="0" width="200" height="260" rx="12" fill="#fff" stroke="#86efac" stroke-width="2"/>
+    <rect x="12" y="12" width="176" height="36" rx="6" fill="#f0fdf4"/>
+    <text x="100" y="35" text-anchor="middle" class="head" fill="#166534">1. Starch</text>
+    <circle cx="100" cy="95" r="30" fill="#fef08a" stroke="#ca8a04" stroke-width="2"/>
+    <text x="100" y="100" text-anchor="middle" font-size="11" font-weight="bold" fill="#713f12">Energy Store</text>
+    <text x="100" y="150" text-anchor="middle" class="label">Storage Molecule</text>
+    <text x="100" y="180" text-anchor="middle" class="small">Insoluble granule</text>
+    <text x="100" y="200" text-anchor="middle" class="small">Stored in leaves, seeds,</text>
+    <text x="100" y="220" text-anchor="middle" class="small">tubers &amp; roots</text>
+    <text x="100" y="240" text-anchor="middle" font-size="11" fill="#15803d">Does not affect osmosis</text>
+  </g>
+
+  <!-- 2. Cellulose -->
+  <g transform="translate(280, 400)">
+    <rect x="0" y="0" width="200" height="260" rx="12" fill="#fff" stroke="#86efac" stroke-width="2"/>
+    <rect x="12" y="12" width="176" height="36" rx="6" fill="#f0fdf4"/>
+    <text x="100" y="35" text-anchor="middle" class="head" fill="#166534">2. Cellulose</text>
+    <rect x="70" y="70" width="60" height="50" rx="4" fill="#fed7aa" stroke="#c2410c" stroke-width="2"/>
+    <text x="100" y="100" text-anchor="middle" font-size="11" font-weight="bold" fill="#7c2d12">Cell Wall</text>
+    <text x="100" y="150" text-anchor="middle" class="label">Structural Support</text>
+    <text x="100" y="180" text-anchor="middle" class="small">Polymer of glucose</text>
+    <text x="100" y="200" text-anchor="middle" class="small">Builds strong plant</text>
+    <text x="100" y="220" text-anchor="middle" class="small">cell walls to maintain</text>
+    <text x="100" y="240" text-anchor="middle" font-size="11" fill="#15803d">shape &amp; withstand turgor</text>
+  </g>
+
+  <!-- 3. Glucose for Respiration -->
+  <g transform="translate(500, 400)">
+    <rect x="0" y="0" width="200" height="260" rx="12" fill="#fff" stroke="#86efac" stroke-width="2"/>
+    <rect x="12" y="12" width="176" height="36" rx="6" fill="#f0fdf4"/>
+    <text x="100" y="35" text-anchor="middle" class="head" fill="#166534">3. Glucose</text>
+    <circle cx="100" cy="95" r="30" fill="#fecdd3" stroke="#e11d48" stroke-width="2"/>
+    <text x="100" y="93" text-anchor="middle" font-size="11" font-weight="bold" fill="#9f1239">Respiration</text>
+    <text x="100" y="108" text-anchor="middle" font-size="10" fill="#9f1239">⚡ Energy</text>
+    <text x="100" y="150" text-anchor="middle" class="label">Immediate Fuel</text>
+    <text x="100" y="180" text-anchor="middle" class="small">Broken down in</text>
+    <text x="100" y="200" text-anchor="middle" class="small">cellular respiration</text>
+    <text x="100" y="220" text-anchor="middle" class="small">to release usable</text>
+    <text x="100" y="240" text-anchor="middle" font-size="11" fill="#15803d">metabolic energy</text>
+  </g>
+
+  <!-- 4. Sucrose for Transport -->
+  <g transform="translate(720, 400)">
+    <rect x="0" y="0" width="200" height="260" rx="12" fill="#fff" stroke="#86efac" stroke-width="2"/>
+    <rect x="12" y="12" width="176" height="36" rx="6" fill="#f0fdf4"/>
+    <text x="100" y="35" text-anchor="middle" class="head" fill="#166534">4. Sucrose</text>
+    <path d="M 85 75 L 115 75 L 125 115 L 75 115 Z" fill="#c7d2fe" stroke="#4338ca" stroke-width="2"/>
+    <text x="100" y="100" text-anchor="middle" font-size="11" font-weight="bold" fill="#312e81">Phloem</text>
+    <text x="100" y="150" text-anchor="middle" class="label">Transport Sugar</text>
+    <text x="100" y="180" text-anchor="middle" class="small">Soluble disaccharide</text>
+    <text x="100" y="200" text-anchor="middle" class="small">Translocated in phloem</text>
+    <text x="100" y="220" text-anchor="middle" class="small">from leaves (sources)</text>
+    <text x="100" y="240" text-anchor="middle" font-size="11" fill="#15803d">to growing shoots/roots</text>
+  </g>
+
+  <!-- 5. Nectar -->
+  <g transform="translate(940, 400)">
+    <rect x="0" y="0" width="200" height="260" rx="12" fill="#fff" stroke="#86efac" stroke-width="2"/>
+    <rect x="12" y="12" width="176" height="36" rx="6" fill="#f0fdf4"/>
+    <text x="100" y="35" text-anchor="middle" class="head" fill="#166534">5. Nectar</text>
+    <circle cx="100" cy="95" r="28" fill="#fef9c3" stroke="#eab308" stroke-width="2"/>
+    <text x="100" y="100" text-anchor="middle" font-size="16">🐝🌸</text>
+    <text x="100" y="150" text-anchor="middle" class="label">Insect Pollination</text>
+    <text x="100" y="180" text-anchor="middle" class="small">Sweet, sugary liquid</text>
+    <text x="100" y="200" text-anchor="middle" class="small">Secreted in flowers to</text>
+    <text x="100" y="220" text-anchor="middle" class="small">attract pollinators</text>
+    <text x="100" y="240" text-anchor="middle" font-size="11" fill="#15803d">for reproduction</text>
+  </g>
+</svg>

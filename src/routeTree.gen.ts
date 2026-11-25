@@ -10,33 +10,466 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutUsRouteImport } from './routes/about-us'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as ArcadeRouteImport } from './routes/arcade'
+import { Route as AssignmentsRouteImport } from './routes/assignments'
+import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as ChatRouteImport } from './routes/chat'
+import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as CustomerServiceRouteImport } from './routes/customer-service'
+import { Route as FlashcardsRouteImport } from './routes/flashcards'
+import { Route as HomeRouteImport } from './routes/home'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as NotesRouteImport } from './routes/notes'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as RecordLectureRouteImport } from './routes/record-lecture'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SignupRouteImport } from './routes/signup'
+import { Route as StudyPlanRouteImport } from './routes/study-plan'
+import { Route as SyllabusNotesRouteImport } from './routes/syllabus-notes'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TestRouteImport } from './routes/test'
+import { Route as TutorSignupRouteImport } from './routes/tutor-signup'
+import { Route as TutorsRouteImport } from './routes/tutors'
+import { Route as ApiAccountPlanRouteImport } from './routes/api/account-plan'
+import { Route as ApiAssignmentRouteImport } from './routes/api/assignment'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as ApiPaypalCaptureRouteImport } from './routes/api/paypal-capture'
+import { Route as ApiPaypalOrderRouteImport } from './routes/api/paypal-order'
+import { Route as ApiTtsRouteImport } from './routes/api/tts'
+import { Route as OnboardingGoalRouteImport } from './routes/onboarding.goal'
+import { Route as OnboardingRoleRouteImport } from './routes/onboarding.role'
+import { Route as OnboardingSourceRouteImport } from './routes/onboarding.source'
+import { Route as ApiV1ChatCompletionsRouteImport } from './routes/api/v1/chat/completions'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArcadeRoute = ArcadeRouteImport.update({
+  id: '/arcade',
+  path: '/arcade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssignmentsRoute = AssignmentsRouteImport.update({
+  id: '/assignments',
+  path: '/assignments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalendarRoute = CalendarRouteImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChatRoute = ChatRouteImport.update({
+  id: '/chat',
+  path: '/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomerServiceRoute = CustomerServiceRouteImport.update({
+  id: '/customer-service',
+  path: '/customer-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FlashcardsRoute = FlashcardsRouteImport.update({
+  id: '/flashcards',
+  path: '/flashcards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeRoute = HomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesRoute = NotesRouteImport.update({
+  id: '/notes',
+  path: '/notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecordLectureRoute = RecordLectureRouteImport.update({
+  id: '/record-lecture',
+  path: '/record-lecture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SignupRoute = SignupRouteImport.update({
+  id: '/signup',
+  path: '/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudyPlanRoute = StudyPlanRouteImport.update({
+  id: '/study-plan',
+  path: '/study-plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SyllabusNotesRoute = SyllabusNotesRouteImport.update({
+  id: '/syllabus-notes',
+  path: '/syllabus-notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestRoute = TestRouteImport.update({
+  id: '/test',
+  path: '/test',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TutorSignupRoute = TutorSignupRouteImport.update({
+  id: '/tutor-signup',
+  path: '/tutor-signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TutorsRoute = TutorsRouteImport.update({
+  id: '/tutors',
+  path: '/tutors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAccountPlanRoute = ApiAccountPlanRouteImport.update({
+  id: '/api/account-plan',
+  path: '/api/account-plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAssignmentRoute = ApiAssignmentRouteImport.update({
+  id: '/api/assignment',
+  path: '/api/assignment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPaypalCaptureRoute = ApiPaypalCaptureRouteImport.update({
+  id: '/api/paypal-capture',
+  path: '/api/paypal-capture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPaypalOrderRoute = ApiPaypalOrderRouteImport.update({
+  id: '/api/paypal-order',
+  path: '/api/paypal-order',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiTtsRoute = ApiTtsRouteImport.update({
+  id: '/api/tts',
+  path: '/api/tts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingGoalRoute = OnboardingGoalRouteImport.update({
+  id: '/onboarding/goal',
+  path: '/onboarding/goal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingRoleRoute = OnboardingRoleRouteImport.update({
+  id: '/onboarding/role',
+  path: '/onboarding/role',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnboardingSourceRoute = OnboardingSourceRouteImport.update({
+  id: '/onboarding/source',
+  path: '/onboarding/source',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiV1ChatCompletionsRoute = ApiV1ChatCompletionsRouteImport.update({
+  id: '/api/v1/chat/completions',
+  path: '/api/v1/chat/completions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/admin': typeof AdminRoute
+  '/arcade': typeof ArcadeRoute
+  '/assignments': typeof AssignmentsRoute
+  '/calendar': typeof CalendarRoute
+  '/chat': typeof ChatRoute
+  '/checkout': typeof CheckoutRoute
+  '/customer-service': typeof CustomerServiceRoute
+  '/flashcards': typeof FlashcardsRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/notes': typeof NotesRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/record-lecture': typeof RecordLectureRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/study-plan': typeof StudyPlanRoute
+  '/syllabus-notes': typeof SyllabusNotesRoute
+  '/terms': typeof TermsRoute
+  '/test': typeof TestRoute
+  '/tutor-signup': typeof TutorSignupRoute
+  '/tutors': typeof TutorsRoute
+  '/api/account-plan': typeof ApiAccountPlanRoute
+  '/api/assignment': typeof ApiAssignmentRoute
+  '/api/chat': typeof ApiChatRoute
+  '/api/paypal-capture': typeof ApiPaypalCaptureRoute
+  '/api/paypal-order': typeof ApiPaypalOrderRoute
+  '/api/tts': typeof ApiTtsRoute
+  '/onboarding/goal': typeof OnboardingGoalRoute
+  '/onboarding/role': typeof OnboardingRoleRoute
+  '/onboarding/source': typeof OnboardingSourceRoute
+  '/api/v1/chat/completions': typeof ApiV1ChatCompletionsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/admin': typeof AdminRoute
+  '/arcade': typeof ArcadeRoute
+  '/assignments': typeof AssignmentsRoute
+  '/calendar': typeof CalendarRoute
+  '/chat': typeof ChatRoute
+  '/checkout': typeof CheckoutRoute
+  '/customer-service': typeof CustomerServiceRoute
+  '/flashcards': typeof FlashcardsRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/notes': typeof NotesRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/record-lecture': typeof RecordLectureRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/study-plan': typeof StudyPlanRoute
+  '/syllabus-notes': typeof SyllabusNotesRoute
+  '/terms': typeof TermsRoute
+  '/test': typeof TestRoute
+  '/tutor-signup': typeof TutorSignupRoute
+  '/tutors': typeof TutorsRoute
+  '/api/account-plan': typeof ApiAccountPlanRoute
+  '/api/assignment': typeof ApiAssignmentRoute
+  '/api/chat': typeof ApiChatRoute
+  '/api/paypal-capture': typeof ApiPaypalCaptureRoute
+  '/api/paypal-order': typeof ApiPaypalOrderRoute
+  '/api/tts': typeof ApiTtsRoute
+  '/onboarding/goal': typeof OnboardingGoalRoute
+  '/onboarding/role': typeof OnboardingRoleRoute
+  '/onboarding/source': typeof OnboardingSourceRoute
+  '/api/v1/chat/completions': typeof ApiV1ChatCompletionsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/admin': typeof AdminRoute
+  '/arcade': typeof ArcadeRoute
+  '/assignments': typeof AssignmentsRoute
+  '/calendar': typeof CalendarRoute
+  '/chat': typeof ChatRoute
+  '/checkout': typeof CheckoutRoute
+  '/customer-service': typeof CustomerServiceRoute
+  '/flashcards': typeof FlashcardsRoute
+  '/home': typeof HomeRoute
+  '/login': typeof LoginRoute
+  '/notes': typeof NotesRoute
+  '/pricing': typeof PricingRoute
+  '/privacy': typeof PrivacyRoute
+  '/record-lecture': typeof RecordLectureRoute
+  '/settings': typeof SettingsRoute
+  '/signup': typeof SignupRoute
+  '/study-plan': typeof StudyPlanRoute
+  '/syllabus-notes': typeof SyllabusNotesRoute
+  '/terms': typeof TermsRoute
+  '/test': typeof TestRoute
+  '/tutor-signup': typeof TutorSignupRoute
+  '/tutors': typeof TutorsRoute
+  '/api/account-plan': typeof ApiAccountPlanRoute
+  '/api/assignment': typeof ApiAssignmentRoute
+  '/api/chat': typeof ApiChatRoute
+  '/api/paypal-capture': typeof ApiPaypalCaptureRoute
+  '/api/paypal-order': typeof ApiPaypalOrderRoute
+  '/api/tts': typeof ApiTtsRoute
+  '/onboarding/goal': typeof OnboardingGoalRoute
+  '/onboarding/role': typeof OnboardingRoleRoute
+  '/onboarding/source': typeof OnboardingSourceRoute
+  '/api/v1/chat/completions': typeof ApiV1ChatCompletionsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about-us'
+    | '/admin'
+    | '/arcade'
+    | '/assignments'
+    | '/calendar'
+    | '/chat'
+    | '/checkout'
+    | '/customer-service'
+    | '/flashcards'
+    | '/home'
+    | '/login'
+    | '/notes'
+    | '/pricing'
+    | '/privacy'
+    | '/record-lecture'
+    | '/settings'
+    | '/signup'
+    | '/study-plan'
+    | '/syllabus-notes'
+    | '/terms'
+    | '/test'
+    | '/tutor-signup'
+    | '/tutors'
+    | '/api/account-plan'
+    | '/api/assignment'
+    | '/api/chat'
+    | '/api/paypal-capture'
+    | '/api/paypal-order'
+    | '/api/tts'
+    | '/onboarding/goal'
+    | '/onboarding/role'
+    | '/onboarding/source'
+    | '/api/v1/chat/completions'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about-us'
+    | '/admin'
+    | '/arcade'
+    | '/assignments'
+    | '/calendar'
+    | '/chat'
+    | '/checkout'
+    | '/customer-service'
+    | '/flashcards'
+    | '/home'
+    | '/login'
+    | '/notes'
+    | '/pricing'
+    | '/privacy'
+    | '/record-lecture'
+    | '/settings'
+    | '/signup'
+    | '/study-plan'
+    | '/syllabus-notes'
+    | '/terms'
+    | '/test'
+    | '/tutor-signup'
+    | '/tutors'
+    | '/api/account-plan'
+    | '/api/assignment'
+    | '/api/chat'
+    | '/api/paypal-capture'
+    | '/api/paypal-order'
+    | '/api/tts'
+    | '/onboarding/goal'
+    | '/onboarding/role'
+    | '/onboarding/source'
+    | '/api/v1/chat/completions'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-us'
+    | '/admin'
+    | '/arcade'
+    | '/assignments'
+    | '/calendar'
+    | '/chat'
+    | '/checkout'
+    | '/customer-service'
+    | '/flashcards'
+    | '/home'
+    | '/login'
+    | '/notes'
+    | '/pricing'
+    | '/privacy'
+    | '/record-lecture'
+    | '/settings'
+    | '/signup'
+    | '/study-plan'
+    | '/syllabus-notes'
+    | '/terms'
+    | '/test'
+    | '/tutor-signup'
+    | '/tutors'
+    | '/api/account-plan'
+    | '/api/assignment'
+    | '/api/chat'
+    | '/api/paypal-capture'
+    | '/api/paypal-order'
+    | '/api/tts'
+    | '/onboarding/goal'
+    | '/onboarding/role'
+    | '/onboarding/source'
+    | '/api/v1/chat/completions'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
+  AdminRoute: typeof AdminRoute
+  ArcadeRoute: typeof ArcadeRoute
+  AssignmentsRoute: typeof AssignmentsRoute
+  CalendarRoute: typeof CalendarRoute
+  ChatRoute: typeof ChatRoute
+  CheckoutRoute: typeof CheckoutRoute
+  CustomerServiceRoute: typeof CustomerServiceRoute
+  FlashcardsRoute: typeof FlashcardsRoute
+  HomeRoute: typeof HomeRoute
+  LoginRoute: typeof LoginRoute
+  NotesRoute: typeof NotesRoute
+  PricingRoute: typeof PricingRoute
+  PrivacyRoute: typeof PrivacyRoute
+  RecordLectureRoute: typeof RecordLectureRoute
+  SettingsRoute: typeof SettingsRoute
+  SignupRoute: typeof SignupRoute
+  StudyPlanRoute: typeof StudyPlanRoute
+  SyllabusNotesRoute: typeof SyllabusNotesRoute
+  TermsRoute: typeof TermsRoute
+  TestRoute: typeof TestRoute
+  TutorSignupRoute: typeof TutorSignupRoute
+  TutorsRoute: typeof TutorsRoute
+  ApiAccountPlanRoute: typeof ApiAccountPlanRoute
+  ApiAssignmentRoute: typeof ApiAssignmentRoute
+  ApiChatRoute: typeof ApiChatRoute
+  ApiPaypalCaptureRoute: typeof ApiPaypalCaptureRoute
+  ApiPaypalOrderRoute: typeof ApiPaypalOrderRoute
+  ApiTtsRoute: typeof ApiTtsRoute
+  OnboardingGoalRoute: typeof OnboardingGoalRoute
+  OnboardingRoleRoute: typeof OnboardingRoleRoute
+  OnboardingSourceRoute: typeof OnboardingSourceRoute
+  ApiV1ChatCompletionsRoute: typeof ApiV1ChatCompletionsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +481,275 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arcade': {
+      id: '/arcade'
+      path: '/arcade'
+      fullPath: '/arcade'
+      preLoaderRoute: typeof ArcadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assignments': {
+      id: '/assignments'
+      path: '/assignments'
+      fullPath: '/assignments'
+      preLoaderRoute: typeof AssignmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/chat': {
+      id: '/chat'
+      path: '/chat'
+      fullPath: '/chat'
+      preLoaderRoute: typeof ChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customer-service': {
+      id: '/customer-service'
+      path: '/customer-service'
+      fullPath: '/customer-service'
+      preLoaderRoute: typeof CustomerServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/flashcards': {
+      id: '/flashcards'
+      path: '/flashcards'
+      fullPath: '/flashcards'
+      preLoaderRoute: typeof FlashcardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home': {
+      id: '/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes': {
+      id: '/notes'
+      path: '/notes'
+      fullPath: '/notes'
+      preLoaderRoute: typeof NotesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/record-lecture': {
+      id: '/record-lecture'
+      path: '/record-lecture'
+      fullPath: '/record-lecture'
+      preLoaderRoute: typeof RecordLectureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/signup': {
+      id: '/signup'
+      path: '/signup'
+      fullPath: '/signup'
+      preLoaderRoute: typeof SignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/study-plan': {
+      id: '/study-plan'
+      path: '/study-plan'
+      fullPath: '/study-plan'
+      preLoaderRoute: typeof StudyPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/syllabus-notes': {
+      id: '/syllabus-notes'
+      path: '/syllabus-notes'
+      fullPath: '/syllabus-notes'
+      preLoaderRoute: typeof SyllabusNotesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/test': {
+      id: '/test'
+      path: '/test'
+      fullPath: '/test'
+      preLoaderRoute: typeof TestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tutor-signup': {
+      id: '/tutor-signup'
+      path: '/tutor-signup'
+      fullPath: '/tutor-signup'
+      preLoaderRoute: typeof TutorSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tutors': {
+      id: '/tutors'
+      path: '/tutors'
+      fullPath: '/tutors'
+      preLoaderRoute: typeof TutorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/account-plan': {
+      id: '/api/account-plan'
+      path: '/api/account-plan'
+      fullPath: '/api/account-plan'
+      preLoaderRoute: typeof ApiAccountPlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/assignment': {
+      id: '/api/assignment'
+      path: '/api/assignment'
+      fullPath: '/api/assignment'
+      preLoaderRoute: typeof ApiAssignmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/paypal-capture': {
+      id: '/api/paypal-capture'
+      path: '/api/paypal-capture'
+      fullPath: '/api/paypal-capture'
+      preLoaderRoute: typeof ApiPaypalCaptureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/paypal-order': {
+      id: '/api/paypal-order'
+      path: '/api/paypal-order'
+      fullPath: '/api/paypal-order'
+      preLoaderRoute: typeof ApiPaypalOrderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tts': {
+      id: '/api/tts'
+      path: '/api/tts'
+      fullPath: '/api/tts'
+      preLoaderRoute: typeof ApiTtsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/goal': {
+      id: '/onboarding/goal'
+      path: '/onboarding/goal'
+      fullPath: '/onboarding/goal'
+      preLoaderRoute: typeof OnboardingGoalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/role': {
+      id: '/onboarding/role'
+      path: '/onboarding/role'
+      fullPath: '/onboarding/role'
+      preLoaderRoute: typeof OnboardingRoleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/onboarding/source': {
+      id: '/onboarding/source'
+      path: '/onboarding/source'
+      fullPath: '/onboarding/source'
+      preLoaderRoute: typeof OnboardingSourceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/v1/chat/completions': {
+      id: '/api/v1/chat/completions'
+      path: '/api/v1/chat/completions'
+      fullPath: '/api/v1/chat/completions'
+      preLoaderRoute: typeof ApiV1ChatCompletionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
+  AdminRoute: AdminRoute,
+  ArcadeRoute: ArcadeRoute,
+  AssignmentsRoute: AssignmentsRoute,
+  CalendarRoute: CalendarRoute,
+  ChatRoute: ChatRoute,
+  CheckoutRoute: CheckoutRoute,
+  CustomerServiceRoute: CustomerServiceRoute,
+  FlashcardsRoute: FlashcardsRoute,
+  HomeRoute: HomeRoute,
+  LoginRoute: LoginRoute,
+  NotesRoute: NotesRoute,
+  PricingRoute: PricingRoute,
+  PrivacyRoute: PrivacyRoute,
+  RecordLectureRoute: RecordLectureRoute,
+  SettingsRoute: SettingsRoute,
+  SignupRoute: SignupRoute,
+  StudyPlanRoute: StudyPlanRoute,
+  SyllabusNotesRoute: SyllabusNotesRoute,
+  TermsRoute: TermsRoute,
+  TestRoute: TestRoute,
+  TutorSignupRoute: TutorSignupRoute,
+  TutorsRoute: TutorsRoute,
+  ApiAccountPlanRoute: ApiAccountPlanRoute,
+  ApiAssignmentRoute: ApiAssignmentRoute,
+  ApiChatRoute: ApiChatRoute,
+  ApiPaypalCaptureRoute: ApiPaypalCaptureRoute,
+  ApiPaypalOrderRoute: ApiPaypalOrderRoute,
+  ApiTtsRoute: ApiTtsRoute,
+  OnboardingGoalRoute: OnboardingGoalRoute,
+  OnboardingRoleRoute: OnboardingRoleRoute,
+  OnboardingSourceRoute: OnboardingSourceRoute,
+  ApiV1ChatCompletionsRoute: ApiV1ChatCompletionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Diffusion, osmosis and active transport</title>
+  <desc id="desc">Three labelled panels comparing movement down and against concentration gradients and water movement through a partially permeable membrane.</desc>
+  <defs><style>.title{font:700 30px Arial,sans-serif;fill:#173128}.head{font:700 23px Arial,sans-serif;fill:#173128}.label{font:600 16px Arial,sans-serif;fill:#233831}.small{font:15px Arial,sans-serif;fill:#465a4d}.panel{fill:#f7f8f4;stroke:#b7c7b9;stroke-width:2}.arrow{stroke:#547365;stroke-width:4;fill:none;marker-end:url(#arrow)}.water{stroke:#4f91ae;stroke-width:4;fill:none;marker-end:url(#bluearrow)}</style>
+  <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#547365"/></marker>
+  <marker id="bluearrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4f91ae"/></marker></defs>
+  <rect width="1200" height="720" fill="#fffefb"/>
+  <text x="600" y="46" text-anchor="middle" class="title">Movement into and out of cells</text>
+  <g><rect x="30" y="82" width="360" height="590" rx="20" class="panel"/><text x="210" y="125" text-anchor="middle" class="head">1. Diffusion</text><text x="210" y="153" text-anchor="middle" class="small">Any particles · down a gradient</text>
+  <text x="115" y="195" text-anchor="middle" class="label">Higher concentration</text><text x="310" y="195" text-anchor="middle" class="label">Lower concentration</text>
+  <rect x="197" y="215" width="26" height="230" rx="13" fill="#e3d8bd" stroke="#a38b61" stroke-width="2"/>
+  <g fill="#789b66"><circle cx="70" cy="235" r="8"/><circle cx="105" cy="230" r="8"/><circle cx="145" cy="245" r="8"/><circle cx="80" cy="280" r="8"/><circle cx="125" cy="285" r="8"/><circle cx="160" cy="310" r="8"/><circle cx="65" cy="330" r="8"/><circle cx="110" cy="350" r="8"/><circle cx="150" cy="375" r="8"/><circle cx="80" cy="405" r="8"/><circle cx="140" cy="420" r="8"/><circle cx="280" cy="270" r="8"/><circle cx="325" cy="360" r="8"/></g>
+  <path d="M140 320C185 300 235 300 300 315" class="arrow"/>
+  <text x="210" y="480" text-anchor="middle" class="label">Net movement: high → low</text><text x="210" y="514" text-anchor="middle" class="small">Random particle movement</text><text x="210" y="540" text-anchor="middle" class="small">No respiratory energy required</text><text x="210" y="590" text-anchor="middle" class="small">Example: oxygen enters blood</text><text x="210" y="616" text-anchor="middle" class="small">from an alveolus</text></g>
+  <g><rect x="420" y="82" width="360" height="590" rx="20" class="panel"/><text x="600" y="125" text-anchor="middle" class="head">2. Osmosis</text><text x="600" y="153" text-anchor="middle" class="small">Water only · partially permeable membrane</text>
+  <text x="495" y="195" text-anchor="middle" class="label">Dilute solution</text><text x="705" y="195" text-anchor="middle" class="label">Concentrated solution</text><text x="495" y="218" text-anchor="middle" class="small">Higher water potential</text><text x="705" y="218" text-anchor="middle" class="small">Lower water potential</text>
+  <rect x="587" y="240" width="26" height="230" rx="13" fill="#e3d8bd" stroke="#a38b61" stroke-width="2"/>
+  <g fill="#6aa9c5"><circle cx="460" cy="265" r="7"/><circle cx="490" cy="260" r="7"/><circle cx="530" cy="275" r="7"/><circle cx="465" cy="310" r="7"/><circle cx="510" cy="320" r="7"/><circle cx="550" cy="340" r="7"/><circle cx="480" cy="375" r="7"/><circle cx="530" cy="400" r="7"/><circle cx="650" cy="275" r="7"/><circle cx="700" cy="340" r="7"/><circle cx="745" cy="395" r="7"/></g>
+  <g fill="#c49564"><circle cx="675" cy="290" r="13"/><circle cx="725" cy="290" r="13"/><circle cx="665" cy="390" r="13"/><circle cx="730" cy="410" r="13"/><circle cx="690" cy="440" r="13"/></g>
+  <path d="M510 350C555 330 625 330 680 350" class="water"/>
+  <text x="600" y="480" text-anchor="middle" class="label">Water: high Ψ → low Ψ</text><text x="600" y="514" text-anchor="middle" class="small">Solute particles are restricted</text><text x="600" y="540" text-anchor="middle" class="small">No respiratory energy required</text><text x="600" y="590" text-anchor="middle" class="small">Example: water enters a root</text><text x="600" y="616" text-anchor="middle" class="small">hair cell from dilute soil water</text></g>
+  <g><rect x="810" y="82" width="360" height="590" rx="20" class="panel"/><text x="990" y="125" text-anchor="middle" class="head">3. Active transport</text><text x="990" y="153" text-anchor="middle" class="small">Specific particles · against a gradient</text>
+  <text x="895" y="195" text-anchor="middle" class="label">Lower concentration</text><text x="1090" y="195" text-anchor="middle" class="label">Higher concentration</text>
+  <rect x="977" y="215" width="26" height="230" rx="13" fill="#e3d8bd" stroke="#a38b61" stroke-width="2"/>
+  <path d="M980 300C945 290 945 360 980 350L1000 350C1035 360 1035 290 1000 300Z" fill="#c6afd4" stroke="#72528b" stroke-width="2"/>
+  <g fill="#c49564"><circle cx="875" cy="325" r="11"/><circle cx="1060" cy="245" r="11"/><circle cx="1100" cy="265" r="11"/><circle cx="1080" cy="310" r="11"/><circle cx="1120" cy="350" r="11"/><circle cx="1055" cy="390" r="11"/><circle cx="1105" cy="420" r="11"/></g>
+  <path d="M885 325H1055" class="arrow"/>
+  <rect x="865" y="465" width="250" height="48" rx="12" fill="#e7efe2" stroke="#8ca795"/><text x="990" y="495" text-anchor="middle" class="label">Energy released by respiration</text>
+  <text x="990" y="548" text-anchor="middle" class="small">Carrier protein moves particles</text><text x="990" y="574" text-anchor="middle" class="small">from low → high concentration</text><text x="990" y="620" text-anchor="middle" class="small">Example: nitrate ions enter</text><text x="990" y="646" text-anchor="middle" class="small">a root hair cell</text></g>
+</svg>

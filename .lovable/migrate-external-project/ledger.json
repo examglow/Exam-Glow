@@ -1,0 +1,41 @@
+{
+  "source": "github",
+  "repository": "https://github.com/examglow/Exam-Glow.git",
+  "capabilities": [
+    {
+      "capability": "code",
+      "source": "TanStack Start + React 19 + Tailwind v4 app",
+      "outcome": "migrate",
+      "status": "completed",
+      "next_action": "None"
+    },
+    {
+      "capability": "schema",
+      "source": "src/lib/supabase-schema.sql (examglow_accounts)",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "Enable Lovable Cloud and migrate examglow_accounts if user wants persistent backend"
+    },
+    {
+      "capability": "records",
+      "source": "examglow_accounts (optional Supabase table)",
+      "outcome": "migrate",
+      "status": "pending",
+      "next_action": "Request CSV/JSON export from Supabase dashboard if existing records need to be imported"
+    },
+    {
+      "capability": "external_providers",
+      "source": "PayPal, Gemini TTS, AI providers (Cloudflare/HuggingFace)",
+      "outcome": "preserve",
+      "status": "pending",
+      "next_action": "Configure API keys in Secrets when ready for live verification"
+    },
+    {
+      "capability": "verification",
+      "source": "Dev server build and live preview check",
+      "outcome": "verify",
+      "status": "verified",
+      "next_action": "None"
+    }
+  ]
+}

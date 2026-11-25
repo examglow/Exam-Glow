@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  body { background: #ffffff; width: 1360px; height: 760px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 30px; }
+  .title { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 6px; text-align: center; }
+  .subtitle { font-size: 15px; color: #475569; margin-bottom: 30px; text-align: center; font-weight: 500; }
+  
+  .kingdom-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; width: 100%; max-width: 1260px; }
+  .card { background: #ffffff; border: 2px solid #e2e8f0; border-radius: 16px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+  .icon-wrap { width: 64px; height: 64px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 32px; margin-bottom: 12px; }
+  .card-title { font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 10px; }
+  
+  .badge-list { display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: 10px; text-align: left; }
+  .badge-row { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 10px; font-size: 12px; color: #334155; }
+  .badge-label { font-weight: 700; color: #64748b; font-size: 11px; text-transform: uppercase; margin-bottom: 2px; }
+  .example-tag { margin-top: 12px; font-size: 12px; font-weight: 700; color: #2563eb; background: #eff6ff; padding: 4px 10px; border-radius: 6px; }
+</style>
+</head>
+<body>
+  <div class="title">The Five Kingdoms of Living Organisms</div>
+  <div class="subtitle">Cambridge IGCSE Biology (0610 / 0970) • Core Diagnostic Features</div>
+
+  <div class="kingdom-grid">
+    <!-- Animals -->
+    <div class="card" style="border-top: 5px solid #ef4444;">
+      <div class="icon-wrap" style="background: #fee2e2;">🦁</div>
+      <div class="card-title">1. Animals</div>
+      <div class="badge-list">
+        <div class="badge-row"><div class="badge-label">Cells &amp; Nucleus</div>Multicellular, Eukaryotic (True nucleus)</div>
+        <div class="badge-row"><div class="badge-label">Cell Wall</div>Absent (Flexible cell membrane only)</div>
+        <div class="badge-row"><div class="badge-label">Nutrition</div>Heterotrophic (Ingest other organisms)</div>
+      </div>
+      <div class="example-tag">Mammals, Insects, Fish</div>
+    </div>
+
+    <!-- Plants -->
+    <div class="card" style="border-top: 5px solid #10b981;">
+      <div class="icon-wrap" style="background: #d1fae5;">🌿</div>
+      <div class="card-title">2. Plants</div>
+      <div class="badge-list">
+        <div class="badge-row"><div class="badge-label">Cells &amp; Nucleus</div>Multicellular, Eukaryotic</div>
+        <div class="badge-row"><div class="badge-label">Cell Wall</div>Present (Made of <strong>Cellulose</strong>)</div>
+        <div class="badge-row"><div class="badge-label">Nutrition</div>Autotrophic (Photosynthesis via Chloroplasts)</div>
+      </div>
+      <div class="example-tag">Ferns, Flowering Plants</div>
+    </div>
+
+    <!-- Fungi -->
+    <div class="card" style="border-top: 5px solid #f59e0b;">
+      <div class="icon-wrap" style="background: #fef3c7;">🍄</div>
+      <div class="card-title">3. Fungi</div>
+      <div class="badge-list">
+        <div class="badge-row"><div class="badge-label">Cells &amp; Nucleus</div>Multicellular (hyphae) or Unicellular (yeast)</div>
+        <div class="badge-row"><div class="badge-label">Cell Wall</div>Present (Made of <strong>Chitin</strong>)</div>
+        <div class="badge-row"><div class="badge-label">Nutrition</div>Saprotrophic (Secrete enzymes &amp; absorb)</div>
+      </div>
+      <div class="example-tag">Mushrooms, Moulds, Yeast</div>
+    </div>
+
+    <!-- Protoctists -->
+    <div class="card" style="border-top: 5px solid #8b5cf6;">
+      <div class="icon-wrap" style="background: #ede9fe;">🔬</div>
+      <div class="card-title">4. Protoctists</div>
+      <div class="badge-list">
+        <div class="badge-row"><div class="badge-label">Cells &amp; Nucleus</div>Mostly Unicellular, Eukaryotic</div>
+        <div class="badge-row"><div class="badge-label">Cell Wall</div>Variable (Some like plants, some animal-like)</div>
+        <div class="badge-row"><div class="badge-label">Nutrition</div>Autotrophic (Chlorella) or Heterotrophic (Amoeba)</div>
+      </div>
+      <div class="example-tag">Amoeba, Paramecium</div>
+    </div>
+
+    <!-- Prokaryotes -->
+    <div class="card" style="border-top: 5px solid #06b6d4;">
+      <div class="icon-wrap" style="background: #cffafe;">🧫</div>
+      <div class="card-title">5. Prokaryotes</div>
+      <div class="badge-list">
+        <div class="badge-row"><div class="badge-label">Cells &amp; Nucleus</div>Unicellular, <strong>No true nucleus</strong> (Circular DNA)</div>
+        <div class="badge-row"><div class="badge-label">Cell Wall</div>Present (Made of <strong>Peptidoglycan</strong>)</div>
+        <div class="badge-row"><div class="badge-label">Organelles</div>No mitochondria, no chloroplasts, 70S ribosomes</div>
+      </div>
+      <div class="example-tag">Bacteria (E. coli, Lactobacillus)</div>
+    </div>
+  </div>
+</body>
+</html>
