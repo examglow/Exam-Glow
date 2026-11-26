@@ -1,29 +1,9 @@
 import type { SubjectNotes } from "./types";
-import { MATHEMATICS_CHAPTERS_1 } from "./mathematics-chapter-1";
-import { MATHEMATICS_CHAPTERS_2 } from "./mathematics-chapter-2";
-import { MATHEMATICS_CHAPTERS_3 } from "./mathematics-chapter-3";
-import { MATHEMATICS_CHAPTERS_4 } from "./mathematics-chapter-4";
-import { MATHEMATICS_CHAPTERS_5 } from "./mathematics-chapter-5";
-import { MATHEMATICS_CHAPTERS_6 } from "./mathematics-chapter-6";
-import { MATHEMATICS_CHAPTERS_7 } from "./mathematics-chapter-7";
-import { MATHEMATICS_CHAPTERS_8 } from "./mathematics-chapter-8";
-import { MATHEMATICS_CHAPTERS_9 } from "./mathematics-chapter-9";
 
-// One chapter per syllabus topic of the 0580 2028-2030 syllabus, with 6 plates each.
 export const MATHEMATICS: SubjectNotes = {
   id: "mathematics",
   name: "Mathematics",
   code: "0580",
   color: "bg-blue-600",
-  chapters: [
-    ...MATHEMATICS_CHAPTERS_1,
-    ...MATHEMATICS_CHAPTERS_2,
-    ...MATHEMATICS_CHAPTERS_3,
-    ...MATHEMATICS_CHAPTERS_4,
-    ...MATHEMATICS_CHAPTERS_5,
-    ...MATHEMATICS_CHAPTERS_6,
-    ...MATHEMATICS_CHAPTERS_7,
-    ...MATHEMATICS_CHAPTERS_8,
-    ...MATHEMATICS_CHAPTERS_9,
-  ],
+  chapters: [],
 };
