@@ -15,6 +15,7 @@ export const CHEMISTRY_CORE_PART1: Chapter[] = [
     subheadings: [
       {
         title: "Solids, Liquids and Gases",
+        figure: "![States of Matter diagram showing solid, liquid and gas particle arrangements with state change arrows](/notes/chemistry/chem-01-states-of-matter.jpg)",
         body:
           "The three fundamental states of matter differ in their macroscopic properties and particle behaviour:\n\n" +
           "- **Solids:** Have a fixed shape and fixed volume. Particles are tightly packed in a regular lattice arrangement, vibrating about fixed positions. Attractive forces between particles are strong.\n" +
@@ -51,6 +52,7 @@ export const CHEMISTRY_CORE_PART1: Chapter[] = [
       },
       {
         title: "Diffusion",
+        figure: "![Diffusion and Brownian Motion diagram showing gas diffusion rate comparison and smoke cell random collisions](/notes/chemistry/chem-02-diffusion-brownian-motion.jpg)",
         body:
           "**Diffusion** is the net movement of particles from a region of higher concentration to a region of lower concentration down a concentration gradient, resulting from the random motion of particles.\n\n" +
           "**Evidence for Diffusion:**\n" +

@@ -427,6 +427,7 @@ export const CHEMISTRY_EXTENDED_PART4: Chapter[] = [
     subheadings: [
       {
         title: "Measurement Apparatus and Titration Technique",
+        figure: "![Experimental Measurement and Purity diagram showing laboratory apparatus and heating curve comparing pure versus impure substance](/notes/chemistry/chem-03-experimental-measurement-purity.jpg)",
         body:
           "**Precision and Selection of Measurement Apparatus:**\n" +
           "- **Time:** Digital stopwatch (to $0.01\\text{ s}$).\n" +

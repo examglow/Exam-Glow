@@ -37,12 +37,13 @@ describe("Cambridge IGCSE Chemistry (0620) syllabus notes", () => {
       expect(sections).toEqual(EXPECTED_SECTIONS);
     });
 
-    it("has no figures in any subheading (text-only constraint)", () => {
-      for (const chapter of CHEMISTRY_CORE.chapters) {
-        for (const sub of chapter.subheadings) {
-          expect((sub as Record<string, unknown>).figure).toBeUndefined();
-        }
-      }
+    it("wires illustrated diagrams for states of matter and experimental apparatus", () => {
+      const ch1Sub1 = CHEMISTRY_CORE.chapters[0].subheadings[0];
+      const ch1Sub2 = CHEMISTRY_CORE.chapters[0].subheadings[1];
+      const ch26Sub1 = CHEMISTRY_CORE.chapters[25].subheadings[0];
+      expect(ch1Sub1.figure).toContain("chem-01-states-of-matter.jpg");
+      expect(ch1Sub2.figure).toContain("chem-02-diffusion-brownian-motion.jpg");
+      expect(ch26Sub1.figure).toContain("chem-03-experimental-measurement-purity.jpg");
     });
 
     it("ensures every subheading has examiner tips, common mistakes, and recap", () => {
@@ -68,12 +69,13 @@ describe("Cambridge IGCSE Chemistry (0620) syllabus notes", () => {
       expect(sections).toEqual(EXPECTED_SECTIONS);
     });
 
-    it("has no figures in any subheading (text-only constraint)", () => {
-      for (const chapter of CHEMISTRY_EXTENDED.chapters) {
-        for (const sub of chapter.subheadings) {
-          expect((sub as Record<string, unknown>).figure).toBeUndefined();
-        }
-      }
+    it("wires illustrated diagrams for states of matter and experimental apparatus in Extended", () => {
+      const ch1Sub1 = CHEMISTRY_EXTENDED.chapters[0].subheadings[0];
+      const ch1Sub2 = CHEMISTRY_EXTENDED.chapters[0].subheadings[1];
+      const ch28Sub1 = CHEMISTRY_EXTENDED.chapters[27].subheadings[0];
+      expect(ch1Sub1.figure).toContain("chem-01-states-of-matter.jpg");
+      expect(ch1Sub2.figure).toContain("chem-02-diffusion-brownian-motion.jpg");
+      expect(ch28Sub1.figure).toContain("chem-03-experimental-measurement-purity.jpg");
     });
 
     it("ensures every subheading has examiner tips, common mistakes, and recap", () => {

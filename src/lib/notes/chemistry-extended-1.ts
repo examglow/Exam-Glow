@@ -15,6 +15,7 @@ export const CHEMISTRY_EXTENDED_PART1: Chapter[] = [
     subheadings: [
       {
         title: "Kinetic Theory and Heating / Cooling Curves",
+        figure: "![States of Matter diagram showing solid, liquid and gas particle arrangements with state change arrows](/notes/chemistry/chem-01-states-of-matter.jpg)",
         body:
           "**Particle Behaviour in the Three States:**\n" +
           "- **Solids:** Regular 3D lattice, strong interparticle attractions, particles vibrate about fixed positions. Kinetic energy increases with temperature until melting point.\n" +
@@ -42,6 +43,7 @@ export const CHEMISTRY_EXTENDED_PART1: Chapter[] = [
       },
       {
         title: "Diffusion and Effect of Molecular Mass (Mr)",
+        figure: "![Diffusion and Brownian Motion diagram showing gas diffusion rate comparison and smoke cell random collisions](/notes/chemistry/chem-02-diffusion-brownian-motion.jpg)",
         body:
           "**Diffusion** is the net spreading out of particles from an area of higher concentration to an area of lower concentration down a concentration gradient as a result of their random motion.\n\n" +
           "**Effect of Relative Molecular Mass ($M_r$) on Diffusion:**\n" +
