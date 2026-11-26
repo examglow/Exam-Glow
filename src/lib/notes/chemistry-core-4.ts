@@ -313,7 +313,6 @@ export const CHEMISTRY_CORE_PART4: Chapter[] = [
     subheadings: [
       {
         title: "Laboratory Apparatus and Measurements",
-        figure: "![Experimental Measurement and Purity diagram showing laboratory apparatus and heating curve comparing pure versus impure substance](/notes/chemistry/chem-03-experimental-measurement-purity.jpg)",
         body:
           "**Measuring Physical Quantities:**\n" +
           "- **Time:** Digital stopwatch (seconds).\n" +
