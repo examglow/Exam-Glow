@@ -7,7 +7,7 @@ import { BIOLOGY_CORE } from "./notes/biology-core";
 import { CHEMISTRY } from "./notes/chemistry";
 import { PHYSICS } from "./notes/physics";
 import { ENVIRONMENTAL_MANAGEMENT } from "./notes/environmental-management";
-import { MATHEMATICS } from "./notes/mathematics";
+import { MATHEMATICS, MATHEMATICS_CORE } from "./notes/mathematics";
 import { ADDITIONAL_MATHEMATICS } from "./notes/additional-mathematics";
 import { FIRST_LANGUAGE_ENGLISH } from "./notes/first-language-english";
 import { ENGLISH_SECOND_LANGUAGE } from "./notes/english-second-language";
@@ -57,6 +57,7 @@ export {
   PHYSICS,
   ENVIRONMENTAL_MANAGEMENT,
   MATHEMATICS,
+  MATHEMATICS_CORE,
   ADDITIONAL_MATHEMATICS,
   FIRST_LANGUAGE_ENGLISH,
   ENGLISH_SECOND_LANGUAGE,
@@ -106,8 +107,9 @@ export const SYLLABUS_NOTES: SubjectNotes[] = RAW_NOTES.filter(
   (s) => s.chapters && s.chapters.length > 0,
 );
 
-/** Biology Core is a separate four-chapter course; existing Biology URLs stay Extended. */
+/** Core vs Extended level support for subjects with multi-tier curricula. */
 export function getSyllabusSubject(subjectId?: string, level?: string): SubjectNotes | null {
   if (subjectId === "biology" && level === "core") return BIOLOGY_CORE;
+  if (subjectId === "mathematics" && level === "core") return MATHEMATICS_CORE;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
 }
