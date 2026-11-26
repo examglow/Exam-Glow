@@ -1575,7 +1575,7 @@ export function SyllabusNotesPage() {
   const navigate = useNavigate();
 
   const biologyLevel: BiologyLevel = level === "core" ? "core" : "extended";
-  const isBiologyCore = subjectId === "biology" && biologyLevel === "core";
+  const isCourseCore = biologyLevel === "core";
   const selectedSubject = getSyllabusSubject(subjectId, level);
   const activeChapter = selectedSubject?.chapters.find((c) => c.number === chapterNumber) ?? null;
   const activeArticle = STUDY_ARTICLES.find((a) => a.id === articleId || a.slug === articleId) ?? null;
@@ -1659,7 +1659,7 @@ export function SyllabusNotesPage() {
         chapter={activeChapter}
         allChapters={selectedSubject.chapters}
         color={selectedSubject.color}
-        subjectId={isBiologyCore ? "biology-core" : selectedSubject.id}
+        subjectId={isCourseCore ? `${selectedSubject.id}-core` : selectedSubject.id}
         subjectCode={selectedSubject.code}
         onBack={() => goTo(selectedSubject.id, undefined, "topics", board, undefined, biologyLevel)}
         onNext={openNextChapter}
@@ -1768,7 +1768,7 @@ export function SyllabusNotesPage() {
                   {selectedSubject.name} {biologyLevel === "core" ? "Core" : "Extended"} Topics
                 </h1>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  {isBiologyCore
+                  {isCourseCore
                     ? "Complete Core revision notes, diagrams, and examiner guidance."
                     : `${selectedSubject.chapters.length} chapters · Select any topic to start revising.`}
                 </p>
