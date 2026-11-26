@@ -4,7 +4,7 @@
 export * from "./notes/types";
 import { BIOLOGY } from "./notes/biology";
 import { BIOLOGY_CORE } from "./notes/biology-core";
-import { CHEMISTRY } from "./notes/chemistry";
+import { CHEMISTRY, CHEMISTRY_CORE, CHEMISTRY_EXTENDED } from "./notes/chemistry";
 import { PHYSICS } from "./notes/physics";
 import { ENVIRONMENTAL_MANAGEMENT } from "./notes/environmental-management";
 import { MATHEMATICS, MATHEMATICS_CORE, MATHEMATICS_EXTENDED } from "./notes/mathematics";
@@ -54,6 +54,8 @@ export {
   BIOLOGY,
   BIOLOGY_CORE,
   CHEMISTRY,
+  CHEMISTRY_CORE,
+  CHEMISTRY_EXTENDED,
   PHYSICS,
   ENVIRONMENTAL_MANAGEMENT,
   MATHEMATICS,
@@ -100,6 +102,7 @@ export {
 
 const RAW_NOTES: SubjectNotes[] = [
   BIOLOGY,
+  CHEMISTRY,
   MATHEMATICS,
 ];
 
@@ -111,6 +114,8 @@ export const SYLLABUS_NOTES: SubjectNotes[] = RAW_NOTES.filter(
 /** Core vs Extended level support for subjects with multi-tier curricula. */
 export function getSyllabusSubject(subjectId?: string, level?: string): SubjectNotes | null {
   if (subjectId === "biology" && level === "core") return BIOLOGY_CORE;
+  if (subjectId === "chemistry" && level === "core") return CHEMISTRY_CORE;
+  if (subjectId === "chemistry" && level === "extended") return CHEMISTRY_EXTENDED;
   if (subjectId === "mathematics" && level === "core") return MATHEMATICS_CORE;
   if (subjectId === "mathematics" && level === "extended") return MATHEMATICS_EXTENDED;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
