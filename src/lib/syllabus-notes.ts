@@ -108,6 +108,7 @@ const RAW_NOTES: SubjectNotes[] = [
   MATHEMATICS,
   ADDITIONAL_MATHEMATICS,
   PHYSICS,
+  ECONOMICS,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
@@ -125,5 +126,6 @@ export function getSyllabusSubject(subjectId?: string, level?: string): SubjectN
   if (subjectId === "physics" && level === "core") return PHYSICS_CORE;
   if (subjectId === "physics" && level === "extended") return PHYSICS_EXTENDED;
   if (subjectId === "additional-mathematics") return ADDITIONAL_MATHEMATICS;
+  if (subjectId === "economics") return ECONOMICS;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
 }
