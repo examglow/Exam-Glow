@@ -466,27 +466,33 @@ function CalloutList({ items, tone }: { items: string[]; tone: "tips" | "mistake
   const isTips = tone === "tips";
   return (
     <div
-      className={`my-8 rounded-r-2xl border border-slate-200/90 bg-white p-5 sm:p-6 shadow-xs transition-all ${
+      className={`my-8 rounded-2xl border p-5 sm:p-6 shadow-xs transition-all ${
         isTips
-          ? "border-l-[5px] border-l-[#1d4ed8]"
-          : "border-l-[5px] border-l-amber-500"
+          ? "border-blue-500/30 border-l-[5px] border-l-blue-600 dark:border-l-blue-400 bg-blue-50/50 dark:bg-blue-950/25"
+          : "border-amber-500/30 border-l-[5px] border-l-amber-500 dark:border-l-amber-400 bg-amber-50/50 dark:bg-amber-950/25"
       }`}
     >
       <div className="flex items-center gap-3 mb-3">
         <div
           className={`flex size-9 shrink-0 items-center justify-center rounded-full ${
-            isTips ? "bg-[#1d4ed8] text-white" : "bg-amber-500 text-white"
+            isTips
+              ? "bg-blue-600 text-white dark:bg-blue-500"
+              : "bg-amber-500 text-white dark:bg-amber-500"
           }`}
         >
           {isTips ? <Lightbulb className="size-5" /> : <AlertTriangle className="size-5" />}
         </div>
-        <h4 className="text-base font-bold text-slate-900 tracking-tight">
+        <h4 className="text-base font-bold text-foreground tracking-tight">
           {isTips ? "Examiner Tips and Tricks" : "Common Exam Mistakes"}
         </h4>
       </div>
-      <div className="space-y-2 text-[14.5px] leading-relaxed text-slate-700">
+      <div className="space-y-2.5 text-[14.5px] leading-relaxed text-foreground/90">
         {items.map((item, idx) => (
-          <p key={idx} className="m-0">{item}</p>
+          <div
+            key={idx}
+            className="prose prose-sm dark:prose-invert max-w-none prose-p:my-0 text-foreground/90 leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(item) }}
+          />
         ))}
       </div>
     </div>
@@ -723,10 +729,10 @@ function ChapterDoc({
 
   useEffect(() => {
     if (chapter.section) {
-      setExpandedSections((prev) => ({ ...prev, [chapter.section!]: true }));
+      setExpandedSections({ [chapter.section]: true });
     }
     if (chapter.topic) {
-      setExpandedTopics((prev) => ({ ...prev, [chapter.topic!]: true }));
+      setExpandedTopics({ [chapter.topic]: true });
     }
   }, [chapter.number, chapter.section, chapter.topic]);
 
@@ -905,7 +911,7 @@ function ChapterDoc({
         {/* Hierarchy Tree List */}
         <div className="flex-1 overflow-y-auto p-3 space-y-3">
           {Object.entries(hierarchy).map(([secTitle, topics]) => {
-            const isSecOpen = expandedSections[secTitle] ?? true;
+            const isSecOpen = !!expandedSections[secTitle];
             const secChapters = Object.values(topics).flat();
             const secMastered = secChapters.filter((c) => masteredSections[c.number]).length;
             const secPct = secChapters.length ? Math.round((secMastered / secChapters.length) * 100) : 0;
@@ -960,7 +966,7 @@ function ChapterDoc({
                 {isSecOpen && (
                   <div className="pl-2 space-y-2">
                     {Object.entries(topics).map(([topTitle, chaps]) => {
-                      const isTopOpen = expandedTopics[topTitle] ?? true;
+                      const isTopOpen = !!expandedTopics[topTitle];
                       const filteredChaps = sidebarSearch
                         ? chaps.filter((c) =>
                             c.title.toLowerCase().includes(sidebarSearch.toLowerCase()),
@@ -1206,35 +1212,38 @@ function ChapterDoc({
 
                 {/* Exam practice questions */}
                 {sub.recap && sub.recap.length > 0 && (
-                  <div className="mt-10 rounded-2xl border border-slate-200 overflow-hidden shadow-2xs">
+                  <div className="mt-10 rounded-2xl border border-border overflow-hidden shadow-2xs bg-card">
                     <button
                       type="button"
                       onClick={() => setExpandedExam((prev) => ({ ...prev, [si]: !prev[si] }))}
-                      className="w-full flex items-center justify-between gap-3 bg-slate-50/80 px-5 py-3.5 hover:bg-slate-100/70 transition-colors"
+                      className="w-full flex items-center justify-between gap-3 bg-muted/40 px-5 py-3.5 hover:bg-muted/70 transition-colors"
                     >
                       <div className="flex items-center gap-2.5">
-                        <HelpCircle className="size-4 text-slate-800" />
-                        <span className="text-xs font-bold uppercase tracking-wider text-slate-800">
+                        <HelpCircle className="size-4 text-primary" />
+                        <span className="text-xs font-bold uppercase tracking-wider text-foreground">
                           Exam Practice ({sub.recap.length} Questions)
                         </span>
                       </div>
                       <ChevronDown
-                        className={`size-4 text-slate-400 transition-transform duration-200 ${
+                        className={`size-4 text-muted-foreground transition-transform duration-200 ${
                           expandedExam[si] ? "rotate-180" : ""
                         }`}
                       />
                     </button>
 
                     {expandedExam[si] && (
-                      <div className="p-5 space-y-5 bg-white divide-y divide-slate-100">
+                      <div className="p-5 space-y-5 bg-card divide-y divide-border">
                         {sub.recap.map((q, qi) => (
                           <div key={qi} className="pt-4 first:pt-0 space-y-2">
-                            <p className="text-[14px] font-semibold text-slate-900 leading-snug flex items-start gap-2.5">
-                              <span className="size-5 rounded-full bg-slate-900 text-white text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">
+                            <div className="text-[14px] font-semibold text-foreground leading-snug flex items-start gap-2.5">
+                              <span className="size-5 rounded-full bg-primary text-primary-foreground text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">
                                 {qi + 1}
                               </span>
-                              <span>{q}</span>
-                            </p>
+                              <div
+                                className="flex-1 prose prose-sm dark:prose-invert max-w-none prose-p:my-0 text-foreground"
+                                dangerouslySetInnerHTML={{ __html: formatMathAndMarkdown(q) }}
+                              />
+                            </div>
                             <button
                               type="button"
                               onClick={() => {
@@ -1244,7 +1253,7 @@ function ChapterDoc({
                                 }));
                                 sound.playFlip();
                               }}
-                              className="ml-7 text-[12px] font-semibold text-slate-700 hover:underline flex items-center gap-1"
+                              className="ml-7 text-[12px] font-semibold text-primary hover:underline flex items-center gap-1 cursor-pointer"
                             >
                               {revealedAnswers[si * 100 + qi] ? "Hide model answer hint" : "Show model answer hint"}
                               <ChevronDown
@@ -1254,8 +1263,8 @@ function ChapterDoc({
                               />
                             </button>
                             {revealedAnswers[si * 100 + qi] && (
-                              <div className="ml-7 rounded-xl bg-slate-50 border border-slate-200 p-3.5 text-xs text-slate-700 leading-relaxed">
-                                State clear definitions, cite exact chemical bonds (e.g. 1,4 vs 1,6), mention reactants/products, and explain the biological functional advantage.
+                              <div className="ml-7 rounded-xl bg-muted/40 border border-border p-3.5 text-xs text-foreground/80 leading-relaxed">
+                                State clear definitions, cite exact mathematical/scientific formulas or terms, show all step-by-step working, and check significant figures.
                               </div>
                             )}
                           </div>
@@ -1269,10 +1278,10 @@ function ChapterDoc({
           </div>
 
           {/* Bottom 'Get unlimited access' Conversion Card matching ExamGlow */}
-          <div className="mt-16 rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-10 shadow-xs">
+          <div className="mt-16 rounded-3xl border border-border bg-card p-6 sm:p-10 shadow-xs">
             <div className="text-center max-w-xl mx-auto space-y-4">
               <span className="text-3xl block">👏</span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight">
                 Get unlimited access
               </h3>
 
@@ -1287,31 +1296,31 @@ function ChapterDoc({
                 ].map((feat) => (
                   <span
                     key={feat}
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200"
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"
                   >
-                    <CheckCircle2 className="size-3.5 text-emerald-600" />
+                    <CheckCircle2 className="size-3.5 text-emerald-600 dark:text-emerald-400" />
                     {feat}
                   </span>
                 ))}
               </div>
 
-              <div className="pt-6 border-t border-slate-100 mt-6">
-                <p className="text-base font-bold text-slate-900">
+              <div className="pt-6 border-t border-border mt-6">
+                <p className="text-base font-bold text-foreground">
                   Join the 100,000+ Students that ❤️ ExamGlow
                 </p>
-                <p className="text-xs text-slate-500 mt-0.5">the (exam) results speak for themselves:</p>
+                <p className="text-xs text-muted-foreground mt-0.5">the (exam) results speak for themselves:</p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 text-left">
-                  <div className="rounded-2xl bg-slate-50 border border-slate-100 p-4 text-xs text-slate-700 leading-relaxed">
+                  <div className="rounded-2xl bg-muted/40 border border-border p-4 text-xs text-foreground/80 leading-relaxed">
                     "I would just like to say a massive thank you for putting together such a brilliant, easy to use website.{" "}
-                    <span className="bg-slate-200 font-semibold text-slate-900 px-1 rounded">
+                    <span className="bg-primary/10 text-primary font-semibold px-1 rounded">
                       I really think using this site helped me secure my top grades
                     </span>{" "}
                     in science and maths. You really saved my exams and grades! Thank you."
                   </div>
-                  <div className="rounded-2xl bg-slate-50 border border-slate-100 p-4 text-xs text-slate-700 leading-relaxed">
+                  <div className="rounded-2xl bg-muted/40 border border-border p-4 text-xs text-foreground/80 leading-relaxed">
                     "This website is soooo useful and I can't ever thank you enough for organising questions by topic like this.{" "}
-                    <span className="bg-slate-200 font-semibold text-slate-900 px-1 rounded">
+                    <span className="bg-primary/10 text-primary font-semibold px-1 rounded">
                       It literally SAVED MY GRADES!
                     </span>"
                   </div>

@@ -383,9 +383,13 @@ html {
 
 .dark .text-gray-900,
 .dark .text-gray-950,
+.dark .text-slate-900,
+.dark .text-slate-950,
 .dark .text-black,
 .theme-dark .text-gray-900,
 .theme-dark .text-gray-950,
+.theme-dark .text-slate-900,
+.theme-dark .text-slate-950,
 .theme-dark .text-black {
   color: #F9FAFB !important;
 }
@@ -393,25 +397,41 @@ html {
 .dark .text-gray-800,
 .dark .text-gray-700,
 .dark .text-gray-600,
+.dark .text-slate-800,
+.dark .text-slate-700,
+.dark .text-slate-600,
 .theme-dark .text-gray-800,
 .theme-dark .text-gray-700,
-.theme-dark .text-gray-600 {
+.theme-dark .text-gray-600,
+.theme-dark .text-slate-800,
+.theme-dark .text-slate-700,
+.theme-dark .text-slate-600 {
   color: #D1D5DB !important;
 }
 
 .dark .text-gray-500,
 .dark .text-gray-400,
+.dark .text-slate-500,
+.dark .text-slate-400,
 .theme-dark .text-gray-500,
-.theme-dark .text-gray-400 {
+.theme-dark .text-gray-400,
+.theme-dark .text-slate-500,
+.theme-dark .text-slate-400 {
   color: #9CA3AF !important;
 }
 
 .dark .border-gray-100,
 .dark .border-gray-200,
 .dark .border-gray-300,
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300,
 .theme-dark .border-gray-100,
 .theme-dark .border-gray-200,
-.theme-dark .border-gray-300 {
+.theme-dark .border-gray-300,
+.theme-dark .border-slate-100,
+.theme-dark .border-slate-200,
+.theme-dark .border-slate-300 {
   border-color: #525252 !important;
 }
 
