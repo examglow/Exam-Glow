@@ -7,7 +7,7 @@ import { BIOLOGY_CORE } from "./notes/biology-core";
 import { CHEMISTRY } from "./notes/chemistry";
 import { PHYSICS } from "./notes/physics";
 import { ENVIRONMENTAL_MANAGEMENT } from "./notes/environmental-management";
-import { MATHEMATICS, MATHEMATICS_CORE } from "./notes/mathematics";
+import { MATHEMATICS, MATHEMATICS_CORE, MATHEMATICS_EXTENDED } from "./notes/mathematics";
 import { ADDITIONAL_MATHEMATICS } from "./notes/additional-mathematics";
 import { FIRST_LANGUAGE_ENGLISH } from "./notes/first-language-english";
 import { ENGLISH_SECOND_LANGUAGE } from "./notes/english-second-language";
@@ -58,6 +58,7 @@ export {
   ENVIRONMENTAL_MANAGEMENT,
   MATHEMATICS,
   MATHEMATICS_CORE,
+  MATHEMATICS_EXTENDED,
   ADDITIONAL_MATHEMATICS,
   FIRST_LANGUAGE_ENGLISH,
   ENGLISH_SECOND_LANGUAGE,
@@ -100,6 +101,7 @@ export {
 const RAW_NOTES: SubjectNotes[] = [
   BIOLOGY,
   MATHEMATICS,
+  MATHEMATICS_EXTENDED,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
@@ -111,5 +113,6 @@ export const SYLLABUS_NOTES: SubjectNotes[] = RAW_NOTES.filter(
 export function getSyllabusSubject(subjectId?: string, level?: string): SubjectNotes | null {
   if (subjectId === "biology" && level === "core") return BIOLOGY_CORE;
   if (subjectId === "mathematics" && level === "core") return MATHEMATICS_CORE;
+  if (subjectId === "mathematics" && level === "extended") return MATHEMATICS_EXTENDED;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
 }
