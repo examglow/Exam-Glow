@@ -2253,27 +2253,45 @@ export function SyllabusNotesPage() {
                     >
                       {/* Level Buttons: Core & Extended styled with theme primary */}
                       <div className="flex flex-wrap items-center gap-3">
-                        {(["core", "extended"] as const).map((courseLevel) => {
-                          const isActive = activeLevel === courseLevel;
-                          return (
-                            <button
-                              key={courseLevel}
-                              type="button"
-                              aria-label={`Open ${sub.name} ${courseLevel === "core" ? "Core" : "Extended"} topics`}
-                              onClick={() => toggleSubjectLevel(sub.id, courseLevel)}
-                              className={`rounded-full px-6 py-2 text-sm font-semibold transition-all cursor-pointer ${
-                                isActive
-                                  ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/40"
-                                  : "bg-primary/90 text-primary-foreground hover:bg-primary hover:scale-[1.02]"
-                              }`}
-                            >
-                              {courseLevel === "core" ? "Core" : "Extended"}
-                              <span className="ml-1.5 text-xs opacity-75">
-                                {isActive ? "▾" : "▸"}
-                              </span>
-                            </button>
-                          );
-                        })}
+                        {["biology", "chemistry", "mathematics", "physics"].includes(sub.id) ? (
+                          (["core", "extended"] as const).map((courseLevel) => {
+                            const isActive = activeLevel === courseLevel;
+                            return (
+                              <button
+                                key={courseLevel}
+                                type="button"
+                                aria-label={`Open ${sub.name} ${courseLevel === "core" ? "Core" : "Extended"} topics`}
+                                onClick={() => toggleSubjectLevel(sub.id, courseLevel)}
+                                className={`rounded-full px-6 py-2 text-sm font-semibold transition-all cursor-pointer ${
+                                  isActive
+                                    ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/40"
+                                    : "bg-primary/90 text-primary-foreground hover:bg-primary hover:scale-[1.02]"
+                                }`}
+                              >
+                                {courseLevel === "core" ? "Core" : "Extended"}
+                                <span className="ml-1.5 text-xs opacity-75">
+                                  {isActive ? "▾" : "▸"}
+                                </span>
+                              </button>
+                            );
+                          })
+                        ) : (
+                          <button
+                            type="button"
+                            aria-label={`Open ${sub.name} syllabus topics`}
+                            onClick={() => toggleSubjectLevel(sub.id, "extended")}
+                            className={`rounded-full px-6 py-2 text-sm font-semibold transition-all cursor-pointer ${
+                              activeLevel
+                                ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/40"
+                                : "bg-primary/90 text-primary-foreground hover:bg-primary hover:scale-[1.02]"
+                            }`}
+                          >
+                            Full Syllabus
+                            <span className="ml-1.5 text-xs opacity-75">
+                              {activeLevel ? "▾" : "▸"}
+                            </span>
+                          </button>
+                        )}
                       </div>
 
                       {/* Dropdown list of Topics when Core or Extended is clicked */}
@@ -2281,7 +2299,7 @@ export function SyllabusNotesPage() {
                         <div className="mt-3.5 rounded-xl border border-border bg-card p-4 text-card-foreground shadow-xs animate-in fade-in slide-in-from-top-1 duration-150">
                           <div className="flex items-center justify-between pb-3 border-b border-border/60 mb-3">
                             <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                              {sub.name} · {activeLevel === "core" ? "Core" : "Extended"} Topics
+                              {sub.name} · {["biology", "chemistry", "mathematics", "physics"].includes(sub.id) ? (activeLevel === "core" ? "Core" : "Extended") : "Full Syllabus"} Topics
                             </span>
                             <button
                               type="button"
