@@ -60,6 +60,9 @@ import { CHINESE_SECOND_LANGUAGE } from "./notes/chinese-second-language";
 import { FIRST_LANGUAGE_CHINESE } from "./notes/first-language-chinese";
 import { MANDARIN_CHINESE } from "./notes/mandarin-chinese";
 import { BAHASA_INDONESIA } from "./notes/bahasa-indonesia";
+import { ARABIC_0544 } from "./notes/arabic-0544";
+import { ARABIC_7180 } from "./notes/arabic-7180";
+import { FIRST_LANGUAGE_ARABIC } from "./notes/first-language-arabic";
 import type { SubjectNotes } from "./notes/types";
 export * from "./notes/definitions-store";
 
@@ -126,6 +129,9 @@ export {
   FIRST_LANGUAGE_CHINESE,
   MANDARIN_CHINESE,
   BAHASA_INDONESIA,
+  ARABIC_0544,
+  ARABIC_7180,
+  FIRST_LANGUAGE_ARABIC,
 };
 
 const RAW_NOTES: SubjectNotes[] = [
@@ -163,6 +169,9 @@ const RAW_NOTES: SubjectNotes[] = [
   FIRST_LANGUAGE_CHINESE,
   MANDARIN_CHINESE,
   BAHASA_INDONESIA,
+  ARABIC_0544,
+  ARABIC_7180,
+  FIRST_LANGUAGE_ARABIC,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
@@ -210,5 +219,8 @@ export function getSyllabusSubject(subjectId?: string, level?: string): SubjectN
   if (subjectId === "first-language-chinese") return FIRST_LANGUAGE_CHINESE;
   if (subjectId === "chinese" || subjectId === "mandarin-chinese") return MANDARIN_CHINESE;
   if (subjectId === "bahasa-indonesia") return BAHASA_INDONESIA;
+  if (subjectId === "arabic-0544" || (subjectId === "arabic" && level === "0544")) return ARABIC_0544;
+  if (subjectId === "arabic-7180" || (subjectId === "arabic" && level === "7180")) return ARABIC_7180;
+  if (subjectId === "first-language-arabic") return FIRST_LANGUAGE_ARABIC;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
 }

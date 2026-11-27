@@ -1,653 +1,471 @@
 import type { SubjectNotes } from "./types";
 
+/**
+ * Cambridge IGCSE Art & Design (0400) 2027 Syllabus Notes
+ * Full 6-chapter specification covering visual elements, observational recording,
+ * media processes, contextual studies, developmental progression, and coursework / exam submission.
+ * Strictly text-only with zero figures.
+ */
 export const ART_AND_DESIGN: SubjectNotes = {
   id: "art-and-design",
-  name: "Art & Design",
+  name: "Art & Design (0400)",
   code: "0400",
-  color: "bg-pink-500",
+  color: "bg-pink-600",
   chapters: [
     {
       number: 1,
-      title: "Foundations of Art & Design — Elements and Principles",
+      title: "Visual Elements and Principles of Composition",
+      section: "Foundations of Visual Art",
+      topic: "Formal Elements, Dynamic Composition, and Spatial Organization",
       intro:
-        " **What is this topic all about?** Art and design are built upon a shared visual language. The **elements of art** are the fundamental building blocks — line, shape, form, colour, texture, tone, and space — while the **principles of design** describe how those elements are organised on a surface. Mastering this vocabulary allows artists and designers to make purposeful, communicative choices and to analyse both their own work and that of others.",
+        "Art and design are communicated through a universal visual language. The formal elements (line, tone, colour, texture, shape, form, space) operate as expressive tools, while organizational principles (balance, harmony, contrast, emphasis, rhythm, proportion) govern how visual stimuli interact. Mastering this technical vocabulary is essential for critical articulation, deliberate mark-making, and intentional visual storytelling.",
       subheadings: [
         {
-          title: "The Elements of Art",
-          body: "Every artwork — whether a watercolour painting, a graphic poster, or a textile piece — is composed of some or all of the seven elements below. Understanding each element individually enables you to use them deliberately in composition.\n\n![Elements of Art overview diagram](/diagrams/computer-architecture.svg) ",
+          title: "The Formal Elements of Art",
+          body: "The building blocks of visual communication enable candidates to explore tactile, optical, and emotional qualities across diverse surfaces.",
           groups: [
             {
-              subTitle: "Line",
+              subTitle: "Line and Mark-Making",
               bullets: [
-                "**Definition**: A mark made by a moving point; the most fundamental element — it defines edges, creates outlines, suggests movement, and expresses mood.",
-                "**Types**: Horizontal lines convey calm and stability; vertical lines suggest power and growth; diagonal lines create energy and tension; curved lines imply softness and flow.",
-                "**Contour lines**: Describe the outer edge or shape of an object.",
-                "**Hatching and cross-hatching**: Parallel lines drawn closely together to build tonal value; cross-hatching adds further layers at angles to deepen shadows.",
-                "**Implicit lines**: Lines implied by the arrangement of shapes or the direction of a subject's gaze — they guide the viewer's eye without being physically present.",
+                "**Linear Functions**: Continuous contour lines delineate form, gestural lines record kinetic rhythm, and structural lines establish underlying planar architecture.",
+                "**Expressive Weight**: Calligraphic modulation in line thickness signals depth, shadow boundaries, and focal prioritization.",
+                "**Cross-Hatching and Stippling**: Systematic planar layering of directional hatching generates gradual tonal transitions and simulated volumetric density.",
               ],
             },
             {
-              subTitle: "Shape and Form",
+              subTitle: "Tone, Chiaroscuro and Value Scale",
               bullets: [
-                "**Shape**: A two-dimensional area enclosed by a line or defined by contrast — can be **geometric** (circles, squares, triangles) or **organic** (irregular, natural forms).",
-                "**Form**: Three-dimensional equivalent of shape — objects that have length, width, and depth (sphere, cube, cylinder); achieved on a 2D surface through shading and tonal modelling.",
-                "**Positive and negative space**: Positive space = the main subject; negative space = the empty area surrounding it. Skilled composition balances both.",
+                "**9-Step Value Scale**: Mapping visual subjects from pure paper highlight (value 1) to saturated pigment occlusion (value 9) prevents mid-tone flattening.",
+                "**Chiaroscuro & Sfumato**: Modeling form through pronounced atmospheric tonal contrast and seamless edge transitions creates high illusionistic three-dimensionality.",
+                "**Cast vs Form Shadows**: Identifying core shadows, ambient occlusion, reflected light, and distinct cast shadow penumbras conveys true environmental illumination.",
               ],
             },
             {
-              subTitle: "Colour",
+              subTitle: "Colour Theory and Harmonic Relationships",
               bullets: [
-                "**Colour wheel**: Based on **primary** colours (red, yellow, blue in traditional theory; red, green, blue in light/additive colour).",
-                "**Secondary colours**: Formed by mixing two primaries — orange, green, violet.",
-                "**Tertiary colours**: Formed by mixing a primary with an adjacent secondary — red-orange, yellow-green, blue-violet, etc.",
-                "**Hue, Value, Saturation**: Hue = the colour name; Value = lightness or darkness (tint = hue + white; shade = hue + black); Saturation/Chroma = purity/intensity of the colour.",
-                "**Colour harmonies**: Complementary (opposite on wheel — create vibrant contrast); analogous (adjacent — create harmony); triadic (three equally spaced hues — bold balance).",
-                "**Warm and cool colours**: Reds, oranges, yellows advance visually and evoke energy; blues, greens, violets recede and evoke calm.",
-              ],
-            },
-            {
-              subTitle: "Texture, Tone, and Space",
-              bullets: [
-                "**Texture**: The surface quality of a work — **actual/tactile texture** (physically rough or smooth) vs **visual/implied texture** (the illusion of texture in 2D work).",
-                "**Tone (Value)**: The degree of lightness or darkness; tonal range creates the illusion of three-dimensionality and establishes mood — high contrast is dramatic, low contrast is subtle.",
-                "**Space**: The area within and around objects. Artists use overlapping, size variation, perspective, and placement to suggest depth on a flat surface.",
-              ],
-            },
-            {
-              subTitle: ' "The Elements of Art" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "The Elements of Art" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Primary & Secondary Primaries**: Subtractive pigment mixing relies on warm/cool primaries (e.g. Ultramarine vs Phthalo Blue, Cadmium vs Crimson) to prevent muddy tertiary degradation.",
+                "**Complementary Dynamics**: Placing complementary pairings (orange/blue, red/green, yellow/violet) adjacent heightens simultaneous optical brilliance.",
+                "**Tonal Value of Hues**: Recognizing the intrinsic lightness or darkness of pure pigments (e.g. natural yellow is high value, dioxazine violet is low value) ensures correct tonal rendering.",
               ],
             },
           ],
-        },
-        {
-          title: "Principles of Design",
-          body: "The principles of design govern how elements are arranged. They are the 'grammar' of visual composition — understanding them helps explain why some works feel harmonious while others feel chaotic or unresolved. ",
-          groups: [
-            {
-              bullets: [
-                "**Balance**: Distribution of visual weight — **symmetrical** (formal, mirror-image calm), **asymmetrical** (informal balance using contrast of size, tone, or colour), **radial** (elements radiating from a centre point).",
-                "**Contrast**: Placing opposing elements side by side to create visual interest — light/dark, rough/smooth, large/small, warm/cool. Contrast creates focal points.",
-                "**Emphasis (Focal Point)**: The area of greatest visual interest; created through contrast, isolation, placement, or detail. The eye is drawn here first.",
-                "**Rhythm and Pattern**: Repetition of elements creating visual rhythm — **regular** rhythm (equal spacing) produces predictability; **progressive** rhythm (graduating size/colour) creates movement; **random** pattern adds energy.",
-                "**Unity and Harmony**: The sense that all elements belong together; achieved through repetition of colour, shape, line, and consistent style.",
-                "**Proportion and Scale**: The relative size relationship between elements and the whole; **Golden Ratio** ($\\phi \\approx 1.618$) has been used since antiquity to create aesthetically pleasing proportions.",
-                "**Movement**: The path the viewer's eye takes through an artwork; guided by line direction, shape arrangement, and tonal progression.",
-              ],
-            },
-            {
-              subTitle: ' "Principles of Design" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Principles of Design" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          examinerTips: [
+            "Always include annotated value swatches and colour-mixing trials in your preparatory studies to prove rigorous analytical testing of media.",
+            "Avoid outlining three-dimensional forms with heavy uniform wire-like black lines; establish form through planes of varying tone and lost-and-found edges.",
+          ],
+          commonMistakes: [
+            "Relying solely on black paint or graphite to darken colours rather than mixing chromatic shadows with complementary hues.",
+            "Confusing shape (two-dimensional flat boundary) with form (three-dimensional volume containing mass and depth).",
+          ],
+          recap: [
+            "The formal elements—line, tone, colour, texture, shape, form, and space—form the foundational visual grammar assessed across all Cambridge assessment objectives.",
           ],
         },
         {
-          title: "Media, Materials, and Processes",
-          body: "IGCSE Art & Design is a practical subject with five distinct areas of study. Candidates must develop skills in selecting, handling, and experimenting with materials appropriate to their chosen area. ",
+          title: "Principles of Composition and Spatial Design",
+          body: "Composition determines how the viewer's eye travels across the picture plane, organizing focal points and creating visual equilibrium.",
           groups: [
             {
-              subTitle: "Five Areas of Study",
+              subTitle: "Focal Hierarchy and Golden Ratio",
               bullets: [
-                "**Painting and Related Media**: Watercolour, acrylic, oil, gouache, ink wash, mixed media. Key skills: wet-on-wet, wet-on-dry, glazing, impasto, resist techniques.",
-                "**Graphic Communication**: Typography, layout, illustration, logo design, poster design. Key skills: lettering, grid systems, hierarchy, digital and analogue image-making.",
-                "**Three-Dimensional Design**: Sculpture, ceramics, model-making. Key skills: additive and subtractive modelling, armature construction, surface treatment.",
-                "**Textiles and Fashion**: Weaving, printing, embroidery, dyeing, fashion design. Key skills: resist dyeing (batik, tie-dye), screen printing, pattern-cutting.",
-                "**Photography**: Digital and film-based image-making, darkroom techniques, photo-editing. Key skills: composition, exposure, depth of field, focal length, post-processing.",
+                "**Rule of Thirds & Golden Section**: Placing primary visual weight at intersection points avoids static, dead-center stagnation.",
+                "**Leading Lines and Sightlines**: Incorporating diagonal perspective lines, gaze vectors, and geometric rhythms to guide the spectator's gaze continuously across the plane.",
+                "**Hierarchy & Scale**: Juxtaposing exaggerated foreground motifs against diminishing background elements establishes dramatic visual narrative.",
               ],
             },
             {
-              subTitle: "Wet Media — Painting Techniques",
+              subTitle: "Balance, Contrast and Negative Space",
               bullets: [
-                "**Wet-on-wet (alla prima)**: Applying wet paint onto a still-wet surface — produces soft, blended edges ideal for skies and foliage.",
-                "**Wet-on-dry**: Applying wet paint onto a dry surface — produces crisp, defined edges ideal for architectural detail.",
-                "**Glazing**: Applying thin, transparent colour layers over dry paint to build luminous depth and adjust tone.",
-                "**Impasto**: Thick, textured paint application using a palette knife or stiff brush — creates dramatic surface relief.",
-                "**Resist techniques (wax/masking fluid)**: Blocking areas before applying colour washes to preserve white paper or earlier colour.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Media, Materials, and Processes" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Media, Materials, and Processes" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Asymmetrical Balance**: Balancing a large neutral area with a small, highly saturated or intricate accent maintains energetic equilibrium without monotony.",
+                "**Positive vs Negative Space**: Treating unoccupied background voids with equal compositional rigor prevents isolated 'floating' subject matter.",
+                "**Tension and Cropping**: Radical cinematic cropping and frame encroachment heighten intimacy, vulnerability, and dynamic tension.",
               ],
             },
           ],
-        },
-        {
-          title: " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 1: "Foundations of Art & Design — Elements and Principles". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          examinerTips: [
+            "Generate at least 4–6 thumbnail compositional variations exploring alternative viewpoints (worm's-eye, bird's-eye, extreme macro) before commencing a major board.",
+            "Explicitly critique compositional choices using academic terms such as asymmetrical counterweight, dominant focal vector, and negative space activation.",
+          ],
+          commonMistakes: [
+            "Placing every important focal subject dead-center, resulting in predictable and unengaging symmetrical compositions.",
+            "Treating the background as an afterthought by filling negative space with flat, unmodulated brushstrokes that detach from the subject.",
+          ],
+          recap: [
+            "Deliberate composition harmonizes visual elements through focal hierarchy, dynamic balance, and thoughtful activation of negative space.",
           ],
         },
       ],
     },
     {
       number: 2,
-      title: "Drawing Skills, Observational Drawing, and Tonal Rendering",
+      title: "Observational Recording and Direct Studies",
+      section: "Component 1 & 2 Core Skills",
+      topic: "Primary Sourcing, Life Drawing, and Technical Recording",
       intro:
-        " **What is this topic all about?** Observational drawing — drawing directly from real objects, still life arrangements, the figure, or natural forms — is the cornerstone of IGCSE Art & Design. It develops hand-eye coordination, spatial understanding, proportion, and sensitivity to light. Tonal rendering transforms a flat outline into a convincing three-dimensional form.",
+        "Direct observation from primary sources is the cornerstone of Cambridge Art & Design assessment. Candidates must demonstrate sustained engagement with real-world stimuli through first-hand life drawing, still life setups, environmental architectural studies, and experimental tactile sampling.",
       subheadings: [
         {
-          title: "Measuring and Proportion in Observational Drawing",
-          body: "Accurate proportion is the foundation of convincing representational drawing. Artists use a range of sight-measuring techniques to transfer what they see onto the page with accuracy. ",
+          title: "Working from Primary Sources",
+          body: "Primary recording requires direct sensory contact with physical objects, living subjects, or architectural environments rather than copying secondary internet photographs.",
           groups: [
             {
+              subTitle: "Primary vs Secondary Evidence",
               bullets: [
-                "**Sighting**: Holding a pencil at arm's length at a constant distance to measure comparative sizes and angles of the subject.",
-                "**Blocking in**: Establishing the overall bounding shape before adding internal detail — works from general to specific.",
-                "**Negative space drawing**: Drawing the spaces *around* objects rather than the objects themselves; forces the artist to see shapes objectively rather than from symbol memory.",
-                "**Plumb line**: An imaginary vertical reference line dropped from a known point to check alignment of features below.",
-                "**The rule of thirds**: Dividing the picture plane into a 3×3 grid and placing focal elements near the intersection points for dynamic composition.",
-                "**Foreshortening**: The optical illusion of compression when a form extends toward the viewer; handled by measuring the apparent width versus height rather than drawing the 'known' length.",
+                "**Direct Life Observation**: Working directly in front of physical objects allows for dynamic parallax changes, natural lighting analysis, and authentic tactile understanding.",
+                "**Candidate-Taken Photography**: When photographic reference is necessary, candidates must take their own photographs under controlled studio or outdoor lighting.",
+                "**Tactile Engagement**: Handling surfaces—such as organic textures, rusted metal, woven fabrics, or biological specimens—informs authentic mark-making.",
               ],
             },
             {
-              subTitle: "Perspective Drawing",
+              subTitle: "Sustained vs Rapid Recording",
               bullets: [
-                "**One-point perspective**: A single vanishing point on the horizon line — all receding parallel lines converge there; suited to views directly facing a scene (corridors, roads).",
-                "**Two-point perspective**: Two vanishing points on the horizon line — used when viewing a corner of a box-like form; the most common perspective for architectural sketching.",
-                "**Three-point perspective**: A third vanishing point above or below the horizon accounts for extreme vertical convergence — used for dramatic bird's-eye or worm's-eye views.",
-                "**Atmospheric (aerial) perspective**: Objects in the distance appear lighter, bluer, and less detailed than foreground objects — created by adjusting tonal contrast and colour saturation.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Measuring and Proportion in Observational Drawing" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Measuring and Proportion in Observational Drawing" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Timed Gestural Studies**: Rapid 30-second to 2-minute charcoal sketches capture anatomical rhythm, weight distribution, and overarching posture.",
+                "**Analytical Cross-Sectional Studies**: Methodical, highly rendered pencil studies capturing intricate microscopic details, surface cracks, and specular reflections.",
+                "**Multi-Angle Documentation**: Recording a single object from multiple sequential rotations reveals structural volume and spatial depth.",
               ],
             },
           ],
-        },
-        {
-          title: "Tonal Rendering Techniques",
-          body: "Tone — the relative lightness or darkness of a surface — is what gives a drawing the illusion of three-dimensional solidity. Understanding how a directional light source creates a highlight, midtone, core shadow, reflected light, and cast shadow allows the artist to model any form convincingly. ",
-          groups: [
-            {
-              subTitle: "Light and Shadow Zones",
-              bullets: [
-                "**Highlight**: The brightest point where light directly strikes the surface; in graphite, leave the paper bare or use an eraser to reclaim.",
-                "**Midtone (half-tone)**: Transitions between highlight and shadow — the majority of the form's colour.",
-                "**Core shadow (terminator)**: The darkest part of the form itself, at the edge where direct light ends — darker than the cast shadow.",
-                "**Reflected light**: Faint lightening of the shadow side caused by light bouncing off nearby surfaces — prevents the shadow from appearing flat.",
-                "**Cast shadow**: The shadow projected by the form onto adjacent surfaces; its edges are hard near the object and softer further away.",
-              ],
-            },
-            {
-              subTitle: "Pencil Tonal Techniques",
-              bullets: [
-                "**Hatching**: Parallel lines drawn at a consistent angle; the closer the lines, the darker the tone.",
-                "**Cross-hatching**: A second set of hatching lines overlaid at an angle to the first — builds deeper tones and creates a woven texture.",
-                "**Blending/smudging**: Using a tortillon (paper stump) or fingertip to smooth graphite — produces smooth gradients for organic, rounded forms.",
-                "**Stippling**: Creating tone through accumulations of dots — time-intensive but produces distinctive, fine-grained texture.",
-                "**Contour shading**: Following the surface direction of the form with curved, parallel marks — reinforces the sense of volume.",
-              ],
-            },
-            {
-              subTitle: "Composition Strategies",
-              bullets: [
-                "**Rule of Thirds**: Place key elements at intersections of the thirds grid for dynamic balance.",
-                "**Golden Spiral (Fibonacci composition)**: Arrange the eye path along a logarithmic spiral to create natural, harmonious movement.",
-                "**Leading lines**: Roads, rivers, fences, and edges that direct the viewer's gaze toward the focal point.",
-                "**Framing**: Using elements within the scene (archways, branches, doorways) to frame and emphasise the subject.",
-                "**Symmetry and asymmetry**: Symmetrical compositions feel formal and stable; asymmetric ones feel dynamic and alive.",
-              ],
-            },
-            {
-              subTitle: ' "Tonal Rendering Techniques" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Tonal Rendering Techniques" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          examinerTips: [
+            "Examiners award higher marks when portfolio sheets visibly document candidate-curated primary still lifes and candid field sketches rather than stock photo reproductions.",
+            "Write clear observational annotations explaining physical properties: 'Drawn directly from natural daylight source at 3 PM; raking light emphasizes textured wood grain.'",
+          ],
+          commonMistakes: [
+            "Copying low-resolution internet images or heavily filtered social media portraits, which flattens tone and lacks original insight.",
+            "Submitting isolated drawings without displaying the developmental journey, intermediate studies, or physical research context.",
+          ],
+          recap: [
+            "Observational recording from direct primary sources provides authentic evidence of visual inquiry, spatial comprehension, and perceptual accuracy.",
           ],
         },
         {
-          title: "Contextual References and Critical Analysis",
-          body: "IGCSE Art & Design requires candidates to research the work of other artists, craftspeople, and designers and demonstrate how that research has informed and influenced their own work. Analytical writing uses formal vocabulary to describe, analyse, interpret, and evaluate artworks. ",
+          title: "Technical Drawing Techniques and Accuracy",
+          body: "Mastering observational measurement techniques ensures anatomical and structural authenticity across challenging forms.",
           groups: [
             {
-              subTitle: "The DAIE Framework",
+              subTitle: "Sighting and Proportional Measurement",
               bullets: [
-                "**Describe**: What do you see? List the elements present — colours, shapes, marks, subject matter — without interpretation.",
-                "**Analyse**: How are the elements organised? Discuss composition, use of principles, and technical processes.",
-                "**Interpret**: What does it mean or communicate? What mood, message, or narrative is suggested?",
-                "**Evaluate**: How successful is the work? What is its cultural context? How has it influenced your own practice?",
+                "**Thumb-and-Pencil Sighting**: Using a rigid straight edge held at arm's length to gauge proportional aspect ratios and compare relational angles.",
+                "**Negative Shape Enclosure**: Tracing the geometric silhouette of surrounding air spaces to verify the accuracy of complex positive contours.",
+                "**Plumb Lines and Horizontal Alignments**: Projecting mental vertical and horizontal grid axes across the subject to check alignment between landmarks.",
               ],
             },
             {
-              subTitle: "Key Artists and Movements to Reference",
+              subTitle: "Perspective Systems in Practice",
               bullets: [
-                "**Post-Impressionism**: Van Gogh's expressive, energetic brushwork; Cézanne's geometric simplification of form — foundational for 20th-century abstraction.",
-                "**Cubism**: Picasso and Braque's fragmentation of objects into geometric planes seen simultaneously from multiple viewpoints.",
-                "**Bauhaus**: Integration of fine art, craft, and industrial design — 'form follows function'; key figures include Klee, Kandinsky, Moholy-Nagy.",
-                "**Pop Art**: Warhol, Lichtenstein — use of commercial imagery, bold primary colours, repetition, and irony.",
-                "**Contemporary textile/pattern**: Yayoi Kusama's obsessive dot patterns; William Morris's naturalistic pattern design.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Contextual References and Critical Analysis" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Contextual References and Critical Analysis" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Linear Perspective (1, 2, and 3-Point)**: Locating true horizon lines, vanishing points, and converging orthogonals in complex architectural and spatial setups.",
+                "**Atmospheric/Aerial Perspective**: Simulating expansive atmospheric depth by reducing tonal contrast, softening sharp edges, and cooling color temperatures toward the background.",
+                "**Foreshortening**: Correctly compressing forms that advance directly toward the viewer through overlapping contour rings and dramatic scale distortion.",
               ],
             },
           ],
-        },
-        {
-          title: " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 2: "Drawing Skills, Observational Drawing, and Tonal Rendering". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          examinerTips: [
+            "Leave subtle light construction and sighting lines visible in your sketchbook studies; they demonstrate technical measurement and rigorous problem-solving.",
+            "Pay close attention to ellipses on cylindrical objects; ensure the curve remains rounded at the edges and never pinched into sharp points.",
+          ],
+          commonMistakes: [
+            "Drawing what the brain assumes is there rather than what the eye actually observes (e.g., drawing flat symmetrical eyes on a turned three-quarter portrait).",
+            "Inconsistent perspective where multiple objects in the same scene converge toward conflicting horizon lines.",
+          ],
+          recap: [
+            "Rigorous sighting, accurate linear perspective, and observational truth eliminate anatomical and architectural distortions.",
           ],
         },
       ],
     },
     {
       number: 3,
-      title: "Colour Theory — Mixing, Pigments, and Colour in Context",
+      title: "Media, Materials and Technical Processes",
+      section: "Practical Craft & Media Exploration",
+      topic: "Wet Media, Dry Media, Printmaking, 3D and Mixed Media",
       intro:
-        " **What is this topic all about?** A deep understanding of colour is essential for all five areas of study. Colour theory encompasses the science of pigment mixing, the psychology of colour perception, and the practical craft of applying colour harmoniously and expressively in artworks and designs.",
+        "Cambridge Art & Design encourages candidates to explore a wide range of conventional and non-traditional media. Rigorous experimentation with pigment viscosity, substrate tooth, resist techniques, print matrixes, and sculptural construction enables candidates to select materials that reinforce conceptual intent.",
       subheadings: [
         {
-          title: "Pigment Mixing and Colour Models",
-          body: "There are two fundamentally different colour systems: **subtractive** colour (pigments, dyes — used in painting, printing, textiles) and **additive** colour (light — used in screen-based graphic design and photography). ",
+          title: "Dry Media and Mark-Making Systems",
+          body: "Dry media provide direct tactile control over line quality, grain texture, and immediate tonal variation.",
           groups: [
             {
-              subTitle: "Subtractive Colour (RYB / CMYK)",
+              subTitle: "Graphite, Charcoal, and Carbon",
               bullets: [
-                "**Traditional RYB primaries**: Red, Yellow, Blue — the basis for painting; mixing all three produces a neutral brown-grey (never true black).",
-                "**CMYK (print model)**: Cyan, Magenta, Yellow (CMY) are the true subtractive primaries; Black (K = Key) is added for depth. Used in all professional printing.",
-                "**Mixing chart**: Red + Yellow = Orange; Yellow + Blue = Green; Blue + Red = Violet; mixing complementaries (opposite colours) greys or neutralises each other.",
+                "**Graphite Grading (9B–9H)**: Utilizing hard H pencils for precise architectural incising and soft B pencils for velvety specular shadows.",
+                "**Willow vs Compressed Charcoal**: Willow charcoal permits airy, easily erased gestural washes; compressed charcoal produces non-reflective, pitch-black opacity.",
+                "**Subtractive Drawing**: Coating paper in a uniform vine charcoal tone and pulling out luminous highlights using kneaded erasers and eraser pens.",
               ],
             },
             {
-              subTitle: "Additive Colour (RGB)",
+              subTitle: "Pastels, Conté, and Sanguine",
               bullets: [
-                "**RGB primaries**: Red, Green, Blue — the primaries of light, used in screens, stage lighting, and digital photography.",
-                "**Mixing RGB**: Red + Green = Yellow; Green + Blue = Cyan; Blue + Red = Magenta; all three combined = White.",
-                "**Application**: Digital graphic designers work in RGB colour mode for screen output; they convert to CMYK for print.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Pigment Mixing and Colour Models" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Pigment Mixing and Colour Models" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Soft vs Oil Pastels**: Soft pastels blend into seamless atmospheric gradients; oil pastels yield thick, buttery impasto resistant to aqueous washes.",
+                "**Toned Paper Grounds**: Working on mid-tone gray, ochre, or kraft paper allows rapid simultaneous modeling toward dark values and white chalk highlights.",
               ],
             },
           ],
-        },
-        {
-          title: "Colour Psychology and Cultural Context",
-          body: "Colour carries powerful psychological and cultural associations that artists and designers leverage to communicate meaning. These associations vary across cultures and must be considered thoughtfully in contextual design briefs. ",
-          groups: [
-            {
-              bullets: [
-                "**Red**: Energy, passion, danger, urgency — used in advertising for calls to action; mourning colour in some South Asian contexts.",
-                "**Blue**: Trust, calm, authority, depth — dominant in corporate identity (finance, technology); sky and water associations universally.",
-                "**Yellow**: Optimism, warmth, caution — high visibility; the most luminous colour at mid-saturation.",
-                "**Green**: Nature, growth, health, sustainability — used extensively in ecological branding.",
-                "**White**: Purity, simplicity, space (Western context); mourning in East Asian cultures.",
-                "**Black**: Elegance, power, formality, grief — context determines whether it reads as luxury or mourning.",
-                "**Simultaneous contrast (Chevreul effect)**: Placing two colours side by side alters the perceived hue of each — a grey on a red ground looks slightly green; the same grey on a green ground looks slightly red.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Colour Psychology and Cultural Context" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Colour Psychology and Cultural Context" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          examinerTips: [
+            "Always fix dry media with appropriate workable fixative between layers to preserve crisp detail and prevent smudge contamination during transit to Cambridge.",
+            "Incorporate a diverse range of mark-making tools—such as palette knives, sticks, dip pens, and stiff hog bristles—to avoid repetitive surface textures.",
+          ],
+          commonMistakes: [
+            "Over-blending charcoal or pastel with fingers, which strips away textural vitality and leaves greasy, muddy surfaces.",
+            "Using cheap cartridge paper for heavy media that requires high paper weight and abrasive tooth.",
+          ],
+          recap: [
+            "Deliberate selection of dry media and ground papers expands range, tactile mark-making, and rapid tonal manipulation.",
           ],
         },
         {
-          title: "Graphic Communication — Typography and Layout",
-          body: "Graphic communication is one of the five study areas. It encompasses the design of visual information — posters, books, packaging, logos, and digital interfaces — using typography, layout, illustration, and photography in combination. ",
+          title: "Wet Media, Printmaking and Mixed Media Processes",
+          body: "Mastering fluid dynamics, opaque layering, chemical resists, and print transfer systems creates rich visual and physical surfaces.",
           groups: [
             {
-              subTitle: "Typography Fundamentals",
+              subTitle: "Aqueous and Opaque Painting Media",
               bullets: [
-                "**Typeface categories**: Serif (e.g. Times New Roman — humanistic, traditional), Sans-serif (e.g. Helvetica — modern, clean), Script (handwritten, ornamental), Display (decorative, high-impact).",
-                "**Type anatomy**: Baseline, x-height, cap height, ascender, descender, counter, bowl, stem, serif.",
-                "**Leading**: Line spacing — too tight causes illegibility; adequate leading improves readability.",
-                "**Kerning**: Adjustment of space between specific letter pairs for optical consistency.",
-                "**Tracking**: Uniform adjustment of spacing across a range of characters — wider tracking for headlines, tighter for text.",
-                "**Hierarchy**: Using size, weight, colour, and style to signal importance — headline > subhead > body > caption.",
+                "**Watercolor Glazing**: Applying transparent washes wet-on-dry builds rich optical depth, while wet-in-wet produces soft atmospheric diffusion.",
+                "**Acrylic Modifiers and Body**: Heavy-body acrylics retain knife impasto marks; fluid acrylics glaze cleanly; modeling paste creates raised sculptural reliefs.",
+                "**Oil Painting (Fat-over-Lean)**: Increasing oil medium content in progressive layers prevents upper films from cracking over flexible under-paintings.",
               ],
             },
             {
-              subTitle: "Grid and Layout Systems",
+              subTitle: "Printmaking and Transfer Techniques",
               bullets: [
-                "**Column grid**: Divides the page into vertical columns; content, images, and captions align to column edges for visual order.",
-                "**Modular grid**: Both horizontal and vertical divisions creating a matrix of rectangular modules for complex editorial layouts.",
-                "**White space (negative space in design)**: Strategic emptiness that gives the design room to breathe, directs attention, and signals premium or minimal aesthetics.",
-                "**Visual hierarchy flow**: Z-pattern (Western left-to-right, top-to-bottom reading path) and F-pattern (web reading) inform placement of key content.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Graphic Communication — Typography and Layout" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Graphic Communication — Typography and Layout" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Monoprinting**: Subtractive wiping or direct roll-up on acrylic plates produces spontaneous, highly textured single impressions.",
+                "**Relief Printing (Lino & Woodblock)**: Gouging negative white space leaves raised matrix lines to receive brayer-rolled ink for graphic contrast.",
+                "**Collagraphy**: Building collage plates from textured materials (textiles, thread, sand, plaster) creates variable intaglio and relief surfaces.",
               ],
             },
           ],
-        },
-        {
-          title: " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 3: "Colour Theory — Mixing, Pigments, and Colour in Context". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          examinerTips: [
+            "Present clear step-by-step samples of print states (first proof, reduction stages, final multi-colour print) on your development boards.",
+            "Annotate why a specific medium was chosen: explain how acrylic impasto captures the raw energy of urban architecture or how delicate watercolor glazes evoke transient light.",
+          ],
+          commonMistakes: [
+            "Applying heavy wet washes to light paper without stretching, resulting in severe paper warping and buckling.",
+            "Arbitrary mixed-media collaging that obscures rather than clarifies the candidate's core visual idea.",
+          ],
+          recap: [
+            "Aqueous media and printmaking techniques demonstrate material mastery and enrich narrative concepts through textured surfaces.",
           ],
         },
       ],
     },
     {
       number: 4,
-      title: "Three-Dimensional Design — Sculpture, Ceramics, and Model-Making",
+      title: "Contextual Studies and Artist Investigation (AO3)",
+      section: "Critical Engagement & Cultural Inquiry",
+      topic: "Art Historical Research, Critical Analysis, and Visual Transcription",
       intro:
-        " **What is this topic all about?** Three-dimensional design requires the artist to think spatially — about volume, mass, surface, structure, and the relationship of the object to its surrounding space. Candidates working in this area explore additive and subtractive processes, a range of sculptural materials, and the history of three-dimensional art from ancient to contemporary practice.",
+        "Assessment Objective 3 (AO3) requires candidates to research, analyse, and relate their personal work to artists, designers, and cultural movements across historical and contemporary contexts. This involves rigorous visual analysis, contextual inquiry, and thoughtful practical transcription.",
       subheadings: [
         {
-          title: "Sculptural Processes",
-          body: "Sculpture is made through four fundamental processes, often used in combination within a single artwork. ",
+          title: "Critical Analysis of Art and Culture",
+          body: "Evaluating artwork requires a structured methodology that examines form, technique, historical context, and philosophical meaning.",
           groups: [
             {
+              subTitle: "The Four Pillars of Critical Analysis",
               bullets: [
-                "**Modelling (additive)**: Building up form by adding material — clay, wax, papier-mâché, air-dry clay. An armature (internal wire or rod skeleton) supports heavy or tall structures.",
-                "**Carving (subtractive)**: Removing material from a solid block — wood, stone, plaster, foam. Requires understanding the block's grain and structural weaknesses.",
-                "**Construction/Assembly**: Joining separate components — welding metal, joining wood, assemblage of found objects (like Picasso's assemblage sculptures).",
-                "**Casting**: Creating a mould from a model and filling it with plaster, resin, or metal — allows multiple identical copies.",
+                "**Form & Formal Elements**: How has the artist deployed colour schemes, tonal dynamics, brushwork texture, and compositional axes?",
+                "**Process & Technique**: What exact physical tools, pigments, binding agents, and mechanical workflows were utilized to fabricate the work?",
+                "**Content & Iconography**: What symbols, cultural allegories, narrative themes, and psychological motifs are embedded within the imagery?",
+                "**Context & Era**: What historical events, political regimes, scientific discoveries, or religious philosophies shaped the artist's worldview?",
               ],
             },
             {
-              subTitle: "Ceramic Hand-Building Techniques",
+              subTitle: "Selecting Diverse and Relevant Practitioners",
               bullets: [
-                "**Pinch pot**: Shaping clay by pressing and rotating between thumb and fingers — the most immediate hand-building method.",
-                "**Coil building**: Rolling clay into long coils and stacking them; smoothed inside and out to create larger vessels.",
-                "**Slab building**: Rolling clay into flat slabs using rolling pins and guides; slabs are scored, slipped, and joined to form geometric or architectural forms.",
-                "**Glazing and firing**: Glaze is a glass-forming liquid applied to bisque-fired (first-fired) pottery; the second (glost) firing melts the glaze, creating a glass-like surface — adds colour, texture, and waterproofing.",
-              ],
-            },
-            {
-              subTitle: ' "Sculptural Processes" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Sculptural Processes" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Connecting Historical with Contemporary**: Juxtaposing a classical Renaissance master (e.g., Caravaggio) with a cutting-edge contemporary artist (e.g., Jenny Saville).",
+                "**Cross-Cultural Perspectives**: Investigating indigenous patterns, non-Western ceramic traditions, Islamic geometry, or Japanese printmaking alongside Western traditions.",
               ],
             },
           ],
-        },
-        {
-          title: "Textiles and Fashion Design",
-          body: "Textiles is a rich area of study covering both fine art (tapestry, fibre art) and applied design (fashion, surface pattern, soft furnishings). Candidates develop skills in resist-dyeing, printing, stitch, and construction. ",
-          groups: [
-            {
-              subTitle: "Surface Decoration Techniques",
-              bullets: [
-                "**Batik**: A wax-resist dyeing technique — hot wax is applied to cloth with a tjanting tool or block; the cloth is dyed; the wax is removed by boiling, leaving undyed areas. Layers can be built up for complex multicolour designs.",
-                "**Tie-dye (shibori)**: Binding, folding, pleating, or twisting fabric before dyeing — the tied areas resist the dye, creating pattern.",
-                "**Screen printing**: A stencil-based process — ink is forced through a mesh screen onto fabric or paper; each colour requires a separate screen.",
-                "**Block printing**: Carved wooden or lino blocks are inked and pressed onto fabric.",
-                "**Embroidery and hand stitch**: Running stitch, backstitch, satin stitch, French knots — builds texture and pattern on cloth.",
-              ],
-            },
-            {
-              subTitle: "Fashion Design Process",
-              bullets: [
-                "**Brief and research**: Identifying the target customer, occasion, season, and cultural context; researching trend forecasts and historical costume.",
-                "**Mood board**: A collage of visual references — colour swatches, fabric samples, photographic imagery — that establishes the design direction.",
-                "**Sketch development**: Rapidly developing silhouette ideas using croquis (fashion figure templates at 9–10 heads tall).",
-                "**Flat technical drawing (spec drawing)**: Scale orthographic drawing showing exact construction details, seam lines, fastenings, and proportions — used by pattern cutters.",
-                "**Toile**: A prototype garment made in inexpensive calico or muslin to test fit and pattern before cutting in final fabric.",
-              ],
-            },
-            {
-              subTitle: ' "Textiles and Fashion Design" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Textiles and Fashion Design" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          examinerTips: [
+            "Avoid writing lengthy biographical essays on artists; examiners want your critical evaluation of their visual techniques and conceptual strategies.",
+            "Use precise art-historical vocabulary: write 'tenebrism', 'impasto', 'alla prima', 'expressionist distortion', or 'gestural abstraction' rather than vague descriptions.",
+          ],
+          commonMistakes: [
+            "Cutting and pasting Wikipedia biographies and artist statements without offering personal critique or contextual evaluation.",
+            "Selecting artists whose styles have zero conceptual or visual link to the candidate's personal project theme.",
+          ],
+          recap: [
+            "AO3 is satisfied through focused critical analysis of formal qualities, context, and philosophical meaning rather than generic biographical summaries.",
           ],
         },
         {
-          title: "Photography — Composition, Exposure, and Editing",
-          body: "Photography as an art form goes far beyond technically correct exposure. IGCSE Photography requires candidates to use the camera as a creative tool — making deliberate decisions about composition, light, depth of field, and post-processing to produce expressive, purposeful images. ",
+          title: "Practical Response and Visual Transcription",
+          body: "Candidates must translate artist research into their own practice through transcription and creative synthesis rather than superficial copying.",
           groups: [
             {
-              subTitle: "The Exposure Triangle",
+              subTitle: "Analytical Transcription vs Blind Copying",
               bullets: [
-                "**Aperture (f-stop)**: Controls depth of field — wide aperture (f/1.8) = shallow depth of field (blurred background, portrait style); narrow aperture (f/16) = deep depth of field (landscape, everything sharp).",
-                "**Shutter speed**: Duration the sensor is exposed — fast speed (1/2000s) freezes motion; slow speed (1/30s) creates motion blur for panning effects.",
-                "**ISO**: Sensor sensitivity — low ISO (100) = clean, low-noise image; high ISO (3200) = brighter in low light but introduces digital grain/noise.",
-                "**Exposure triangle balance**: These three factors work together — changing one requires adjusting another to maintain correct exposure.",
+                "**Deconstructive Studies**: Reproducing a small section of an artist's painting to isolate and master their specific brush-handling, glazing, or palette choice.",
+                "**Methodology Adoption**: Adopting the artist's procedural technique (e.g., Lucian Freud's structural impasto planes) to render the candidate's own primary subject.",
               ],
             },
             {
-              subTitle: "Compositional Techniques in Photography",
+              subTitle: "Synthesis and Evolution into Original Work",
               bullets: [
-                "**Rule of thirds**: Off-centre subject placement at grid intersections creates visual dynamism over centred 'snapshot' composition.",
-                "**Leading lines**: Roads, railways, rivers, fences drawing the eye deep into the frame.",
-                "**Frame within a frame**: Shooting through doorways, windows, or foliage to create depth and direct attention.",
-                "**Point of view**: High angle (overhead, bird's eye) diminishes subject; low angle (worm's eye) elevates and empowers subject.",
-                "**Fill the frame**: Moving close to fill the entire frame with the subject — eliminates distracting backgrounds and creates powerful portraits.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Photography — Composition, Exposure, and Editing" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Photography — Composition, Exposure, and Editing" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Hybridization**: Blending technical strategies from two contrasting practitioners to forge an original personal visual dialect.",
+                "**Conceptual Recontextualization**: Translating a historical artist's thematic concept (e.g., Vanitas still lifes) into contemporary sociopolitical commentary.",
               ],
             },
           ],
-        },
-        {
-          title: " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 4: "Three-Dimensional Design — Sculpture, Ceramics, and Model-Making". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          examinerTips: [
+            "Always position your artist transcription directly next to your own primary observational study to clearly demonstrate how their technique informed your work.",
+            "Write reflective annotations: 'By experimenting with Anselm Kiefer's textural layering of straw and emulsion, I developed this tactile surface to represent urban decay.'",
+          ],
+          commonMistakes: [
+            "Producing an isolated copy of a famous painting and abandoning that artist's technique for the rest of the sketchbook.",
+            "Simply mimicking an artist's finished style without understanding the underlying technical and conceptual methodology.",
+          ],
+          recap: [
+            "Effective artistic transcription absorbs and repurposes an artist's technique to advance the candidate's independent visual investigation.",
           ],
         },
       ],
     },
     {
       number: 5,
-      title: "Personal Investigation, Portfolio Development, and Examination Preparation",
+      title: "Development of Ideas and Creative Intentions (AO1 & AO2)",
+      section: "Ideation & Iterative Workflow",
+      topic: "Mind-Mapping, Thumbnail Iterations, and Media Experimentation",
       intro:
-        " **What is this topic all about?** The IGCSE Art & Design assessment consists of two components: a **Personal Investigation** (portfolio developed over the course) and a **Timed Test** (drawing exam under controlled conditions). Both require candidates to demonstrate research, development, technical skill, and critical reflection.",
+        "Assessment Objectives 1 (AO1) and 2 (AO2) demand clear, unbroken visual narratives illustrating the birth, evolution, and refinement of creative ideas. Candidates must show deliberate decision-making, visual problem-solving, and continuous experimentation leading logically toward final outcomes.",
       subheadings: [
         {
-          title: "Component 1 — Personal Investigation Portfolio",
-          body: "The portfolio is a sustained investigation of a theme or starting point chosen by the candidate in consultation with their teacher. It must demonstrate all four assessment objectives across a body of work. ",
+          title: "Visual Ideation and Conceptual Brainstorming",
+          body: "Effective projects start with expansive conceptual exploration before focusing on a clear, personal thematic trajectory.",
           groups: [
             {
-              subTitle: "Assessment Objectives (AO)",
+              subTitle: "Mind-Mapping and Thematic Divergence",
               bullets: [
-                "**AO1 — Develop**: Show evidence of sustained exploration and development of ideas through practical work and contextual research.",
-                "**AO2 — Create**: Demonstrate technical skills and control of media, materials, and processes in realised outcomes.",
-                "**AO3 — Reflect**: Evaluate and analyse the development of your own work, identifying strengths and areas for improvement.",
-                "**AO4 — Present**: Select, organise, and present a body of work that effectively communicates ideas and intentions.",
+                "**Multi-Layered Conceptual Mapping**: Branching out from a broad syllabus starting point (e.g., 'Reflections') into scientific, psychological, architectural, and metaphorical sub-themes.",
+                "**Visual Brainstorming**: Supplementing textual mind-maps with small photo fragments, material swatches, and rapid intuitive sketches.",
+                "**Formulating an Independent Intent**: Defining a focused personal thesis: 'Exploring internal psychological anxiety through fractured urban architectural reflections.'",
               ],
             },
             {
-              subTitle: "Portfolio Development Strategies",
+              subTitle: "Iterative Thumbnail Refinement",
               bullets: [
-                "**Sketchbook as a working space**: Record all research, experiments, annotated artist studies, colour tests, thumbnail compositions, and written reflections — not a clean 'best work' album.",
-                "**Artist research pages**: Include reproductions of artworks, biographical context, formal analysis using DAIE, and explicit connections to your own developing work.",
-                "**Experimentation**: Test multiple media and processes for each stage — don't go straight to a final piece. The development process is worth as many marks as the final outcome.",
-                "**Annotation**: Written notes alongside practical work showing your thought process, what you tried, what worked, and what you changed in response.",
-                "**Final outcome**: A resolved, ambitious artwork that synthesises all the development — should not look like a first attempt.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Component 1 — Personal Investigation Portfolio" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Component 1 — Personal Investigation Portfolio" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Framing and Viewpoint Sequences**: Testing low-angle foreshortening, birds-eye panoramas, and panoramic letterbox formats across small rapid thumbnails.",
+                "**Tonal Notan Studies**: Creating high-contrast black-and-white miniature studies to evaluate compositional balance before committing to colour.",
               ],
             },
           ],
-        },
-        {
-          title: "Component 2 — Externally Set Assignment (Timed Test)",
-          body: "Candidates are given a paper of thematic starting points several weeks before the examination. They use this preparatory period to develop ideas, and then complete a timed piece under controlled conditions. ",
-          groups: [
-            {
-              bullets: [
-                "**Preparatory period**: Research, sketch development, material experiments, and artist references are completed before the timed session.",
-                "**Timed session**: 10 hours total (may be split over multiple sessions) in which the candidate produces a final piece from their preparations.",
-                "**Assessment**: Both preparatory work and the final timed piece are assessed together against all four AOs.",
-                "**Strategy**: Choose a starting point that aligns with your strongest skills and the media you know best. Do not attempt techniques you have not practised in preparatory work.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Component 2 — Externally Set Assignment (Timed Test)" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Component 2 — Externally Set Assignment (Timed Test)" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          examinerTips: [
+            "Document failed experiments alongside successful breakthroughs; examiners reward candidates who demonstrate thoughtful problem-solving and critical self-evaluation.",
+            "Ensure that every page in your portfolio directly connects to the previous one, forming a cohesive visual journey.",
+          ],
+          commonMistakes: [
+            "Jumping straight from a mind-map to a large final piece without showing progressive compositional testing and refinement.",
+            "Including decorative borders, glitter, or irrelevant scrapbooking elements that distract from substantive artistic investigation.",
+          ],
+          recap: [
+            "AO1 and AO2 require transparent documentation of ideation, thumbnail variation, and progressive visual refinement.",
           ],
         },
         {
-          title: "Critical Studies — Major Art Movements Reference Guide",
-          body: "Contextual knowledge strengthens every investigation. Below is a concise reference to key movements and their visual characteristics relevant to IGCSE study. ",
+          title: "Media Testing and Resolving Compositions",
+          body: "Testing materials against compositional studies ensures the final piece is technically sound and visually impactful.",
           groups: [
             {
+              subTitle: "Scale and Substrate Trials",
               bullets: [
-                "**Impressionism (1860s–1880s)**: Monet, Renoir, Degas — loose, visible brushwork capturing light and atmosphere; painted en plein air (outdoors); broken colour instead of blended tones.",
-                "**Expressionism (1905–1920s)**: Kirchner, Munch, Nolde — distorted forms, non-naturalistic colour used emotionally; communicates psychological states over realistic representation.",
-                "**Surrealism (1920s–1930s)**: Dalí, Magritte, Kahlo — dream imagery, illogical juxtapositions, Freudian symbolism; meticulous realist technique used to render impossible scenes.",
-                "**Abstract Expressionism (1940s–1950s)**: Pollock, de Kooning, Rothko — non-representational; emphasis on the physical act of painting and emotional authenticity; large scale.",
-                "**Minimalism (1960s)**: Donald Judd, Dan Flavin — reduced to essential geometric form and industrial material; 'less is more'; no personal mark-making.",
-                "**Street Art / Urban (1970s–present)**: Basquiat, Banksy, KAWS — public context, social commentary, graffiti aesthetics, mixed media.",
+                "**Testing Substrate Interactions**: Comparing how mixed media behaves on hot-pressed smooth paper, textured rough paper, raw linen, wooden panel, or metal sheet.",
+                "**Sectional Mockups at Full Scale**: Executing a 1:1 scale test of the most challenging detail (such as a focal eye, complex reflection, or intricate fabric fold).",
               ],
             },
             {
-              subTitle:
-                ' "Critical Studies — Major Art Movements Reference Guide" — Super Simple Breakdown & Memory Tricks',
+              subTitle: "Self-Critique and Course Correction",
               bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Critical Studies — Major Art Movements Reference Guide" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
+                "**Critical Annotation**: Annotating developmental studies to explain what succeeded, what failed, and how subsequent iterations will resolve the issue.",
+                "**Refining Palette Harmonization**: Restricting colour choices to a controlled, unified palette that reinforces the emotional mood of the subject.",
               ],
             },
           ],
+          examinerTips: [
+            "Keep written annotations concise, legible, and directly tied to visual decisions; avoid unnecessary personal narratives that do not critique the work.",
+            "Take photographs of work in progress to document key decision points before committing to irreversible media applications.",
+          ],
+          commonMistakes: [
+            "Over-annotating with large blocks of unreadable handwriting that crowd out vital visual work.",
+            "Sticking to safe, predictable techniques rather than taking calculated creative risks during media trials.",
+          ],
+          recap: [
+            "Systematic media trials and reflective annotations build the technical foundation needed to execute confident final outcomes.",
+          ],
         },
+      ],
+    },
+    {
+      number: 6,
+      title: "Coursework Portfolio, ESA Exam and Assessment Mastery",
+      section: "Submission Standards & Exam Execution",
+      topic: "Component 1 Portfolio, Component 2 8-Hour Test, and AO1–AO4 Criteria",
+      intro:
+        "Cambridge IGCSE Art & Design requires two distinct components: Component 1 (Coursework Assignment) and Component 2 (Externally Set Assignment). Both are assessed against four equally weighted Assessment Objectives (AO1–AO4, 25% each). Success depends on curated presentation, technical consistency, and focused execution under timed examination conditions.",
+      subheadings: [
         {
-          title: " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 5: "Personal Investigation, Portfolio Development, and Examination Preparation". These are the exact pitfalls examiners point out in examiner reports year after year.',
+          title: "Component 1 and Component 2 Structure",
+          body: "Understanding the precise submission requirements for the Coursework Portfolio and the timed practical test ensures all criteria are met.",
           groups: [
             {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
+              subTitle: "Component 1: Coursework Assignment",
               bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
+                "**Portfolio Supporting Sheets**: Up to four single-sided A2 sheets (or eight A3 sides) showcasing primary recording, artist research, and media development.",
+                "**One Resolved Final Outcome**: A finished artwork executed on canvas, heavy paper, textile, or sculptural armature representing the culmination of the supporting studies.",
+                "**Independent Thematic Freedom**: Candidates choose their own theme, establishing a personal creative direction.",
               ],
             },
             {
-              subTitle: " Golden Rules for Full Marks",
+              subTitle: "Component 2: Externally Set Assignment (ESA)",
               bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
+                "**Cambridge Question Paper**: Candidates select one starting point from the early-release paper (prompts include visual, conceptual, and text-based triggers).",
+                "**Preparatory Supporting Period**: Several weeks of classroom and independent investigation documented on up to two single-sided A2 sheets (or four A3 sides).",
+                "**8-Hour Practical Examination**: Supervised timed test where candidates produce a resolved final outcome without teacher assistance.",
               ],
             },
+          ],
+          examinerTips: [
+            "Curate your supporting sheets carefully: select only your strongest work so that every drawing, swatch, and annotation earns marks across the objectives.",
+            "Rehearse your 8-hour final outcome by completing a timed 4-hour practice run to ensure your painting or sculpture can be completed within the time limit.",
+          ],
+          commonMistakes: [
+            "Submitting more sheets than the syllabus allows, which results in excess sheets being removed and unassessed by examiners.",
+            "Arriving at the 8-hour examination without a clear, fully resolved compositional plan, leading to panic and incomplete work.",
+          ],
+          recap: [
+            "Component 1 and Component 2 both require well-curated supporting study sheets and a resolved outcome demonstrating mastery of all four assessment objectives.",
+          ],
+        },
+        {
+          title: "Mastering the Four Assessment Objectives (AO1–AO4)",
+          body: "A top-grade submission (Grade 9 / A*) demonstrates balanced excellence across all four Cambridge Assessment Objectives.",
+          groups: [
+            {
+              subTitle: "The Four Criteria (25% Each)",
+              bullets: [
+                "**AO1: Record**: Primary observational studies, candid photography, sensitive direct drawing, and personal sensory engagement.",
+                "**AO2: Explore**: Experimenting with media, testing substrates, varying compositions, and embracing creative problem-solving.",
+                "**AO3: Develop**: Researching artists and cultural movements, conducting critical analysis, and integrating insights into personal work.",
+                "**AO4: Present**: Delivering a resolved, technically proficient final outcome that realizes creative intentions with coherence and flair.",
+              ],
+            },
+            {
+              subTitle: "Mounting, Curation and Presentation Standards",
+              bullets: [
+                "**Board Layout Logic**: Group studies logically with clear visual flow (top-left to bottom-right), consistent margins, and secure archival adhesion.",
+                "**Packaging and Safety**: Ensure all wet media is thoroughly dry, oil pastels and charcoals are properly fixed, and fragile three-dimensional work is carefully photographed from multiple angles.",
+              ],
+            },
+          ],
+          examinerTips: [
+            "Check that all four assessment objectives are visibly represented across every supporting board; an imbalance (such as no artist research) caps the overall grade.",
+            "Use clean, professional mounting: neutral white or off-white card keeps the examiner's focus entirely on your artwork.",
+          ],
+          commonMistakes: [
+            "Allowing one objective to dominate (e.g., spending 70% of the portfolio on observational drawing while neglecting artist research and media exploration).",
+            "Attaching heavy 3D objects with weak adhesive, causing work to detach and get damaged inside the transit package.",
+          ],
+          recap: [
+            "Top Cambridge grades require a balanced, cohesive portfolio scoring high marks across AO1 (Record), AO2 (Explore), AO3 (Develop), and AO4 (Present).",
           ],
         },
       ],
