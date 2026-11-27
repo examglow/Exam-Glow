@@ -72,8 +72,8 @@ function extractYouTubeId(text: string): string | null {
 
 function YouTubeVideoCard({ videoId }: { videoId: string }) {
   return (
-    <div className="my-4 overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm max-w-2xl">
-      <div className="flex items-center gap-2 border-b border-black/5 bg-neutral-50 px-4 py-2.5 text-xs font-medium">
+    <div className="my-4 overflow-hidden rounded-2xl border border-border bg-white dark:bg-card shadow-sm max-w-2xl">
+      <div className="flex items-center gap-2 border-b border-border bg-neutral-50 dark:bg-neutral-800/80 px-4 py-2.5 text-xs font-medium">
         <span className="flex size-2 rounded-full bg-emerald-500 animate-pulse" />
         <span className="text-foreground font-semibold">Video Study Session</span>
         <span className="text-[10px] uppercase tracking-wider text-muted-foreground ml-auto">
@@ -543,7 +543,7 @@ export function StudyChat({
       : topicStarters.filter((t) => t.subject === selectedSubject || t.subject === "All Topics");
 
   return (
-    <div className={`relative flex h-full w-full flex-col bg-[#FAFAFA] text-foreground ${className}`}>
+    <div className={`relative flex h-full w-full flex-col bg-[#FAFAFA] dark:bg-card text-foreground ${className}`}>
       {/* Hidden file inputs */}
       <input
         ref={pdfInputRef}
@@ -577,21 +577,21 @@ export function StudyChat({
       />
 
       {/* ── TOP NAV BAR (Expansive & Sleek) ── */}
-      <header className="shrink-0 border-b border-black/[0.08] bg-white/95 px-6 py-3.5 backdrop-blur-md">
+      <header className="shrink-0 border-b border-border bg-white/95 dark:bg-card/95 px-6 py-3.5 backdrop-blur-md">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
           {/* Left: Chat info + History Toggle */}
           <div className="flex items-center gap-3 min-w-0">
             <button
               type="button"
               onClick={() => setShowHistory((v) => !v)}
-              className="flex size-9 items-center justify-center rounded-xl border border-black/10 bg-neutral-50 text-neutral-700 hover:bg-neutral-100 transition cursor-pointer"
+              className="flex size-9 items-center justify-center rounded-xl border border-border bg-neutral-50 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 transition cursor-pointer"
               title="Toggle Chat History"
             >
               {showHistory ? <PanelLeftClose className="size-4" /> : <PanelLeftOpen className="size-4" />}
             </button>
 
             <div className="min-w-0 flex items-center gap-2.5">
-              <span className="font-semibold text-base text-neutral-900 truncate">
+              <span className="font-semibold text-base text-neutral-900 dark:text-neutral-100 truncate">
                 {currentSession?.title && currentSession.title !== "New Chat"
                   ? currentSession.title
                   : "Study Tutor"}
@@ -604,7 +604,7 @@ export function StudyChat({
             <button
               type="button"
               onClick={handleNewChat}
-              className="flex items-center gap-1.5 rounded-xl bg-black px-4 py-2 text-xs font-semibold text-white hover:bg-neutral-800 transition shadow-sm cursor-pointer"
+              className="flex items-center gap-1.5 rounded-xl bg-black dark:bg-neutral-100 px-4 py-2 text-xs font-semibold text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition shadow-sm cursor-pointer"
             >
               <Plus className="size-3.5" />
               <span>New Chat</span>
@@ -614,7 +614,7 @@ export function StudyChat({
               <button
                 type="button"
                 onClick={onClose}
-                className="flex size-9 items-center justify-center rounded-xl border border-black/10 text-neutral-500 hover:bg-neutral-100 transition cursor-pointer"
+                className="flex size-9 items-center justify-center rounded-xl border border-border text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition cursor-pointer"
               >
                 <X className="size-4" />
               </button>
@@ -627,16 +627,16 @@ export function StudyChat({
       <div className="relative flex flex-1 min-h-0 w-full overflow-hidden">
         {/* Left Drawer / Sidebar: Chat History */}
         {showHistory && (
-          <aside className="absolute inset-y-0 left-0 z-40 flex w-80 max-w-[85%] flex-col border-r border-black/10 bg-white shadow-2xl animate-in slide-in-from-left duration-200">
-            <div className="flex items-center justify-between border-b border-black/5 px-5 py-4">
+          <aside className="absolute inset-y-0 left-0 z-40 flex w-80 max-w-[85%] flex-col border-r border-border bg-white dark:bg-card shadow-2xl animate-in slide-in-from-left duration-200">
+            <div className="flex items-center justify-between border-b border-border px-5 py-4">
               <div className="flex items-center gap-2">
-                <History className="size-4 text-neutral-500" />
-                <span className="text-sm font-semibold text-neutral-900">Conversations</span>
+                <History className="size-4 text-neutral-500 dark:text-neutral-400" />
+                <span className="text-sm font-semibold text-neutral-900 dark:text-neutral-100">Conversations</span>
               </div>
               <button
                 type="button"
                 onClick={() => setShowHistory(false)}
-                className="size-7 flex items-center justify-center rounded-lg hover:bg-neutral-100 text-neutral-500 transition cursor-pointer"
+                className="size-7 flex items-center justify-center rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-500 dark:text-neutral-400 transition cursor-pointer"
               >
                 <X className="size-4" />
               </button>
@@ -656,8 +656,8 @@ export function StudyChat({
                       onClick={() => handleSelectSession(s)}
                       className={`group flex items-center justify-between gap-2 rounded-xl px-3.5 py-3 text-left transition cursor-pointer ${
                         isActive
-                          ? "bg-black text-white"
-                          : "text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
+                          ? "bg-black dark:bg-neutral-800 text-white"
+                          : "text-neutral-600 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800/60 hover:text-neutral-900 dark:hover:text-neutral-100"
                       }`}
                     >
                       <div className="min-w-0 flex-1">
@@ -666,7 +666,7 @@ export function StudyChat({
                         </p>
                         <p
                           className={`text-[10px] mt-0.5 ${
-                            isActive ? "text-neutral-300" : "text-neutral-400"
+                            isActive ? "text-neutral-300 dark:text-neutral-400" : "text-neutral-400 dark:text-neutral-500"
                           }`}
                         >
                           {new Date(s.updatedAt).toLocaleDateString([], {
@@ -682,7 +682,7 @@ export function StudyChat({
                         className={`size-6 shrink-0 flex items-center justify-center rounded-lg transition opacity-0 group-hover:opacity-100 ${
                           isActive
                             ? "hover:bg-white/20 text-white/80"
-                            : "hover:bg-red-50 text-red-500"
+                            : "hover:bg-red-50 dark:hover:bg-red-950/40 text-red-500"
                         }`}
                         title="Delete chat"
                       >
@@ -694,11 +694,11 @@ export function StudyChat({
               )}
             </div>
 
-            <div className="border-t border-black/5 p-3">
+            <div className="border-t border-border p-3">
               <button
                 type="button"
                 onClick={handleNewChat}
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-black py-2.5 text-xs font-semibold text-white hover:bg-neutral-800 transition cursor-pointer"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-black dark:bg-neutral-100 py-2.5 text-xs font-semibold text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition cursor-pointer"
               >
                 <Plus className="size-3.5" />
                 Start Fresh Session
@@ -715,13 +715,13 @@ export function StudyChat({
               <div className="w-full py-4 space-y-8 animate-in fade-in duration-300">
                 {/* Hero section */}
                 <div className="flex flex-col items-center text-center max-w-2xl mx-auto pt-6 pb-2">
-                  <div className="flex size-14 items-center justify-center rounded-2xl bg-black text-white font-bold text-xl shadow-md mb-4">
+                  <div className="flex size-14 items-center justify-center rounded-2xl bg-black dark:bg-neutral-800 text-white font-bold text-xl shadow-md mb-4 border border-border">
                     Y
                   </div>
-                  <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900">
+                  <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100">
                     What are we mastering today?
                   </h1>
-                  <p className="mt-2.5 text-sm sm:text-base text-neutral-500 leading-relaxed">
+                  <p className="mt-2.5 text-sm sm:text-base text-neutral-500 dark:text-neutral-400 leading-relaxed">
                     Ask Yumna anything from past exam questions, difficult formulas, or paste a video link to study together.
                   </p>
                 </div>
@@ -735,8 +735,8 @@ export function StudyChat({
                       onClick={() => setSelectedSubject(name)}
                       className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold transition cursor-pointer shrink-0 ${
                         selectedSubject === name
-                          ? "bg-black text-white shadow-sm"
-                          : "bg-white border border-black/10 text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
+                          ? "bg-black dark:bg-neutral-100 text-white dark:text-neutral-900 shadow-sm"
+                          : "bg-white dark:bg-card border border-border text-neutral-600 dark:text-neutral-300 hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-white"
                       }`}
                     >
                       <Icon className="size-3.5" />
@@ -759,19 +759,19 @@ export function StudyChat({
                           void send(prompt);
                         }
                       }}
-                      className="group flex flex-col justify-between rounded-2xl border border-black/[0.08] bg-white p-5 text-left transition hover:border-black/20 hover:shadow-md cursor-pointer"
+                      className="group flex flex-col justify-between rounded-2xl border border-border bg-white dark:bg-card p-5 text-left transition hover:border-black/20 dark:hover:border-neutral-600 hover:shadow-md cursor-pointer"
                     >
                       <div>
                         <div className="flex items-center justify-between mb-3">
-                          <span className="rounded-full bg-neutral-100 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-neutral-600">
+                          <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-300 border border-border/50">
                             {badge}
                           </span>
-                          <ArrowUpRight className="size-4 text-neutral-400 group-hover:text-black group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
+                          <ArrowUpRight className="size-4 text-neutral-400 dark:text-neutral-500 group-hover:text-black dark:group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
                         </div>
-                        <h3 className="text-sm font-semibold text-neutral-900 group-hover:text-black transition">
+                        <h3 className="text-sm font-semibold text-neutral-900 dark:text-neutral-100 group-hover:text-black dark:group-hover:text-white transition">
                           {title}
                         </h3>
-                        <p className="mt-1.5 text-xs text-neutral-500 line-clamp-2 leading-relaxed">
+                        <p className="mt-1.5 text-xs text-neutral-500 dark:text-neutral-400 line-clamp-2 leading-relaxed">
                           {prompt}
                         </p>
                       </div>
@@ -792,7 +792,7 @@ export function StudyChat({
                         {extractYouTubeId(m.content) && (
                           <YouTubeVideoCard videoId={extractYouTubeId(m.content)!} />
                         )}
-                        <div className="rounded-3xl rounded-tr-sm bg-neutral-900 px-5 py-3.5 text-sm sm:text-[15px] leading-relaxed text-white shadow-sm">
+                        <div className="rounded-3xl rounded-tr-sm bg-neutral-900 dark:bg-neutral-800 border border-transparent dark:border-neutral-700 px-5 py-3.5 text-sm sm:text-[15px] leading-relaxed text-white shadow-sm">
                           <p className="whitespace-pre-wrap">{m.content}</p>
                         </div>
                       </div>
@@ -806,7 +806,7 @@ export function StudyChat({
                 return (
                   <div key={i} className="flex items-start gap-4 w-full group py-2">
                     {/* Yumna Avatar Mark */}
-                    <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-black text-white font-bold text-xs mt-1 shadow-sm">
+                    <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-black dark:bg-neutral-800 text-white font-bold text-xs mt-1 shadow-sm border border-border">
                       Y
                     </div>
 
@@ -814,10 +814,10 @@ export function StudyChat({
                     <div className="min-w-0 flex-1 space-y-3">
                       {/* Name / author bar */}
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-sm text-neutral-900">Yumna</span>
-                        <span className="text-[11px] font-medium text-neutral-400">AI Study Tutor</span>
+                        <span className="font-semibold text-sm text-neutral-900 dark:text-neutral-100">Yumna</span>
+                        <span className="text-[11px] font-medium text-neutral-400 dark:text-neutral-400">AI Study Tutor</span>
                         {isLastStreaming && (
-                          <span className="inline-flex items-center gap-1 text-[10px] text-emerald-600 font-semibold bg-emerald-50 px-2 py-0.5 rounded-full ml-1">
+                          <span className="inline-flex items-center gap-1 text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold bg-emerald-50 dark:bg-emerald-950/50 px-2 py-0.5 rounded-full ml-1">
                             <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
                             Streaming live…
                           </span>
@@ -831,18 +831,18 @@ export function StudyChat({
 
                       {/* Bottom utility bar: Listen, Copy, Stop */}
                       {!isLastStreaming && (
-                        <div className="flex items-center gap-3 pt-2 text-xs text-neutral-500">
+                        <div className="flex items-center gap-3 pt-2 text-xs text-neutral-500 dark:text-neutral-400">
                           {/* Copy button */}
                           <button
                             type="button"
                             onClick={() => handleCopy(cleanUnnecessaryDollars(m.content), i)}
-                            className="flex items-center gap-1.5 rounded-lg px-2.5 py-1 hover:bg-neutral-200/60 transition cursor-pointer"
+                            className="flex items-center gap-1.5 rounded-lg px-2.5 py-1 hover:bg-neutral-200/60 dark:hover:bg-neutral-800 transition cursor-pointer"
                             title="Copy message"
                           >
                             {copiedIdx === i ? (
                               <>
-                                <Check className="size-3.5 text-emerald-600" />
-                                <span className="text-emerald-600 font-medium">Copied</span>
+                                <Check className="size-3.5 text-emerald-600 dark:text-emerald-400" />
+                                <span className="text-emerald-600 dark:text-emerald-400 font-medium">Copied</span>
                               </>
                             ) : (
                               <>
@@ -861,7 +861,7 @@ export function StudyChat({
                                 setPlayingMsgIdx(null);
                                 setVoiceLoadingIdx(null);
                               }}
-                              className="flex items-center gap-1.5 rounded-lg bg-black px-3 py-1 font-medium text-white transition hover:bg-neutral-800 cursor-pointer"
+                              className="flex items-center gap-1.5 rounded-lg bg-black dark:bg-neutral-100 px-3 py-1 font-medium text-white dark:text-neutral-900 transition hover:bg-neutral-800 dark:hover:bg-neutral-200 cursor-pointer"
                             >
                               <VolumeX className="size-3.5" />
                               <span>Stop</span>
@@ -873,7 +873,7 @@ export function StudyChat({
                                 stopRealisticVoice();
                                 setVoiceLoadingIdx(null);
                               }}
-                              className="flex items-center gap-1.5 rounded-lg border border-black/10 px-2.5 py-1 text-neutral-600 hover:bg-neutral-100 transition cursor-pointer"
+                              className="flex items-center gap-1.5 rounded-lg border border-border px-2.5 py-1 text-neutral-600 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition cursor-pointer"
                             >
                               <Loader2 className="size-3.5 animate-spin" />
                               <span>Preparing voice…</span>
@@ -898,7 +898,7 @@ export function StudyChat({
                                   },
                                 });
                               }}
-                              className="flex items-center gap-1.5 rounded-lg px-2.5 py-1 hover:bg-neutral-200/60 transition cursor-pointer"
+                              className="flex items-center gap-1.5 rounded-lg px-2.5 py-1 hover:bg-neutral-200/60 dark:hover:bg-neutral-800 transition cursor-pointer"
                               title="Listen with realistic voice"
                             >
                               <Volume2 className="size-3.5" />
@@ -916,12 +916,12 @@ export function StudyChat({
             {/* ── CLEAN THINKING TEXT WITH 2-SECOND LIGHT GLAZE ── */}
             {status === "submitted" && (
               <div className="flex items-start gap-4 w-full py-2 animate-in fade-in duration-200">
-                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-black text-white font-bold text-xs mt-1 shadow-sm">
+                <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-black dark:bg-neutral-800 text-white font-bold text-xs mt-1 shadow-sm border border-border">
                   Y
                 </div>
 
                 <div className="min-w-0 flex-1 pt-1.5 flex items-center gap-3">
-                  <span className="thinking-glaze text-[15px] font-medium tracking-tight select-none">
+                  <span className="thinking-glaze text-[15px] font-medium tracking-tight select-none text-foreground">
                     Thinking…
                   </span>
                 </div>
@@ -948,23 +948,23 @@ export function StudyChat({
       {/* ── EXPANSIVE BOTTOM DOCK / COMPOSER ── */}
       <div
         style={viewportBottomOffset > 0 ? { transform: `translateY(-${viewportBottomOffset}px)` } : undefined}
-        className="z-30 shrink-0 border-t border-black/[0.08] bg-white/95 px-6 pb-6 pt-3.5 backdrop-blur-md transition-all duration-200"
+        className="z-30 shrink-0 border-t border-border bg-white/95 dark:bg-card/95 px-6 pb-6 pt-3.5 backdrop-blur-md transition-all duration-200"
       >
         <div className="mx-auto w-full max-w-5xl">
           {/* Active Attachment preview */}
           {attachment && (
-            <div className="mb-2.5 flex items-center justify-between gap-3 rounded-xl border border-black/10 bg-neutral-50 px-3.5 py-2 text-xs text-neutral-800">
+            <div className="mb-2.5 flex items-center justify-between gap-3 rounded-xl border border-border bg-neutral-50 dark:bg-neutral-800 px-3.5 py-2 text-xs text-neutral-800 dark:text-neutral-200">
               <span className="flex min-w-0 items-center gap-2">
-                <Paperclip className="size-3.5 shrink-0 text-neutral-500" aria-hidden />
+                <Paperclip className="size-3.5 shrink-0 text-neutral-500 dark:text-neutral-400" aria-hidden />
                 <span className="truncate font-semibold">{attachment.name}</span>
-                <span className="shrink-0 rounded-md bg-white border border-black/10 px-1.5 py-0.5 text-[10px] font-bold uppercase text-neutral-500">
+                <span className="shrink-0 rounded-md bg-white dark:bg-neutral-700 border border-border px-1.5 py-0.5 text-[10px] font-bold uppercase text-neutral-500 dark:text-neutral-300">
                   {attachment.type}
                 </span>
               </span>
               <button
                 type="button"
                 onClick={() => setAttachment(null)}
-                className="shrink-0 text-neutral-400 hover:text-neutral-800 transition cursor-pointer"
+                className="shrink-0 text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition cursor-pointer"
               >
                 <X className="size-3.5" />
               </button>
@@ -973,42 +973,42 @@ export function StudyChat({
 
           {/* Upload Dropdown Popover */}
           {uploadOpen && (
-            <div className="mb-3 w-72 rounded-2xl border border-black/10 bg-white p-2.5 shadow-xl">
-              <p className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-neutral-400">
+            <div className="mb-3 w-72 rounded-2xl border border-border bg-white dark:bg-card p-2.5 shadow-xl text-foreground">
+              <p className="px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
                 Upload &amp; Analyze
               </p>
               <div className="mt-1 flex flex-col gap-1">
                 <button
                   type="button"
                   onClick={() => pdfInputRef.current?.click()}
-                  className="flex items-center gap-3 rounded-xl px-3 py-2 text-left text-xs font-medium hover:bg-neutral-100 transition cursor-pointer"
+                  className="flex items-center gap-3 rounded-xl px-3 py-2 text-left text-xs font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition cursor-pointer"
                 >
-                  <FileText className="size-4 shrink-0 text-neutral-500" />
+                  <FileText className="size-4 shrink-0 text-neutral-500 dark:text-neutral-400" />
                   <div>
-                    <span className="block font-semibold text-neutral-800">PDF Past Paper</span>
-                    <span className="block text-[10px] text-neutral-400">Upload exam questions or mark scheme</span>
+                    <span className="block font-semibold text-neutral-800 dark:text-neutral-100">PDF Past Paper</span>
+                    <span className="block text-[10px] text-neutral-400 dark:text-neutral-500">Upload exam questions or mark scheme</span>
                   </div>
                 </button>
                 <button
                   type="button"
                   onClick={() => imgInputRef.current?.click()}
-                  className="flex items-center gap-3 rounded-xl px-3 py-2 text-left text-xs font-medium hover:bg-neutral-100 transition cursor-pointer"
+                  className="flex items-center gap-3 rounded-xl px-3 py-2 text-left text-xs font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition cursor-pointer"
                 >
-                  <ImageIcon className="size-4 shrink-0 text-neutral-500" />
+                  <ImageIcon className="size-4 shrink-0 text-neutral-500 dark:text-neutral-400" />
                   <div>
-                    <span className="block font-semibold text-neutral-800">Image / Diagram</span>
-                    <span className="block text-[10px] text-neutral-400">Homework photo or circuit graph</span>
+                    <span className="block font-semibold text-neutral-800 dark:text-neutral-100">Image / Diagram</span>
+                    <span className="block text-[10px] text-neutral-400 dark:text-neutral-500">Homework photo or circuit graph</span>
                   </div>
                 </button>
                 <button
                   type="button"
                   onClick={() => docInputRef.current?.click()}
-                  className="flex items-center gap-3 rounded-xl px-3 py-2 text-left text-xs font-medium hover:bg-neutral-100 transition cursor-pointer"
+                  className="flex items-center gap-3 rounded-xl px-3 py-2 text-left text-xs font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 transition cursor-pointer"
                 >
-                  <FileUp className="size-4 shrink-0 text-neutral-500" />
+                  <FileUp className="size-4 shrink-0 text-neutral-500 dark:text-neutral-400" />
                   <div>
-                    <span className="block font-semibold text-neutral-800">Text Notes</span>
-                    <span className="block text-[10px] text-neutral-400">Upload .txt or markdown summary</span>
+                    <span className="block font-semibold text-neutral-800 dark:text-neutral-100">Text Notes</span>
+                    <span className="block text-[10px] text-neutral-400 dark:text-neutral-500">Upload .txt or markdown summary</span>
                   </div>
                 </button>
               </div>
@@ -1017,7 +1017,7 @@ export function StudyChat({
 
           {/* Tutor Mode Quick Launcher Chips */}
           <div className="mb-2.5 flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 shrink-0">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 dark:text-neutral-500 shrink-0">
               Tutor:
             </span>
             {[
@@ -1034,7 +1034,7 @@ export function StudyChat({
                   setInput(prefix);
                   inputRef.current?.focus();
                 }}
-                className="rounded-full border border-black/[0.08] bg-white px-3 py-1 text-[11px] font-medium text-neutral-700 hover:bg-neutral-100 hover:text-black transition cursor-pointer shrink-0"
+                className="rounded-full border border-border bg-white dark:bg-neutral-800 px-3 py-1 text-[11px] font-medium text-neutral-700 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-700 hover:text-black dark:hover:text-white transition cursor-pointer shrink-0"
               >
                 {label}
               </button>
@@ -1050,8 +1050,10 @@ export function StudyChat({
               setIsInputFocused(false);
               void send(input);
             }}
-            className={`rounded-2xl border bg-white p-2.5 transition shadow-sm ${
-              isInputFocused ? "border-black/40 ring-2 ring-black/5" : "border-black/10"
+            className={`rounded-2xl border bg-white dark:bg-neutral-900/90 p-2.5 transition shadow-sm ${
+              isInputFocused
+                ? "border-black/40 dark:border-neutral-500 ring-2 ring-black/5 dark:ring-white/5"
+                : "border-border"
             }`}
           >
             <textarea
@@ -1071,10 +1073,10 @@ export function StudyChat({
                 }
               }}
               placeholder="Ask Yumna anything… (paste a question, formula, or YouTube video link)"
-              className="max-h-48 w-full resize-none bg-transparent px-3 py-1.5 text-sm sm:text-base leading-relaxed text-neutral-900 outline-none placeholder:text-neutral-400"
+              className="max-h-48 w-full resize-none bg-transparent px-3 py-1.5 text-sm sm:text-base leading-relaxed text-neutral-900 dark:text-neutral-100 outline-none placeholder:text-neutral-400 dark:placeholder:text-neutral-500"
             />
 
-            <div className="mt-1 flex items-center justify-between border-t border-black/5 pt-2 px-1">
+            <div className="mt-1 flex items-center justify-between border-t border-border/60 pt-2 px-1">
               <div className="flex items-center gap-1.5">
                 {!isMini && (
                   <button
@@ -1083,8 +1085,8 @@ export function StudyChat({
                     title="Upload file or image"
                     className={`flex size-8 items-center justify-center rounded-xl transition cursor-pointer ${
                       uploadOpen
-                        ? "bg-neutral-200 text-neutral-900"
-                        : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
+                        ? "bg-neutral-200 dark:bg-neutral-700 text-neutral-900 dark:text-neutral-100"
+                        : "text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100"
                     }`}
                   >
                     <Plus className="size-4" />
@@ -1098,7 +1100,7 @@ export function StudyChat({
                   className={`flex h-8 items-center gap-1.5 rounded-xl px-2.5 text-xs font-medium transition cursor-pointer ${
                     isDictating
                       ? "bg-rose-500 text-white"
-                      : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
+                      : "text-neutral-500 dark:text-neutral-400 hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100"
                   }`}
                 >
                   <Mic className="size-3.5" />
@@ -1109,7 +1111,7 @@ export function StudyChat({
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="hidden text-[11px] text-neutral-400 sm:inline">
+                <span className="hidden text-[11px] text-neutral-400 dark:text-neutral-500 sm:inline">
                   Enter to send · Shift+Enter for newline
                 </span>
 
@@ -1118,7 +1120,7 @@ export function StudyChat({
                     type="button"
                     onClick={stopGenerating}
                     title="Stop generating"
-                    className="flex size-8 items-center justify-center rounded-xl bg-neutral-900 text-white hover:bg-neutral-700 transition cursor-pointer shadow-sm"
+                    className="flex size-8 items-center justify-center rounded-xl bg-neutral-900 dark:bg-neutral-700 text-white hover:bg-neutral-700 dark:hover:bg-neutral-600 transition cursor-pointer shadow-sm"
                   >
                     <Square className="size-3 fill-white" />
                   </button>
@@ -1128,8 +1130,8 @@ export function StudyChat({
                     disabled={!input.trim() && !attachment}
                     className={`flex size-8 items-center justify-center rounded-xl transition cursor-pointer ${
                       input.trim() || attachment
-                        ? "bg-black text-white hover:bg-neutral-800 shadow-sm"
-                        : "bg-neutral-100 text-neutral-400 cursor-not-allowed"
+                        ? "bg-black dark:bg-neutral-100 text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 shadow-sm"
+                        : "bg-neutral-100 dark:bg-neutral-800 text-neutral-400 dark:text-neutral-600 cursor-not-allowed"
                     }`}
                   >
                     <ArrowUp className="size-4" />
