@@ -47,6 +47,10 @@ import { CO_ORDINATED_SCIENCES } from "./notes/co-ordinated-sciences";
 // 5 more new subjects
 import { ASTRONOMY } from "./notes/astronomy";
 import { GERMAN } from "./notes/german";
+import { JAPANESE } from "./notes/japanese";
+import { ITALIAN } from "./notes/italian";
+import { ISIZULU } from "./notes/isizulu";
+import { HINDI } from "./notes/hindi";
 import { ARABIC_SECOND_LANGUAGE } from "./notes/arabic-second-language";
 import { LATIN } from "./notes/latin";
 import { WORLD_LITERATURE } from "./notes/world-literature";
@@ -100,6 +104,10 @@ export {
   CO_ORDINATED_SCIENCES,
   ASTRONOMY,
   GERMAN,
+  JAPANESE,
+  ITALIAN,
+  ISIZULU,
+  HINDI,
   ARABIC_SECOND_LANGUAGE,
   LATIN,
   WORLD_LITERATURE,
@@ -128,6 +136,11 @@ const RAW_NOTES: SubjectNotes[] = [
   BUSINESS_STUDIES,
   AGRICULTURE,
   CORE_ENGLISH,
+  JAPANESE,
+  ITALIAN,
+  GERMAN,
+  ISIZULU,
+  HINDI,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
@@ -160,5 +173,10 @@ export function getSyllabusSubject(subjectId?: string, level?: string): SubjectN
   if (subjectId === "business") return BUSINESS;
   if (subjectId === "business-studies") return BUSINESS_STUDIES;
   if (subjectId === "agriculture") return AGRICULTURE;
+  if (subjectId === "japanese") return JAPANESE;
+  if (subjectId === "italian") return ITALIAN;
+  if (subjectId === "german") return GERMAN;
+  if (subjectId === "isizulu") return ISIZULU;
+  if (subjectId === "hindi") return HINDI;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
 }

@@ -47,6 +47,8 @@ export function AppLayoutProvider({ children }: { children: ReactNode }) {
     try {
       const saved = localStorage.getItem(THEME_STORAGE_KEY) as ThemeMode | null;
       if (saved === "light" || saved === "dark" || saved === "pink") return saved;
+      const legacyTheme = localStorage.getItem("examglow.theme");
+      if (legacyTheme === "dark") return "dark";
     } catch {}
     return "light";
   });
@@ -67,6 +69,7 @@ export function AppLayoutProvider({ children }: { children: ReactNode }) {
     applyThemeClasses(themeMode);
     try {
       localStorage.setItem(THEME_STORAGE_KEY, themeMode);
+      localStorage.setItem("examglow.theme", themeMode === "dark" ? "dark" : "light");
     } catch {}
   }, [themeMode]);
 

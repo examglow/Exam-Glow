@@ -325,8 +325,9 @@ function PersonalizationModal({ onClose }: { onClose: () => void }) {
 // ─── Profile Avatar ───────────────────────────────────────────────────────────
 
 export function ProfileAvatar({ className = "" }: { className?: string }) {
+  const { themeMode, setThemeMode } = useAppLayout();
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(false);
+  const dark = themeMode === "dark";
   const [showPersonalization, setShowPersonalization] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
 
@@ -338,13 +339,6 @@ export function ProfileAvatar({ className = "" }: { className?: string }) {
     setProfile(readProfile());
     setGooglePicture(window.localStorage.getItem("examglow.google_picture"));
   }, [open]); // re-read each time menu opens
-
-  useEffect(() => {
-    const stored = window.localStorage.getItem(THEME_KEY);
-    const isDark = stored === "dark";
-    setDark(isDark);
-    applyTheme(isDark);
-  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -363,14 +357,8 @@ export function ProfileAvatar({ className = "" }: { className?: string }) {
   }, [open]);
 
   function toggleDark() {
-    const next = !dark;
-    setDark(next);
-    applyTheme(next);
-    try {
-      window.localStorage.setItem(THEME_KEY, next ? "dark" : "light");
-    } catch {
-      /* storage unavailable */
-    }
+    const next = dark ? "light" : "dark";
+    setThemeMode(next);
   }
 
   function signOut() {
