@@ -56,6 +56,10 @@ import { ENGLISH_ADDITIONAL_LANGUAGE } from "./notes/english-additional-language
 import { ARABIC_SECOND_LANGUAGE } from "./notes/arabic-second-language";
 import { LATIN } from "./notes/latin";
 import { WORLD_LITERATURE } from "./notes/world-literature";
+import { CHINESE_SECOND_LANGUAGE } from "./notes/chinese-second-language";
+import { FIRST_LANGUAGE_CHINESE } from "./notes/first-language-chinese";
+import { MANDARIN_CHINESE } from "./notes/mandarin-chinese";
+import { BAHASA_INDONESIA } from "./notes/bahasa-indonesia";
 import type { SubjectNotes } from "./notes/types";
 export * from "./notes/definitions-store";
 
@@ -118,6 +122,10 @@ export {
   BUSINESS,
   COMMERCE,
   CORE_ENGLISH,
+  CHINESE_SECOND_LANGUAGE,
+  FIRST_LANGUAGE_CHINESE,
+  MANDARIN_CHINESE,
+  BAHASA_INDONESIA,
 };
 
 const RAW_NOTES: SubjectNotes[] = [
@@ -150,6 +158,11 @@ const RAW_NOTES: SubjectNotes[] = [
   ENGLISH_ADDITIONAL_LANGUAGE,
   LITERATURE_IN_ENGLISH,
   DRAMA,
+  DESIGN_AND_TECHNOLOGY,
+  CHINESE_SECOND_LANGUAGE,
+  FIRST_LANGUAGE_CHINESE,
+  MANDARIN_CHINESE,
+  BAHASA_INDONESIA,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
@@ -192,5 +205,10 @@ export function getSyllabusSubject(subjectId?: string, level?: string): SubjectN
   if (subjectId === "english-additional-language") return ENGLISH_ADDITIONAL_LANGUAGE;
   if (subjectId === "literature-in-english") return LITERATURE_IN_ENGLISH;
   if (subjectId === "drama") return DRAMA;
+  if (subjectId === "design-technology" || subjectId === "design-and-technology") return DESIGN_AND_TECHNOLOGY;
+  if (subjectId === "chinese-second-language") return CHINESE_SECOND_LANGUAGE;
+  if (subjectId === "first-language-chinese") return FIRST_LANGUAGE_CHINESE;
+  if (subjectId === "chinese" || subjectId === "mandarin-chinese") return MANDARIN_CHINESE;
+  if (subjectId === "bahasa-indonesia") return BAHASA_INDONESIA;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
 }
