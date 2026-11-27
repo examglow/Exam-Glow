@@ -34,6 +34,8 @@ import { MARINE_SCIENCE } from "./notes/marine-science";
 import { GLOBAL_PERSPECTIVES } from "./notes/global-perspectives";
 import { MEDIA_STUDIES } from "./notes/media-studies";
 import { DRAMA } from "./notes/drama";
+import { BUSINESS } from "./notes/business";
+import { COMMERCE } from "./notes/commerce";
 // New subjects — 5 additional IGCSE syllabuses
 import { FRENCH } from "./notes/french";
 import { SPANISH } from "./notes/spanish";
@@ -100,6 +102,8 @@ export {
   ARABIC_SECOND_LANGUAGE,
   LATIN,
   WORLD_LITERATURE,
+  BUSINESS,
+  COMMERCE,
 };
 
 const RAW_NOTES: SubjectNotes[] = [
@@ -115,6 +119,12 @@ const RAW_NOTES: SubjectNotes[] = [
   FOOD_AND_NUTRITION,
   FRENCH,
   ENVIRONMENTAL_MANAGEMENT,
+  COMPUTER_SCIENCE,
+  COMMERCE,
+  PORTUGUESE,
+  BUSINESS,
+  BUSINESS_STUDIES,
+  AGRICULTURE,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
@@ -139,5 +149,11 @@ export function getSyllabusSubject(subjectId?: string, level?: string): SubjectN
   if (subjectId === "food-and-nutrition") return FOOD_AND_NUTRITION;
   if (subjectId === "french") return FRENCH;
   if (subjectId === "environmental-management") return ENVIRONMENTAL_MANAGEMENT;
+  if (subjectId === "computer-science") return COMPUTER_SCIENCE;
+  if (subjectId === "commerce") return COMMERCE;
+  if (subjectId === "portuguese") return PORTUGUESE;
+  if (subjectId === "business") return BUSINESS;
+  if (subjectId === "business-studies") return BUSINESS_STUDIES;
+  if (subjectId === "agriculture") return AGRICULTURE;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
 }

@@ -163,6 +163,26 @@ export const igcseSubjects: IgcseSubject[] = [
     ],
   },
   {
+    id: "business",
+    name: "Business",
+    code: "0774",
+    category: "Business & Economics",
+    color: "bg-amber-500",
+    syllabuses: [
+      { label: "2027 – 2029 Syllabus", url: `${BASE}/718158-2027-2029-syllabus.pdf` },
+    ],
+  },
+  {
+    id: "commerce",
+    name: "Commerce",
+    code: "0715",
+    category: "Business & Economics",
+    color: "bg-teal-600",
+    syllabuses: [
+      { label: "2029 Syllabus", url: `${BASE}/764336-2029-syllabus.pdf` },
+    ],
+  },
+  {
     id: "economics",
     name: "Economics",
     code: "0455",
@@ -347,6 +367,7 @@ export const igcseSubjects: IgcseSubject[] = [
     color: "bg-green-600",
     syllabuses: [
       { label: "2023 – 2025 Syllabus", url: `${BASE}/595424-2023-2025-syllabus.pdf` },
+      { label: "2027 – 2028 Syllabus", url: `${BASE}/721347-2027-2028-syllabus.pdf` },
     ],
   },
   {
@@ -422,12 +443,13 @@ igcseSubjects.push(
   {
     id: "portuguese",
     name: "Portuguese",
-    code: "0540",
+    code: "0504",
     category: "Languages",
     color: "bg-emerald-500",
     syllabuses: [
-      { label: "2025 – 2027 Syllabus", url: `${BASE}/662484-2025-2027-syllabus.pdf` },
-      { label: "2028 – 2030 Syllabus", url: `${BASE}/745697-2028-2030-syllabus.pdf` },
+      { label: "2025 – 2027 Syllabus (0540)", url: `${BASE}/662484-2025-2027-syllabus.pdf` },
+      { label: "2028 – 2029 Syllabus (0504)", url: `${BASE}/744803-2028-2029-syllabus.pdf` },
+      { label: "2028 – 2030 Syllabus (0540)", url: `${BASE}/745697-2028-2030-syllabus.pdf` },
     ],
   },
   {
