@@ -1784,30 +1784,38 @@ export function SyllabusNotesPage() {
               </div>
 
               {/* Level switch buttons */}
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => goTo(selectedSubject.id, undefined, "topics", board, undefined, "core")}
-                  className={`rounded-full px-5 py-2 text-xs font-semibold transition-all cursor-pointer ${
-                    biologyLevel === "core"
-                      ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/40"
-                      : "border border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground"
-                  }`}
-                >
-                  Core
-                </button>
-                <button
-                  type="button"
-                  onClick={() => goTo(selectedSubject.id, undefined, "topics", board, undefined, "extended")}
-                  className={`rounded-full px-5 py-2 text-xs font-semibold transition-all cursor-pointer ${
-                    biologyLevel === "extended"
-                      ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/40"
-                      : "border border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground"
-                  }`}
-                >
-                  Extended
-                </button>
-              </div>
+              {selectedSubject.id === "core-english" || selectedSubject.code.toLowerCase().includes("core") ? (
+                <div className="flex items-center gap-2">
+                  <span className="rounded-full bg-primary px-5 py-2 text-xs font-semibold text-primary-foreground shadow-sm">
+                    Core Only
+                  </span>
+                </div>
+              ) : ["biology", "chemistry", "mathematics", "physics", "english-second-language"].includes(selectedSubject.id) ? (
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => goTo(selectedSubject.id, undefined, "topics", board, undefined, "core")}
+                    className={`rounded-full px-5 py-2 text-xs font-semibold transition-all cursor-pointer ${
+                      biologyLevel === "core"
+                        ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/40"
+                        : "border border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground"
+                    }`}
+                  >
+                    Core
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => goTo(selectedSubject.id, undefined, "topics", board, undefined, "extended")}
+                    className={`rounded-full px-5 py-2 text-xs font-semibold transition-all cursor-pointer ${
+                      biologyLevel === "extended"
+                        ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/40"
+                        : "border border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground"
+                    }`}
+                  >
+                    Extended
+                  </button>
+                </div>
+              ) : null}
             </div>
           </header>
 
@@ -2253,7 +2261,7 @@ export function SyllabusNotesPage() {
                     >
                       {/* Level Buttons: Core & Extended styled with theme primary */}
                       <div className="flex flex-wrap items-center gap-3">
-                        {["biology", "chemistry", "mathematics", "physics"].includes(sub.id) ? (
+                        {["biology", "chemistry", "mathematics", "physics", "english-second-language"].includes(sub.id) ? (
                           (["core", "extended"] as const).map((courseLevel) => {
                             const isActive = activeLevel === courseLevel;
                             return (
@@ -2275,6 +2283,22 @@ export function SyllabusNotesPage() {
                               </button>
                             );
                           })
+                        ) : sub.id === "core-english" || sub.code.toLowerCase().includes("core") || sub.id.includes("core") ? (
+                          <button
+                            type="button"
+                            aria-label={`Open ${sub.name} Core topics`}
+                            onClick={() => toggleSubjectLevel(sub.id, "core")}
+                            className={`rounded-full px-6 py-2 text-sm font-semibold transition-all cursor-pointer ${
+                              activeLevel === "core"
+                                ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary/40"
+                                : "bg-primary/90 text-primary-foreground hover:bg-primary hover:scale-[1.02]"
+                            }`}
+                          >
+                            Core
+                            <span className="ml-1.5 text-xs opacity-75">
+                              {activeLevel === "core" ? "▾" : "▸"}
+                            </span>
+                          </button>
                         ) : (
                           <button
                             type="button"
@@ -2299,7 +2323,7 @@ export function SyllabusNotesPage() {
                         <div className="mt-3.5 rounded-xl border border-border bg-card p-4 text-card-foreground shadow-xs animate-in fade-in slide-in-from-top-1 duration-150">
                           <div className="flex items-center justify-between pb-3 border-b border-border/60 mb-3">
                             <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                              {sub.name} · {["biology", "chemistry", "mathematics", "physics"].includes(sub.id) ? (activeLevel === "core" ? "Core" : "Extended") : "Full Syllabus"} Topics
+                              {sub.name} · {sub.id === "core-english" || sub.code.toLowerCase().includes("core") ? "Core" : ["biology", "chemistry", "mathematics", "physics", "english-second-language"].includes(sub.id) ? (activeLevel === "core" ? "Core" : "Extended") : "Full Syllabus"} Topics
                             </span>
                             <button
                               type="button"

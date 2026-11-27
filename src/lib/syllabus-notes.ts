@@ -11,6 +11,7 @@ import { MATHEMATICS, MATHEMATICS_CORE, MATHEMATICS_EXTENDED } from "./notes/mat
 import { ADDITIONAL_MATHEMATICS } from "./notes/additional-mathematics";
 import { FIRST_LANGUAGE_ENGLISH } from "./notes/first-language-english";
 import { ENGLISH_SECOND_LANGUAGE } from "./notes/english-second-language";
+import { CORE_ENGLISH } from "./notes/core-english";
 import { LITERATURE_IN_ENGLISH } from "./notes/literature-in-english";
 import { ACCOUNTING } from "./notes/accounting";
 import { AGRICULTURE } from "./notes/agriculture";
@@ -104,6 +105,7 @@ export {
   WORLD_LITERATURE,
   BUSINESS,
   COMMERCE,
+  CORE_ENGLISH,
 };
 
 const RAW_NOTES: SubjectNotes[] = [
@@ -125,6 +127,7 @@ const RAW_NOTES: SubjectNotes[] = [
   BUSINESS,
   BUSINESS_STUDIES,
   AGRICULTURE,
+  CORE_ENGLISH,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
@@ -141,6 +144,8 @@ export function getSyllabusSubject(subjectId?: string, level?: string): SubjectN
   if (subjectId === "mathematics" && level === "extended") return MATHEMATICS_EXTENDED;
   if (subjectId === "physics" && level === "core") return PHYSICS_CORE;
   if (subjectId === "physics" && level === "extended") return PHYSICS_EXTENDED;
+  if (subjectId === "core-english") return CORE_ENGLISH;
+  if (subjectId === "english-second-language" && level === "core") return CORE_ENGLISH;
   if (subjectId === "additional-mathematics") return ADDITIONAL_MATHEMATICS;
   if (subjectId === "economics") return ECONOMICS;
   if (subjectId === "history") return HISTORY;

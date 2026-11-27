@@ -123,6 +123,28 @@ export const igcseSubjects: IgcseSubject[] = [
     syllabuses: [
       { label: "2024 – 2026 Syllabus", url: `${BASE}/637160-2024-2026-syllabus.pdf` },
       { label: "2027 – 2029 Syllabus", url: `${BASE}/721337-2027-2029-syllabus.pdf` },
+      { label: "2027 – 2029 Syllabus (9–1 - 0993)", url: `${BASE}/721392-2027-2029-syllabus.pdf` },
+      { label: "2027 – 2029 Syllabus (Core only - 0465)", url: `${BASE}/721307-2027-2029-syllabus.pdf` },
+    ],
+  },
+  {
+    id: "core-english",
+    name: "Core English as a Second Language",
+    code: "0465",
+    category: "English",
+    color: "bg-sky-500",
+    syllabuses: [
+      { label: "2027 – 2029 Syllabus (Core only)", url: `${BASE}/721307-2027-2029-syllabus.pdf` },
+    ],
+  },
+  {
+    id: "english-additional-language",
+    name: "English (as an Additional Language)",
+    code: "0772",
+    category: "English",
+    color: "bg-cyan-500",
+    syllabuses: [
+      { label: "2029 – 2030 Syllabus (9–1)", url: `${BASE}/764349-2029-2030-syllabus.pdf` },
     ],
   },
   {
@@ -135,6 +157,7 @@ export const igcseSubjects: IgcseSubject[] = [
       { label: "2023 – 2025 Syllabus", url: `${BASE}/596436-2023-2025-syllabus.pdf` },
       { label: "2026 Syllabus",         url: `${BASE}/697163-2026-syllabus.pdf` },
       { label: "2027 Syllabus",         url: `${BASE}/721333-2027-syllabus.pdf` },
+      { label: "2028 – 2030 Syllabus (9–1 - 0992)", url: `${BASE}/743323-2028-2030-syllabus.pdf` },
     ],
   },
 
@@ -324,6 +347,16 @@ export const igcseSubjects: IgcseSubject[] = [
       { label: "2027 – 2029 Syllabus", url: `${BASE}/721329-2027-2029-syllabus.pdf` },
     ],
   },
+  {
+    id: "drama",
+    name: "Drama (9–1)",
+    code: "0994",
+    category: "Creative & Applied",
+    color: "bg-fuchsia-500",
+    syllabuses: [
+      { label: "2029 – 2031 Syllabus (9–1)", url: `${BASE}/763442-2029-2031-syllabus.pdf` },
+    ],
+  },
 
   // ── Additional Humanities ─────────────────────────────────────────────────────
   {
@@ -357,6 +390,7 @@ export const igcseSubjects: IgcseSubject[] = [
     color: "bg-amber-500",
     syllabuses: [
       { label: "2023 – 2025 Syllabus", url: `${BASE}/595438-2023-2025-syllabus.pdf` },
+      { label: "2028 Syllabus", url: `${BASE}/744767-2028-syllabus.pdf` },
     ],
   },
   {
@@ -426,7 +460,10 @@ igcseSubjects.push(
     color: "bg-green-500",
     syllabuses: [
       { label: "2025 – 2027 Syllabus", url: `${BASE}/664580-2025-2027-syllabus.pdf` },
-      { label: "2028 – 2030 Syllabus", url: `${BASE}/745661-2028-2030-syllabus.pdf` },
+      { label: "2028 – 2030 Syllabus (0508)", url: `${BASE}/745661-2028-2030-syllabus.pdf` },
+      { label: "2028 – 2030 Syllabus (0544)", url: `${BASE}/743910-2028-2030-syllabus.pdf` },
+      { label: "2029 – 2031 Key Info (7180 9–1)", url: `${BASE}/764384-2029-2031-key-information-arabic.pdf` },
+      { label: "2026 Syllabus (First Language 7184 9–1)", url: `${BASE}/697270-2026-syllabus.pdf` },
     ],
   },
   {
@@ -438,6 +475,7 @@ igcseSubjects.push(
     syllabuses: [
       { label: "2025 – 2027 Syllabus", url: `${BASE}/662480-2025-2027-syllabus.pdf` },
       { label: "2028 – 2030 Syllabus", url: `${BASE}/745693-2028-2030-syllabus.pdf` },
+      { label: "2028 – 2030 Syllabus (9–1 - 7159)", url: `${BASE}/743944-2028-2030-syllabus.pdf` },
     ],
   },
   {
@@ -471,6 +509,7 @@ igcseSubjects.push(
     color: "bg-orange-500",
     syllabuses: [
       { label: "2025 – 2027 Syllabus", url: `${BASE}/662488-2025-2027-syllabus.pdf` },
+      { label: "2027 – 2029 Syllabus", url: `${BASE}/719328-2027-2029-syllabus.pdf` },
       { label: "2028 – 2030 Syllabus", url: `${BASE}/745701-2028-2030-syllabus.pdf` },
     ],
   },
@@ -493,7 +532,68 @@ igcseSubjects.push(
     color: "bg-rose-500",
     syllabuses: [
       { label: "2025 – 2027 Syllabus", url: `${BASE}/662492-2025-2027-syllabus.pdf` },
+      { label: "2028 – 2030 Syllabus (Mandarin 0547)", url: `${BASE}/743359-2028-2030-syllabus.pdf` },
       { label: "2028 – 2030 Syllabus", url: `${BASE}/745705-2028-2030-syllabus.pdf` },
+    ],
+  },
+  {
+    id: "chinese-second-language",
+    name: "Chinese as a Second Language",
+    code: "0523",
+    category: "Languages",
+    color: "bg-rose-600",
+    syllabuses: [
+      { label: "2028 – 2029 Syllabus", url: `${BASE}/744807-2028-2029-syllabus.pdf` },
+    ],
+  },
+  {
+    id: "first-language-chinese",
+    name: "First Language Chinese",
+    code: "0509",
+    category: "Languages",
+    color: "bg-red-700",
+    syllabuses: [
+      { label: "2028 – 2029 Syllabus", url: `${BASE}/744811-2028-2029-syllabus.pdf` },
+    ],
+  },
+  {
+    id: "japanese",
+    name: "Japanese",
+    code: "0716",
+    category: "Languages",
+    color: "bg-indigo-500",
+    syllabuses: [
+      { label: "2027 – 2029 Syllabus", url: `${BASE}/722865-2027-2029-syllabus.pdf` },
+    ],
+  },
+  {
+    id: "italian",
+    name: "Italian",
+    code: "0535",
+    category: "Languages",
+    color: "bg-emerald-600",
+    syllabuses: [
+      { label: "2028 – 2030 Syllabus", url: `${BASE}/743354-2028-2030-syllabus.pdf` },
+    ],
+  },
+  {
+    id: "isizulu",
+    name: "IsiZulu as a Second Language",
+    code: "0531",
+    category: "Languages",
+    color: "bg-amber-600",
+    syllabuses: [
+      { label: "2028 – 2029 Syllabus", url: `${BASE}/745674-2028-2029-syllabus.pdf` },
+    ],
+  },
+  {
+    id: "bahasa-indonesia",
+    name: "Bahasa Indonesia",
+    code: "0538",
+    category: "Languages",
+    color: "bg-amber-700",
+    syllabuses: [
+      { label: "2028 – 2030 Syllabus", url: `${BASE}/745676-2028-2030-syllabus.pdf` },
     ],
   },
   {
