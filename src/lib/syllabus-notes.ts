@@ -111,6 +111,10 @@ const RAW_NOTES: SubjectNotes[] = [
   ECONOMICS,
   HISTORY,
   ICT,
+  GEOGRAPHY,
+  FOOD_AND_NUTRITION,
+  FRENCH,
+  ENVIRONMENTAL_MANAGEMENT,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
@@ -131,5 +135,9 @@ export function getSyllabusSubject(subjectId?: string, level?: string): SubjectN
   if (subjectId === "economics") return ECONOMICS;
   if (subjectId === "history") return HISTORY;
   if (subjectId === "ict") return ICT;
+  if (subjectId === "geography") return GEOGRAPHY;
+  if (subjectId === "food-and-nutrition") return FOOD_AND_NUTRITION;
+  if (subjectId === "french") return FRENCH;
+  if (subjectId === "environmental-management") return ENVIRONMENTAL_MANAGEMENT;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
 }
