@@ -1,473 +1,361 @@
 import type { SubjectNotes } from "./types";
 
+/**
+ * Cambridge IGCSE Literature in English (9–1) (0992) / (0475) 2028–2030 Syllabus Notes
+ * Covers Poetry, Prose, Drama, Unseen Analysis, Thematic Essays, and Exam Technique.
+ * Strictly text-only with zero figures.
+ */
 export const LITERATURE_IN_ENGLISH: SubjectNotes = {
   id: "literature-in-english",
-  name: "Literature in English",
-  code: "0475",
+  name: "Literature in English (9–1)",
+  code: "0992",
   color: "bg-fuchsia-600",
   chapters: [
     {
       number: 1,
       title: "Critical Analysis of Poetry (Paper 1 Section A)",
+      section: "Set Texts: Poetry and Prose",
+      topic: "Poetic Form, Meter, Figurative Language, Sound Devices, and Tone",
       intro:
-        " **What is this topic all about?** Poetry analysis requires close critical reading of how poets craft form, meter, rhyme, figurative imagery, sound devices, and tone to convey complex emotional and thematic meanings.",
+        "Poetry analysis requires close critical reading of how poets craft form, meter, rhyme, figurative imagery, sound devices, and tone to convey complex emotional and thematic meanings. Success in Cambridge Literature requires moving beyond feature-spotting to analyzing the precise effect of literary devices on the reader.",
       subheadings: [
         {
-          title: "Poetic Form and Structural Elements",
-          body: "Examining stanza forms, line breaks, enjambment, and rhythmic structures. ",
-          groups: [
-            {
-              subTitle: "Form and Stanza Types",
-              bullets: [
-                "**Sonnet**: 14-line poem with iambic pentameter; **Petrarchan** (Octave $abbaabba$ + Sestet $cdecde$, with a turn/volta at line 9) vs **Shakespearean** (3 quatrains $abab\\,cdcd\\,efef$ + rhyming couplet $gg$).",
-                "**Free Verse**: Poetry without regular meter or rhyme scheme, often mirroring natural speech or emotional fluidity.",
-                "**Ballad**: Narrative poem in four-line stanzas (quatrains) with alternating lines of four and three stresses ($abcb$ or $abab$).",
-                "**Blank Verse**: Unrhymed iambic pentameter (10 syllables per line with unstressed/stressed beats), common in reflective verse and Shakespearean drama.",
-              ],
-            },
-            {
-              subTitle: "Structural Techniques",
-              bullets: [
-                "**Enjambment**: Continuation of a sentence across a line break without terminal punctuation; creates momentum, breathlessness, or continuous motion.",
-                "**Caesura**: A deliberate pause or punctuation break in the middle of a poetic line (; or — or .), creating hesitation, tension, or shock.",
-                "**Volta**: The pivotal dramatic or philosophical turn in thought, emotion, or argument.",
-                "**End-Stopping**: A line of verse that ends with definite punctuation, creating a sense of finality or calm.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Poetic Form and Structural Elements" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Poetic Form and Structural Elements" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Poetic Form, Meter, and Structural Craft",
+          body:
+            "**1. Traditional and Contemporary Forms:**\n" +
+            "- **Sonnet (14 lines in iambic pentameter):** Petrarchan (Octave abbaabba presenting a conflict + Volta at line 9 + Sestet cdecde resolving it) vs. Shakespearean (three quatrains abab cdcd efef + heroic rhyming couplet gg delivering a punchy conclusion).\n" +
+            "- **Ballad:** Narrative verse in 4-line stanzas (quatrains) with alternating lines of four and three stresses (abcb or abab), creating a rhythmic, song-like cadence.\n" +
+            "- **Dramatic Monologue:** A single fictional speaker revealing their inner psychology and moral flaws to a silent listener (e.g. Robert Browning).\n" +
+            "- **Free Verse & Blank Verse:** Blank verse is unrhymed iambic pentameter mirroring natural spoken English; Free verse abandons regular meter and rhyme to convey emotional spontaneity.\n\n" +
+            "**2. Structural Mechanics:**\n" +
+            "- **Enjambment:** Running a sentence over a line break without terminal punctuation, accelerating rhythm, mirroring breathless excitement or chaotic movement.\n" +
+            "- **Caesura:** A sharp pause within a poetic line (; or . or —), disrupting the cadence to create hesitation, suspense, or shock.\n" +
+            "- **End-Stopping:** Punctuation at the line end creating calm, deliberate finality.",
+          examinerTips: [
+            "Never feature-spot without analysis; stating 'there is a caesura in line 4' earns zero marks unless you explain how it dramatizes the speaker's sudden hesitation.",
+            "Discuss the poem's trajectory from opening stanza to closing lines to demonstrate holistic understanding."
           ],
+          commonMistakes: [
+            "Confusing Shakespearean and Petrarchan sonnet structures.",
+            "Treating rhyme schemes as purely decorative rather than analyzing how rhymed words reinforce thematic connections."
+          ],
+          recap: [
+            "Sonnets turn at the volta; ballads tell rhythmic tales.",
+            "Enjambment accelerates; caesura creates dramatic pauses.",
+            "Always link structural devices to emotional effects."
+          ]
         },
         {
-          title: "Imagery, Sound Devices and Tone",
-          body: "Analyzing figurative language and auditory texture in poetic texts. ",
-          groups: [
-            {
-              subTitle: "Sound Devices",
-              bullets: [
-                "**Alliteration**: Repetition of initial consonant sounds (e.g. harsh plosives $p, b, t, d$ conveying violence; soft sibilance $s, sh$ conveying whispering, stealth, or calm).",
-                "**Assonance**: Repetition of identical vowel sounds within nearby words (e.g. long melancholic vowels $o, oo, aw$).",
-                "**Consonance**: Repetition of internal or final consonant sounds.",
-                "**Onomatopoeia**: Words imitating physical sounds (*rustle, clang, screech*).",
-              ],
-            },
-            {
-              subTitle: "Tone and Voice",
-              bullets: [
-                "**Speaker / Persona**: The voice or narrator of the poem (never assume the speaker is identical to the biographical poet).",
-                "**Tone Descriptors**: Nostalgic, eulogistic, satirical, bitter, celebratory, melancholic, reflective, urgent, or ambivalent.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Imagery, Sound Devices and Tone" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Imagery, Sound Devices and Tone" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Imagery, Auditory Devices, and Shifts in Tone",
+          body:
+            "**1. Figurative Imagery:**\n" +
+            "- **Metaphor and Simile:** Establishing direct identity (*'Life is a broken-winged bird'*) or comparative resemblance (*'like a patient etherized upon a table'*).\n" +
+            "- **Personification & Anthropomorphism:** Imbuing inanimate forces with human volition or emotional temperament.\n" +
+            "- **Synesthesia & Tactile Imagery:** Blending sensory modalities (e.g. 'cold bright light') to evoke vivid visceral responses.\n\n" +
+            "**2. Sound and Auditory Texture:**\n" +
+            "- **Alliteration:** Repeating initial consonants (e.g. harsh plosives *b, p, d, t* vs. soft sibilant *s, sh* creating hushed menace).\n" +
+            "- **Assonance and Consonance:** Internal vowel repetition adding melodic resonance; internal consonant repetition reinforcing texture.\n" +
+            "- **Onomatopoeia:** Words echoing real acoustic phenomena (*hiss, whisper, clang*).\n\n" +
+            "**3. Tone and Speaker Persona:**\n" +
+            "- Tracking changes in vocal register: melancholic, indignant, satirical, celebratory, or resigned.",
+          examinerTips: [
+            "Quote concise snippets (1–3 words) embedded directly into your sentences rather than copying multi-line blocks.",
+            "Analyze the connotations of specific word choices (diction) rather than merely summarizing the story of the poem."
           ],
-        },
-        {
-          title: " Chapter 1 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 1: "Critical Analysis of Poetry (Paper 1 Section A)". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          commonMistakes: [
+            "Confusing the speaker of the poem with the biographical poet.",
+            "Calling every repeated 's' sound 'alliteration'; it is specifically 'sibilance'."
           ],
-        },
-      ],
+          recap: [
+            "Examine imagery through sensory connotations.",
+            "Plosives create harshness; sibilance creates whisper or menace.",
+            "Track shifts in the speaker's emotional register."
+          ]
+        }
+      ]
     },
     {
       number: 2,
-      title: "Prose Analysis: Character, Themes and Setting (Paper 1 Section B)",
+      title: "Prose Fiction Analysis (Paper 1 Section B)",
+      section: "Set Texts: Poetry and Prose",
+      topic: "Narrative Perspective, Characterisation, Setting, Thematic Conflict, and Symbolism",
       intro:
-        " **What is this topic all about?** Prose fiction analysis explores how novelists and short-story writers construct realistic characters, develop complex thematic motifs, establish immersive settings, and employ distinct narrative perspectives.",
+        "Prose fiction demands close textual exploration of narrative craft, character evolution, atmospheric setting, and underlying social themes. Whether writing on a passage-based question or an essay question, candidates must sustain focused analytical engagement with the author's literary methods.",
       subheadings: [
         {
-          title: "Characterisation and Character Arcs",
-          body: "Methods of indirect and direct character development. ",
-          groups: [
-            {
-              bullets: [
-                "**Direct vs Indirect Characterisation**: Direct statement by narrator vs indirect revelation through speech, physical appearance, internal thoughts, actions, and reactions of others.",
-                "**Protagonist vs Antagonist**: The central character driving the narrative vs the opposing character or force.",
-                "**Static vs Dynamic Characters**: Flat characters who remain unchanged vs round characters who undergo profound psychological transformation or moral epiphany.",
-                "**Foils**: A character whose contrasting traits highlight the specific qualities of another character.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Characterisation and Character Arcs" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Characterisation and Character Arcs" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Narrative Voice, Perspective, and Character Arc",
+          body:
+            "**1. Narrative Points of View:**\n" +
+            "- **First-Person Protagonist/Witness:** Intimate subjective view, creating immediate empathy but bounded by unreliable memory and personal bias.\n" +
+            "- **Third-Person Omniscient:** All-knowing narrator revealing multiple characters' interior thoughts and external historical context.\n" +
+            "- **Third-Person Limited (Free Indirect Discourse):** Filtering events through one character's perspective while maintaining third-person pronouns, seamlessly blending narrator and character thought.\n\n" +
+            "**2. Methods of Characterisation:**\n" +
+            "- Direct exposition vs. indirect revelation through dialogue, habitual gestures, physical contrast, and moral choices under pressure.\n" +
+            "- **Protagonist vs. Antagonist:** Foils whose contrasting values highlight the text's central ethical dilemma.",
+          examinerTips: [
+            "Consider whether a first-person narrator is reliable or self-delusional.",
+            "Track character transformation (bildungsroman) from opening innocence to climactic realization."
           ],
+          commonMistakes: [
+            "Retelling the plot instead of analyzing the author's construction of character.",
+            "Writing about characters as if they were real living people rather than literary constructs crafted by a writer."
+          ],
+          recap: [
+            "Identify narrative voice and degree of reliability.",
+            "Examine character revelation through action and dialogue.",
+            "Analyze character foils to illuminate core themes."
+          ]
         },
         {
-          title: "Narrative Voice, Perspective and Setting",
-          body: "Examining point of view, temporal structure, and atmospheric symbolism. ",
-          groups: [
-            {
-              subTitle: "Narrative Point of View",
-              bullets: [
-                "**First-Person Narrator ($I / We$)**: Immediacy and psychological intimacy, but potentially unreliable or limited in perspective.",
-                "**Third-Person Omniscient**: All-knowing narrator who reveals thoughts, motivations, and background of all characters.",
-                "**Third-Person Limited**: Narrates from the focal perspective of a single character.",
-                "**Stream of Consciousness**: Continuous, unedited flow of a character's interior mental associations and sensory perceptions.",
-              ],
-            },
-            {
-              subTitle: "Setting as Symbol",
-              bullets: [
-                "**Microcosm**: A small setting reflecting broader societal or human conditions.",
-                "**Pathetic Fallacy**: Attribution of human emotions to nature/weather (e.g. torrential thunderstorm mirroring violent internal emotional turmoil).",
-              ],
-            },
-            {
-              subTitle:
-                ' "Narrative Voice, Perspective and Setting" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Narrative Voice, Perspective and Setting" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Setting as Symbolism and Thematic Conflict",
+          body:
+            "**1. Functions of Setting:**\n" +
+            "- Setting is rarely mere backdrop; it acts as an active symbolic force mirroring psychological states (**pathetic fallacy**).\n" +
+            "- Contrasting settings (e.g. oppressive domestic interiors vs. wild uncultivated moors) symbolize societal confinement versus spiritual freedom.\n\n" +
+            "**2. Motif and Recurring Symbolism:**\n" +
+            "- Tracing recurring objects, colors, weather patterns, or physical barriers that carry layered figurative weight throughout the novel.\n\n" +
+            "**3. Central Thematic Conflicts:**\n" +
+            "- Individual freedom vs. societal expectation, class mobility vs. entrenched privilege, innocence vs. harsh experience.",
+          examinerTips: [
+            "In passage-based questions, explore how the author uses descriptive setting to establish atmospheric tension in the opening lines.",
+            "Connect local symbolic motifs to the overarching moral or political message of the novel."
           ],
-        },
-        {
-          title: " Chapter 2 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 2: "Prose Analysis: Character, Themes and Setting (Paper 1 Section B)". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          commonMistakes: [
+            "Dismissing descriptive paragraphs as unimportant filler.",
+            "Failing to tie physical settings to internal character crises."
           ],
-        },
-      ],
+          recap: [
+            "Settings reflect psychological and ideological tensions.",
+            "Pathetic fallacy aligns weather with character emotional crises.",
+            "Motifs unify the novel's thematic architecture."
+          ]
+        }
+      ]
     },
     {
       number: 3,
-      title: "Drama Analysis: Dialogue and Stagecraft (Paper 2 / Paper 3)",
+      title: "Dramatic Texts and Performance (Paper 2 Drama)",
+      section: "Set Texts: Drama",
+      topic: "Stagecraft, Dramatic Irony, Subtext, Soliloquy, and Performance Context",
       intro:
-        " **What is this topic all about?** Plays are written primarily for live theatrical performance. Drama analysis examines dialogue, stage directions, dramatic irony, soliloquies, spatial staging, pacing, and the escalation of audience tension.",
+        "Plays are written to be seen and heard in performance, not read in silent isolation. Studying drama requires visualising stage movement, pacing, voice inflection, lighting, props, and the dynamic tension between performer and audience.",
       subheadings: [
         {
-          title: "Dramatic Conventions and Stagecraft",
-          body: "Techniques unique to the medium of theatre and performance. ",
-          groups: [
-            {
-              bullets: [
-                "**Dramatic Irony**: When the audience knows critical information that characters on stage are unaware of, generating intense suspense, tragedy, or comedic anticipation.",
-                "**Soliloquy**: A character speaks their innermost private thoughts aloud alone on stage, revealing true motivations, dilemmas, or secret plans to the audience.",
-                "**Monologue**: A prolonged continuous speech delivered by one character to other characters on stage.",
-                "**Aside**: A brief remark spoken directly to the audience or another character, unheard by other figures on stage.",
-                "**Stage Directions**: Explicit instructions by the playwright detailing physical gestures, lighting, sound effects, facial expressions, and spatial positioning (blocking).",
-              ],
-            },
-            {
-              subTitle:
-                ' "Dramatic Conventions and Stagecraft" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Dramatic Conventions and Stagecraft" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Theatrical Devices: Dramatic Irony, Soliloquy, and Aside",
+          body:
+            "**1. Core Theatrical Mechanisms:**\n" +
+            "- **Dramatic Irony:** When the audience knows critical information that characters on stage are ignorant of, producing intense suspense, foreboding, or dark humor.\n" +
+            "- **Soliloquy:** A character speaking their private thoughts aloud while alone on stage, revealing hidden motives, moral conflict, or deceitful plots (e.g. Shakespearean tragedies).\n" +
+            "- **Aside:** A brief remark spoken directly to the audience or to one character, unheard by others on stage, creating intimacy and complicity.\n\n" +
+            "**2. Tension and Pacing:**\n" +
+            "- Managing conflict through stichomythia (rapid alternating one-line dialogue), pregnant silences, explosive confrontations, and anticlimax.",
+          examinerTips: [
+            "Always discuss the audience's emotional and intellectual reaction to dramatic irony.",
+            "Refer explicitly to performance elements: voice pitch, pauses, physical positioning (proxemics), and facial expression."
           ],
+          commonMistakes: [
+            "Analyzing a drama script as if it were a novel, omitting staging and audience response.",
+            "Calling a speech a soliloquy when other characters are present on stage (that is a monologue)."
+          ],
+          recap: [
+            "Dramatic irony exploits knowledge gaps between audience and characters.",
+            "Soliloquies reveal raw psychological subtext.",
+            "Stage dynamics depend on dialogue pacing and proxemics."
+          ]
         },
         {
-          title: "Tragedy, Conflict and Climax",
-          body: "Structural elements of classical and modern dramatic works. ",
-          groups: [
-            {
-              bullets: [
-                "**Hamartia**: The tragic flaw or fatal error in judgment that leads to the downfall of a noble protagonist.",
-                "**Hubris**: Excessive pride or arrogance that defies divine order or moral boundaries.",
-                "**Catharsis**: The purging or release of emotional tension (pity and fear) experienced by the audience at the play's climax/denouement.",
-                "**Exposition $\\to$ Conflict $\\to$ Climax $\\to$ Denouement**: The rising and falling arc of dramatic tension.\\to$ conflict $\\to$ climax $\\to$ denouement works when you look at it in real life.",
-              ],
-            },
-            {
-              subTitle: ' "Tragedy, Conflict and Climax" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Tragedy, Conflict and Climax" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Stagecraft, Proxemics, and Visual Symbolism",
+          body:
+            "**1. Proxemics and Spatial Relationships:**\n" +
+            "- The physical distance between characters on stage communicates dominance, emotional estrangement, intimacy, or intimidation.\n" +
+            "- Levels: elevated positions (balcony, rostra) represent power, moral superiority, or divine judgment.\n\n" +
+            "**2. Props and Costume as Symbolic Anchors:**\n" +
+            "- Hand props (weapons, letters, tokens of affection) carry immense dramatic weight when passed, dropped, or destroyed.\n" +
+            "- Costume changes mark psychological transformations or deceitful disguise.\n\n" +
+            "**3. Stage Directions:**\n" +
+            "- Authors (e.g. Arthur Miller, J.B. Priestley) use detailed stage directions to prescribe lighting (e.g. 'pink and intimate' shifting to 'brighter and harder'), sound effects, and character entrances.",
+          examinerTips: [
+            "In passage-based questions, pay equal attention to stage directions and dialogue.",
+            "Explain how lighting shifts alter the psychological mood in the theatre auditorium."
           ],
-        },
-        {
-          title: " Chapter 3 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 3: "Drama Analysis: Dialogue and Stagecraft (Paper 2 / Paper 3)". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          commonMistakes: [
+            "Ignoring stage directions entirely when analyzing dramatic passages.",
+            "Failing to explain how an actor would deliver a line to convey subtext."
           ],
-        },
-      ],
+          recap: [
+            "Proxemics visualizes power and emotional distance.",
+            "Props and costume changes anchor thematic transformations.",
+            "Stage directions dictate lighting, pace, and symbolic atmosphere."
+          ]
+        }
+      ]
     },
     {
       number: 4,
-      title: "Unseen Poetry and Prose Critical Commentary (Paper 4)",
+      title: "Unseen Text Analysis (Paper 3 / Paper 4)",
+      section: "Unseen Texts",
+      topic: "Unseen Poetry and Prose, First-Impression Reading, Annotation, and Rapid Analysis",
       intro:
-        " **What is this topic all about?** Paper 4 evaluates your ability to produce a perceptive, structured critical response to an unseen literary text (poem or prose extract) under exam conditions without prior study.",
+        "The Unseen paper assesses pure literary critical ability. Without the benefit of prior revision notes, candidates must read, decode, and analytically critique an unfamiliar poem or prose excerpt within strict time limits.",
       subheadings: [
         {
-          title: "Methodical Approach to Unseen Texts",
-          body: "A step-by-step reading and planning strategy for unseen literary extracts. ",
-          groups: [
-            {
-              subTitle: "The 15-Minute Reading & Annotation Strategy",
-              bullets: [
-                "**1. First Reading (Gist)**: Read the entire piece straight through to understand the overall story, speaker, mood, and dramatic situation.",
-                "**2. Re-read the Question**: Note the guiding bullet points or prompt keywords (e.g. 'How does the writer memorably portray the tension between the two characters?').",
-                "**3. Second Reading (Active Annotation)**: Underline 8–10 rich quotes containing vivid imagery, word choice, tonal shifts, or structural features answering the prompt.",
-                "**4. Outline 3–4 Paragraphs**: Group annotations into chronological sections or thematic focal points.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Methodical Approach to Unseen Texts" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Methodical Approach to Unseen Texts" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "First-Reading Strategies and Active Annotation",
+          body:
+            "**1. The 15-Minute Unseen Method:**\n" +
+            "- **Reading 1 (Global Gist):** Read straight through without writing to grasp the basic narrative situation, speaker, and emotional arc.\n" +
+            "- **Reading 2 (Guiding Question Focus):** Re-read with the exam prompt in mind, highlighting pivotal lines, surprising word choices, and shifts in feeling.\n" +
+            "- **Reading 3 (Form & Craft):** Note structural turns (voltas, stanza transitions, narrative pacing shifts) and sound effects.\n\n" +
+            "**2. Active Annotation Coding:**\n" +
+            "- Underline high-potency verbs and adjectives.\n" +
+            "- Mark tonal shifts with arrows and marginal emotion labels (e.g. *nostalgia -> dread -> acceptance*).",
+          examinerTips: [
+            "The exam question always contains a guiding prompt (e.g. 'How does the writer vividly convey the speaker's experience of loneliness?'). Make this the backbone of your thesis.",
+            "Write a brief 3-point plan before drafting your response."
           ],
+          commonMistakes: [
+            "Panicking and writing immediately without spending 10–15 minutes planning and annotating.",
+            "Paraphrasing the story of the poem line by line instead of grouping points by analytical argument."
+          ],
+          recap: [
+            "Read three times: gist, question focus, and detailed craft.",
+            "Annotate imagery, tone shifts, and diction.",
+            "Structure your essay around the guiding question prompt."
+          ]
         },
         {
-          title: "Writing the Unseen Critical Commentary",
-          body: "Drafting a coherent, closely evidenced literary essay. ",
-          groups: [
-            {
-              bullets: [
-                "**Introduction**: State the overarching theme, the speaker's core perspective, and how the atmosphere develops across the extract.",
-                "**Body Paragraphs**: Analyze the text sequentially (tracking the reader's journey), combining embedded quotes with close word-level analysis.",
-                "**Conclusion**: Provide a succinct final evaluation of the text's central emotional impact or memorable thematic message.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Writing the Unseen Critical Commentary" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Writing the Unseen Critical Commentary" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Structuring the Unseen Essay",
+          body:
+            "**1. High-Scoring Essay Architecture:**\n" +
+            "- **Introduction:** One clear sentence defining the text's central concern, the speaker/narrator's perspective, and the overall progression of tone.\n" +
+            "- **Body Paragraphs (3–4 Chronological or Thematic Sections):** Point -> Evidence (embedded quote) -> Analysis of word level connotations -> Structural/sound craft -> Audience effect.\n" +
+            "- **Conclusion:** Synthesize how the opening tension is resolved or magnified by the final lines without merely repeating previous points.",
+          examinerTips: [
+            "Explore ambiguity; high-band candidates recognize that literary texts often contain conflicting emotions (e.g. love mixed with resentment).",
+            "Keep quotations short: 2–5 words integrated syntactically into your own sentences."
           ],
-        },
-        {
-          title: " Chapter 4 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 4: "Unseen Poetry and Prose Critical Commentary (Paper 4)". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          commonMistakes: [
+            "Writing a lengthy biographical or historical introduction for an unseen text.",
+            "Claiming the writer 'rhymes to make the poem sound musical' (vacuous comment)."
           ],
-        },
-      ],
+          recap: [
+            "Craft a concise thesis defining the text's emotional trajectory.",
+            "Follow the PEEL structure with embedded micro-quotes.",
+            "Acknowledge nuanced emotional ambiguities in the conclusion."
+          ]
+        }
+      ]
     },
     {
       number: 5,
-      title: "Essay Structuring: PEEL / PEEZL and Textual Evidence",
+      title: "Thematic Essay Writing & Critical Arguments",
+      section: "Essay Construction",
+      topic: "Thesis Statements, Evidence Integration, Critical Vocabulary, and Evaluative Conclusions",
       intro:
-        " **What is this topic all about?** Achieving top-tier marks in IGCSE Literature requires structuring analytical essays logically, embedding concise textual quotes seamlessly, and integrating analytical commentary with contextual awareness.",
+        "General essay questions on set texts require sustained, coherent argument rather than passage-dependent line-by-line reading. You must select relevant moments from throughout the entire work to construct an insightful literary critique.",
       subheadings: [
         {
-          title: "The PEEZL Paragraph Framework",
-          body: "A rigorous analytical paragraph structure ensuring sustained textual focus. ",
-          groups: [
-            {
-              bullets: [
-                "**P — Point (Topic Sentence)**: State a clear analytical claim addressing the question prompt directly.",
-                "**E — Evidence**: Embed a concise, highly relevant quote (1–6 words) smoothly into your own sentence.",
-                "**E — Explanation & Effect**: Explain what the quote means and how it supports your claim.",
-                "**Z — Zoom (Word-Level Analysis)**: 'Zoom in' on a specific keyword, verb, adjective, or literary device, unpacking its connotations and subtle associations.",
-                "**L — Link**: Connect back to the exam question prompt and broader thematic significance.",
-              ],
-            },
-            {
-              subTitle: ' "The PEEZL Paragraph Framework" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "The PEEZL Paragraph Framework" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Formulating a Literary Thesis and Evidence Selection",
+          body:
+            "**1. Developing a Complex Thesis:**\n" +
+            "- Move beyond simple agreement with the prompt. Add nuance: *'While on the surface Macbeth is driven by external ambition, Shakespeare presents his downfall as rooted primarily in psychological guilt and moral paralysis.'*\n\n" +
+            "**2. Selective Textual Evidence:**\n" +
+            "- Choose 4–6 key scenes/moments from across the text that illustrate the progression of your thesis.\n" +
+            "- Commit key quotes to memory (aim for 20–30 high-impact short quotes per set text).",
+          examinerTips: [
+            "Spend 5 minutes planning the progression of your argument across beginning, middle, and end of the text.",
+            "Ensure each body paragraph begins with a strong conceptual topic sentence, not a plot summary statement."
           ],
+          commonMistakes: [
+            "Selecting evidence only from the first act or opening chapters.",
+            "Quoting huge 4-line blocks of text that consume writing time without adding analytical value."
+          ],
+          recap: [
+            "Formulate a nuanced, multi-dimensional thesis.",
+            "Select evidence spanning the text's entire narrative arc.",
+            "Open body paragraphs with conceptual argument statements."
+          ]
         },
         {
-          title: "Embedding Quotations Seamlessly",
-          body: "Integrating quotes into grammatical prose rather than dropping isolated lines. ",
-          groups: [
-            {
-              bullets: [
-                "**Avoid 'Dropped Quotes'**: Never write a quote as a standalone sentence without introductory phrasing.",
-                "**Seamless Integration**: *Shakespeare presents Macbeth's mounting paranoia when he describes life as a 'tale told by an idiot', revealing his nihilistic disillusionment with power.*",
-                "**Concise Snippets**: Select only the powerful 2–4 word phrases rather than quoting lengthy multi-line blocks.",
-              ],
-            },
-            {
-              subTitle:
-                ' "Embedding Quotations Seamlessly" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Embedding Quotations Seamlessly" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Critical Vocabulary and Nuanced Evaluation",
+          body:
+            "**1. Analytical Literary Verbs:**\n" +
+            "- *Exposes, subverts, foregrounds, encapsulates, crystallizes, epitomizes, interrogates, foreshadows, heightens, mirrors*.\n\n" +
+            "**2. Evaluative Words and Transition Signposts:**\n" +
+            "- *Inevitably, profoundly, ostensibly, subtly, paradoxically, fundamentally, poignant, evocative*.\n\n" +
+            "**3. Concluding with Insight:**\n" +
+            "- Connect the text's internal conflicts to the universal human condition or the author's philosophical worldview.",
+          examinerTips: [
+            "Use phrases like 'The author invites the reader to interrogate...' rather than 'The author says...'.",
+            "Proofread for correct set text character spellings and capitalization of titles."
           ],
-        },
-        {
-          title: " Chapter 5 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 5: "Essay Structuring: PEEL / PEEZL and Textual Evidence". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          commonMistakes: [
+            "Ending the essay with 'In conclusion, as I have said above...' followed by verbatim repetition.",
+            "Using casual modern colloquialisms when evaluating classic texts."
           ],
-        },
-      ],
+          recap: [
+            "Elevate analytical vocabulary with precise literary verbs.",
+            "Embed micro-quotes smoothly into critical prose.",
+            "Conclude with universal thematic synthesis."
+          ]
+        }
+      ]
     },
     {
       number: 6,
-      title: "Literary Devices & Figurative Techniques Glossary",
+      title: "Exam Mastery, Timings & Assessment Objectives",
+      section: "Examination Strategy",
+      topic: "Assessment Objectives (AO1–AO4), Time Management, Rubrics, and Grade 9 Criteria",
       intro:
-        " **What is this topic all about?** A reference guide to essential literary terminology for high-level textual commentary across poetry, prose, and drama.",
+        "Understanding how Cambridge examiners grade your responses is the ultimate key to achieving Grade 9 (A*). This chapter breaks down Assessment Objectives AO1 to AO4, timing breakdowns, and common pitfalls to avoid under examination conditions.",
       subheadings: [
         {
-          title: "Comprehensive Glossary of Literary Terms",
-          body: "Definitions and analytical functions of key rhetorical and literary devices. ",
-          groups: [
-            {
-              bullets: [
-                "**Allegory**: A narrative with a deeper symbolic moral or political meaning beneath the surface story.",
-                "**Allusion**: An implicit reference to another literary work, historical event, or mythological figure.",
-                "**Anaphora**: Repetition of a word or phrase at the beginning of successive lines or clauses.",
-                "**Antithesis**: Direct juxtaposition of contrasting ideas in balanced phrases (*To be or not to be*).",
-                "**Hyperbole**: Deliberate poetic exaggeration for emotional emphasis.",
-                "**Juxtaposition**: Placing two contrasting characters, images, or settings side by side to highlight differences.",
-                "**Motif**: A recurring thematic image, symbol, or idea throughout a literary work.",
-                "**Oxymoron**: Pairing contradictory terms (*bittersweet, deafening silence*).",
-                "**Synecdoche**: A figure of speech where a part represents the whole (*all hands on deck*).",
-              ],
-            },
-            {
-              subTitle:
-                ' "Comprehensive Glossary of Literary Terms" — Super Simple Breakdown & Memory Tricks',
-              bullets: [
-                '**The 1-Minute Rule**: If you had to explain "Comprehensive Glossary of Literary Terms" to a 10-year-old, focus on the big idea first: what is changing, what causes it, and what happens at the end.',
-                "**Step-by-Step Flow**: 1. Notice the starting condition → 2. Follow the process or formula → 3. State the final result clearly with proper units or terms.",
-                "**Top Examiner Trap**: Examiners love asking 'Explain why' rather than just 'State what'. Always add the word 'because...' followed by the scientific or logical reason!",
-              ],
-            },
+          title: "Deconstructing Cambridge Assessment Objectives (AO1–AO4)",
+          body:
+            "**1. The Four Assessment Objectives:**\n" +
+            "- **AO1 (Knowledge & Understanding):** Demonstrating comprehensive textual familiarity through accurate textual detail, recall, and intelligent context.\n" +
+            "- **AO2 (Analysis of Language, Structure, & Form):** Dissecting the effects of writer's craft, literary devices, verse form, staging, and stylistic choices.\n" +
+            "- **AO3 (Informed Personal Response):** Articulating an original, critical, and independent evaluation of texts with supporting reasoning.\n" +
+            "- **AO4 (Contextual Appreciation):** Understanding how historical, cultural, and social contexts shape meaning and reception.",
+          examinerTips: [
+            "Grade 9 essays integrate AO1, AO2, and AO3 seamlessly in every paragraph; do not write separate 'language' or 'plot' sections.",
+            "Use 'informed personal response' to present unique interpretations supported by textual evidence."
           ],
+          commonMistakes: [
+            "Dumping biographical history that is disconnected from the specific question asked.",
+            "Omitting language analysis in general essay questions."
+          ],
+          recap: [
+            "AO1 is textual recall; AO2 is craft analysis; AO3 is personal critical response.",
+            "Weave all objectives together in every body paragraph.",
+            "Avoid irrelevant biographical or historical context."
+          ]
         },
         {
-          title: " Chapter 6 Exam Mastery: Top Mistakes & How to Get Full Marks",
-          body: 'Here is your cheat-sheet for Chapter 6: "Literary Devices & Figurative Techniques Glossary". These are the exact pitfalls examiners point out in examiner reports year after year.',
-          groups: [
-            {
-              subTitle: " The 3 Biggest Mistakes Students Make in This Chapter",
-              bullets: [
-                "**Mistake 1: Giving a partial definition**: Don't stop at half the sentence! Always include both the key keyword AND what it actually does.",
-                "**Mistake 2: Forgetting units, labels, or conditions**: Whether it's scientific units (like m/s, g/cm³, °C), currency signs, or diagram labels, always double-check your final answer.",
-                "**Mistake 3: Confusing causes with effects**: Clearly separate *why* something happens from *what* happens as a result.",
-              ],
-            },
-            {
-              subTitle: " Golden Rules for Full Marks",
-              bullets: [
-                "**Rule 1 — Use the exact keywords**: examiners look for specific syllabus words. When you use the correct term, you get the mark instantly.",
-                "**Rule 2 — Structure long answers in bullet points or steps**: Writing in clean, numbered steps makes it impossible for the examiner to miss your points.",
-                "**Rule 3 — Always re-read the question prompt**: Highlight command words like 'Describe' (say what you see), 'Explain' (give reasons why), or 'Calculate' (show all working steps).",
-              ],
-            },
+          title: "Exam Timing Strategy and Final Checklist",
+          body:
+            "**1. Time Allocation per Question (Paper 1 & Paper 2 - 45 mins each):**\n" +
+            "- 5 mins: Read question, formulate thesis, plan 3–4 paragraph trajectory.\n" +
+            "- 35 mins: Focused, analytical drafting with embedded quotations.\n" +
+            "- 5 mins: Proofreading spelling of character names, punctuation, and closing conclusions.\n\n" +
+            "**2. Final Exam Checklist:**\n" +
+            "- Did I answer the specific question asked in the prompt?\n" +
+            "- Did I analyze the effect of words, not just identify techniques?\n" +
+            "- Are all quotations short, embedded, and accurately cited?",
+          examinerTips: [
+            "Strictly follow time limits; spending 60 minutes on Question 1 leaves insufficient time for Question 2 and destroys your overall grade.",
+            "Underline key words in the prompt before writing a single word of your essay."
           ],
-        },
-      ],
-    },
-  ],
+          commonMistakes: [
+            "Writing on two questions from the same text section when rubric permits only one.",
+            "Running out of time and leaving the second question half-finished."
+          ],
+          recap: [
+            "Allocate 45 minutes strictly per question: 5 plan, 35 write, 5 check.",
+            "Address every nuance of the exam question prompt.",
+            "Rigorous time management secures balanced high marks across all papers."
+          ]
+        }
+      ]
+    }
+  ]
 };

@@ -51,6 +51,8 @@ import { JAPANESE } from "./notes/japanese";
 import { ITALIAN } from "./notes/italian";
 import { ISIZULU } from "./notes/isizulu";
 import { HINDI } from "./notes/hindi";
+import { ENGLISH_SECOND_LANGUAGE_9_1 } from "./notes/english-second-language-9-1";
+import { ENGLISH_ADDITIONAL_LANGUAGE } from "./notes/english-additional-language";
 import { ARABIC_SECOND_LANGUAGE } from "./notes/arabic-second-language";
 import { LATIN } from "./notes/latin";
 import { WORLD_LITERATURE } from "./notes/world-literature";
@@ -108,6 +110,8 @@ export {
   ITALIAN,
   ISIZULU,
   HINDI,
+  ENGLISH_SECOND_LANGUAGE_9_1,
+  ENGLISH_ADDITIONAL_LANGUAGE,
   ARABIC_SECOND_LANGUAGE,
   LATIN,
   WORLD_LITERATURE,
@@ -141,6 +145,11 @@ const RAW_NOTES: SubjectNotes[] = [
   GERMAN,
   ISIZULU,
   HINDI,
+  ENTERPRISE,
+  ENGLISH_SECOND_LANGUAGE_9_1,
+  ENGLISH_ADDITIONAL_LANGUAGE,
+  LITERATURE_IN_ENGLISH,
+  DRAMA,
 ];
 
 // All subjects with written syllabus chapters are published and accessible.
@@ -178,5 +187,10 @@ export function getSyllabusSubject(subjectId?: string, level?: string): SubjectN
   if (subjectId === "german") return GERMAN;
   if (subjectId === "isizulu") return ISIZULU;
   if (subjectId === "hindi") return HINDI;
+  if (subjectId === "enterprise") return ENTERPRISE;
+  if (subjectId === "english-second-language-9-1") return ENGLISH_SECOND_LANGUAGE_9_1;
+  if (subjectId === "english-additional-language") return ENGLISH_ADDITIONAL_LANGUAGE;
+  if (subjectId === "literature-in-english") return LITERATURE_IN_ENGLISH;
+  if (subjectId === "drama") return DRAMA;
   return SYLLABUS_NOTES.find((subject) => subject.id === subjectId) ?? null;
 }
